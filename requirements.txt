@@ -1,0 +1,48 @@
+jupyter-book==1.0.3
+jupyter
+notebook
+jupyterlab
+matplotlib
+numpy
+scipy
+seaborn
+ghp-import
+#jupyterlab-lsp
+jupyterlab-git
+pandas
+ipython
+seaborn
+jupyter_contrib_nbextensions
+#pulp
+bokeh
+#ipyvolume
+plotly
+#vpython
+#jupyterlab-vpython
+RISE
+#pylint
+#autopep8
+#jupyter-collaboration
+#jupyterlab-link-share
+jupyterlab_vpython
+#python-lsp-server
+pyright
+nb-js-diagrammers
+#ipywidgets
+#ipympl
+#lmfit
+jupyter-repo2docker
+scikit-learn
+py-heat-magic
+
+#nnv
+
+#gdbfrontend
+#gdbgui
+
+nbgrader
+
+# fenics stuff
+# superlu_dist==6.2.0
+# fenics
+# mshr
