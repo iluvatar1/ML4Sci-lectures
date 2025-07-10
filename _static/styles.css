@@ -1,0 +1,34 @@
+.centerimg5 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 5%; /* this is the size of the image */
+}
+
+.centerimg10 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%; /* this is the size of the image */
+}
+
+.centerimg30 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%; /* this is the size of the image */
+}
+
+.centerimg50 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%; /* this is the size of the image */
+}
+
+.centerimg80 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
