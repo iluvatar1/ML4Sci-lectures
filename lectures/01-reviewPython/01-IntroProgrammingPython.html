@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python Programming (very fast) Introduction &#8212; Introduction to Machine Learning for Science</title>
+    <title>3. Python Programming (very fast) Introduction &#8212; Introduction to Machine Learning for Science</title>
   
   
   
@@ -64,8 +64,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Intro Python II: python data structures" href="02-IntroProgrammingPython-DataStructs.html" />
-    <link rel="prev" title="Introduction to the course and to Machine Learning" href="../00-IntroductionCourseML/IntroCourse-MachineLearning.html" />
+    <link rel="next" title="4. Intro Python II: python data structures" href="02-IntroProgrammingPython-DataStructs.html" />
+    <link rel="prev" title="2. A fast introduction to Machine Learning" href="../00-TALK-IntroML/IntroMachineLearning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,29 +177,26 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../00-IntroductionCourseML/IntroCourse-MachineLearning.html">Introduction to the course and to Machine Learning</a></li>
-
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python Programming (very fast) Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02-IntroProgrammingPython-DataStructs.html">Intro Python II: python data structures</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="pandas-intro.html">Pandas Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html"><strong>Lo primero es importar las librerías pandas y numpy</strong></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-IntroductionCourseML/IntroCourse-MachineLearning.html">1. Introduction to the course and to Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00-TALK-IntroML/IntroMachineLearning.html">2. A fast introduction to Machine Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python review</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Python Programming (very fast) Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-IntroProgrammingPython-DataStructs.html">4. Intro Python II: python data structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas-intro.html">5. Pandas Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">6. Pandas for data cleaning and analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Supervised learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03-PCA/PCA.html">7. Principal Component Analysis (PCA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-PCA/Kernel-PCA/Kernel_PCA.html">8. Exercise: Dimensionality Reduction¶</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Neural Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">9. What is a Neural Network?</a></li>
 
 </ul>
 
@@ -445,21 +442,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-modules">Importing modules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-for-help">Looking for help</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printing-and-reading-to-and-from-the-screen">Printing and reading to and from the screen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-structures-if-if-else">Selection structures : <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">else</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-structures-for-and-while">Loop structures: for and while</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-declare-functions">How to declare functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-from-farenheit-to-celcius">Convert from Farenheit to Celcius</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#triangle-vertexes">Triangle vertexes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rc-circuit">RC circuit</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spring-system">Spring system</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projectile">Projectile</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-numbers">Random numbers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmap">Heatmap</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-with-scipy">Fitting with scipy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-modules">3.1. Importing modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-for-help">3.2. Looking for help</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printing-and-reading-to-and-from-the-screen">3.3. Printing and reading to and from the screen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-structures-if-if-else">3.4. Selection structures : <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">else</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-structures-for-and-while">3.5. Loop structures: for and while</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-declare-functions">3.6. How to declare functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">3.7. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-from-farenheit-to-celcius">3.7.1. Convert from Farenheit to Celcius</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#triangle-vertexes">3.7.2. Triangle vertexes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rc-circuit">3.7.3. RC circuit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spring-system">3.7.4. Spring system</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projectile">3.7.5. Projectile</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-numbers">3.7.6. Random numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmap">3.7.7. Heatmap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-with-scipy">3.7.8. Fitting with scipy</a></li>
 </ul>
 </li>
 </ul>
@@ -474,9 +471,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python-programming-very-fast-introduction">
-<h1>Python Programming (very fast) Introduction<a class="headerlink" href="#python-programming-very-fast-introduction" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">3. </span>Python Programming (very fast) Introduction<a class="headerlink" href="#python-programming-very-fast-introduction" title="Link to this heading">#</a></h1>
 <section id="importing-modules">
-<h2>Importing modules<a class="headerlink" href="#importing-modules" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.1. </span>Importing modules<a class="headerlink" href="#importing-modules" title="Link to this heading">#</a></h2>
 <p>Python has an extensive standard library (https://docs.python.org/3/library/) to perform several task in optimized and easy-to-use way. For basic mathematical operations you can just use the normal operators, but for other standard functions, like <code class="docutils literal notranslate"><span class="pre">sin</span></code>, you could import the standard <code class="docutils literal notranslate"><span class="pre">math</span></code> module, or , much better, use either <code class="docutils literal notranslate"><span class="pre">numpy</span></code> or <code class="docutils literal notranslate"><span class="pre">scipy</span></code> modules</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">m</span> <span class="c1"># imports the math module with an alias m</span>
 <span class="c1"># import math # imports math module but you need to use math.sin or math.cos</span>
@@ -520,7 +517,7 @@ document.write(`
 </div>
 </section>
 <section id="looking-for-help">
-<h2>Looking for help<a class="headerlink" href="#looking-for-help" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.2. </span>Looking for help<a class="headerlink" href="#looking-for-help" title="Link to this heading">#</a></h2>
 <p>What are the units of the argument for the <code class="docutils literal notranslate"><span class="pre">sin</span></code> function? Are there any other functions provided by the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> module? Check the documentation using either google or, inside a notebook</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>help(np.sin)
 help(np)
@@ -536,7 +533,7 @@ np.sin?
 </div>
 </section>
 <section id="printing-and-reading-to-and-from-the-screen">
-<h2>Printing and reading to and from the screen<a class="headerlink" href="#printing-and-reading-to-and-from-the-screen" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.3. </span>Printing and reading to and from the screen<a class="headerlink" href="#printing-and-reading-to-and-from-the-screen" title="Link to this heading">#</a></h2>
 <p>You have already seen how to print to the screen. To read, you can use the function call <code class="docutils literal notranslate"><span class="pre">input</span></code>. Try it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -573,7 +570,7 @@ np.sin?
 </div>
 </section>
 <section id="selection-structures-if-if-else">
-<h2>Selection structures : <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">else</span></code><a class="headerlink" href="#selection-structures-if-if-else" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.4. </span>Selection structures : <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">else</span></code><a class="headerlink" href="#selection-structures-if-if-else" title="Link to this heading">#</a></h2>
 <p>This is a simple example on how to use if to select from several options</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -612,7 +609,7 @@ np.sin?
 </div>
 </section>
 <section id="loop-structures-for-and-while">
-<h2>Loop structures: for and while<a class="headerlink" href="#loop-structures-for-and-while" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.5. </span>Loop structures: for and while<a class="headerlink" href="#loop-structures-for-and-while" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">5</span>
@@ -670,7 +667,7 @@ np.sin?
 </div>
 </section>
 <section id="how-to-declare-functions">
-<h2>How to declare functions<a class="headerlink" href="#how-to-declare-functions" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.6. </span>How to declare functions<a class="headerlink" href="#how-to-declare-functions" title="Link to this heading">#</a></h2>
 <p>Functions are the next construct necessary for the a good program design. A function should be defined by using the keyword <code class="docutils literal notranslate"><span class="pre">def</span></code> .</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -724,9 +721,9 @@ np.sin?
 </div>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.7. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <section id="convert-from-farenheit-to-celcius">
-<h3>Convert from Farenheit to Celcius<a class="headerlink" href="#convert-from-farenheit-to-celcius" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.7.1. </span>Convert from Farenheit to Celcius<a class="headerlink" href="#convert-from-farenheit-to-celcius" title="Link to this heading">#</a></h3>
 <p>Write a function that receives a temperature in F and prints it in C</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -750,31 +747,31 @@ np.sin?
 </div>
 </section>
 <section id="triangle-vertexes">
-<h3>Triangle vertexes<a class="headerlink" href="#triangle-vertexes" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.7.2. </span>Triangle vertexes<a class="headerlink" href="#triangle-vertexes" title="Link to this heading">#</a></h3>
 <p>The coordinates for the vertexes of a given triangle are written into a file in the form  \begin{align*}x_1\ \ \  y_1\x_2\ \ \  y_2\x_3\ \ \ y_3  \end{align*} Write a program that reads this values, and computes the area of the triangle, defined as $<span class="math notranslate nohighlight">\( A = \frac{1}{2}[x_2y_3 - x_3y_2 - x_1y_3 + x_3y_1 + x_1y_2 - x_2y_1]\)</span>$. Use functions.</p>
 </section>
 <section id="rc-circuit">
-<h3>RC circuit<a class="headerlink" href="#rc-circuit" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.7.3. </span>RC circuit<a class="headerlink" href="#rc-circuit" title="Link to this heading">#</a></h3>
 <p>Write a Python program that uses a loop to simulate the behavior of an RC circuit. The program should ask the user for the resistance and capacitance values of the circuit and should calculate the voltage across the capacitor as a function of time. The program should then create a plot of the voltage across the capacitor versus time.</p>
 </section>
 <section id="spring-system">
-<h3>Spring system<a class="headerlink" href="#spring-system" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.7.4. </span>Spring system<a class="headerlink" href="#spring-system" title="Link to this heading">#</a></h3>
 <p>Write a Python program that uses a loop to simulate the motion of a mass-spring system. The program should ask the user for the mass of the object, the spring constant, and the initial displacement from equilibrium. The program should then calculate the position of the object as a function of time and create a plot of the position versus time.</p>
 </section>
 <section id="projectile">
-<h3>Projectile<a class="headerlink" href="#projectile" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.7.5. </span>Projectile<a class="headerlink" href="#projectile" title="Link to this heading">#</a></h3>
 <p>Write a Python program that uses a loop to simulate the motion of a projectile under the influence of gravity. The program should ask the user for the initial velocity and launch angle of the projectile, and should calculate the trajectory of the projectile over time. The program should then create a plot of the trajectory of the projectile. Use the Euler integration algorithm to compute the next position and velocity. Compare adding a damping linear force with air.</p>
 </section>
 <section id="random-numbers">
-<h3>Random numbers<a class="headerlink" href="#random-numbers" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.7.6. </span>Random numbers<a class="headerlink" href="#random-numbers" title="Link to this heading">#</a></h3>
 <p>Write a Python program that reads three integers N, lower, upper, and generates a list of N random integers between lower and upper, inclusive. The program should then print out the number of integers in the list that are even and the number of integers that are odd. Finally, the program should create a bar chart that shows the number of even and odd integers in the list. Then create 4 plots with increasing N showing that limit distribution of even and odd numbers.</p>
 </section>
 <section id="heatmap">
-<h3>Heatmap<a class="headerlink" href="#heatmap" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.7.7. </span>Heatmap<a class="headerlink" href="#heatmap" title="Link to this heading">#</a></h3>
 <p>Write a Python function that takes an integer n as input and returns a NumPy array of size n x n, where the elements of the array are random integers between lower and upper, which are also arguments of the function. Write a second function that takes the NumPy array as input and creates a heatmap of the array. Use these functions to create a program that generates a mxm NumPy array of random integers and displays it as a heatmap. Use several m</p>
 </section>
 <section id="fitting-with-scipy">
-<h3>Fitting with scipy<a class="headerlink" href="#fitting-with-scipy" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.7.8. </span>Fitting with scipy<a class="headerlink" href="#fitting-with-scipy" title="Link to this heading">#</a></h3>
 <p>Here we will learn how to perform a non-linear fit. To do so, we will generate some random data and then fit it. First, create a function that represents the theoretical trend that you want to fit. Now create two numpy arrays, xdata and ydata. For xdata use the linspace function on the range you are interested in. For ydata use the theoretical function and add a gaussian noise for each point. Now use the scipy.curve_fit function to fit the data, and print the fit parameters and their errors. Plot both the data and the fit.</p>
 </section>
 </section>
@@ -811,12 +808,12 @@ np.sin?
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../00-IntroductionCourseML/IntroCourse-MachineLearning.html"
+       href="../00-TALK-IntroML/IntroMachineLearning.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction to the course and to Machine Learning</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>A fast introduction to Machine Learning</p>
       </div>
     </a>
     <a class="right-next"
@@ -824,7 +821,7 @@ np.sin?
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Intro Python II: python data structures</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Intro Python II: python data structures</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -844,21 +841,21 @@ np.sin?
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-modules">Importing modules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-for-help">Looking for help</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printing-and-reading-to-and-from-the-screen">Printing and reading to and from the screen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-structures-if-if-else">Selection structures : <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">else</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-structures-for-and-while">Loop structures: for and while</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-declare-functions">How to declare functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-from-farenheit-to-celcius">Convert from Farenheit to Celcius</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#triangle-vertexes">Triangle vertexes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rc-circuit">RC circuit</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spring-system">Spring system</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projectile">Projectile</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-numbers">Random numbers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmap">Heatmap</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-with-scipy">Fitting with scipy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-modules">3.1. Importing modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-for-help">3.2. Looking for help</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printing-and-reading-to-and-from-the-screen">3.3. Printing and reading to and from the screen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-structures-if-if-else">3.4. Selection structures : <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">else</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-structures-for-and-while">3.5. Loop structures: for and while</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-declare-functions">3.6. How to declare functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">3.7. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-from-farenheit-to-celcius">3.7.1. Convert from Farenheit to Celcius</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#triangle-vertexes">3.7.2. Triangle vertexes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rc-circuit">3.7.3. RC circuit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spring-system">3.7.4. Spring system</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projectile">3.7.5. Projectile</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-numbers">3.7.6. Random numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmap">3.7.7. Heatmap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-with-scipy">3.7.8. Fitting with scipy</a></li>
 </ul>
 </li>
 </ul>

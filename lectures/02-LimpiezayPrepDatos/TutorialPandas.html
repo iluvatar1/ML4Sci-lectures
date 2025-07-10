@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Lo primero es importar las librerías pandas y numpy &#8212; Introduction to Machine Learning for Science</title>
+    <title>6. Pandas for data cleaning and analysis &#8212; Introduction to Machine Learning for Science</title>
   
   
   
@@ -62,7 +62,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Pandas Introduction" href="../01-reviewPython/pandas-intro.html" />
+    <link rel="next" title="7. Principal Component Analysis (PCA)" href="../03-PCA/PCA.html" />
+    <link rel="prev" title="5. Pandas Introduction" href="../01-reviewPython/pandas-intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,29 +175,26 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../00-IntroductionCourseML/IntroCourse-MachineLearning.html">Introduction to the course and to Machine Learning</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">Python Programming (very fast) Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">Intro Python II: python data structures</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/pandas-intro.html">Pandas Introduction</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Lo primero es importar las librerías pandas y numpy</strong></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-IntroductionCourseML/IntroCourse-MachineLearning.html">1. Introduction to the course and to Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00-TALK-IntroML/IntroMachineLearning.html">2. A fast introduction to Machine Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python review</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">3. Python Programming (very fast) Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">4. Intro Python II: python data structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/pandas-intro.html">5. Pandas Introduction</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Pandas for data cleaning and analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Supervised learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03-PCA/PCA.html">7. Principal Component Analysis (PCA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-PCA/Kernel-PCA/Kernel_PCA.html">8. Exercise: Dimensionality Reduction¶</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Neural Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">9. What is a Neural Network?</a></li>
 
 </ul>
 
@@ -432,7 +430,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Lo primero es importar las librerías pandas y numpy</h1>
+    <h1>Pandas for data cleaning and analysis</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -442,27 +440,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Lo primero es importar las librerías pandas y numpy</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#luego-hay-que-leer-los-datos-del-archivo-bip-pozos-csv-para-eso-usamos-pd-read-csv-ubicacion-del-archivo-nombre-del-archivo-csv"><strong>Luego hay que leer los datos del archivo BIP_pozos.csv. Para eso usamos pd.read_csv(“ubicacion_del_archivo/nombre_del_archivo.csv”)</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#df-es-ahora-un-dataframe-de-pandas-con-lo-datos-del-archivo-bip-pozos-csv"><strong>df es ahora un DataFrame de Pandas con lo datos del archivo “BIP_pozos.csv”</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#para-ver-que-columnas-hay-cuantas-filas-hay-y-que-tipos-de-datos-contienen"><strong>Para ver que columnas hay, cuantas filas hay y qué tipos de datos contienen:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#algo-que-uno-a-veces-necesita-saber-es-cuantos-valores-unicos-o-diferentes-hay-para-una-columna"><strong>Algo que uno a veces necesita saber es cuántos valores únicos o diferentes hay para una columna:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#para-ver-las-llaves-keys-de-las-columnas"><strong>Para ver las llaves (keys) de las columnas:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#uno-puede-seleccionar-columnas-asi"><strong>Uno puede seleccionar columnas así:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#y-puede-seleccionar-varias-columnas-asi"><strong>y puede seleccionar varias columnas así:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#para-excluir-una-columna-de-un-dataframe"><strong>Para excluir una columna de un DataFrame:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#antes"><strong>antes:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminar-columna"><strong>eliminar columna:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#para-acceder-a-filas-especificas"><strong>para acceder a filas específicas:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#y-todo-lo-anterior-se-puede-combinar"><strong>Y todo lo anterior se puede combinar:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-lo-que-vinimos-limpieza-de-datos"><strong>A lo que vinimos: limpieza de datos:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#repitamos-lo-mismo-para-un-pedazo-del-dataframe-y-asi-poder-ver-que-pasa"><strong>Repitamos lo mismo para un pedazo del DataFrame y así poder “ver” qué pasa:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicar-una-funcion-a-los-datos-de-una-columna"><strong>Aplicar una función a los datos de una columna</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-error-que-sigue-quedo-de-intento-la-idea-es-que-hay-que-saber-tambien-entender-los-errores"><strong>el error que sigue quedó de intento: la idea es que hay que saber también entender los errores</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicar-una-funcion-a-los-datos-de-una-columna">6.1. Aplicar una función a los datos de una columna</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo1">6.1.1. Ejemplo1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-2">6.1.2. Ejemplo 2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-cosas-utiles">6.2. Otras cosas útiles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenar-bases-de-datos">6.2.1. concatenar bases de datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agregar-columnas">6.2.2. agregar columnas</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -473,8 +461,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="lo-primero-es-importar-las-librerias-pandas-y-numpy">
-<h1><strong>Lo primero es importar las librerías pandas y numpy</strong><a class="headerlink" href="#lo-primero-es-importar-las-librerias-pandas-y-numpy" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="pandas-for-data-cleaning-and-analysis">
+<h1><span class="section-number">6. </span>Pandas for data cleaning and analysis<a class="headerlink" href="#pandas-for-data-cleaning-and-analysis" title="Link to this heading">#</a></h1>
+<p>Lo primero es importar las librerías pandas y numpy</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -483,12 +472,8 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="luego-hay-que-leer-los-datos-del-archivo-bip-pozos-csv-para-eso-usamos-pd-read-csv-ubicacion-del-archivo-nombre-del-archivo-csv">
-<h1><strong>Luego hay que leer los datos del archivo BIP_pozos.csv. Para eso usamos pd.read_csv(“ubicacion_del_archivo/nombre_del_archivo.csv”)</strong><a class="headerlink" href="#luego-hay-que-leer-los-datos-del-archivo-bip-pozos-csv-para-eso-usamos-pd-read-csv-ubicacion-del-archivo-nombre-del-archivo-csv" title="Link to this heading">#</a></h1>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  (para otros formatos ver https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html):
-</pre></div>
-</div>
+<p>Luego hay que leer los datos del archivo BIP_pozos.csv. Para eso usamos pd.read_csv(“ubicacion_del_archivo/nombre_del_archivo.csv”)
+(para otros formatos ver https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;BIP_pozos.csv&quot;</span><span class="p">)</span>
@@ -560,12 +545,8 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="df-es-ahora-un-dataframe-de-pandas-con-lo-datos-del-archivo-bip-pozos-csv">
-<h1><strong>df es ahora un DataFrame de Pandas con lo datos del archivo “BIP_pozos.csv”</strong><a class="headerlink" href="#df-es-ahora-un-dataframe-de-pandas-con-lo-datos-del-archivo-bip-pozos-csv" title="Link to this heading">#</a></h1>
-</section>
-<section id="para-ver-que-columnas-hay-cuantas-filas-hay-y-que-tipos-de-datos-contienen">
-<h1><strong>Para ver que columnas hay, cuantas filas hay y qué tipos de datos contienen:</strong><a class="headerlink" href="#para-ver-que-columnas-hay-cuantas-filas-hay-y-que-tipos-de-datos-contienen" title="Link to this heading">#</a></h1>
+<p>df es ahora un DataFrame de Pandas con lo datos del archivo “BIP_pozos.csv”</p>
+<p>Para ver que columnas hay, cuantas filas hay y qué tipos de datos contienen</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -573,9 +554,7 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="algo-que-uno-a-veces-necesita-saber-es-cuantos-valores-unicos-o-diferentes-hay-para-una-columna">
-<h1><strong>Algo que uno a veces necesita saber es cuántos valores únicos o diferentes hay para una columna:</strong><a class="headerlink" href="#algo-que-uno-a-veces-necesita-saber-es-cuantos-valores-unicos-o-diferentes-hay-para-una-columna" title="Link to this heading">#</a></h1>
+<p>Algo que uno a veces necesita saber es cuántos valores únicos o diferentes hay para una columna</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
@@ -583,9 +562,7 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="para-ver-las-llaves-keys-de-las-columnas">
-<h1><strong>Para ver las llaves (keys) de las columnas:</strong><a class="headerlink" href="#para-ver-las-llaves-keys-de-las-columnas" title="Link to this heading">#</a></h1>
+<p>Para ver las llaves (keys) de las columnas</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
@@ -593,9 +570,7 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="uno-puede-seleccionar-columnas-asi">
-<h1><strong>Uno puede seleccionar columnas así:</strong><a class="headerlink" href="#uno-puede-seleccionar-columnas-asi" title="Link to this heading">#</a></h1>
+<p>Uno puede seleccionar columnas así</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;DEPARTAMEN&quot;</span><span class="p">]</span>
@@ -603,9 +578,7 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="y-puede-seleccionar-varias-columnas-asi">
-<h1><strong>y puede seleccionar varias columnas así:</strong><a class="headerlink" href="#y-puede-seleccionar-varias-columnas-asi" title="Link to this heading">#</a></h1>
+<p>y puede seleccionar varias columnas así</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;DEPARTAMEN&quot;</span><span class="p">,</span> <span class="s2">&quot;WELL_DRILL&quot;</span><span class="p">]]</span>
@@ -613,12 +586,8 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="para-excluir-una-columna-de-un-dataframe">
-<h1><strong>Para excluir una columna de un DataFrame:</strong><a class="headerlink" href="#para-excluir-una-columna-de-un-dataframe" title="Link to this heading">#</a></h1>
-</section>
-<section id="antes">
-<h1><strong>antes:</strong><a class="headerlink" href="#antes" title="Link to this heading">#</a></h1>
+<p>Para excluir una columna de un DataFrame</p>
+<p>antes</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
@@ -626,9 +595,7 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="eliminar-columna">
-<h1><strong>eliminar columna:</strong><a class="headerlink" href="#eliminar-columna" title="Link to this heading">#</a></h1>
+<p>eliminar columna</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;WELL_ALIAS&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#o df.drop([&quot;WELL_ALIAS&quot;], axis=1, inplace=True)</span>
@@ -643,9 +610,7 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="para-acceder-a-filas-especificas">
-<h1><strong>para acceder a filas específicas:</strong><a class="headerlink" href="#para-acceder-a-filas-especificas" title="Link to this heading">#</a></h1>
+<p>para acceder a filas específicas</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">111</span><span class="p">]</span>
@@ -653,7 +618,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>###<strong>Para acceder/seleccionar de manera condicional:</strong></p>
+<p>Para acceder/seleccionar de manera condicional</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;DEPARTAMEN&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;META&#39;</span><span class="p">]</span>
@@ -661,9 +626,7 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="y-todo-lo-anterior-se-puede-combinar">
-<h1><strong>Y todo lo anterior se puede combinar:</strong><a class="headerlink" href="#y-todo-lo-anterior-se-puede-combinar" title="Link to this heading">#</a></h1>
+<p>Y todo lo anterior se puede combinar</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;DEPARTAMEN&quot;</span><span class="p">,</span> <span class="s2">&quot;WELL_DRILL&quot;</span><span class="p">]][</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;DEPARTAMEN&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;META&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">111</span><span class="p">]</span>
@@ -699,9 +662,7 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="a-lo-que-vinimos-limpieza-de-datos">
-<h1><strong>A lo que vinimos: limpieza de datos:</strong><a class="headerlink" href="#a-lo-que-vinimos-limpieza-de-datos" title="Link to this heading">#</a></h1>
+<p>A lo que vinimos: limpieza de datos</p>
 <p>Problemas usuales: valores nulos, datos vacios, datos incorrectos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -717,9 +678,7 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="repitamos-lo-mismo-para-un-pedazo-del-dataframe-y-asi-poder-ver-que-pasa">
-<h1><strong>Repitamos lo mismo para un pedazo del DataFrame y así poder “ver” qué pasa:</strong><a class="headerlink" href="#repitamos-lo-mismo-para-un-pedazo-del-dataframe-y-asi-poder-ver-que-pasa" title="Link to this heading">#</a></h1>
+<p>Repitamos lo mismo para un pedazo del DataFrame y así poder “ver” qué pasa</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;DEPARTAMEN&quot;</span><span class="p">,</span> <span class="s2">&quot;WELL_DRILL&quot;</span><span class="p">,</span> <span class="s2">&quot;FORMACION1&quot;</span><span class="p">]][</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;DEPARTAMEN&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;META&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">111</span><span class="p">]</span>
@@ -743,7 +702,7 @@ document.write(`
 </div>
 <p>##<strong>Qué hacer cuando faltan datos??</strong></p>
 <p>###<strong>Esa es la gran pregunta…</strong></p>
-<p>###<strong>Opción 1: quitar las filas que tengan datos faltantes:</strong></p>
+<p>###**Opción 1: quitar las filas que tengan datos faltantes</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;DEPARTAMEN&quot;</span><span class="p">,</span> <span class="s2">&quot;WELL_DRILL&quot;</span><span class="p">,</span> <span class="s2">&quot;FORMACION1&quot;</span><span class="p">]][</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;DEPARTAMEN&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;META&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">111</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
@@ -751,7 +710,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>###<strong>Opción 2: quitar las columnas que tengan datos faltantes:</strong></p>
+<p>###**Opción 2: quitar las columnas que tengan datos faltantes</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;DEPARTAMEN&quot;</span><span class="p">,</span> <span class="s2">&quot;WELL_DRILL&quot;</span><span class="p">,</span> <span class="s2">&quot;FORMACION1&quot;</span><span class="p">]][</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;DEPARTAMEN&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;META&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">111</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -759,7 +718,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>###<strong>Opción 3: remplazar datos faltantes:</strong></p>
+<p>Opción 3: remplazar datos faltantes</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;FORMACION1&quot;</span><span class="p">]][</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;DEPARTAMEN&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;META&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">111</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;FORMACION1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">444</span><span class="p">])</span>
@@ -774,7 +733,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>##<strong>Agrupaciones:</strong></p>
+<p>##**Agrupaciones</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;DEPARTAMEN&#39;</span><span class="p">)[</span><span class="s2">&quot;WELL_TVD&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -804,10 +763,10 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
 <section id="aplicar-una-funcion-a-los-datos-de-una-columna">
-<h1><strong>Aplicar una función a los datos de una columna</strong><a class="headerlink" href="#aplicar-una-funcion-a-los-datos-de-una-columna" title="Link to this heading">#</a></h1>
-<p>###<strong>ejemplo1:</strong></p>
+<h2><span class="section-number">6.1. </span>Aplicar una función a los datos de una columna<a class="headerlink" href="#aplicar-una-funcion-a-los-datos-de-una-columna" title="Link to this heading">#</a></h2>
+<section id="ejemplo1">
+<h3><span class="section-number">6.1.1. </span>Ejemplo1<a class="headerlink" href="#ejemplo1" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;WELL_TVD_+1000000&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;WELL_TVD&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="mi">1000000</span><span class="p">)</span>
@@ -822,7 +781,9 @@ document.write(`
 </div>
 </div>
 </div>
-<p>###<strong>ejemplo 2:</strong></p>
+</section>
+<section id="ejemplo-2">
+<h3><span class="section-number">6.1.2. </span>Ejemplo 2<a class="headerlink" href="#ejemplo-2" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#defino una funcion, por ejemplo para corregir los errores en los nombre de los deptos:</span>
@@ -860,8 +821,7 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="el-error-que-sigue-quedo-de-intento-la-idea-es-que-hay-que-saber-tambien-entender-los-errores">
-<h2><strong>el error que sigue quedó de intento: la idea es que hay que saber también entender los errores</strong><a class="headerlink" href="#el-error-que-sigue-quedo-de-intento-la-idea-es-que-hay-que-saber-tambien-entender-los-errores" title="Link to this heading">#</a></h2>
+<p>el error que sigue quedó de intento: la idea es que hay que saber también entender los errores</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;DEPARTAMEN NOMBRE CORREGIDO&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;DEPARTAMEN&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">corregir_nombres</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
@@ -897,7 +857,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>###<strong>Operaciones sobre cols:</strong></p>
+<p>Operaciones sobre cols</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;suma&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;WELL_TVD&quot;</span><span class="p">]</span><span class="o">+</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;WELL_X_DEP&quot;</span><span class="p">]</span>
@@ -912,9 +872,13 @@ document.write(`
 </div>
 </div>
 </div>
-<p>#<strong>Otras cosas útiles:</strong></p>
-<p>##<strong>concatenar bases de datos:</strong></p>
-<p>###<strong>agregar filas (ojo: ambos DataFrames tienen que tener las mismas columnas!!):</strong></p>
+</section>
+</section>
+<section id="otras-cosas-utiles">
+<h2><span class="section-number">6.2. </span>Otras cosas útiles<a class="headerlink" href="#otras-cosas-utiles" title="Link to this heading">#</a></h2>
+<section id="concatenar-bases-de-datos">
+<h3><span class="section-number">6.2.1. </span>concatenar bases de datos<a class="headerlink" href="#concatenar-bases-de-datos" title="Link to this heading">#</a></h3>
+<p>agregar filas (ojo: ambos DataFrames tienen que tener las mismas columnas!!)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_5</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -924,7 +888,9 @@ document.write(`
 </div>
 </div>
 </div>
-<p>###<strong>agregar columnas:</strong></p>
+</section>
+<section id="agregar-columnas">
+<h3><span class="section-number">6.2.2. </span>agregar columnas<a class="headerlink" href="#agregar-columnas" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
@@ -939,6 +905,7 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
 </section>
 </section>
 
@@ -978,8 +945,17 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Pandas Introduction</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Pandas Introduction</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../03-PCA/PCA.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Principal Component Analysis (PCA)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -997,27 +973,17 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Lo primero es importar las librerías pandas y numpy</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#luego-hay-que-leer-los-datos-del-archivo-bip-pozos-csv-para-eso-usamos-pd-read-csv-ubicacion-del-archivo-nombre-del-archivo-csv"><strong>Luego hay que leer los datos del archivo BIP_pozos.csv. Para eso usamos pd.read_csv(“ubicacion_del_archivo/nombre_del_archivo.csv”)</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#df-es-ahora-un-dataframe-de-pandas-con-lo-datos-del-archivo-bip-pozos-csv"><strong>df es ahora un DataFrame de Pandas con lo datos del archivo “BIP_pozos.csv”</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#para-ver-que-columnas-hay-cuantas-filas-hay-y-que-tipos-de-datos-contienen"><strong>Para ver que columnas hay, cuantas filas hay y qué tipos de datos contienen:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#algo-que-uno-a-veces-necesita-saber-es-cuantos-valores-unicos-o-diferentes-hay-para-una-columna"><strong>Algo que uno a veces necesita saber es cuántos valores únicos o diferentes hay para una columna:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#para-ver-las-llaves-keys-de-las-columnas"><strong>Para ver las llaves (keys) de las columnas:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#uno-puede-seleccionar-columnas-asi"><strong>Uno puede seleccionar columnas así:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#y-puede-seleccionar-varias-columnas-asi"><strong>y puede seleccionar varias columnas así:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#para-excluir-una-columna-de-un-dataframe"><strong>Para excluir una columna de un DataFrame:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#antes"><strong>antes:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminar-columna"><strong>eliminar columna:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#para-acceder-a-filas-especificas"><strong>para acceder a filas específicas:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#y-todo-lo-anterior-se-puede-combinar"><strong>Y todo lo anterior se puede combinar:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-lo-que-vinimos-limpieza-de-datos"><strong>A lo que vinimos: limpieza de datos:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#repitamos-lo-mismo-para-un-pedazo-del-dataframe-y-asi-poder-ver-que-pasa"><strong>Repitamos lo mismo para un pedazo del DataFrame y así poder “ver” qué pasa:</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicar-una-funcion-a-los-datos-de-una-columna"><strong>Aplicar una función a los datos de una columna</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-error-que-sigue-quedo-de-intento-la-idea-es-que-hay-que-saber-tambien-entender-los-errores"><strong>el error que sigue quedó de intento: la idea es que hay que saber también entender los errores</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicar-una-funcion-a-los-datos-de-una-columna">6.1. Aplicar una función a los datos de una columna</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo1">6.1.1. Ejemplo1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-2">6.1.2. Ejemplo 2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-cosas-utiles">6.2. Otras cosas útiles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenar-bases-de-datos">6.2.1. concatenar bases de datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agregar-columnas">6.2.2. agregar columnas</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>

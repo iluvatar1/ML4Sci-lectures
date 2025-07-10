@@ -13,7 +13,3 @@ DATA: https://drive.google.com/drive/folders/1dRx5gtmaBm2WC0XP1pO_qXFRH1uHappi?u
 ```{tableofcontents}
 ```
 
-## TODO
-- [ ] https://www.youtube.com/watch?v=UZDiGooFs54
-- [ ] https://www.youtube.com/watch?v=5eqRuVp65eY
-- [ ] https://www.youtube.com/watch?v=E0Hmnixke2g
