@@ -62,7 +62,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="8. Exercise: Dimensionality Reduction¶" href="Kernel-PCA/Kernel_PCA.html" />
+    <link rel="next" title="8. An Introduction to Linear Regression" href="../04-LinearRegression/LinearRegression.html" />
     <link rel="prev" title="6. Pandas for data cleaning and analysis" href="../02-LimpiezayPrepDatos/TutorialPandas.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -190,12 +190,11 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supervised learning</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Principal Component Analysis (PCA)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Kernel-PCA/Kernel_PCA.html">8. Exercise: Dimensionality Reduction¶</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../04-LinearRegression/LinearRegression.html">9. An Introduction to Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-LinearRegression/LinearRegression.html">8. An Introduction to Linear Regression</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Neural Networks</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">10. What is a Neural Network?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">9. What is a Neural Network?</a></li>
 
 </ul>
 
@@ -539,22 +538,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7a15bfc335b0&gt;]
-</pre></div>
-</div>
-<img alt="../../_images/ec50da52089245aeaa880203c763e0e992d55a13291f19a97c5f32391e6d291e.png" src="../../_images/ec50da52089245aeaa880203c763e0e992d55a13291f19a97c5f32391e6d291e.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">per_var</span><span class="o">=</span><span class="p">(</span><span class="n">valores</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">valores</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">valores</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">per_var</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7255152452459432
 </pre></div>
 </div>
 </div>
@@ -564,22 +552,6 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;autovectores 1: &quot;</span><span class="p">,</span><span class="n">vectores</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;autovectores 2: &quot;</span><span class="p">,</span><span class="n">vectores</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">datosPC</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">datos</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:],</span> <span class="n">vectores</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>autovectores 1:  [ 0.21691695 -0.21639914 -0.10359936 -0.2245478  -0.21796464 -0.13764549
- -0.23150388 -0.25122179 -0.2552664  -0.1330126  -0.05797189 -0.20090409
- -0.01547414 -0.20563036 -0.19798194 -0.01123624 -0.1619218  -0.14578435
- -0.1762679  -0.03832541 -0.09508414 -0.22558983 -0.10501867 -0.23364163
- -0.22196962 -0.12530106 -0.20447639 -0.22307483 -0.24628844 -0.12066328
- -0.12672101]
-autovectores 2:  [ 0.07760994 -0.22654473 -0.05826196 -0.20762951 -0.22322434  0.18876038
-  0.15847307  0.06786768 -0.02722028  0.19321967  0.36761956 -0.09715581
-  0.09118826 -0.08069084 -0.14355563  0.20531469  0.23886735  0.203226
-  0.13704859  0.1860032   0.28433173 -0.21289639 -0.04513536 -0.19259202
- -0.21188718  0.17247591  0.14766283  0.10308807 -0.00243309  0.14206245
-  0.27644912]
 </pre></div>
 </div>
 </div>
@@ -594,9 +566,6 @@ autovectores 2:  [ 0.07760994 -0.22654473 -0.05826196 -0.20762951 -0.22322434  0
         <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">datosPC</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">datosPC</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/f7618b192aabf1259e703ec3c5e3e6bd580f4f353a1f4a8a75a0e9d716670999.png" src="../../_images/f7618b192aabf1259e703ec3c5e3e6bd580f4f353a1f4a8a75a0e9d716670999.png" />
 </div>
 </div>
 </section>
@@ -642,11 +611,11 @@ autovectores 2:  [ 0.07760994 -0.22654473 -0.05826196 -0.20762951 -0.22322434  0
       </div>
     </a>
     <a class="right-next"
-       href="Kernel-PCA/Kernel_PCA.html"
+       href="../04-LinearRegression/LinearRegression.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>Exercise: Dimensionality Reduction¶</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>An Introduction to Linear Regression</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

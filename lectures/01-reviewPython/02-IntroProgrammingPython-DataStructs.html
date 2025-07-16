@@ -192,12 +192,11 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supervised learning</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../03-PCA/PCA.html">7. Principal Component Analysis (PCA)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03-PCA/Kernel-PCA/Kernel_PCA.html">8. Exercise: Dimensionality Reduction¶</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../04-LinearRegression/LinearRegression.html">9. An Introduction to Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-LinearRegression/LinearRegression.html">8. An Introduction to Linear Regression</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Neural Networks</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">10. What is a Neural Network?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">9. What is a Neural Network?</a></li>
 
 </ul>
 
@@ -566,7 +565,7 @@ l
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140508331747336, 140508331747368, 140508331747400, 140508331749032
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139997209667592, 139997209667624, 139997209667656, 139997209669288
 </pre></div>
 </div>
 </div>
@@ -610,9 +609,8 @@ l
 </div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">printreversed</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
-    <span class="c1">### BEGIN SOLUTION</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">[::</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
-    <span class="c1">### END SOLUTION</span>
+    <span class="c1"># YOUR CODE HERE</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -625,8 +623,18 @@ l
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 1]
-[&#39;mundo&#39;, 4, 2]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NotImplementedError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">printreversed</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">printreversed</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span> <span class="p">,</span> <span class="s2">&quot;hola&quot;</span><span class="p">,</span> <span class="s2">&quot;mundo&quot;</span><span class="p">])</span>
+
+<span class="nn">Cell In[8], line 3,</span> in <span class="ni">printreversed</span><span class="nt">(l)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">printreversed</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="c1"># YOUR CODE HERE</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+<span class="ne">NotImplementedError</span>: 
 </pre></div>
 </div>
 </div>
@@ -638,23 +646,8 @@ l
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">primefactors</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="c1">### BEGIN SOLUTION</span>
-    <span class="k">if</span> <span class="kc">True</span> <span class="o">==</span> <span class="n">isprime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
-        <span class="k">return</span> <span class="p">[</span><span class="n">n</span><span class="p">]</span>
-    <span class="n">primedivisors</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="c1"># for ii in range(2, n):</span>
-    <span class="c1">#     if n%ii==0 and isprime(ii):</span>
-    <span class="c1">#         primedivisors.append(ii)</span>
-    <span class="n">limit</span> <span class="o">=</span> <span class="n">n</span>
-    <span class="n">ii</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="k">while</span> <span class="n">ii</span> <span class="o">&lt;=</span> <span class="n">limit</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">limit</span><span class="o">%</span><span class="k">ii</span>==0 and isprime(ii):
-            <span class="n">primedivisors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
-            <span class="n">limit</span> <span class="o">/=</span> <span class="n">ii</span>
-            <span class="k">continue</span>
-        <span class="n">ii</span> <span class="o">=</span> <span class="n">ii</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">primedivisors</span>
-    <span class="c1">### END SOLUTION</span>
+    <span class="c1"># YOUR CODE HERE</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 
 <span class="c1"># def primefactors(n):</span>
 <span class="c1">#     &quot;&quot;&quot;</span>
@@ -671,13 +664,8 @@ l
 <span class="c1">#     return factors</span>
     
 <span class="k">def</span><span class="w"> </span><span class="nf">isprime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="c1">### BEGIN SOLUTION</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span><span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="kc">False</span>
-    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">n</span><span class="o">%</span><span class="k">ii</span> == 0: 
-            <span class="k">return</span> <span class="kc">False</span>
-    <span class="k">return</span> <span class="kc">True</span>
-    <span class="c1">### END SOLUTION</span>
+    <span class="c1"># YOUR CODE HERE</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -695,34 +683,6 @@ l
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2]
-[2, 2, 2]
-[2, 5]
-[3, 67]
-[97]
-[1213427]
-[2, 2, 3, 101119]
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="n">primefactors</span><span class="p">(</span><span class="mi">1213427</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="nb">print</span><span class="p">(</span><span class="n">primefactors</span><span class="p">(</span><span class="mi">1213428</span><span class="p">))</span>
-<span class="ne">----&gt; </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="n">primefactors</span><span class="p">(</span><span class="mi">1213428987543096</span><span class="p">))</span>
-
-<span class="nn">Cell In[10], line 13,</span> in <span class="ni">primefactors</span><span class="nt">(n)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">limit</span> <span class="o">=</span> <span class="n">n</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">ii</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="ne">---&gt; </span><span class="mi">13</span> <span class="k">while</span> <span class="n">ii</span> <span class="o">&lt;=</span> <span class="n">limit</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="k">if</span> <span class="n">limit</span><span class="o">%</span><span class="k">ii</span>==0 and isprime(ii):
-<span class="g g-Whitespace">     </span><span class="mi">15</span>         <span class="n">primedivisors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-</div>
 </div>
 <div class="alert alert-block alert-info">
 <b>Exercise:</b> Write a function that receives a list of numbers and returns its mean, max and min values . Use numpy
@@ -731,10 +691,8 @@ l
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">stats</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-<span class="c1">### BEGIN SOLUTION</span>
-    <span class="n">xdata</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">xdata</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">xdata</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">xdata</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="c1"># returns a tuple → inmutable list</span>
-<span class="c1">### END SOLUTION</span>
+<span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -742,11 +700,6 @@ l
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2.1666666666666665, 1.0, 3.5)
 </pre></div>
 </div>
 </div>
@@ -767,13 +720,6 @@ l
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2)
-1
-()
-</pre></div>
-</div>
-</div>
 </div>
 <p>You can use tuples to unpack data from functions returning several results</p>
 <div class="cell docutils container">
@@ -783,11 +729,6 @@ l
 
 <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3 -1
 </pre></div>
 </div>
 </div>
@@ -828,12 +769,6 @@ l
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coordinates : (    0.0000000000000000e+00,    0.0000000000000000e+00 )
-Coordinates : (    2.0000000000000000e+00,   -3.0000000000000000e+00 )
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -842,9 +777,6 @@ Coordinates : (    2.0000000000000000e+00,   -3.0000000000000000e+00 )
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=class%20Point2D%20%3A%0A%20%20%20%20%22%22%22This%20is%20a%20doctring.%20This%20allows%20to%20embed%20documentation%20inside%20the%20class%20definition.%0A%20%20%20%20You%20can%20split%20it%20%0A%20%20%20%20across%20several%20lines.%0A%20%20%20%20%22%22%22%0A%20%20%20%20def%20__init__%28self,%20x%20%3D%200,%20y%20%3D%200%29%3A%20%0A%20%20%20%20%20%20%20%20%22%22%22%20This%20is%20the%20constructor%22%22%22%0A%20%20%20%20%20%20%20%20self.x_%20%3D%20x%20%23%20attribute%20x_%0A%20%20%20%20%20%20%20%20self.y_%20%3D%20y%20%23%20attribute%20y_%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20def%20coordinates%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.x_,%20self.y_%0A%20%20%20%20%0A%20%20%20%20def%20__str__%28self%29%3A%0A%20%20%20%20%20%20%20%20%22%22%22Cast%20method%20to%20convert%20to%20string%22%22%22%0A%20%20%20%20%20%20%20%20return%20%28f%22Coordinates%20%3A%20%28%20%7Bself.x_%3A25.16e%7D,%20%7Bself.y_%3A25.16e%7D%20%29%22%29%0A%20%20%20%20%20%20%20%20%0A%0Ap1%20%3D%20Point2D%28%29%20%23%20constructs%20a%20point%20with%20default%20internal%20attributes%0Aprint%20%28p1%29%20%23%20Uses%20the%20str%20cast%20method%0A%0Ap2%20%3D%20Point2D%282,%20-3%29%0Aprint%20%28p2%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
-</div></div>
 </div>
 <p>You can save the class to a file, and then later import it for re-use (you can import any python code)</p>
 <div class="cell docutils container">
@@ -870,22 +802,12 @@ Coordinates : (    2.0000000000000000e+00,   -3.0000000000000000e+00 )
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting Point3D.py
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">Point3D</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">P3D</span>
 <span class="n">p3</span> <span class="o">=</span> <span class="n">P3D</span><span class="o">.</span><span class="n">Point3D</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">p3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coordinates : (    2.0000000000000000e+00,    5.0000000000000000e+00, ,    9.0000000000000002e-01 )
 </pre></div>
 </div>
 </div>
@@ -922,17 +844,6 @@ Coordinates : (    2.0000000000000000e+00,   -3.0000000000000000e+00 )
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;jack&#39;: 4098, &#39;sape&#39;: 4139}
-{&#39;jack&#39;: 4098, &#39;sape&#39;: 4139, &#39;guido&#39;: 4127}
-4098
-{&#39;jack&#39;: 4098, &#39;guido&#39;: 4127}
-dict_keys([&#39;jack&#39;, &#39;guido&#39;])
-dict_values([4098, 4127])
-dict_items([(&#39;jack&#39;, 4098), (&#39;guido&#39;, 4127)])
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -941,9 +852,6 @@ dict_items([(&#39;jack&#39;, 4098), (&#39;guido&#39;, 4127)])
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=%23%20creates%20a%20dictionary%20with%20several%20key%3Avalue%20pairs.%20Keys%20are%20strings%0Atel%20%3D%20%7B'jack'%3A%204098,%20'sape'%3A%204139%7D%20%20%0Aprint%20%28tel%29%0A%23%20acces%20%20by%20key.%20If%20key%20does%20not%20exists,%20creates%20a%20new%20entry%0Atel%5B'guido'%5D%20%3D%204127%20%0Aprint%20%28tel%29%0A%23%20Access%20by%20key%0Aprint%20%28tel%5B'jack'%5D%29%0A%23%20Delete%20by%20key%0Adel%20tel%5B'sape'%5D%20%20%20%20%0Aprint%20%28tel%29%0A%23%20key%20a%20list%20of%20the%20keys%0Aprint%28tel.keys%28%29%29%20%20%20%0A%23%20list%20of%20values%0Aprint%28tel.values%28%29%29%0A%23%20keys%20and%20values%0Aprint%28tel.items%28%29%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
-</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -952,21 +860,10 @@ dict_items([(&#39;jack&#39;, 4098), (&#39;guido&#39;, 4127)])
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>key=&#39;jack&#39;, val=4098
-key=&#39;guido&#39;, val=4127
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;guido&#39;</span> <span class="ow">in</span> <span class="n">tel</span>   <span class="c1"># check if a key is in the dictionary</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -980,9 +877,8 @@ key=&#39;guido&#39;, val=4127
 <p>Write a program which prints a sorted key list of a given dictionary. (<em>hint</em>: Check the <code class="docutils literal notranslate"><span class="pre">sorted</span></code> function, or try to sort the <code class="docutils literal notranslate"><span class="pre">keys()</span></code> function output)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
-
-<span class="c1">### END SOLUTION</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -993,9 +889,8 @@ key=&#39;guido&#39;, val=4127
 <p>Search how to copy a dictionary (different to making a reference)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
-
-<span class="c1">### END SOLUTION</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1006,9 +901,8 @@ key=&#39;guido&#39;, val=4127
 <p><em>Representing a polynomial by a dictionary</em> : Consider the polynomial <span class="math notranslate nohighlight">\(p(x) = -1 + x^2 + 3x^7\)</span> . It can be represent by means of a dictionary as <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">{0:-1,</span> <span class="pre">2:1,</span> <span class="pre">7:3}</span></code> (What is the advantage over using a list?). Write a function which gets a dictionary representing a polynomial, an <code class="docutils literal notranslate"><span class="pre">x</span></code> value, and returns the polynomial evaluated on that <code class="docutils literal notranslate"><span class="pre">x</span></code> value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
-
-<span class="c1">### END SOLUTION</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1032,22 +926,9 @@ E : ==
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
 
-<span class="c1">### BEGIN SOLUTION</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">print_histo</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="nb">print</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="o">*</span><span class="n">v</span><span class="p">)</span>
-        
-<span class="c1">### END SOLUTION</span>
+<span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 <span class="n">print_histo</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A : ========
-B : ============
-C : =====
-D : ==
-E : ==
 </pre></div>
 </div>
 </div>
@@ -1058,9 +939,8 @@ E : ==
 <p>Make a program which reads a text and counts the numbers of ocurrences for each word.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
-
-<span class="c1">### END SOLUTION</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1071,9 +951,8 @@ E : ==
 <p>Modify the previous program for representing a polynomial with a dictionary to represent it with a list. Use both representations for the polynomyal <span class="math notranslate nohighlight">\(-\frac{1}{2} + 2x^{100}\)</span>. Print both representations and use both to evaluate that polynomial at <span class="math notranslate nohighlight">\(x = 1.05\)</span> .</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
-
-<span class="c1">### END SOLUTION</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1084,9 +963,8 @@ E : ==
 <p>By using the dictionary plynomial representation of the previous exercises, write a function which computes the derivative of a given polynomial and returns a dictionary representation of the new polynomial representing the derivative. Test it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
-
-<span class="c1">### END SOLUTION</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>

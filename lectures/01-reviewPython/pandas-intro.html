@@ -190,12 +190,11 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supervised learning</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../03-PCA/PCA.html">7. Principal Component Analysis (PCA)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03-PCA/Kernel-PCA/Kernel_PCA.html">8. Exercise: Dimensionality Reduction¶</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../04-LinearRegression/LinearRegression.html">9. An Introduction to Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-LinearRegression/LinearRegression.html">8. An Introduction to Linear Regression</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Neural Networks</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">10. What is a Neural Network?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">9. What is a Neural Network?</a></li>
 
 </ul>
 
@@ -1669,63 +1668,6 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Rank</th>
-      <th>Population</th>
-      <th>Date of census/estimate</th>
-      <th>Numeric Population</th>
-    </tr>
-    <tr>
-      <th>City</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Gothenburg</th>
-      <td>53</td>
-      <td>528,014</td>
-      <td>31 March 2013</td>
-      <td>528014</td>
-    </tr>
-    <tr>
-      <th>Malmö</th>
-      <td>102</td>
-      <td>309,105</td>
-      <td>31 March 2013</td>
-      <td>309105</td>
-    </tr>
-    <tr>
-      <th>Stockholm</th>
-      <td>20</td>
-      <td>909,976</td>
-      <td>31 January 2014</td>
-      <td>909976</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1733,63 +1675,6 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Rank</th>
-      <th>Population</th>
-      <th>Date of census/estimate</th>
-      <th>Numeric Population</th>
-    </tr>
-    <tr>
-      <th>City</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Malmö</th>
-      <td>102</td>
-      <td>309,105</td>
-      <td>31 March 2013</td>
-      <td>309105</td>
-    </tr>
-    <tr>
-      <th>Gothenburg</th>
-      <td>53</td>
-      <td>528,014</td>
-      <td>31 March 2013</td>
-      <td>528014</td>
-    </tr>
-    <tr>
-      <th>Stockholm</th>
-      <td>20</td>
-      <td>909,976</td>
-      <td>31 January 2014</td>
-      <td>909976</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>You can count the categorical data:</p>
 <div class="cell docutils container">
@@ -1806,21 +1691,6 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Germany           19
-United Kingdom    16
-Spain             13
-Poland            10
-Italy             10
-France             5
-Netherlands        4
-Bulgaria           3
-Sweden             3
-Romania            3
-Name: State, dtype: int64
-</pre></div>
-</div>
-</div>
 </div>
 <p>**Exercise: ** How large the total population of all cities within a state? Hint: Use the sum function</p>
 <div class="cell docutils container">
@@ -1832,80 +1702,6 @@ Name: State, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-11-e03d6c91635d&gt;:3: FutureWarning: Using the level keyword in DataFrame and Series aggregations is deprecated and will be removed in a future version. Use groupby instead. df.sum(level=1) should use df.groupby(level=1).sum().
-  dfaux = dfaux.sum(level=&quot;State&quot;)
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Numeric Population</th>
-    </tr>
-    <tr>
-      <th>State</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>United Kingdom</th>
-      <td>16011877</td>
-    </tr>
-    <tr>
-      <th>Germany</th>
-      <td>15119548</td>
-    </tr>
-    <tr>
-      <th>Spain</th>
-      <td>10041639</td>
-    </tr>
-    <tr>
-      <th>Italy</th>
-      <td>8764067</td>
-    </tr>
-    <tr>
-      <th>France</th>
-      <td>4395271</td>
-    </tr>
-    <tr>
-      <th>Romania</th>
-      <td>2527280</td>
-    </tr>
-    <tr>
-      <th>Austria</th>
-      <td>1794770</td>
-    </tr>
-    <tr>
-      <th>Hungary</th>
-      <td>1744665</td>
-    </tr>
-    <tr>
-      <th>Poland</th>
-      <td>6267409</td>
-    </tr>
-    <tr>
-      <th>Bulgaria</th>
-      <td>1968755</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1915,63 +1711,6 @@ Name: State, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Rank</th>
-      <th>Numeric Population</th>
-    </tr>
-    <tr>
-      <th>State</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>United Kingdom</th>
-      <td>989</td>
-      <td>16011877</td>
-    </tr>
-    <tr>
-      <th>Germany</th>
-      <td>918</td>
-      <td>15119548</td>
-    </tr>
-    <tr>
-      <th>Spain</th>
-      <td>714</td>
-      <td>10041639</td>
-    </tr>
-    <tr>
-      <th>Italy</th>
-      <td>472</td>
-      <td>8764067</td>
-    </tr>
-    <tr>
-      <th>Poland</th>
-      <td>545</td>
-      <td>6267409</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1979,56 +1718,6 @@ Name: State, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Numeric Population</th>
-    </tr>
-    <tr>
-      <th>State</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>United Kingdom</th>
-      <td>16011877</td>
-    </tr>
-    <tr>
-      <th>Germany</th>
-      <td>15119548</td>
-    </tr>
-    <tr>
-      <th>Spain</th>
-      <td>10041639</td>
-    </tr>
-    <tr>
-      <th>Italy</th>
-      <td>8764067</td>
-    </tr>
-    <tr>
-      <th>Poland</th>
-      <td>6267409</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>We can also plot</p>
 <div class="cell docutils container">
@@ -2037,158 +1726,6 @@ Name: State, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Rank</th>
-      <th>Numeric Population</th>
-    </tr>
-    <tr>
-      <th>State</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>United Kingdom</th>
-      <td>989</td>
-      <td>16011877</td>
-    </tr>
-    <tr>
-      <th>Germany</th>
-      <td>918</td>
-      <td>15119548</td>
-    </tr>
-    <tr>
-      <th>Spain</th>
-      <td>714</td>
-      <td>10041639</td>
-    </tr>
-    <tr>
-      <th>Italy</th>
-      <td>472</td>
-      <td>8764067</td>
-    </tr>
-    <tr>
-      <th>Poland</th>
-      <td>545</td>
-      <td>6267409</td>
-    </tr>
-    <tr>
-      <th>France</th>
-      <td>238</td>
-      <td>4395271</td>
-    </tr>
-    <tr>
-      <th>Romania</th>
-      <td>197</td>
-      <td>2527280</td>
-    </tr>
-    <tr>
-      <th>Netherlands</th>
-      <td>205</td>
-      <td>2271771</td>
-    </tr>
-    <tr>
-      <th>Bulgaria</th>
-      <td>183</td>
-      <td>1968755</td>
-    </tr>
-    <tr>
-      <th>Austria</th>
-      <td>7</td>
-      <td>1794770</td>
-    </tr>
-    <tr>
-      <th>Sweden</th>
-      <td>175</td>
-      <td>1747095</td>
-    </tr>
-    <tr>
-      <th>Hungary</th>
-      <td>9</td>
-      <td>1744665</td>
-    </tr>
-    <tr>
-      <th>Belgium</th>
-      <td>75</td>
-      <td>1686441</td>
-    </tr>
-    <tr>
-      <th>Czech Republic</th>
-      <td>91</td>
-      <td>1625107</td>
-    </tr>
-    <tr>
-      <th>Greece</th>
-      <td>130</td>
-      <td>986286</td>
-    </tr>
-    <tr>
-      <th>Denmark</th>
-      <td>137</td>
-      <td>886116</td>
-    </tr>
-    <tr>
-      <th>Lithuania</th>
-      <td>155</td>
-      <td>844040</td>
-    </tr>
-    <tr>
-      <th>Croatia</th>
-      <td>24</td>
-      <td>790017</td>
-    </tr>
-    <tr>
-      <th>Latvia</th>
-      <td>30</td>
-      <td>701185</td>
-    </tr>
-    <tr>
-      <th>Finland</th>
-      <td>38</td>
-      <td>605523</td>
-    </tr>
-    <tr>
-      <th>Portugal</th>
-      <td>47</td>
-      <td>547631</td>
-    </tr>
-    <tr>
-      <th>Ireland</th>
-      <td>54</td>
-      <td>527612</td>
-    </tr>
-    <tr>
-      <th>Estonia</th>
-      <td>68</td>
-      <td>434810</td>
-    </tr>
-    <tr>
-      <th>Slovakia Slovak Republic</th>
-      <td>70</td>
-      <td>417389</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2200,34 +1737,11 @@ Name: State, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Total pop. in top 105 cities&#39;)
-</pre></div>
-</div>
-<img alt="../../_images/ebe9113ec82d3bf18aaa0f913a51aee432a11cbeae42cfcbcdb235099c650efd.png" src="../../_images/ebe9113ec82d3bf18aaa0f913a51aee432a11cbeae42cfcbcdb235099c650efd.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#print(df.State == &quot;France&quot;)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">State</span> <span class="o">==</span> <span class="s2">&quot;France&quot;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rank       City   State Population Date of census/estimate  \
-4      5      Paris  France  2,273,305          1 January 2013   
-21    22  Marseille  France    852,516        31 December 2012   
-62    63       Lyon  France    484,344        31 December 2010   
-65    66   Toulouse  France    441,802        31 December 2010   
-81    82       Nice  France    343,304        31 December 2010   
-
-    Numeric Population  
-4              2273305  
-21              852516  
-62              484344  
-65              441802  
-81              343304  
 </pre></div>
 </div>
 </div>
@@ -2240,132 +1754,6 @@ Name: State, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Numeric Population</th>
-    </tr>
-    <tr>
-      <th>State</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Austria</th>
-      <td>1794770</td>
-    </tr>
-    <tr>
-      <th>Belgium</th>
-      <td>1686441</td>
-    </tr>
-    <tr>
-      <th>Bulgaria</th>
-      <td>1968755</td>
-    </tr>
-    <tr>
-      <th>Croatia</th>
-      <td>790017</td>
-    </tr>
-    <tr>
-      <th>Czech Republic</th>
-      <td>1625107</td>
-    </tr>
-    <tr>
-      <th>Denmark</th>
-      <td>886116</td>
-    </tr>
-    <tr>
-      <th>Estonia</th>
-      <td>434810</td>
-    </tr>
-    <tr>
-      <th>Finland</th>
-      <td>605523</td>
-    </tr>
-    <tr>
-      <th>France</th>
-      <td>4395271</td>
-    </tr>
-    <tr>
-      <th>Germany</th>
-      <td>15119548</td>
-    </tr>
-    <tr>
-      <th>Greece</th>
-      <td>986286</td>
-    </tr>
-    <tr>
-      <th>Hungary</th>
-      <td>1744665</td>
-    </tr>
-    <tr>
-      <th>Ireland</th>
-      <td>527612</td>
-    </tr>
-    <tr>
-      <th>Italy</th>
-      <td>8764067</td>
-    </tr>
-    <tr>
-      <th>Latvia</th>
-      <td>701185</td>
-    </tr>
-    <tr>
-      <th>Lithuania</th>
-      <td>844040</td>
-    </tr>
-    <tr>
-      <th>Netherlands</th>
-      <td>2271771</td>
-    </tr>
-    <tr>
-      <th>Poland</th>
-      <td>6267409</td>
-    </tr>
-    <tr>
-      <th>Portugal</th>
-      <td>547631</td>
-    </tr>
-    <tr>
-      <th>Romania</th>
-      <td>2527280</td>
-    </tr>
-    <tr>
-      <th>Slovakia Slovak Republic</th>
-      <td>417389</td>
-    </tr>
-    <tr>
-      <th>Spain</th>
-      <td>10041639</td>
-    </tr>
-    <tr>
-      <th>Sweden</th>
-      <td>1747095</td>
-    </tr>
-    <tr>
-      <th>United Kingdom</th>
-      <td>16011877</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </section>
 <section id="date-series-and-data-frames">

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9. An Introduction to Linear Regression &#8212; Introduction to Machine Learning for Science</title>
+    <title>8. An Introduction to Linear Regression &#8212; Introduction to Machine Learning for Science</title>
   
   
   
@@ -64,8 +64,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="10. What is a Neural Network?" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html" />
-    <link rel="prev" title="8. Exercise: Dimensionality Reduction¶" href="../03-PCA/Kernel-PCA/Kernel_PCA.html" />
+    <link rel="next" title="9. What is a Neural Network?" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html" />
+    <link rel="prev" title="7. Principal Component Analysis (PCA)" href="../03-PCA/PCA.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -192,12 +192,11 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supervised learning</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../03-PCA/PCA.html">7. Principal Component Analysis (PCA)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03-PCA/Kernel-PCA/Kernel_PCA.html">8. Exercise: Dimensionality Reduction¶</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. An Introduction to Linear Regression</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. An Introduction to Linear Regression</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Neural Networks</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">10. What is a Neural Network?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">9. What is a Neural Network?</a></li>
 
 </ul>
 
@@ -443,31 +442,31 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-what-is-machine-learning">9.1. Review: What is Machine Learning?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">9.2. Supervised Learning</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-regression-predicting-a-continuous-value">9.2.1. A. Regression: Predicting a Continuous Value</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-classification-predicting-a-discrete-category">9.2.2. B. Classification: Predicting a Discrete Category</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-what-is-machine-learning">8.1. Review: What is Machine Learning?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">8.2. Supervised Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-regression-predicting-a-continuous-value">8.2.1. A. Regression: Predicting a Continuous Value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-classification-predicting-a-discrete-category">8.2.2. B. Classification: Predicting a Discrete Category</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">9.3. Linear Regression</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-goal">9.3.1. The Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">8.3. Linear Regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-goal">8.3.1. The Goal</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-find-the-best-line">9.4. How Do We Find the “Best” Line?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-gradient-descent">9.4.1. Optimization with Gradient Descent</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-find-the-best-line">8.4. How Do We Find the “Best” Line?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-gradient-descent">8.4.1. Optimization with Gradient Descent</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-physics-example-hooke-s-law">9.5. A Physics Example - Hooke’s Law</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-generation">9.5.1. Data Generation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression-using-sklearn">9.5.2. Linear regression using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-physics-example-hooke-s-law">8.5. A Physics Example - Hooke’s Law</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-generation">8.5.1. Data Generation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression-using-sklearn">8.5.2. Linear regression using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-exercises">9.6. Practice Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-pytorch">9.6.1. Tensorflow/pytorch</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biology-brain-vs-body-weight">9.6.2. Biology - Brain vs. Body Weight</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-exercises">8.6. Practice Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-pytorch">8.6.1. Tensorflow/pytorch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biology-brain-vs-body-weight">8.6.2. Biology - Brain vs. Body Weight</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-what-s-next">9.7. Conclusion &amp; What’s Next?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-what-s-next">8.7. Conclusion &amp; What’s Next?</a></li>
 </ul>
             </nav>
         </div>
@@ -480,11 +479,11 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="an-introduction-to-linear-regression">
-<h1><span class="section-number">9. </span>An Introduction to Linear Regression<a class="headerlink" href="#an-introduction-to-linear-regression" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">8. </span>An Introduction to Linear Regression<a class="headerlink" href="#an-introduction-to-linear-regression" title="Link to this heading">#</a></h1>
 <hr class="docutils" />
 <p><strong>Goal:</strong> By the end of this session, you will understand the core concepts of supervised learning, know the difference between regression and classification, and be able to build, train, and interpret a simple Linear Regression model using Python.</p>
 <section id="review-what-is-machine-learning">
-<h2><span class="section-number">9.1. </span>Review: What is Machine Learning?<a class="headerlink" href="#review-what-is-machine-learning" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.1. </span>Review: What is Machine Learning?<a class="headerlink" href="#review-what-is-machine-learning" title="Link to this heading">#</a></h2>
 <p>At its core, <strong>Machine Learning (ML)</strong> is the science of getting computers to learn and act like humans do, and improve their learning over time in an autonomous fashion, by feeding them data and information in the form of observations and real-world interactions.</p>
 <ol class="arabic simple">
 <li><p><strong>Supervised Learning:</strong> Learning from data that is <strong>labeled</strong>. You provide the algorithm with examples of inputs and their corresponding correct outputs. The goal is to learn a general rule that maps inputs to outputs. (This is our focus today).</p></li>
@@ -493,13 +492,13 @@ document.write(`
 </ol>
 </section>
 <section id="supervised-learning">
-<h2><span class="section-number">9.2. </span>Supervised Learning<a class="headerlink" href="#supervised-learning" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.2. </span>Supervised Learning<a class="headerlink" href="#supervised-learning" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p><strong>Supervised Learning:</strong> Given a dataset of input features <strong>X</strong> and corresponding output labels <strong>y</strong>, we want to learn a function <code class="docutils literal notranslate"><span class="pre">h</span></code> (for hypothesis) such that <code class="docutils literal notranslate"><span class="pre">h(X)</span></code> is a good predictor for <strong>y</strong>.</p>
 </div></blockquote>
 <p>There are two primary types of supervised learning problems:</p>
 <section id="a-regression-predicting-a-continuous-value">
-<h3><span class="section-number">9.2.1. </span>A. Regression: Predicting a Continuous Value<a class="headerlink" href="#a-regression-predicting-a-continuous-value" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.2.1. </span>A. Regression: Predicting a Continuous Value<a class="headerlink" href="#a-regression-predicting-a-continuous-value" title="Link to this heading">#</a></h3>
 <p>The output <code class="docutils literal notranslate"><span class="pre">y</span></code> is a continuous, numerical value.</p>
 <ul class="simple">
 <li><p><strong>Question:</strong> Based on a material’s temperature, what will its electrical resistance be?</p></li>
@@ -508,7 +507,7 @@ document.write(`
 </ul>
 </section>
 <section id="b-classification-predicting-a-discrete-category">
-<h3><span class="section-number">9.2.2. </span>B. Classification: Predicting a Discrete Category<a class="headerlink" href="#b-classification-predicting-a-discrete-category" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.2.2. </span>B. Classification: Predicting a Discrete Category<a class="headerlink" href="#b-classification-predicting-a-discrete-category" title="Link to this heading">#</a></h3>
 <p>The output <code class="docutils literal notranslate"><span class="pre">y</span></code> is a discrete category or class label.</p>
 <ul class="simple">
 <li><p><strong>Question:</strong> Based on a cell’s size and shape, is it cancerous or benign?</p></li>
@@ -565,7 +564,7 @@ document.write(`
 </section>
 </section>
 <section id="linear-regression">
-<h2><span class="section-number">9.3. </span>Linear Regression<a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.3. </span>Linear Regression<a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h2>
 <p>Linear Regression is one of the simplest and most interpretable machine learning models. It assumes a linear relationship between the input features and the output variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -587,7 +586,7 @@ document.write(`
 </div>
 </div>
 <section id="the-goal">
-<h3><span class="section-number">9.3.1. </span>The Goal<a class="headerlink" href="#the-goal" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.3.1. </span>The Goal<a class="headerlink" href="#the-goal" title="Link to this heading">#</a></h3>
 <p>To find the “best-fit” line that describes the data. For a single input feature <code class="docutils literal notranslate"><span class="pre">x</span></code>, the equation of the line is:</p>
 <div class="math notranslate nohighlight">
 \[ \hat{y} = \theta_0 + \theta_1 x \]</div>
@@ -605,7 +604,7 @@ document.write(`
 </section>
 </section>
 <section id="how-do-we-find-the-best-line">
-<h2><span class="section-number">9.4. </span>How Do We Find the “Best” Line?<a class="headerlink" href="#how-do-we-find-the-best-line" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.4. </span>How Do We Find the “Best” Line?<a class="headerlink" href="#how-do-we-find-the-best-line" title="Link to this heading">#</a></h2>
 <p>We need a way to quantify how “wrong” our line is. We do this with a <strong>Cost Function</strong> (or Loss Function).</p>
 <ol class="arabic simple">
 <li><p>For each data point <span class="math notranslate nohighlight">\((x_i, y_i)\)</span>, we calculate the difference between the <strong>actual value</strong> (<span class="math notranslate nohighlight">\(y_i\)</span>) and the <strong>predicted value</strong> (<span class="math notranslate nohighlight">\(\hat{y}_i\)</span>). This difference is called the <strong>residual</strong> or <strong>error</strong>.</p></li>
@@ -621,7 +620,7 @@ document.write(`
 </ul>
 <p>Our goal is to find the values of <span class="math notranslate nohighlight">\(\theta_0\)</span> and <span class="math notranslate nohighlight">\(\theta_1\)</span> that <strong>minimize</strong> this cost function <span class="math notranslate nohighlight">\(J\)</span>.</p>
 <section id="optimization-with-gradient-descent">
-<h3><span class="section-number">9.4.1. </span>Optimization with Gradient Descent<a class="headerlink" href="#optimization-with-gradient-descent" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.4.1. </span>Optimization with Gradient Descent<a class="headerlink" href="#optimization-with-gradient-descent" title="Link to this heading">#</a></h3>
 <p>How do we find the minimum of the cost function? We use an algorithm called <strong>Gradient Descent</strong>.</p>
 <p><strong>Analogy:</strong> Imagine you are a hiker in a foggy valley and you want to get to the lowest point. You can’t see the whole valley, but you can feel the slope of the ground right under your feet. What do you do? You take a step in the steepest downward direction.</p>
 <p>This is exactly what Gradient Descent does:</p>
@@ -639,13 +638,13 @@ document.write(`
 </section>
 </section>
 <section id="a-physics-example-hooke-s-law">
-<h2><span class="section-number">9.5. </span>A Physics Example - Hooke’s Law<a class="headerlink" href="#a-physics-example-hooke-s-law" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.5. </span>A Physics Example - Hooke’s Law<a class="headerlink" href="#a-physics-example-hooke-s-law" title="Link to this heading">#</a></h2>
 <p>Hooke’s Law is a fundamental principle in physics that states the force (<code class="docutils literal notranslate"><span class="pre">F</span></code>) needed to extend or compress a spring by some distance (<code class="docutils literal notranslate"><span class="pre">x</span></code>) is directly proportional to that distance.</p>
 <div class="math notranslate nohighlight">
 \[ F = kx \]</div>
 <p>This is a perfect linear relationship! We can use linear regression to find the spring constant <code class="docutils literal notranslate"><span class="pre">k</span></code> from experimental data. Let’s assume we conducted an experiment and got some noisy measurements.</p>
 <section id="data-generation">
-<h3><span class="section-number">9.5.1. </span>Data Generation<a class="headerlink" href="#data-generation" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.5.1. </span>Data Generation<a class="headerlink" href="#data-generation" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 1: Generate some experimental data</span>
@@ -686,14 +685,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/abcab875842e1a64a9ae6cdda348ed2e372e8d798921f74e79bd0bb111ec6bb2.png" src="../../_images/abcab875842e1a64a9ae6cdda348ed2e372e8d798921f74e79bd0bb111ec6bb2.png" />
-</div>
 </div>
 <p>This looks like a good candidate for linear regression! The data points roughly follow a straight line.</p>
 </section>
 <section id="linear-regression-using-sklearn">
-<h3><span class="section-number">9.5.2. </span>Linear regression using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code><a class="headerlink" href="#linear-regression-using-sklearn" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.5.2. </span>Linear regression using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code><a class="headerlink" href="#linear-regression-using-sklearn" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build and train the model using Scikit-Learn</span>
@@ -709,587 +705,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style>#sk-container-id-3 {
-  /* Definition of color scheme common for light and dark mode */
-  --sklearn-color-text: #000;
-  --sklearn-color-text-muted: #666;
-  --sklearn-color-line: gray;
-  /* Definition of color scheme for unfitted estimators */
-  --sklearn-color-unfitted-level-0: #fff5e6;
-  --sklearn-color-unfitted-level-1: #f6e4d2;
-  --sklearn-color-unfitted-level-2: #ffe0b3;
-  --sklearn-color-unfitted-level-3: chocolate;
-  /* Definition of color scheme for fitted estimators */
-  --sklearn-color-fitted-level-0: #f0f8ff;
-  --sklearn-color-fitted-level-1: #d4ebff;
-  --sklearn-color-fitted-level-2: #b3dbfd;
-  --sklearn-color-fitted-level-3: cornflowerblue;
-
-  /* Specific color for light theme */
-  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
-  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
-  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
-  --sklearn-color-icon: #696969;
-
-  @media (prefers-color-scheme: dark) {
-    /* Redefinition of color scheme for dark theme */
-    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
-    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
-    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
-    --sklearn-color-icon: #878787;
-  }
-}
-
-#sk-container-id-3 {
-  color: var(--sklearn-color-text);
-}
-
-#sk-container-id-3 pre {
-  padding: 0;
-}
-
-#sk-container-id-3 input.sk-hidden--visually {
-  border: 0;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-#sk-container-id-3 div.sk-dashed-wrapped {
-  border: 1px dashed var(--sklearn-color-line);
-  margin: 0 0.4em 0.5em 0.4em;
-  box-sizing: border-box;
-  padding-bottom: 0.4em;
-  background-color: var(--sklearn-color-background);
-}
-
-#sk-container-id-3 div.sk-container {
-  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
-     but bootstrap.min.css set `[hidden] { display: none !important; }`
-     so we also need the `!important` here to be able to override the
-     default hidden behavior on the sphinx rendered scikit-learn.org.
-     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
-  display: inline-block !important;
-  position: relative;
-}
-
-#sk-container-id-3 div.sk-text-repr-fallback {
-  display: none;
-}
-
-div.sk-parallel-item,
-div.sk-serial,
-div.sk-item {
-  /* draw centered vertical line to link estimators */
-  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
-  background-size: 2px 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-/* Parallel-specific style estimator block */
-
-#sk-container-id-3 div.sk-parallel-item::after {
-  content: "";
-  width: 100%;
-  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
-  flex-grow: 1;
-}
-
-#sk-container-id-3 div.sk-parallel {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  background-color: var(--sklearn-color-background);
-  position: relative;
-}
-
-#sk-container-id-3 div.sk-parallel-item {
-  display: flex;
-  flex-direction: column;
-}
-
-#sk-container-id-3 div.sk-parallel-item:first-child::after {
-  align-self: flex-end;
-  width: 50%;
-}
-
-#sk-container-id-3 div.sk-parallel-item:last-child::after {
-  align-self: flex-start;
-  width: 50%;
-}
-
-#sk-container-id-3 div.sk-parallel-item:only-child::after {
-  width: 0;
-}
-
-/* Serial-specific style estimator block */
-
-#sk-container-id-3 div.sk-serial {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--sklearn-color-background);
-  padding-right: 1em;
-  padding-left: 1em;
-}
-
-
-/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
-clickable and can be expanded/collapsed.
-- Pipeline and ColumnTransformer use this feature and define the default style
-- Estimators will overwrite some part of the style using the `sk-estimator` class
-*/
-
-/* Pipeline and ColumnTransformer style (default) */
-
-#sk-container-id-3 div.sk-toggleable {
-  /* Default theme specific background. It is overwritten whether we have a
-  specific estimator or a Pipeline/ColumnTransformer */
-  background-color: var(--sklearn-color-background);
-}
-
-/* Toggleable label */
-#sk-container-id-3 label.sk-toggleable__label {
-  cursor: pointer;
-  display: flex;
-  width: 100%;
-  margin-bottom: 0;
-  padding: 0.5em;
-  box-sizing: border-box;
-  text-align: center;
-  align-items: start;
-  justify-content: space-between;
-  gap: 0.5em;
-}
-
-#sk-container-id-3 label.sk-toggleable__label .caption {
-  font-size: 0.6rem;
-  font-weight: lighter;
-  color: var(--sklearn-color-text-muted);
-}
-
-#sk-container-id-3 label.sk-toggleable__label-arrow:before {
-  /* Arrow on the left of the label */
-  content: "▸";
-  float: left;
-  margin-right: 0.25em;
-  color: var(--sklearn-color-icon);
-}
-
-#sk-container-id-3 label.sk-toggleable__label-arrow:hover:before {
-  color: var(--sklearn-color-text);
-}
-
-/* Toggleable content - dropdown */
-
-#sk-container-id-3 div.sk-toggleable__content {
-  display: none;
-  text-align: left;
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-3 div.sk-toggleable__content.fitted {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-#sk-container-id-3 div.sk-toggleable__content pre {
-  margin: 0.2em;
-  border-radius: 0.25em;
-  color: var(--sklearn-color-text);
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-3 div.sk-toggleable__content.fitted pre {
-  /* unfitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-#sk-container-id-3 input.sk-toggleable__control:checked~div.sk-toggleable__content {
-  /* Expand drop-down */
-  display: block;
-  width: 100%;
-  overflow: visible;
-}
-
-#sk-container-id-3 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
-  content: "▾";
-}
-
-/* Pipeline/ColumnTransformer-specific style */
-
-#sk-container-id-3 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-3 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Estimator-specific style */
-
-/* Colorize estimator box */
-#sk-container-id-3 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-3 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-#sk-container-id-3 div.sk-label label.sk-toggleable__label,
-#sk-container-id-3 div.sk-label label {
-  /* The background is the default theme color */
-  color: var(--sklearn-color-text-on-default-background);
-}
-
-/* On hover, darken the color of the background */
-#sk-container-id-3 div.sk-label:hover label.sk-toggleable__label {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-/* Label box, darken color on hover, fitted */
-#sk-container-id-3 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Estimator label */
-
-#sk-container-id-3 div.sk-label label {
-  font-family: monospace;
-  font-weight: bold;
-  display: inline-block;
-  line-height: 1.2em;
-}
-
-#sk-container-id-3 div.sk-label-container {
-  text-align: center;
-}
-
-/* Estimator-specific */
-#sk-container-id-3 div.sk-estimator {
-  font-family: monospace;
-  border: 1px dotted var(--sklearn-color-border-box);
-  border-radius: 0.25em;
-  box-sizing: border-box;
-  margin-bottom: 0.5em;
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-3 div.sk-estimator.fitted {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-/* on hover */
-#sk-container-id-3 div.sk-estimator:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-3 div.sk-estimator.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Specification for estimator info (e.g. "i" and "?") */
-
-/* Common style for "i" and "?" */
-
-.sk-estimator-doc-link,
-a:link.sk-estimator-doc-link,
-a:visited.sk-estimator-doc-link {
-  float: right;
-  font-size: smaller;
-  line-height: 1em;
-  font-family: monospace;
-  background-color: var(--sklearn-color-background);
-  border-radius: 1em;
-  height: 1em;
-  width: 1em;
-  text-decoration: none !important;
-  margin-left: 0.5em;
-  text-align: center;
-  /* unfitted */
-  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
-  color: var(--sklearn-color-unfitted-level-1);
-}
-
-.sk-estimator-doc-link.fitted,
-a:link.sk-estimator-doc-link.fitted,
-a:visited.sk-estimator-doc-link.fitted {
-  /* fitted */
-  border: var(--sklearn-color-fitted-level-1) 1pt solid;
-  color: var(--sklearn-color-fitted-level-1);
-}
-
-/* On hover */
-div.sk-estimator:hover .sk-estimator-doc-link:hover,
-.sk-estimator-doc-link:hover,
-div.sk-label-container:hover .sk-estimator-doc-link:hover,
-.sk-estimator-doc-link:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
-.sk-estimator-doc-link.fitted:hover,
-div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
-.sk-estimator-doc-link.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-/* Span, style for the box shown on hovering the info icon */
-.sk-estimator-doc-link span {
-  display: none;
-  z-index: 9999;
-  position: relative;
-  font-weight: normal;
-  right: .2ex;
-  padding: .5ex;
-  margin: .5ex;
-  width: min-content;
-  min-width: 20ex;
-  max-width: 50ex;
-  color: var(--sklearn-color-text);
-  box-shadow: 2pt 2pt 4pt #999;
-  /* unfitted */
-  background: var(--sklearn-color-unfitted-level-0);
-  border: .5pt solid var(--sklearn-color-unfitted-level-3);
-}
-
-.sk-estimator-doc-link.fitted span {
-  /* fitted */
-  background: var(--sklearn-color-fitted-level-0);
-  border: var(--sklearn-color-fitted-level-3);
-}
-
-.sk-estimator-doc-link:hover span {
-  display: block;
-}
-
-/* "?"-specific style due to the `<a>` HTML tag */
-
-#sk-container-id-3 a.estimator_doc_link {
-  float: right;
-  font-size: 1rem;
-  line-height: 1em;
-  font-family: monospace;
-  background-color: var(--sklearn-color-background);
-  border-radius: 1rem;
-  height: 1rem;
-  width: 1rem;
-  text-decoration: none;
-  /* unfitted */
-  color: var(--sklearn-color-unfitted-level-1);
-  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
-}
-
-#sk-container-id-3 a.estimator_doc_link.fitted {
-  /* fitted */
-  border: var(--sklearn-color-fitted-level-1) 1pt solid;
-  color: var(--sklearn-color-fitted-level-1);
-}
-
-/* On hover */
-#sk-container-id-3 a.estimator_doc_link:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-#sk-container-id-3 a.estimator_doc_link.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-3);
-}
-
-.estimator-table summary {
-    padding: .5rem;
-    font-family: monospace;
-    cursor: pointer;
-}
-
-.estimator-table details[open] {
-    padding-left: 0.1rem;
-    padding-right: 0.1rem;
-    padding-bottom: 0.3rem;
-}
-
-.estimator-table .parameters-table {
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-
-.estimator-table .parameters-table tr:nth-child(odd) {
-    background-color: #fff;
-}
-
-.estimator-table .parameters-table tr:nth-child(even) {
-    background-color: #f6f6f6;
-}
-
-.estimator-table .parameters-table tr:hover {
-    background-color: #e0e0e0;
-}
-
-.estimator-table table td {
-    border: 1px solid rgba(106, 105, 104, 0.232);
-}
-
-.user-set td {
-    color:rgb(255, 94, 0);
-    text-align: left;
-}
-
-.user-set td.value pre {
-    color:rgb(255, 94, 0) !important;
-    background-color: transparent !important;
-}
-
-.default td {
-    color: black;
-    text-align: left;
-}
-
-.user-set td i,
-.default td i {
-    color: black;
-}
-
-.copy-paste-icon {
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNy4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjUgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTIwOCAwTDMzMi4xIDBjMTIuNyAwIDI0LjkgNS4xIDMzLjkgMTQuMWw2Ny45IDY3LjljOSA5IDE0LjEgMjEuMiAxNC4xIDMzLjlMNDQ4IDMzNmMwIDI2LjUtMjEuNSA0OC00OCA0OGwtMTkyIDBjLTI2LjUgMC00OC0yMS41LTQ4LTQ4bDAtMjg4YzAtMjYuNSAyMS41LTQ4IDQ4LTQ4ek00OCAxMjhsODAgMCAwIDY0LTY0IDAgMCAyNTYgMTkyIDAgMC0zMiA2NCAwIDAgNDhjMCAyNi41LTIxLjUgNDgtNDggNDhMNDggNTEyYy0yNi41IDAtNDgtMjEuNS00OC00OEwwIDE3NmMwLTI2LjUgMjEuNS00OCA0OC00OHoiLz48L3N2Zz4=);
-    background-repeat: no-repeat;
-    background-size: 14px 14px;
-    background-position: 0;
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    cursor: pointer;
-}
-</style><body><div id="sk-container-id-3" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LinearRegression()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-3" type="checkbox" checked><label for="sk-estimator-id-3" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>LinearRegression</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.LinearRegression.html">?<span>Documentation for LinearRegression</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
-        <div class="estimator-table">
-            <details>
-                <summary>Parameters</summary>
-                <table class="parameters-table">
-                  <tbody>
-                    
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('fit_intercept',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">fit_intercept&nbsp;</td>
-            <td class="value">True</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('copy_X',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">copy_X&nbsp;</td>
-            <td class="value">True</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('tol',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">tol&nbsp;</td>
-            <td class="value">1e-06</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('n_jobs',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">n_jobs&nbsp;</td>
-            <td class="value">None</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('positive',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">positive&nbsp;</td>
-            <td class="value">False</td>
-        </tr>
-    
-                  </tbody>
-                </table>
-            </details>
-        </div>
-    </div></div></div></div></div><script>function copyToClipboard(text, element) {
-    // Get the parameter prefix from the closest toggleable content
-    const toggleableContent = element.closest('.sk-toggleable__content');
-    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
-    const fullParamName = paramPrefix ? `${paramPrefix}${text}` : text;
-
-    const originalStyle = element.style;
-    const computedStyle = window.getComputedStyle(element);
-    const originalWidth = computedStyle.width;
-    const originalHTML = element.innerHTML.replace('Copied!', '');
-
-    navigator.clipboard.writeText(fullParamName)
-        .then(() => {
-            element.style.width = originalWidth;
-            element.style.color = 'green';
-            element.innerHTML = "Copied!";
-
-            setTimeout(() => {
-                element.innerHTML = originalHTML;
-                element.style = originalStyle;
-            }, 2000);
-        })
-        .catch(err => {
-            console.error('Failed to copy:', err);
-            element.style.color = 'red';
-            element.innerHTML = "Failed!";
-            setTimeout(() => {
-                element.innerHTML = originalHTML;
-                element.style = originalStyle;
-            }, 2000);
-        });
-    return false;
-}
-
-document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
-    const toggleableContent = element.closest('.sk-toggleable__content');
-    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
-    const paramName = element.parentElement.nextElementSibling.textContent.trim();
-    const fullParamName = paramPrefix ? `${paramPrefix}${paramName}` : paramName;
-
-    element.setAttribute('title', fullParamName);
-});
-</script></body></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1306,15 +721,6 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The estimated spring constant (k) is: </span><span class="si">{</span><span class="n">theta_1</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> N/m&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The true spring constant was: </span><span class="si">{</span><span class="n">k_true</span><span class="si">}</span><span class="s2"> N/m&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model has learned the following equation:
-Force = 0.387 + 4.027 * Displacement
-
-The estimated spring constant (k) is: 4.027 N/m
-The true spring constant was: 4.5 N/m
 </pre></div>
 </div>
 </div>
@@ -1341,21 +747,18 @@ The true spring constant was: 4.5 N/m
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/39aa6baad631dbd5f4df2d174543f4591ba57ccd060e0637c5977febe629bda0.png" src="../../_images/39aa6baad631dbd5f4df2d174543f4591ba57ccd060e0637c5977febe629bda0.png" />
-</div>
 </div>
 </section>
 </section>
 <section id="practice-exercises">
-<h2><span class="section-number">9.6. </span>Practice Exercises<a class="headerlink" href="#practice-exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.6. </span>Practice Exercises<a class="headerlink" href="#practice-exercises" title="Link to this heading">#</a></h2>
 <p>Now it’s your turn! Apply what you’ve learned to new scientific datasets.</p>
 <section id="tensorflow-pytorch">
-<h3><span class="section-number">9.6.1. </span>Tensorflow/pytorch<a class="headerlink" href="#tensorflow-pytorch" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.6.1. </span>Tensorflow/pytorch<a class="headerlink" href="#tensorflow-pytorch" title="Link to this heading">#</a></h3>
 <p>Implement the same example but using <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> and <code class="docutils literal notranslate"><span class="pre">pytorch</span></code>. Compare easy of use.</p>
 </section>
 <section id="biology-brain-vs-body-weight">
-<h3><span class="section-number">9.6.2. </span>Biology - Brain vs. Body Weight<a class="headerlink" href="#biology-brain-vs-body-weight" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.6.2. </span>Biology - Brain vs. Body Weight<a class="headerlink" href="#biology-brain-vs-body-weight" title="Link to this heading">#</a></h3>
 <p>Allometry is the study of the relationship of body size to shape, anatomy, and physiology. It is a well-known fact that the brain weight of mammals generally increases with body weight. Let’s model this relationship.</p>
 <p><strong>Task:</strong></p>
 <ol class="arabic simple">
@@ -1373,48 +776,16 @@ The true spring constant was: 4.5 N/m
 
 <span class="c1"># 1. (Data is already loaded)</span>
 
-<span class="c1">### BEGIN SOLUTION</span>
-<span class="c1"># 2. Transform the data</span>
-<span class="n">log_body</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">body_wt</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># Reshape for scikit-learn</span>
-<span class="n">log_brain</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">brain_wt</span><span class="p">)</span>
-
-<span class="c1"># 3. Create and fit the model</span>
-<span class="n">bio_model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
-<span class="n">bio_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">log_body</span><span class="p">,</span> <span class="n">log_brain</span><span class="p">)</span>
-
-<span class="c1"># 4. Print the equation</span>
-<span class="n">intercept</span> <span class="o">=</span> <span class="n">bio_model</span><span class="o">.</span><span class="n">intercept_</span>
-<span class="n">slope</span> <span class="o">=</span> <span class="n">bio_model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model for Log-Transformed Data:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;log(brain_wt) = </span><span class="si">{</span><span class="n">intercept</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">slope</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> * log(body_wt)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># 5. Plot the results</span>
-<span class="n">log_brain_pred</span> <span class="o">=</span> <span class="n">bio_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">log_body</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">log_body</span><span class="p">,</span> <span class="n">log_brain</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Log-Transformed Data&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">log_body</span><span class="p">,</span> <span class="n">log_brain_pred</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Regression Fit&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Log(Body Weight [kg])&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Log(Brain Weight [g])&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Allometry: Log of Brain Weight vs. Body Weight&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="c1">### END SOLUTION</span>
+<span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model for Log-Transformed Data:
-log(brain_wt) = 2.052 + 0.644 * log(body_wt)
-</pre></div>
-</div>
-<img alt="../../_images/9372d1bcfcda163828153e1f5c0b664bc0bab8e8c672debde3007601acfb0322.png" src="../../_images/9372d1bcfcda163828153e1f5c0b664bc0bab8e8c672debde3007601acfb0322.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="conclusion-what-s-next">
-<h2><span class="section-number">9.7. </span>Conclusion &amp; What’s Next?<a class="headerlink" href="#conclusion-what-s-next" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.7. </span>Conclusion &amp; What’s Next?<a class="headerlink" href="#conclusion-what-s-next" title="Link to this heading">#</a></h2>
 <p><strong>Key Takeaways:</strong></p>
 <ul class="simple">
 <li><p>Supervised learning uses <strong>labeled data</strong> (X, y) to learn a predictive function.</p></li>
@@ -1463,12 +834,12 @@ log(brain_wt) = 2.052 + 0.644 * log(body_wt)
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../03-PCA/Kernel-PCA/Kernel_PCA.html"
+       href="../03-PCA/PCA.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>Exercise: Dimensionality Reduction¶</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Principal Component Analysis (PCA)</p>
       </div>
     </a>
     <a class="right-next"
@@ -1476,7 +847,7 @@ log(brain_wt) = 2.052 + 0.644 * log(body_wt)
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>What is a Neural Network?</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>What is a Neural Network?</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1496,31 +867,31 @@ log(brain_wt) = 2.052 + 0.644 * log(body_wt)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-what-is-machine-learning">9.1. Review: What is Machine Learning?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">9.2. Supervised Learning</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-regression-predicting-a-continuous-value">9.2.1. A. Regression: Predicting a Continuous Value</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-classification-predicting-a-discrete-category">9.2.2. B. Classification: Predicting a Discrete Category</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-what-is-machine-learning">8.1. Review: What is Machine Learning?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">8.2. Supervised Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-regression-predicting-a-continuous-value">8.2.1. A. Regression: Predicting a Continuous Value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-classification-predicting-a-discrete-category">8.2.2. B. Classification: Predicting a Discrete Category</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">9.3. Linear Regression</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-goal">9.3.1. The Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">8.3. Linear Regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-goal">8.3.1. The Goal</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-find-the-best-line">9.4. How Do We Find the “Best” Line?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-gradient-descent">9.4.1. Optimization with Gradient Descent</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-find-the-best-line">8.4. How Do We Find the “Best” Line?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-gradient-descent">8.4.1. Optimization with Gradient Descent</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-physics-example-hooke-s-law">9.5. A Physics Example - Hooke’s Law</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-generation">9.5.1. Data Generation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression-using-sklearn">9.5.2. Linear regression using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-physics-example-hooke-s-law">8.5. A Physics Example - Hooke’s Law</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-generation">8.5.1. Data Generation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression-using-sklearn">8.5.2. Linear regression using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-exercises">9.6. Practice Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-pytorch">9.6.1. Tensorflow/pytorch</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biology-brain-vs-body-weight">9.6.2. Biology - Brain vs. Body Weight</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-exercises">8.6. Practice Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-pytorch">8.6.1. Tensorflow/pytorch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biology-brain-vs-body-weight">8.6.2. Biology - Brain vs. Body Weight</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-what-s-next">9.7. Conclusion &amp; What’s Next?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-what-s-next">8.7. Conclusion &amp; What’s Next?</a></li>
 </ul>
   </nav></div>
 
