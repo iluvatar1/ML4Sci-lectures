@@ -69,6 +69,7 @@ parse:
     - html_image
     - dollarmath
     - amsmath
+    - html_admonition
 
 # Displaying interactive plotly figures
 sphinx:

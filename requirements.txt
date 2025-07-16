@@ -35,14 +35,8 @@ jupyter-repo2docker
 scikit-learn
 py-heat-magic
 
-#nnv
-
-#gdbfrontend
-#gdbgui
+#nnv # https://github.com/renatosc/nnv
 
 nbgrader
-
-# fenics stuff
-# superlu_dist==6.2.0
-# fenics
-# mshr
+#ipyflow # reactive kernel
+jupyter-ai
