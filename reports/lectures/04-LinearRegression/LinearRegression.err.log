@@ -25,16 +25,25 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from aux.linear_regression_example_plot import generate_and_plot_regression_problems
-fig_regression_problems = generate_and_plot_regression_problems()
+# THIS CELL IS HIDDEN
+from bokeh.plotting import figure, show, output_notebook
+output_notebook()
+p = figure()
+data = px.data.iris()
+p.scatter(x_displacement[:, 0], y_force[:, 0])
+p.line(x_displacement[:, 0], k_true * x_displacement[:, 0], color="red")
+show(p)
 ------------------
 
 
 [31m---------------------------------------------------------------------------[39m
-[31mModuleNotFoundError[39m                       Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01maux[39;00m[34;01m.[39;00m[34;01mlinear_regression_example_plot[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m generate_and_plot_regression_problems
-[32m      2[39m fig_regression_problems = generate_and_plot_regression_problems()
+[31mNameError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[7][39m[32m, line 5[39m
+[32m      3[39m output_notebook()
+[32m      4[39m p = figure()
+[32m----> [39m[32m5[39m data = [43mpx[49m.data.iris()
+[32m      6[39m p.scatter(x_displacement[:, [32m0[39m], y_force[:, [32m0[39m])
+[32m      7[39m p.line(x_displacement[:, [32m0[39m], k_true * x_displacement[:, [32m0[39m], color=[33m"[39m[33mred[39m[33m"[39m)
 
-[31mModuleNotFoundError[39m: No module named 'aux.linear_regression_example_plot'
+[31mNameError[39m: name 'px' is not defined
 
