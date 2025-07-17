@@ -16,7 +16,7 @@ jupyter_contrib_nbextensions
 #pulp
 bokeh
 #ipyvolume
-plotly
+#plotly
 #vpython
 #jupyterlab-vpython
 RISE
@@ -40,3 +40,5 @@ py-heat-magic
 nbgrader
 #ipyflow # reactive kernel
 jupyter-ai
+
+jupyter-cache
