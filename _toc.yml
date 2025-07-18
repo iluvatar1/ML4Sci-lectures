@@ -12,20 +12,20 @@ parts:
     chapters:
       - file: lectures/00-IntroductionCourseML/IntroCourse-MachineLearning.ipynb
       - file: lectures/00-TALK-IntroML/IntroMachineLearning.ipynb
-  - caption: Python review
+  - caption: Supervised learning
+    numbered: true
+    chapters:
+      - file: lectures/03-PCA/PCA.ipynb
+      #- file: lectures/03-PCA/Kernel-PCA/Kernel_PCA.ipynb
+      - file: lectures/04-LinearRegression/LinearRegression.ipynb
+  - caption: Introduction to Neural Networks
+    numbered: true
+    chapters:
+      - file: lectures/07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.ipynb
+  - caption: Appendix
     numbered: true
     chapters:
       - file: lectures/01-reviewPython/01-IntroProgrammingPython.ipynb
       - file: lectures/01-reviewPython/02-IntroProgrammingPython-DataStructs.ipynb
       - file: lectures/01-reviewPython/pandas-intro.ipynb
       - file: lectures/02-LimpiezayPrepDatos/TutorialPandas.ipynb
-  - caption: Supervised learning
-    numbered: true
-    chapters:
-      - file: lectures/03-PCA/PCA.ipynb
-      - file: lectures/03-PCA/Kernel-PCA/Kernel_PCA.ipynb
-      - file: lectures/04-LinearRegression/LinearRegression.ipynb
-  - caption: Introduction to Neural Networks
-    numbered: true
-    chapters:
-       - file: lectures/07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.ipynb

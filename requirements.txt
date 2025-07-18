@@ -35,10 +35,22 @@ jupyter-repo2docker
 scikit-learn
 py-heat-magic
 
-#nnv # https://github.com/renatosc/nnv
+nnv # https://github.com/renatosc/nnv
+
 
 nbgrader
 #ipyflow # reactive kernel
 jupyter-ai
 
 jupyter-cache
+
+jupyterlab_myst
+
+sphinx-exercise
+sphinx-inline_tabs
+sphinx_proof
+sphinx_examples
+sphinx_hoverxref
+
+openpyxl
+statsmodels
