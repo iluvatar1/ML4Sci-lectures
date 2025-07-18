@@ -1432,369 +1432,6 @@ The true spring constant was: 4.5 N/m
 <img alt="../../_images/5d18c32fd23b6600f40b2017b0ddaa5300073cb5f4f9cd3415866777f23e3431.png" src="../../_images/5d18c32fd23b6600f40b2017b0ddaa5300073cb5f4f9cd3415866777f23e3431.png" />
 </div>
 </div>
-<div class="cell tag_hide-input tag_hide-output docutils container">
-<details class="admonition hide above-input">
-<summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
-</summary>
-<div class="cell_input above-output-prompt docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># THIS CELL IS HIDDEN</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_notebook</span>
-<span class="n">output_notebook</span><span class="p">()</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">()</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">iris</span><span class="p">()</span>
-<span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_displacement</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y_force</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
-<span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x_displacement</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">k_true</span> <span class="o">*</span> <span class="n">x_displacement</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
-<span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</details>
-<details class="admonition hide below-input">
-<summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell output</p>
-<p class="expanded admonition-title">Hide code cell output</p>
-</summary>
-<div class="cell_output docutils container">
-<div class="output text_html">    <style>
-        .bk-notebook-logo {
-            display: block;
-            width: 20px;
-            height: 20px;
-            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAOkSURBVDiNjZRtaJVlGMd/1/08zzln5zjP1LWcU9N0NkN8m2CYjpgQYQXqSs0I84OLIC0hkEKoPtiH3gmKoiJDU7QpLgoLjLIQCpEsNJ1vqUOdO7ppbuec5+V+rj4ctwzd8IIbbi6u+8f1539dt3A78eXC7QizUF7gyV1fD1Yqg4JWz84yffhm0qkFqBogB9rM8tZdtwVsPUhWhGcFJngGeWrPzHm5oaMmkfEg1usvLFyc8jLRqDOMru7AyC8saQr7GG7f5fvDeH7Ej8CM66nIF+8yngt6HWaKh7k49Soy9nXurCi1o3qUbS3zWfrYeQDTB/Qj6kX6Ybhw4B+bOYoLKCC9H3Nu/leUTZ1JdRWkkn2ldcCamzrcf47KKXdAJllSlxAOkRgyHsGC/zRday5Qld9DyoM4/q/rUoy/CXh3jzOu3bHUVZeU+DEn8FInkPBFlu3+nW3Nw0mk6vCDiWg8CeJaxEwuHS3+z5RgY+YBR6V1Z1nxSOfoaPa4LASWxxdNp+VWTk7+4vzaou8v8PN+xo+KY2xsw6une2frhw05CTYOmQvsEhjhWjn0bmXPjpE1+kplmmkP3suftwTubK9Vq22qKmrBhpY4jvd5afdRA3wGjFAgcnTK2s4hY0/GPNIb0nErGMCRxWOOX64Z8RAC4oCXdklmEvcL8o0BfkNK4lUg9HTl+oPlQxdNo3Mg4Nv175e/1LDGzZen30MEjRUtmXSfiTVu1kK8W4txyV6BMKlbgk3lMwYCiusNy9fVfvvwMxv8Ynl6vxoByANLTWplvuj/nF9m2+PDtt1eiHPBr1oIfhCChQMBw6Aw0UulqTKZdfVvfG7VcfIqLG9bcldL/+pdWTLxLUy8Qq38heUIjh4XlzZxzQm19lLFlr8vdQ97rjZVOLf8nclzckbcD4wxXMidpX30sFd37Fv/GtwwhzhxGVAprjbg0gCAEeIgwCZyTV2Z1REEW8O4py0wsjeloKoMr6iCY6dP92H6Vw/oTyICIthibxjm/DfN9lVz8IqtqKYLUXfoKVMVQVVJOElGjrnnUt9T9wbgp8AyYKaGlqingHZU/uG2NTZSVqwHQTWkx9hxjkpWDaCg6Ckj5qebgBVbT3V3NNXMSiWSDdGV3hrtzla7J+duwPOToIg42ChPQOQjspnSlp1V+Gjdged7+8UN5CRAV7a5EdFNwCjEaBR27b3W890TE7g24NAP/mMDXRWrGoFPQI9ls/MWO2dWFAar/xcOIImbbpA3zgAAAABJRU5ErkJggg==);
-        }
-    </style>
-    <div>
-        <a href="https://bokeh.org" target="_blank" class="bk-notebook-logo"></a>
-        <span id="adaaa60a-fd4d-4260-933c-425e545d45d3">Loading BokehJS ...</span>
-    </div>
-</div><script type="application/javascript">'use strict';
-(function(root) {
-  function now() {
-    return new Date();
-  }
-
-  const force = true;
-
-  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
-    root._bokeh_onload_callbacks = [];
-    root._bokeh_is_loading = undefined;
-  }
-
-const JS_MIME_TYPE = 'application/javascript';
-  const HTML_MIME_TYPE = 'text/html';
-  const EXEC_MIME_TYPE = 'application/vnd.bokehjs_exec.v0+json';
-  const CLASS_NAME = 'output_bokeh rendered_html';
-
-  /**
-   * Render data to the DOM node
-   */
-  function render(props, node) {
-    const script = document.createElement("script");
-    node.appendChild(script);
-  }
-
-  /**
-   * Handle when an output is cleared or removed
-   */
-  function handleClearOutput(event, handle) {
-    function drop(id) {
-      const view = Bokeh.index.get_by_id(id)
-      if (view != null) {
-        view.model.document.clear()
-        Bokeh.index.delete(view)
-      }
-    }
-
-    const cell = handle.cell;
-
-    const id = cell.output_area._bokeh_element_id;
-    const server_id = cell.output_area._bokeh_server_id;
-
-    // Clean up Bokeh references
-    if (id != null) {
-      drop(id)
-    }
-
-    if (server_id !== undefined) {
-      // Clean up Bokeh references
-      const cmd_clean = "from bokeh.io.state import curstate; print(curstate().uuid_to_server['" + server_id + "'].get_sessions()[0].document.roots[0]._id)";
-      cell.notebook.kernel.execute(cmd_clean, {
-        iopub: {
-          output: function(msg) {
-            const id = msg.content.text.trim()
-            drop(id)
-          }
-        }
-      });
-      // Destroy server and session
-      const cmd_destroy = "import bokeh.io.notebook as ion; ion.destroy_server('" + server_id + "')";
-      cell.notebook.kernel.execute(cmd_destroy);
-    }
-  }
-
-  /**
-   * Handle when a new output is added
-   */
-  function handleAddOutput(event, handle) {
-    const output_area = handle.output_area;
-    const output = handle.output;
-
-    // limit handleAddOutput to display_data with EXEC_MIME_TYPE content only
-    if ((output.output_type != "display_data") || (!Object.prototype.hasOwnProperty.call(output.data, EXEC_MIME_TYPE))) {
-      return
-    }
-
-    const toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
-
-    if (output.metadata[EXEC_MIME_TYPE]["id"] !== undefined) {
-      toinsert[toinsert.length - 1].firstChild.textContent = output.data[JS_MIME_TYPE];
-      // store reference to embed id on output_area
-      output_area._bokeh_element_id = output.metadata[EXEC_MIME_TYPE]["id"];
-    }
-    if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
-      const bk_div = document.createElement("div");
-      bk_div.innerHTML = output.data[HTML_MIME_TYPE];
-      const script_attrs = bk_div.children[0].attributes;
-      for (let i = 0; i < script_attrs.length; i++) {
-        toinsert[toinsert.length - 1].firstChild.setAttribute(script_attrs[i].name, script_attrs[i].value);
-        toinsert[toinsert.length - 1].firstChild.textContent = bk_div.children[0].textContent
-      }
-      // store reference to server id on output_area
-      output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
-    }
-  }
-
-  function register_renderer(events, OutputArea) {
-
-    function append_mime(data, metadata, element) {
-      // create a DOM node to render to
-      const toinsert = this.create_output_subarea(
-        metadata,
-        CLASS_NAME,
-        EXEC_MIME_TYPE
-      );
-      this.keyboard_manager.register_events(toinsert);
-      // Render to node
-      const props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
-      render(props, toinsert[toinsert.length - 1]);
-      element.append(toinsert);
-      return toinsert
-    }
-
-    /* Handle when an output is cleared or removed */
-    events.on('clear_output.CodeCell', handleClearOutput);
-    events.on('delete.Cell', handleClearOutput);
-
-    /* Handle when a new output is added */
-    events.on('output_added.OutputArea', handleAddOutput);
-
-    /**
-     * Register the mime type and append_mime function with output_area
-     */
-    OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
-      /* Is output safe? */
-      safe: true,
-      /* Index of renderer in `output_area.display_order` */
-      index: 0
-    });
-  }
-
-  // register the mime type if in Jupyter Notebook environment and previously unregistered
-  if (root.Jupyter !== undefined) {
-    const events = require('base/js/events');
-    const OutputArea = require('notebook/js/outputarea').OutputArea;
-
-    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
-      register_renderer(events, OutputArea);
-    }
-  }
-  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
-    root._bokeh_timeout = Date.now() + 5000;
-    root._bokeh_failed_load = false;
-  }
-
-  const NB_LOAD_WARNING = {'data': {'text/html':
-     "<div style='background-color: #fdd'>\n"+
-     "<p>\n"+
-     "BokehJS does not appear to have successfully loaded. If loading BokehJS from CDN, this \n"+
-     "may be due to a slow or bad network connection. Possible fixes:\n"+
-     "</p>\n"+
-     "<ul>\n"+
-     "<li>re-rerun `output_notebook()` to attempt to load from CDN again, or</li>\n"+
-     "<li>use INLINE resources instead, as so:</li>\n"+
-     "</ul>\n"+
-     "<code>\n"+
-     "from bokeh.resources import INLINE\n"+
-     "output_notebook(resources=INLINE)\n"+
-     "</code>\n"+
-     "</div>"}};
-
-  function display_loaded(error = null) {
-    const el = document.getElementById("adaaa60a-fd4d-4260-933c-425e545d45d3");
-    if (el != null) {
-      const html = (() => {
-        if (typeof root.Bokeh === "undefined") {
-          if (error == null) {
-            return "BokehJS is loading ...";
-          } else {
-            return "BokehJS failed to load.";
-          }
-        } else {
-          const prefix = `BokehJS ${root.Bokeh.version}`;
-          if (error == null) {
-            return `${prefix} successfully loaded.`;
-          } else {
-            return `${prefix} <b>encountered errors</b> while loading and may not function as expected.`;
-          }
-        }
-      })();
-      el.innerHTML = html;
-
-      if (error != null) {
-        const wrapper = document.createElement("div");
-        wrapper.style.overflow = "auto";
-        wrapper.style.height = "5em";
-        wrapper.style.resize = "vertical";
-        const content = document.createElement("div");
-        content.style.fontFamily = "monospace";
-        content.style.whiteSpace = "pre-wrap";
-        content.style.backgroundColor = "rgb(255, 221, 221)";
-        content.textContent = error.stack ?? error.toString();
-        wrapper.append(content);
-        el.append(wrapper);
-      }
-    } else if (Date.now() < root._bokeh_timeout) {
-      setTimeout(() => display_loaded(error), 100);
-    }
-  }
-
-  function run_callbacks() {
-    try {
-      root._bokeh_onload_callbacks.forEach(function(callback) {
-        if (callback != null)
-          callback();
-      });
-    } finally {
-      delete root._bokeh_onload_callbacks
-    }
-    console.debug("Bokeh: all callbacks have finished");
-  }
-
-  function load_libs(css_urls, js_urls, callback) {
-    if (css_urls == null) css_urls = [];
-    if (js_urls == null) js_urls = [];
-
-    root._bokeh_onload_callbacks.push(callback);
-    if (root._bokeh_is_loading > 0) {
-      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
-      return null;
-    }
-    if (js_urls == null || js_urls.length === 0) {
-      run_callbacks();
-      return null;
-    }
-    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
-    root._bokeh_is_loading = css_urls.length + js_urls.length;
-
-    function on_load() {
-      root._bokeh_is_loading--;
-      if (root._bokeh_is_loading === 0) {
-        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
-        run_callbacks()
-      }
-    }
-
-    function on_error(url) {
-      console.error("failed to load " + url);
-    }
-
-    for (let i = 0; i < css_urls.length; i++) {
-      const url = css_urls[i];
-      const element = document.createElement("link");
-      element.onload = on_load;
-      element.onerror = on_error.bind(null, url);
-      element.rel = "stylesheet";
-      element.type = "text/css";
-      element.href = url;
-      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
-      document.body.appendChild(element);
-    }
-
-    for (let i = 0; i < js_urls.length; i++) {
-      const url = js_urls[i];
-      const element = document.createElement('script');
-      element.onload = on_load;
-      element.onerror = on_error.bind(null, url);
-      element.async = false;
-      element.src = url;
-      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
-      document.head.appendChild(element);
-    }
-  };
-
-  function inject_raw_css(css) {
-    const element = document.createElement("style");
-    element.appendChild(document.createTextNode(css));
-    document.body.appendChild(element);
-  }
-
-  const js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-3.7.3.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.7.3.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.7.3.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.7.3.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.7.3.min.js"];
-  const css_urls = [];
-
-  const inline_js = [    function(Bokeh) {
-      Bokeh.set_log_level("info");
-    },
-function(Bokeh) {
-    }
-  ];
-
-  function run_inline_js() {
-    if (root.Bokeh !== undefined || force === true) {
-      try {
-            for (let i = 0; i < inline_js.length; i++) {
-      inline_js[i].call(root, root.Bokeh);
-    }
-
-      } catch (error) {display_loaded(error);throw error;
-      }if (force === true) {
-        display_loaded();
-      }} else if (Date.now() < root._bokeh_timeout) {
-      setTimeout(run_inline_js, 100);
-    } else if (!root._bokeh_failed_load) {
-      console.log("Bokeh: BokehJS failed to load within specified timeout.");
-      root._bokeh_failed_load = true;
-    } else if (force !== true) {
-      const cell = $(document.getElementById("adaaa60a-fd4d-4260-933c-425e545d45d3")).parents('.cell').data().cell;
-      cell.output_area.append_execute_result(NB_LOAD_WARNING)
-    }
-  }
-
-  if (root._bokeh_is_loading === 0) {
-    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
-    run_inline_js();
-  } else {
-    load_libs(css_urls, js_urls, function() {
-      console.debug("Bokeh: BokehJS plotting callback run at", now());
-      run_inline_js();
-    });
-  }
-}(window));</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">output_notebook</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">data</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">iris</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_displacement</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y_force</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x_displacement</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">k_true</span> <span class="o">*</span> <span class="n">x_displacement</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;px&#39; is not defined
-</pre></div>
-</div>
-</div>
-</details>
-</div>
 </section>
 </section>
 <section id="what-is-happening-at-each-step">
@@ -1854,11 +1491,28 @@ function(Bokeh) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prediction with full data
+Computing loss
+loss=np.float64(107.63157894736842)
+Computing the gradients
+grad_0=np.float64(-2.4999999999999996), grad_1=np.float64(-3.789473684210526)
+Improving paramether estimation
+theta_0=np.float64(1.25), theta_1=np.float64(1.3789473684210527)
+(np.float64(1.25), np.float64(1.3789473684210527))
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now with more steps</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">step</span><span class="p">(</span><span class="n">theta_0</span><span class="p">,</span> <span class="n">theta_1</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.float64(1.0787927631817147e-07), np.float64(4.49999991017813))
 </pre></div>
 </div>
 </div>
@@ -1878,6 +1532,19 @@ function(Bokeh) {
 <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NotImplementedError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">alphas</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># YOUR CODE HERE</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+<span class="ne">NotImplementedError</span>: 
+</pre></div>
+</div>
+<img alt="../../_images/fb6c53af49698106d93d7f3beef0ff5242ceb9fcd3542157fc9a756f7df6b7b5.png" src="../../_images/fb6c53af49698106d93d7f3beef0ff5242ceb9fcd3542157fc9a756f7df6b7b5.png" />
 </div>
 </div>
 </section>
@@ -1912,6 +1579,9 @@ Implement the same example but using <code class="docutils literal notranslate">
 </div>
 </div>
 </div>
+<p>:::{exercise} Splitting data into train and test subsets
+Use one of the previous examples to actually split the data into train and test sets, using sklearn functions, and then compute metrics like <span class="math notranslate nohighlight">\(R^2\)</span>.
+:::</p>
 </section>
 </section>
 <section id="conclusion-what-s-next">
@@ -1934,21 +1604,24 @@ Implement the same example but using <code class="docutils literal notranslate">
 <section id="regularization">
 <h2><span class="section-number">8.5. </span>Regularization<a class="headerlink" href="#regularization" title="Link to this heading">#</a></h2>
 <p>The bias-variance trade-off shows that is important to not go to the extremes when fitting a model. For example, when the model performs well on the training data but does not work well on the test data, we might need to add a <code class="docutils literal notranslate"><span class="pre">regularization</span></code> so penalize the cost function to improve the trade-off. One example is the so-called ridge regularization, where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-df2a1021-33e5-44d9-b8c8-501056d0c977">
-<span class="eqno">(8.1)<a class="headerlink" href="#equation-df2a1021-33e5-44d9-b8c8-501056d0c977" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a56efe30-fba6-4da8-81e9-158eff71bc39">
+<span class="eqno">(8.1)<a class="headerlink" href="#equation-a56efe30-fba6-4da8-81e9-158eff71bc39" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \Delta(\theta) = \frac{1}{2m} \sum_{i=1}^{m} \left( \hat y(x_i) - y_i \right)^2 + \lambda \sum_{j=1}^{n} \theta_j^2,
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is the hyper-regularization parameter. This controls the magnitude of the coefficients preventing overfitting. When <span class="math notranslate nohighlight">\(\lambda\)</span> is large, the parameters <span class="math notranslate nohighlight">\(\theta\)</span> decrease, which shrinks the impact of variables no so correlated with the output. When <span class="math notranslate nohighlight">\(lambda\)</span> decreases, we basically converge to the usual linear regression.</p>
 <p>There are several other regularization techniques, such as lasso regression (L1),</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fc04ec37-e0a3-41fc-8452-986d4d4d5084">
-<span class="eqno">(8.2)<a class="headerlink" href="#equation-fc04ec37-e0a3-41fc-8452-986d4d4d5084" title="Permalink to this equation">#</a></span>\[\begin{equation}
-|delta = J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} \left( h_\theta(x_i) - y_i \right)^2 + \lambda \sum_{j=1}^{n} |\theta_j|, 
+<div class="amsmath math notranslate nohighlight" id="equation-1a9fabdc-ded8-468b-9094-41488ee6c493">
+<span class="eqno">(8.2)<a class="headerlink" href="#equation-1a9fabdc-ded8-468b-9094-41488ee6c493" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\Delta(\theta) = \frac{1}{2m} \sum_{i=1}^{m} \left( h_\theta(x_i) - y_i \right)^2 + \lambda \sum_{j=1}^{n} |\theta_j|, 
 \end{equation}\]</div>
 <p>Elastic Net regression, where both previous regressions are combines, and so on.</p>
 <section id="exercises">
 <h3><span class="section-number">8.5.1. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h3>
-<p>:::{exercise}
+<p>:::{exercise} Ridge, lasso and elastic net
 Implement ridge regularization into our step by step approach. Check the role of several values. Now do the same for lasso, and then for Elastic Net.
+:::</p>
+<p>:::{exercise} Ransac regression with outliers
+Look for ransac regression in sklearn and implement an example showing how ransac can ignore outliers in data.
 :::</p>
 </section>
 </section>
@@ -1956,8 +1629,8 @@ Implement ridge regularization into our step by step approach. Check the role of
 <h2><span class="section-number">8.6. </span>Multiple linear regression<a class="headerlink" href="#multiple-linear-regression" title="Link to this heading">#</a></h2>
 <p>REF: <a class="reference external" href="https://www.digitalocean.com/community/tutorials/multiple-linear-regression-python">https://www.digitalocean.com/community/tutorials/multiple-linear-regression-python</a></p>
 <p>Until now, we explore a single variable linear regression. But, in general, we have multiple variables problems. In this case, we want to study a model like</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0bb92ffb-db8c-40b8-8831-9fd3132f4eb5">
-<span class="eqno">(8.3)<a class="headerlink" href="#equation-0bb92ffb-db8c-40b8-8831-9fd3132f4eb5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1cbb6484-c4bd-432c-80d0-4efa06836c37">
+<span class="eqno">(8.3)<a class="headerlink" href="#equation-1cbb6484-c4bd-432c-80d0-4efa06836c37" title="Permalink to this equation">#</a></span>\[\begin{equation}
 Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n + \epsilon = \vec \beta \cdot \vec V + \epsilon,
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\vec \beta\)</span> are the coefficients we want to optimize, and we have <span class="math notranslate nohighlight">\(n\)</span> “independent” variables.</p>
@@ -2239,19 +1912,16 @@ Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n + \epsilon = \vec
 <section id="id2">
 <h3><span class="section-number">8.7.3. </span>Exercises<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>For the following exercises, perform a full analysis with explicit statistical tests computation and interpretation. Explain why you use some of the features, or why you need to use all of them. Plot correlation matrices and so on. Also perform a previous pre-processing stage.</p>
-<p>:::{exercise} A large number of features model
-Use <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression">sklearn.datasets.make_regression</a> to generate a 100 features model but 10 relevant features.
-:::</p>
 <p>:::{exercise} Star dataset
 Use the star dataset to try to predict luminosity: <a class="reference external" href="https://www.kaggle.com/datasets/waqi786/stars-dataset">https://www.kaggle.com/datasets/waqi786/stars-dataset</a>.
 :::</p>
 <p>:::{exercise} Polynomial regression
 Generate a random set following the model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-af932bef-219e-4214-8ef0-99897f182126">
-<span class="eqno">(8.4)<a class="headerlink" href="#equation-af932bef-219e-4214-8ef0-99897f182126" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2d2cc894-8933-40a7-8fba-b2ab277066ab">
+<span class="eqno">(8.4)<a class="headerlink" href="#equation-2d2cc894-8933-40a7-8fba-b2ab277066ab" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = \beta_0 + \beta_1 x_1 + \beta_2 x_1^2 + \epsilon
 \end{equation}\]</div>
-<p>and apply (polynomial) linear regression to get the coefficients.<br />
+<p>and apply (polynomial) linear regression to get the coefficients.  Check <a class="reference external" href="https://www.geeksforgeeks.org/machine-learning/python-implementation-of-polynomial-regression/">https://www.geeksforgeeks.org/machine-learning/python-implementation-of-polynomial-regression/</a>
 :::</p>
 </section>
 </section>
