@@ -684,7 +684,7 @@ document.write(`
 </ul>
 <p>Our goal is to find the optimal values for <span class="math notranslate nohighlight">\(\theta_0\)</span> and <span class="math notranslate nohighlight">\(\theta_1\)</span> that make our line fit the data as closely as possible. Notice that it is possible to also add non-linear relationships even if the method is called linear regression.</p>
 <blockquote>
-<div><p><strong>Note</strong> In ML, We can apply linear regression to non-linear problems</p>
+<div><p>In ML, We can apply linear regression to non-linear problems</p>
 </div></blockquote>
 </section>
 <section id="how-do-we-find-the-best-line">
@@ -1551,20 +1551,6 @@ theta_0=np.float64(1.25), theta_1=np.float64(1.3789473684210527)
 <section id="practice-exercises">
 <h3><span class="section-number">8.3.5. </span>Practice Exercises<a class="headerlink" href="#practice-exercises" title="Link to this heading">#</a></h3>
 <p>Now it’s your turn! Apply what you’ve learned to new scientific datasets.</p>
-<p>:::{exercise} Tensorflow/pytorch
-Implement the same example but using <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> and <code class="docutils literal notranslate"><span class="pre">pytorch</span></code>. Compare easy of use.
-:::</p>
-<p>:::{exercise} Biology - Brain vs. Body Weight</p>
-<p>Allometry is the study of the relationship of body size to shape, anatomy, and physiology. It is a well-known fact that the brain weight of mammals generally increases with body weight. Let’s model this relationship.</p>
-<p><strong>Task:</strong></p>
-<ol class="arabic simple">
-<li><p>Load the provided data for various mammal species.</p></li>
-<li><p>The relationship is often modeled on a log-log scale. Transform both <code class="docutils literal notranslate"><span class="pre">body_wt</span></code> and <code class="docutils literal notranslate"><span class="pre">brain_wt</span></code> by taking their natural logarithm (<code class="docutils literal notranslate"><span class="pre">np.log()</span></code>).</p></li>
-<li><p>Fit a linear regression model to the log-transformed data.</p></li>
-<li><p>Print the equation of your model.</p></li>
-<li><p>Plot the log-transformed data as a scatter plot and overlay your regression line.
-:::</p></li>
-</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data for Exercise 1</span>
@@ -1604,14 +1590,14 @@ Use one of the previous examples to actually split the data into train and test 
 <section id="regularization">
 <h2><span class="section-number">8.5. </span>Regularization<a class="headerlink" href="#regularization" title="Link to this heading">#</a></h2>
 <p>The bias-variance trade-off shows that is important to not go to the extremes when fitting a model. For example, when the model performs well on the training data but does not work well on the test data, we might need to add a <code class="docutils literal notranslate"><span class="pre">regularization</span></code> so penalize the cost function to improve the trade-off. One example is the so-called ridge regularization, where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a56efe30-fba6-4da8-81e9-158eff71bc39">
-<span class="eqno">(8.1)<a class="headerlink" href="#equation-a56efe30-fba6-4da8-81e9-158eff71bc39" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c5a3b06e-8f10-405f-9f2c-e21f17128b7e">
+<span class="eqno">(8.1)<a class="headerlink" href="#equation-c5a3b06e-8f10-405f-9f2c-e21f17128b7e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \Delta(\theta) = \frac{1}{2m} \sum_{i=1}^{m} \left( \hat y(x_i) - y_i \right)^2 + \lambda \sum_{j=1}^{n} \theta_j^2,
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is the hyper-regularization parameter. This controls the magnitude of the coefficients preventing overfitting. When <span class="math notranslate nohighlight">\(\lambda\)</span> is large, the parameters <span class="math notranslate nohighlight">\(\theta\)</span> decrease, which shrinks the impact of variables no so correlated with the output. When <span class="math notranslate nohighlight">\(lambda\)</span> decreases, we basically converge to the usual linear regression.</p>
 <p>There are several other regularization techniques, such as lasso regression (L1),</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1a9fabdc-ded8-468b-9094-41488ee6c493">
-<span class="eqno">(8.2)<a class="headerlink" href="#equation-1a9fabdc-ded8-468b-9094-41488ee6c493" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e3eeeba4-d12e-4608-b567-b6b46a9ff917">
+<span class="eqno">(8.2)<a class="headerlink" href="#equation-e3eeeba4-d12e-4608-b567-b6b46a9ff917" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \Delta(\theta) = \frac{1}{2m} \sum_{i=1}^{m} \left( h_\theta(x_i) - y_i \right)^2 + \lambda \sum_{j=1}^{n} |\theta_j|, 
 \end{equation}\]</div>
 <p>Elastic Net regression, where both previous regressions are combines, and so on.</p>
@@ -1629,8 +1615,8 @@ Look for ransac regression in sklearn and implement an example showing how ransa
 <h2><span class="section-number">8.6. </span>Multiple linear regression<a class="headerlink" href="#multiple-linear-regression" title="Link to this heading">#</a></h2>
 <p>REF: <a class="reference external" href="https://www.digitalocean.com/community/tutorials/multiple-linear-regression-python">https://www.digitalocean.com/community/tutorials/multiple-linear-regression-python</a></p>
 <p>Until now, we explore a single variable linear regression. But, in general, we have multiple variables problems. In this case, we want to study a model like</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1cbb6484-c4bd-432c-80d0-4efa06836c37">
-<span class="eqno">(8.3)<a class="headerlink" href="#equation-1cbb6484-c4bd-432c-80d0-4efa06836c37" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c60b6051-aee8-446f-83c0-dcfc156ddaac">
+<span class="eqno">(8.3)<a class="headerlink" href="#equation-c60b6051-aee8-446f-83c0-dcfc156ddaac" title="Permalink to this equation">#</a></span>\[\begin{equation}
 Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n + \epsilon = \vec \beta \cdot \vec V + \epsilon,
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\vec \beta\)</span> are the coefficients we want to optimize, and we have <span class="math notranslate nohighlight">\(n\)</span> “independent” variables.</p>
@@ -1917,8 +1903,8 @@ Use the star dataset to try to predict luminosity: <a class="reference external"
 :::</p>
 <p>:::{exercise} Polynomial regression
 Generate a random set following the model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2d2cc894-8933-40a7-8fba-b2ab277066ab">
-<span class="eqno">(8.4)<a class="headerlink" href="#equation-2d2cc894-8933-40a7-8fba-b2ab277066ab" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-841a63a4-93f1-4f28-82a2-0f7b9df91636">
+<span class="eqno">(8.4)<a class="headerlink" href="#equation-841a63a4-93f1-4f28-82a2-0f7b9df91636" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = \beta_0 + \beta_1 x_1 + \beta_2 x_1^2 + \epsilon
 \end{equation}\]</div>
 <p>and apply (polynomial) linear regression to get the coefficients.  Check <a class="reference external" href="https://www.geeksforgeeks.org/machine-learning/python-implementation-of-polynomial-regression/">https://www.geeksforgeeks.org/machine-learning/python-implementation-of-polynomial-regression/</a>
