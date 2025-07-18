@@ -34,6 +34,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster.custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster.bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-shadow.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-punk.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-noir.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-light.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-borderless.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/micromodal.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles.css?v=76e7d31e" />
   
@@ -42,12 +54,18 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
+    <script src="../../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    <script src="../../_static/js/hoverxref.js"></script>
+    <script src="../../_static/js/tooltipster.bundle.min.js"></script>
+    <script src="../../_static/js/micromodal.min.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -58,11 +76,13 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/00-TALK-IntroML/IntroMachineLearning';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3. Python Programming (very fast) Introduction" href="../01-reviewPython/01-IntroProgrammingPython.html" />
+    <link rel="next" title="3. Principal Component Analysis (PCA)" href="../03-PCA/PCA.html" />
     <link rel="prev" title="1. Introduction to the course and to Machine Learning" href="../00-IntroductionCourseML/IntroCourse-MachineLearning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -180,22 +200,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../00-IntroductionCourseML/IntroCourse-MachineLearning.html">1. Introduction to the course and to Machine Learning</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. A fast introduction to Machine Learning</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python review</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">3. Python Programming (very fast) Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">4. Intro Python II: python data structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/pandas-intro.html">5. Pandas Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">6. Pandas for data cleaning and analysis</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supervised learning</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../03-PCA/PCA.html">7. Principal Component Analysis (PCA)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../04-LinearRegression/LinearRegression.html">8. Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-PCA/PCA.html">3. Principal Component Analysis (PCA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-LinearRegression/LinearRegression.html">4. Linear Regression</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Neural Networks</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">9. What is a Neural Network?</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">5. Neural Networks Introduction</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">6. Python Programming (very fast) Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">7. Intro Python II: python data structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/pandas-intro.html">8. Pandas Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">9. Pandas for data cleaning and analysis</a></li>
 </ul>
 
     </div>
@@ -281,6 +300,24 @@
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
 </li>
       
   </ul>
@@ -458,14 +495,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-flow-playground">2.6.2. Tensor flow playground</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-to-scientific-discovery">2.7. Applications to Scientific Discovery</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-ethics">2.8. ML Ethics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-in-scientific-discovery-examples">2.9. AI in scientific discovery: examples</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-detecting-supernovae">2.9.1. 🔭 Example 1: Detecting Supernovae</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-classifying-protein-types">2.9.2. 🧬 Example 2: Classifying Protein Types</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-predicting-molecular-boiling-point">2.9.3. ⚗️ Example 3: Predicting Molecular Boiling Point</a></li>
-</ul>
-</li>
 </ul>
             </nav>
         </div>
@@ -490,7 +519,7 @@ to learn without being explicitly programmed. Arthur Samuel, 1959</p>
 <div><p>A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E. Tom Mitchell’s, 1997</p>
 </div></blockquote>
 <p>Machine learning is a branch of artificial intelligence that allows computers to learn from given information and perform new but similar tasks.</p>
-<a class="reference internal image-reference" href="lectures/00-TALK-IntroML/figs/ML-googletrends.png"><img alt="ML trends" class="align-center" src="lectures/00-TALK-IntroML/figs/ML-googletrends.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../../_images/AI-ML.png"><img alt="transistors-per-microprocessor.png" class="align-center" src="../../_images/AI-ML.png" style="width: 50%;" /></a>
 <p><strong>Artificial intelligence</strong>: The computer performs actions defined as requiring intelligence -&gt; Moving target</p>
 <ul class="simple">
 <li><p>Search Based Heuristic Optimization</p></li>
@@ -515,15 +544,14 @@ to learn without being explicitly programmed. Arthur Samuel, 1959</p>
 <!-- <div style="text-align: center;">
     <img src="figs/AI-ML.png" alt="Machine learning as a subarea of artificail intelligence. From: Understanding Deep Learning, Simon J.D. Prince" width="600">
     <figcaption>From: Understanding Deep Learning, Simon J.D. Prince</figcaption>
-</div> -->
-</section>
+</div> --></section>
 <section id="historical-development">
 <h2><span class="section-number">2.2. </span>Historical development<a class="headerlink" href="#historical-development" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>https://letsdatascience.com/learn/history/history-of-machine-learning/</p></li>
-<li><p>https://github.com/microsoft/ML-For-Beginners/blob/main/1-Introduction/2-history-of-ML/README.md</p></li>
-<li><p>https://www.inveniam.fr/a-brief-history-of-machine-learning</p></li>
-<li><p>https://ahistoryofai.com/</p></li>
+<li><p><a class="reference external" href="https://letsdatascience.com/learn/history/history-of-machine-learning/">https://letsdatascience.com/learn/history/history-of-machine-learning/</a></p></li>
+<li><p><a class="github reference external" href="https://github.com/microsoft/ML-For-Beginners/blob/main/1-Introduction/2-history-of-ML/README.md">microsoft/ML-For-Beginners</a></p></li>
+<li><p><a class="reference external" href="https://www.inveniam.fr/a-brief-history-of-machine-learning">https://www.inveniam.fr/a-brief-history-of-machine-learning</a></p></li>
+<li><p><a class="reference external" href="https://ahistoryofai.com/">https://ahistoryofai.com/</a></p></li>
 </ul>
 <p>Hardware was too costly, but improvements on both cpu and gpu made it practical, or at least attainable, to apply the different AI models.</p>
 <a class="reference internal image-reference" href="../../_images/transistors-per-microprocessor.png"><img alt="transistor versus microprocesos" class="align-center" src="../../_images/transistors-per-microprocessor.png" style="width: 60%;" /></a>
@@ -535,7 +563,12 @@ to learn without being explicitly programmed. Arthur Samuel, 1959</p>
 </section>
 <section id="practical-short-fast-example">
 <h2><span class="section-number">2.4. </span>Practical, short, fast example<a class="headerlink" href="#practical-short-fast-example" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data creation</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_blobs</span>
@@ -547,6 +580,7 @@ to learn without being explicitly programmed. Arthur Samuel, 1959</p>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="../../_images/dda2971c0692df7a1da09bfcf2c52de946b4fdc4b1f3c8d88b9e7324361c872f.png" src="../../_images/dda2971c0692df7a1da09bfcf2c52de946b4fdc4b1f3c8d88b9e7324361c872f.png" />
 </div>
@@ -605,7 +639,7 @@ to learn without being explicitly programmed. Arthur Samuel, 1959</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ba2352f45664414581a6143f2f98a4139a836e3d26164eaf18624a4498c0a3d9.png" src="../../_images/ba2352f45664414581a6143f2f98a4139a836e3d26164eaf18624a4498c0a3d9.png" />
+<img alt="../../_images/c3051f8b55cf33c40afd993b8223ab3600eda38f57e669a2089b76d95d706d9f.png" src="../../_images/c3051f8b55cf33c40afd993b8223ab3600eda38f57e669a2089b76d95d706d9f.png" />
 </div>
 </div>
 </section>
@@ -615,13 +649,19 @@ to learn without being explicitly programmed. Arthur Samuel, 1959</p>
 <li><p>Learn by trial and error</p></li>
 <li><p>Agent interacts with environment</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">IFrame</span>
 <span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/embed/L_4BPjLBF4E?si=4vNIAkUAz7tkTyiO&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;560&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;315&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html">
         <iframe
@@ -656,7 +696,12 @@ to learn without being explicitly programmed. Arthur Samuel, 1959</p>
 <li><p><strong>Meta-Parameters</strong>: Parameters controlling the model</p></li>
 </ul>
 <p>Beware of under/over fitting : See also last part of <a class="reference external" href="https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks">https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks</a></p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
@@ -708,8 +753,9 @@ to learn without being explicitly programmed. Arthur Samuel, 1959</p>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../../_images/14072beeef25ae44c4ca217c0a3a89307cecaf3cd2154132af1f38c5a3a271cf.png" src="../../_images/14072beeef25ae44c4ca217c0a3a89307cecaf3cd2154132af1f38c5a3a271cf.png" />
+<img alt="../../_images/dffa07a1d496f351e8e06c64ad56e0c36c0ab98dd9ee066de63ff51c8bd6f183.png" src="../../_images/dffa07a1d496f351e8e06c64ad56e0c36c0ab98dd9ee066de63ff51c8bd6f183.png" />
 </div>
 </div>
 </section>
@@ -717,195 +763,21 @@ to learn without being explicitly programmed. Arthur Samuel, 1959</p>
 <section id="ml-algorithms">
 <h2><span class="section-number">2.6. </span>ML Algorithms<a class="headerlink" href="#ml-algorithms" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>https://www.datacamp.com/cheat-sheet/machine-learning-cheat-sheet</p></li>
-<li><p>https://sites.google.com/view/datascience-cheat-sheets</p></li>
-<li><p>https://github.com/SamBelkacem/AI-ML-cheatsheets</p></li>
-<li><p>https://www.naftaliharris.com/blog/visualizing-k-means-clustering/</p></li>
+<li><p><a class="reference external" href="https://www.datacamp.com/cheat-sheet/machine-learning-cheat-sheet">https://www.datacamp.com/cheat-sheet/machine-learning-cheat-sheet</a></p></li>
+<li><p><a class="reference external" href="https://sites.google.com/view/datascience-cheat-sheets">https://sites.google.com/view/datascience-cheat-sheets</a></p></li>
+<li><p><a class="github reference external" href="https://github.com/SamBelkacem/AI-ML-cheatsheets">SamBelkacem/AI-ML-cheatsheets</a></p></li>
+<li><p><a class="reference external" href="https://www.naftaliharris.com/blog/visualizing-k-means-clustering/">https://www.naftaliharris.com/blog/visualizing-k-means-clustering/</a></p></li>
 </ul>
-<img alt="Some algs ML" class="centerimg50" src="../../_images/ML-CheatSheet-01.webp" />
-<img alt="../../_images/ML-Cheat-Sheet_2.png" src="../../_images/ML-Cheat-Sheet_2.png" />
+<a class="reference internal image-reference" href="../../_images/ML-CheatSheet-01.webp"><img alt="Some algs ML" class="align-center" src="../../_images/ML-CheatSheet-01.webp" style="width: 50%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ML-Cheat-Sheet_2.png"><img alt="ML cheatsheet" class="align-center" src="../../_images/ML-Cheat-Sheet_2.png" style="width: 50%;" /></a>
 <section id="classifier-comparison">
 <h3><span class="section-number">2.6.1. </span>Classifier comparison:<a class="headerlink" href="#classifier-comparison" title="Link to this heading">#</a></h3>
-<p>https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html
-<img alt="Classifiers" class="centerimg30" src="https://scikit-learn.org/stable/_images/sphx_glr_plot_classifier_comparison_001.png" /></p>
+<p><a class="reference external" href="https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html">https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html</a></p>
+<a class="reference internal image-reference" href="https://scikit-learn.org/stable/_images/sphx_glr_plot_classifier_comparison_001.png"><img alt="Classifiers" class="align-center" src="https://scikit-learn.org/stable/_images/sphx_glr_plot_classifier_comparison_001.png" style="width: 80%;" /></a>
 </section>
 <section id="tensor-flow-playground">
 <h3><span class="section-number">2.6.2. </span>Tensor flow playground<a class="headerlink" href="#tensor-flow-playground" title="Link to this heading">#</a></h3>
 <p>Try: <a class="reference external" href="https://playground.tensorflow.org">https://playground.tensorflow.org</a></p>
-</section>
-</section>
-<section id="applications-to-scientific-discovery">
-<h2><span class="section-number">2.7. </span>Applications to Scientific Discovery<a class="headerlink" href="#applications-to-scientific-discovery" title="Link to this heading">#</a></h2>
-<p>“AI is becoming a microscope for data: it helps scientists see patterns and predictions that were previously invisible.”</p>
-<p>Machine Learning and AI are accelerating breakthroughs in scientific research by helping scientists extract patterns from massive datasets, automate complex processes, and even generate new hypotheses.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Field</p></th>
-<th class="head"><p>ML/AI Application</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Astronomy</p></td>
-<td><p>Classifying galaxies from telescope data; finding exoplanets (e.g., Kepler mission)</p></td>
-</tr>
-<tr class="row-odd"><td><p>Physics</p></td>
-<td><p>Simulating particle collisions (e.g., CERN), anomaly detection in LHC data</p></td>
-</tr>
-<tr class="row-even"><td><p>Biology</p></td>
-<td><p>Protein folding prediction (e.g., AlphaFold), gene expression analysis</p></td>
-</tr>
-<tr class="row-odd"><td><p>Chemistry</p></td>
-<td><p>Drug discovery by molecular property prediction</p></td>
-</tr>
-<tr class="row-even"><td><p>Climate Science</p></td>
-<td><p>Modeling weather and climate patterns; detecting extreme events</p></td>
-</tr>
-<tr class="row-odd"><td><p>Materials Science</p></td>
-<td><p>Discovering new materials using generative models and property prediction</p></td>
-</tr>
-<tr class="row-even"><td><p>Neuroscience</p></td>
-<td><p>Brain activity decoding from EEG/fMRI signals</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>AlphaFold</strong> by DeepMind predicts the 3D structure of proteins from amino acid sequences with remarkable accuracy — solving a 50-year grand challenge in biology.</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://deepmind.google/science/alphafold/">https://deepmind.google/science/alphafold/</a></p></li>
-<li><p>https://www.youtube.com/watch?v=gg7WjuFs8F4</p></li>
-</ul>
-<p><strong>Google Co-Scientist</strong></p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://blog.google/feed/google-research-ai-co-scientist/">https://blog.google/feed/google-research-ai-co-scientist/</a></p></li>
-<li><p><a class="reference external" href="https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/">https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/</a></p></li>
-</ul>
-</section>
-<section id="ml-ethics">
-<h2><span class="section-number">2.8. </span>ML Ethics<a class="headerlink" href="#ml-ethics" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>http://approximatelycorrect.com/2016/11/07/the-foundations-of-algorithmic-bias/</p></li>
-<li><p>https://www.edx.org/course/data-science-ethics-michiganx-ds101x-1</p></li>
-<li><p>https://en.wikipedia.org/wiki/Weapons_of_Math_Destruction?useskin=vector</p></li>
-<li><p>Bias in algorithms (data reflects societal bias).</p></li>
-<li><p>Transparency (black-box models).</p></li>
-<li><p>Automation and the future of work.</p></li>
-<li><p>AI alignment and safety.</p></li>
-<li><p>Power usage:
-<a class="reference internal" href="https://www.researchgate.net/profile/Yuzhuo-Li-2/publication/384115745/figure/fig5/AS:11431281278937909&#64;1726775834031/Reported-energy-consumption-of-training-different-LLM-models-with-respect-to-model.png"><img alt="https://www.researchgate.net/publication/384115745_The_Unseen_AI_Disruptions_for_Power_Grids_LLM-Induced_Transients" class="align-center" src="https://www.researchgate.net/profile/Yuzhuo-Li-2/publication/384115745/figure/fig5/AS:11431281278937909&#64;1726775834031/Reported-energy-consumption-of-training-different-LLM-models-with-respect-to-model.png" style="width: 40%;" /></a></p>
-<ul>
-<li><p>https://www.nature.com/articles/s41598-024-76682-6</p></li>
-<li><p>https://birchtree.me/blog/another-study-on-llm-energy-use/</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="ai-in-scientific-discovery-examples">
-<h2><span class="section-number">2.9. </span>AI in scientific discovery: examples<a class="headerlink" href="#ai-in-scientific-discovery-examples" title="Link to this heading">#</a></h2>
-<p>Machine Learning is transforming how scientists explore and understand the world by revealing patterns, accelerating simulations, and automating classification.</p>
-<section id="example-1-detecting-supernovae">
-<h3><span class="section-number">2.9.1. </span>🔭 Example 1: Detecting Supernovae<a class="headerlink" href="#example-1-detecting-supernovae" title="Link to this heading">#</a></h3>
-<p>Classifying celestial events using features like brightness and spectral line strength.</p>
-<p>DATA: https://www.kaggle.com/competitions/PLAsTiCC-2018/data</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomForestClassifier</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConfusionMatrixDisplay</span>
-
-<span class="c1"># Prepare data</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">supernova_data</span><span class="p">[[</span><span class="s1">&#39;brightness&#39;</span><span class="p">,</span> <span class="s1">&#39;spectral_line_strength&#39;</span><span class="p">,</span> <span class="s1">&#39;redshift&#39;</span><span class="p">]]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">supernova_data</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span>
-
-<span class="c1"># Train/test split</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="c1"># Train model</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
-<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-<span class="c1"># Evaluate</span>
-<span class="n">ConfusionMatrixDisplay</span><span class="o">.</span><span class="n">from_estimator</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Supernova Detection (Random Forest)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConfusionMatrixDisplay</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Prepare data</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">X</span> <span class="o">=</span> <span class="n">supernova_data</span><span class="p">[[</span><span class="s1">&#39;brightness&#39;</span><span class="p">,</span> <span class="s1">&#39;spectral_line_strength&#39;</span><span class="p">,</span> <span class="s1">&#39;redshift&#39;</span><span class="p">]]</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">y</span> <span class="o">=</span> <span class="n">supernova_data</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># Train/test split</span>
-
-<span class="ne">NameError</span>: name &#39;supernova_data&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="example-2-classifying-protein-types">
-<h3><span class="section-number">2.9.2. </span>🧬 Example 2: Classifying Protein Types<a class="headerlink" href="#example-2-classifying-protein-types" title="Link to this heading">#</a></h3>
-<p>Distinguishing enzymes from non-enzymes using biochemical features.</p>
-<p>DATA: https://archive.ics.uci.edu/datasets</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">LabelEncoder</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span>
-
-<span class="c1"># Prepare data</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">protein_data</span><span class="p">[[</span><span class="s1">&#39;hydrophobicity&#39;</span><span class="p">,</span> <span class="s1">&#39;charge&#39;</span><span class="p">,</span> <span class="s1">&#39;molecular_weight&#39;</span><span class="p">]]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">protein_data</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">])</span>  <span class="c1"># enzyme=1, non-enzyme=0</span>
-
-<span class="c1"># Split and train</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
-<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-<span class="c1"># Evaluate</span>
-<span class="n">ConfusionMatrixDisplay</span><span class="o">.</span><span class="n">from_estimator</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Protein Classification (Logistic Regression)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="example-3-predicting-molecular-boiling-point">
-<h3><span class="section-number">2.9.3. </span>⚗️ Example 3: Predicting Molecular Boiling Point<a class="headerlink" href="#example-3-predicting-molecular-boiling-point" title="Link to this heading">#</a></h3>
-<p>Using regression to estimate a physical property from structural features.</p>
-<p>DATA: https://moleculenet.org/</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">GradientBoostingRegressor</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">mean_squared_error</span>
-
-<span class="c1"># Prepare data</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">molecular_data</span><span class="p">[[</span><span class="s1">&#39;num_atoms&#39;</span><span class="p">,</span> <span class="s1">&#39;molecular_weight&#39;</span><span class="p">,</span> <span class="s1">&#39;polarity&#39;</span><span class="p">]]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">molecular_data</span><span class="p">[</span><span class="s1">&#39;boiling_point&#39;</span><span class="p">]</span>
-
-<span class="c1"># Split and train</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">reg</span> <span class="o">=</span> <span class="n">GradientBoostingRegressor</span><span class="p">()</span>
-<span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-<span class="c1"># Evaluate</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="n">mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-
-<span class="c1"># Plot results</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;True Boiling Point&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Predicted&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Boiling Point Prediction (MSE = </span><span class="si">{</span><span class="n">mse</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 </section>
@@ -914,7 +786,7 @@ to learn without being explicitly programmed. Arthur Samuel, 1959</p>
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "iluvatar1/ML4Sci-lectures",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -950,11 +822,11 @@ to learn without being explicitly programmed. Arthur Samuel, 1959</p>
       </div>
     </a>
     <a class="right-next"
-       href="../01-reviewPython/01-IntroProgrammingPython.html"
+       href="../03-PCA/PCA.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Python Programming (very fast) Introduction</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Principal Component Analysis (PCA)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -990,14 +862,6 @@ to learn without being explicitly programmed. Arthur Samuel, 1959</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-algorithms">2.6. ML Algorithms</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classifier-comparison">2.6.1. Classifier comparison:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-flow-playground">2.6.2. Tensor flow playground</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-to-scientific-discovery">2.7. Applications to Scientific Discovery</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-ethics">2.8. ML Ethics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-in-scientific-discovery-examples">2.9. AI in scientific discovery: examples</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-detecting-supernovae">2.9.1. 🔭 Example 1: Detecting Supernovae</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-classifying-protein-types">2.9.2. 🧬 Example 2: Classifying Protein Types</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-predicting-molecular-boiling-point">2.9.3. ⚗️ Example 3: Predicting Molecular Boiling Point</a></li>
 </ul>
 </li>
 </ul>

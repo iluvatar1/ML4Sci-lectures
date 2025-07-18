@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5. Pandas Introduction &#8212; Introduction to Machine Learning for Science</title>
+    <title>8. Pandas Introduction &#8212; Introduction to Machine Learning for Science</title>
   
   
   
@@ -34,6 +34,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster.custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster.bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-shadow.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-punk.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-noir.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-light.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-borderless.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/micromodal.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles.css?v=76e7d31e" />
   
@@ -42,12 +54,18 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
+    <script src="../../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    <script src="../../_static/js/hoverxref.js"></script>
+    <script src="../../_static/js/tooltipster.bundle.min.js"></script>
+    <script src="../../_static/js/micromodal.min.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -58,12 +76,14 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/01-reviewPython/pandas-intro';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6. Pandas for data cleaning and analysis" href="../02-LimpiezayPrepDatos/TutorialPandas.html" />
-    <link rel="prev" title="4. Intro Python II: python data structures" href="02-IntroProgrammingPython-DataStructs.html" />
+    <link rel="next" title="9. Pandas for data cleaning and analysis" href="../02-LimpiezayPrepDatos/TutorialPandas.html" />
+    <link rel="prev" title="7. Intro Python II: python data structures" href="02-IntroProgrammingPython-DataStructs.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,22 +200,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../00-IntroductionCourseML/IntroCourse-MachineLearning.html">1. Introduction to the course and to Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00-TALK-IntroML/IntroMachineLearning.html">2. A fast introduction to Machine Learning</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python review</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01-IntroProgrammingPython.html">3. Python Programming (very fast) Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02-IntroProgrammingPython-DataStructs.html">4. Intro Python II: python data structures</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Pandas Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">6. Pandas for data cleaning and analysis</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supervised learning</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../03-PCA/PCA.html">7. Principal Component Analysis (PCA)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../04-LinearRegression/LinearRegression.html">8. Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-PCA/PCA.html">3. Principal Component Analysis (PCA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-LinearRegression/LinearRegression.html">4. Linear Regression</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Neural Networks</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">9. What is a Neural Network?</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">5. Neural Networks Introduction</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-IntroProgrammingPython.html">6. Python Programming (very fast) Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-IntroProgrammingPython-DataStructs.html">7. Intro Python II: python data structures</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Pandas Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">9. Pandas for data cleaning and analysis</a></li>
 </ul>
 
     </div>
@@ -281,6 +300,24 @@
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
 </li>
       
   </ul>
@@ -440,21 +477,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-with-pandas">5.1. Starting with pandas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series">5.2. Series</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe">5.3. Dataframe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-a-large-csv-into-a-dataframe">5.4. Reading a large csv into a dataframe</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-info">5.4.1. Processing info</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date-series-and-data-frames">5.4.2. Date series and data frames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-with-pandas">8.1. Starting with pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series">8.2. Series</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe">8.3. Dataframe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-a-large-csv-into-a-dataframe">8.4. Reading a large csv into a dataframe</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-info">8.4.1. Processing info</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date-series-and-data-frames">8.4.2. Date series and data frames</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">5.5. Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-a-simple-dataframe">5.5.1. Processing a simple dataframe</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-some-exercises">5.5.2. Solving some exercises</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-covid19-data">5.5.3. Processing covid19 data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">8.5. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-a-simple-dataframe">8.5.1. Processing a simple dataframe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-some-exercises">8.5.2. Solving some exercises</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-covid19-data">8.5.3. Processing covid19 data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">5.6. Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">8.6. Practice</a></li>
 </ul>
             </nav>
         </div>
@@ -467,8 +504,8 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas-introduction">
-<h1><span class="section-number">5. </span>Pandas Introduction<a class="headerlink" href="#pandas-introduction" title="Link to this heading">#</a></h1>
-<p>Pandas is the de-facto python standar tool to perform data processing and analysis. The current version is v1.1.2 (see http://pandas.pydata.org/).</p>
+<h1><span class="section-number">8. </span>Pandas Introduction<a class="headerlink" href="#pandas-introduction" title="Link to this heading">#</a></h1>
+<p>Pandas is the de-facto python standar tool to perform data processing and analysis. The current version is v1.1.2 (see <a class="reference external" href="http://pandas.pydata.org/">http://pandas.pydata.org/</a>).</p>
 <p>You can install it by just running</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda install pandas
 </pre></div>
@@ -476,7 +513,7 @@ document.write(`
 <p>In the following we will use both the official pandas documentation and the book “Numerical Python - A practical technique approach for Industry”, from Robert Johansson, as the basis for this introduction.</p>
 <p>We will also use the seaborn libray to generate plots that are pleasant and clear almost by default. Please install it.</p>
 <section id="starting-with-pandas">
-<h2><span class="section-number">5.1. </span>Starting with pandas<a class="headerlink" href="#starting-with-pandas" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.1. </span>Starting with pandas<a class="headerlink" href="#starting-with-pandas" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -488,7 +525,7 @@ document.write(`
 </div>
 </section>
 <section id="series">
-<h2><span class="section-number">5.2. </span>Series<a class="headerlink" href="#series" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.2. </span>Series<a class="headerlink" href="#series" title="Link to this heading">#</a></h2>
 <p>A series is a convenient container for one-dimensional arrays, which can use descriptive name for indexing and allows for quick access to some descriptive statistics.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -632,12 +669,12 @@ Name: Population, dtype: float64
 </div>
 </section>
 <section id="dataframe">
-<h2><span class="section-number">5.3. </span>Dataframe<a class="headerlink" href="#dataframe" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.3. </span>Dataframe<a class="headerlink" href="#dataframe" title="Link to this heading">#</a></h2>
 <p>The dataframe is the most important object inside pandas. It allows to represent, access, process, etc multi-dimensional data.</p>
 <p><img alt="Pandas dataframe" src="https://www.w3resource.com/w3r_images/pandas-data-structure.svg" />
-Source: https://www.w3resource.com/python-exercises/pandas/index.php</p>
+Source: <a class="reference external" href="https://www.w3resource.com/python-exercises/pandas/index.php">https://www.w3resource.com/python-exercises/pandas/index.php</a></p>
 <p><img alt="Pandas dataframe example" src="https://miro.medium.com/max/1400/1*ZSehcrMtBWN7_qCWq_HiSg.png" />
-Source: https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-6fcd0170be9c</p>
+Source: <a class="reference external" href="https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-6fcd0170be9c">https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-6fcd0170be9c</a></p>
 <p>You can initialize a dataframe in several ways. For example, you can use a dictionary or a nested list. For example, you can do something like</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1086,8 +1123,8 @@ Name: Population, dtype: int64
 </div>
 </section>
 <section id="reading-a-large-csv-into-a-dataframe">
-<h2><span class="section-number">5.4. </span>Reading a large csv into a dataframe<a class="headerlink" href="#reading-a-large-csv-into-a-dataframe" title="Link to this heading">#</a></h2>
-<p>Download the population for many european cities from the url: https://en.wikipedia.org/wiki/List_of_cities_in_the_European_Union_by_population_within_city_limits or directly from https://raw.githubusercontent.com/jrjohansson/numerical-python-book-code/master/european_cities.csv</p>
+<h2><span class="section-number">8.4. </span>Reading a large csv into a dataframe<a class="headerlink" href="#reading-a-large-csv-into-a-dataframe" title="Link to this heading">#</a></h2>
+<p>Download the population for many european cities from the url: <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_cities_in_the_European_Union_by_population_within_city_limits">https://en.wikipedia.org/wiki/List_of_cities_in_the_European_Union_by_population_within_city_limits</a> or directly from <a class="reference external" href="https://raw.githubusercontent.com/jrjohansson/numerical-python-book-code/master/european_cities.csv">https://raw.githubusercontent.com/jrjohansson/numerical-python-book-code/master/european_cities.csv</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -1287,7 +1324,7 @@ memory usage: 4.2+ KB
 </div></div></div>
 </div>
 <section id="processing-info">
-<h3><span class="section-number">5.4.1. </span>Processing info<a class="headerlink" href="#processing-info" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.4.1. </span>Processing info<a class="headerlink" href="#processing-info" title="Link to this heading">#</a></h3>
 <p>Let’s say that you want to have the population as integers. You will need to extract the population , to replace the ‘,’ and to cast the values to integers. You could use the <code class="docutils literal notranslate"><span class="pre">apply</span></code> method to do that</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1645,22 +1682,163 @@ dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;State&quot;</span><span class="p">,</span> <span class="s2">&quot;City&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;State&quot;</span><span class="p">,</span> <span class="s2">&quot;City&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
 <span class="n">df3</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df3</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;State&quot;</span><span class="p">,</span> <span class="s2">&quot;City&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df3</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">TypeError</span>: DataFrame.sort_index() takes 1 positional argument but 2 were given
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Rank</th>
+      <th>Population</th>
+      <th>Date of census/estimate</th>
+      <th>Numeric Population</th>
+    </tr>
+    <tr>
+      <th>State</th>
+      <th>City</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Austria</th>
+      <th>Vienna</th>
+      <td>7</td>
+      <td>1,794,770</td>
+      <td>1 January 2015</td>
+      <td>1794770</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Belgium</th>
+      <th>Antwerp</th>
+      <td>59</td>
+      <td>510,610</td>
+      <td>1 January 2014</td>
+      <td>510610</td>
+    </tr>
+    <tr>
+      <th>Brussels[17]</th>
+      <td>16</td>
+      <td>1,175,831</td>
+      <td>1 January 2014</td>
+      <td>1175831</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">Bulgaria</th>
+      <th>Plovdiv</th>
+      <td>84</td>
+      <td>341,041</td>
+      <td>31 December 2013</td>
+      <td>341041</td>
+    </tr>
+    <tr>
+      <th>Sofia</th>
+      <td>14</td>
+      <td>1,291,895</td>
+      <td>14 December 2014</td>
+      <td>1291895</td>
+    </tr>
+    <tr>
+      <th>Varna</th>
+      <td>85</td>
+      <td>335,819</td>
+      <td>31 December 2013</td>
+      <td>335819</td>
+    </tr>
+    <tr>
+      <th>Croatia</th>
+      <th>Zagreb</th>
+      <td>24</td>
+      <td>790,017</td>
+      <td>31 March 2011</td>
+      <td>790017</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Czech Republic</th>
+      <th>Brno</th>
+      <td>76</td>
+      <td>378,327</td>
+      <td>1 January 2013</td>
+      <td>378327</td>
+    </tr>
+    <tr>
+      <th>Prague</th>
+      <td>15</td>
+      <td>1,246,780</td>
+      <td>1 January 2013</td>
+      <td>1246780</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Denmark</th>
+      <th>Aarhus</th>
+      <td>92</td>
+      <td>326,676</td>
+      <td>1 October 2014</td>
+      <td>326676</td>
+    </tr>
+    <tr>
+      <th>Copenhagen</th>
+      <td>45</td>
+      <td>559,440</td>
+      <td>1 January 2013</td>
+      <td>559440</td>
+    </tr>
+    <tr>
+      <th>Estonia</th>
+      <th>Tallinn</th>
+      <td>68</td>
+      <td>434,810</td>
+      <td>1 February 2015</td>
+      <td>434810</td>
+    </tr>
+    <tr>
+      <th>Finland</th>
+      <th>Helsinki</th>
+      <td>38</td>
+      <td>605,523</td>
+      <td>28 February 2013</td>
+      <td>605523</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">France</th>
+      <th>Lyon</th>
+      <td>63</td>
+      <td>484,344</td>
+      <td>31 December 2010</td>
+      <td>484344</td>
+    </tr>
+    <tr>
+      <th>Marseille</th>
+      <td>22</td>
+      <td>852,516</td>
+      <td>31 December 2012</td>
+      <td>852516</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1668,6 +1846,63 @@ dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Rank</th>
+      <th>Population</th>
+      <th>Date of census/estimate</th>
+      <th>Numeric Population</th>
+    </tr>
+    <tr>
+      <th>City</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Gothenburg</th>
+      <td>53</td>
+      <td>528,014</td>
+      <td>31 March 2013</td>
+      <td>528014</td>
+    </tr>
+    <tr>
+      <th>Malmö</th>
+      <td>102</td>
+      <td>309,105</td>
+      <td>31 March 2013</td>
+      <td>309105</td>
+    </tr>
+    <tr>
+      <th>Stockholm</th>
+      <td>20</td>
+      <td>909,976</td>
+      <td>31 January 2014</td>
+      <td>909976</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1675,6 +1910,63 @@ dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Rank</th>
+      <th>Population</th>
+      <th>Date of census/estimate</th>
+      <th>Numeric Population</th>
+    </tr>
+    <tr>
+      <th>City</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Malmö</th>
+      <td>102</td>
+      <td>309,105</td>
+      <td>31 March 2013</td>
+      <td>309105</td>
+    </tr>
+    <tr>
+      <th>Gothenburg</th>
+      <td>53</td>
+      <td>528,014</td>
+      <td>31 March 2013</td>
+      <td>528014</td>
+    </tr>
+    <tr>
+      <th>Stockholm</th>
+      <td>20</td>
+      <td>909,976</td>
+      <td>31 January 2014</td>
+      <td>909976</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>You can count the categorical data:</p>
 <div class="cell docutils container">
@@ -1683,11 +1975,158 @@ dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Rank</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Population</th>
+      <th>Date of census/estimate</th>
+      <th>Numeric Population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>London[2]</td>
+      <td>United Kingdom</td>
+      <td>8,615,246</td>
+      <td>1 June 2014</td>
+      <td>8615246</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Berlin</td>
+      <td>Germany</td>
+      <td>3,437,916</td>
+      <td>31 May 2014</td>
+      <td>3437916</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Madrid</td>
+      <td>Spain</td>
+      <td>3,165,235</td>
+      <td>1 January 2014</td>
+      <td>3165235</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Rome</td>
+      <td>Italy</td>
+      <td>2,872,086</td>
+      <td>30 September 2014</td>
+      <td>2872086</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Paris</td>
+      <td>France</td>
+      <td>2,273,305</td>
+      <td>1 January 2013</td>
+      <td>2273305</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>101</td>
+      <td>Bonn</td>
+      <td>Germany</td>
+      <td>309,869</td>
+      <td>31 December 2012</td>
+      <td>309869</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>102</td>
+      <td>Malmö</td>
+      <td>Sweden</td>
+      <td>309,105</td>
+      <td>31 March 2013</td>
+      <td>309105</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>103</td>
+      <td>Nottingham</td>
+      <td>United Kingdom</td>
+      <td>308,735</td>
+      <td>30 June 2012</td>
+      <td>308735</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>104</td>
+      <td>Katowice</td>
+      <td>Poland</td>
+      <td>308,269</td>
+      <td>30 June 2012</td>
+      <td>308269</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>105</td>
+      <td>Kaunas</td>
+      <td>Lithuania</td>
+      <td>306,888</td>
+      <td>1 January 2013</td>
+      <td>306888</td>
+    </tr>
+  </tbody>
+</table>
+<p>105 rows × 6 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">city_counts</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">State</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 <span class="n">city_counts</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>State
+Germany           19
+United Kingdom    16
+Spain             13
+Italy             10
+Poland            10
+France             5
+Netherlands        4
+Romania            3
+Sweden             3
+Bulgaria           3
+Name: count, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -1697,11 +2136,81 @@ dtype: object
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># extract the data indexed by state abd city</span>
 <span class="n">dfaux</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;State&quot;</span><span class="p">,</span> <span class="s2">&quot;City&quot;</span><span class="p">,</span> <span class="s2">&quot;Numeric Population&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;State&quot;</span><span class="p">,</span> <span class="s2">&quot;City&quot;</span><span class="p">])</span>
-<span class="n">dfaux</span> <span class="o">=</span> <span class="n">dfaux</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;State&quot;</span><span class="p">)</span>
+<span class="n">dfaux</span> <span class="o">=</span> <span class="n">dfaux</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;State&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="n">dfaux</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Numeric Population</th>
+    </tr>
+    <tr>
+      <th>State</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Austria</th>
+      <td>1794770</td>
+    </tr>
+    <tr>
+      <th>Belgium</th>
+      <td>1686441</td>
+    </tr>
+    <tr>
+      <th>Bulgaria</th>
+      <td>1968755</td>
+    </tr>
+    <tr>
+      <th>Croatia</th>
+      <td>790017</td>
+    </tr>
+    <tr>
+      <th>Czech Republic</th>
+      <td>1625107</td>
+    </tr>
+    <tr>
+      <th>Denmark</th>
+      <td>886116</td>
+    </tr>
+    <tr>
+      <th>Estonia</th>
+      <td>434810</td>
+    </tr>
+    <tr>
+      <th>Finland</th>
+      <td>605523</td>
+    </tr>
+    <tr>
+      <th>France</th>
+      <td>4395271</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>15119548</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1711,6 +2220,84 @@ dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Rank</th>
+      <th>City</th>
+      <th>Population</th>
+      <th>Date of census/estimate</th>
+      <th>Numeric Population</th>
+    </tr>
+    <tr>
+      <th>State</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>United Kingdom</th>
+      <td>989</td>
+      <td>London[2]BirminghamLeedsGlasgowSheffieldBradfo...</td>
+      <td>8,615,2461,092,330757,655596,550557,382524,619...</td>
+      <td>1 June 201430 June 201330 June 201231 December...</td>
+      <td>16011877</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>918</td>
+      <td>BerlinHamburg[10]MunichCologneFrankfurtStuttga...</td>
+      <td>3,437,9161,746,3421,407,8361,034,175701,350604...</td>
+      <td>31 May 201430 December 201331 December 201331 ...</td>
+      <td>15119548</td>
+    </tr>
+    <tr>
+      <th>Spain</th>
+      <td>714</td>
+      <td>MadridBarcelonaValenciaSevilleZaragozaMálagaMu...</td>
+      <td>3,165,2351,602,386786,424696,676666,058566,913...</td>
+      <td>1 January 20141 January 20141 January 20141 Ja...</td>
+      <td>10041639</td>
+    </tr>
+    <tr>
+      <th>Italy</th>
+      <td>472</td>
+      <td>RomeMilanNaplesTurinPalermoGenoaBolognaFlorenc...</td>
+      <td>2,872,0861,332,516989,845898,095677,015594,774...</td>
+      <td>30 September 201430 September 201430 September...</td>
+      <td>8764067</td>
+    </tr>
+    <tr>
+      <th>Poland</th>
+      <td>545</td>
+      <td>WarsawKrakówŁódźWrocławPoznańGdańskSzczecinByd...</td>
+      <td>1,729,119760,700709,757632,432547,161460,35440...</td>
+      <td>31 March 201431 March 201431 March 201431 Marc...</td>
+      <td>6267409</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1718,6 +2305,77 @@ dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>City</th>
+      <th>Population</th>
+      <th>Date of census/estimate</th>
+      <th>Numeric Population</th>
+    </tr>
+    <tr>
+      <th>State</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>United Kingdom</th>
+      <td>London[2]BirminghamLeedsGlasgowSheffieldBradfo...</td>
+      <td>8,615,2461,092,330757,655596,550557,382524,619...</td>
+      <td>1 June 201430 June 201330 June 201231 December...</td>
+      <td>16011877</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>BerlinHamburg[10]MunichCologneFrankfurtStuttga...</td>
+      <td>3,437,9161,746,3421,407,8361,034,175701,350604...</td>
+      <td>31 May 201430 December 201331 December 201331 ...</td>
+      <td>15119548</td>
+    </tr>
+    <tr>
+      <th>Spain</th>
+      <td>MadridBarcelonaValenciaSevilleZaragozaMálagaMu...</td>
+      <td>3,165,2351,602,386786,424696,676666,058566,913...</td>
+      <td>1 January 20141 January 20141 January 20141 Ja...</td>
+      <td>10041639</td>
+    </tr>
+    <tr>
+      <th>Italy</th>
+      <td>RomeMilanNaplesTurinPalermoGenoaBolognaFlorenc...</td>
+      <td>2,872,0861,332,516989,845898,095677,015594,774...</td>
+      <td>30 September 201430 September 201430 September...</td>
+      <td>8764067</td>
+    </tr>
+    <tr>
+      <th>Poland</th>
+      <td>WarsawKrakówŁódźWrocławPoznańGdańskSzczecinByd...</td>
+      <td>1,729,119760,700709,757632,432547,161460,35440...</td>
+      <td>31 March 201431 March 201431 March 201431 Marc...</td>
+      <td>6267409</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>We can also plot</p>
 <div class="cell docutils container">
@@ -1726,6 +2384,236 @@ dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Rank</th>
+      <th>City</th>
+      <th>Population</th>
+      <th>Date of census/estimate</th>
+      <th>Numeric Population</th>
+    </tr>
+    <tr>
+      <th>State</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>United Kingdom</th>
+      <td>989</td>
+      <td>London[2]BirminghamLeedsGlasgowSheffieldBradfo...</td>
+      <td>8,615,2461,092,330757,655596,550557,382524,619...</td>
+      <td>1 June 201430 June 201330 June 201231 December...</td>
+      <td>16011877</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>918</td>
+      <td>BerlinHamburg[10]MunichCologneFrankfurtStuttga...</td>
+      <td>3,437,9161,746,3421,407,8361,034,175701,350604...</td>
+      <td>31 May 201430 December 201331 December 201331 ...</td>
+      <td>15119548</td>
+    </tr>
+    <tr>
+      <th>Spain</th>
+      <td>714</td>
+      <td>MadridBarcelonaValenciaSevilleZaragozaMálagaMu...</td>
+      <td>3,165,2351,602,386786,424696,676666,058566,913...</td>
+      <td>1 January 20141 January 20141 January 20141 Ja...</td>
+      <td>10041639</td>
+    </tr>
+    <tr>
+      <th>Italy</th>
+      <td>472</td>
+      <td>RomeMilanNaplesTurinPalermoGenoaBolognaFlorenc...</td>
+      <td>2,872,0861,332,516989,845898,095677,015594,774...</td>
+      <td>30 September 201430 September 201430 September...</td>
+      <td>8764067</td>
+    </tr>
+    <tr>
+      <th>Poland</th>
+      <td>545</td>
+      <td>WarsawKrakówŁódźWrocławPoznańGdańskSzczecinByd...</td>
+      <td>1,729,119760,700709,757632,432547,161460,35440...</td>
+      <td>31 March 201431 March 201431 March 201431 Marc...</td>
+      <td>6267409</td>
+    </tr>
+    <tr>
+      <th>France</th>
+      <td>238</td>
+      <td>ParisMarseilleLyonToulouseNice</td>
+      <td>2,273,305852,516484,344441,802343,304</td>
+      <td>1 January 201331 December 201231 December 2010...</td>
+      <td>4395271</td>
+    </tr>
+    <tr>
+      <th>Romania</th>
+      <td>197</td>
+      <td>BucharestCluj-NapocaTimișoara</td>
+      <td>1,883,425324,576319,279</td>
+      <td>20 October 201120 October 201120 October 2011</td>
+      <td>2527280</td>
+    </tr>
+    <tr>
+      <th>Netherlands</th>
+      <td>205</td>
+      <td>AmsterdamRotterdamThe HagueUtrecht</td>
+      <td>813,562616,528510,909330,772</td>
+      <td>31 May 201431 January 20131 May 20141 May 2014</td>
+      <td>2271771</td>
+    </tr>
+    <tr>
+      <th>Bulgaria</th>
+      <td>183</td>
+      <td>SofiaPlovdivVarna</td>
+      <td>1,291,895341,041335,819</td>
+      <td>14 December 201431 December 201331 December 2013</td>
+      <td>1968755</td>
+    </tr>
+    <tr>
+      <th>Austria</th>
+      <td>7</td>
+      <td>Vienna</td>
+      <td>1,794,770</td>
+      <td>1 January 2015</td>
+      <td>1794770</td>
+    </tr>
+    <tr>
+      <th>Sweden</th>
+      <td>175</td>
+      <td>StockholmGothenburgMalmö</td>
+      <td>909,976528,014309,105</td>
+      <td>31 January 201431 March 201331 March 2013</td>
+      <td>1747095</td>
+    </tr>
+    <tr>
+      <th>Hungary</th>
+      <td>9</td>
+      <td>Budapest</td>
+      <td>1,744,665</td>
+      <td>1 January 2014</td>
+      <td>1744665</td>
+    </tr>
+    <tr>
+      <th>Belgium</th>
+      <td>75</td>
+      <td>Brussels[17]Antwerp</td>
+      <td>1,175,831510,610</td>
+      <td>1 January 20141 January 2014</td>
+      <td>1686441</td>
+    </tr>
+    <tr>
+      <th>Czech Republic</th>
+      <td>91</td>
+      <td>PragueBrno</td>
+      <td>1,246,780378,327</td>
+      <td>1 January 20131 January 2013</td>
+      <td>1625107</td>
+    </tr>
+    <tr>
+      <th>Greece</th>
+      <td>130</td>
+      <td>AthensThessaloniki</td>
+      <td>664,046322,240</td>
+      <td>24 May 201124 May 2011</td>
+      <td>986286</td>
+    </tr>
+    <tr>
+      <th>Denmark</th>
+      <td>137</td>
+      <td>CopenhagenAarhus</td>
+      <td>559,440326,676</td>
+      <td>1 January 20131 October 2014</td>
+      <td>886116</td>
+    </tr>
+    <tr>
+      <th>Lithuania</th>
+      <td>155</td>
+      <td>VilniusKaunas</td>
+      <td>537,152306,888</td>
+      <td>1 January 20131 January 2013</td>
+      <td>844040</td>
+    </tr>
+    <tr>
+      <th>Croatia</th>
+      <td>24</td>
+      <td>Zagreb</td>
+      <td>790,017</td>
+      <td>31 March 2011</td>
+      <td>790017</td>
+    </tr>
+    <tr>
+      <th>Latvia</th>
+      <td>30</td>
+      <td>Riga</td>
+      <td>701,185</td>
+      <td>1 January 2014</td>
+      <td>701185</td>
+    </tr>
+    <tr>
+      <th>Finland</th>
+      <td>38</td>
+      <td>Helsinki</td>
+      <td>605,523</td>
+      <td>28 February 2013</td>
+      <td>605523</td>
+    </tr>
+    <tr>
+      <th>Portugal</th>
+      <td>47</td>
+      <td>Lisbon</td>
+      <td>547,631</td>
+      <td>1 January 2011</td>
+      <td>547631</td>
+    </tr>
+    <tr>
+      <th>Ireland</th>
+      <td>54</td>
+      <td>Dublin</td>
+      <td>527,612</td>
+      <td>10 April 2011</td>
+      <td>527612</td>
+    </tr>
+    <tr>
+      <th>Estonia</th>
+      <td>68</td>
+      <td>Tallinn</td>
+      <td>434,810</td>
+      <td>1 February 2015</td>
+      <td>434810</td>
+    </tr>
+    <tr>
+      <th>Slovakia Slovak Republic</th>
+      <td>70</td>
+      <td>Bratislava</td>
+      <td>417,389</td>
+      <td>31 December 2013</td>
+      <td>417389</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1737,11 +2625,34 @@ dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Total pop. in top 105 cities&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/4ad328ea9f92c38ba40296008643b62665b724309673a41ed5aecdd8bc62340c.png" src="../../_images/4ad328ea9f92c38ba40296008643b62665b724309673a41ed5aecdd8bc62340c.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#print(df.State == &quot;France&quot;)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">State</span> <span class="o">==</span> <span class="s2">&quot;France&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rank       City   State Population Date of census/estimate  \
+4      5      Paris  France  2,273,305          1 January 2013   
+21    22  Marseille  France    852,516        31 December 2012   
+62    63       Lyon  France    484,344        31 December 2010   
+65    66   Toulouse  France    441,802        31 December 2010   
+81    82       Nice  France    343,304        31 December 2010   
+
+    Numeric Population  
+4              2273305  
+21              852516  
+62              484344  
+65              441802  
+81              343304  
 </pre></div>
 </div>
 </div>
@@ -1754,10 +2665,140 @@ dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2443/314900803.py:3: FutureWarning: The provided callable &lt;function sum at 0x7f8eb8389b20&gt; is currently using DataFrameGroupBy.sum. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;sum&quot; instead.
+  df.pivot_table(values=&quot;Numeric Population&quot;, index=[&quot;State&quot;], aggfunc=np.sum)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Numeric Population</th>
+    </tr>
+    <tr>
+      <th>State</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Austria</th>
+      <td>1794770</td>
+    </tr>
+    <tr>
+      <th>Belgium</th>
+      <td>1686441</td>
+    </tr>
+    <tr>
+      <th>Bulgaria</th>
+      <td>1968755</td>
+    </tr>
+    <tr>
+      <th>Croatia</th>
+      <td>790017</td>
+    </tr>
+    <tr>
+      <th>Czech Republic</th>
+      <td>1625107</td>
+    </tr>
+    <tr>
+      <th>Denmark</th>
+      <td>886116</td>
+    </tr>
+    <tr>
+      <th>Estonia</th>
+      <td>434810</td>
+    </tr>
+    <tr>
+      <th>Finland</th>
+      <td>605523</td>
+    </tr>
+    <tr>
+      <th>France</th>
+      <td>4395271</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>15119548</td>
+    </tr>
+    <tr>
+      <th>Greece</th>
+      <td>986286</td>
+    </tr>
+    <tr>
+      <th>Hungary</th>
+      <td>1744665</td>
+    </tr>
+    <tr>
+      <th>Ireland</th>
+      <td>527612</td>
+    </tr>
+    <tr>
+      <th>Italy</th>
+      <td>8764067</td>
+    </tr>
+    <tr>
+      <th>Latvia</th>
+      <td>701185</td>
+    </tr>
+    <tr>
+      <th>Lithuania</th>
+      <td>844040</td>
+    </tr>
+    <tr>
+      <th>Netherlands</th>
+      <td>2271771</td>
+    </tr>
+    <tr>
+      <th>Poland</th>
+      <td>6267409</td>
+    </tr>
+    <tr>
+      <th>Portugal</th>
+      <td>547631</td>
+    </tr>
+    <tr>
+      <th>Romania</th>
+      <td>2527280</td>
+    </tr>
+    <tr>
+      <th>Slovakia Slovak Republic</th>
+      <td>417389</td>
+    </tr>
+    <tr>
+      <th>Spain</th>
+      <td>10041639</td>
+    </tr>
+    <tr>
+      <th>Sweden</th>
+      <td>1747095</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>16011877</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="date-series-and-data-frames">
-<h3><span class="section-number">5.4.2. </span>Date series and data frames<a class="headerlink" href="#date-series-and-data-frames" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.4.2. </span>Date series and data frames<a class="headerlink" href="#date-series-and-data-frames" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;20130101&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
@@ -1767,6 +2808,82 @@ dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2013-01-01&#39;, &#39;2013-01-02&#39;, &#39;2013-01-03&#39;, &#39;2013-01-04&#39;,
+               &#39;2013-01-05&#39;, &#39;2013-01-06&#39;],
+              dtype=&#39;datetime64[ns]&#39;, freq=&#39;D&#39;)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-01</th>
+      <td>-1.416055</td>
+      <td>-1.047066</td>
+      <td>0.509691</td>
+      <td>-0.708385</td>
+    </tr>
+    <tr>
+      <th>2013-01-02</th>
+      <td>-0.711623</td>
+      <td>-0.845034</td>
+      <td>0.195303</td>
+      <td>0.754116</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>0.040386</td>
+      <td>1.693990</td>
+      <td>-0.597813</td>
+      <td>-0.565638</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>0.383107</td>
+      <td>0.373967</td>
+      <td>1.358978</td>
+      <td>0.446946</td>
+    </tr>
+    <tr>
+      <th>2013-01-05</th>
+      <td>0.235633</td>
+      <td>-2.583263</td>
+      <td>-0.162017</td>
+      <td>-0.437162</td>
+    </tr>
+    <tr>
+      <th>2013-01-06</th>
+      <td>1.964308</td>
+      <td>0.120868</td>
+      <td>-1.004381</td>
+      <td>0.558172</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1774,6 +2891,77 @@ dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>D</th>
+      <th>C</th>
+      <th>B</th>
+      <th>A</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-01</th>
+      <td>-0.708385</td>
+      <td>0.509691</td>
+      <td>-1.047066</td>
+      <td>-1.416055</td>
+    </tr>
+    <tr>
+      <th>2013-01-02</th>
+      <td>0.754116</td>
+      <td>0.195303</td>
+      <td>-0.845034</td>
+      <td>-0.711623</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>-0.565638</td>
+      <td>-0.597813</td>
+      <td>1.693990</td>
+      <td>0.040386</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>0.446946</td>
+      <td>1.358978</td>
+      <td>0.373967</td>
+      <td>0.383107</td>
+    </tr>
+    <tr>
+      <th>2013-01-05</th>
+      <td>-0.437162</td>
+      <td>-0.162017</td>
+      <td>-2.583263</td>
+      <td>0.235633</td>
+    </tr>
+    <tr>
+      <th>2013-01-06</th>
+      <td>0.558172</td>
+      <td>-1.004381</td>
+      <td>0.120868</td>
+      <td>1.964308</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1781,10 +2969,92 @@ dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-01</th>
+      <td>-1.416055</td>
+      <td>-1.047066</td>
+      <td>0.509691</td>
+      <td>-0.708385</td>
+    </tr>
+    <tr>
+      <th>2013-01-02</th>
+      <td>-0.711623</td>
+      <td>-0.845034</td>
+      <td>0.195303</td>
+      <td>0.754116</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>0.040386</td>
+      <td>1.693990</td>
+      <td>-0.597813</td>
+      <td>-0.565638</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>0.383107</td>
+      <td>0.373967</td>
+      <td>1.358978</td>
+      <td>0.446946</td>
+    </tr>
+    <tr>
+      <th>2013-01-05</th>
+      <td>0.235633</td>
+      <td>-2.583263</td>
+      <td>-0.162017</td>
+      <td>-0.437162</td>
+    </tr>
+    <tr>
+      <th>2013-01-06</th>
+      <td>1.964308</td>
+      <td>0.120868</td>
+      <td>-1.004381</td>
+      <td>0.558172</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2013-01-01    False
+2013-01-02    False
+2013-01-03     True
+2013-01-04     True
+2013-01-05     True
+2013-01-06     True
+Freq: D, Name: A, dtype: bool
 </pre></div>
 </div>
 </div>
@@ -1795,6 +3065,63 @@ dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-03</th>
+      <td>0.040386</td>
+      <td>1.693990</td>
+      <td>-0.597813</td>
+      <td>-0.565638</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>0.383107</td>
+      <td>0.373967</td>
+      <td>1.358978</td>
+      <td>0.446946</td>
+    </tr>
+    <tr>
+      <th>2013-01-05</th>
+      <td>0.235633</td>
+      <td>-2.583263</td>
+      <td>-0.162017</td>
+      <td>-0.437162</td>
+    </tr>
+    <tr>
+      <th>2013-01-06</th>
+      <td>1.964308</td>
+      <td>0.120868</td>
+      <td>-1.004381</td>
+      <td>0.558172</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1802,6 +3129,77 @@ dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-01</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.509691</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2013-01-02</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.195303</td>
+      <td>0.754116</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>0.040386</td>
+      <td>1.693990</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>0.383107</td>
+      <td>0.373967</td>
+      <td>1.358978</td>
+      <td>0.446946</td>
+    </tr>
+    <tr>
+      <th>2013-01-05</th>
+      <td>0.235633</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2013-01-06</th>
+      <td>1.964308</td>
+      <td>0.120868</td>
+      <td>NaN</td>
+      <td>0.558172</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1809,6 +3207,77 @@ dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-01</th>
+      <td>5.000000</td>
+      <td>5.000000</td>
+      <td>0.509691</td>
+      <td>5.000000</td>
+    </tr>
+    <tr>
+      <th>2013-01-02</th>
+      <td>5.000000</td>
+      <td>5.000000</td>
+      <td>0.195303</td>
+      <td>0.754116</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>0.040386</td>
+      <td>1.693990</td>
+      <td>5.000000</td>
+      <td>5.000000</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>0.383107</td>
+      <td>0.373967</td>
+      <td>1.358978</td>
+      <td>0.446946</td>
+    </tr>
+    <tr>
+      <th>2013-01-05</th>
+      <td>0.235633</td>
+      <td>5.000000</td>
+      <td>5.000000</td>
+      <td>5.000000</td>
+    </tr>
+    <tr>
+      <th>2013-01-06</th>
+      <td>1.964308</td>
+      <td>0.120868</td>
+      <td>5.000000</td>
+      <td>0.558172</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1821,10 +3290,10 @@ dtype: object
 </section>
 </section>
 <section id="exercises">
-<h2><span class="section-number">5.5. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
-<p>From : https://www.w3resource.com/python-exercises/pandas/index.php , https://github.com/ajcr/100-pandas-puzzles/blob/master/100-pandas-puzzles.ipynb , https://github.com/guipsamora/pandas_exercises</p>
+<h2><span class="section-number">8.5. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<p>From : <a class="reference external" href="https://www.w3resource.com/python-exercises/pandas/index.php">https://www.w3resource.com/python-exercises/pandas/index.php</a> , <a class="github reference external" href="https://github.com/ajcr/100-pandas-puzzles/blob/master/100-pandas-puzzles.ipynb">ajcr/100-pandas-puzzles</a> , <a class="github reference external" href="https://github.com/guipsamora/pandas_exercises">guipsamora/pandas_exercises</a></p>
 <section id="processing-a-simple-dataframe">
-<h3><span class="section-number">5.5.1. </span>Processing a simple dataframe<a class="headerlink" href="#processing-a-simple-dataframe" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.5.1. </span>Processing a simple dataframe<a class="headerlink" href="#processing-a-simple-dataframe" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Write a Python program to create and display a DataFrame from a specified dictionary data which has the index labels.</p>
 <ul class="simple">
@@ -1844,30 +3313,30 @@ dtype: object
 </ol>
 </section>
 <section id="solving-some-exercises">
-<h3><span class="section-number">5.5.2. </span>Solving some exercises<a class="headerlink" href="#solving-some-exercises" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.5.2. </span>Solving some exercises<a class="headerlink" href="#solving-some-exercises" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Solve the even exercises on https://github.com/ajcr/100-pandas-puzzles/blob/master/100-pandas-puzzles.ipynb</p></li>
+<li><p>Solve the even exercises on <a class="github reference external" href="https://github.com/ajcr/100-pandas-puzzles/blob/master/100-pandas-puzzles.ipynb">ajcr/100-pandas-puzzles</a></p></li>
 </ol>
 </section>
 <section id="processing-covid19-data">
-<h3><span class="section-number">5.5.3. </span>Processing covid19 data<a class="headerlink" href="#processing-covid19-data" title="Link to this heading">#</a></h3>
-<p>Source: https://github.com/CSSEGISandData/COVID-19</p>
+<h3><span class="section-number">8.5.3. </span>Processing covid19 data<a class="headerlink" href="#processing-covid19-data" title="Link to this heading">#</a></h3>
+<p>Source: <a class="github reference external" href="https://github.com/CSSEGISandData/COVID-19">CSSEGISandData/COVID-19</a></p>
 </section>
 </section>
 <section id="practice">
-<h2><span class="section-number">5.6. </span>Practice<a class="headerlink" href="#practice" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.6. </span>Practice<a class="headerlink" href="#practice" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>The Colombian government offers public dataset regarding its functioning, at the webpage https://www.datos.gov.co/. As an example, we will get the budget info from Cali, and extract the departments with budget execution smaller than 90%. REF: https://www.datos.gov.co/dataset/Ejecuci-n-Presupuestal-de-Gastos-por-Organismos-a-/qiu9-tp3c</p></li>
+<li><p>The Colombian government offers public dataset regarding its functioning, at the webpage <a class="reference external" href="https://www.datos.gov.co/">https://www.datos.gov.co/</a>. As an example, we will get the budget info from Cali, and extract the departments with budget execution smaller than 90%. REF: <a class="reference external" href="https://www.datos.gov.co/dataset/Ejecuci-n-Presupuestal-de-Gastos-por-Organismos-a-/qiu9-tp3c">https://www.datos.gov.co/dataset/Ejecuci-n-Presupuestal-de-Gastos-por-Organismos-a-/qiu9-tp3c</a></p></li>
 </ol>
 <ul class="simple">
-<li><p>Load the data from “http://datos.cali.gov.co/dataset/f7c0d30f-233a-4dbb-bf9e-66d5bf358410/resource/d37f213d-5e5c-4066-bd8f-fc84ca2da0de/download/ejecucion-presupuestal-de-gastos-por-organismos-a-diciembre-31-de-2019.xlsx”</p></li>
+<li><p>Load the data from “<a class="reference external" href="http://datos.cali.gov.co/dataset/f7c0d30f-233a-4dbb-bf9e-66d5bf358410/resource/d37f213d-5e5c-4066-bd8f-fc84ca2da0de/download/ejecucion-presupuestal-de-gastos-por-organismos-a-diciembre-31-de-2019.xlsx">http://datos.cali.gov.co/dataset/f7c0d30f-233a-4dbb-bf9e-66d5bf358410/resource/d37f213d-5e5c-4066-bd8f-fc84ca2da0de/download/ejecucion-presupuestal-de-gastos-por-organismos-a-diciembre-31-de-2019.xlsx</a>”</p></li>
 <li><p>(Data cleaning) As you can see, there are several columns that have spaces on their titles. Remove those spaces for easier indexing. Use the method <code class="docutils literal notranslate"><span class="pre">df.rename</span></code> on one column, then devise a way to do it for all columns.</p></li>
 <li><p>Select the departments with budget execution smaller than 90% and print them.</p></li>
 <li><p>For those departments, compute the ratio between the initial budget and any budget addition.</p></li>
 <li><p>Print this info into an excel file</p></li>
 </ul>
 <ol class="arabic simple" start="2">
-<li><p>Load the gapminder data from “http://bit.ly/2cLzoxH”.</p></li>
+<li><p>Load the gapminder data from “<a class="reference external" href="http://bit.ly/2cLzoxH">http://bit.ly/2cLzoxH</a>”.</p></li>
 </ol>
 <ul class="simple">
 <li><p>Plot the gdppercapita as function of the life expectancy. Is there any correlation?</p></li>
@@ -1884,6 +3353,105 @@ dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>score</th>
+      <th>attempts</th>
+      <th>qualify</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Anastasia</td>
+      <td>12.5</td>
+      <td>1</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Dima</td>
+      <td>9.0</td>
+      <td>3</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Katherine</td>
+      <td>16.5</td>
+      <td>2</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>James</td>
+      <td>NaN</td>
+      <td>3</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Emily</td>
+      <td>9.0</td>
+      <td>2</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Michael</td>
+      <td>20.0</td>
+      <td>3</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Matthew</td>
+      <td>14.5</td>
+      <td>1</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Laura</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Kevin</td>
+      <td>8.0</td>
+      <td>2</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Jonas</td>
+      <td>19.0</td>
+      <td>1</td>
+      <td>yes</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1893,6 +3461,105 @@ dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>score</th>
+      <th>attempts</th>
+      <th>qualify</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>a</th>
+      <td>Anastasia</td>
+      <td>12.5</td>
+      <td>1</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>Dima</td>
+      <td>9.0</td>
+      <td>3</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>c</th>
+      <td>Katherine</td>
+      <td>16.5</td>
+      <td>2</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>d</th>
+      <td>James</td>
+      <td>NaN</td>
+      <td>3</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>e</th>
+      <td>Emily</td>
+      <td>9.0</td>
+      <td>2</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>f</th>
+      <td>Michael</td>
+      <td>20.0</td>
+      <td>3</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>g</th>
+      <td>Matthew</td>
+      <td>14.5</td>
+      <td>1</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>h</th>
+      <td>Laura</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>i</th>
+      <td>Kevin</td>
+      <td>8.0</td>
+      <td>2</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>j</th>
+      <td>Jonas</td>
+      <td>19.0</td>
+      <td>1</td>
+      <td>yes</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1900,6 +3567,83 @@ dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>a</th>
+      <td>Anastasia</td>
+      <td>12.5</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>Dima</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>c</th>
+      <td>Katherine</td>
+      <td>16.5</td>
+    </tr>
+    <tr>
+      <th>d</th>
+      <td>James</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>e</th>
+      <td>Emily</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>f</th>
+      <td>Michael</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>g</th>
+      <td>Matthew</td>
+      <td>14.5</td>
+    </tr>
+    <tr>
+      <th>h</th>
+      <td>Laura</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>i</th>
+      <td>Kevin</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>j</th>
+      <td>Jonas</td>
+      <td>19.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1907,6 +3651,77 @@ dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>score</th>
+      <th>attempts</th>
+      <th>qualify</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>b</th>
+      <td>Dima</td>
+      <td>9.0</td>
+      <td>3</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>c</th>
+      <td>Katherine</td>
+      <td>16.5</td>
+      <td>2</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>d</th>
+      <td>James</td>
+      <td>NaN</td>
+      <td>3</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>e</th>
+      <td>Emily</td>
+      <td>9.0</td>
+      <td>2</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>f</th>
+      <td>Michael</td>
+      <td>20.0</td>
+      <td>3</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>i</th>
+      <td>Kevin</td>
+      <td>8.0</td>
+      <td>2</td>
+      <td>no</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
@@ -1915,7 +3730,7 @@ dtype: object
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "iluvatar1/ML4Sci-lectures",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -1947,7 +3762,7 @@ dtype: object
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Intro Python II: python data structures</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Intro Python II: python data structures</p>
       </div>
     </a>
     <a class="right-next"
@@ -1955,7 +3770,7 @@ dtype: object
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Pandas for data cleaning and analysis</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Pandas for data cleaning and analysis</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1975,21 +3790,21 @@ dtype: object
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-with-pandas">5.1. Starting with pandas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series">5.2. Series</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe">5.3. Dataframe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-a-large-csv-into-a-dataframe">5.4. Reading a large csv into a dataframe</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-info">5.4.1. Processing info</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date-series-and-data-frames">5.4.2. Date series and data frames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-with-pandas">8.1. Starting with pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series">8.2. Series</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe">8.3. Dataframe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-a-large-csv-into-a-dataframe">8.4. Reading a large csv into a dataframe</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-info">8.4.1. Processing info</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date-series-and-data-frames">8.4.2. Date series and data frames</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">5.5. Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-a-simple-dataframe">5.5.1. Processing a simple dataframe</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-some-exercises">5.5.2. Solving some exercises</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-covid19-data">5.5.3. Processing covid19 data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">8.5. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-a-simple-dataframe">8.5.1. Processing a simple dataframe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-some-exercises">8.5.2. Solving some exercises</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-covid19-data">8.5.3. Processing covid19 data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">5.6. Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">8.6. Practice</a></li>
 </ul>
   </nav></div>
 

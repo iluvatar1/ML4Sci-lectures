@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9. What is a Neural Network? &#8212; Introduction to Machine Learning for Science</title>
+    <title>5. Neural Networks Introduction &#8212; Introduction to Machine Learning for Science</title>
   
   
   
@@ -34,6 +34,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster.custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster.bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-shadow.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-punk.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-noir.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-light.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-borderless.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/micromodal.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles.css?v=76e7d31e" />
   
@@ -42,12 +54,18 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
+    <script src="../../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    <script src="../../_static/js/hoverxref.js"></script>
+    <script src="../../_static/js/tooltipster.bundle.min.js"></script>
+    <script src="../../_static/js/micromodal.min.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -64,7 +82,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="8. Linear Regression" href="../04-LinearRegression/LinearRegression.html" />
+    <link rel="next" title="6. Python Programming (very fast) Introduction" href="../01-reviewPython/01-IntroProgrammingPython.html" />
+    <link rel="prev" title="4. Linear Regression" href="../04-LinearRegression/LinearRegression.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,22 +200,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../00-IntroductionCourseML/IntroCourse-MachineLearning.html">1. Introduction to the course and to Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00-TALK-IntroML/IntroMachineLearning.html">2. A fast introduction to Machine Learning</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python review</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">3. Python Programming (very fast) Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">4. Intro Python II: python data structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/pandas-intro.html">5. Pandas Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">6. Pandas for data cleaning and analysis</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supervised learning</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../03-PCA/PCA.html">7. Principal Component Analysis (PCA)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../04-LinearRegression/LinearRegression.html">8. Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-PCA/PCA.html">3. Principal Component Analysis (PCA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-LinearRegression/LinearRegression.html">4. Linear Regression</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Neural Networks</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. What is a Neural Network?</a></li>
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Neural Networks Introduction</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">6. Python Programming (very fast) Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">7. Intro Python II: python data structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/pandas-intro.html">8. Pandas Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">9. Pandas for data cleaning and analysis</a></li>
 </ul>
 
     </div>
@@ -282,6 +300,24 @@
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
 </li>
       
   </ul>
@@ -431,7 +467,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>What is a Neural Network?</h1>
+    <h1>Neural Networks Introduction</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -441,17 +477,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">9. What is a Neural Network?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-playground">9.1. Tensorflow playground</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-neural-network-a-perceptron">10. Simple neural network: A perceptron</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-implementation">10.1. Basic Implementation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-the-training">10.2. Improving the training</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-playground">5.1. Tensorflow playground</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-neural-network-a-perceptron">5.2. Simple neural network: A perceptron</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-implementation">5.2.1. Basic Implementation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-the-training">5.2.2. Improving the training</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -462,8 +494,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="what-is-a-neural-network">
-<h1><span class="section-number">9. </span>What is a Neural Network?<a class="headerlink" href="#what-is-a-neural-network" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="neural-networks-introduction">
+<h1><span class="section-number">5. </span>Neural Networks Introduction<a class="headerlink" href="#neural-networks-introduction" title="Link to this heading">#</a></h1>
 <p>An artificial neural network is a series of algorithms that endeavors to recognize underlying relationships in a set of data through a process that mimics the way the human brain operates.
 In this sense, neural networks refer to systems of neurons, either organic or artificial in nature. Neural networks can adapt to changing input; so the network generates the best possible
 result without needing to redesign the output criteria. In general, neural networks are useful to approximate non-linear, multi-dimensional functions. Or basically functions where we don’t have any info about their functional form just inputs and outputs.
@@ -478,7 +510,7 @@ activation function. The strenghst or weights of the network connections change 
 <p><img alt="Neural network with several layeres (Credit http://alexlenail.me/NN-SVG/index.html)" src="../../_images/nn.svg" /></p>
 <p>The input for each network is computed as
 $<span class="math notranslate nohighlight">\(
-z = b + \sum_i w)i X_i,
+z = b + \sum_i w_i X_i,
 \)</span><span class="math notranslate nohighlight">\(
 where \)</span>b<span class="math notranslate nohighlight">\( is the bias, \)</span>w_i<span class="math notranslate nohighlight">\( are the weights, and \)</span>X_i<span class="math notranslate nohighlight">\( are the outputs of the neurons in the previous layer and connected t =o this one. Then , the output for this neuron is computed aas
 \)</span><span class="math notranslate nohighlight">\(
@@ -495,22 +527,21 @@ where \)</span>f$ is some <a class="reference external" href="https://en.wikiped
 <p>The evolution of the training process is measured in <em>epochs</em> (an iteration, basically).</p>
 <p>These are some recommended tools to get familiar with neural networks:</p>
 <ul class="simple">
-<li><p>A visual introduction: https://www.youtube.com/watch?v=UOvPeC8WOt8</p></li>
-<li><p>But what is a neural network? | Chapter 1, Deep learning: https://www.youtube.com/watch?v=aircAruvnKk</p></li>
-<li><p>Neural netoworks full playlist: https://www.youtube.com/watch?v=aircAruvnKk&amp;list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi</p></li>
-<li><p>Visualization of a fully connected neural network, version 1: https://www.youtube.com/watch?v=Tsvxx-GGlTg</p></li>
-<li><p>Watching Neural Networks Learn: https://www.youtube.com/watch?v=TkwXa7Cvfr8</p></li>
-<li><p>Neural network Visualization: http://alexlenail.me/NN-SVG/index.html</p></li>
+<li><p>A visual introduction: <a class="reference external" href="https://www.youtube.com/watch?v=UOvPeC8WOt8">https://www.youtube.com/watch?v=UOvPeC8WOt8</a></p></li>
+<li><p>But what is a neural network? | Chapter 1, Deep learning: <a class="reference external" href="https://www.youtube.com/watch?v=aircAruvnKk">https://www.youtube.com/watch?v=aircAruvnKk</a></p></li>
+<li><p>Neural netoworks full playlist: <a class="reference external" href="https://www.youtube.com/watch?v=aircAruvnKk&amp;amp;list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi">https://www.youtube.com/watch?v=aircAruvnKk&amp;list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi</a></p></li>
+<li><p>Visualization of a fully connected neural network, version 1: <a class="reference external" href="https://www.youtube.com/watch?v=Tsvxx-GGlTg">https://www.youtube.com/watch?v=Tsvxx-GGlTg</a></p></li>
+<li><p>Watching Neural Networks Learn: <a class="reference external" href="https://www.youtube.com/watch?v=TkwXa7Cvfr8">https://www.youtube.com/watch?v=TkwXa7Cvfr8</a></p></li>
+<li><p>Neural network Visualization: <a class="reference external" href="http://alexlenail.me/NN-SVG/index.html">http://alexlenail.me/NN-SVG/index.html</a></p></li>
 </ul>
 <section id="tensorflow-playground">
-<h2><span class="section-number">9.1. </span>Tensorflow playground<a class="headerlink" href="#tensorflow-playground" title="Link to this heading">#</a></h2>
-<p>Now let’s play a bit with a neural network: https://playground.tensorflow.org</p>
+<h2><span class="section-number">5.1. </span>Tensorflow playground<a class="headerlink" href="#tensorflow-playground" title="Link to this heading">#</a></h2>
+<p>Now let’s play a bit with a neural network: <a class="reference external" href="https://playground.tensorflow.org">https://playground.tensorflow.org</a></p>
 <p><img alt="Neural network with several layeres (Credit http://alexlenail.me/NN-SVG/index.html)" src="../../_images/tensorflow-playground.png" /></p>
 </section>
-</section>
 <section id="simple-neural-network-a-perceptron">
-<h1><span class="section-number">10. </span>Simple neural network: A perceptron<a class="headerlink" href="#simple-neural-network-a-perceptron" title="Link to this heading">#</a></h1>
-<p>Based on https://www.youtube.com/watch?v=kft1AJ9WVDk</p>
+<h2><span class="section-number">5.2. </span>Simple neural network: A perceptron<a class="headerlink" href="#simple-neural-network-a-perceptron" title="Link to this heading">#</a></h2>
+<p>Based on <a class="reference external" href="https://www.youtube.com/watch?v=kft1AJ9WVDk">https://www.youtube.com/watch?v=kft1AJ9WVDk</a></p>
 <p><strong>TODO</strong></p>
 <ul class="simple">
 <li><p>Add bias</p></li>
@@ -533,7 +564,7 @@ where \)</span>f$ is some <a class="reference external" href="https://en.wikiped
 </div>
 </div>
 </div>
-<p>This is the neural network that we are going to use (you can also use http://alexlenail.me/NN-SVG/index.html)</p>
+<p>This is the neural network that we are going to use (you can also use <a class="reference external" href="http://alexlenail.me/NN-SVG/index.html">http://alexlenail.me/NN-SVG/index.html</a>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nnv</span><span class="w"> </span><span class="kn">import</span> <span class="n">NNV</span>
@@ -549,18 +580,8 @@ where \)</span>f$ is some <a class="reference external" href="https://en.wikiped
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">nnv</span><span class="w"> </span><span class="kn">import</span> <span class="n">NNV</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">layersList</span> <span class="o">=</span> <span class="p">[</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;darkBlue&quot;</span><span class="p">},</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;hidden 1</span><span class="se">\n</span><span class="s2">(sigmoid)&quot;</span><span class="p">,</span> <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;edges_color&quot;</span><span class="p">:</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;edges_width&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">},</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;output</span><span class="se">\n</span><span class="s2">(sigmoid)&quot;</span><span class="p">,</span> <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;darkBlue&quot;</span><span class="p">},</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">NNV</span><span class="p">(</span><span class="n">layersList</span><span class="p">)</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;nnv&#39;
+<img alt="../../_images/3ad27c0a904af19d102fcf4b01fc7bfddf4e0c2e46b95dcb7e5fc41d4612f02b.png" src="../../_images/3ad27c0a904af19d102fcf4b01fc7bfddf4e0c2e46b95dcb7e5fc41d4612f02b.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 640x480 with 1 Axes&gt;, &lt;Axes: &gt;)
 </pre></div>
 </div>
 </div>
@@ -595,9 +616,15 @@ where \)</span>x = \sum x_i w_i$.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;sigmoid(x)&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/ddd83d6078031fdd8046bcdebc46edcecc65d35ceecc5671191c60f9b72f97a5.png" src="../../_images/ddd83d6078031fdd8046bcdebc46edcecc65d35ceecc5671191c60f9b72f97a5.png" />
+</div>
 </div>
 <section id="basic-implementation">
-<h2><span class="section-number">10.1. </span>Basic Implementation<a class="headerlink" href="#basic-implementation" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">5.2.1. </span>Basic Implementation<a class="headerlink" href="#basic-implementation" title="Link to this heading">#</a></h3>
 <p>For this very basic nn, we will:</p>
 <ul class="simple">
 <li><p>set the input or start of the algorithm:</p>
@@ -652,6 +679,21 @@ where \)</span>x = \sum x_i w_i$.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 0 1]
+ [1 1 1]
+ [1 0 1]
+ [0 1 1]]
+[[0]
+ [1]
+ [1]
+ [0]]
+[[-0.16595599]
+ [ 0.44064899]
+ [-0.99977125]]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -663,10 +705,24 @@ where \)</span>x = \sum x_i w_i$.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training outputs:
+[[0]
+ [1]
+ [1]
+ [0]]
+Results after one step training:
+[[0.2689864 ]
+ [0.3262757 ]
+ [0.23762817]
+ [0.36375058]]
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="improving-the-training">
-<h2><span class="section-number">10.2. </span>Improving the training<a class="headerlink" href="#improving-the-training" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">5.2.2. </span>Improving the training<a class="headerlink" href="#improving-the-training" title="Link to this heading">#</a></h3>
 <p>These results are not optimal, and depend a lot on the initial weights. Also, we are not yet comparing with the expecting output for the training data. We are now going to include it and add correction terms to the weights, so we will be using back-propagation. Our algorithm is now:</p>
 <ul class="simple">
 <li><p>Take each input from the training data.</p></li>
@@ -731,6 +787,23 @@ where \)</span>x = \sum x_i w_i$.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training outputs:
+[[0]
+ [1]
+ [1]
+ [0]]
+Results after training:
+[[1.44088654e-04]
+ [9.99877867e-01]
+ [9.99918587e-01]
+ [9.60488041e-05]]
+[[18.26087192]
+ [-0.40562037]
+ [-8.84495771]]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -742,6 +815,12 @@ where \)</span>x = \sum x_i w_i$.</p>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Epoch&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Epoch&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/6bb9a4b57f5907903e879503651b81a4b7f1ba474332cab31220daedd22ba267.png" src="../../_images/6bb9a4b57f5907903e879503651b81a4b7f1ba474332cab31220daedd22ba267.png" />
 </div>
 </div>
 <p>It seems that our network is very well trained, But how does it perform with a new input? let’s check with <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">0,</span> <span class="pre">0]</span></code></p>
@@ -757,15 +836,20 @@ where \)</span>x = \sum x_i w_i$.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9999999882671348
+</pre></div>
+</div>
+</div>
 </div>
 <p>Which is basically one, as expected.
 There are more topics related to this that we have not used, like more layers, more neurons per hidden layer, bias on the activation function, and a lot of other details, but hopefully you now see how a neural network works on the core.</p>
 <p>Recommended lectures:</p>
 <ul class="simple">
-<li><p>3blue1brown Neural Networks: https://www.youtube.com/watch?v=aircAruvnKk&amp;list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi</p></li>
-<li><p>Neural networks from scratch: https://www.youtube.com/watch?v=9RN2Wr8xvro</p></li>
-<li><p>Backprop basic: https://www.youtube.com/watch?v=wqPt3qjB6uA</p></li>
-<li><p>https://www.youtube.com/watch?v=khUVIZ3MON8&amp;t=0s</p></li>
+<li><p>3blue1brown Neural Networks: <a class="reference external" href="https://www.youtube.com/watch?v=aircAruvnKk&amp;amp;list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi">https://www.youtube.com/watch?v=aircAruvnKk&amp;list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi</a></p></li>
+<li><p>Neural networks from scratch: <a class="reference external" href="https://www.youtube.com/watch?v=9RN2Wr8xvro">https://www.youtube.com/watch?v=9RN2Wr8xvro</a></p></li>
+<li><p>Backprop basic: <a class="reference external" href="https://www.youtube.com/watch?v=wqPt3qjB6uA">https://www.youtube.com/watch?v=wqPt3qjB6uA</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=khUVIZ3MON8&amp;amp;t=0s">https://www.youtube.com/watch?v=khUVIZ3MON8&amp;t=0s</a></p></li>
 </ul>
 <p>TODO:</p>
 <ul class="simple">
@@ -776,12 +860,13 @@ There are more topics related to this that we have not used, like more layers, m
 </ul>
 </section>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "iluvatar1/ML4Sci-lectures",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -813,8 +898,17 @@ There are more topics related to this that we have not used, like more layers, m
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>Linear Regression</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Linear Regression</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../01-reviewPython/01-IntroProgrammingPython.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Python Programming (very fast) Introduction</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -832,17 +926,13 @@ There are more topics related to this that we have not used, like more layers, m
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">9. What is a Neural Network?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-playground">9.1. Tensorflow playground</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-neural-network-a-perceptron">10. Simple neural network: A perceptron</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-implementation">10.1. Basic Implementation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-the-training">10.2. Improving the training</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-playground">5.1. Tensorflow playground</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-neural-network-a-perceptron">5.2. Simple neural network: A perceptron</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-implementation">5.2.1. Basic Implementation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-the-training">5.2.2. Improving the training</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>
