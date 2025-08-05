@@ -14,6 +14,7 @@ ipython
 seaborn
 jupyter_contrib_nbextensions
 #pulp
+jupyter-bokeh
 bokeh
 #ipyvolume
 #plotly
