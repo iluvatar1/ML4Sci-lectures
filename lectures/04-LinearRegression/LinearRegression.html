@@ -82,7 +82,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5. Neural Networks Introduction" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html" />
+    <link rel="next" title="5. An Introduction to Logistic Regression" href="../05-LogisticRegression/LinearRegression.html" />
     <link rel="prev" title="3. Principal Component Analysis (PCA)" href="../03-PCA/PCA.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -204,17 +204,18 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../03-PCA/PCA.html">3. Principal Component Analysis (PCA)</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-LogisticRegression/LinearRegression.html">5. An Introduction to Logistic Regression</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Neural Networks</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">5. Neural Networks Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">6. Neural Networks Introduction</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">6. Python Programming (very fast) Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">7. Intro Python II: python data structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/pandas-intro.html">8. Pandas Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">9. Pandas for data cleaning and analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">7. Python Programming (very fast) Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">8. Intro Python II: python data structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/pandas-intro.html">9. Pandas Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">10. Pandas for data cleaning and analysis</a></li>
 </ul>
 
     </div>
@@ -702,7 +703,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/6a193387f826f6d4dcea7912363428aa058f5e4f6b5b9c7f8e208cd8d6c6ae50.png" src="../../_images/6a193387f826f6d4dcea7912363428aa058f5e4f6b5b9c7f8e208cd8d6c6ae50.png" />
+<img alt="../../_images/14cda0628b8cf6fa223eb33c6e8317d81ffdec875144967bd46a6cf3ae100be0.png" src="../../_images/14cda0628b8cf6fa223eb33c6e8317d81ffdec875144967bd46a6cf3ae100be0.png" />
 </div>
 </div>
 <section id="the-goal">
@@ -809,7 +810,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/93173eda38f7ba4f4b94ae11e0a004a327f204600172aee952acda67c8d5b5bc.png" src="../../_images/93173eda38f7ba4f4b94ae11e0a004a327f204600172aee952acda67c8d5b5bc.png" />
+<img alt="../../_images/74c72e2ffaacf5d074e6f9b967e30146e5c0a86b59b5d8153396e63bf55f19be.png" src="../../_images/74c72e2ffaacf5d074e6f9b967e30146e5c0a86b59b5d8153396e63bf55f19be.png" />
 </div>
 </div>
 <p>This looks like a good candidate for linear regression! The data points roughly follow a straight line.</p>
@@ -1465,7 +1466,7 @@ The true spring constant was: 4.5 N/m
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5d18c32fd23b6600f40b2017b0ddaa5300073cb5f4f9cd3415866777f23e3431.png" src="../../_images/5d18c32fd23b6600f40b2017b0ddaa5300073cb5f4f9cd3415866777f23e3431.png" />
+<img alt="../../_images/31effcdcf13756f86b8e1cc43323d6dbd6938c60ad8cd025aa3e35c72ff8f8c5.png" src="../../_images/31effcdcf13756f86b8e1cc43323d6dbd6938c60ad8cd025aa3e35c72ff8f8c5.png" />
 </div>
 </div>
 </section>
@@ -1569,7 +1570,7 @@ theta_0=np.float64(1.25), theta_1=np.float64(1.3789473684210527)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fb6c53af49698106d93d7f3beef0ff5242ceb9fcd3542157fc9a756f7df6b7b5.png" src="../../_images/fb6c53af49698106d93d7f3beef0ff5242ceb9fcd3542157fc9a756f7df6b7b5.png" />
+<img alt="../../_images/ec36c669f1b36a05f3ccefe3306b73c0174d37b6370c8483948284c13757e881.png" src="../../_images/ec36c669f1b36a05f3ccefe3306b73c0174d37b6370c8483948284c13757e881.png" />
 </div>
 </div>
 </section>
@@ -1640,14 +1641,14 @@ theta_0=np.float64(1.25), theta_1=np.float64(1.3789473684210527)
 <section id="regularization">
 <h2><span class="section-number">4.5. </span>Regularization<a class="headerlink" href="#regularization" title="Link to this heading">#</a></h2>
 <p>The bias-variance trade-off shows that is important to not go to the extremes when fitting a model. For example, when the model performs well on the training data but does not work well on the test data, we might need to add a <code class="docutils literal notranslate"><span class="pre">regularization</span></code> so penalize the cost function to improve the trade-off. One example is the so-called ridge regularization, where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fdcab4d8-b043-4185-9525-490af5b29099">
-<span class="eqno">(4.1)<a class="headerlink" href="#equation-fdcab4d8-b043-4185-9525-490af5b29099" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b07c2ef0-685d-41bf-b83d-494b80c09722">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-b07c2ef0-685d-41bf-b83d-494b80c09722" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \Delta(\theta) = \frac{1}{2m} \sum_{i=1}^{m} \left( \hat y(x_i) - y_i \right)^2 + \lambda \sum_{j=1}^{n} \theta_j^2,
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is the hyper-regularization parameter. This controls the magnitude of the coefficients preventing overfitting. When <span class="math notranslate nohighlight">\(\lambda\)</span> is large, the parameters <span class="math notranslate nohighlight">\(\theta\)</span> decrease, which shrinks the impact of variables no so correlated with the output. When <span class="math notranslate nohighlight">\(lambda\)</span> decreases, we basically converge to the usual linear regression.</p>
 <p>There are several other regularization techniques, such as lasso regression (L1),</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7b8d063e-7f4b-4684-9c7f-98fbe1ce68dd">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-7b8d063e-7f4b-4684-9c7f-98fbe1ce68dd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bb7c21e0-3964-475c-ab04-ce6ff50ecedf">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-bb7c21e0-3964-475c-ab04-ce6ff50ecedf" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \Delta(\theta) = \frac{1}{2m} \sum_{i=1}^{m} \left( h_\theta(x_i) - y_i \right)^2 + \lambda \sum_{j=1}^{n} |\theta_j|, 
 \end{equation}\]</div>
 <p>Elastic Net regression, where both previous regressions are combines, and so on.</p>
@@ -1673,8 +1674,8 @@ theta_0=np.float64(1.25), theta_1=np.float64(1.3789473684210527)
 <h2><span class="section-number">4.6. </span>Multiple linear regression<a class="headerlink" href="#multiple-linear-regression" title="Link to this heading">#</a></h2>
 <p>REF: <a class="reference external" href="https://www.digitalocean.com/community/tutorials/multiple-linear-regression-python">https://www.digitalocean.com/community/tutorials/multiple-linear-regression-python</a></p>
 <p>Until now, we explore a single variable linear regression. But, in general, we have multiple variables problems. In this case, we want to study a model like</p>
-<div class="amsmath math notranslate nohighlight" id="equation-30e4845c-a577-468e-becd-26ce094b8ea9">
-<span class="eqno">(4.3)<a class="headerlink" href="#equation-30e4845c-a577-468e-becd-26ce094b8ea9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-895f95e3-3371-4f78-984d-56f03416e0d8">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-895f95e3-3371-4f78-984d-56f03416e0d8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n + \epsilon = \vec \beta \cdot \vec V + \epsilon,
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\vec \beta\)</span> are the coefficients we want to optimize, and we have <span class="math notranslate nohighlight">\(n\)</span> “independent” variables.</p>
@@ -1769,7 +1770,7 @@ Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n + \epsilon = \vec
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/8379f67e07bf901175c7e929ba183c51163034d1ead0e2095f8a58654f254848.png" src="../../_images/8379f67e07bf901175c7e929ba183c51163034d1ead0e2095f8a58654f254848.png" />
+<img alt="../../_images/b3cb8d3af31d2772c559863d5190706cb62f65e5d97d6010587508077f52ce22.png" src="../../_images/b3cb8d3af31d2772c559863d5190706cb62f65e5d97d6010587508077f52ce22.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- 1. Correlation with Dependent Variable (y) ---
 We want these values to be high (far from zero).
 y     1.000000
@@ -1894,8 +1895,8 @@ X3 -0.037654 -0.146354  1.000000
 Dep. Variable:                      y   R-squared:                       0.898
 Model:                            OLS   Adj. R-squared:                  0.896
 Method:                 Least Squares   F-statistic:                     428.0
-Date:                Fri, 18 Jul 2025   Prob (F-statistic):           7.45e-49
-Time:                        23:09:17   Log-Likelihood:                -311.60
+Date:                Tue, 05 Aug 2025   Prob (F-statistic):           7.45e-49
+Time:                        15:52:10   Log-Likelihood:                -311.60
 No. Observations:                 100   AIC:                             629.2
 Df Residuals:                      97   BIC:                             637.0
 Df Model:                           2                                         
@@ -1921,7 +1922,7 @@ Notes:
 Checking for Linearity and Homoscedasticity...
 </pre></div>
 </div>
-<img alt="../../_images/c9eface57dceb5422065a0b138361eb73d0fbe31b8ebf8e5fff56f86014fbbe0.png" src="../../_images/c9eface57dceb5422065a0b138361eb73d0fbe31b8ebf8e5fff56f86014fbbe0.png" />
+<img alt="../../_images/d21b39d534ea10bdae8f86837371c0cb5854022903a4ffcb615a685da92e1573.png" src="../../_images/d21b39d534ea10bdae8f86837371c0cb5854022903a4ffcb615a685da92e1573.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Checking for Homoscedasticity (Breusch-Pagan Test)...
 Breusch-Pagan Test p-value: 0.4893
 Result: No evidence of heteroscedasticity (Good).
@@ -1937,7 +1938,7 @@ Result: No significant autocorrelation (Good).
 Checking for Normality of Residuals (Q-Q Plot and Jarque-Bera)...
 </pre></div>
 </div>
-<img alt="../../_images/f54ae2ea0cd9a9ed73f11df31072f9075b7400b34487f27070ad150a67c3aa12.png" src="../../_images/f54ae2ea0cd9a9ed73f11df31072f9075b7400b34487f27070ad150a67c3aa12.png" />
+<img alt="../../_images/3bd26fd0c8a3b8f2e8ebc1fd881f0ff3a1da92d3050ffbeb0996bd1263af58a6.png" src="../../_images/3bd26fd0c8a3b8f2e8ebc1fd881f0ff3a1da92d3050ffbeb0996bd1263af58a6.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jarque-Bera test probability: 2.103
 Result: Residuals appear to be normally distributed (Good).
 
@@ -2058,8 +2059,8 @@ Result: Potential multicollinearity detected (Bad).
 <p class="admonition-title"><span class="caption-number">Exercise 4.8 </span> (Polynomial regression)</p>
 <section id="exercise-content">
 <p>Generate a random set following the model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a85ef530-7b0f-4c1f-9bf3-3d57a2d7dff6">
-<span class="eqno">(4.4)<a class="headerlink" href="#equation-a85ef530-7b0f-4c1f-9bf3-3d57a2d7dff6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8ac46440-5342-4524-9100-ca1c7d56a00a">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-8ac46440-5342-4524-9100-ca1c7d56a00a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = \beta_0 + \beta_1 x_1 + \beta_2 x_1^2 + \epsilon
 \end{equation}\]</div>
 <p>and apply (polynomial) linear regression to get the coefficients.  Check <a class="reference external" href="https://www.geeksforgeeks.org/machine-learning/python-implementation-of-polynomial-regression/">https://www.geeksforgeeks.org/machine-learning/python-implementation-of-polynomial-regression/</a></p>
@@ -2109,11 +2110,11 @@ y = \beta_0 + \beta_1 x_1 + \beta_2 x_1^2 + \epsilon
       </div>
     </a>
     <a class="right-next"
-       href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html"
+       href="../05-LogisticRegression/LinearRegression.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Neural Networks Introduction</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>An Introduction to Logistic Regression</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

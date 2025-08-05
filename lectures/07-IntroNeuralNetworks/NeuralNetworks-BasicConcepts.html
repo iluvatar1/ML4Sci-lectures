@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5. Neural Networks Introduction &#8212; Introduction to Machine Learning for Science</title>
+    <title>6. Neural Networks Introduction &#8212; Introduction to Machine Learning for Science</title>
   
   
   
@@ -82,8 +82,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6. Python Programming (very fast) Introduction" href="../01-reviewPython/01-IntroProgrammingPython.html" />
-    <link rel="prev" title="4. Linear Regression" href="../04-LinearRegression/LinearRegression.html" />
+    <link rel="next" title="7. Python Programming (very fast) Introduction" href="../01-reviewPython/01-IntroProgrammingPython.html" />
+    <link rel="prev" title="5. An Introduction to Logistic Regression" href="../05-LogisticRegression/LinearRegression.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -204,17 +204,18 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../03-PCA/PCA.html">3. Principal Component Analysis (PCA)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04-LinearRegression/LinearRegression.html">4. Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-LogisticRegression/LinearRegression.html">5. An Introduction to Logistic Regression</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Neural Networks</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Neural Networks Introduction</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Neural Networks Introduction</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">6. Python Programming (very fast) Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">7. Intro Python II: python data structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/pandas-intro.html">8. Pandas Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">9. Pandas for data cleaning and analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">7. Python Programming (very fast) Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">8. Intro Python II: python data structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/pandas-intro.html">9. Pandas Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">10. Pandas for data cleaning and analysis</a></li>
 </ul>
 
     </div>
@@ -477,10 +478,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-playground">5.1. Tensorflow playground</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-neural-network-a-perceptron">5.2. Simple neural network: A perceptron</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-implementation">5.2.1. Basic Implementation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-the-training">5.2.2. Improving the training</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-playground">6.1. Tensorflow playground</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-neural-network-a-perceptron">6.2. Simple neural network: A perceptron</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-implementation">6.2.1. Basic Implementation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-the-training">6.2.2. Improving the training</a></li>
 </ul>
 </li>
 </ul>
@@ -495,7 +496,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="neural-networks-introduction">
-<h1><span class="section-number">5. </span>Neural Networks Introduction<a class="headerlink" href="#neural-networks-introduction" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">6. </span>Neural Networks Introduction<a class="headerlink" href="#neural-networks-introduction" title="Link to this heading">#</a></h1>
 <p>An artificial neural network is a series of algorithms that endeavors to recognize underlying relationships in a set of data through a process that mimics the way the human brain operates.
 In this sense, neural networks refer to systems of neurons, either organic or artificial in nature. Neural networks can adapt to changing input; so the network generates the best possible
 result without needing to redesign the output criteria. In general, neural networks are useful to approximate non-linear, multi-dimensional functions. Or basically functions where we don’t have any info about their functional form just inputs and outputs.
@@ -535,12 +536,12 @@ where \)</span>f$ is some <a class="reference external" href="https://en.wikiped
 <li><p>Neural network Visualization: <a class="reference external" href="http://alexlenail.me/NN-SVG/index.html">http://alexlenail.me/NN-SVG/index.html</a></p></li>
 </ul>
 <section id="tensorflow-playground">
-<h2><span class="section-number">5.1. </span>Tensorflow playground<a class="headerlink" href="#tensorflow-playground" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>Tensorflow playground<a class="headerlink" href="#tensorflow-playground" title="Link to this heading">#</a></h2>
 <p>Now let’s play a bit with a neural network: <a class="reference external" href="https://playground.tensorflow.org">https://playground.tensorflow.org</a></p>
 <p><img alt="Neural network with several layeres (Credit http://alexlenail.me/NN-SVG/index.html)" src="../../_images/tensorflow-playground.png" /></p>
 </section>
 <section id="simple-neural-network-a-perceptron">
-<h2><span class="section-number">5.2. </span>Simple neural network: A perceptron<a class="headerlink" href="#simple-neural-network-a-perceptron" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>Simple neural network: A perceptron<a class="headerlink" href="#simple-neural-network-a-perceptron" title="Link to this heading">#</a></h2>
 <p>Based on <a class="reference external" href="https://www.youtube.com/watch?v=kft1AJ9WVDk">https://www.youtube.com/watch?v=kft1AJ9WVDk</a></p>
 <p><strong>TODO</strong></p>
 <ul class="simple">
@@ -558,7 +559,9 @@ where \)</span>f$ is some <a class="reference external" href="https://en.wikiped
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">ERROR: Could not open requirements file: [Errno 2] No such file or directory: &#39;requirements.txt&#39;</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">25.1.1</span> -&gt; <span class=" -Color -Color-Green">25.2</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
+<span class=" -Color -Color-Red">ERROR: Could not open requirements file: [Errno 2] No such file or directory: &#39;requirements.txt&#39;</span>
 
 </pre></div>
 </div>
@@ -580,7 +583,7 @@ where \)</span>f$ is some <a class="reference external" href="https://en.wikiped
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3ad27c0a904af19d102fcf4b01fc7bfddf4e0c2e46b95dcb7e5fc41d4612f02b.png" src="../../_images/3ad27c0a904af19d102fcf4b01fc7bfddf4e0c2e46b95dcb7e5fc41d4612f02b.png" />
+<img alt="../../_images/826c81d3da80766923a1808906d910cc17caf143d5c92480980bc9f7253d47c8.png" src="../../_images/826c81d3da80766923a1808906d910cc17caf143d5c92480980bc9f7253d47c8.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 640x480 with 1 Axes&gt;, &lt;Axes: &gt;)
 </pre></div>
 </div>
@@ -620,11 +623,11 @@ where \)</span>x = \sum x_i w_i$.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;sigmoid(x)&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/ddd83d6078031fdd8046bcdebc46edcecc65d35ceecc5671191c60f9b72f97a5.png" src="../../_images/ddd83d6078031fdd8046bcdebc46edcecc65d35ceecc5671191c60f9b72f97a5.png" />
+<img alt="../../_images/0e013cf8350e39ec6fcf12771e77067e033e6007bb896a6bf307b18001e99bb4.png" src="../../_images/0e013cf8350e39ec6fcf12771e77067e033e6007bb896a6bf307b18001e99bb4.png" />
 </div>
 </div>
 <section id="basic-implementation">
-<h3><span class="section-number">5.2.1. </span>Basic Implementation<a class="headerlink" href="#basic-implementation" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.1. </span>Basic Implementation<a class="headerlink" href="#basic-implementation" title="Link to this heading">#</a></h3>
 <p>For this very basic nn, we will:</p>
 <ul class="simple">
 <li><p>set the input or start of the algorithm:</p>
@@ -722,7 +725,7 @@ Results after one step training:
 </div>
 </section>
 <section id="improving-the-training">
-<h3><span class="section-number">5.2.2. </span>Improving the training<a class="headerlink" href="#improving-the-training" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.2. </span>Improving the training<a class="headerlink" href="#improving-the-training" title="Link to this heading">#</a></h3>
 <p>These results are not optimal, and depend a lot on the initial weights. Also, we are not yet comparing with the expecting output for the training data. We are now going to include it and add correction terms to the weights, so we will be using back-propagation. Our algorithm is now:</p>
 <ul class="simple">
 <li><p>Take each input from the training data.</p></li>
@@ -820,7 +823,7 @@ Results after training:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Epoch&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/6bb9a4b57f5907903e879503651b81a4b7f1ba474332cab31220daedd22ba267.png" src="../../_images/6bb9a4b57f5907903e879503651b81a4b7f1ba474332cab31220daedd22ba267.png" />
+<img alt="../../_images/8df20f7aea68d6fc9c5f139b1a5bf1321c8f06a85c9a105f40e0330b8c9ec65b.png" src="../../_images/8df20f7aea68d6fc9c5f139b1a5bf1321c8f06a85c9a105f40e0330b8c9ec65b.png" />
 </div>
 </div>
 <p>It seems that our network is very well trained, But how does it perform with a new input? let’s check with <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">0,</span> <span class="pre">0]</span></code></p>
@@ -893,12 +896,12 @@ There are more topics related to this that we have not used, like more layers, m
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../04-LinearRegression/LinearRegression.html"
+       href="../05-LogisticRegression/LinearRegression.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Linear Regression</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>An Introduction to Logistic Regression</p>
       </div>
     </a>
     <a class="right-next"
@@ -906,7 +909,7 @@ There are more topics related to this that we have not used, like more layers, m
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Python Programming (very fast) Introduction</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Python Programming (very fast) Introduction</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -926,10 +929,10 @@ There are more topics related to this that we have not used, like more layers, m
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-playground">5.1. Tensorflow playground</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-neural-network-a-perceptron">5.2. Simple neural network: A perceptron</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-implementation">5.2.1. Basic Implementation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-the-training">5.2.2. Improving the training</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-playground">6.1. Tensorflow playground</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-neural-network-a-perceptron">6.2. Simple neural network: A perceptron</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-implementation">6.2.1. Basic Implementation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-the-training">6.2.2. Improving the training</a></li>
 </ul>
 </li>
 </ul>
