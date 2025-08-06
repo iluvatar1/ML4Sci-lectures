@@ -57,3 +57,8 @@ openpyxl
 statsmodels
 
 shap==0.48.0
+
+torch
+torchvision
+
+tensorflow
