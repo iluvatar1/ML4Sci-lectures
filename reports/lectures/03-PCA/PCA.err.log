@@ -36,12 +36,12 @@ datos=np.genfromtxt("WDBC.dat",  delimiter=",")
 [32m----> [39m[32m1[39m datos=[43mnp[49m[43m.[49m[43mgenfromtxt[49m[43m([49m[33;43m"[39;49m[33;43mWDBC.dat[39;49m[33;43m"[39;49m[43m,[49m[43m  [49m[43mdelimiter[49m[43m=[49m[33;43m"[39;49m[33;43m,[39;49m[33;43m"[39;49m[43m)[49m
 [32m      2[39m [38;5;66;03m#print(datos[0:4,:])[39;00m
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.13/x64/lib/python3.11/site-packages/numpy/lib/_npyio_impl.py:1991[39m, in [36mgenfromtxt[39m[34m(fname, dtype, comments, delimiter, skip_header, skip_footer, converters, missing_values, filling_values, usecols, names, excludelist, deletechars, replace_space, autostrip, case_sensitive, defaultfmt, unpack, usemask, loose, invalid_raise, max_rows, encoding, ndmin, like)[39m
-[32m   1989[39m     fname = os.fspath(fname)
-[32m   1990[39m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(fname, [38;5;28mstr[39m):
-[32m-> [39m[32m1991[39m     fid = [43mnp[49m[43m.[49m[43mlib[49m[43m.[49m[43m_datasource[49m[43m.[49m[43mopen[49m[43m([49m[43mfname[49m[43m,[49m[43m [49m[33;43m'[39;49m[33;43mrt[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[43mencoding[49m[43m=[49m[43mencoding[49m[43m)[49m
-[32m   1992[39m     fid_ctx = contextlib.closing(fid)
-[32m   1993[39m [38;5;28;01melse[39;00m:
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.13/x64/lib/python3.11/site-packages/numpy/lib/_npyio_impl.py:1990[39m, in [36mgenfromtxt[39m[34m(fname, dtype, comments, delimiter, skip_header, skip_footer, converters, missing_values, filling_values, usecols, names, excludelist, deletechars, replace_space, autostrip, case_sensitive, defaultfmt, unpack, usemask, loose, invalid_raise, max_rows, encoding, ndmin, like)[39m
+[32m   1988[39m     fname = os.fspath(fname)
+[32m   1989[39m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(fname, [38;5;28mstr[39m):
+[32m-> [39m[32m1990[39m     fid = [43mnp[49m[43m.[49m[43mlib[49m[43m.[49m[43m_datasource[49m[43m.[49m[43mopen[49m[43m([49m[43mfname[49m[43m,[49m[43m [49m[33;43m'[39;49m[33;43mrt[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[43mencoding[49m[43m=[49m[43mencoding[49m[43m)[49m
+[32m   1991[39m     fid_ctx = contextlib.closing(fid)
+[32m   1992[39m [38;5;28;01melse[39;00m:
 
 [36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.13/x64/lib/python3.11/site-packages/numpy/lib/_datasource.py:192[39m, in [36mopen[39m[34m(path, mode, destpath, encoding, newline)[39m
 [32m    155[39m [38;5;250m[39m[33;03m"""[39;00m
