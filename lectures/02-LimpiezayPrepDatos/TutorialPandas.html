@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>10. Pandas for data cleaning and analysis &#8212; Introduction to Machine Learning for Science</title>
+    <title>11. Pandas for data cleaning and analysis &#8212; Introduction to Machine Learning for Science</title>
   
   
   
@@ -82,7 +82,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="9. Pandas Introduction" href="../01-reviewPython/pandas-intro.html" />
+    <link rel="prev" title="10. Pandas Introduction" href="../01-reviewPython/pandas-intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -204,17 +204,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../03-PCA/PCA.html">3. Principal Component Analysis (PCA)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04-LinearRegression/LinearRegression.html">4. Linear Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-LogisticRegression/LinearRegression.html">5. An Introduction to Logistic Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-SVM/SVM.html">6. Support Vector Machines</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Neural Networks</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">6. Neural Networks Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">7. Neural Networks Introduction</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">7. Python Programming (very fast) Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">8. Intro Python II: python data structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/pandas-intro.html">9. Pandas Introduction</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Pandas for data cleaning and analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">8. Python Programming (very fast) Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">9. Intro Python II: python data structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/pandas-intro.html">10. Pandas Introduction</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Pandas for data cleaning and analysis</a></li>
 </ul>
 
     </div>
@@ -477,14 +478,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicar-una-funcion-a-los-datos-de-una-columna">10.1. Aplicar una función a los datos de una columna</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo1">10.1.1. Ejemplo1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-2">10.1.2. Ejemplo 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicar-una-funcion-a-los-datos-de-una-columna">11.1. Aplicar una función a los datos de una columna</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo1">11.1.1. Ejemplo1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-2">11.1.2. Ejemplo 2</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-cosas-utiles">10.2. Otras cosas útiles</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenar-bases-de-datos">10.2.1. concatenar bases de datos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agregar-columnas">10.2.2. agregar columnas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-cosas-utiles">11.2. Otras cosas útiles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenar-bases-de-datos">11.2.1. concatenar bases de datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agregar-columnas">11.2.2. agregar columnas</a></li>
 </ul>
 </li>
 </ul>
@@ -499,7 +500,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas-for-data-cleaning-and-analysis">
-<h1><span class="section-number">10. </span>Pandas for data cleaning and analysis<a class="headerlink" href="#pandas-for-data-cleaning-and-analysis" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">11. </span>Pandas for data cleaning and analysis<a class="headerlink" href="#pandas-for-data-cleaning-and-analysis" title="Link to this heading">#</a></h1>
 <p>Lo primero es importar las librerías pandas y numpy</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -801,9 +802,9 @@ document.write(`
 </div>
 </div>
 <section id="aplicar-una-funcion-a-los-datos-de-una-columna">
-<h2><span class="section-number">10.1. </span>Aplicar una función a los datos de una columna<a class="headerlink" href="#aplicar-una-funcion-a-los-datos-de-una-columna" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.1. </span>Aplicar una función a los datos de una columna<a class="headerlink" href="#aplicar-una-funcion-a-los-datos-de-una-columna" title="Link to this heading">#</a></h2>
 <section id="ejemplo1">
-<h3><span class="section-number">10.1.1. </span>Ejemplo1<a class="headerlink" href="#ejemplo1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.1.1. </span>Ejemplo1<a class="headerlink" href="#ejemplo1" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;WELL_TVD_+1000000&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;WELL_TVD&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="mi">1000000</span><span class="p">)</span>
@@ -820,7 +821,7 @@ document.write(`
 </div>
 </section>
 <section id="ejemplo-2">
-<h3><span class="section-number">10.1.2. </span>Ejemplo 2<a class="headerlink" href="#ejemplo-2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.1.2. </span>Ejemplo 2<a class="headerlink" href="#ejemplo-2" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#defino una funcion, por ejemplo para corregir los errores en los nombre de los deptos:</span>
@@ -912,9 +913,9 @@ document.write(`
 </section>
 </section>
 <section id="otras-cosas-utiles">
-<h2><span class="section-number">10.2. </span>Otras cosas útiles<a class="headerlink" href="#otras-cosas-utiles" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.2. </span>Otras cosas útiles<a class="headerlink" href="#otras-cosas-utiles" title="Link to this heading">#</a></h2>
 <section id="concatenar-bases-de-datos">
-<h3><span class="section-number">10.2.1. </span>concatenar bases de datos<a class="headerlink" href="#concatenar-bases-de-datos" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.2.1. </span>concatenar bases de datos<a class="headerlink" href="#concatenar-bases-de-datos" title="Link to this heading">#</a></h3>
 <p>agregar filas (ojo: ambos DataFrames tienen que tener las mismas columnas!!)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -927,7 +928,7 @@ document.write(`
 </div>
 </section>
 <section id="agregar-columnas">
-<h3><span class="section-number">10.2.2. </span>agregar columnas<a class="headerlink" href="#agregar-columnas" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.2.2. </span>agregar columnas<a class="headerlink" href="#agregar-columnas" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
@@ -982,7 +983,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>Pandas Introduction</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Pandas Introduction</p>
       </div>
     </a>
 </div>
@@ -1001,14 +1002,14 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicar-una-funcion-a-los-datos-de-una-columna">10.1. Aplicar una función a los datos de una columna</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo1">10.1.1. Ejemplo1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-2">10.1.2. Ejemplo 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicar-una-funcion-a-los-datos-de-una-columna">11.1. Aplicar una función a los datos de una columna</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo1">11.1.1. Ejemplo1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-2">11.1.2. Ejemplo 2</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-cosas-utiles">10.2. Otras cosas útiles</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenar-bases-de-datos">10.2.1. concatenar bases de datos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agregar-columnas">10.2.2. agregar columnas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-cosas-utiles">11.2. Otras cosas útiles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenar-bases-de-datos">11.2.1. concatenar bases de datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agregar-columnas">11.2.2. agregar columnas</a></li>
 </ul>
 </li>
 </ul>
