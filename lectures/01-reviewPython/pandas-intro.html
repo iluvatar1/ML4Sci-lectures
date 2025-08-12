@@ -200,9 +200,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../00-IntroductionCourseML/IntroCourse-MachineLearning.html">1. Introduction to the course and to Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00-TALK-IntroML/IntroMachineLearning.html">2. A fast introduction to Machine Learning</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Supervised learning</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unsupervised learning I</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../03-PCA/Intro-PCA.html">3. An Introduction to Principal Component Analysis (PCA)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Supervised learning</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../04-LinearRegression/LinearRegression.html">4. Linear Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-LogisticRegression/LogisticRegression.html">5. An Introduction to Logistic Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06-SVM/SVM.html">6. Support Vector Machines</a></li>
@@ -2674,7 +2677,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2458/314900803.py:3: FutureWarning: The provided callable &lt;function sum at 0x7f81545a2340&gt; is currently using DataFrameGroupBy.sum. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;sum&quot; instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2474/314900803.py:3: FutureWarning: The provided callable &lt;function sum at 0x7f12f0562340&gt; is currently using DataFrameGroupBy.sum. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;sum&quot; instead.
   df.pivot_table(values=&quot;Numeric Population&quot;, index=[&quot;State&quot;], aggfunc=np.sum)
 </pre></div>
 </div>
@@ -2849,45 +2852,45 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>1.386890</td>
-      <td>0.737983</td>
-      <td>0.679107</td>
-      <td>-0.266201</td>
+      <td>1.222141</td>
+      <td>0.965986</td>
+      <td>-0.421769</td>
+      <td>-0.815425</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
-      <td>1.327017</td>
-      <td>0.485150</td>
-      <td>0.094802</td>
-      <td>1.699114</td>
+      <td>2.265017</td>
+      <td>0.709519</td>
+      <td>0.796612</td>
+      <td>-0.664470</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
-      <td>-3.009680</td>
-      <td>1.034842</td>
-      <td>0.602876</td>
-      <td>-0.996887</td>
+      <td>-0.921680</td>
+      <td>1.681115</td>
+      <td>0.203868</td>
+      <td>-0.594240</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>-0.705607</td>
-      <td>-1.768319</td>
-      <td>-0.555131</td>
-      <td>-1.256078</td>
+      <td>0.209952</td>
+      <td>1.013105</td>
+      <td>-0.993590</td>
+      <td>1.165468</td>
     </tr>
     <tr>
       <th>2013-01-05</th>
-      <td>-0.537355</td>
-      <td>-1.144810</td>
-      <td>1.065709</td>
-      <td>-0.155596</td>
+      <td>-0.574359</td>
+      <td>2.253332</td>
+      <td>-1.109631</td>
+      <td>0.935640</td>
     </tr>
     <tr>
       <th>2013-01-06</th>
-      <td>-0.284032</td>
-      <td>0.960870</td>
-      <td>0.875370</td>
-      <td>-0.706221</td>
+      <td>0.955753</td>
+      <td>-0.191254</td>
+      <td>0.226137</td>
+      <td>0.354762</td>
     </tr>
   </tbody>
 </table>
@@ -2927,45 +2930,45 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>-0.266201</td>
-      <td>0.679107</td>
-      <td>0.737983</td>
-      <td>1.386890</td>
+      <td>-0.815425</td>
+      <td>-0.421769</td>
+      <td>0.965986</td>
+      <td>1.222141</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
-      <td>1.699114</td>
-      <td>0.094802</td>
-      <td>0.485150</td>
-      <td>1.327017</td>
+      <td>-0.664470</td>
+      <td>0.796612</td>
+      <td>0.709519</td>
+      <td>2.265017</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
-      <td>-0.996887</td>
-      <td>0.602876</td>
-      <td>1.034842</td>
-      <td>-3.009680</td>
+      <td>-0.594240</td>
+      <td>0.203868</td>
+      <td>1.681115</td>
+      <td>-0.921680</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>-1.256078</td>
-      <td>-0.555131</td>
-      <td>-1.768319</td>
-      <td>-0.705607</td>
+      <td>1.165468</td>
+      <td>-0.993590</td>
+      <td>1.013105</td>
+      <td>0.209952</td>
     </tr>
     <tr>
       <th>2013-01-05</th>
-      <td>-0.155596</td>
-      <td>1.065709</td>
-      <td>-1.144810</td>
-      <td>-0.537355</td>
+      <td>0.935640</td>
+      <td>-1.109631</td>
+      <td>2.253332</td>
+      <td>-0.574359</td>
     </tr>
     <tr>
       <th>2013-01-06</th>
-      <td>-0.706221</td>
-      <td>0.875370</td>
-      <td>0.960870</td>
-      <td>-0.284032</td>
+      <td>0.354762</td>
+      <td>0.226137</td>
+      <td>-0.191254</td>
+      <td>0.955753</td>
     </tr>
   </tbody>
 </table>
@@ -3005,45 +3008,45 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>1.386890</td>
-      <td>0.737983</td>
-      <td>0.679107</td>
-      <td>-0.266201</td>
+      <td>1.222141</td>
+      <td>0.965986</td>
+      <td>-0.421769</td>
+      <td>-0.815425</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
-      <td>1.327017</td>
-      <td>0.485150</td>
-      <td>0.094802</td>
-      <td>1.699114</td>
+      <td>2.265017</td>
+      <td>0.709519</td>
+      <td>0.796612</td>
+      <td>-0.664470</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
-      <td>-3.009680</td>
-      <td>1.034842</td>
-      <td>0.602876</td>
-      <td>-0.996887</td>
+      <td>-0.921680</td>
+      <td>1.681115</td>
+      <td>0.203868</td>
+      <td>-0.594240</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>-0.705607</td>
-      <td>-1.768319</td>
-      <td>-0.555131</td>
-      <td>-1.256078</td>
+      <td>0.209952</td>
+      <td>1.013105</td>
+      <td>-0.993590</td>
+      <td>1.165468</td>
     </tr>
     <tr>
       <th>2013-01-05</th>
-      <td>-0.537355</td>
-      <td>-1.144810</td>
-      <td>1.065709</td>
-      <td>-0.155596</td>
+      <td>-0.574359</td>
+      <td>2.253332</td>
+      <td>-1.109631</td>
+      <td>0.935640</td>
     </tr>
     <tr>
       <th>2013-01-06</th>
-      <td>-0.284032</td>
-      <td>0.960870</td>
-      <td>0.875370</td>
-      <td>-0.706221</td>
+      <td>0.955753</td>
+      <td>-0.191254</td>
+      <td>0.226137</td>
+      <td>0.354762</td>
     </tr>
   </tbody>
 </table>
@@ -3059,9 +3062,9 @@ Name: count, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2013-01-01     True
 2013-01-02     True
 2013-01-03    False
-2013-01-04    False
+2013-01-04     True
 2013-01-05    False
-2013-01-06    False
+2013-01-06     True
 Freq: D, Name: A, dtype: bool
 </pre></div>
 </div>
@@ -3101,17 +3104,31 @@ Freq: D, Name: A, dtype: bool
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>1.386890</td>
-      <td>0.737983</td>
-      <td>0.679107</td>
-      <td>-0.266201</td>
+      <td>1.222141</td>
+      <td>0.965986</td>
+      <td>-0.421769</td>
+      <td>-0.815425</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
-      <td>1.327017</td>
-      <td>0.485150</td>
-      <td>0.094802</td>
-      <td>1.699114</td>
+      <td>2.265017</td>
+      <td>0.709519</td>
+      <td>0.796612</td>
+      <td>-0.664470</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>0.209952</td>
+      <td>1.013105</td>
+      <td>-0.993590</td>
+      <td>1.165468</td>
+    </tr>
+    <tr>
+      <th>2013-01-06</th>
+      <td>0.955753</td>
+      <td>-0.191254</td>
+      <td>0.226137</td>
+      <td>0.354762</td>
     </tr>
   </tbody>
 </table>
@@ -3151,45 +3168,45 @@ Freq: D, Name: A, dtype: bool
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>1.386890</td>
-      <td>0.737983</td>
-      <td>0.679107</td>
+      <td>1.222141</td>
+      <td>0.965986</td>
+      <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
-      <td>1.327017</td>
-      <td>0.485150</td>
-      <td>0.094802</td>
-      <td>1.699114</td>
+      <td>2.265017</td>
+      <td>0.709519</td>
+      <td>0.796612</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
       <td>NaN</td>
-      <td>1.034842</td>
-      <td>0.602876</td>
+      <td>1.681115</td>
+      <td>0.203868</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
+      <td>0.209952</td>
+      <td>1.013105</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>1.165468</td>
     </tr>
     <tr>
       <th>2013-01-05</th>
       <td>NaN</td>
+      <td>2.253332</td>
       <td>NaN</td>
-      <td>1.065709</td>
-      <td>NaN</td>
+      <td>0.935640</td>
     </tr>
     <tr>
       <th>2013-01-06</th>
+      <td>0.955753</td>
       <td>NaN</td>
-      <td>0.960870</td>
-      <td>0.875370</td>
-      <td>NaN</td>
+      <td>0.226137</td>
+      <td>0.354762</td>
     </tr>
   </tbody>
 </table>
@@ -3229,45 +3246,45 @@ Freq: D, Name: A, dtype: bool
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>1.386890</td>
-      <td>0.737983</td>
-      <td>0.679107</td>
+      <td>1.222141</td>
+      <td>0.965986</td>
+      <td>5.000000</td>
       <td>5.000000</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
-      <td>1.327017</td>
-      <td>0.485150</td>
-      <td>0.094802</td>
-      <td>1.699114</td>
+      <td>2.265017</td>
+      <td>0.709519</td>
+      <td>0.796612</td>
+      <td>5.000000</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
       <td>5.000000</td>
-      <td>1.034842</td>
-      <td>0.602876</td>
+      <td>1.681115</td>
+      <td>0.203868</td>
       <td>5.000000</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
+      <td>0.209952</td>
+      <td>1.013105</td>
       <td>5.000000</td>
-      <td>5.000000</td>
-      <td>5.000000</td>
-      <td>5.000000</td>
+      <td>1.165468</td>
     </tr>
     <tr>
       <th>2013-01-05</th>
       <td>5.000000</td>
+      <td>2.253332</td>
       <td>5.000000</td>
-      <td>1.065709</td>
-      <td>5.000000</td>
+      <td>0.935640</td>
     </tr>
     <tr>
       <th>2013-01-06</th>
+      <td>0.955753</td>
       <td>5.000000</td>
-      <td>0.960870</td>
-      <td>0.875370</td>
-      <td>5.000000</td>
+      <td>0.226137</td>
+      <td>0.354762</td>
     </tr>
   </tbody>
 </table>
