@@ -489,9 +489,15 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-playground">7.1. Tensorflow playground</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-neural-network-a-perceptron">7.2. Simple neural network: A perceptron</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-implementation">7.2.1. Basic Implementation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-the-training">7.2.2. Improving the training</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-applications-to-basi-sciences">7.2. Some applications to basi sciences</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biology-bioinformatics">7.2.1. <strong>Biology &amp; Bioinformatics</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chemistry-materials-science">7.2.2. <strong>Chemistry &amp; Materials Science</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physics">7.2.3. <strong>Physics</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-neural-network-a-perceptron">7.3. Simple neural network: A perceptron</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-implementation">7.3.1. Basic Implementation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-the-training">7.3.2. Improving the training</a></li>
 </ul>
 </li>
 </ul>
@@ -550,8 +556,41 @@ where \)</span>f$ is some <a class="reference external" href="https://en.wikiped
 <p>Now let’s play a bit with a neural network: <a class="reference external" href="https://playground.tensorflow.org">https://playground.tensorflow.org</a></p>
 <p><img alt="Neural network with several layeres (Credit http://alexlenail.me/NN-SVG/index.html)" src="../../_images/tensorflow-playground.png" /></p>
 </section>
+<section id="some-applications-to-basi-sciences">
+<h2><span class="section-number">7.2. </span>Some applications to basi sciences<a class="headerlink" href="#some-applications-to-basi-sciences" title="Link to this heading">#</a></h2>
+<section id="biology-bioinformatics">
+<h3><span class="section-number">7.2.1. </span><strong>Biology &amp; Bioinformatics</strong><a class="headerlink" href="#biology-bioinformatics" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Jumper, J., Evans, R., Pritzel, A., Green, T., Figurnov, M., Ronneberger, O., … &amp; Hassabis, D. (2021). Highly accurate protein structure prediction with AlphaFold. <em>Nature, 596</em>(7873), 583–589. <a class="reference external" href="https://doi.org/10.1038/s41586-021-03819-2">https://doi.org/10.1038/s41586-021-03819-2</a></p></li>
+<li><p>Avsec, Ž., Agarwal, V., Visentin, D., Ledsam, J. R., Grinsztajn, L., Kelcy, M., … &amp; Kundaje, A. (2021). Effective gene expression prediction from DNA sequence using deep learning. <em>Nature Methods, 18</em>(10), 1173–1182. <a class="reference external" href="https://doi.org/10.1038/s41592-021-01252-8">https://doi.org/10.1038/s41592-021-01252-8</a></p></li>
+<li><p>Lin, Z., Akin, H., Rao, R., Hie, B., Zhu, Z., Lu, W., … &amp; Rives, A. (2023). Evolutionary-scale prediction of atomic-level protein structure with a language model. <em>Science, 379</em>(6637), 1123-1130. <a class="reference external" href="https://doi.org/10.1126/science.ade2574">https://doi.org/10.1126/science.ade2574</a></p></li>
+<li><p>Mendez, K. M., Pritchard, J. K., &amp; Regev, A. (2023). A unified framework for single-cell genomics analysis with generative deep learning. <em>Nature Biotechnology, 41</em>(10), 1438–1448. <a class="reference external" href="https://doi.org/10.1038/s41587-023-01743-6">https://doi.org/10.1038/s41587-023-01743-6</a></p></li>
+<li><p>Watson, J. L., Juergens, D., Bennett, N. R., Trippe, B. L., Yim, J., Eisen, H. E., … &amp; Baker, D. (2023). De novo design of protein structure and function with RFdiffusion. <em>Nature, 620</em>(7976), 1089–1100. <a class="reference external" href="https://doi.org/10.1038/s41586-023-06415-8">https://doi.org/10.1038/s41586-023-06415-8</a></p></li>
+</ol>
+</section>
+<section id="chemistry-materials-science">
+<h3><span class="section-number">7.2.2. </span><strong>Chemistry &amp; Materials Science</strong><a class="headerlink" href="#chemistry-materials-science" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="6">
+<li><p>Satorras, R., Hoogeboom, E., &amp; Welling, M. (2021). E(n) equivariant graph neural networks. <em>Proceedings of the 38th International Conference on Machine Learning, PMLR 139</em>, 9323-9332. <a class="reference external" href="https://proceedings.mlr.press/v139/satorras21a.html">https://proceedings.mlr.press/v139/satorras21a.html</a></p></li>
+<li><p>Lowe, D. M., &amp; Zare, R. N. (2023). Artificial neural network for predicting reaction yields. <em>Accounts of Chemical Research, 56</em>(15), 1950–1961. <a class="reference external" href="https://doi.org/10.1021/acs.accounts.3c00127">https://doi.org/10.1021/acs.accounts.3c00127</a></p></li>
+<li><p>Merchant, A., Batzner, S., Schoenholz, S. S., Murugan, A., &amp; Cubuk, E. D. (2023). Scaling deep learning for materials discovery. <em>Nature, 624</em>(7990), 80–85. <a class="reference external" href="https://doi.org/10.1038/s41586-023-06739-3">https://doi.org/10.1038/s41586-023-06739-3</a></p></li>
+<li><p>Schwalbe-Koda, D., Vasudevan, R. K., &amp; Linstrom, L. (2023). Artificial intelligence for autonomous materials research. <em>MRS Bulletin, 48</em>(8), 856-865. <a class="reference external" href="https://doi.org/10.1557/s43577-023-00569-z">https://doi.org/10.1557/s43577-023-00569-z</a></p></li>
+<li><p>Wang, S., Chen, S., He, T., Li, W., &amp; Li, S. (2023). A universal deep neural network potential for the phase behavior of solid-liquid-vapor water. <em>The Journal of Physical Chemistry B, 127</em>(31), 7024–7034. <a class="reference external" href="https://doi.org/10.1021/acs.jpcb.3c02826">https://doi.org/10.1021/acs.jpcb.3c02826</a></p></li>
+</ol>
+</section>
+<section id="physics">
+<h3><span class="section-number">7.2.3. </span><strong>Physics</strong><a class="headerlink" href="#physics" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="11">
+<li><p>Iten, R., Metger, T., Wilming, H., del Rio, L., &amp; Renner, R. (2020). Discovering physical concepts with neural networks. <em>Physical Review Letters, 124</em>(1), 010508. <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.124.010508">https://doi.org/10.1103/PhysRevLett.124.010508</a></p></li>
+<li><p>Karniadakis, G. E., Kevrekidis, I. G., Lu, L., Perdikaris, P., Wang, S., &amp; Yang, L. (2021). Physics-informed machine learning. <em>Nature Reviews Physics, 3</em>(6), 422–440. <a class="reference external" href="https://doi.org/10.1038/s42254-021-00314-5">https://doi.org/10.1038/s42254-021-00314-5</a></p></li>
+<li><p>Kochkov, D., Smith, J., Alistarke, A., Allen, E., Vinyals, O., &amp; Kovachki, N. (2021). Machine learning–accelerated computational fluid dynamics. <em>Proceedings of the National Academy of Sciences, 118</em>(21), e2101784118. <a class="reference external" href="https://doi.org/10.1073/pnas.2101784118">https://doi.org/10.1073/pnas.2101784118</a></p></li>
+<li><p>Villaescusa-Navarro, F., Angles-Alcazar, D., Hassan, S., Moody, C. E., Genel, S., Vogelsberger, M., … &amp; Spergel, D. N. (2021). The CAMELS project: public data release. <em>The Astrophysical Journal, 915</em>(1), 71. <a class="reference external" href="https://doi.org/10.3847/1538-4357/abf707">https://doi.org/10.3847/1538-4357/abf707</a></p></li>
+<li><p>Bauer, F., &amp; Zdeborová, L. (2021). Replica symmetry breaking in neural networks. <em>Physical Review E, 104</em>(4), 044307. <a class="reference external" href="https://doi.org/10.1103/PhysRevE.104.044307">https://doi.org/10.1103/PhysRevE.104.044307</a></p></li>
+</ol>
+</section>
+</section>
 <section id="simple-neural-network-a-perceptron">
-<h2><span class="section-number">7.2. </span>Simple neural network: A perceptron<a class="headerlink" href="#simple-neural-network-a-perceptron" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.3. </span>Simple neural network: A perceptron<a class="headerlink" href="#simple-neural-network-a-perceptron" title="Link to this heading">#</a></h2>
 <p>Based on <a class="reference external" href="https://www.youtube.com/watch?v=kft1AJ9WVDk">https://www.youtube.com/watch?v=kft1AJ9WVDk</a></p>
 <p><strong>TODO</strong></p>
 <ul class="simple">
@@ -635,7 +674,7 @@ where \)</span>x = \sum x_i w_i$.</p>
 </div>
 </div>
 <section id="basic-implementation">
-<h3><span class="section-number">7.2.1. </span>Basic Implementation<a class="headerlink" href="#basic-implementation" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.3.1. </span>Basic Implementation<a class="headerlink" href="#basic-implementation" title="Link to this heading">#</a></h3>
 <p>For this very basic nn, we will:</p>
 <ul class="simple">
 <li><p>set the input or start of the algorithm:</p>
@@ -733,7 +772,7 @@ Results after one step training:
 </div>
 </section>
 <section id="improving-the-training">
-<h3><span class="section-number">7.2.2. </span>Improving the training<a class="headerlink" href="#improving-the-training" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.3.2. </span>Improving the training<a class="headerlink" href="#improving-the-training" title="Link to this heading">#</a></h3>
 <p>These results are not optimal, and depend a lot on the initial weights. Also, we are not yet comparing with the expecting output for the training data. We are now going to include it and add correction terms to the weights, so we will be using back-propagation. Our algorithm is now:</p>
 <ul class="simple">
 <li><p>Take each input from the training data.</p></li>
@@ -938,9 +977,15 @@ There are more topics related to this that we have not used, like more layers, m
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-playground">7.1. Tensorflow playground</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-neural-network-a-perceptron">7.2. Simple neural network: A perceptron</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-implementation">7.2.1. Basic Implementation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-the-training">7.2.2. Improving the training</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-applications-to-basi-sciences">7.2. Some applications to basi sciences</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biology-bioinformatics">7.2.1. <strong>Biology &amp; Bioinformatics</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chemistry-materials-science">7.2.2. <strong>Chemistry &amp; Materials Science</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physics">7.2.3. <strong>Physics</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-neural-network-a-perceptron">7.3. Simple neural network: A perceptron</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-implementation">7.3.1. Basic Implementation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-the-training">7.3.2. Improving the training</a></li>
 </ul>
 </li>
 </ul>
