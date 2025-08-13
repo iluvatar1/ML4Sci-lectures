@@ -17,7 +17,7 @@ jupyter_contrib_nbextensions
 jupyter-bokeh
 bokeh
 #ipyvolume
-#plotly
+plotly
 #vpython
 #jupyterlab-vpython
 RISE
