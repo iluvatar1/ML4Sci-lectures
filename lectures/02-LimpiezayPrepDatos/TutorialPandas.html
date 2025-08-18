@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>15. Pandas for data cleaning and analysis &#8212; Introduction to Machine Learning for Science</title>
+    <title>14. Pandas for data cleaning and analysis &#8212; Introduction to Machine Learning for Science</title>
   
   
   
@@ -82,7 +82,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="14. Pandas Introduction" href="../01-reviewPython/pandas-intro.html" />
+    <link rel="prev" title="13. Intro Python II: python data structures" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -224,8 +224,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/PythonReview.html">11. Python Review:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">12. Python Programming (very fast) Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">13. Intro Python II: python data structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/pandas-intro.html">14. Pandas Introduction</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">15. Pandas for data cleaning and analysis</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Pandas for data cleaning and analysis</a></li>
 </ul>
 
     </div>
@@ -488,14 +487,29 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicar-una-funcion-a-los-datos-de-una-columna">15.1. Aplicar una función a los datos de una columna</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo1">15.1.1. Ejemplo1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-2">15.1.2. Ejemplo 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dataframe">14.1. The Dataframe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-vs-polars">14.2. Pandas vs. Polars</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polars-syntax-example">14.2.1. Polars Syntax Example</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-cosas-utiles">15.2. Otras cosas útiles</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenar-bases-de-datos">15.2.1. concatenar bases de datos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agregar-columnas">15.2.2. agregar columnas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applied-pandas-tutorial">14.3. Applied pandas tutorial</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cargando-y-explorando-los-datos">14.3.1. Cargando y explorando los datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-de-datos">14.3.2. Limpieza de datos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-data-exploration">14.4. More data exploration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agrupaciones">14.4.1. Agrupaciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicar-una-funcion-a-los-datos-de-una-columna">14.4.2. Aplicar una función a los datos de una columna</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo1">14.4.2.1. Ejemplo1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-2">14.4.2.2. Ejemplo 2</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-sobre-cols">14.4.3. Operaciones sobre cols</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-cosas-utiles">14.5. Otras cosas útiles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenar-bases-de-datos">14.5.1. concatenar bases de datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agregar-columnas">14.5.2. agregar columnas</a></li>
 </ul>
 </li>
 </ul>
@@ -510,7 +524,404 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas-for-data-cleaning-and-analysis">
-<h1><span class="section-number">15. </span>Pandas for data cleaning and analysis<a class="headerlink" href="#pandas-for-data-cleaning-and-analysis" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">14. </span>Pandas for data cleaning and analysis<a class="headerlink" href="#pandas-for-data-cleaning-and-analysis" title="Link to this heading">#</a></h1>
+<p>Pandas has two main data structures:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Series</span></code></strong>: A one-dimensional labeled array, like a single column of data.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></strong>: A two-dimensional labeled data structure with columns of potentially different types, similar to a spreadsheet or SQL table.</p></li>
+</ul>
+<section id="the-dataframe">
+<h2><span class="section-number">14.1. </span>The Dataframe<a class="headerlink" href="#the-dataframe" title="Link to this heading">#</a></h2>
+<p>The dataframe is the most important object inside pandas. It allows to represent, access, process, etc multi-dimensional data.</p>
+<p><img alt="Pandas dataframe" src="https://www.w3resource.com/w3r_images/pandas-data-structure.svg" /></p>
+<p>Source: <a class="reference external" href="https://www.w3resource.com/python-exercises/pandas/index.php">https://www.w3resource.com/python-exercises/pandas/index.php</a></p>
+<p><img alt="Pandas dataframe example" src="https://miro.medium.com/max/1400/1*ZSehcrMtBWN7_qCWq_HiSg.png" /></p>
+<p>Source: <a class="reference external" href="https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-6fcd0170be9c">https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-6fcd0170be9c</a></p>
+<p>You can initialize a dataframe in several ways. For example, you can use a dictionary or a nested list. Or you can read from a file, either local or online.
+For example, you can do something like</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">909976</span><span class="p">,</span> <span class="s2">&quot;Sweden&quot;</span><span class="p">],</span>
+                   <span class="p">[</span><span class="mi">8615246</span><span class="p">,</span> <span class="s2">&quot;United Kingdom&quot;</span><span class="p">],</span>
+                   <span class="p">[</span><span class="mi">2872086</span><span class="p">,</span> <span class="s2">&quot;Italy&quot;</span><span class="p">],</span>
+                   <span class="p">[</span><span class="mi">2273305</span><span class="p">,</span> <span class="s2">&quot;France&quot;</span><span class="p">],</span>
+                   <span class="p">[</span><span class="mi">344444</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>909976</td>
+      <td>Sweden</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>8615246</td>
+      <td>United Kingdom</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2872086</td>
+      <td>Italy</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2273305</td>
+      <td>France</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>344444</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>909976</td>
+      <td>Sweden</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>8615246</td>
+      <td>United Kingdom</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2872086</td>
+      <td>Italy</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2273305</td>
+      <td>France</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;Unknown&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>909976</td>
+      <td>Sweden</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>8615246</td>
+      <td>United Kingdom</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2872086</td>
+      <td>Italy</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2273305</td>
+      <td>France</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>344444</td>
+      <td>Unknown</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>909976</td>
+      <td>Sweden</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>8615246</td>
+      <td>United Kingdom</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2872086</td>
+      <td>Italy</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2273305</td>
+      <td>France</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Stockholm&quot;</span><span class="p">,</span> <span class="s2">&quot;London&quot;</span><span class="p">,</span> <span class="s2">&quot;Rome&quot;</span><span class="p">,</span> <span class="s2">&quot;Paris&quot;</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Population&quot;</span><span class="p">,</span> <span class="s2">&quot;State&quot;</span><span class="p">]</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Population</th>
+      <th>State</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Stockholm</th>
+      <td>909976</td>
+      <td>Sweden</td>
+    </tr>
+    <tr>
+      <th>London</th>
+      <td>8615246</td>
+      <td>United Kingdom</td>
+    </tr>
+    <tr>
+      <th>Rome</th>
+      <td>2872086</td>
+      <td>Italy</td>
+    </tr>
+    <tr>
+      <th>Paris</th>
+      <td>2273305</td>
+      <td>France</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="pandas-vs-polars">
+<h2><span class="section-number">14.2. </span>Pandas vs. Polars<a class="headerlink" href="#pandas-vs-polars" title="Link to this heading">#</a></h2>
+<p>Polars is a newer, extremely fast DataFrame library built in Rust. It’s gaining popularity for its performance, especially on large datasets.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Pandas</p></th>
+<th class="head"><p>Polars</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Backend</strong></p></td>
+<td><p>Python/NumPy (partially C)</p></td>
+<td><p>Rust (built on Apache Arrow)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Performance</strong></p></td>
+<td><p>Slower, especially on large data.</p></td>
+<td><p>Significantly faster (5-100x) due to parallelism and query optimization.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Execution Model</strong></p></td>
+<td><p>Eager (executes line-by-line)</p></td>
+<td><p>Supports both Eager and Lazy execution (optimizes the whole query before running)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Memory Usage</strong></p></td>
+<td><p>Higher memory footprint.</p></td>
+<td><p>More memory efficient.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>API</strong></p></td>
+<td><p>Very flexible, but can be inconsistent (e.g., <code class="docutils literal notranslate"><span class="pre">inplace</span></code>).</p></td>
+<td><p>More consistent and expressive, encourages method chaining.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Ecosystem</strong></p></td>
+<td><p>Mature and extensive. Integrates with almost every data science library (scikit-learn, Matplotlib, etc.).</p></td>
+<td><p>Growing, but less integrated with the broader ML ecosystem.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>When to choose which?</strong></p>
+<ul class="simple">
+<li><p><strong>Pandas</strong>: Excellent for data exploration, smaller datasets (up to a few GB), and projects that need deep integration with libraries like scikit-learn.</p></li>
+<li><p><strong>Polars</strong>: Ideal for large datasets, performance-critical data transformations, and building data pipelines where speed and memory are key.</p></li>
+</ul>
+<section id="polars-syntax-example">
+<h3><span class="section-number">14.2.1. </span>Polars Syntax Example<a class="headerlink" href="#polars-syntax-example" title="Link to this heading">#</a></h3>
+<p>Notice the similarity, but also the use of expressions (<code class="docutils literal notranslate"><span class="pre">pl.col()</span></code>).</p>
+<div class="exercise admonition" id="lectures/02-LimpiezayPrepDatos/TutorialPandas-exercise-0">
+
+<p class="admonition-title"><span class="caption-number">Exercise 14.1 </span></p>
+<section id="exercise-content">
+<p>Complete the demo (find a data source) and create a script with inline dependencies.</p>
+</section>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">polars</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pl</span>
+
+<span class="c1"># Same data in a Polars DataFrame</span>
+<span class="n">df_pl</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># The same aggregation, but using the Polars expression API</span>
+<span class="n">polar_stats</span> <span class="o">=</span> <span class="n">df_pl</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s1">&#39;Experiment&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+    <span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;Measurement&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">),</span>
+    <span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;Measurement&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s1">&#39;std&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">polar_stats</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">polars</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pl</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Same data in a Polars DataFrame</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">df_pl</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;polars&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="applied-pandas-tutorial">
+<h2><span class="section-number">14.3. </span>Applied pandas tutorial<a class="headerlink" href="#applied-pandas-tutorial" title="Link to this heading">#</a></h2>
+<p>En este tutorial se hará una manipulación y limpieza de datos en un archivo de pozos petroleros en Colombia.</p>
+<section id="cargando-y-explorando-los-datos">
+<h3><span class="section-number">14.3.1. </span>Cargando y explorando los datos<a class="headerlink" href="#cargando-y-explorando-los-datos" title="Link to this heading">#</a></h3>
 <p>Lo primero es importar las librerías pandas y numpy</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -520,75 +931,11 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Luego hay que leer los datos del archivo BIP_pozos.csv. Para eso usamos pd.read_csv(“ubicacion_del_archivo/nombre_del_archivo.csv”)
+<p>Luego hay que leer los datos del archivo BIP_pozos.csv. El archivo se encuentra en la la carpete de datos del curso. Puede descargarlo y ponerlo en esta carpeta. Para esto se usa <code class="docutils literal notranslate"><span class="pre">pd.read_csv(&quot;ubicacion_del_archivo/nombre_del_archivo.csv&quot;)</span></code>
 (para otros formatos ver <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html">https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html</a>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;BIP_pozos.csv&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;BIP_pozos.csv&quot;</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.13/x64/lib/python3.11/site-packages/pandas/io/parsers/readers.py:1026,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="n">dialect</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="n">delimiter</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="mi">1022</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.13/x64/lib/python3.11/site-packages/pandas/io/parsers/readers.py:620,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">617</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">619</span> <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">620</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">622</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="k">return</span> <span class="n">parser</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.13/x64/lib/python3.11/site-packages/pandas/io/parsers/readers.py:1620,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1617</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1619</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">-&gt; </span><span class="mi">1620</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.13/x64/lib/python3.11/site-packages/pandas/io/parsers/readers.py:1880,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1878</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1879</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1880</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1881</span>     <span class="n">f</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1882</span>     <span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1883</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1884</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1885</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1886</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1887</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1888</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1889</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1890</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1891</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.13/x64/lib/python3.11/site-packages/pandas/io/common.py:873,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
-<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
-<span class="g g-Whitespace">    </span><span class="mi">871</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="c1"># Encoding</span>
-<span class="ne">--&gt; </span><span class="mi">873</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">874</span>             <span class="n">handle</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">875</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">876</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">877</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">878</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">879</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">881</span>         <span class="c1"># Binary mode</span>
-<span class="g g-Whitespace">    </span><span class="mi">882</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;BIP_pozos.csv&#39;
 </pre></div>
 </div>
 </div>
@@ -598,6 +945,20 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -635,15 +996,15 @@ document.write(`
 </div>
 </div>
 <p>Para excluir una columna de un DataFrame</p>
-<p>antes</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estas son las columnas originales</span>
+<span class="n">df</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>eliminar columna</p>
+<p>y ahora eliminar la columna <code class="docutils literal notranslate"><span class="pre">WELL_ALIAS</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;WELL_ALIAS&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#o df.drop([&quot;WELL_ALIAS&quot;], axis=1, inplace=True)</span>
@@ -684,33 +1045,14 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">df.max()</span>
-<span class="sd">df.min()</span>
-<span class="sd">df.mean()</span>
-<span class="sd">df.median()</span>
-<span class="sd">df.count()</span>
-<span class="sd">df.std()</span>
-<span class="sd">&quot;&quot;&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;DEPARTAMEN&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>A lo que vinimos: limpieza de datos</p>
+</section>
+<section id="limpieza-de-datos">
+<h3><span class="section-number">14.3.2. </span>Limpieza de datos<a class="headerlink" href="#limpieza-de-datos" title="Link to this heading">#</a></h3>
 <p>Problemas usuales: valores nulos, datos vacios, datos incorrectos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -749,7 +1091,10 @@ document.write(`
 </div>
 </div>
 <p><strong>Qué hacer cuando faltan datos??</strong></p>
-<p><strong>Esa es la gran pregunta…</strong></p>
+<ul class="simple">
+<li><p>Quitar los datos faltantes (por fila o columna)</p></li>
+<li><p>Aproximar los datos faltantes (cómo?)</p></li>
+</ul>
 <p>Opción 1: quitar las filas que tengan datos faltantes</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -781,7 +1126,12 @@ document.write(`
 </div>
 </div>
 </div>
-<p>##**Agrupaciones</p>
+</section>
+</section>
+<section id="more-data-exploration">
+<h2><span class="section-number">14.4. </span>More data exploration<a class="headerlink" href="#more-data-exploration" title="Link to this heading">#</a></h2>
+<section id="agrupaciones">
+<h3><span class="section-number">14.4.1. </span>Agrupaciones<a class="headerlink" href="#agrupaciones" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;DEPARTAMEN&#39;</span><span class="p">)[</span><span class="s2">&quot;WELL_TVD&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -811,10 +1161,11 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
 <section id="aplicar-una-funcion-a-los-datos-de-una-columna">
-<h2><span class="section-number">15.1. </span>Aplicar una función a los datos de una columna<a class="headerlink" href="#aplicar-una-funcion-a-los-datos-de-una-columna" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">14.4.2. </span>Aplicar una función a los datos de una columna<a class="headerlink" href="#aplicar-una-funcion-a-los-datos-de-una-columna" title="Link to this heading">#</a></h3>
 <section id="ejemplo1">
-<h3><span class="section-number">15.1.1. </span>Ejemplo1<a class="headerlink" href="#ejemplo1" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">14.4.2.1. </span>Ejemplo1<a class="headerlink" href="#ejemplo1" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;WELL_TVD_+1000000&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;WELL_TVD&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="mi">1000000</span><span class="p">)</span>
@@ -831,7 +1182,7 @@ document.write(`
 </div>
 </section>
 <section id="ejemplo-2">
-<h3><span class="section-number">15.1.2. </span>Ejemplo 2<a class="headerlink" href="#ejemplo-2" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">14.4.2.2. </span>Ejemplo 2<a class="headerlink" href="#ejemplo-2" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#defino una funcion, por ejemplo para corregir los errores en los nombre de los deptos:</span>
@@ -905,7 +1256,10 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Operaciones sobre cols</p>
+</section>
+</section>
+<section id="operaciones-sobre-cols">
+<h3><span class="section-number">14.4.3. </span>Operaciones sobre cols<a class="headerlink" href="#operaciones-sobre-cols" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;suma&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;WELL_TVD&quot;</span><span class="p">]</span><span class="o">+</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;WELL_X_DEP&quot;</span><span class="p">]</span>
@@ -923,10 +1277,10 @@ document.write(`
 </section>
 </section>
 <section id="otras-cosas-utiles">
-<h2><span class="section-number">15.2. </span>Otras cosas útiles<a class="headerlink" href="#otras-cosas-utiles" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.5. </span>Otras cosas útiles<a class="headerlink" href="#otras-cosas-utiles" title="Link to this heading">#</a></h2>
 <section id="concatenar-bases-de-datos">
-<h3><span class="section-number">15.2.1. </span>concatenar bases de datos<a class="headerlink" href="#concatenar-bases-de-datos" title="Link to this heading">#</a></h3>
-<p>agregar filas (ojo: ambos DataFrames tienen que tener las mismas columnas!!)</p>
+<h3><span class="section-number">14.5.1. </span>concatenar bases de datos<a class="headerlink" href="#concatenar-bases-de-datos" title="Link to this heading">#</a></h3>
+<p>Agregar filas (ojo: ambos DataFrames tienen que tener las mismas columnas!!)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_5</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -938,7 +1292,7 @@ document.write(`
 </div>
 </section>
 <section id="agregar-columnas">
-<h3><span class="section-number">15.2.2. </span>agregar columnas<a class="headerlink" href="#agregar-columnas" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.5.2. </span>agregar columnas<a class="headerlink" href="#agregar-columnas" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
@@ -949,6 +1303,13 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">=</span> <span class="n">df</span><span class="p">[[]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span>
 </pre></div>
 </div>
 </div>
@@ -988,12 +1349,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../01-reviewPython/pandas-intro.html"
+       href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">14. </span>Pandas Introduction</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>Intro Python II: python data structures</p>
       </div>
     </a>
 </div>
@@ -1012,14 +1373,29 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicar-una-funcion-a-los-datos-de-una-columna">15.1. Aplicar una función a los datos de una columna</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo1">15.1.1. Ejemplo1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-2">15.1.2. Ejemplo 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dataframe">14.1. The Dataframe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-vs-polars">14.2. Pandas vs. Polars</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polars-syntax-example">14.2.1. Polars Syntax Example</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-cosas-utiles">15.2. Otras cosas útiles</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenar-bases-de-datos">15.2.1. concatenar bases de datos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agregar-columnas">15.2.2. agregar columnas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applied-pandas-tutorial">14.3. Applied pandas tutorial</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cargando-y-explorando-los-datos">14.3.1. Cargando y explorando los datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-de-datos">14.3.2. Limpieza de datos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-data-exploration">14.4. More data exploration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agrupaciones">14.4.1. Agrupaciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicar-una-funcion-a-los-datos-de-una-columna">14.4.2. Aplicar una función a los datos de una columna</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo1">14.4.2.1. Ejemplo1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-2">14.4.2.2. Ejemplo 2</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-sobre-cols">14.4.3. Operaciones sobre cols</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-cosas-utiles">14.5. Otras cosas útiles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenar-bases-de-datos">14.5.1. concatenar bases de datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agregar-columnas">14.5.2. agregar columnas</a></li>
 </ul>
 </li>
 </ul>
