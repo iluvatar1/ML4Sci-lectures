@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>13. Pandas Introduction &#8212; Introduction to Machine Learning for Science</title>
+    <title>14. Pandas Introduction &#8212; Introduction to Machine Learning for Science</title>
   
   
   
@@ -82,8 +82,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="14. Pandas for data cleaning and analysis" href="../02-LimpiezayPrepDatos/TutorialPandas.html" />
-    <link rel="prev" title="12. Intro Python II: python data structures" href="02-IntroProgrammingPython-DataStructs.html" />
+    <link rel="next" title="15. Pandas for data cleaning and analysis" href="../02-LimpiezayPrepDatos/TutorialPandas.html" />
+    <link rel="prev" title="13. Intro Python II: python data structures" href="02-IntroProgrammingPython-DataStructs.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -222,10 +222,11 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01-IntroProgrammingPython.html">11. Python Programming (very fast) Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02-IntroProgrammingPython-DataStructs.html">12. Intro Python II: python data structures</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">13. Pandas Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">14. Pandas for data cleaning and analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PythonReview.html">11. Python Review:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-IntroProgrammingPython.html">12. Python Programming (very fast) Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-IntroProgrammingPython-DataStructs.html">13. Intro Python II: python data structures</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Pandas Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">15. Pandas for data cleaning and analysis</a></li>
 </ul>
 
     </div>
@@ -488,21 +489,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-with-pandas">13.1. Starting with pandas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series">13.2. Series</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe">13.3. Dataframe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-a-large-csv-into-a-dataframe">13.4. Reading a large csv into a dataframe</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-info">13.4.1. Processing info</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date-series-and-data-frames">13.4.2. Date series and data frames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-with-pandas">14.1. Starting with pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series">14.2. Series</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe">14.3. Dataframe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-a-large-csv-into-a-dataframe">14.4. Reading a large csv into a dataframe</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-info">14.4.1. Processing info</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date-series-and-data-frames">14.4.2. Date series and data frames</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">13.5. Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-a-simple-dataframe">13.5.1. Processing a simple dataframe</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-some-exercises">13.5.2. Solving some exercises</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-covid19-data">13.5.3. Processing covid19 data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">14.5. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-a-simple-dataframe">14.5.1. Processing a simple dataframe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-some-exercises">14.5.2. Solving some exercises</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-covid19-data">14.5.3. Processing covid19 data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">13.6. Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">14.6. Practice</a></li>
 </ul>
             </nav>
         </div>
@@ -515,7 +516,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas-introduction">
-<h1><span class="section-number">13. </span>Pandas Introduction<a class="headerlink" href="#pandas-introduction" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">14. </span>Pandas Introduction<a class="headerlink" href="#pandas-introduction" title="Link to this heading">#</a></h1>
 <p>Pandas is the de-facto python standar tool to perform data processing and analysis. The current version is v1.1.2 (see <a class="reference external" href="http://pandas.pydata.org/">http://pandas.pydata.org/</a>).</p>
 <p>You can install it by just running</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda install pandas
@@ -524,7 +525,7 @@ document.write(`
 <p>In the following we will use both the official pandas documentation and the book “Numerical Python - A practical technique approach for Industry”, from Robert Johansson, as the basis for this introduction.</p>
 <p>We will also use the seaborn libray to generate plots that are pleasant and clear almost by default. Please install it.</p>
 <section id="starting-with-pandas">
-<h2><span class="section-number">13.1. </span>Starting with pandas<a class="headerlink" href="#starting-with-pandas" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.1. </span>Starting with pandas<a class="headerlink" href="#starting-with-pandas" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -536,7 +537,7 @@ document.write(`
 </div>
 </section>
 <section id="series">
-<h2><span class="section-number">13.2. </span>Series<a class="headerlink" href="#series" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.2. </span>Series<a class="headerlink" href="#series" title="Link to this heading">#</a></h2>
 <p>A series is a convenient container for one-dimensional arrays, which can use descriptive name for indexing and allows for quick access to some descriptive statistics.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -680,7 +681,7 @@ Name: Population, dtype: float64
 </div>
 </section>
 <section id="dataframe">
-<h2><span class="section-number">13.3. </span>Dataframe<a class="headerlink" href="#dataframe" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.3. </span>Dataframe<a class="headerlink" href="#dataframe" title="Link to this heading">#</a></h2>
 <p>The dataframe is the most important object inside pandas. It allows to represent, access, process, etc multi-dimensional data.</p>
 <p><img alt="Pandas dataframe" src="https://www.w3resource.com/w3r_images/pandas-data-structure.svg" />
 Source: <a class="reference external" href="https://www.w3resource.com/python-exercises/pandas/index.php">https://www.w3resource.com/python-exercises/pandas/index.php</a></p>
@@ -1134,7 +1135,7 @@ Name: Population, dtype: int64
 </div>
 </section>
 <section id="reading-a-large-csv-into-a-dataframe">
-<h2><span class="section-number">13.4. </span>Reading a large csv into a dataframe<a class="headerlink" href="#reading-a-large-csv-into-a-dataframe" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.4. </span>Reading a large csv into a dataframe<a class="headerlink" href="#reading-a-large-csv-into-a-dataframe" title="Link to this heading">#</a></h2>
 <p>Download the population for many european cities from the url: <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_cities_in_the_European_Union_by_population_within_city_limits">https://en.wikipedia.org/wiki/List_of_cities_in_the_European_Union_by_population_within_city_limits</a> or directly from <a class="reference external" href="https://raw.githubusercontent.com/jrjohansson/numerical-python-book-code/master/european_cities.csv">https://raw.githubusercontent.com/jrjohansson/numerical-python-book-code/master/european_cities.csv</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1335,7 +1336,7 @@ memory usage: 4.2+ KB
 </div></div></div>
 </div>
 <section id="processing-info">
-<h3><span class="section-number">13.4.1. </span>Processing info<a class="headerlink" href="#processing-info" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.4.1. </span>Processing info<a class="headerlink" href="#processing-info" title="Link to this heading">#</a></h3>
 <p>Let’s say that you want to have the population as integers. You will need to extract the population , to replace the ‘,’ and to cast the values to integers. You could use the <code class="docutils literal notranslate"><span class="pre">apply</span></code> method to do that</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2677,7 +2678,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2423/314900803.py:3: FutureWarning: The provided callable &lt;function sum at 0x7fdc2c93e340&gt; is currently using DataFrameGroupBy.sum. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;sum&quot; instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2479/314900803.py:3: FutureWarning: The provided callable &lt;function sum at 0x7f72b8e91c60&gt; is currently using DataFrameGroupBy.sum. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;sum&quot; instead.
   df.pivot_table(values=&quot;Numeric Population&quot;, index=[&quot;State&quot;], aggfunc=np.sum)
 </pre></div>
 </div>
@@ -2809,7 +2810,7 @@ Name: count, dtype: int64
 </div>
 </section>
 <section id="date-series-and-data-frames">
-<h3><span class="section-number">13.4.2. </span>Date series and data frames<a class="headerlink" href="#date-series-and-data-frames" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.4.2. </span>Date series and data frames<a class="headerlink" href="#date-series-and-data-frames" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;20130101&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
@@ -2852,45 +2853,45 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>0.645187</td>
-      <td>-2.268141</td>
-      <td>0.075391</td>
-      <td>0.661055</td>
+      <td>-0.490810</td>
+      <td>-0.988378</td>
+      <td>-1.035157</td>
+      <td>-0.766557</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
-      <td>-0.754685</td>
-      <td>0.528804</td>
-      <td>-0.111537</td>
-      <td>0.730360</td>
+      <td>1.242657</td>
+      <td>1.976347</td>
+      <td>0.607330</td>
+      <td>0.035630</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
-      <td>-0.038488</td>
-      <td>0.169890</td>
-      <td>-1.139892</td>
-      <td>-2.367220</td>
+      <td>-0.748816</td>
+      <td>-0.247335</td>
+      <td>0.257245</td>
+      <td>-0.444408</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>-2.360811</td>
-      <td>-1.381890</td>
-      <td>-0.076752</td>
-      <td>-0.022786</td>
+      <td>1.638703</td>
+      <td>0.511802</td>
+      <td>1.580107</td>
+      <td>1.476439</td>
     </tr>
     <tr>
       <th>2013-01-05</th>
-      <td>0.519886</td>
-      <td>0.455566</td>
-      <td>-1.760856</td>
-      <td>1.316759</td>
+      <td>0.666799</td>
+      <td>-0.855475</td>
+      <td>-1.148612</td>
+      <td>-1.560368</td>
     </tr>
     <tr>
       <th>2013-01-06</th>
-      <td>-1.987486</td>
-      <td>-1.240703</td>
-      <td>1.234976</td>
-      <td>0.641025</td>
+      <td>-0.987505</td>
+      <td>-0.857413</td>
+      <td>-1.447970</td>
+      <td>-0.042230</td>
     </tr>
   </tbody>
 </table>
@@ -2930,45 +2931,45 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>0.661055</td>
-      <td>0.075391</td>
-      <td>-2.268141</td>
-      <td>0.645187</td>
+      <td>-0.766557</td>
+      <td>-1.035157</td>
+      <td>-0.988378</td>
+      <td>-0.490810</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
-      <td>0.730360</td>
-      <td>-0.111537</td>
-      <td>0.528804</td>
-      <td>-0.754685</td>
+      <td>0.035630</td>
+      <td>0.607330</td>
+      <td>1.976347</td>
+      <td>1.242657</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
-      <td>-2.367220</td>
-      <td>-1.139892</td>
-      <td>0.169890</td>
-      <td>-0.038488</td>
+      <td>-0.444408</td>
+      <td>0.257245</td>
+      <td>-0.247335</td>
+      <td>-0.748816</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>-0.022786</td>
-      <td>-0.076752</td>
-      <td>-1.381890</td>
-      <td>-2.360811</td>
+      <td>1.476439</td>
+      <td>1.580107</td>
+      <td>0.511802</td>
+      <td>1.638703</td>
     </tr>
     <tr>
       <th>2013-01-05</th>
-      <td>1.316759</td>
-      <td>-1.760856</td>
-      <td>0.455566</td>
-      <td>0.519886</td>
+      <td>-1.560368</td>
+      <td>-1.148612</td>
+      <td>-0.855475</td>
+      <td>0.666799</td>
     </tr>
     <tr>
       <th>2013-01-06</th>
-      <td>0.641025</td>
-      <td>1.234976</td>
-      <td>-1.240703</td>
-      <td>-1.987486</td>
+      <td>-0.042230</td>
+      <td>-1.447970</td>
+      <td>-0.857413</td>
+      <td>-0.987505</td>
     </tr>
   </tbody>
 </table>
@@ -3008,45 +3009,45 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>0.645187</td>
-      <td>-2.268141</td>
-      <td>0.075391</td>
-      <td>0.661055</td>
+      <td>-0.490810</td>
+      <td>-0.988378</td>
+      <td>-1.035157</td>
+      <td>-0.766557</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
-      <td>-0.754685</td>
-      <td>0.528804</td>
-      <td>-0.111537</td>
-      <td>0.730360</td>
+      <td>1.242657</td>
+      <td>1.976347</td>
+      <td>0.607330</td>
+      <td>0.035630</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
-      <td>-0.038488</td>
-      <td>0.169890</td>
-      <td>-1.139892</td>
-      <td>-2.367220</td>
+      <td>-0.748816</td>
+      <td>-0.247335</td>
+      <td>0.257245</td>
+      <td>-0.444408</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>-2.360811</td>
-      <td>-1.381890</td>
-      <td>-0.076752</td>
-      <td>-0.022786</td>
+      <td>1.638703</td>
+      <td>0.511802</td>
+      <td>1.580107</td>
+      <td>1.476439</td>
     </tr>
     <tr>
       <th>2013-01-05</th>
-      <td>0.519886</td>
-      <td>0.455566</td>
-      <td>-1.760856</td>
-      <td>1.316759</td>
+      <td>0.666799</td>
+      <td>-0.855475</td>
+      <td>-1.148612</td>
+      <td>-1.560368</td>
     </tr>
     <tr>
       <th>2013-01-06</th>
-      <td>-1.987486</td>
-      <td>-1.240703</td>
-      <td>1.234976</td>
-      <td>0.641025</td>
+      <td>-0.987505</td>
+      <td>-0.857413</td>
+      <td>-1.447970</td>
+      <td>-0.042230</td>
     </tr>
   </tbody>
 </table>
@@ -3059,10 +3060,10 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2013-01-01     True
-2013-01-02    False
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2013-01-01    False
+2013-01-02     True
 2013-01-03    False
-2013-01-04    False
+2013-01-04     True
 2013-01-05     True
 2013-01-06    False
 Freq: D, Name: A, dtype: bool
@@ -3103,18 +3104,25 @@ Freq: D, Name: A, dtype: bool
   </thead>
   <tbody>
     <tr>
-      <th>2013-01-01</th>
-      <td>0.645187</td>
-      <td>-2.268141</td>
-      <td>0.075391</td>
-      <td>0.661055</td>
+      <th>2013-01-02</th>
+      <td>1.242657</td>
+      <td>1.976347</td>
+      <td>0.607330</td>
+      <td>0.035630</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>1.638703</td>
+      <td>0.511802</td>
+      <td>1.580107</td>
+      <td>1.476439</td>
     </tr>
     <tr>
       <th>2013-01-05</th>
-      <td>0.519886</td>
-      <td>0.455566</td>
-      <td>-1.760856</td>
-      <td>1.316759</td>
+      <td>0.666799</td>
+      <td>-0.855475</td>
+      <td>-1.148612</td>
+      <td>-1.560368</td>
     </tr>
   </tbody>
 </table>
@@ -3154,45 +3162,45 @@ Freq: D, Name: A, dtype: bool
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>0.645187</td>
       <td>NaN</td>
-      <td>0.075391</td>
-      <td>0.661055</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
-      <td>NaN</td>
-      <td>0.528804</td>
-      <td>NaN</td>
-      <td>0.730360</td>
+      <td>1.242657</td>
+      <td>1.976347</td>
+      <td>0.607330</td>
+      <td>0.035630</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
       <td>NaN</td>
-      <td>0.169890</td>
       <td>NaN</td>
+      <td>0.257245</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>1.638703</td>
+      <td>0.511802</td>
+      <td>1.580107</td>
+      <td>1.476439</td>
     </tr>
     <tr>
       <th>2013-01-05</th>
-      <td>0.519886</td>
-      <td>0.455566</td>
+      <td>0.666799</td>
       <td>NaN</td>
-      <td>1.316759</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>2013-01-06</th>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.234976</td>
-      <td>0.641025</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
@@ -3232,45 +3240,45 @@ Freq: D, Name: A, dtype: bool
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>0.645187</td>
       <td>5.000000</td>
-      <td>0.075391</td>
-      <td>0.661055</td>
+      <td>5.000000</td>
+      <td>5.000000</td>
+      <td>5.000000</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
-      <td>5.000000</td>
-      <td>0.528804</td>
-      <td>5.000000</td>
-      <td>0.730360</td>
+      <td>1.242657</td>
+      <td>1.976347</td>
+      <td>0.607330</td>
+      <td>0.035630</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
       <td>5.000000</td>
-      <td>0.169890</td>
       <td>5.000000</td>
+      <td>0.257245</td>
       <td>5.000000</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>5.000000</td>
-      <td>5.000000</td>
-      <td>5.000000</td>
-      <td>5.000000</td>
+      <td>1.638703</td>
+      <td>0.511802</td>
+      <td>1.580107</td>
+      <td>1.476439</td>
     </tr>
     <tr>
       <th>2013-01-05</th>
-      <td>0.519886</td>
-      <td>0.455566</td>
+      <td>0.666799</td>
       <td>5.000000</td>
-      <td>1.316759</td>
+      <td>5.000000</td>
+      <td>5.000000</td>
     </tr>
     <tr>
       <th>2013-01-06</th>
       <td>5.000000</td>
       <td>5.000000</td>
-      <td>1.234976</td>
-      <td>0.641025</td>
+      <td>5.000000</td>
+      <td>5.000000</td>
     </tr>
   </tbody>
 </table>
@@ -3287,10 +3295,10 @@ Freq: D, Name: A, dtype: bool
 </section>
 </section>
 <section id="exercises">
-<h2><span class="section-number">13.5. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.5. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <p>From : <a class="reference external" href="https://www.w3resource.com/python-exercises/pandas/index.php">https://www.w3resource.com/python-exercises/pandas/index.php</a> , <a class="github reference external" href="https://github.com/ajcr/100-pandas-puzzles/blob/master/100-pandas-puzzles.ipynb">ajcr/100-pandas-puzzles</a> , <a class="github reference external" href="https://github.com/guipsamora/pandas_exercises">guipsamora/pandas_exercises</a></p>
 <section id="processing-a-simple-dataframe">
-<h3><span class="section-number">13.5.1. </span>Processing a simple dataframe<a class="headerlink" href="#processing-a-simple-dataframe" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.5.1. </span>Processing a simple dataframe<a class="headerlink" href="#processing-a-simple-dataframe" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Write a Python program to create and display a DataFrame from a specified dictionary data which has the index labels.</p>
 <ul class="simple">
@@ -3310,18 +3318,18 @@ Freq: D, Name: A, dtype: bool
 </ol>
 </section>
 <section id="solving-some-exercises">
-<h3><span class="section-number">13.5.2. </span>Solving some exercises<a class="headerlink" href="#solving-some-exercises" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.5.2. </span>Solving some exercises<a class="headerlink" href="#solving-some-exercises" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Solve the even exercises on <a class="github reference external" href="https://github.com/ajcr/100-pandas-puzzles/blob/master/100-pandas-puzzles.ipynb">ajcr/100-pandas-puzzles</a></p></li>
 </ol>
 </section>
 <section id="processing-covid19-data">
-<h3><span class="section-number">13.5.3. </span>Processing covid19 data<a class="headerlink" href="#processing-covid19-data" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.5.3. </span>Processing covid19 data<a class="headerlink" href="#processing-covid19-data" title="Link to this heading">#</a></h3>
 <p>Source: <a class="github reference external" href="https://github.com/CSSEGISandData/COVID-19">CSSEGISandData/COVID-19</a></p>
 </section>
 </section>
 <section id="practice">
-<h2><span class="section-number">13.6. </span>Practice<a class="headerlink" href="#practice" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.6. </span>Practice<a class="headerlink" href="#practice" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>The Colombian government offers public dataset regarding its functioning, at the webpage <a class="reference external" href="https://www.datos.gov.co/">https://www.datos.gov.co/</a>. As an example, we will get the budget info from Cali, and extract the departments with budget execution smaller than 90%. REF: <a class="reference external" href="https://www.datos.gov.co/dataset/Ejecuci-n-Presupuestal-de-Gastos-por-Organismos-a-/qiu9-tp3c">https://www.datos.gov.co/dataset/Ejecuci-n-Presupuestal-de-Gastos-por-Organismos-a-/qiu9-tp3c</a></p></li>
 </ol>
@@ -3759,7 +3767,7 @@ Freq: D, Name: A, dtype: bool
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">12. </span>Intro Python II: python data structures</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>Intro Python II: python data structures</p>
       </div>
     </a>
     <a class="right-next"
@@ -3767,7 +3775,7 @@ Freq: D, Name: A, dtype: bool
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">14. </span>Pandas for data cleaning and analysis</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>Pandas for data cleaning and analysis</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -3787,21 +3795,21 @@ Freq: D, Name: A, dtype: bool
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-with-pandas">13.1. Starting with pandas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series">13.2. Series</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe">13.3. Dataframe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-a-large-csv-into-a-dataframe">13.4. Reading a large csv into a dataframe</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-info">13.4.1. Processing info</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date-series-and-data-frames">13.4.2. Date series and data frames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-with-pandas">14.1. Starting with pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series">14.2. Series</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe">14.3. Dataframe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-a-large-csv-into-a-dataframe">14.4. Reading a large csv into a dataframe</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-info">14.4.1. Processing info</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date-series-and-data-frames">14.4.2. Date series and data frames</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">13.5. Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-a-simple-dataframe">13.5.1. Processing a simple dataframe</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-some-exercises">13.5.2. Solving some exercises</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-covid19-data">13.5.3. Processing covid19 data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">14.5. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-a-simple-dataframe">14.5.1. Processing a simple dataframe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-some-exercises">14.5.2. Solving some exercises</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-covid19-data">14.5.3. Processing covid19 data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">13.6. Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">14.6. Practice</a></li>
 </ul>
   </nav></div>
 
