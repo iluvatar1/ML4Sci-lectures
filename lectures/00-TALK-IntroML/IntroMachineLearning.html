@@ -1,0 +1,914 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>2. A fast introduction to Machine Learning &#8212; Introduction to Machine Learning for Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster.custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster.bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-shadow.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-punk.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-noir.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-light.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-borderless.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/micromodal.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles.css?v=76e7d31e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    <script src="../../_static/js/hoverxref.js"></script>
+    <script src="../../_static/js/tooltipster.bundle.min.js"></script>
+    <script src="../../_static/js/micromodal.min.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/00-TALK-IntroML/IntroMachineLearning';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="1. Introduction to the course and to Machine Learning" href="../00-IntroductionCourseML/IntroCourse-MachineLearning.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../README.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Introduction to Machine Learning for Science</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../README.html">
+                    Introduction to Machine Learning for Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-IntroductionCourseML/IntroCourse-MachineLearning.html">1. Introduction to the course and to Machine Learning</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. A fast introduction to Machine Learning</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/iluvatar1/ML4Sci-lectures" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/iluvatar1/ML4Sci-lectures/issues/new?title=Issue%20on%20page%20%2Flectures/00-TALK-IntroML/IntroMachineLearning.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lectures/00-TALK-IntroML/IntroMachineLearning.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>A fast introduction to Machine Learning</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-machine-learning">2.1. Introduction to Machine Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-development">2.2. Historical development</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-find-data-in-the-basic-and-natural-sciences">2.3. Where to Find Data in the Basic and Natural Sciences</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#field-specific-databases">2.3.1. Field-Specific Databases</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#genomics-and-molecular-biology">2.3.1.1. Genomics and Molecular Biology:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#environmental-and-earth-sciences">2.3.1.2. Environmental and Earth Sciences:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#astronomy-and-physics">2.3.1.3. Astronomy and Physics:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#chemistry">2.3.1.4. Chemistry:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-learning">2.4. Types of learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-in-science">2.5. ML in science</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-short-fast-example">2.6. Practical, short, fast example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised">2.6.1. Supervised</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised">2.6.2. Unsupervised</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning">2.6.3. Reinforcement learning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typical-workflow">2.7. Typical workflow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-concepts">2.7.1. Core concepts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-algorithms">2.8. ML Algorithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classifier-comparison">2.8.1. Classifier comparison:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-flow-playground">2.8.2. Tensor flow playground</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="a-fast-introduction-to-machine-learning">
+<h1><span class="section-number">2. </span>A fast introduction to Machine Learning<a class="headerlink" href="#a-fast-introduction-to-machine-learning" title="Link to this heading">#</a></h1>
+<section id="introduction-to-machine-learning">
+<h2><span class="section-number">2.1. </span>Introduction to Machine Learning<a class="headerlink" href="#introduction-to-machine-learning" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>Machine learning is the field of study that gives computers the ability
+to learn without being explicitly programmed. Arthur Samuel, 1959</p>
+</div></blockquote>
+<p>Learning:</p>
+<blockquote>
+<div><p>A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E. Tom Mitchell’s, 1997</p>
+</div></blockquote>
+<p>Machine learning is a branch of artificial intelligence that allows computers to learn from given information and perform new but similar tasks.</p>
+<a class="reference internal image-reference" href="../../_images/AI-ML.png"><img alt="transistors-per-microprocessor.png" class="align-center" src="../../_images/AI-ML.png" style="width: 50%;" /></a>
+<p><strong>Artificial intelligence</strong>: The computer performs actions defined as requiring intelligence -&gt; Moving target</p>
+<ul class="simple">
+<li><p>Search Based Heuristic Optimization</p></li>
+<li><p>Evolutionary computation</p></li>
+<li><p>Logic Programming (inductive logic programming, fuzzy logic)</p></li>
+<li><p>robabilistic Reasoning Under Uncertainty (bayesian networks)</p></li>
+<li><p>Computer Vision</p></li>
+<li><p>Natural Language Processing</p></li>
+<li><p>Robotics</p></li>
+<li><p>Machine Learning</p></li>
+</ul>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>Self-driving cars</p></li>
+<li><p>ChatGPT (LLM)</p></li>
+<li><p>Healthcare: Diagnosis from scans</p></li>
+<li><p>Finance: Fraud detection</p></li>
+<li><p>Retail: Recommender systems</p></li>
+<li><p>Transport: Autonomous vehicles</p></li>
+<li><p>Creativity: AI art, music, writing</p></li>
+</ul>
+<!-- <div style="text-align: center;">
+    <img src="figs/AI-ML.png" alt="Machine learning as a subarea of artificail intelligence. From: Understanding Deep Learning, Simon J.D. Prince" width="600">
+    <figcaption>From: Understanding Deep Learning, Simon J.D. Prince</figcaption>
+</div> --></section>
+<section id="historical-development">
+<h2><span class="section-number">2.2. </span>Historical development<a class="headerlink" href="#historical-development" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://letsdatascience.com/learn/history/history-of-machine-learning/">https://letsdatascience.com/learn/history/history-of-machine-learning/</a></p></li>
+<li><p><a class="github reference external" href="https://github.com/microsoft/ML-For-Beginners/blob/main/1-Introduction/2-history-of-ML/README.md">microsoft/ML-For-Beginners</a></p></li>
+<li><p><a class="reference external" href="https://www.inveniam.fr/a-brief-history-of-machine-learning">https://www.inveniam.fr/a-brief-history-of-machine-learning</a></p></li>
+<li><p><a class="reference external" href="https://ahistoryofai.com/">https://ahistoryofai.com/</a></p></li>
+</ul>
+<p>Hardware was too costly, but improvements on both cpu and gpu made it practical, or at least attainable, to apply the different AI models.</p>
+<a class="reference internal image-reference" href="../../_images/transistors-per-microprocessor.png"><img alt="transistor versus microprocesos" class="align-center" src="../../_images/transistors-per-microprocessor.png" style="width: 60%;" /></a>
+<img alt="gpu-perf over time" src="https://epochai.org/assets/images/posts/2022/gpu-perf/gpu-perf-banner.png" />
+<p>Is this the future? <a class="reference external" href="https://ai-2027.com/">https://ai-2027.com/</a></p>
+<div style="text-align: center;">
+<figure>
+<img src="https://ai-2027.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FepochLLMprice-nowatermark.824fa343.png&w=1920&q=75" width=60%>
+<figcaption> https://ai-2027.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FepochLLMprice-nowatermark.824fa343.png&w=1920&q=75 </figcaption>
+</figure>
+</div>
+</section>
+<section id="where-to-find-data-in-the-basic-and-natural-sciences">
+<h2><span class="section-number">2.3. </span>Where to Find Data in the Basic and Natural Sciences<a class="headerlink" href="#where-to-find-data-in-the-basic-and-natural-sciences" title="Link to this heading">#</a></h2>
+<p>Finding high-quality, publicly available data is a crucial skill for any scientist. Data is often stored in repositories, which can be general-purpose or field-specific. The articles mentioned previously likely sourced their data from a mix of their own experiments and public databases like these.
+General-Purpose Scientific Data Repositories</p>
+<p>These platforms host datasets from a wide variety of scientific fields. They are often used when a field-specific repository doesn’t exist or as a requirement for publication in many journals.</p>
+<ul class="simple">
+<li><p>Zenodo: (<a class="reference external" href="https://zenodo.org/">https://zenodo.org/</a>)</p></li>
+</ul>
+<p>A general-purpose repository operated by CERN. It accepts data from all fields of science and provides a DOI for every upload, making the data citable.</p>
+<ul class="simple">
+<li><p>Figshare: (<a class="reference external" href="https://figshare.com/">https://figshare.com/</a>)</p></li>
+</ul>
+<p>A platform where researchers can make all of their research outputs available in a citable, shareable, and discoverable manner. It hosts figures, datasets, posters, and code.</p>
+<ul class="simple">
+<li><p>Dryad: (<a class="reference external" href="https://datadryad.org/">https://datadryad.org/</a>)</p></li>
+</ul>
+<p>A curated general-purpose repository that makes the data underlying scientific publications discoverable, freely reusable, and citable. It has strong ties to the biosciences but is open to all fields.</p>
+<section id="field-specific-databases">
+<h3><span class="section-number">2.3.1. </span>Field-Specific Databases<a class="headerlink" href="#field-specific-databases" title="Link to this heading">#</a></h3>
+<p>These are highly curated databases focused on a single area of research.</p>
+<section id="genomics-and-molecular-biology">
+<h4><span class="section-number">2.3.1.1. </span>Genomics and Molecular Biology:<a class="headerlink" href="#genomics-and-molecular-biology" title="Link to this heading">#</a></h4>
+<ul>
+<li><p>NCBI (National Center for Biotechnology Information): (<a class="reference external" href="https://www.ncbi.nlm.nih.gov/">https://www.ncbi.nlm.nih.gov/</a>) A suite of databases, including:</p>
+<p>Gene Expression Omnibus (GEO): For gene expression data from microarrays and sequencing.</p>
+<p>Sequence Read Archive (SRA): For raw sequencing data from next-generation sequencers.</p>
+</li>
+<li><p>Protein Data Bank (PDB): (<a class="reference external" href="https://www.rcsb.org/">https://www.rcsb.org/</a>) A database of 3D structural data for large biological molecules like proteins and nucleic acids. This is essential for the kind of molecular dynamics work mentioned in the Sfriso &amp; Crave paper.</p></li>
+</ul>
+</section>
+<section id="environmental-and-earth-sciences">
+<h4><span class="section-number">2.3.1.2. </span>Environmental and Earth Sciences:<a class="headerlink" href="#environmental-and-earth-sciences" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>USGS (U.S. Geological Survey) Data Releases: (<a class="reference external" href="https://www.usgs.gov/data">https://www.usgs.gov/data</a>) Provides public access to water data (matching the Kaur &amp; Godara study), geological data (relevant to the Kahangwa study), and more.</p></li>
+<li><p>NOAA (National Oceanic and Atmospheric Administration): (<a class="reference external" href="https://www.noaa.gov/data">https://www.noaa.gov/data</a>) The primary source for climate, weather, and oceanographic data.</p></li>
+<li><p>Copernicus: (<a class="reference external" href="https://www.copernicus.eu/en">https://www.copernicus.eu/en</a>) The European Union’s Earth observation programme, providing vast amounts of satellite imagery and environmental data.</p></li>
+</ul>
+</section>
+<section id="astronomy-and-physics">
+<h4><span class="section-number">2.3.1.3. </span>Astronomy and Physics:<a class="headerlink" href="#astronomy-and-physics" title="Link to this heading">#</a></h4>
+<p>Sloan Digital Sky Survey (SDSS): (<a class="reference external" href="https://www.sdss.org/">https://www.sdss.org/</a>) A massive survey that has created the most detailed three-dimensional maps of the Universe ever made. It provides images and spectra for millions of celestial objects. (We will use this for our example).</p>
+<p>MAST (Mikulski Archive for Space Telescopes): (<a class="reference external" href="https://mast.stsci.edu/">https://mast.stsci.edu/</a>) The official data archive for NASA’s Hubble, James Webb, and other space telescopes.</p>
+<p>ESO Science Archive Facility: (<a class="reference external" href="http://archive.eso.org/">http://archive.eso.org/</a>) The data archive for the European Southern Observatory’s telescopes, including the Very Large Telescope (VLT).</p>
+</section>
+<section id="chemistry">
+<h4><span class="section-number">2.3.1.4. </span>Chemistry:<a class="headerlink" href="#chemistry" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>PubChem: (<a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/">https://pubchem.ncbi.nlm.nih.gov/</a>) A massive database of chemical molecules and their activities against biological assays.</p></li>
+<li><p>Spectral Database for Organic Compounds (SDBS): (<a class="reference external" href="https://sdbs.db.aist.go.jp/">https://sdbs.db.aist.go.jp/</a>) A free database containing various types of spectra (MS, NMR, IR, Raman) for thousands of organic compounds.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="types-of-learning">
+<h2><span class="section-number">2.4. </span>Types of learning<a class="headerlink" href="#types-of-learning" title="Link to this heading">#</a></h2>
+<a class="reference internal image-reference" href="../../_images/AI-ML.png"><img alt="ML trends" class="align-center" src="../../_images/AI-ML.png" style="width: 40%;" /></a>
+</section>
+<section id="ml-in-science">
+<h2><span class="section-number">2.5. </span>ML in science<a class="headerlink" href="#ml-in-science" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://mailchi.mp/quantamagazine.org/how-physics-made-modern-ai-possible?e=7add59a1e9">https://mailchi.mp/quantamagazine.org/how-physics-made-modern-ai-possible?e=7add59a1e9</a></p>
+</section>
+<section id="practical-short-fast-example">
+<h2><span class="section-number">2.6. </span>Practical, short, fast example<a class="headerlink" href="#practical-short-fast-example" title="Link to this heading">#</a></h2>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data creation</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_blobs</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;bwr&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Input data&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/1c6ac44a928969979ca5378f9c57ce5a2161ca92baa629c8265808a52f2d642c.png" src="../../_images/1c6ac44a928969979ca5378f9c57ce5a2161ca92baa629c8265808a52f2d642c.png" />
+</div>
+</div>
+<section id="supervised">
+<h3><span class="section-number">2.6.1. </span>Supervised<a class="headerlink" href="#supervised" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Learn from labeled examples</p></li>
+<li><p>Task: Prediction (classification or regression)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Classification</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Train a classifier</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Plot decision boundary</span>
+<span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">xx</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">ravel</span><span class="p">()])</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;bwr&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;bwr&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Supervised Learning: Logistic Regression&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/c0dadc32789b36bd39382c3ddf0197809f6788fef31c6c46dd21a6978a4047c9.png" src="../../_images/c0dadc32789b36bd39382c3ddf0197809f6788fef31c6c46dd21a6978a4047c9.png" />
+</div>
+</div>
+</section>
+<section id="unsupervised">
+<h3><span class="section-number">2.6.2. </span>Unsupervised<a class="headerlink" href="#unsupervised" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>No labels, find structure in data</p></li>
+<li><p>Task: Clustering or dimensionality reduction</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.cluster</span><span class="w"> </span><span class="kn">import</span> <span class="n">KMeans</span>
+<span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">kmeans</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">preds</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">preds</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;cool&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Unsupervised: K-means Clustering&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/838712c3fe8f9853eea9fb3378715d4cf20e30e13d3a2364b99006a0c4c9c3c8.png" src="../../_images/838712c3fe8f9853eea9fb3378715d4cf20e30e13d3a2364b99006a0c4c9c3c8.png" />
+</div>
+</div>
+</section>
+<section id="reinforcement-learning">
+<h3><span class="section-number">2.6.3. </span>Reinforcement learning<a class="headerlink" href="#reinforcement-learning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Learn by trial and error</p></li>
+<li><p>Agent interacts with environment</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">IFrame</span>
+<span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/embed/L_4BPjLBF4E?si=4vNIAkUAz7tkTyiO&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;560&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;315&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html">
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/L_4BPjLBF4E?si=4vNIAkUAz7tkTyiO"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
+</div>
+</section>
+</section>
+<section id="typical-workflow">
+<h2><span class="section-number">2.7. </span>Typical workflow<a class="headerlink" href="#typical-workflow" title="Link to this heading">#</a></h2>
+<a class="reference internal image-reference" href="../../_images/ML-workflow.png"><img alt="ML workflow" class="align-center" src="../../_images/ML-workflow.png" style="width: 50%;" /></a>
+<ol class="arabic simple">
+<li><p><strong>Dataset Collection</strong>: Depends on the experiment or goals. What kind of data ? (categorical numerical) How much data? Units? reference data? data base? Data storage/access?</p></li>
+<li><p><strong>Dataset preprocessing</strong>: Cleaning data. Missing data. Noise. Outliers. Normalization. Training and test sets. Or Train, validation (for hyper parameters), and test set.</p></li>
+<li><p><strong>Model training</strong>: Depends on the actual approach. For supervised learning we need both input and output values. For unsupervised only input. No underfitting or overfitting.</p></li>
+<li><p><strong>Model evaluation</strong>: Testing the training success, with some defined metrics. Maybe needs to redo some previous steps.</p></li>
+</ol>
+<section id="core-concepts">
+<h3><span class="section-number">2.7.1. </span>Core concepts<a class="headerlink" href="#core-concepts" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Data</strong>: examples used for learning</p></li>
+<li><p><strong>Features</strong>: inputs (e.g., age, temperature, pixels)</p></li>
+<li><p><strong>Model</strong>: function that maps input to output</p></li>
+<li><p><strong>Training</strong>: adjusting model to reduce error</p></li>
+<li><p><strong>Testing</strong>: evaluate model on new data</p></li>
+<li><p><strong>Meta-Parameters</strong>: Parameters controlling the model</p></li>
+</ul>
+<p>Beware of under/over fitting : See also last part of <a class="reference external" href="https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks">https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks</a></p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolynomialFeatures</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_pipeline</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+
+<span class="c1"># True function</span>
+<span class="n">x_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Underfitting (degree=1)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">model_under</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">PolynomialFeatures</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">LinearRegression</span><span class="p">())</span>
+<span class="n">model_under</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x_plot</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;true function&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">model_under</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_plot</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;underfit model&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Underfitting&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Good fit (degree=3)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">model_good</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">PolynomialFeatures</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">LinearRegression</span><span class="p">())</span>
+<span class="n">model_good</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x_plot</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;true function&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">model_good</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_plot</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;good fit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Good Fit&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Overfitting (degree=15)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">model_over</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">PolynomialFeatures</span><span class="p">(</span><span class="mi">15</span><span class="p">),</span> <span class="n">LinearRegression</span><span class="p">())</span>
+<span class="n">model_over</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x_plot</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;true function&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">model_over</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_plot</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;overfit model&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Overfitting, poor generalization&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/3e30f42c3ce5e28829b9c5f8de5d3760bb950ce99aa337924a24bf1be218fb7b.png" src="../../_images/3e30f42c3ce5e28829b9c5f8de5d3760bb950ce99aa337924a24bf1be218fb7b.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="ml-algorithms">
+<h2><span class="section-number">2.8. </span>ML Algorithms<a class="headerlink" href="#ml-algorithms" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.datacamp.com/cheat-sheet/machine-learning-cheat-sheet">https://www.datacamp.com/cheat-sheet/machine-learning-cheat-sheet</a></p></li>
+<li><p><a class="reference external" href="https://sites.google.com/view/datascience-cheat-sheets">https://sites.google.com/view/datascience-cheat-sheets</a></p></li>
+<li><p><a class="github reference external" href="https://github.com/SamBelkacem/AI-ML-cheatsheets">SamBelkacem/AI-ML-cheatsheets</a></p></li>
+<li><p><a class="reference external" href="https://www.naftaliharris.com/blog/visualizing-k-means-clustering/">https://www.naftaliharris.com/blog/visualizing-k-means-clustering/</a></p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/ML-CheatSheet-01.webp"><img alt="Some algs ML" class="align-center" src="../../_images/ML-CheatSheet-01.webp" style="width: 50%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ML-Cheat-Sheet_2.png"><img alt="ML cheatsheet" class="align-center" src="../../_images/ML-Cheat-Sheet_2.png" style="width: 50%;" /></a>
+<section id="classifier-comparison">
+<h3><span class="section-number">2.8.1. </span>Classifier comparison:<a class="headerlink" href="#classifier-comparison" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html">https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html</a></p>
+<a class="reference internal image-reference" href="https://scikit-learn.org/stable/_images/sphx_glr_plot_classifier_comparison_001.png"><img alt="Classifiers" class="align-center" src="https://scikit-learn.org/stable/_images/sphx_glr_plot_classifier_comparison_001.png" style="width: 80%;" /></a>
+</section>
+<section id="tensor-flow-playground">
+<h3><span class="section-number">2.8.2. </span>Tensor flow playground<a class="headerlink" href="#tensor-flow-playground" title="Link to this heading">#</a></h3>
+<p>Try: <a class="reference external" href="https://playground.tensorflow.org">https://playground.tensorflow.org</a></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lectures/00-TALK-IntroML"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../00-IntroductionCourseML/IntroCourse-MachineLearning.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Introduction to the course and to Machine Learning</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-machine-learning">2.1. Introduction to Machine Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-development">2.2. Historical development</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-find-data-in-the-basic-and-natural-sciences">2.3. Where to Find Data in the Basic and Natural Sciences</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#field-specific-databases">2.3.1. Field-Specific Databases</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#genomics-and-molecular-biology">2.3.1.1. Genomics and Molecular Biology:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#environmental-and-earth-sciences">2.3.1.2. Environmental and Earth Sciences:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#astronomy-and-physics">2.3.1.3. Astronomy and Physics:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#chemistry">2.3.1.4. Chemistry:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-learning">2.4. Types of learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-in-science">2.5. ML in science</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-short-fast-example">2.6. Practical, short, fast example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised">2.6.1. Supervised</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised">2.6.2. Unsupervised</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning">2.6.3. Reinforcement learning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typical-workflow">2.7. Typical workflow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-concepts">2.7.1. Core concepts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-algorithms">2.8. ML Algorithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classifier-comparison">2.8.1. Classifier comparison:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-flow-playground">2.8.2. Tensor flow playground</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Veronica Arias, Carlos Viviescas, William Oquendo
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
