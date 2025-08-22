@@ -19,20 +19,22 @@ only_build_toc_files        : true
 #######################################################################################
 # Execution settings
 execute:
-  execute_notebooks         : cache # Whether to execute notebooks at build time. Must be one of ("auto", "force", "cache", "off")
-  cache                     : ""    # A path to the jupyter cache that will be used to store execution artifacts. Defaults to `_build/.jupyter_cache/`
-  exclude_patterns          : []    # A list of patterns to *skip* in execution (e.g. a notebook that takes a really long time)
-  timeout                   : 10    # The maximum time (in seconds) each notebook cell is allowed to run.
-  run_in_temp               : false # If `True`, then a temporary directory will be created and used as the command working directory (cwd),
-                                    # otherwise the notebook's parent directory will be the cwd.
-  allow_errors              : false # If `False`, when a code cell raises an error the execution is stopped, otherwise all cells are always run.
-  stderr_output             : show  # One of 'show', 'remove', 'remove-warn', 'warn', 'error', 'severe'
-  exclude_tags              : ["skip-execution"]
+  execute_notebooks         : off # Whether to execute notebooks at build time. Must be one of ("auto", "force", "cache", "off")
+# execute:
+#   execute_notebooks         : cache # Whether to execute notebooks at build time. Must be one of ("auto", "force", "cache", "off")
+#   cache                     : ""    # A path to the jupyter cache that will be used to store execution artifacts. Defaults to `_build/.jupyter_cache/`
+#   exclude_patterns          : []    # A list of patterns to *skip* in execution (e.g. a notebook that takes a really long time)
+#   timeout                   : 10    # The maximum time (in seconds) each notebook cell is allowed to run.
+#   run_in_temp               : false # If `True`, then a temporary directory will be created and used as the command working directory (cwd),
+#                                     # otherwise the notebook's parent directory will be the cwd.
+#   allow_errors              : false # If `False`, when a code cell raises an error the execution is stopped, otherwise all cells are always run.
+#   stderr_output             : show  # One of 'show', 'remove', 'remove-warn', 'warn', 'error', 'severe'
+#   exclude_tags              : ["skip-execution"]
 
-# Define the name of the latex output file for PDF builds
-latex:
-  latex_documents:
-    targetname: book.tex
+# # Define the name of the latex output file for PDF builds
+# latex:
+#   latex_documents:
+#     targetname: book.tex
 
 ## Add a bibtex file so that we can create citations
 #bibtex_bibfiles:
@@ -55,8 +57,8 @@ latex:
 # Information about where the book exists on the web
 repository:
   url: https://github.com/iluvatar1/ML4Sci-lectures  # Online location of your book
-  path_to_book: .  # Optional path to your book, relative to the repository root
-  branch: gh-pages  # Which branch of the repository should be used when creating links (optional)
+  #path_to_book: .  # Optional path to your book, relative to the repository root
+  #branch: gh-pages  # Which branch of the repository should be used when creating links (optional)
 
 # # Add GitHub buttons to your book
 # # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
@@ -72,18 +74,18 @@ html:
   use_repository_button     : true  # Whether to add a link to your repository button
   use_issues_button         : true  # Whether to add an "open an issue" button
   use_multitoc_numbering    : true   # Continuous numbering across parts/chapters
-  extra_footer              : ""  # Will be displayed underneath the footer.
-  home_page_in_navbar       : true  # Whether to include your home page in the left Navigation Bar
+  #extra_footer              : ""  # Will be displayed underneath the footer.
+  #home_page_in_navbar       : true  # Whether to include your home page in the left Navigation Bar
   #baseurl                   : ""  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
-  analytics:
-    plausible_analytics_domain: ""
-    plausible_analytics_url: "https://plausible.io/js/script.js"
-    google_analytics_id       : ""  # A GA id that can be used to track book views.
+  #analytics:
+  #  plausible_analytics_domain: ""
+  #  plausible_analytics_url: "https://plausible.io/js/script.js"
+  #  google_analytics_id       : ""  # A GA id that can be used to track book views.
 
-  comments:
-    hypothesis              : false
-    utterances              : false
-  announcement              : "" # A banner announcement at the top of the site.
+  #comments:
+  #  hypothesis              : false
+  #  utterances              : false
+  #announcement              : "" # A banner announcement at the top of the site.
 
 
 # Parsing math blocks
