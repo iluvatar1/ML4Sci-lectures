@@ -5,7 +5,7 @@
 
 #######################################################################################
 # Book settings
-title                       : Introduction to Machine Learning for Science TEST TEST TEST  # The title of the book. Will be placed in the left navbar.
+title                       : Introduction to Machine Learning for Science # The title of the book. Will be placed in the left navbar.
 author                      : Veronica Arias, Carlos Viviescas, William Oquendo   # The author of the book
 email                       : wfoquendop@unal.edu.co  # An email address to contact the author
 copyright                   : "2025"  # Copyright year to be placed in the footer
@@ -22,7 +22,7 @@ execute:
   execute_notebooks         : cache # Whether to execute notebooks at build time. Must be one of ("auto", "force", "cache", "off")
   cache                     : ""    # A path to the jupyter cache that will be used to store execution artifacts. Defaults to `_build/.jupyter_cache/`
   exclude_patterns          : []    # A list of patterns to *skip* in execution (e.g. a notebook that takes a really long time)
-  timeout                   : 40    # The maximum time (in seconds) each notebook cell is allowed to run.
+  timeout                   : 10    # The maximum time (in seconds) each notebook cell is allowed to run.
   run_in_temp               : false # If `True`, then a temporary directory will be created and used as the command working directory (cwd),
                                     # otherwise the notebook's parent directory will be the cwd.
   allow_errors              : false # If `False`, when a code cell raises an error the execution is stopped, otherwise all cells are always run.
@@ -38,20 +38,20 @@ latex:
 #bibtex_bibfiles:
 #  - references.bib
 
-#######################################################################################
-# Launch button settings
-launch_buttons:
-  use_binder_button         : true  # Add a binder button to pages (requires the repository to run on Binder)
-  notebook_interface        : jupyterlab  # The interface interactive links will activate ["classic", "jupyterlab"]
-  binderhub_url             : "https://mybinder.org"  # The URL of the BinderHub (e.g., https://mybinder.org)
-  binder_repo_base          : "https://github.com/"  # The site on which the textbook repository is hosted
-  binder_repo_org           : "iluvatar1"  # The username or organization that owns this repository
-  binder_repo_name          : "ML4Sci-lectures"  # The name of the repository on the web
-  binder_repo_branch        : "gh-pages"  # The branch on which your textbook is hosted.
-  binderhub_interact_text   : "Interact"  # The text that interact buttons will contain.
-  jupyterhub_url            : ""  # The URL of the JupyterHub (e.g., https://datahub.berkeley.edu)
-  thebe                     : true  # Add a thebe button to pages (requires the repository to run on Binder)
-  colab_url                 : "https://colab.research.google.com" #/github/iluvatar1/ML4Sci-lectures/blob/master" # The URL of Google Colab (https://colab.research.google.com)
+# #######################################################################################
+# # Launch button settings
+# launch_buttons:
+#   use_binder_button         : true  # Add a binder button to pages (requires the repository to run on Binder)
+#   notebook_interface        : jupyterlab  # The interface interactive links will activate ["classic", "jupyterlab"]
+#   binderhub_url             : "https://mybinder.org"  # The URL of the BinderHub (e.g., https://mybinder.org)
+#   binder_repo_base          : "https://github.com/"  # The site on which the textbook repository is hosted
+#   binder_repo_org           : "iluvatar1"  # The username or organization that owns this repository
+#   binder_repo_name          : "ML4Sci-lectures"  # The name of the repository on the web
+#   binder_repo_branch        : "gh-pages"  # The branch on which your textbook is hosted.
+#   binderhub_interact_text   : "Interact"  # The text that interact buttons will contain.
+#   jupyterhub_url            : ""  # The URL of the JupyterHub (e.g., https://datahub.berkeley.edu)
+#   thebe                     : true  # Add a thebe button to pages (requires the repository to run on Binder)
+#   colab_url                 : "https://colab.research.google.com" #/github/iluvatar1/ML4Sci-lectures/blob/master" # The URL of Google Colab (https://colab.research.google.com)
 # Information about where the book exists on the web
 repository:
   url: https://github.com/iluvatar1/ML4Sci-lectures  # Online location of your book
@@ -74,7 +74,7 @@ html:
   use_multitoc_numbering    : true   # Continuous numbering across parts/chapters
   extra_footer              : ""  # Will be displayed underneath the footer.
   home_page_in_navbar       : true  # Whether to include your home page in the left Navigation Bar
-  baseurl                   : ""  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
+  #baseurl                   : ""  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
   analytics:
     plausible_analytics_domain: ""
     plausible_analytics_url: "https://plausible.io/js/script.js"
