@@ -11,7 +11,7 @@ parts:
     numbered: true
     chapters:
       - file: lectures/00-IntroductionCourseML/IntroCourse-MachineLearning.ipynb
-  #     - file: lectures/00-TALK-IntroML/IntroMachineLearning.ipynb
+      - file: lectures/00-TALK-IntroML/IntroMachineLearning.ipynb
   # - caption: Unsupervised learning I
   #   numbered: true
   #   chapters:
