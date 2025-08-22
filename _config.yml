@@ -43,13 +43,13 @@ execute:
 #######################################################################################
 # Launch button settings
 launch_buttons:
-  use_binder_button         : true  # Add a binder button to pages (requires the repository to run on Binder)
-  notebook_interface        : jupyterlab  # The interface interactive links will activate ["classic", "jupyterlab"]
+  #use_binder_button         : true  # Add a binder button to pages (requires the repository to run on Binder)
+  notebook_interface        : "jupyterlab"  # The interface interactive links will activate ["classic", "jupyterlab"]
   binderhub_url             : "https://mybinder.org"  # The URL of the BinderHub (e.g., https://mybinder.org)
-  binder_repo_base          : "https://github.com/"  # The site on which the textbook repository is hosted
-  binder_repo_org           : "iluvatar1"  # The username or organization that owns this repository
-  binder_repo_name          : "ML4Sci-lectures"  # The name of the repository on the web
-  binder_repo_branch        : "master"  # The branch on which your textbook is hosted.
+  #binder_repo_base          : "https://github.com/"  # The site on which the textbook repository is hosted
+  #binder_repo_org           : "iluvatar1"  # The username or organization that owns this repository
+  #binder_repo_name          : "ML4Sci-lectures"  # The name of the repository on the web
+  #binder_repo_branch        : "master"  # The branch on which your textbook is hosted.
 #  binderhub_interact_text   : "Interact"  # The text that interact buttons will contain.
 #  jupyterhub_url            : ""  # The URL of the JupyterHub (e.g., https://datahub.berkeley.edu)
   thebe                     : true  # Add a thebe button to pages (requires the repository to run on Binder)
@@ -59,7 +59,7 @@ launch_buttons:
 repository:
   url: https://github.com/iluvatar1/ML4Sci-lectures  # Online location of your book
   #path_to_book: .  # Optional path to your book, relative to the repository root
-  #branch: gh-pages  # Which branch of the repository should be used when creating links (optional)
+  branch: master  # Which branch of the repository should be used when creating links (optional)
 
 #######################################################################################
 # HTML-specific settings
