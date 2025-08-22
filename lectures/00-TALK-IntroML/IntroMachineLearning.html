@@ -95,7 +95,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3. Python Review:" href="../01-reviewPython/PythonReview.html" />
+    <link rel="next" title="3. An Introduction to Principal Component Analysis (PCA)" href="../03-PCA/Intro-PCA.html" />
     <link rel="prev" title="1. Introduction to the course and to Machine Learning" href="../00-IntroductionCourseML/IntroCourse-MachineLearning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -213,12 +213,32 @@
 <li class="toctree-l1"><a class="reference internal" href="../00-IntroductionCourseML/IntroCourse-MachineLearning.html">1. Introduction to the course and to Machine Learning</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. A fast introduction to Machine Learning</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unsupervised learning I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03-PCA/Intro-PCA.html">3. An Introduction to Principal Component Analysis (PCA)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Supervised learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04-LinearRegression/LinearRegression.html">4. Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-LogisticRegression/LogisticRegression.html">5. An Introduction to Logistic Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-SVM/SVM.html">6. Support Vector Machines</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Neural Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">7. Neural Networks Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/BackPropagation.html">8. Introduction to Backpropagation in Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/DeepLearning.html">9. An Introduction to Deep Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to LLM and some useful tools</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../08-llm/llm.html">10. An Introduction to Large Language Models (LLMs) for Everyone</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/PythonReview.html">3. Python Review:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">4. Python Programming (very fast) Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">5. Intro Python II: python data structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">6. Pandas for data cleaning and analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/PythonReview.html">11. Python Review:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">12. Python Programming (very fast) Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">13. Intro Python II: python data structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">14. Pandas for data cleaning and analysis</a></li>
 </ul>
 
     </div>
@@ -718,7 +738,7 @@ General-Purpose Scientific Data Repositories</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/54034bb763d17524c108988852ce697fa5341c3fc206031b2a36d240aa350588.png" src="../../_images/54034bb763d17524c108988852ce697fa5341c3fc206031b2a36d240aa350588.png" />
+<img alt="../../_images/838712c3fe8f9853eea9fb3378715d4cf20e30e13d3a2364b99006a0c4c9c3c8.png" src="../../_images/838712c3fe8f9853eea9fb3378715d4cf20e30e13d3a2364b99006a0c4c9c3c8.png" />
 </div>
 </div>
 </section>
@@ -834,7 +854,7 @@ General-Purpose Scientific Data Repositories</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/31cd95b50147d117b31bdff808acf508990e1f5e3496e296bc3c49fa1945f28f.png" src="../../_images/31cd95b50147d117b31bdff808acf508990e1f5e3496e296bc3c49fa1945f28f.png" />
+<img alt="../../_images/f2b0954551101b4a6cb13908cef61eac1bf2209ee53c14ba9dc1cf49bab37720.png" src="../../_images/f2b0954551101b4a6cb13908cef61eac1bf2209ee53c14ba9dc1cf49bab37720.png" />
 </div>
 </div>
 </section>
@@ -901,11 +921,11 @@ General-Purpose Scientific Data Repositories</p>
       </div>
     </a>
     <a class="right-next"
-       href="../01-reviewPython/PythonReview.html"
+       href="../03-PCA/Intro-PCA.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Python Review:</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>An Introduction to Principal Component Analysis (PCA)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

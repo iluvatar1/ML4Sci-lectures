@@ -1,0 +1,2289 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4. Linear Regression &#8212; Introduction to Machine Learning for Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster.custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster.bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-shadow.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-punk.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-noir.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-light.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-borderless.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/micromodal.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles.css?v=76e7d31e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    <script src="../../_static/js/hoverxref.js"></script>
+    <script src="../../_static/js/tooltipster.bundle.min.js"></script>
+    <script src="../../_static/js/micromodal.min.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-JMZ8EV2JDJ"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-JMZ8EV2JDJ');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-JMZ8EV2JDJ');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/04-LinearRegression/LinearRegression';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5. An Introduction to Logistic Regression" href="../05-LogisticRegression/LogisticRegression.html" />
+    <link rel="prev" title="3. An Introduction to Principal Component Analysis (PCA)" href="../03-PCA/Intro-PCA.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../README.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Introduction to Machine Learning for Science</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../README.html">
+                    Introduction to Machine Learning for Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-IntroductionCourseML/IntroCourse-MachineLearning.html">1. Introduction to the course and to Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00-TALK-IntroML/IntroMachineLearning.html">2. A fast introduction to Machine Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unsupervised learning I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03-PCA/Intro-PCA.html">3. An Introduction to Principal Component Analysis (PCA)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Supervised learning</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-LogisticRegression/LogisticRegression.html">5. An Introduction to Logistic Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-SVM/SVM.html">6. Support Vector Machines</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Neural Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">7. Neural Networks Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/BackPropagation.html">8. Introduction to Backpropagation in Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/DeepLearning.html">9. An Introduction to Deep Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to LLM and some useful tools</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../08-llm/llm.html">10. An Introduction to Large Language Models (LLMs) for Everyone</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/PythonReview.html">11. Python Review:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">12. Python Programming (very fast) Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">13. Intro Python II: python data structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">14. Pandas for data cleaning and analysis</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/iluvatar1/ML4Sci-lectures/master?urlpath=lab/tree/lectures/04-LinearRegression/LinearRegression.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/iluvatar1/ML4Sci-lectures/blob/master/lectures/04-LinearRegression/LinearRegression.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/iluvatar1/ML4Sci-lectures" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/iluvatar1/ML4Sci-lectures/issues/new?title=Issue%20on%20page%20%2Flectures/04-LinearRegression/LinearRegression.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lectures/04-LinearRegression/LinearRegression.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Linear Regression</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-what-is-machine-learning">4.1. Review: What is Machine Learning?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">4.2. Supervised Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-regression-predicting-a-continuous-value">4.2.1. A. Regression: Predicting a Continuous Value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-classification-predicting-a-discrete-category">4.2.2. B. Classification: Predicting a Discrete Category</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.3. Linear Regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-goal">4.3.1. The Goal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-find-the-best-line">4.3.2. How Do We Find the “Best” Line?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-gradient-descent">4.3.2.1. Optimization with Gradient Descent</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-applications-to-basic-sciences">4.4. Some applications to basic sciences</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-physics-example-hookes-law">4.4.1. A Physics Example - Hooke’s Law</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-generation">4.4.1.1. Data Generation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression-using-sklearn">4.4.1.2. Linear regression using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-happening-at-each-step">4.4.2. What is happening at each step?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-exercises">4.4.3. Practice Exercises</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-whats-next">4.5. Conclusion &amp; What’s Next?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regularization">4.6. Regularization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">4.6.1. Exercises</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-linear-regression">4.7. Multiple linear regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-of-multiple-linear-regression">4.7.1. Assumptions of Multiple Linear Regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-example-workflow-in-python">4.7.2. Full example Workflow in Python</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-pre-processing-and-post-processing-tips">4.8. Data pre-processing and post-processing tips</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation">4.8.1. Cross-validation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-selection">4.8.2. Feature selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.8.3. Exercises</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="linear-regression">
+<h1><span class="section-number">4. </span>Linear Regression<a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h1>
+<p><strong>Goal:</strong> By the end of this session, you will understand the core concepts of supervised learning, know the difference between regression and classification, and be able to build, train, and interpret a simple Linear Regression model using Python.</p>
+<section id="review-what-is-machine-learning">
+<h2><span class="section-number">4.1. </span>Review: What is Machine Learning?<a class="headerlink" href="#review-what-is-machine-learning" title="Link to this heading">#</a></h2>
+<p>At its core, <strong>Machine Learning (ML)</strong> is the science of getting computers to learn and act like humans do, and improve their learning over time in an autonomous fashion, by feeding them data and information in the form of observations and real-world interactions.</p>
+<ol class="arabic simple">
+<li><p><strong>Supervised Learning:</strong> Learning from data that is <strong>labeled</strong>. You provide the algorithm with examples of inputs and their corresponding correct outputs. The goal is to learn a general rule that maps inputs to outputs. (This is our focus today).</p></li>
+<li><p><strong>Unsupervised Learning:</strong> Learning from data that is <strong>unlabeled</strong>. The algorithm tries to find patterns, structures, or clusters in the data on its own.</p></li>
+<li><p><strong>Reinforcement Learning:</strong> An agent learns to perform actions in an environment to maximize a cumulative reward. It learns by trial and error.</p></li>
+</ol>
+</section>
+<section id="supervised-learning">
+<h2><span class="section-number">4.2. </span>Supervised Learning<a class="headerlink" href="#supervised-learning" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p><strong>Supervised Learning:</strong> Given a dataset of input features <strong>X</strong> and corresponding output labels <strong>y</strong>, we want to learn a function <code class="docutils literal notranslate"><span class="pre">h</span></code> (for hypothesis) such that <code class="docutils literal notranslate"><span class="pre">h(X)</span></code> is a good predictor for <strong>y</strong>.</p>
+</div></blockquote>
+<p>For all models, you should always keep in mind the bias-variance tradeoff</p>
+<div style="text-align: center;">
+<figure>
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Bias_and_variance_contributing_to_total_error.svg" width=50%>
+<figcaption> https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Bias_and_variance_contributing_to_total_error.svg/250px-Bias_and_variance_contributing_to_total_error.svg.png </figcaption>
+</figure>
+</div>
+<p>If your model has a low bias, then it might be overfitting the training data and then it will increase the predictions variance (imagine using a very large polynomial to do a fit). If your model has low variance, it might be underfitting, so the bias will be large.</p>
+<p>There are two primary types of supervised learning problems:</p>
+<section id="a-regression-predicting-a-continuous-value">
+<h3><span class="section-number">4.2.1. </span>A. Regression: Predicting a Continuous Value<a class="headerlink" href="#a-regression-predicting-a-continuous-value" title="Link to this heading">#</a></h3>
+<p>The output <code class="docutils literal notranslate"><span class="pre">y</span></code> is a continuous, numerical value.</p>
+<ul class="simple">
+<li><p><strong>Question:</strong> Based on a material’s temperature, what will its electrical resistance be?</p></li>
+<li><p><strong>Question:</strong> Given the mass of a star, what is its expected luminosity?</p></li>
+<li><p><strong>Our main tool today:</strong> <strong>Linear Regression</strong> See <a class="reference external" href="https://www.youtube.com/watch?v=CtsRRUddV2s">Visually Explained: Linear regression</a></p></li>
+</ul>
+</section>
+<section id="b-classification-predicting-a-discrete-category">
+<h3><span class="section-number">4.2.2. </span>B. Classification: Predicting a Discrete Category<a class="headerlink" href="#b-classification-predicting-a-discrete-category" title="Link to this heading">#</a></h3>
+<p>The output <code class="docutils literal notranslate"><span class="pre">y</span></code> is a discrete category or class label.</p>
+<ul class="simple">
+<li><p><strong>Question:</strong> Based on a cell’s size and shape, is it cancerous or benign?</p></li>
+<li><p><strong>Question:</strong> Given the energy and momentum from a particle collider, did we detect an electron or a muon?</p></li>
+<li><p><strong>A common tool:</strong> <strong>Logistic Regression</strong> (despite its name, it’s for classification!)</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Feature</p></th>
+<th class="head text-left"><p>Linear Regression</p></th>
+<th class="head text-left"><p>Logistic Regression</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Problem Type</strong></p></td>
+<td class="text-left"><p>Regression (predicting continuous values)</p></td>
+<td class="text-left"><p>Classification (predicting categorical outcomes)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Output</strong></p></td>
+<td class="text-left"><p>Continuous numerical value (e.g., price, temperature)</p></td>
+<td class="text-left"><p>Probability (0 to 1), which is then mapped to a class</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Dependent Variable</strong></p></td>
+<td class="text-left"><p>Continuous</p></td>
+<td class="text-left"><p>Categorical (binary or multi-class)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Underlying Function</strong></p></td>
+<td class="text-left"><p>Linear equation: y=β0​+β1​x1​+…+βn​xn​</p></td>
+<td class="text-left"><p>Sigmoid (logistic) function applied to a linear equation: p=1+e−(β0​+β1​x1​+…+βn​xn​)1​</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Cost Function</strong></p></td>
+<td class="text-left"><p>Mean Squared Error (MSE), Root Mean Squared Error (RMSE)</p></td>
+<td class="text-left"><p>Log Loss (Binary Cross-Entropy), Cross-Entropy</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Interpretation of Coefficients</strong></p></td>
+<td class="text-left"><p>Change in the dependent variable for a one-unit change in the independent variable</p></td>
+<td class="text-left"><p>Change in the log-odds of the dependent variable for a one-unit change in the independent variable</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Assumptions</strong></p></td>
+<td class="text-left"><p>Linearity, independence of errors, homoscedasticity, normality of residuals, no multicollinearity</p></td>
+<td class="text-left"><p>Linearity of independent variables with log-odds, independence of observations, no multicollinearity</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Common Use Cases</strong></p></td>
+<td class="text-left"><p>Predicting house prices, sales forecasting, predicting exam scores, trend analysis</p></td>
+<td class="text-left"><p>Spam detection, disease prediction (e.g., presence/absence), customer churn prediction, sentiment analysis</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Evaluation Metrics</strong></p></td>
+<td class="text-left"><p>MSE, RMSE, R-squared, MAE</p></td>
+<td class="text-left"><p>Accuracy, Precision, Recall, F1-Score, ROC-AUC</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="id1">
+<h2><span class="section-number">4.3. </span>Linear Regression<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Linear Regression is one of the simplest and most interpretable machine learning models. It assumes a linear relationship between the input features and the output variable.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#from aux.linear_regression_example_plot import generate_and_plot_regression_problems</span>
+
+<span class="c1"># linear_regression_plots.py</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span> <span class="c1"># Required for 3D projection</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_and_plot_regression_problems</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generates data and plots 2D and 3D linear regression problems.</span>
+<span class="sd">    Returns the matplotlib figure object.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Create a figure with two subplots</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span> <span class="c1"># 1 row, 2 columns</span>
+
+    <span class="c1"># --- Left Subplot: 2D Linear Regression Problem ---</span>
+    <span class="c1"># Generate data for a straight line with noise</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">x_2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+    <span class="n">true_slope</span> <span class="o">=</span> <span class="mf">2.5</span>
+    <span class="n">true_intercept</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">y_true_2d</span> <span class="o">=</span> <span class="n">true_slope</span> <span class="o">*</span> <span class="n">x_2d</span> <span class="o">+</span> <span class="n">true_intercept</span>
+    <span class="n">noise_2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">x_2d</span><span class="p">))</span>
+    <span class="n">y_noisy_2d</span> <span class="o">=</span> <span class="n">y_true_2d</span> <span class="o">+</span> <span class="n">noise_2d</span>
+
+    <span class="c1"># Plot the true line</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_2d</span><span class="p">,</span> <span class="n">y_true_2d</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;True Line&#39;</span><span class="p">)</span>
+    <span class="c1"># Plot the noisy points</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_2d</span><span class="p">,</span> <span class="n">y_noisy_2d</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Noisy Data&#39;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;2D Linear Regression Problem&#39;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># --- Right Subplot: 3D Plane Regression Problem ---</span>
+    <span class="c1"># Generate data for a plane with noise</span>
+    <span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span> <span class="c1"># Specify 3D projection</span>
+    <span class="n">x_3d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+    <span class="n">y_3d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+    <span class="n">X_3d</span><span class="p">,</span> <span class="n">Y_3d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x_3d</span><span class="p">,</span> <span class="n">y_3d</span><span class="p">)</span>
+    <span class="n">true_coeff_x</span> <span class="o">=</span> <span class="mf">1.2</span>
+    <span class="n">true_coeff_y</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.8</span>
+    <span class="n">true_intercept_3d</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">Z_true_3d</span> <span class="o">=</span> <span class="n">true_coeff_x</span> <span class="o">*</span> <span class="n">X_3d</span> <span class="o">+</span> <span class="n">true_coeff_y</span> <span class="o">*</span> <span class="n">Y_3d</span> <span class="o">+</span> <span class="n">true_intercept_3d</span>
+    <span class="n">noise_3d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">Z_true_3d</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">Z_noisy_3d</span> <span class="o">=</span> <span class="n">Z_true_3d</span> <span class="o">+</span> <span class="n">noise_3d</span>
+
+    <span class="c1"># Plot the true plane surface</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X_3d</span><span class="p">,</span> <span class="n">Y_3d</span><span class="p">,</span> <span class="n">Z_true_3d</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;True Plane&#39;</span><span class="p">)</span>
+    <span class="c1"># Plot the noisy points</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_3d</span><span class="p">,</span> <span class="n">Y_3d</span><span class="p">,</span> <span class="n">Z_noisy_3d</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Noisy Data&#39;</span><span class="p">)</span> <span class="c1"># s is marker size</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;3D Linear Regression Problem (Plane)&#39;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Adjust layout to prevent overlap</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="c1"># No plt.show() here, as we return the figure to be shown in Jupyter</span>
+    <span class="k">return</span> <span class="n">fig</span>
+
+<span class="c1"># if __name__ == &#39;__main__&#39;:</span>
+<span class="c1">#     # This block only runs if the script is executed directly, not when imported</span>
+<span class="c1">#     fig = generate_and_plot_regression_problems()</span>
+<span class="c1">#     plt.show()</span>
+
+
+<span class="n">fig_regression_problems</span> <span class="o">=</span> <span class="n">generate_and_plot_regression_problems</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/14cda0628b8cf6fa223eb33c6e8317d81ffdec875144967bd46a6cf3ae100be0.png" src="../../_images/14cda0628b8cf6fa223eb33c6e8317d81ffdec875144967bd46a6cf3ae100be0.png" />
+</div>
+</div>
+<section id="the-goal">
+<h3><span class="section-number">4.3.1. </span>The Goal<a class="headerlink" href="#the-goal" title="Link to this heading">#</a></h3>
+<p>To find the “best-fit” line that describes the data. For a single input feature <code class="docutils literal notranslate"><span class="pre">x</span></code>, the equation of the line is:</p>
+<div class="math notranslate nohighlight">
+\[ \hat{y} = \theta_0 + \theta_1 x \]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{y}\)</span> (y-hat) is the <strong>predicted value</strong>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> is the <strong>input feature</strong>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta_0\)</span> (theta-zero) is the <strong>y-intercept</strong> (also called the bias). It’s the value of <span class="math notranslate nohighlight">\(\hat{y}\)</span> when <span class="math notranslate nohighlight">\(x=0\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta_1\)</span> (theta-one) is the <strong>slope</strong> or <strong>coefficient</strong>. It represents the change in <span class="math notranslate nohighlight">\(\hat{y}\)</span> for a one-unit change in <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+</ul>
+<p>Our goal is to find the optimal values for <span class="math notranslate nohighlight">\(\theta_0\)</span> and <span class="math notranslate nohighlight">\(\theta_1\)</span> that make our line fit the data as closely as possible. Notice that it is possible to also add non-linear relationships even if the method is called linear regression.</p>
+<blockquote>
+<div><p>In ML, We can apply linear regression to non-linear problems</p>
+</div></blockquote>
+</section>
+<section id="how-do-we-find-the-best-line">
+<h3><span class="section-number">4.3.2. </span>How Do We Find the “Best” Line?<a class="headerlink" href="#how-do-we-find-the-best-line" title="Link to this heading">#</a></h3>
+<p>We need a way to quantify how “wrong” our line is. We do this with a <strong>Cost Function</strong> (or Loss Function).</p>
+<ol class="arabic simple">
+<li><p>For each data point <span class="math notranslate nohighlight">\((x_i, y_i)\)</span>, we calculate the difference between the <strong>actual value</strong> (<span class="math notranslate nohighlight">\(y_i\)</span>) and the <strong>predicted value</strong> (<span class="math notranslate nohighlight">\(\hat{y}_i\)</span>). This difference is called the <strong>residual</strong> or <strong>error</strong>.</p></li>
+<li><p>We square these errors (so positive and negative errors don’t cancel out) and sum them up.</p></li>
+<li><p>We take the average.</p></li>
+</ol>
+<p>This gives us the <strong>Mean Squared Error (MSE)</strong> cost function:</p>
+<div class="math notranslate nohighlight">
+\[ \Delta (\theta_0, \theta_1) = \frac{1}{2m} \sum_{i=1}^{m} (\hat{y}_i - y_i)^2 = \frac{1}{2m} \sum_{i=1}^{m} ((\theta_0 + \theta_1 x_i) - y_i)^2 \]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m\)</span> is the number of data points.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta (\theta_0, \theta_1)\)</span> is the cost for a specific choice of <span class="math notranslate nohighlight">\(\theta_0\)</span> and <span class="math notranslate nohighlight">\(\theta_1\)</span>.</p></li>
+</ul>
+<p>Our goal is to find the values of <span class="math notranslate nohighlight">\(\theta_0\)</span> and <span class="math notranslate nohighlight">\(\theta_1\)</span> that <strong>minimize</strong> this cost function <span class="math notranslate nohighlight">\(\Delta\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are several definitions for the loss, like with absolute value, or with the square root of the quantity shown. Each one has different advantages and disadvantages, like slower/faster convergence, sensitivity to outliers and so on.</p>
+</div>
+<section id="optimization-with-gradient-descent">
+<h4><span class="section-number">4.3.2.1. </span>Optimization with Gradient Descent<a class="headerlink" href="#optimization-with-gradient-descent" title="Link to this heading">#</a></h4>
+<p>How do we find the minimum of the cost function? We use an algorithm called <strong>Gradient Descent</strong>.</p>
+<p><strong>Analogy:</strong> Imagine you are a hiker in a foggy valley and you want to get to the lowest point. You can’t see the whole valley, but you can feel the slope of the ground right under your feet. What do you do? You take a step in the steepest downward direction.</p>
+<p>This is exactly what Gradient Descent does:</p>
+<ol class="arabic simple">
+<li><p>Start with some random values for <span class="math notranslate nohighlight">\(\theta_0\)</span> and <span class="math notranslate nohighlight">\(\theta_1\)</span>.</p></li>
+<li><p>Calculate the gradient (the “slope”) of the cost function at that point.</p></li>
+<li><p>Take a small step in the opposite direction of the gradient (downhill).</p></li>
+<li><p>Repeat until you reach the bottom (the minimum), where the slope is zero.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For a nice visualization of gradient descent, check: <a class="reference external" href="https://aero-learn.imperial.ac.uk/vis/Machine%20Learning/gradient_descent_3d.html">https://aero-learn.imperial.ac.uk/vis/Machine Learning/gradient_descent_3d.html</a></p>
+</div>
+<p>The size of the “step” you take is called the <strong>learning rate</strong> (alpha, <span class="math notranslate nohighlight">\(\alpha\)</span>). A small learning rate will converge slowly, while a large one might overshoot the minimum. See <a class="reference external" href="https://www.youtube.com/watch?v=gsfbWn4Gy5Q">https://www.youtube.com/watch?v=gsfbWn4Gy5Q</a></p>
+</section>
+</section>
+</section>
+<section id="some-applications-to-basic-sciences">
+<h2><span class="section-number">4.4. </span>Some applications to basic sciences<a class="headerlink" href="#some-applications-to-basic-sciences" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>De Souza, G. F. P., Lins, H. A., de Oliveira, T. C., de Medeiros, G. A., &amp; de Oliveira, R. A. (2022). Prediction of soil fertility properties using multiple linear regression and artificial neural networks. Journal of the Saudi Society of Agricultural Sciences, 21(7), 475-484. <a class="reference external" href="https://doi.org/10.1016/j.jssas.2022.02.001">https://doi.org/10.1016/j.jssas.2022.02.001</a></p></li>
+<li><p>Kḥatun, K., &amp; Tḥakur, S. (2023). Modeling of COVID-19 cases in India using multiple linear regression and analysis of variance. Infectious Disease Modelling, 8(1), 169-181. <a class="reference external" href="https://doi.org/10.1016/j.idm.2023.01.004">https://doi.org/10.1016/j.idm.2023.01.004</a></p></li>
+<li><p>Le, V. T., &amp; Kim, H. (2022). Predicting the compressive strength of nano-silica-and-slag-blended concrete using a multiple linear regression model. Computers and Concrete, 29(4), 253-261. <a class="reference external" href="https://doi.org/10.12989/cac.2022.29.4.253">https://doi.org/10.12989/cac.2022.29.4.253</a></p></li>
+<li><p>Lee, S., &amp; An, S. (2022). A study on the comparison of machine learning regression models for predicting the compressive strength of concrete. Applied Sciences, 12(19), 10077. <a class="reference external" href="https://doi.org/10.3390/app121910077">https://doi.org/10.3390/app121910077</a></p></li>
+<li><p>Lins, H. A., de Oliveira, T. C., de Souza, G. F. P., de Medeiros, G. A., &amp; de Oliveira, R. A. (2021). Prediction of soil properties in the Brazilian semi-arid region using multiple linear regression and artificial neural networks. Communications in Soil Science and Plant Analysis, 52(14), 1633-1647. <a class="reference external" href="https://doi.org/10.1080/00103624.2021.1904739">https://doi.org/10.1080/00103624.2021.1904739</a></p></li>
+<li><p>Park, H. S., Kim, D. G., &amp; Lee, J. M. (2021). Prediction of concrete compressive strength using machine learning techniques. Journal of the Korea Concrete Institute, 33(3), 209-217. <a class="reference external" href="https://doi.org/10.4334/JKCI.2021.33.3.209">https://doi.org/10.4334/JKCI.2021.33.3.209</a></p></li>
+<li><p>Rıdvanoğulları, A. (2021). Performance comparison of multiple linear regression and various machine learning algorithms for the prediction of concrete’s compressive strength. Konya Journal of Engineering Sciences, 9(2), 426-439. <a class="reference external" href="https://doi.org/10.36306/konjes.850404">https://doi.org/10.36306/konjes.850404</a></p></li>
+<li><p>Sharma, S., Singh, G., &amp; Singh, R. (2021). Performance analysis of machine learning algorithms for predicting the compressive strength of concrete. Materials Today: Proceedings, 46, 7949-7953. <a class="reference external" href="https://doi.org/10.1016/j.matpr.2021.02.433">https://doi.org/10.1016/j.matpr.2021.02.433</a></p></li>
+<li><p>Tadesse, M. G., &amp; Usman, M. A. (2022). Multiple linear regression analysis on the determinants of child mortality in Ethiopia. Scientific Reports, 12(1), 16738. <a class="reference external" href="https://doi.org/10.1038/s41598-022-21175-5">https://doi.org/10.1038/s41598-022-21175-5</a></p></li>
+<li><p>Zhang, X., Li, H., &amp; Chen, W. (2021). Prediction of compressive strength of concrete based on machine learning. Journal of Building Engineering, 34, 101921. <a class="reference external" href="https://doi.org/10.1016/j.jobe.2020.101921">https://doi.org/10.1016/j.jobe.2020.101921</a></p></li>
+<li><p>Engel, A., &amp; Zass, M. (2022). Dynamically optimal online regression. Physical Review E, 105(4), 044315.
+<a class="reference external" href="https://doi.org/10.1103/PhysRevE.105.044315">https://doi.org/10.1103/PhysRevE.105.044315</a>
+(This theoretical paper develops a new, optimal form of online linear regression from a statistical physics perspective.)</p></li>
+<li><p>Weber, A. I., &amp; O’Donnell, C. (2021). Data-driven modeling of homeostatic structural plasticity in a spiking neural network. Physical Review E, 103(5), 052410.
+<a class="reference external" href="https://doi.org/10.1103/PhysRevE.103.052410">https://doi.org/10.1103/PhysRevE.103.052410</a>
+(Uses linear regression to relate the weights of synaptic connections to neuronal firing rates, a key process in computational neuroscience.)</p></li>
+<li><p>Workamp, M., &amp; van der Weele, K. (2021). Hysteretic clustering in a vibrofluidized granular gas. Physical Review E, 104(4), 044903.
+<a class="reference external" href="https://doi.org/10.1103/PhysRevE.104.044903">https://doi.org/10.1103/PhysRevE.104.044903</a>
+(Employs linear fits (a form of linear regression) to analyze the growth rates of clusters in granular gas experiments, demonstrating a direct application to experimental data analysis.)</p></li>
+<li><p>Kumar, S., Vaid, K., &amp; Singh, M. (2023). Predicting fracture patterns in disordered solids using machine learning. Physical Review E, 108(1), 015001.
+<a class="reference external" href="https://doi.org/10.1103/PhysRevE.108.015001">https://doi.org/10.1103/PhysRevE.108.015001</a>
+(Compares multiple machine learning models, including linear regression, to predict where a material will crack, showing its use as a foundational baseline model in computational physics.)</p></li>
+<li><p>Datta, S. S., &amp; D’Souza, R. M. (2023). Network-based approach to modeling the viscoelasticity of physical gels. Physical Review E, 107(2), 024501.
+<a class="reference external" href="https://doi.org/10.1103/PhysRevE.107.024501">https://doi.org/10.1103/PhysRevE.107.024501</a> (Uses linear regression on log-transformed data to extract power-law exponents that characterize the material properties of gels, a classic physics application.)</p></li>
+<li><p>Zhang, C., Fu, W., &amp; Shattuck, M. D. (2023). Discovering dynamics and parameters of a granular system using machine learning. Physical Review E, 107(6), 064903.
+<a class="reference external" href="https://doi.org/10.1103/PhysRevE.107.064903">https://doi.org/10.1103/PhysRevE.107.064903</a>
+(This study uses a sparse regression technique (a variant of linear regression) to automatically discover the governing equations of motion for a physical system directly from observed data.)</p></li>
+</ul>
+<section id="a-physics-example-hookes-law">
+<h3><span class="section-number">4.4.1. </span>A Physics Example - Hooke’s Law<a class="headerlink" href="#a-physics-example-hookes-law" title="Link to this heading">#</a></h3>
+<p>Hooke’s Law is a fundamental principle in physics that states the force (<code class="docutils literal notranslate"><span class="pre">F</span></code>) needed to extend or compress a spring by some distance (<code class="docutils literal notranslate"><span class="pre">x</span></code>) is directly proportional to that distance.</p>
+<div class="math notranslate nohighlight">
+\[ F = kx \]</div>
+<p>This is a perfect linear relationship! We can use linear regression to find the spring constant <code class="docutils literal notranslate"><span class="pre">k</span></code> from experimental data. Let’s assume we conducted an experiment and got some noisy measurements.</p>
+<section id="data-generation">
+<h4><span class="section-number">4.4.1.1. </span>Data Generation<a class="headerlink" href="#data-generation" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 1: Generate some experimental data</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Let&#39;s assume the true spring constant k is 4.5 N/m</span>
+<span class="n">k_true</span> <span class="o">=</span> <span class="mf">4.5</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span> <span class="c1"># for reproducibility</span>
+
+<span class="c1"># Displacement (x) in meters. This is our feature X.</span>
+<span class="c1"># The .reshape(-1, 1) is needed because scikit-learn expects 2D arrays for features.</span>
+<span class="n">x_displacement</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Force (F) in Newtons. This is our target y.</span>
+<span class="c1"># We&#39;ll calculate the true force and add some random &quot;measurement noise&quot;</span>
+<span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">x_displacement</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">y_force</span> <span class="o">=</span> <span class="n">k_true</span> <span class="o">*</span> <span class="n">x_displacement</span> <span class="o">+</span> <span class="n">noise</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 2: Setup visualization </span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Set up plots for a nice look</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;seaborn-v0_8-darkgrid&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="s1">&#39;figure.figsize&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">)})</span>
+
+<span class="c1"># Step 3: Visualize the data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_displacement</span><span class="p">,</span> <span class="n">y_force</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Experimental Data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Displacement (x) [m]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Force (F) [N]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Hooke&#39;s Law: Force vs. Displacement&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/74c72e2ffaacf5d074e6f9b967e30146e5c0a86b59b5d8153396e63bf55f19be.png" src="../../_images/74c72e2ffaacf5d074e6f9b967e30146e5c0a86b59b5d8153396e63bf55f19be.png" />
+</div>
+</div>
+<p>This looks like a good candidate for linear regression! The data points roughly follow a straight line.</p>
+</section>
+<section id="linear-regression-using-sklearn">
+<h4><span class="section-number">4.4.1.2. </span>Linear regression using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code><a class="headerlink" href="#linear-regression-using-sklearn" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build and train the model using Scikit-Learn</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
+
+<span class="c1"># Create a linear regression model object</span>
+<span class="c1"># Check https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+
+<span class="c1"># Train the model using our data</span>
+<span class="c1"># The .fit() method is where the &#39;learning&#39; (Gradient Descent) happens!</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_displacement</span><span class="p">,</span> <span class="n">y_force</span><span class="p">)</span> <span class="c1"># USE ALL data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-1 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: #000;
+  --sklearn-color-text-muted: #666;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
+  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-icon: #696969;
+
+  @media (prefers-color-scheme: dark) {
+    /* Redefinition of color scheme for dark theme */
+    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
+    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-icon: #878787;
+  }
+}
+
+#sk-container-id-1 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-1 pre {
+  padding: 0;
+}
+
+#sk-container-id-1 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-1 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-1 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-1 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-1 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-1 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-1 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-1 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-1 label.sk-toggleable__label {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+#sk-container-id-1 label.sk-toggleable__label .caption {
+  font-size: 0.6rem;
+  font-weight: lighter;
+  color: var(--sklearn-color-text-muted);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-1 div.sk-toggleable__content {
+  display: none;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label label.sk-toggleable__label,
+#sk-container-id-1 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-1 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+}
+
+#sk-container-id-1 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-1 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-1 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 0.5em;
+  text-align: center;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-1);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-1 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-1 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+
+.estimator-table summary {
+    padding: .5rem;
+    font-family: monospace;
+    cursor: pointer;
+}
+
+.estimator-table details[open] {
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    padding-bottom: 0.3rem;
+}
+
+.estimator-table .parameters-table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.estimator-table .parameters-table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.estimator-table .parameters-table tr:nth-child(even) {
+    background-color: #f6f6f6;
+}
+
+.estimator-table .parameters-table tr:hover {
+    background-color: #e0e0e0;
+}
+
+.estimator-table table td {
+    border: 1px solid rgba(106, 105, 104, 0.232);
+}
+
+.user-set td {
+    color:rgb(255, 94, 0);
+    text-align: left;
+}
+
+.user-set td.value pre {
+    color:rgb(255, 94, 0) !important;
+    background-color: transparent !important;
+}
+
+.default td {
+    color: black;
+    text-align: left;
+}
+
+.user-set td i,
+.default td i {
+    color: black;
+}
+
+.copy-paste-icon {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNy4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjUgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTIwOCAwTDMzMi4xIDBjMTIuNyAwIDI0LjkgNS4xIDMzLjkgMTQuMWw2Ny45IDY3LjljOSA5IDE0LjEgMjEuMiAxNC4xIDMzLjlMNDQ4IDMzNmMwIDI2LjUtMjEuNSA0OC00OCA0OGwtMTkyIDBjLTI2LjUgMC00OC0yMS41LTQ4LTQ4bDAtMjg4YzAtMjYuNSAyMS41LTQ4IDQ4LTQ4ek00OCAxMjhsODAgMCAwIDY0LTY0IDAgMCAyNTYgMTkyIDAgMC0zMiA2NCAwIDAgNDhjMCAyNi41LTIxLjUgNDgtNDggNDhMNDggNTEyYy0yNi41IDAtNDgtMjEuNS00OC00OEwwIDE3NmMwLTI2LjUgMjEuNS00OCA0OC00OHoiLz48L3N2Zz4=);
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    background-position: 0;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+</style><body><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LinearRegression()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>LinearRegression</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.LinearRegression.html">?<span>Documentation for LinearRegression</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                <table class="parameters-table">
+                  <tbody>
+                    
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('fit_intercept',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">fit_intercept&nbsp;</td>
+            <td class="value">True</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('copy_X',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">copy_X&nbsp;</td>
+            <td class="value">True</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('tol',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">tol&nbsp;</td>
+            <td class="value">1e-06</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('n_jobs',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">n_jobs&nbsp;</td>
+            <td class="value">None</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('positive',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">positive&nbsp;</td>
+            <td class="value">False</td>
+        </tr>
+    
+                  </tbody>
+                </table>
+            </details>
+        </div>
+    </div></div></div></div></div><script>function copyToClipboard(text, element) {
+    // Get the parameter prefix from the closest toggleable content
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const fullParamName = paramPrefix ? `${paramPrefix}${text}` : text;
+
+    const originalStyle = element.style;
+    const computedStyle = window.getComputedStyle(element);
+    const originalWidth = computedStyle.width;
+    const originalHTML = element.innerHTML.replace('Copied!', '');
+
+    navigator.clipboard.writeText(fullParamName)
+        .then(() => {
+            element.style.width = originalWidth;
+            element.style.color = 'green';
+            element.innerHTML = "Copied!";
+
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        })
+        .catch(err => {
+            console.error('Failed to copy:', err);
+            element.style.color = 'red';
+            element.innerHTML = "Failed!";
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        });
+    return false;
+}
+
+document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const paramName = element.parentElement.nextElementSibling.textContent.trim();
+    const fullParamName = paramPrefix ? `${paramPrefix}${paramName}` : paramName;
+
+    element.setAttribute('title', fullParamName);
+});
+</script></body></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Analyze the results</span>
+
+<span class="c1"># Get the learned parameters (theta_0 and theta_1)</span>
+<span class="c1"># .intercept_ is an array, so we take the first element</span>
+<span class="n">theta_0</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">intercept_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># .coef_ is a 2D array, so we access it with [0][0]</span>
+<span class="n">theta_1</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The model has learned the following equation:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Force = </span><span class="si">{</span><span class="n">theta_0</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">theta_1</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> * Displacement</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The estimated spring constant (k) is: </span><span class="si">{</span><span class="n">theta_1</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> N/m&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The true spring constant was: </span><span class="si">{</span><span class="n">k_true</span><span class="si">}</span><span class="s2"> N/m&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model has learned the following equation:
+Force = 0.387 + 4.027 * Displacement
+
+The estimated spring constant (k) is: 4.027 N/m
+The true spring constant was: 4.5 N/m
+</pre></div>
+</div>
+</div>
+</div>
+<p>That’s pretty close! Our model successfully estimated the spring constant from the noisy data. The small non-zero intercept <code class="docutils literal notranslate"><span class="pre">theta_0</span></code> is a result of the random noise we added; in a perfect world, it would be zero.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualize the model&#39;s fit</span>
+
+<span class="c1"># Generate predictions from our model for the x values</span>
+<span class="n">y_predicted</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_displacement</span><span class="p">)</span>
+
+<span class="c1"># Plot the original data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_displacement</span><span class="p">,</span> <span class="n">y_force</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Experimental Data&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot the regression line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_displacement</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Linear Regression Fit&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Displacement (x) [m]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Force (F) [N]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Hooke&#39;s Law with Model Fit&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/31effcdcf13756f86b8e1cc43323d6dbd6938c60ad8cd025aa3e35c72ff8f8c5.png" src="../../_images/31effcdcf13756f86b8e1cc43323d6dbd6938c60ad8cd025aa3e35c72ff8f8c5.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="what-is-happening-at-each-step">
+<h3><span class="section-number">4.4.2. </span>What is happening at each step?<a class="headerlink" href="#what-is-happening-at-each-step" title="Link to this heading">#</a></h3>
+<p>Doing  the linear regression with <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> hides a lot of complexity. But it is useful to stop for a moment and try to understand what is happening at each step. What does it mean to compute the gradient? how is the gradient optimizing the solution parameters? those are the questions to be treated here. We will use the same example as before (same data). The general algorithm would be</p>
+<ul class="simple">
+<li><p>Give some initial value to params</p></li>
+<li><p>For <span class="math notranslate nohighlight">\(N\)</span> steps:</p>
+<ul>
+<li><p>Predict : <span class="math notranslate nohighlight">\(\hat y = \theta_0 + \theta_1 x\)</span></p></li>
+<li><p>compute error and loss: <span class="math notranslate nohighlight">\(\Delta = \dfrac{1}{2m} \sum (\hat y - y)^2\)</span></p></li>
+<li><p>compute gradients: <span class="math notranslate nohighlight">\(\dfrac{\partial \Delta}{\partial \theta_0}\)</span>, <span class="math notranslate nohighlight">\(\dfrac{\partial \Delta}{\partial \theta_1}\)</span> (autodiff)</p></li>
+<li><p>improve params: <span class="math notranslate nohighlight">\(\theta = \theta -\alpha \nabla_\theta\)</span> (back-propagation)</p></li>
+</ul>
+</li>
+</ul>
+<p>To do so, we will implement a simple function to do the iterations, and then test it</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">step</span><span class="p">(</span><span class="n">theta_0</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span> <span class="n">theta_1</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span> <span class="n">N</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">verbose</span><span class="p">:</span><span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+    <span class="c1"># util function to print</span>
+    <span class="n">mylog</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">msg</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="k">if</span> <span class="n">verbose</span> <span class="k">else</span> <span class="kc">None</span>
+
+    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+        <span class="n">mylog</span><span class="p">(</span><span class="s2">&quot;Prediction with full data&quot;</span><span class="p">)</span>
+        <span class="n">ypred</span> <span class="o">=</span> <span class="n">theta_0</span> <span class="o">+</span> <span class="n">theta_1</span><span class="o">*</span><span class="n">x_displacement</span> 
+        
+        <span class="n">mylog</span><span class="p">(</span><span class="s2">&quot;Computing loss&quot;</span><span class="p">)</span>
+        <span class="n">ytheo</span> <span class="o">=</span> <span class="n">k_true</span> <span class="o">*</span> <span class="n">x_displacement</span>
+        <span class="n">error</span> <span class="o">=</span> <span class="n">ypred</span><span class="o">-</span><span class="n">ytheo</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">error</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span>
+        <span class="n">mylog</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">loss</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="n">mylog</span><span class="p">(</span><span class="s2">&quot;Computing the gradients&quot;</span><span class="p">)</span>
+        <span class="n">grad_0</span> <span class="o">=</span> <span class="n">error</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <span class="n">grad_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">error</span><span class="o">*</span><span class="n">x_displacement</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <span class="n">mylog</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">grad_0</span><span class="si">=}</span><span class="s2">, </span><span class="si">{</span><span class="n">grad_1</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="n">mylog</span><span class="p">(</span><span class="s2">&quot;Improving paramether estimation&quot;</span><span class="p">)</span>
+        <span class="c1"># NOTE: learning rate hyper paramemeter alpha</span>
+        <span class="n">theta_0</span> <span class="o">=</span> <span class="n">theta_0</span> <span class="o">-</span> <span class="n">alpha</span><span class="o">*</span><span class="n">grad_0</span>
+        <span class="n">theta_1</span> <span class="o">=</span> <span class="n">theta_1</span> <span class="o">-</span> <span class="n">alpha</span><span class="o">*</span><span class="n">grad_1</span>
+        <span class="n">mylog</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">theta_0</span><span class="si">=}</span><span class="s2">, </span><span class="si">{</span><span class="n">theta_1</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">theta_0</span><span class="p">,</span> <span class="n">theta_1</span>
+
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta_0</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">theta_1</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">step</span><span class="p">(</span><span class="n">theta_0</span><span class="p">,</span> <span class="n">theta_1</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prediction with full data
+Computing loss
+loss=np.float64(107.63157894736842)
+Computing the gradients
+grad_0=np.float64(-2.4999999999999996), grad_1=np.float64(-3.789473684210526)
+Improving paramether estimation
+theta_0=np.float64(1.25), theta_1=np.float64(1.3789473684210527)
+(np.float64(1.25), np.float64(1.3789473684210527))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now with more steps</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">step</span><span class="p">(</span><span class="n">theta_0</span><span class="p">,</span> <span class="n">theta_1</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.float64(1.0787927631817147e-07), np.float64(4.49999991017813))
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s plot the parameters as functions of the iterations and the learning rate</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">sharex</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="c1"># Params</span>
+<span class="n">NMAX</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">alphas</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]</span>
+
+<span class="c1"># YOUR CODE HERE</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/ec36c669f1b36a05f3ccefe3306b73c0174d37b6370c8483948284c13757e881.png" src="../../_images/ec36c669f1b36a05f3ccefe3306b73c0174d37b6370c8483948284c13757e881.png" />
+</div>
+</div>
+</section>
+<section id="practice-exercises">
+<h3><span class="section-number">4.4.3. </span>Practice Exercises<a class="headerlink" href="#practice-exercises" title="Link to this heading">#</a></h3>
+<p>Now it’s your turn! Apply what you’ve learned to new scientific datasets.</p>
+<div class="exercise admonition" id="tensorflow">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.1 </span> (Tensorflow/pytorch)</p>
+<section id="exercise-content">
+<p>Implement the same example but using <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> and <code class="docutils literal notranslate"><span class="pre">pytorch</span></code>. Compare easy of use.</p>
+</section>
+</div>
+<div class="exercise admonition" id="lectures/04-LinearRegression/LinearRegression-exercise-1">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.2 </span> (Biology - Brain vs. Body Weight)</p>
+<section id="exercise-content">
+<p>Allometry is the study of the relationship of body size to shape, anatomy, and physiology. It is a well-known fact that the brain weight of mammals generally increases with body weight. Let’s model this relationship.</p>
+<p><strong>Task:</strong></p>
+<ol class="arabic simple">
+<li><p>Load the provided data for various mammal species.</p></li>
+<li><p>The relationship is often modeled on a log-log scale. Transform both <code class="docutils literal notranslate"><span class="pre">body_wt</span></code> and <code class="docutils literal notranslate"><span class="pre">brain_wt</span></code> by taking their natural logarithm (<code class="docutils literal notranslate"><span class="pre">np.log()</span></code>).</p></li>
+<li><p>Fit a linear regression model to the log-transformed data.</p></li>
+<li><p>Print the equation of your model.</p></li>
+<li><p>Plot the log-transformed data as a scatter plot and overlay your regression line.</p></li>
+</ol>
+</section>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data for Exercise 1</span>
+<span class="n">body_wt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.385</span><span class="p">,</span> <span class="mf">0.48</span><span class="p">,</span> <span class="mf">1.35</span><span class="p">,</span> <span class="mf">465.0</span><span class="p">,</span> <span class="mf">36.33</span><span class="p">,</span> <span class="mf">27.66</span><span class="p">,</span> <span class="mf">1.04</span><span class="p">,</span> <span class="mf">4.235</span><span class="p">,</span> <span class="mf">10.55</span><span class="p">,</span> <span class="mf">0.55</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">600.0</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">6.8</span><span class="p">,</span> <span class="mf">35.0</span><span class="p">,</span> <span class="mf">3.92</span><span class="p">,</span> <span class="mf">572.0</span><span class="p">,</span> <span class="mf">180.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">1.92</span><span class="p">,</span> <span class="mf">119.5</span><span class="p">,</span> <span class="mf">85.0</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">14.83</span><span class="p">,</span> <span class="mf">192.0</span><span class="p">])</span>
+<span class="n">brain_wt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">44.5</span><span class="p">,</span> <span class="mf">15.5</span><span class="p">,</span> <span class="mf">8.1</span><span class="p">,</span> <span class="mf">423.0</span><span class="p">,</span> <span class="mf">119.5</span><span class="p">,</span> <span class="mf">115.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">25.6</span><span class="p">,</span> <span class="mf">73.5</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mf">6.6</span><span class="p">,</span> <span class="mf">812.0</span><span class="p">,</span> <span class="mf">10.8</span><span class="p">,</span> <span class="mf">12.3</span><span class="p">,</span> <span class="mf">37.0</span><span class="p">,</span> <span class="mf">57.0</span><span class="p">,</span> <span class="mf">17.5</span><span class="p">,</span> <span class="mf">655.0</span><span class="p">,</span> <span class="mf">157.0</span><span class="p">,</span> <span class="mf">12.1</span><span class="p">,</span> <span class="mf">11.4</span><span class="p">,</span> <span class="mf">75.0</span><span class="p">,</span> <span class="mf">62.0</span><span class="p">,</span> <span class="mf">4.7</span><span class="p">,</span> <span class="mf">48.0</span><span class="p">,</span> <span class="mf">180.0</span><span class="p">])</span>
+
+<span class="c1"># 1. (Data is already loaded)</span>
+
+<span class="c1"># YOUR CODE HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition" id="lectures/04-LinearRegression/LinearRegression-exercise-2">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.3 </span> (Splitting data into train and test subsets)</p>
+<section id="exercise-content">
+<p>Use one of the previous examples to actually split the data into train and test sets, using sklearn functions, and then compute metrics like <span class="math notranslate nohighlight">\(R^2\)</span>.</p>
+</section>
+</div>
+</section>
+</section>
+<section id="conclusion-whats-next">
+<h2><span class="section-number">4.5. </span>Conclusion &amp; What’s Next?<a class="headerlink" href="#conclusion-whats-next" title="Link to this heading">#</a></h2>
+<p><strong>Key Takeaways:</strong></p>
+<ul class="simple">
+<li><p>Supervised learning uses <strong>labeled data</strong> (X, y) to learn a predictive function.</p></li>
+<li><p><strong>Regression</strong> predicts continuous values, while <strong>Classification</strong> predicts discrete categories.</p></li>
+<li><p><strong>Linear Regression</strong> finds the best-fit line by minimizing a <strong>cost function</strong> (like MSE).</p></li>
+<li><p><strong>Gradient Descent</strong> is the optimization algorithm used to find the model parameters that minimize the cost.</p></li>
+<li><p>Libraries like <strong>Scikit-Learn</strong> make it incredibly easy to implement these powerful models.</p></li>
+</ul>
+<p><strong>What’s Next?</strong></p>
+<ul class="simple">
+<li><p>What if our data isn’t linear? We can use <strong>Polynomial Regression</strong>.</p></li>
+<li><p>How do we handle classification problems? We’ll use models like <strong>Logistic Regression</strong> and <strong>Support Vector Machines</strong>.</p></li>
+<li><p>What happens when we have many features? We need to be careful about <strong>overfitting</strong> and use techniques like <strong>regularization</strong>.</p></li>
+</ul>
+</section>
+<section id="regularization">
+<h2><span class="section-number">4.6. </span>Regularization<a class="headerlink" href="#regularization" title="Link to this heading">#</a></h2>
+<p>The bias-variance trade-off shows that is important to not go to the extremes when fitting a model. For example, when the model performs well on the training data but does not work well on the test data, we might need to add a <code class="docutils literal notranslate"><span class="pre">regularization</span></code> so penalize the cost function to improve the trade-off. One example is the so-called ridge regularization, where</p>
+<div class="amsmath math notranslate nohighlight" id="equation-77f73a76-fc1e-44ad-ba67-89f786285ee8">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-77f73a76-fc1e-44ad-ba67-89f786285ee8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\Delta(\theta) = \frac{1}{2m} \sum_{i=1}^{m} \left( \hat y(x_i) - y_i \right)^2 + \lambda \sum_{j=1}^{n} \theta_j^2,
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is the hyper-regularization parameter. This controls the magnitude of the coefficients preventing overfitting. When <span class="math notranslate nohighlight">\(\lambda\)</span> is large, the parameters <span class="math notranslate nohighlight">\(\theta\)</span> decrease, which shrinks the impact of variables no so correlated with the output. When <span class="math notranslate nohighlight">\(lambda\)</span> decreases, we basically converge to the usual linear regression.</p>
+<p>There are several other regularization techniques, such as lasso regression (L1),</p>
+<div class="amsmath math notranslate nohighlight" id="equation-21d55d99-5821-485d-80f8-c35488bd6037">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-21d55d99-5821-485d-80f8-c35488bd6037" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\Delta(\theta) = \frac{1}{2m} \sum_{i=1}^{m} \left( h_\theta(x_i) - y_i \right)^2 + \lambda \sum_{j=1}^{n} |\theta_j|, 
+\end{equation}\]</div>
+<p>Elastic Net regression, where both previous regressions are combines, and so on.</p>
+<section id="exercises">
+<h3><span class="section-number">4.6.1. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h3>
+<div class="exercise admonition" id="lectures/04-LinearRegression/LinearRegression-exercise-3">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.4 </span> (Ridge, lasso and elastic net)</p>
+<section id="exercise-content">
+<p>Implement ridge regularization into our step by step approach. Check the role of several values. Now do the same for lasso, and then for Elastic Net.</p>
+</section>
+</div>
+<div class="exercise admonition" id="lectures/04-LinearRegression/LinearRegression-exercise-4">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.5 </span> (Ransac regression with outliers)</p>
+<section id="exercise-content">
+<p>Look for ransac regression in sklearn and implement an example showing how ransac can ignore outliers in data.</p>
+</section>
+</div>
+</section>
+</section>
+<section id="multiple-linear-regression">
+<h2><span class="section-number">4.7. </span>Multiple linear regression<a class="headerlink" href="#multiple-linear-regression" title="Link to this heading">#</a></h2>
+<p>REF: <a class="reference external" href="https://www.digitalocean.com/community/tutorials/multiple-linear-regression-python">https://www.digitalocean.com/community/tutorials/multiple-linear-regression-python</a></p>
+<p>Until now, we explore a single variable linear regression. But, in general, we have multiple variables problems. In this case, we want to study a model like</p>
+<div class="amsmath math notranslate nohighlight" id="equation-861af395-1dc7-4963-9c92-aaf99ee07690">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-861af395-1dc7-4963-9c92-aaf99ee07690" title="Permalink to this equation">#</a></span>\[\begin{equation}
+Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n + \epsilon = \vec \beta \cdot \vec V + \epsilon,
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\vec \beta\)</span> are the coefficients we want to optimize, and we have <span class="math notranslate nohighlight">\(n\)</span> “independent” variables.</p>
+<p>There are several assumptions here to be able to apply linear regression, and there are some tests that you can use to check for them.</p>
+<section id="assumptions-of-multiple-linear-regression">
+<h3><span class="section-number">4.7.1. </span>Assumptions of Multiple Linear Regression<a class="headerlink" href="#assumptions-of-multiple-linear-regression" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Assumption</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-left"><p>Test(s) to Check</p></th>
+<th class="head text-left"><p>Python Implementation (<code class="docutils literal notranslate"><span class="pre">pandas</span></code> + <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>1. Linearity</strong></p></td>
+<td class="text-left"><p>The relationship between predictors (X) and the outcome (y) is linear.</p></td>
+<td class="text-left"><p><strong>Scatter Plots</strong> or <strong>Fitted vs. Residuals Plot</strong>. Look for a random scatter. Remember that you can tranform the data</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">seaborn</span> <span class="pre">as</span> <span class="pre">sns</span></code><br><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">model</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">fitted</span> <span class="pre">OLS</span> <span class="pre">model</span></code><br><code class="docutils literal notranslate"><span class="pre">residuals</span> <span class="pre">=</span> <span class="pre">model.resid</span></code><br><code class="docutils literal notranslate"><span class="pre">fitted</span> <span class="pre">=</span> <span class="pre">model.fittedvalues</span></code><br><code class="docutils literal notranslate"><span class="pre">sns.residplot(x=fitted,</span> <span class="pre">y=residuals,</span> <span class="pre">lowess=True)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>2. Independence of Residuals</strong></p></td>
+<td class="text-left"><p>The residuals (errors) are independent of each other (no autocorrelation).</p></td>
+<td class="text-left"><p><strong>Durbin-Watson Test</strong>. Look for a value around 2.</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">statsmodels.stats.stattools</span> <span class="pre">import</span> <span class="pre">durbin_watson</span></code><br><code class="docutils literal notranslate"><span class="pre">dw_stat</span> <span class="pre">=</span> <span class="pre">durbin_watson(model.resid)</span></code><br><code class="docutils literal notranslate"><span class="pre">print(f&quot;Durbin-Watson:</span> <span class="pre">{dw_stat:.2f}&quot;)</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>3. Homoscedasticity</strong></p></td>
+<td class="text-left"><p>Residuals have constant variance across all levels of X.</p></td>
+<td class="text-left"><p><strong>Breusch-Pagan Test</strong> or <strong>White Test</strong>. Look for a p-value &gt; 0.05. Visual check with <strong>Residuals vs. Fitted Plot</strong>.</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">statsmodels.stats.api</span> <span class="pre">as</span> <span class="pre">sms</span></code><br><code class="docutils literal notranslate"><span class="pre">bp_test</span> <span class="pre">=</span> <span class="pre">sms.het_breuschpagan(model.resid,</span> <span class="pre">model.model.exog)</span></code><br><code class="docutils literal notranslate"><span class="pre">print(f&quot;Breusch-Pagan</span> <span class="pre">p-value:</span> <span class="pre">{bp_test[1]:.4f}&quot;)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>4. Normality of Residuals</strong></p></td>
+<td class="text-left"><p>The residuals are approximately normally distributed.</p></td>
+<td class="text-left"><p><strong>Jarque-Bera Test</strong> or <strong>Q-Q Plot</strong>. Points on the Q-Q plot should follow the line.</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">statsmodels.api</span> <span class="pre">as</span> <span class="pre">sm</span></code><br><code class="docutils literal notranslate"><span class="pre">sm.qqplot(model.resid,</span> <span class="pre">line='s')</span></code><br><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Jarque-Bera</span> <span class="pre">result</span> <span class="pre">is</span> <span class="pre">in</span> <span class="pre">model.summary()</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>5. No Perfect Multicollinearity</strong></p></td>
+<td class="text-left"><p>Independent variables are not highly correlated with each other.</p></td>
+<td class="text-left"><p><strong>A) Correlation Matrix (Preliminary)</strong><br><br><strong>B) Variance Inflation Factor (VIF) (Definitive)</strong></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">A)</span> <span class="pre">Correlation</span> <span class="pre">Matrix</span></code><br><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">seaborn</span> <span class="pre">as</span> <span class="pre">sns</span></code><br><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">matplotlib.pyplot</span> <span class="pre">as</span> <span class="pre">plt</span></code><br><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">df</span> <span class="pre">is</span> <span class="pre">your</span> <span class="pre">full</span> <span class="pre">DataFrame</span> <span class="pre">(X's</span> <span class="pre">and</span> <span class="pre">y)</span></code><br><code class="docutils literal notranslate"><span class="pre">corr_matrix</span> <span class="pre">=</span> <span class="pre">df.corr()</span></code><br><code class="docutils literal notranslate"><span class="pre">sns.heatmap(corr_matrix,</span> <span class="pre">annot=True,</span> <span class="pre">cmap='coolwarm')</span></code><br><code class="docutils literal notranslate"><span class="pre">plt.show()</span></code><br><br><code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">B)</span> <span class="pre">VIF</span></code><br><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">statsmodels.stats.outliers_influence</span> <span class="pre">import</span> <span class="pre">variance_inflation_factor</span></code><br><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">X</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">DataFrame</span> <span class="pre">of</span> <span class="pre">predictors</span> <span class="pre">only</span></code><br><code class="docutils literal notranslate"><span class="pre">vif</span> <span class="pre">=</span> <span class="pre">[variance_inflation_factor(X.values,</span> <span class="pre">i)</span> <span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(X.shape[1])]</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>It is also useful to check for the correlation between the dependent variable <span class="math notranslate nohighlight">\(Y\)</span> and the independent variables <span class="math notranslate nohighlight">\(\vec X\)</span>. Large positive or negative correlations allow to select the most important variables for applying linear regression.</p>
+<p>The following code shows an example of this:</p>
+<hr class="docutils" />
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Create sample data representing a &quot;good&quot; scenario</span>
+<span class="c1"># X1 and X2 are good predictors of y</span>
+<span class="c1"># X3 is a weak predictor</span>
+<span class="c1"># X1 and X2 have low correlation with each other</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">X1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span>
+<span class="n">X2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span>
+<span class="n">X3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="c1"># Weak predictor</span>
+<span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">X1</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">X2</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">X3</span> <span class="o">+</span> <span class="n">noise</span> <span class="c1"># X3 has a small effect</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;X1&#39;</span><span class="p">:</span> <span class="n">X1</span><span class="p">,</span> <span class="s1">&#39;X2&#39;</span><span class="p">:</span> <span class="n">X2</span><span class="p">,</span> <span class="s1">&#39;X3&#39;</span><span class="p">:</span> <span class="n">X3</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">y</span><span class="p">})</span>
+
+<span class="c1"># --- Generate the Correlation Matrix ---</span>
+<span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+
+<span class="c1"># --- Visualize it with a Heatmap ---</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corr_matrix</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.2f&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Full Correlation Matrix (for y and X)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># --- Explicitly Analyze the Correlations ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- 1. Correlation with Dependent Variable (y) ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;We want these values to be high (far from zero).&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">corr_matrix</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- 2. Correlation Among Independent Variables (X) ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;We want the off-diagonal values here to be low (close to zero).&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;X1&#39;</span><span class="p">,</span> <span class="s1">&#39;X2&#39;</span><span class="p">,</span> <span class="s1">&#39;X3&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/b3cb8d3af31d2772c559863d5190706cb62f65e5d97d6010587508077f52ce22.png" src="../../_images/b3cb8d3af31d2772c559863d5190706cb62f65e5d97d6010587508077f52ce22.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- 1. Correlation with Dependent Variable (y) ---
+We want these values to be high (far from zero).
+y     1.000000
+X1    0.825275
+X3    0.092789
+X2   -0.530057
+Name: y, dtype: float64
+
+--- 2. Correlation Among Independent Variables (X) ---
+We want the off-diagonal values here to be low (close to zero).
+          X1        X2        X3
+X1  1.000000 -0.034033 -0.037654
+X2 -0.034033  1.000000 -0.146354
+X3 -0.037654 -0.146354  1.000000
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="full-example-workflow-in-python">
+<h3><span class="section-number">4.7.2. </span>Full example Workflow in Python<a class="headerlink" href="#full-example-workflow-in-python" title="Link to this heading">#</a></h3>
+<p>Here is a quick summary of how you would typically check these assumptions after fitting a model.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.stats.outliers_influence</span><span class="w"> </span><span class="kn">import</span> <span class="n">variance_inflation_factor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.stats.stattools</span><span class="w"> </span><span class="kn">import</span> <span class="n">durbin_watson</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.stats.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sms</span>
+
+<span class="c1"># 1. Prepare your data (assuming you have a pandas DataFrame `df`)</span>
+<span class="c1"># Let&#39;s create some sample data for demonstration</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">X1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span>
+<span class="n">X2</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">X1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="c1"># X2 is somewhat correlated with X1</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">X1</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">X2</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;X1&#39;</span><span class="p">:</span> <span class="n">X1</span><span class="p">,</span> <span class="s1">&#39;X2&#39;</span><span class="p">:</span> <span class="n">X2</span><span class="p">})</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="c1"># Add a constant for the intercept</span>
+
+<span class="c1"># 2. Fit the OLS model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># 3. Check Assumptions</span>
+
+<span class="c1"># --- Linearity &amp; Homoscedasticity (Visual Check) ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Checking for Linearity and Homoscedasticity...&quot;</span><span class="p">)</span>
+<span class="n">residuals</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">resid</span>
+<span class="n">fitted</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fittedvalues</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">residplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fitted</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">residuals</span><span class="p">,</span> <span class="n">lowess</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">line_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;lw&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Residuals vs. Fitted Values&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Fitted Values&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Residuals&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># --- Homoscedasticity (Statistical Test) ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Checking for Homoscedasticity (Breusch-Pagan Test)...&quot;</span><span class="p">)</span>
+<span class="n">bp_test</span> <span class="o">=</span> <span class="n">sms</span><span class="o">.</span><span class="n">het_breuschpagan</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">resid</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">exog</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Breusch-Pagan Test p-value: </span><span class="si">{</span><span class="n">bp_test</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">bp_test</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result: No evidence of heteroscedasticity (Good).&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result: Evidence of heteroscedasticity found (Bad).&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># --- Independence of Residuals ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Checking for Independence of Residuals (Durbin-Watson Test)...&quot;</span><span class="p">)</span>
+<span class="n">dw_stat</span> <span class="o">=</span> <span class="n">durbin_watson</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">resid</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Durbin-Watson statistic: </span><span class="si">{</span><span class="n">dw_stat</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="mf">1.5</span> <span class="o">&lt;</span> <span class="n">dw_stat</span> <span class="o">&lt;</span> <span class="mf">2.5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result: No significant autocorrelation (Good).&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result: Potential autocorrelation detected (Bad).&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># --- Normality of Residuals ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Checking for Normality of Residuals (Q-Q Plot and Jarque-Bera)...&quot;</span><span class="p">)</span>
+<span class="n">sm</span><span class="o">.</span><span class="n">qqplot</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">resid</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="s1">&#39;45&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Q-Q Plot of Residuals&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># The Jarque-Bera test result is in the model summary `Prob(JB)`</span>
+<span class="n">jb_prob</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary2</span><span class="p">()</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jarque-Bera test probability: </span><span class="si">{</span><span class="n">jb_prob</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">jb_prob</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result: Residuals appear to be normally distributed (Good).&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result: Residuals may not be normally distributed (Bad).&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># --- Multicollinearity ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Checking for Multicollinearity (VIF)...&quot;</span><span class="p">)</span>
+<span class="c1"># Note: We check VIF on the design matrix X without the constant</span>
+<span class="n">X_no_const</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;const&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">vif_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">vif_data</span><span class="p">[</span><span class="s2">&quot;feature&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">X_no_const</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">vif_data</span><span class="p">[</span><span class="s2">&quot;VIF&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">X_no_const</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X_no_const</span><span class="o">.</span><span class="n">columns</span><span class="p">))]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vif_data</span><span class="p">)</span>
+<span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">vif_data</span><span class="p">[</span><span class="s2">&quot;VIF&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Result: No significant multicollinearity detected (Good).&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Result: Potential multicollinearity detected (Bad).&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.898
+Model:                            OLS   Adj. R-squared:                  0.896
+Method:                 Least Squares   F-statistic:                     428.0
+Date:                Fri, 22 Aug 2025   Prob (F-statistic):           7.45e-49
+Time:                        23:51:34   Log-Likelihood:                -311.60
+No. Observations:                 100   AIC:                             629.2
+Df Residuals:                      97   BIC:                             637.0
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          2.1903      1.049      2.089      0.039       0.109       4.272
+X1             3.0667      0.337      9.101      0.000       2.398       3.735
+X2             4.8641      0.617      7.883      0.000       3.639       6.089
+==============================================================================
+Omnibus:                        5.239   Durbin-Watson:                   2.103
+Prob(Omnibus):                  0.073   Jarque-Bera (JB):                5.526
+Skew:                           0.306   Prob(JB):                       0.0631
+Kurtosis:                       3.975   Cond. No.                         11.9
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+================================================================================
+
+Checking for Linearity and Homoscedasticity...
+</pre></div>
+</div>
+<img alt="../../_images/d21b39d534ea10bdae8f86837371c0cb5854022903a4ffcb615a685da92e1573.png" src="../../_images/d21b39d534ea10bdae8f86837371c0cb5854022903a4ffcb615a685da92e1573.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Checking for Homoscedasticity (Breusch-Pagan Test)...
+Breusch-Pagan Test p-value: 0.4893
+Result: No evidence of heteroscedasticity (Good).
+
+================================================================================
+
+Checking for Independence of Residuals (Durbin-Watson Test)...
+Durbin-Watson statistic: 2.10
+Result: No significant autocorrelation (Good).
+
+================================================================================
+
+Checking for Normality of Residuals (Q-Q Plot and Jarque-Bera)...
+</pre></div>
+</div>
+<img alt="../../_images/3bd26fd0c8a3b8f2e8ebc1fd881f0ff3a1da92d3050ffbeb0996bd1263af58a6.png" src="../../_images/3bd26fd0c8a3b8f2e8ebc1fd881f0ff3a1da92d3050ffbeb0996bd1263af58a6.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jarque-Bera test probability: 2.103
+Result: Residuals appear to be normally distributed (Good).
+
+================================================================================
+
+Checking for Multicollinearity (VIF)...
+  feature       VIF
+0      X1  9.923332
+1      X2  9.923332
+
+Result: Potential multicollinearity detected (Bad).
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="data-pre-processing-and-post-processing-tips">
+<h2><span class="section-number">4.8. </span>Data pre-processing and post-processing tips<a class="headerlink" href="#data-pre-processing-and-post-processing-tips" title="Link to this heading">#</a></h2>
+<p>What happens if there is missing data? or the independent variables are of very different magnitudes? this could affect the actual analysis, so it is better to perform a data cleaning or pre-processing stage.</p>
+<p>For example, for missing data detection, you can use</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>If you find any missing data, you have to carefully analyze what to do.</p>
+<p>You should also use the correlation matrix to select the more relevant variables to use in the model.</p>
+<p>Additionally, it is useful to standardize data so their mean become 0 and its variance 1. This ensures that no variable dominates the model. To do so, you can use a scaller like</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="c1"># Initialize the StandardScaler object</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+
+<span class="c1"># Fit the scaler to the data and transform it</span>
+<span class="n">X_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># Print the scaled data</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>After this, you can apply some statistical test to check for the multiple linear assumptions.</p>
+<p>Finally, you can also split your data into training and testing subsets, to be able to check for model prediction, by using the <code class="docutils literal notranslate"><span class="pre">train_test_split</span></code> function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># The &#39;LinearRegression&#39; model is initialized and fitted to the training data.</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># The model is used to predict the target variable for the test set.</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mean Squared Error:&quot;</span><span class="p">,</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R-squared:&quot;</span><span class="p">,</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+</pre></div>
+</div>
+<section id="cross-validation">
+<h3><span class="section-number">4.8.1. </span>Cross-validation<a class="headerlink" href="#cross-validation" title="Link to this heading">#</a></h3>
+<p>After the initial results and tests, you can use cross-validation to check for your model performance with unseen data, by splitting your data in k groups ad computing R2 as</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">cross_val_score</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X_scaled</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;r2&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cross-Validation Scores:&quot;</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mean CV R^2:&quot;</span><span class="p">,</span> <span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+<span class="c1"># Line Plot for Cross-Validation Scores</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">scores</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Fold&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;R-squared&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Cross-Validation R-squared Scores&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="feature-selection">
+<h3><span class="section-number">4.8.2. </span>Feature selection<a class="headerlink" href="#feature-selection" title="Link to this heading">#</a></h3>
+<p>It is possible to recursively try to eliminate features until some k-features are selected. This is called recursive features elimination:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.feature_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">RFE</span>
+<span class="n">rfe</span> <span class="o">=</span> <span class="n">RFE</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">LinearRegression</span><span class="p">(),</span> <span class="n">n_features_to_select</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">rfe</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Selected Features:&quot;</span><span class="p">,</span> <span class="n">rfe</span><span class="o">.</span><span class="n">support_</span><span class="p">)</span>
+
+<span class="c1"># Bar Plot of Feature Rankings</span>
+<span class="n">feature_ranking</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+   <span class="s1">&#39;Feature&#39;</span><span class="p">:</span> <span class="n">selected_features</span><span class="p">,</span>
+   <span class="s1">&#39;Ranking&#39;</span><span class="p">:</span> <span class="n">rfe</span><span class="o">.</span><span class="n">ranking_</span>
+<span class="p">})</span>
+<span class="n">feature_ranking</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Ranking&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Feature&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Ranking&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Feature Ranking (Lower is Better)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Ranking&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3><span class="section-number">4.8.3. </span>Exercises<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>For the following exercises, perform a full analysis with explicit statistical tests computation and interpretation. Explain why you use some of the features, or why you need to use all of them. Plot correlation matrices and so on. Also perform a previous pre-processing stage.</p>
+<div class="exercise admonition" id="lectures/04-LinearRegression/LinearRegression-exercise-5">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.6 </span> (A large number of features model)</p>
+<section id="exercise-content">
+<p>Use <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression">sklearn.datasets.make_regression</a> to generate a 100 features model but 10 relevant features.</p>
+</section>
+</div>
+<div class="exercise admonition" id="lectures/04-LinearRegression/LinearRegression-exercise-6">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.7 </span> (Star dataset)</p>
+<section id="exercise-content">
+<p>Use the star dataset to try to predict luminosity: <a class="reference external" href="https://www.kaggle.com/datasets/waqi786/stars-dataset">https://www.kaggle.com/datasets/waqi786/stars-dataset</a>.</p>
+</section>
+</div>
+<div class="exercise admonition" id="lectures/04-LinearRegression/LinearRegression-exercise-7">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.8 </span> (Polynomial regression)</p>
+<section id="exercise-content">
+<p>Generate a random set following the model</p>
+<div class="amsmath math notranslate nohighlight" id="equation-696690b5-a56e-47eb-8208-e9fe92150d52">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-696690b5-a56e-47eb-8208-e9fe92150d52" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y = \beta_0 + \beta_1 x_1 + \beta_2 x_1^2 + \epsilon
+\end{equation}\]</div>
+<p>and apply (polynomial) linear regression to get the coefficients.  Check <a class="reference external" href="https://www.geeksforgeeks.org/machine-learning/python-implementation-of-polynomial-regression/">https://www.geeksforgeeks.org/machine-learning/python-implementation-of-polynomial-regression/</a></p>
+</section>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "iluvatar1/ML4Sci-lectures",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lectures/04-LinearRegression"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../03-PCA/Intro-PCA.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>An Introduction to Principal Component Analysis (PCA)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../05-LogisticRegression/LogisticRegression.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>An Introduction to Logistic Regression</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-what-is-machine-learning">4.1. Review: What is Machine Learning?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">4.2. Supervised Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-regression-predicting-a-continuous-value">4.2.1. A. Regression: Predicting a Continuous Value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-classification-predicting-a-discrete-category">4.2.2. B. Classification: Predicting a Discrete Category</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.3. Linear Regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-goal">4.3.1. The Goal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-find-the-best-line">4.3.2. How Do We Find the “Best” Line?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-gradient-descent">4.3.2.1. Optimization with Gradient Descent</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-applications-to-basic-sciences">4.4. Some applications to basic sciences</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-physics-example-hookes-law">4.4.1. A Physics Example - Hooke’s Law</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-generation">4.4.1.1. Data Generation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression-using-sklearn">4.4.1.2. Linear regression using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-happening-at-each-step">4.4.2. What is happening at each step?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-exercises">4.4.3. Practice Exercises</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-whats-next">4.5. Conclusion &amp; What’s Next?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regularization">4.6. Regularization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">4.6.1. Exercises</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-linear-regression">4.7. Multiple linear regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-of-multiple-linear-regression">4.7.1. Assumptions of Multiple Linear Regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-example-workflow-in-python">4.7.2. Full example Workflow in Python</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-pre-processing-and-post-processing-tips">4.8. Data pre-processing and post-processing tips</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation">4.8.1. Cross-validation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-selection">4.8.2. Feature selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.8.3. Exercises</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Veronica Arias, Carlos Viviescas, William Oquendo
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
