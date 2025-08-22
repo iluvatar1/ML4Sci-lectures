@@ -1,0 +1,43 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+# 
+
+format: jb-book
+root: README
+title: Introduction to Machine Learning for Science
+
+parts:
+  - caption: Introduction
+    numbered: true
+    chapters:
+      - file: lectures/00-IntroductionCourseML/IntroCourse-MachineLearning.ipynb
+      - file: lectures/00-TALK-IntroML/IntroMachineLearning.ipynb
+  - caption: Unsupervised learning I
+    numbered: true
+    chapters:
+      - file: lectures/03-PCA/Intro-PCA.ipynb
+      #- file: lectures/03-PCA/Kernel-PCA/Kernel_PCA.ipynb
+  - caption: Supervised learning
+    numbered: true
+    chapters:
+      - file: lectures/04-LinearRegression/LinearRegression.ipynb
+      - file: lectures/05-LogisticRegression/LogisticRegression.ipynb
+      - file: lectures/06-SVM/SVM.ipynb
+  - caption: Introduction to Neural Networks
+    numbered: true
+    chapters:
+      - file: lectures/07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.ipynb
+      - file: lectures/07-IntroNeuralNetworks/BackPropagation.ipynb
+      - file: lectures/07-IntroNeuralNetworks/DeepLearning.ipynb
+  - caption: Introduction to LLM and some useful tools
+    numbered: true
+    chapters:
+      - file: lectures/08-llm/llm.ipynb
+  - caption: Appendix
+    numbered: true
+    chapters:
+      - file: lectures/01-reviewPython/PythonReview.ipynb
+      - file: lectures/01-reviewPython/01-IntroProgrammingPython.ipynb
+      - file: lectures/01-reviewPython/02-IntroProgrammingPython-DataStructs.ipynb
+      #- file: lectures/01-reviewPython/pandas-intro.ipynb
+      - file: lectures/02-LimpiezayPrepDatos/TutorialPandas.ipynb
