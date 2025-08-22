@@ -44,16 +44,16 @@ execute:
 # Launch button settings
 launch_buttons:
   use_binder_button         : true  # Add a binder button to pages (requires the repository to run on Binder)
-  # notebook_interface        : jupyterlab  # The interface interactive links will activate ["classic", "jupyterlab"]
-  # binderhub_url             : "https://mybinder.org"  # The URL of the BinderHub (e.g., https://mybinder.org)
-  # binder_repo_base          : "https://github.com/"  # The site on which the textbook repository is hosted
-  # binder_repo_org           : "iluvatar1"  # The username or organization that owns this repository
-  # binder_repo_name          : "ML4Sci-lectures"  # The name of the repository on the web
-  # binder_repo_branch        : "gh-pages"  # The branch on which your textbook is hosted.
-  # binderhub_interact_text   : "Interact"  # The text that interact buttons will contain.
-  # jupyterhub_url            : ""  # The URL of the JupyterHub (e.g., https://datahub.berkeley.edu)
-  # thebe                     : true  # Add a thebe button to pages (requires the repository to run on Binder)
-  # colab_url                 : "https://colab.research.google.com" #/github/iluvatar1/ML4Sci-lectures/blob/master" # The URL of Google Colab (https://colab.research.google.com)
+  notebook_interface        : jupyterlab  # The interface interactive links will activate ["classic", "jupyterlab"]
+  binderhub_url             : "https://mybinder.org"  # The URL of the BinderHub (e.g., https://mybinder.org)
+  binder_repo_base          : "https://github.com/"  # The site on which the textbook repository is hosted
+  binder_repo_org           : "iluvatar1"  # The username or organization that owns this repository
+  binder_repo_name          : "ML4Sci-lectures"  # The name of the repository on the web
+  binder_repo_branch        : "master"  # The branch on which your textbook is hosted.
+#  binderhub_interact_text   : "Interact"  # The text that interact buttons will contain.
+#  jupyterhub_url            : ""  # The URL of the JupyterHub (e.g., https://datahub.berkeley.edu)
+  thebe                     : true  # Add a thebe button to pages (requires the repository to run on Binder)
+  colab_url                 : "https://colab.research.google.com" #/github/iluvatar1/ML4Sci-lectures/blob/master" # The URL of Google Colab (https://colab.research.google.com)
 
 # Information about where the book exists on the web
 repository:
