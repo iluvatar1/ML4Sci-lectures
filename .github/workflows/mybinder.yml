@@ -13,13 +13,11 @@ jobs:
   cache-binder-image:
     runs-on: ubuntu-latest
     steps:
-      - name: Warm Binder cache
-        run: |
-          curl -L https://mybinder.org/build/gh/iluvatar1/ML4Sci-lectures/master
-        #uses: jupyterhub/repo2docker-action@master
-        #with:
-        #  NO_PUSH: true
-        #  MYBINDERORG_TAG: master # ${{ github.ref_name }}
+    - name: Warm Binder cache
+      uses: jupyterhub/repo2docker-action@master
+      with:
+        NO_PUSH: true
+        MYBINDERORG_TAG: master # ${{ github.ref_name }}
 
 
 # name: Binder
