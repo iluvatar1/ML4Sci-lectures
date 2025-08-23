@@ -16,8 +16,8 @@ jobs:
     - name: Warm Binder cache
       uses: jupyterhub/repo2docker-action@master
       with:
-        NO_PUSH: true
-        MYBINDERORG_TAG: master # ${{ github.ref_name }}
+        # NO_PUSH: true # triggers local build, which is discarded
+        MYBINDERORG_TAG: ${{ github.ref_name }} # master
 
 
 # name: Binder
