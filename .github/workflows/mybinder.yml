@@ -15,11 +15,11 @@ jobs:
     steps:
       - name: Warm Binder cache
         uses: jupyterhub/repo2docker-action@master
+        run: |
+          curl -L https://mybinder.org/build/gh/iluvatar1/ML4Sci-lectures/master
         #with:
         #  NO_PUSH: true
         #  MYBINDERORG_TAG: master # ${{ github.ref_name }}
-        run: |
-          curl -L https://mybinder.org/build/gh/iluvatar1/ML4Sci-lectures/master
 
 
 # name: Binder
