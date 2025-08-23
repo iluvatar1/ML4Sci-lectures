@@ -1699,14 +1699,14 @@ theta_0=np.float64(1.25), theta_1=np.float64(1.3789473684210527)
 <section id="regularization">
 <h2><span class="section-number">4.6. </span>Regularization<a class="headerlink" href="#regularization" title="Link to this heading">#</a></h2>
 <p>The bias-variance trade-off shows that is important to not go to the extremes when fitting a model. For example, when the model performs well on the training data but does not work well on the test data, we might need to add a <code class="docutils literal notranslate"><span class="pre">regularization</span></code> so penalize the cost function to improve the trade-off. One example is the so-called ridge regularization, where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2d875a00-4a9f-4622-bd90-1319fccc82e2">
-<span class="eqno">(4.1)<a class="headerlink" href="#equation-2d875a00-4a9f-4622-bd90-1319fccc82e2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-751b0e2d-38cc-4356-9922-56f76ddfd8f4">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-751b0e2d-38cc-4356-9922-56f76ddfd8f4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \Delta(\theta) = \frac{1}{2m} \sum_{i=1}^{m} \left( \hat y(x_i) - y_i \right)^2 + \lambda \sum_{j=1}^{n} \theta_j^2,
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is the hyper-regularization parameter. This controls the magnitude of the coefficients preventing overfitting. When <span class="math notranslate nohighlight">\(\lambda\)</span> is large, the parameters <span class="math notranslate nohighlight">\(\theta\)</span> decrease, which shrinks the impact of variables no so correlated with the output. When <span class="math notranslate nohighlight">\(lambda\)</span> decreases, we basically converge to the usual linear regression.</p>
 <p>There are several other regularization techniques, such as lasso regression (L1),</p>
-<div class="amsmath math notranslate nohighlight" id="equation-61494793-967b-4317-a3fe-ee5bd29f655b">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-61494793-967b-4317-a3fe-ee5bd29f655b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ba4557c5-fce2-4fff-b9c4-fac7210e228a">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-ba4557c5-fce2-4fff-b9c4-fac7210e228a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \Delta(\theta) = \frac{1}{2m} \sum_{i=1}^{m} \left( h_\theta(x_i) - y_i \right)^2 + \lambda \sum_{j=1}^{n} |\theta_j|, 
 \end{equation}\]</div>
 <p>Elastic Net regression, where both previous regressions are combines, and so on.</p>
@@ -1732,8 +1732,8 @@ theta_0=np.float64(1.25), theta_1=np.float64(1.3789473684210527)
 <h2><span class="section-number">4.7. </span>Multiple linear regression<a class="headerlink" href="#multiple-linear-regression" title="Link to this heading">#</a></h2>
 <p>REF: <a class="reference external" href="https://www.digitalocean.com/community/tutorials/multiple-linear-regression-python">https://www.digitalocean.com/community/tutorials/multiple-linear-regression-python</a></p>
 <p>Until now, we explore a single variable linear regression. But, in general, we have multiple variables problems. In this case, we want to study a model like</p>
-<div class="amsmath math notranslate nohighlight" id="equation-379b9cd9-4a21-4426-970a-c8312e447c8b">
-<span class="eqno">(4.3)<a class="headerlink" href="#equation-379b9cd9-4a21-4426-970a-c8312e447c8b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-edf94581-1255-4922-bde4-db77a988f0f3">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-edf94581-1255-4922-bde4-db77a988f0f3" title="Permalink to this equation">#</a></span>\[\begin{equation}
 Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n + \epsilon = \vec \beta \cdot \vec V + \epsilon,
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\vec \beta\)</span> are the coefficients we want to optimize, and we have <span class="math notranslate nohighlight">\(n\)</span> “independent” variables.</p>
@@ -1954,7 +1954,7 @@ Dep. Variable:                      y   R-squared:                       0.898
 Model:                            OLS   Adj. R-squared:                  0.896
 Method:                 Least Squares   F-statistic:                     428.0
 Date:                Sat, 23 Aug 2025   Prob (F-statistic):           7.45e-49
-Time:                        02:45:12   Log-Likelihood:                -311.60
+Time:                        22:17:08   Log-Likelihood:                -311.60
 No. Observations:                 100   AIC:                             629.2
 Df Residuals:                      97   BIC:                             637.0
 Df Model:                           2                                         
@@ -2117,8 +2117,8 @@ Result: Potential multicollinearity detected (Bad).
 <p class="admonition-title"><span class="caption-number">Exercise 4.8 </span> (Polynomial regression)</p>
 <section id="exercise-content">
 <p>Generate a random set following the model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3dfb3775-9846-4d34-8a6b-55b8d20bf476">
-<span class="eqno">(4.4)<a class="headerlink" href="#equation-3dfb3775-9846-4d34-8a6b-55b8d20bf476" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ac3c5786-4a4e-4ceb-9b8f-6ea31765d9cd">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-ac3c5786-4a4e-4ceb-9b8f-6ea31765d9cd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = \beta_0 + \beta_1 x_1 + \beta_2 x_1^2 + \epsilon
 \end{equation}\]</div>
 <p>and apply (polynomial) linear regression to get the coefficients.  Check <a class="reference external" href="https://www.geeksforgeeks.org/machine-learning/python-implementation-of-polynomial-regression/">https://www.geeksforgeeks.org/machine-learning/python-implementation-of-polynomial-regression/</a></p>
