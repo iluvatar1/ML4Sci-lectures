@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3. An Introduction to Principal Component Analysis (PCA) &#8212; Introduction to Machine Learning for Science</title>
+    <title>4. An Introduction to Principal Component Analysis (PCA) &#8212; Introduction to Machine Learning for Science</title>
   
   
   
@@ -91,15 +91,15 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script type="application/vnd.jupyter.widget-state+json">{"state": {"b13a0c39007b4d6da65383fb5f251037": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f95524bb3e204d1d97ec56a1eb663e06": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": ""}}, "1e48e517c9f64029b797dca451b24526": {"model_name": "DropdownModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "DropdownModel", "_options_labels": ["1", "2", "3", "4"], "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "DropdownView", "description": "PC X:", "description_allow_html": false, "disabled": false, "index": 0, "layout": "IPY_MODEL_b13a0c39007b4d6da65383fb5f251037", "style": "IPY_MODEL_f95524bb3e204d1d97ec56a1eb663e06", "tabbable": null, "tooltip": null}}, "64373299f32f4374843443a7ed18a796": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f114a4a22f924ced8ee5e7706564db2e": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": ""}}, "45d4080fd78544deba1905526f353368": {"model_name": "DropdownModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "DropdownModel", "_options_labels": ["1", "2", "3", "4"], "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "DropdownView", "description": "PC Y:", "description_allow_html": false, "disabled": false, "index": 1, "layout": "IPY_MODEL_64373299f32f4374843443a7ed18a796", "style": "IPY_MODEL_f114a4a22f924ced8ee5e7706564db2e", "tabbable": null, "tooltip": null}}, "340985ad79454727998551732196cb50": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "adeea7982529419e81e10be9c493873a": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": ""}}, "d8628075460f475b84227d721e01ec11": {"model_name": "DropdownModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "DropdownModel", "_options_labels": ["1", "2", "3", "4"], "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "DropdownView", "description": "PC Z:", "description_allow_html": false, "disabled": false, "index": 2, "layout": "IPY_MODEL_340985ad79454727998551732196cb50", "style": "IPY_MODEL_adeea7982529419e81e10be9c493873a", "tabbable": null, "tooltip": null}}, "f18eaac41d9642acbc02ab743b07d3d3": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e098d862f3a1461ab99b623300eb2e3d": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_f18eaac41d9642acbc02ab743b07d3d3", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {}, "data": {"application/vnd.plotly.v1+json": {"data": [{"hovertemplate": "target=setosa<br>PC1=%{x}<br>PC2=%{y}<br>PC3=%{z}<extra></extra>", "legendgroup": "setosa", "marker": {"color": "#636efa", "symbol": "circle", "size": 5}, "mode": "markers", "name": "setosa", "scene": "scene", "showlegend": true, "x": {"dtype": "f8", "bdata": "Wigv2xZ5BcB5Hb3qj7YFwDV/ZBanHAfA/kuqUHb2BcDrcuRVadQFwGWrzlUzPwLAu4OkGHaQBsC9wbFLWAIFwJTkZdRPFwfA4q6uys1hBcB8N7lGOg4EwLGl6Tbs5gTAe+Gqp/NJBsCvAAWeWcoJwA0Td+RyKAXANff/oZsWA8DQ3cEu/PwEwKC8+y62LwXAABzYZTuZAcDixq82MrQEwGrHTpxnewLA3miBIIJZBMBzBsFxProJwMma6F//awLA4D8zlJXYAsD8K4ltqA0EwK4dDr0kwAPAeAM4lKF/BMDK3XlgxB0FwGUZrnNQDgXA1M74+P2yBMAsiWGwikcDwOscTbzeMAXAQGcifjbKBMAoQ3sebRgFwPtCchoQ7gbA2JOCznwABcDsNtISzWcGwHijnXQR2AfAdmn3OlW4BMCC4fJ1KykGwHU/09GBywbAC4iTSLD6B8CCOKLOsj4DwLwoibEIrQHABwpETzK3BcABZqasIE4EwOIK4vA3twbAxI9zVz1YBMAPnPMXe6AFwA=="}, "y": {"dtype": "f8", "bdata": "IPwgJgFx1D+ArIDk+afGv+BFTuqzjcK/wC6PrgJf1L+wDbjCi+nUP0AiSKL6uOc/ABzO+PDmtr8AAUhhzOnEP7D646aHgeK/wA8oGU8gvb/gl+uHZ6TkPwDQwve6Ko4/QL7hZyYYzr+wZ1EuWF3gv+Djsk443PI/CEnRC7Ro9T+YQh4qFvHpPzAYVB1W9dM/aHjgIkzu6z/AQVMHFm/gPwCUw9LPC9k/ACHFHjW22z8gNd1QexXBPwCLQMf7RLk/ANAYoJsWo78gEzJfrrDCv+BQPrYEw8A/4FizrLSI1z+Q6omJdvjTP+Cm0IEGNsm/AMr+uhsnyr9g7P9IlUzaP+iZ/Y8TB+o/WIlpaIZ98T/An1s8+w6/vwDQ8LjewbE/COAACgou4z/AhAeBdTHRP7BmyKK1Ot+/4NpC9k5RzT9wu8GWot3QP5ipU1lZHO6/wGmf1B3i1b8AvjNh8CzIP+BeLfZJ8ts/EKeKRWkD0L+oK8Sp5B7gPyBAHwdSLc2/aOGs4oaK4j/ASOo1oJK7Pw=="}, "z": {"dtype": "f8", "bdata": "wLtHXrSVnL/womtHfvDKv+D9891xVJI/gIsJ24wooD+QQTfgbg+3Pwp0ycA6l8U/7ZJmHE6B0D/AEiEriGeWvyAZdy3/QZU/sMM4dQdMyb9ATxWDCkizvyCWyvmEJro/cAoS2OB5yr/g6Oqwq2KvP7BWjtuHaMO/42ksxhjH0T8mPE3u/K/BP6D+lF3wTps/8DWCwFfMvr92539fYVnLP1zFejcaps6/PhbsAbquyj/hE3rcoLbSPxCdoLn2B6Q//HTC2rAAwD9OW4GyCDjQv3g0ZDwPTLg/oDL+OzIYtL/Uj62HJK3Cv6Cmbmby36Q/MN2RxOLEs7+0ssHxj6DCv7LC4Qi64sw/fiVODCUzxD9gLL3dck/Cv1wdYE3XCMW/MGLeDacs0b8wcuq+qfy3P3h7PsxYq7I/EKRyGEaAtL8Yg9E7gcazP0YbU17KWda/2g4+UCSkyD+zWBxhNuPQP1fbu+SZHtM/qLc1Um8Bub8iXqM8nFbFP+h6ZW4fb7U/AL+r1ZmGkb/IMSXe+Nu2vw=="}, "type": "scatter3d"}, {"hovertemplate": "target=versicolor<br>PC1=%{x}<br>PC2=%{y}<br>PC3=%{z}<extra></extra>", "legendgroup": "versicolor", "marker": {"color": "#EF553B", "symbol": "diamond", "size": 5}, "mode": "markers", "name": "versicolor", "scene": "scene", "showlegend": true, "x": {"dtype": "f8", "bdata": "/FCrYaWO9D9gpcUw8tbtP+SOhkXIbfc/AM//ffR2xz+8rij23mjxP1jEd5qNiOQ/bEdSVF6F8T/IifMa0Pjnv9DL2ZLDtPA/AOw1RBzpgb84n3SGO0Dgv9i6NKfVX+A/cCsjB2D10D9ok+VglYTvP8CuqMMvQ8a/iLCsFwmx7T/ALlJpCyHlP6BgXDywOM4/mL4oOkI77j+AJTOA/SenP+SxvL9L3PE/YJm60qTn1j/8xo10XMX0P8D+NafNfu0/KD4HFRTg5j+QGK98Os7sP2AbE9v4T/U/dFra88Hs+D9YfOMcegbqP6BcM0OvjtO/gMBs37xwsb+g5bmWjEXIv6BEMPt+dsE/CPadmZYU9j+IbH/j8tDiP4g9FobI0ek/WPupKfOH8z9YxpeaQhXqPwAdqI+Ke88/wIWhPgdNxT8wZne1Sb/dP9CXBuCOgew/ADOs/piCzT+AXx4whovmv0AqQenI2NY/wNfxHWo+1T/gx2TP6hPYP+h7NI/7j+Q/CHkYF80B7b9Q9VVt1CLTPw=="}, "y": {"dtype": "f8", "bdata": "wGilptXs5T8wgGMNlF/UP+jwisXrIuA/+FbG5aN+6r8AjI/eXxizP3CswoaOxNq/cI1XGVgk0j8EKGWLCBTwv8Asn3X2Os0/UGfKqXwj579c088Ba0H0vwC03aWDnrq/6K/jEeaZ4b8A+m0ZEPS/v2AJ6AaIT9C/oDx/0kTm3T9Q5LAUDpfWv3DRRvngWdW/UCUyx3Jh4b/4tbBuxa7iv8Dz3TRzqbW/QJ/WJBKlsb/QolWed/rUvyBqrLfzY8e/ANor40MUwz8wUe2gNwbVP8DaJbDWSc8/QLGBOaUe0T8gXp+jqejEv+BbVpObkde/kCOEJcWQ5r+IKSi/6MTlvxB5CoMbGdS/APFHQOrw2r8wvqupkP7ev+DKk1H32sg/MCjxfXAW2j8Qh02HdM/Xv7DbavOAL9G/eNix/lfS5b+YR5cOeHblv4B+39pSpaG/wAcKLnXh2b9o7IoyKzLwv7CzSTY5KOC/ADYXyEQ4y79w/exTGcTSvwAyscn1KZI/kH1It+ox6L/AaxZ3V1TWvw=="}, "z": {"dtype": "f8", "bdata": "gOs+5TUF2r9g6gmaT3KSv0Yu/xshp9W/WLFfydn8xr+igNosTrLTv4D/eOXsB6U/PA5diVe8xT+A2yreRTKJP4D7OM3dlNq/rgQdoTj+0T8YBPlJr0TRvzS27ObJtcA/mvPCaXM25r+QjLWwdc2vv9C0Vjc8KLc/Im11BMAi1L+qt6QsZ/7UPxirui23WtG/uHkYvB7437+ATKyJjBTOv41QnCluat0/0MQRKdprzb/G2K3mPkPWv1T6M5DCk82/xGBS9WKY1L+KiZL7xDzUv/KCHAfKseC/ECnNeyEcxb+wH5UjKSOiP3TxtIIqYtS/WJOF7GVCz79QHFD8ZJzTv4RDvBXkr8a/4A/jjx2OkD9a53kzmXHcP/701lTF5Ng/DBmSE31bzr/IPWMLy6vjv84I1ldnHMg/4IADfYe5rr+guIZ55eOYv0CJ0LsOX4S/HJ4sllBdzb/w1AM8kw67v0DpNmoXBJE/aJ9IXOBMtT8A/SChkfezPxhi+txhSsq/gLqdEdjNib+AfyBu1quFPw=="}, "type": "scatter3d"}, {"hovertemplate": "target=virginica<br>PC1=%{x}<br>PC2=%{y}<br>PC3=%{z}<extra></extra>", "legendgroup": "virginica", "marker": {"color": "#00cc96", "symbol": "square", "size": 5}, "mode": "markers", "name": "virginica", "scene": "scene", "showlegend": true, "x": {"dtype": "f8", "bdata": "IFEO+eE/BEBIG+lfzqT2P7Bux9Xz7gRAhOs9JWSL/z8m/F/nz8wCQFDAFKUiLQtAgNImPu+t4D/EAJA18HUHQDq57WngkQJAXGHnh4FVB0DET7N+oJb6PwxxmAG82vw/bjOlyiFTAUAgck3S4on1P/hr9UX2X/k//FdmP6d4/j/Yzrcn7TH/P6S+Z0h95QtABB/YWHtdDkBA/Ir4CtD0P9AXSswrbANApHp9yBsv8z8MXs4T1v8LQDSE1tViOPY/gp1z6BQ0AkDQay5EqOkEQNhV8nPZIvQ/XHULF3qo9D+Ag+6RJv0AQLzfQ1OhGgNA2B3/7767BkDsMb9ua9gJQDrvIT6HRgFArEuf0Ugb9z9Q2pr8LoD8PwTxBf+rnAhArsDsCWknAUC4OU0ySHv+P5grHYmPtfI/1MwnO2PcAECo+MaKY4MCQOx8sOGbwf4/SBvpX86k9j+8WAkoDYEEQGpMQZmXWQNAmJk23xIb/z8AvqJCRm/4PyCyGJPCOvw/8MYKwUFq/j+oRhWtNj72Pw=="}, "y": {"dtype": "f8", "bdata": "AAyJGcUrhL9gu9T3tmXiv6BDAF2CAtY/AIyv71IBx7+A7pA2FZ2kv6D5Ajt0oOE/1MfHLIoV879QCqEVg8DWPwBZFOTeNc+/sHt3s6EM6T+gMLwoVwHPPwATHnEDmsu/AHtoGuuuyz9A2pgmstvovxC2Spq8ROG/gHyPnjaHvj+AFBVBlnmlP/zXGwvUz/I/wG3Wxvp30D+oOnt7Vlvov0C/agxdNNg/6EpDDxpl47/wNjw3r3vdP6CjJtXBKcq/wCsecHxw1T+wJBFm5/LhP0BgIhSRAMe/wMBCKf/dvb/gBqtdatjKv6A0aZeovN0/IDUT+GgE2D+QTLGHlPz1P+DORG/Az8u/YI/c4V5bwr+Ai9yeY/7fv4h0QEHMBOY/YLWCrZ/twT8Aoc0l6z2pPwAaxqFmHsW/MDmxgpDT1z/gJfOW4oHHP8Ch2LxjMNo/YLvU97Zl4r/gMRc6gMjRP+Cb6kzQgdM/QHK8+Q4ByD/gQnSFMQXYv4AsKAkYMLQ/gMibc1TbvT9gqiHnHRfSvw=="}, "z": {"dtype": "f8", "bdata": "a0UyckZT6D+swwzD8vbSP8AZOD+YXLy/2DBc+7fBuz9dzR+W0kPSP9hMtgjNTNa/SPixewp24T+AMSYLNuXav1oWU4SeSta/9teLb+0X2z9o2w23RwjPPyDsneaeRqO/YCmdiTAQoT+gN9ZisgrSPxu5JBwCIeQ/efbJNmuy3j8wTtDBkZ+mP0ogVJx3I8E/xsTqF8lw4L8Op7URZhTWv0o25h0aDMw/qjLEzR5h4D/4SE9Jglfiv/g0lDmQhLC/1GfUeEhQ0j90IyaO9E7KvxC/7alZeac/kn4O0M+ZzT8ARjzIK7zDP5AfPUgaxdy/+L/5MfLt37+AL1X8B1O9v1Ldt1/AuMo/7FvvBCudw78MH8QxxiDGv1rwMhhYetW/wSv41CCE5z/Kq1hsUsLEPyVQIjGZCdI/gKkT4DTymz8+266sA6fUP8jzONoCFL0/rMMMw/L20j/9wPyGdbnSPznL5dO4JOA/un5W+vjCxj+gjJz1tzS/v0AYjkGfs8A/3Ap/duAk5z/1fHtj6TnXPw=="}, "type": "scatter3d"}], "layout": {"template": {"data": {"histogram2dcontour": [{"type": "histogram2dcontour", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "choropleth": [{"type": "choropleth", "colorbar": {"outlinewidth": 0, "ticks": ""}}], "histogram2d": [{"type": "histogram2d", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "heatmap": [{"type": "heatmap", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "contourcarpet": [{"type": "contourcarpet", "colorbar": {"outlinewidth": 0, "ticks": ""}}], "contour": [{"type": "contour", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "surface": [{"type": "surface", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "mesh3d": [{"type": "mesh3d", "colorbar": {"outlinewidth": 0, "ticks": ""}}], "scatter": [{"fillpattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}, "type": "scatter"}], "parcoords": [{"type": "parcoords", "line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatterpolargl": [{"type": "scatterpolargl", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}, "pattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}}, "type": "bar"}], "scattergeo": [{"type": "scattergeo", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatterpolar": [{"type": "scatterpolar", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "histogram": [{"marker": {"pattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}}, "type": "histogram"}], "scattergl": [{"type": "scattergl", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatter3d": [{"type": "scatter3d", "line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scattermap": [{"type": "scattermap", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scattermapbox": [{"type": "scattermapbox", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatterternary": [{"type": "scatterternary", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scattercarpet": [{"type": "scattercarpet", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}, "pattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}}, "type": "barpolar"}], "pie": [{"automargin": true, "type": "pie"}]}, "layout": {"autotypenumbers": "strict", "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "hovermode": "closest", "hoverlabel": {"align": "left"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"bgcolor": "#E5ECF6", "angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "ternary": {"bgcolor": "#E5ECF6", "aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]]}, "xaxis": {"gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "automargin": true, "zerolinewidth": 2}, "yaxis": {"gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "automargin": true, "zerolinewidth": 2}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "geo": {"bgcolor": "white", "landcolor": "#E5ECF6", "subunitcolor": "white", "showland": true, "showlakes": true, "lakecolor": "white"}, "title": {"x": 0.05}, "mapbox": {"style": "light"}}}, "scene": {"domain": {"x": [0.0, 1.0], "y": [0.0, 1.0]}, "xaxis": {"title": {"text": "PC1"}}, "yaxis": {"title": {"text": "PC2"}}, "zaxis": {"title": {"text": "PC3"}}}, "legend": {"title": {"text": "target"}, "tracegroupgap": 0}, "title": {"text": "PC1 vs PC2 vs PC3 (explained var: 0.92, 0.05, 0.02)"}, "width": 800, "height": 600}, "config": {"plotlyServerURL": "https://plot.ly"}}}}], "tabbable": null, "tooltip": null}}, "a187b00c6e714440845841e767ace404": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "4bdc6066e60b4338ae7629e14ade1d69": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_1e48e517c9f64029b797dca451b24526", "IPY_MODEL_45d4080fd78544deba1905526f353368", "IPY_MODEL_d8628075460f475b84227d721e01ec11"], "layout": "IPY_MODEL_a187b00c6e714440845841e767ace404", "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}</script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"86416428107b40e8b136d171eef56eac": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "03ba16465351456aa4c5b7682ce7af1f": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": ""}}, "93ba7493792e42b28747a6a1a6edb493": {"model_name": "DropdownModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "DropdownModel", "_options_labels": ["1", "2", "3", "4"], "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "DropdownView", "description": "PC X:", "description_allow_html": false, "disabled": false, "index": 0, "layout": "IPY_MODEL_86416428107b40e8b136d171eef56eac", "style": "IPY_MODEL_03ba16465351456aa4c5b7682ce7af1f", "tabbable": null, "tooltip": null}}, "ba0095edb7f14ad08ac8347f9f6d681a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "c63036cc33944b62b28d33d4a097ca9e": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": ""}}, "7acb1c0bcf0e45358a5fd72d39979bcc": {"model_name": "DropdownModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "DropdownModel", "_options_labels": ["1", "2", "3", "4"], "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "DropdownView", "description": "PC Y:", "description_allow_html": false, "disabled": false, "index": 1, "layout": "IPY_MODEL_ba0095edb7f14ad08ac8347f9f6d681a", "style": "IPY_MODEL_c63036cc33944b62b28d33d4a097ca9e", "tabbable": null, "tooltip": null}}, "8a652e819bca44df91bc7b62fc8cccbf": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2683b31929b544ea9f5cddbf4738ba2b": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": ""}}, "2ef51796244f4acfaba93ef2dff9014d": {"model_name": "DropdownModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "DropdownModel", "_options_labels": ["1", "2", "3", "4"], "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "DropdownView", "description": "PC Z:", "description_allow_html": false, "disabled": false, "index": 2, "layout": "IPY_MODEL_8a652e819bca44df91bc7b62fc8cccbf", "style": "IPY_MODEL_2683b31929b544ea9f5cddbf4738ba2b", "tabbable": null, "tooltip": null}}, "d728f2b4edab4008829552bbe0683c0b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "41d9412f85024e5ebc82c2b1a3ae6caf": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_d728f2b4edab4008829552bbe0683c0b", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {}, "data": {"application/vnd.plotly.v1+json": {"data": [{"hovertemplate": "target=setosa<br>PC1=%{x}<br>PC2=%{y}<br>PC3=%{z}<extra></extra>", "legendgroup": "setosa", "marker": {"color": "#636efa", "symbol": "circle", "size": 5}, "mode": "markers", "name": "setosa", "scene": "scene", "showlegend": true, "x": {"dtype": "f8", "bdata": "Wigv2xZ5BcB5Hb3qj7YFwDV/ZBanHAfA/kuqUHb2BcDrcuRVadQFwGWrzlUzPwLAu4OkGHaQBsC9wbFLWAIFwJTkZdRPFwfA4q6uys1hBcB8N7lGOg4EwLGl6Tbs5gTAe+Gqp/NJBsCvAAWeWcoJwA0Td+RyKAXANff/oZsWA8DQ3cEu/PwEwKC8+y62LwXAABzYZTuZAcDixq82MrQEwGrHTpxnewLA3miBIIJZBMBzBsFxProJwMma6F//awLA4D8zlJXYAsD8K4ltqA0EwK4dDr0kwAPAeAM4lKF/BMDK3XlgxB0FwGUZrnNQDgXA1M74+P2yBMAsiWGwikcDwOscTbzeMAXAQGcifjbKBMAoQ3sebRgFwPtCchoQ7gbA2JOCznwABcDsNtISzWcGwHijnXQR2AfAdmn3OlW4BMCC4fJ1KykGwHU/09GBywbAC4iTSLD6B8CCOKLOsj4DwLwoibEIrQHABwpETzK3BcABZqasIE4EwOIK4vA3twbAxI9zVz1YBMAPnPMXe6AFwA=="}, "y": {"dtype": "f8", "bdata": "IPwgJgFx1D+ArIDk+afGv+BFTuqzjcK/wC6PrgJf1L+wDbjCi+nUP0AiSKL6uOc/ABzO+PDmtr8AAUhhzOnEP7D646aHgeK/wA8oGU8gvb/gl+uHZ6TkPwDQwve6Ko4/QL7hZyYYzr+wZ1EuWF3gv+Djsk443PI/CEnRC7Ro9T+YQh4qFvHpPzAYVB1W9dM/aHjgIkzu6z/AQVMHFm/gPwCUw9LPC9k/ACHFHjW22z8gNd1QexXBPwCLQMf7RLk/ANAYoJsWo78gEzJfrrDCv+BQPrYEw8A/4FizrLSI1z+Q6omJdvjTP+Cm0IEGNsm/AMr+uhsnyr9g7P9IlUzaP+iZ/Y8TB+o/WIlpaIZ98T/An1s8+w6/vwDQ8LjewbE/COAACgou4z/AhAeBdTHRP7BmyKK1Ot+/4NpC9k5RzT9wu8GWot3QP5ipU1lZHO6/wGmf1B3i1b8AvjNh8CzIP+BeLfZJ8ts/EKeKRWkD0L+oK8Sp5B7gPyBAHwdSLc2/aOGs4oaK4j/ASOo1oJK7Pw=="}, "z": {"dtype": "f8", "bdata": "wLtHXrSVnL/womtHfvDKv+D9891xVJI/gIsJ24wooD+QQTfgbg+3Pwp0ycA6l8U/7ZJmHE6B0D/AEiEriGeWvyAZdy3/QZU/sMM4dQdMyb9ATxWDCkizvyCWyvmEJro/cAoS2OB5yr/g6Oqwq2KvP7BWjtuHaMO/42ksxhjH0T8mPE3u/K/BP6D+lF3wTps/8DWCwFfMvr92539fYVnLP1zFejcaps6/PhbsAbquyj/hE3rcoLbSPxCdoLn2B6Q//HTC2rAAwD9OW4GyCDjQv3g0ZDwPTLg/oDL+OzIYtL/Uj62HJK3Cv6Cmbmby36Q/MN2RxOLEs7+0ssHxj6DCv7LC4Qi64sw/fiVODCUzxD9gLL3dck/Cv1wdYE3XCMW/MGLeDacs0b8wcuq+qfy3P3h7PsxYq7I/EKRyGEaAtL8Yg9E7gcazP0YbU17KWda/2g4+UCSkyD+zWBxhNuPQP1fbu+SZHtM/qLc1Um8Bub8iXqM8nFbFP+h6ZW4fb7U/AL+r1ZmGkb/IMSXe+Nu2vw=="}, "type": "scatter3d"}, {"hovertemplate": "target=versicolor<br>PC1=%{x}<br>PC2=%{y}<br>PC3=%{z}<extra></extra>", "legendgroup": "versicolor", "marker": {"color": "#EF553B", "symbol": "diamond", "size": 5}, "mode": "markers", "name": "versicolor", "scene": "scene", "showlegend": true, "x": {"dtype": "f8", "bdata": "/FCrYaWO9D9gpcUw8tbtP+SOhkXIbfc/AM//ffR2xz+8rij23mjxP1jEd5qNiOQ/bEdSVF6F8T/IifMa0Pjnv9DL2ZLDtPA/AOw1RBzpgb84n3SGO0Dgv9i6NKfVX+A/cCsjB2D10D9ok+VglYTvP8CuqMMvQ8a/iLCsFwmx7T/ALlJpCyHlP6BgXDywOM4/mL4oOkI77j+AJTOA/SenP+SxvL9L3PE/YJm60qTn1j/8xo10XMX0P8D+NafNfu0/KD4HFRTg5j+QGK98Os7sP2AbE9v4T/U/dFra88Hs+D9YfOMcegbqP6BcM0OvjtO/gMBs37xwsb+g5bmWjEXIv6BEMPt+dsE/CPadmZYU9j+IbH/j8tDiP4g9FobI0ek/WPupKfOH8z9YxpeaQhXqPwAdqI+Ke88/wIWhPgdNxT8wZne1Sb/dP9CXBuCOgew/ADOs/piCzT+AXx4whovmv0AqQenI2NY/wNfxHWo+1T/gx2TP6hPYP+h7NI/7j+Q/CHkYF80B7b9Q9VVt1CLTPw=="}, "y": {"dtype": "f8", "bdata": "wGilptXs5T8wgGMNlF/UP+jwisXrIuA/+FbG5aN+6r8AjI/eXxizP3CswoaOxNq/cI1XGVgk0j8EKGWLCBTwv8Asn3X2Os0/UGfKqXwj579c088Ba0H0vwC03aWDnrq/6K/jEeaZ4b8A+m0ZEPS/v2AJ6AaIT9C/oDx/0kTm3T9Q5LAUDpfWv3DRRvngWdW/UCUyx3Jh4b/4tbBuxa7iv8Dz3TRzqbW/QJ/WJBKlsb/QolWed/rUvyBqrLfzY8e/ANor40MUwz8wUe2gNwbVP8DaJbDWSc8/QLGBOaUe0T8gXp+jqejEv+BbVpObkde/kCOEJcWQ5r+IKSi/6MTlvxB5CoMbGdS/APFHQOrw2r8wvqupkP7ev+DKk1H32sg/MCjxfXAW2j8Qh02HdM/Xv7DbavOAL9G/eNix/lfS5b+YR5cOeHblv4B+39pSpaG/wAcKLnXh2b9o7IoyKzLwv7CzSTY5KOC/ADYXyEQ4y79w/exTGcTSvwAyscn1KZI/kH1It+ox6L/AaxZ3V1TWvw=="}, "z": {"dtype": "f8", "bdata": "gOs+5TUF2r9g6gmaT3KSv0Yu/xshp9W/WLFfydn8xr+igNosTrLTv4D/eOXsB6U/PA5diVe8xT+A2yreRTKJP4D7OM3dlNq/rgQdoTj+0T8YBPlJr0TRvzS27ObJtcA/mvPCaXM25r+QjLWwdc2vv9C0Vjc8KLc/Im11BMAi1L+qt6QsZ/7UPxirui23WtG/uHkYvB7437+ATKyJjBTOv41QnCluat0/0MQRKdprzb/G2K3mPkPWv1T6M5DCk82/xGBS9WKY1L+KiZL7xDzUv/KCHAfKseC/ECnNeyEcxb+wH5UjKSOiP3TxtIIqYtS/WJOF7GVCz79QHFD8ZJzTv4RDvBXkr8a/4A/jjx2OkD9a53kzmXHcP/701lTF5Ng/DBmSE31bzr/IPWMLy6vjv84I1ldnHMg/4IADfYe5rr+guIZ55eOYv0CJ0LsOX4S/HJ4sllBdzb/w1AM8kw67v0DpNmoXBJE/aJ9IXOBMtT8A/SChkfezPxhi+txhSsq/gLqdEdjNib+AfyBu1quFPw=="}, "type": "scatter3d"}, {"hovertemplate": "target=virginica<br>PC1=%{x}<br>PC2=%{y}<br>PC3=%{z}<extra></extra>", "legendgroup": "virginica", "marker": {"color": "#00cc96", "symbol": "square", "size": 5}, "mode": "markers", "name": "virginica", "scene": "scene", "showlegend": true, "x": {"dtype": "f8", "bdata": "IFEO+eE/BEBIG+lfzqT2P7Bux9Xz7gRAhOs9JWSL/z8m/F/nz8wCQFDAFKUiLQtAgNImPu+t4D/EAJA18HUHQDq57WngkQJAXGHnh4FVB0DET7N+oJb6PwxxmAG82vw/bjOlyiFTAUAgck3S4on1P/hr9UX2X/k//FdmP6d4/j/Yzrcn7TH/P6S+Z0h95QtABB/YWHtdDkBA/Ir4CtD0P9AXSswrbANApHp9yBsv8z8MXs4T1v8LQDSE1tViOPY/gp1z6BQ0AkDQay5EqOkEQNhV8nPZIvQ/XHULF3qo9D+Ag+6RJv0AQLzfQ1OhGgNA2B3/7767BkDsMb9ua9gJQDrvIT6HRgFArEuf0Ugb9z9Q2pr8LoD8PwTxBf+rnAhArsDsCWknAUC4OU0ySHv+P5grHYmPtfI/1MwnO2PcAECo+MaKY4MCQOx8sOGbwf4/SBvpX86k9j+8WAkoDYEEQGpMQZmXWQNAmJk23xIb/z8AvqJCRm/4PyCyGJPCOvw/8MYKwUFq/j+oRhWtNj72Pw=="}, "y": {"dtype": "f8", "bdata": "AAyJGcUrhL9gu9T3tmXiv6BDAF2CAtY/AIyv71IBx7+A7pA2FZ2kv6D5Ajt0oOE/1MfHLIoV879QCqEVg8DWPwBZFOTeNc+/sHt3s6EM6T+gMLwoVwHPPwATHnEDmsu/AHtoGuuuyz9A2pgmstvovxC2Spq8ROG/gHyPnjaHvj+AFBVBlnmlP/zXGwvUz/I/wG3Wxvp30D+oOnt7Vlvov0C/agxdNNg/6EpDDxpl47/wNjw3r3vdP6CjJtXBKcq/wCsecHxw1T+wJBFm5/LhP0BgIhSRAMe/wMBCKf/dvb/gBqtdatjKv6A0aZeovN0/IDUT+GgE2D+QTLGHlPz1P+DORG/Az8u/YI/c4V5bwr+Ai9yeY/7fv4h0QEHMBOY/YLWCrZ/twT8Aoc0l6z2pPwAaxqFmHsW/MDmxgpDT1z/gJfOW4oHHP8Ch2LxjMNo/YLvU97Zl4r/gMRc6gMjRP+Cb6kzQgdM/QHK8+Q4ByD/gQnSFMQXYv4AsKAkYMLQ/gMibc1TbvT9gqiHnHRfSvw=="}, "z": {"dtype": "f8", "bdata": "a0UyckZT6D+swwzD8vbSP8AZOD+YXLy/2DBc+7fBuz9dzR+W0kPSP9hMtgjNTNa/SPixewp24T+AMSYLNuXav1oWU4SeSta/9teLb+0X2z9o2w23RwjPPyDsneaeRqO/YCmdiTAQoT+gN9ZisgrSPxu5JBwCIeQ/efbJNmuy3j8wTtDBkZ+mP0ogVJx3I8E/xsTqF8lw4L8Op7URZhTWv0o25h0aDMw/qjLEzR5h4D/4SE9Jglfiv/g0lDmQhLC/1GfUeEhQ0j90IyaO9E7KvxC/7alZeac/kn4O0M+ZzT8ARjzIK7zDP5AfPUgaxdy/+L/5MfLt37+AL1X8B1O9v1Ldt1/AuMo/7FvvBCudw78MH8QxxiDGv1rwMhhYetW/wSv41CCE5z/Kq1hsUsLEPyVQIjGZCdI/gKkT4DTymz8+266sA6fUP8jzONoCFL0/rMMMw/L20j/9wPyGdbnSPznL5dO4JOA/un5W+vjCxj+gjJz1tzS/v0AYjkGfs8A/3Ap/duAk5z/1fHtj6TnXPw=="}, "type": "scatter3d"}], "layout": {"template": {"data": {"histogram2dcontour": [{"type": "histogram2dcontour", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "choropleth": [{"type": "choropleth", "colorbar": {"outlinewidth": 0, "ticks": ""}}], "histogram2d": [{"type": "histogram2d", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "heatmap": [{"type": "heatmap", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "contourcarpet": [{"type": "contourcarpet", "colorbar": {"outlinewidth": 0, "ticks": ""}}], "contour": [{"type": "contour", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "surface": [{"type": "surface", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "mesh3d": [{"type": "mesh3d", "colorbar": {"outlinewidth": 0, "ticks": ""}}], "scatter": [{"fillpattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}, "type": "scatter"}], "parcoords": [{"type": "parcoords", "line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatterpolargl": [{"type": "scatterpolargl", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}, "pattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}}, "type": "bar"}], "scattergeo": [{"type": "scattergeo", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatterpolar": [{"type": "scatterpolar", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "histogram": [{"marker": {"pattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}}, "type": "histogram"}], "scattergl": [{"type": "scattergl", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatter3d": [{"type": "scatter3d", "line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scattermap": [{"type": "scattermap", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scattermapbox": [{"type": "scattermapbox", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatterternary": [{"type": "scatterternary", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scattercarpet": [{"type": "scattercarpet", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}, "pattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}}, "type": "barpolar"}], "pie": [{"automargin": true, "type": "pie"}]}, "layout": {"autotypenumbers": "strict", "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "hovermode": "closest", "hoverlabel": {"align": "left"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"bgcolor": "#E5ECF6", "angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "ternary": {"bgcolor": "#E5ECF6", "aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]]}, "xaxis": {"gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "automargin": true, "zerolinewidth": 2}, "yaxis": {"gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "automargin": true, "zerolinewidth": 2}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "geo": {"bgcolor": "white", "landcolor": "#E5ECF6", "subunitcolor": "white", "showland": true, "showlakes": true, "lakecolor": "white"}, "title": {"x": 0.05}, "mapbox": {"style": "light"}}}, "scene": {"domain": {"x": [0.0, 1.0], "y": [0.0, 1.0]}, "xaxis": {"title": {"text": "PC1"}}, "yaxis": {"title": {"text": "PC2"}}, "zaxis": {"title": {"text": "PC3"}}}, "legend": {"title": {"text": "target"}, "tracegroupgap": 0}, "title": {"text": "PC1 vs PC2 vs PC3 (explained var: 0.92, 0.05, 0.02)"}, "width": 800, "height": 600}, "config": {"plotlyServerURL": "https://plot.ly"}}}}], "tabbable": null, "tooltip": null}}, "9344c6a74e15475ba874906a6763021b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3f5d09bbe49243c3bbd55da6feb65418": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_93ba7493792e42b28747a6a1a6edb493", "IPY_MODEL_7acb1c0bcf0e45358a5fd72d39979bcc", "IPY_MODEL_2ef51796244f4acfaba93ef2dff9014d"], "layout": "IPY_MODEL_9344c6a74e15475ba874906a6763021b", "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/03-PCA/Intro-PCA';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4. Linear Regression" href="../04-LinearRegression/LinearRegression.html" />
-    <link rel="prev" title="2. A fast introduction to Machine Learning" href="../00-TALK-IntroML/IntroMachineLearning.html" />
+    <link rel="next" title="5. Linear Regression" href="../04-LinearRegression/LinearRegression.html" />
+    <link rel="prev" title="3. Pandas for data cleaning and analysis" href="../02-LimpiezayPrepDatos/DataCleaning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -215,33 +215,34 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../00-IntroductionCourseML/IntroCourse-MachineLearning.html">1. Introduction to the course and to Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00-TALK-IntroML/IntroMachineLearning.html">2. A fast introduction to Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/DataCleaning.html">3. Pandas for data cleaning and analysis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unsupervised learning I</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. An Introduction to Principal Component Analysis (PCA)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. An Introduction to Principal Component Analysis (PCA)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supervised learning</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../04-LinearRegression/LinearRegression.html">4. Linear Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05-LogisticRegression/LogisticRegression.html">5. An Introduction to Logistic Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../06-SVM/SVM.html">6. Support Vector Machines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-LinearRegression/LinearRegression.html">5. Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-LogisticRegression/LogisticRegression.html">6. An Introduction to Logistic Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-SVM/SVM.html">7. Support Vector Machines</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Neural Networks</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">7. Neural Networks Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/BackPropagation.html">8. Introduction to Backpropagation in Neural Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/DeepLearning.html">9. An Introduction to Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">8. Neural Networks Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/BackPropagation.html">9. Introduction to Backpropagation in Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/DeepLearning.html">10. An Introduction to Deep Learning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to LLM and some useful tools</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../08-llm/llm.html">10. An Introduction to Large Language Models (LLMs) for Everyone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08-llm/llm.html">11. An Introduction to Large Language Models (LLMs) for Everyone</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/PythonReview.html">11. Python Review:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">12. Python Programming (very fast) Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">13. Intro Python II: python data structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">14. Pandas for data cleaning and analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/PythonReview.html">12. Python Review:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">13. Python Programming (very fast) Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">14. Intro Python II: python data structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">15. Pandas for data cleaning and analysis</a></li>
 </ul>
 
     </div>
@@ -504,63 +505,63 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">3.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-applications-to-basic-sciences">3.2. Example applications to basic sciences</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biology-molecular-biology">3.2.1. Biology &amp; Molecular Biology</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environmental-science-earth-science">3.2.2. Environmental Science &amp; Earth Science</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chemistry">3.2.3. Chemistry</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physics">3.2.4. Physics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">4.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-applications-to-basic-sciences">4.2. Example applications to basic sciences</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biology-molecular-biology">4.2.1. Biology &amp; Molecular Biology</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environmental-science-earth-science">4.2.2. Environmental Science &amp; Earth Science</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chemistry">4.2.3. Chemistry</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physics">4.2.4. Physics</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-foundation">3.3. Mathematical Foundation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-data-centering">3.3.1. Step 1: Data Centering</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-covariance-matrix">3.3.2. Step 2: Covariance Matrix</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-eigendecomposition">3.3.3. Step 3: Eigendecomposition</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-variance-explained">3.3.4. Step 4: Variance Explained</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-foundation">4.3. Mathematical Foundation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-data-centering">4.3.1. Step 1: Data Centering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-covariance-matrix">4.3.2. Step 2: Covariance Matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-eigendecomposition">4.3.3. Step 3: Eigendecomposition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-variance-explained">4.3.4. Step 4: Variance Explained</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-pca-process">3.4. Step-by-Step PCA Process</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-analyzing-plant-growth-data">3.4.1. Example: Analyzing Plant Growth Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-pca-process">4.4. Step-by-Step PCA Process</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-analyzing-plant-growth-data">4.4.1. Example: Analyzing Plant Growth Data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-applied-to-real-data">3.5. PCA applied to real data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-guidelines">3.6. Interpretation Guidelines</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-number-of-components">3.6.1. Choosing Number of Components</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-interpretation">3.6.2. Loading Interpretation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-pitfalls">3.6.3. Common Pitfalls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-applied-to-real-data">4.5. PCA applied to real data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-guidelines">4.6. Interpretation Guidelines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-number-of-components">4.6.1. Choosing Number of Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-interpretation">4.6.2. Loading Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-pitfalls">4.6.3. Common Pitfalls</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-detailed-worked-example-the-iris-dataset">3.7. A detailed Worked Example - The Iris Dataset</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-importing-libraries">3.7.1. Setup - Importing Libraries</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-data">3.7.2. Loading data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-standardize-the-data">3.7.3. Step 1: Standardize the Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-perform-pca">3.7.4. Step 2: Perform PCA</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-analyze-and-visualize-the-results">3.7.5. Step 3: Analyze and Visualize the Results</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scree-plot">3.7.5.1. Scree Plot</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scores-plot">3.7.5.2. Scores Plot</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#biplot">3.7.5.3. Biplot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-detailed-worked-example-the-iris-dataset">4.7. A detailed Worked Example - The Iris Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-importing-libraries">4.7.1. Setup - Importing Libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-data">4.7.2. Loading data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-standardize-the-data">4.7.3. Step 1: Standardize the Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-perform-pca">4.7.4. Step 2: Perform PCA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-analyze-and-visualize-the-results">4.7.5. Step 3: Analyze and Visualize the Results</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scree-plot">4.7.5.1. Scree Plot</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scores-plot">4.7.5.2. Scores Plot</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#biplot">4.7.5.3. Biplot</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-details">3.8. Advanced Details</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-assumptions-and-limitations">3.8.1. PCA Assumptions and Limitations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robust-pca">3.8.2. Robust PCA</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-vs-other-techniques">3.8.3. PCA vs. Other Techniques</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-details">4.8. Advanced Details</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-assumptions-and-limitations">4.8.1. PCA Assumptions and Limitations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robust-pca">4.8.2. Robust PCA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-vs-other-techniques">4.8.3. PCA vs. Other Techniques</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-exercises">3.9. Application Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#genomics-cancer-subtype-identification">3.9.1. Genomics - Cancer Subtype Identification</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chemistry-classifying-olive-oils">3.9.2. Chemistry - Classifying Olive Oils</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environmental-science-air-pollution-sources">3.9.3. Environmental Science - Air Pollution Sources</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agriculture-crop-yield-analysis">3.9.4. Agriculture - Crop Yield Analysis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pharmaceutical-analysis">3.9.5. Pharmaceutical Analysis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-structure-analysis">3.9.6. Protein Structure Analysis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#astronomical-data">3.9.7. Astronomical Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-exercises">4.9. Application Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#genomics-cancer-subtype-identification">4.9.1. Genomics - Cancer Subtype Identification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chemistry-classifying-olive-oils">4.9.2. Chemistry - Classifying Olive Oils</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environmental-science-air-pollution-sources">4.9.3. Environmental Science - Air Pollution Sources</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agriculture-crop-yield-analysis">4.9.4. Agriculture - Crop Yield Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pharmaceutical-analysis">4.9.5. Pharmaceutical Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-structure-analysis">4.9.6. Protein Structure Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#astronomical-data">4.9.7. Astronomical Data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">3.10. Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">3.11. Further Reading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">4.10. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">4.11. Further Reading</a></li>
 </ul>
             </nav>
         </div>
@@ -573,9 +574,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="an-introduction-to-principal-component-analysis-pca">
-<h1><span class="section-number">3. </span>An Introduction to Principal Component Analysis (PCA)<a class="headerlink" href="#an-introduction-to-principal-component-analysis-pca" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">4. </span>An Introduction to Principal Component Analysis (PCA)<a class="headerlink" href="#an-introduction-to-principal-component-analysis-pca" title="Link to this heading">#</a></h1>
 <section id="introduction">
-<h2><span class="section-number">3.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>What is Principal Component Analysis?</p>
 <ul class="simple">
 <li><p>Many scientific datasets have many correlated measurements: spectra (many wavelengths), climate grids (many locations), images (many pixels), recordings from many sensors or neurons.</p></li>
@@ -622,7 +623,7 @@ document.write(`
 </div>
 <div class="exercise admonition" id="lectures/03-PCA/Intro-PCA-exercise-0">
 
-<p class="admonition-title"><span class="caption-number">Exercise 3.1 </span> (Understanding Dimensionality)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.1 </span> (Understanding Dimensionality)</p>
 <section id="exercise-content">
 <p><strong>Scenario</strong>: A researcher has measurements of temperature, humidity, pressure, and wind speed from 1000 weather stations. They want to create a 2D map showing weather patterns.</p>
 <p><strong>Question</strong>: How could PCA help in this situation?</p>
@@ -681,9 +682,9 @@ document.write(`
 </div>
 </section>
 <section id="example-applications-to-basic-sciences">
-<h2><span class="section-number">3.2. </span>Example applications to basic sciences<a class="headerlink" href="#example-applications-to-basic-sciences" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.2. </span>Example applications to basic sciences<a class="headerlink" href="#example-applications-to-basic-sciences" title="Link to this heading">#</a></h2>
 <section id="biology-molecular-biology">
-<h3><span class="section-number">3.2.1. </span>Biology &amp; Molecular Biology<a class="headerlink" href="#biology-molecular-biology" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.2.1. </span>Biology &amp; Molecular Biology<a class="headerlink" href="#biology-molecular-biology" title="Link to this heading">#</a></h3>
 <ul>
 <li><p>Higa, G. S., de Oliveira, L. G., Luns, K. F., de Jesus, R. E., Ferreira, R. C., da Silva, J. A., Cunha, P. H., &amp; Pires, D. S. (2024). Application of Principal Component Analysis as a Prediction Model for Feline Sporotrichosis. Animals, 14(12), 1696. DOI: <a class="reference external" href="https://doi.org/10.3390/ani14121696">https://doi.org/10.3390/ani14121696</a></p>
 <p>This study uses PCA to analyze hematological and biochemical data from cats with sporotrichosis, a fungal disease. The researchers successfully used PCA to reduce the complexity of blood analyte data and identified key variables that could serve as predictive markers for the disease’s severity, demonstrating PCA’s utility in veterinary diagnostic research.</p>
@@ -694,7 +695,7 @@ document.write(`
 </ul>
 </section>
 <section id="environmental-science-earth-science">
-<h3><span class="section-number">3.2.2. </span>Environmental Science &amp; Earth Science<a class="headerlink" href="#environmental-science-earth-science" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.2.2. </span>Environmental Science &amp; Earth Science<a class="headerlink" href="#environmental-science-earth-science" title="Link to this heading">#</a></h3>
 <ul>
 <li><p>Huang, J., Lu, D., Lin, W., &amp; Yang, Q. (2024). Enhancing slope stability prediction through integrated PCA-SSA-SVM modeling: a case study of LongLian expressway. Frontiers in Earth Science, 12. DOI: <a class="reference external" href="https://doi.org/10.3389/feart.2024.1429601">https://doi.org/10.3389/feart.2024.1429601</a></p>
 <p>In this engineering and earth science study, PCA was used as a crucial first step to handle high-dimensional monitoring data for predicting slope stability. By reducing the data’s dimensionality and removing redundancy, PCA helped create a more accurate and efficient prediction model, showcasing its value in geotechnical engineering and hazard assessment. DOI: <a class="reference external" href="https://doi.org/10.63333/eem.v1n21">https://doi.org/10.63333/eem.v1n21</a></p>
@@ -708,7 +709,7 @@ document.write(`
 </ul>
 </section>
 <section id="chemistry">
-<h3><span class="section-number">3.2.3. </span>Chemistry<a class="headerlink" href="#chemistry" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.2.3. </span>Chemistry<a class="headerlink" href="#chemistry" title="Link to this heading">#</a></h3>
 <ul>
 <li><p>Moreira, M., Hillenkamp, M., Divitini, G., Tizei, L. H. G., Ducati, C., Cotta, M. A., Rodrigues, V., &amp; Ugarte, D. (2025). Improving Quantitative EDS Chemical Analysis of Alloy Nanoparticles by PCA Denoising: Part I, Reducing Reconstruction Bias. Microscopy and Microanalysis. DOI: <a class="reference external" href="https://doi.org/10.1093/micmic/ozad111">https://doi.org/10.1093/micmic/ozad111</a></p>
 <p>This materials chemistry paper shows a sophisticated use of PCA for signal processing. Researchers applied PCA to denoise data from energy-dispersive X-ray spectroscopy (EDS) of nanoparticles. This application improved the accuracy of quantitative chemical analysis by reducing noise and bias, highlighting PCA’s role in enhancing the quality of analytical instrumentation data.[7]</p>
@@ -716,7 +717,7 @@ document.write(`
 </ul>
 </section>
 <section id="physics">
-<h3><span class="section-number">3.2.4. </span>Physics<a class="headerlink" href="#physics" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.2.4. </span>Physics<a class="headerlink" href="#physics" title="Link to this heading">#</a></h3>
 <ul>
 <li><p>Yao, Z., Yang, J., &amp; Lin, H.-Q. (2025). Principal component analysis for percolation with and without data preprocessing. Physical Review E, 111(4).DOI: <a class="reference external" href="https://doi.org/10.1103/PhysRevE.111.044105">https://doi.org/10.1103/PhysRevE.111.044105</a></p>
 <p>In this statistical physics study, researchers theoretically investigated how PCA can be used to identify phase transitions in the percolation model. They demonstrated that while PCA on raw data offered little insight, applying specific data preprocessing methods allowed PCA to effectively reveal critical phenomena, showcasing its utility in analyzing complex systems in theoretical physics.</p>
@@ -725,11 +726,11 @@ document.write(`
 </section>
 </section>
 <section id="mathematical-foundation">
-<h2><span class="section-number">3.3. </span>Mathematical Foundation<a class="headerlink" href="#mathematical-foundation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.3. </span>Mathematical Foundation<a class="headerlink" href="#mathematical-foundation" title="Link to this heading">#</a></h2>
 <section id="step-1-data-centering">
-<h3><span class="section-number">3.3.1. </span>Step 1: Data Centering<a class="headerlink" href="#step-1-data-centering" title="Link to this heading">#</a></h3>
-<div class="amsmath math notranslate nohighlight" id="equation-6ea15d54-477b-4e29-a928-83f8550676df">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-6ea15d54-477b-4e29-a928-83f8550676df" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<h3><span class="section-number">4.3.1. </span>Step 1: Data Centering<a class="headerlink" href="#step-1-data-centering" title="Link to this heading">#</a></h3>
+<div class="amsmath math notranslate nohighlight" id="equation-6ec7fd56-c640-4987-b7ec-231f27eba2f0">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-6ec7fd56-c640-4987-b7ec-231f27eba2f0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \hat X = X - \mu
 \end{equation}\]</div>
 <p>Where <span class="math notranslate nohighlight">\(\mu\)</span> is the mean of each variable.</p>
@@ -740,9 +741,9 @@ document.write(`
 </ul>
 </section>
 <section id="step-2-covariance-matrix">
-<h3><span class="section-number">3.3.2. </span>Step 2: Covariance Matrix<a class="headerlink" href="#step-2-covariance-matrix" title="Link to this heading">#</a></h3>
-<div class="amsmath math notranslate nohighlight" id="equation-a2b86d2c-c9e0-483e-8b2e-2a440dffe10c">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-a2b86d2c-c9e0-483e-8b2e-2a440dffe10c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<h3><span class="section-number">4.3.2. </span>Step 2: Covariance Matrix<a class="headerlink" href="#step-2-covariance-matrix" title="Link to this heading">#</a></h3>
+<div class="amsmath math notranslate nohighlight" id="equation-57f1970b-21a5-441b-b24e-3a54a12cfbbc">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-57f1970b-21a5-441b-b24e-3a54a12cfbbc" title="Permalink to this equation">#</a></span>\[\begin{equation}
 C = \frac{1}{n-1}\  \hat X^T \times \hat X.
 \end{equation}\]</div>
 <p>Where <span class="math notranslate nohighlight">\(n\)</span> is the number of observations.</p>
@@ -753,9 +754,9 @@ C = \frac{1}{n-1}\  \hat X^T \times \hat X.
 </ul>
 </section>
 <section id="step-3-eigendecomposition">
-<h3><span class="section-number">3.3.3. </span>Step 3: Eigendecomposition<a class="headerlink" href="#step-3-eigendecomposition" title="Link to this heading">#</a></h3>
-<div class="amsmath math notranslate nohighlight" id="equation-04d5b32f-6fb4-4535-abc6-07bfb369b9fe">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-04d5b32f-6fb4-4535-abc6-07bfb369b9fe" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<h3><span class="section-number">4.3.3. </span>Step 3: Eigendecomposition<a class="headerlink" href="#step-3-eigendecomposition" title="Link to this heading">#</a></h3>
+<div class="amsmath math notranslate nohighlight" id="equation-f62246fb-4bc9-4e94-8a5a-2db92575ab1c">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-f62246fb-4bc9-4e94-8a5a-2db92575ab1c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 C\times \vec v = \lambda \vec v
 \end{equation}\]</div>
 <p>Where:</p>
@@ -765,10 +766,10 @@ C\times \vec v = \lambda \vec v
 </ul>
 </section>
 <section id="step-4-variance-explained">
-<h3><span class="section-number">3.3.4. </span>Step 4: Variance Explained<a class="headerlink" href="#step-4-variance-explained" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.3.4. </span>Step 4: Variance Explained<a class="headerlink" href="#step-4-variance-explained" title="Link to this heading">#</a></h3>
 <p>Variance Explained by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-eafd1e08-ee3a-46a2-8a63-95dc2ff4e1c8">
-<span class="eqno">(3.4)<a class="headerlink" href="#equation-eafd1e08-ee3a-46a2-8a63-95dc2ff4e1c8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ae5c4088-c388-417e-b9aa-7b41dc06dd86">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-ae5c4088-c388-417e-b9aa-7b41dc06dd86" title="Permalink to this equation">#</a></span>\[\begin{equation}
 PC_i = \frac{\lambda_i}{\sum_j\lambda_j}
 \end{equation}\]</div>
 <div class="{exercise}Covariance docutils">
@@ -788,9 +789,9 @@ PC_i = \frac{\lambda_i}{\sum_j\lambda_j}
 </section>
 </section>
 <section id="step-by-step-pca-process">
-<h2><span class="section-number">3.4. </span>Step-by-Step PCA Process<a class="headerlink" href="#step-by-step-pca-process" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.4. </span>Step-by-Step PCA Process<a class="headerlink" href="#step-by-step-pca-process" title="Link to this heading">#</a></h2>
 <section id="example-analyzing-plant-growth-data">
-<h3><span class="section-number">3.4.1. </span>Example: Analyzing Plant Growth Data<a class="headerlink" href="#example-analyzing-plant-growth-data" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.4.1. </span>Example: Analyzing Plant Growth Data<a class="headerlink" href="#example-analyzing-plant-growth-data" title="Link to this heading">#</a></h3>
 <p>Suppose we measure 4 variables for 100 plants:</p>
 <ul class="simple">
 <li><p>Height (cm)</p></li>
@@ -819,7 +820,7 @@ PC_i = \frac{\lambda_i}{\sum_j\lambda_j}
 </div>
 <div class="exercise admonition" id="lectures/03-PCA/Intro-PCA-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 3.2 </span> (Plant Growth Interpretation**)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.2 </span> (Plant Growth Interpretation**)</p>
 <section id="exercise-content">
 <p>Given the following PCA results for plant data:</p>
 <p><strong>PC1 Loadings</strong>: Height (0.6), Leaf Area (0.5), Root Depth (0.4), Biomass (0.5)
@@ -1083,42 +1084,42 @@ input[type=range].anim-slider {
 </style>
 
 <div class="animation">
-  <img id="_anim_img93994979cf77457bbf07200783dc15d2">
+  <img id="_anim_img6510441cadd3434d9cde056cf18775a8">
   <div class="anim-controls">
-    <input id="_anim_slider93994979cf77457bbf07200783dc15d2" type="range" class="anim-slider"
+    <input id="_anim_slider6510441cadd3434d9cde056cf18775a8" type="range" class="anim-slider"
            name="points" min="0" max="1" step="1" value="0"
-           oninput="anim93994979cf77457bbf07200783dc15d2.set_frame(parseInt(this.value));">
+           oninput="anim6510441cadd3434d9cde056cf18775a8.set_frame(parseInt(this.value));">
     <div class="anim-buttons">
-      <button title="Decrease speed" aria-label="Decrease speed" onclick="anim93994979cf77457bbf07200783dc15d2.slower()">
+      <button title="Decrease speed" aria-label="Decrease speed" onclick="anim6510441cadd3434d9cde056cf18775a8.slower()">
           <i class="fa fa-minus"></i></button>
-      <button title="First frame" aria-label="First frame" onclick="anim93994979cf77457bbf07200783dc15d2.first_frame()">
+      <button title="First frame" aria-label="First frame" onclick="anim6510441cadd3434d9cde056cf18775a8.first_frame()">
         <i class="fa fa-fast-backward"></i></button>
-      <button title="Previous frame" aria-label="Previous frame" onclick="anim93994979cf77457bbf07200783dc15d2.previous_frame()">
+      <button title="Previous frame" aria-label="Previous frame" onclick="anim6510441cadd3434d9cde056cf18775a8.previous_frame()">
           <i class="fa fa-step-backward"></i></button>
-      <button title="Play backwards" aria-label="Play backwards" onclick="anim93994979cf77457bbf07200783dc15d2.reverse_animation()">
+      <button title="Play backwards" aria-label="Play backwards" onclick="anim6510441cadd3434d9cde056cf18775a8.reverse_animation()">
           <i class="fa fa-play fa-flip-horizontal"></i></button>
-      <button title="Pause" aria-label="Pause" onclick="anim93994979cf77457bbf07200783dc15d2.pause_animation()">
+      <button title="Pause" aria-label="Pause" onclick="anim6510441cadd3434d9cde056cf18775a8.pause_animation()">
           <i class="fa fa-pause"></i></button>
-      <button title="Play" aria-label="Play" onclick="anim93994979cf77457bbf07200783dc15d2.play_animation()">
+      <button title="Play" aria-label="Play" onclick="anim6510441cadd3434d9cde056cf18775a8.play_animation()">
           <i class="fa fa-play"></i></button>
-      <button title="Next frame" aria-label="Next frame" onclick="anim93994979cf77457bbf07200783dc15d2.next_frame()">
+      <button title="Next frame" aria-label="Next frame" onclick="anim6510441cadd3434d9cde056cf18775a8.next_frame()">
           <i class="fa fa-step-forward"></i></button>
-      <button title="Last frame" aria-label="Last frame" onclick="anim93994979cf77457bbf07200783dc15d2.last_frame()">
+      <button title="Last frame" aria-label="Last frame" onclick="anim6510441cadd3434d9cde056cf18775a8.last_frame()">
           <i class="fa fa-fast-forward"></i></button>
-      <button title="Increase speed" aria-label="Increase speed" onclick="anim93994979cf77457bbf07200783dc15d2.faster()">
+      <button title="Increase speed" aria-label="Increase speed" onclick="anim6510441cadd3434d9cde056cf18775a8.faster()">
           <i class="fa fa-plus"></i></button>
     </div>
-    <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_select93994979cf77457bbf07200783dc15d2"
+    <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_select6510441cadd3434d9cde056cf18775a8"
           class="anim-state">
-      <input type="radio" name="state" value="once" id="_anim_radio1_93994979cf77457bbf07200783dc15d2"
+      <input type="radio" name="state" value="once" id="_anim_radio1_6510441cadd3434d9cde056cf18775a8"
              >
-      <label for="_anim_radio1_93994979cf77457bbf07200783dc15d2">Once</label>
-      <input type="radio" name="state" value="loop" id="_anim_radio2_93994979cf77457bbf07200783dc15d2"
+      <label for="_anim_radio1_6510441cadd3434d9cde056cf18775a8">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_6510441cadd3434d9cde056cf18775a8"
              checked>
-      <label for="_anim_radio2_93994979cf77457bbf07200783dc15d2">Loop</label>
-      <input type="radio" name="state" value="reflect" id="_anim_radio3_93994979cf77457bbf07200783dc15d2"
+      <label for="_anim_radio2_6510441cadd3434d9cde056cf18775a8">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_6510441cadd3434d9cde056cf18775a8"
              >
-      <label for="_anim_radio3_93994979cf77457bbf07200783dc15d2">Reflect</label>
+      <label for="_anim_radio3_6510441cadd3434d9cde056cf18775a8">Reflect</label>
     </form>
   </div>
 </div>
@@ -1128,9 +1129,9 @@ input[type=range].anim-slider {
   /* Instantiate the Animation class. */
   /* The IDs given should match those used in the template above. */
   (function() {
-    var img_id = "_anim_img93994979cf77457bbf07200783dc15d2";
-    var slider_id = "_anim_slider93994979cf77457bbf07200783dc15d2";
-    var loop_select_id = "_anim_loop_select93994979cf77457bbf07200783dc15d2";
+    var img_id = "_anim_img6510441cadd3434d9cde056cf18775a8";
+    var slider_id = "_anim_slider6510441cadd3434d9cde056cf18775a8";
+    var loop_select_id = "_anim_loop_select6510441cadd3434d9cde056cf18775a8";
     var frames = new Array(30);
     
   frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+gAAAH0CAYAAACuKActAAAAOnRFWHRTb2Z0d2FyZQBNYXRwbG90\
@@ -19162,7 +19163,7 @@ RAAAAABJRU5ErkJggg==\
     /* set a timeout to make sure all the above elements are created before
        the object is initialized. */
     setTimeout(function() {
-        anim93994979cf77457bbf07200783dc15d2 = new Animation(frames, img_id, slider_id, 100.0,
+        anim6510441cadd3434d9cde056cf18775a8 = new Animation(frames, img_id, slider_id, 100.0,
                                  loop_select_id);
     }, 0);
   })()
@@ -19230,12 +19231,12 @@ RAAAAABJRU5ErkJggg==\
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "4bdc6066e60b4338ae7629e14ade1d69"}</script><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "e098d862f3a1461ab99b623300eb2e3d"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "3f5d09bbe49243c3bbd55da6feb65418"}</script><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "41d9412f85024e5ebc82c2b1a3ae6caf"}</script></div>
 </div>
 </section>
 </section>
 <section id="pca-applied-to-real-data">
-<h2><span class="section-number">3.5. </span>PCA applied to real data<a class="headerlink" href="#pca-applied-to-real-data" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.5. </span>PCA applied to real data<a class="headerlink" href="#pca-applied-to-real-data" title="Link to this heading">#</a></h2>
 <p>Sky data survey. To generate the data, go to <a class="reference external" href="https://skyserver.sdss.org/dr14/en/tools/search/form/searchform.aspx">https://skyserver.sdss.org/dr14/en/tools/search/form/searchform.aspx</a> and write or use the default query. To get the full data, use the following sql command</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>
 <span class="k">SELECT</span><span class="w"> </span><span class="n">TOP</span><span class="w"> </span><span class="mi">10000</span>
@@ -19369,9 +19370,9 @@ RAAAAABJRU5ErkJggg==\
 </div>
 </section>
 <section id="interpretation-guidelines">
-<h2><span class="section-number">3.6. </span>Interpretation Guidelines<a class="headerlink" href="#interpretation-guidelines" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.6. </span>Interpretation Guidelines<a class="headerlink" href="#interpretation-guidelines" title="Link to this heading">#</a></h2>
 <section id="choosing-number-of-components">
-<h3><span class="section-number">3.6.1. </span>Choosing Number of Components<a class="headerlink" href="#choosing-number-of-components" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.6.1. </span>Choosing Number of Components<a class="headerlink" href="#choosing-number-of-components" title="Link to this heading">#</a></h3>
 <p><strong>Method 1: Cumulative Variance</strong></p>
 <ul class="simple">
 <li><p>Keep components explaining 80-95% of variance</p></li>
@@ -19389,7 +19390,7 @@ RAAAAABJRU5ErkJggg==\
 </ul>
 </section>
 <section id="loading-interpretation">
-<h3><span class="section-number">3.6.2. </span>Loading Interpretation<a class="headerlink" href="#loading-interpretation" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.6.2. </span>Loading Interpretation<a class="headerlink" href="#loading-interpretation" title="Link to this heading">#</a></h3>
 <p><strong>Loading Values</strong>:</p>
 <ul class="simple">
 <li><p><strong>|loading| &gt; 0.7</strong>: Strong relationship</p></li>
@@ -19403,7 +19404,7 @@ RAAAAABJRU5ErkJggg==\
 </ul>
 </section>
 <section id="common-pitfalls">
-<h3><span class="section-number">3.6.3. </span>Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.6.3. </span>Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Mistake</strong></p></th>
@@ -19426,11 +19427,11 @@ RAAAAABJRU5ErkJggg==\
 </section>
 </section>
 <section id="a-detailed-worked-example-the-iris-dataset">
-<h2><span class="section-number">3.7. </span>A detailed Worked Example - The Iris Dataset<a class="headerlink" href="#a-detailed-worked-example-the-iris-dataset" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.7. </span>A detailed Worked Example - The Iris Dataset<a class="headerlink" href="#a-detailed-worked-example-the-iris-dataset" title="Link to this heading">#</a></h2>
 <p>The Iris dataset is a classic in machine learning and statistics. It contains 150 samples from three species of Iris flowers (Setosa, Versicolor, and Virginica). For each sample, four features were measured: sepal length, sepal width, petal length, and petal width.</p>
 <p>Our goal is to see if we can use PCA to ‘summarize’ these four measurements and visualize the separation between the species.</p>
 <section id="setup-importing-libraries">
-<h3><span class="section-number">3.7.1. </span>Setup - Importing Libraries<a class="headerlink" href="#setup-importing-libraries" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.7.1. </span>Setup - Importing Libraries<a class="headerlink" href="#setup-importing-libraries" title="Link to this heading">#</a></h3>
 <p>First, let’s import all the necessary libraries for data manipulation, numerical computation, and plotting.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -19450,7 +19451,7 @@ RAAAAABJRU5ErkJggg==\
 </div>
 </section>
 <section id="loading-data">
-<h3><span class="section-number">3.7.2. </span>Loading data<a class="headerlink" href="#loading-data" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.7.2. </span>Loading data<a class="headerlink" href="#loading-data" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the data</span>
@@ -19481,7 +19482,7 @@ First 5 rows of data:
 </div>
 </section>
 <section id="step-1-standardize-the-data">
-<h3><span class="section-number">3.7.3. </span>Step 1: Standardize the Data<a class="headerlink" href="#step-1-standardize-the-data" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.7.3. </span>Step 1: Standardize the Data<a class="headerlink" href="#step-1-standardize-the-data" title="Link to this heading">#</a></h3>
 <p>PCA is sensitive to the scale of the features. We need to standardize our data so that each feature has a mean of 0 and a standard deviation of 1.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -19504,7 +19505,7 @@ First 5 rows of data:
 </div>
 </section>
 <section id="step-2-perform-pca">
-<h3><span class="section-number">3.7.4. </span>Step 2: Perform PCA<a class="headerlink" href="#step-2-perform-pca" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.7.4. </span>Step 2: Perform PCA<a class="headerlink" href="#step-2-perform-pca" title="Link to this heading">#</a></h3>
 <p>Now we apply PCA. We’ll ask <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> to find the first two principal components.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -19520,9 +19521,9 @@ First 5 rows of data:
 </div>
 </section>
 <section id="step-3-analyze-and-visualize-the-results">
-<h3><span class="section-number">3.7.5. </span>Step 3: Analyze and Visualize the Results<a class="headerlink" href="#step-3-analyze-and-visualize-the-results" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.7.5. </span>Step 3: Analyze and Visualize the Results<a class="headerlink" href="#step-3-analyze-and-visualize-the-results" title="Link to this heading">#</a></h3>
 <section id="scree-plot">
-<h4><span class="section-number">3.7.5.1. </span>Scree Plot<a class="headerlink" href="#scree-plot" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">4.7.5.1. </span>Scree Plot<a class="headerlink" href="#scree-plot" title="Link to this heading">#</a></h4>
 <p>First, let’s see how much variance our two new components capture. A scree plot is perfect for this.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="admonition hide above-input">
@@ -19565,7 +19566,7 @@ Total variance explained by first two components: 95.81%
 <p><strong>Observation:</strong> The first two components capture over 95% of the total variance in the data! This means our 2D plot will be a very good representation of the original 4D data.</p>
 </section>
 <section id="scores-plot">
-<h4><span class="section-number">3.7.5.2. </span>Scores Plot<a class="headerlink" href="#scores-plot" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">4.7.5.2. </span>Scores Plot<a class="headerlink" href="#scores-plot" title="Link to this heading">#</a></h4>
 <p>Next, we create a scores plot. This is a scatter plot of our samples in the new PCA space. We will color each point according to its true species.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="admonition hide above-input">
@@ -19597,7 +19598,7 @@ Total variance explained by first two components: 95.81%
 <p><strong>Observation:</strong> The three species are very well separated in the PCA plot. The <em>Setosa</em> species is a distinct cluster, while <em>Versicolor</em> and <em>Virginica</em> are also mostly separated, though they have some overlap.</p>
 </section>
 <section id="biplot">
-<h4><span class="section-number">3.7.5.3. </span>Biplot<a class="headerlink" href="#biplot" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">4.7.5.3. </span>Biplot<a class="headerlink" href="#biplot" title="Link to this heading">#</a></h4>
 <p>Finally, the biplot helps us understand <em>why</em> the samples are separated. It overlays the original feature vectors (loadings) on top of the scores plot. This tells us how the original variables contribute to the principal components.</p>
 <p>We will use a helper function to create a clean biplot.</p>
 <div class="cell tag_hide-input docutils container">
@@ -19659,9 +19660,9 @@ Total variance explained by first two components: 95.81%
 </section>
 </section>
 <section id="advanced-details">
-<h2><span class="section-number">3.8. </span>Advanced Details<a class="headerlink" href="#advanced-details" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.8. </span>Advanced Details<a class="headerlink" href="#advanced-details" title="Link to this heading">#</a></h2>
 <section id="pca-assumptions-and-limitations">
-<h3><span class="section-number">3.8.1. </span>PCA Assumptions and Limitations<a class="headerlink" href="#pca-assumptions-and-limitations" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.8.1. </span>PCA Assumptions and Limitations<a class="headerlink" href="#pca-assumptions-and-limitations" title="Link to this heading">#</a></h3>
 <p><strong>Assumptions</strong>:</p>
 <ul class="simple">
 <li><p>Linear relationships between variables</p></li>
@@ -19682,7 +19683,7 @@ Total variance explained by first two components: 95.81%
 </ul>
 </section>
 <section id="robust-pca">
-<h3><span class="section-number">3.8.2. </span>Robust PCA<a class="headerlink" href="#robust-pca" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.8.2. </span>Robust PCA<a class="headerlink" href="#robust-pca" title="Link to this heading">#</a></h3>
 <p><strong>Problem</strong>: Standard PCA is sensitive to outliers.</p>
 <p><strong>Solutions</strong>:</p>
 <ul class="simple">
@@ -19692,7 +19693,7 @@ Total variance explained by first two components: 95.81%
 </ul>
 </section>
 <section id="pca-vs-other-techniques">
-<h3><span class="section-number">3.8.3. </span>PCA vs. Other Techniques<a class="headerlink" href="#pca-vs-other-techniques" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.8.3. </span>PCA vs. Other Techniques<a class="headerlink" href="#pca-vs-other-techniques" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Method</p></th>
@@ -19728,7 +19729,7 @@ Total variance explained by first two components: 95.81%
 </section>
 <hr class="docutils" />
 <section id="application-exercises">
-<h2><span class="section-number">3.9. </span>Application Exercises<a class="headerlink" href="#application-exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.9. </span>Application Exercises<a class="headerlink" href="#application-exercises" title="Link to this heading">#</a></h2>
 <p>Now it’s your turn! Apply the techniques learned above to the following datasets. For each exercise, you’ll need to:</p>
 <ol class="arabic simple">
 <li><p>Load the data using <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p></li>
@@ -19739,7 +19740,7 @@ Total variance explained by first two components: 95.81%
 </ol>
 <p><em>(Note: You will need to have the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files in the same directory as this notebook for the code to work.)</em></p>
 <section id="genomics-cancer-subtype-identification">
-<h3><span class="section-number">3.9.1. </span>Genomics - Cancer Subtype Identification<a class="headerlink" href="#genomics-cancer-subtype-identification" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.9.1. </span>Genomics - Cancer Subtype Identification<a class="headerlink" href="#genomics-cancer-subtype-identification" title="Link to this heading">#</a></h3>
 <p><strong>Dataset:</strong> <code class="docutils literal notranslate"><span class="pre">cancer_data.csv</span></code>
 <strong>Task:</strong> Perform PCA on the gene expression data. Can you identify distinct clusters in a scores plot? What might they represent?</p>
 <div class="cell docutils container">
@@ -19774,7 +19775,7 @@ Total variance explained by first two components: 95.81%
 </div>
 </section>
 <section id="chemistry-classifying-olive-oils">
-<h3><span class="section-number">3.9.2. </span>Chemistry - Classifying Olive Oils<a class="headerlink" href="#chemistry-classifying-olive-oils" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.9.2. </span>Chemistry - Classifying Olive Oils<a class="headerlink" href="#chemistry-classifying-olive-oils" title="Link to this heading">#</a></h3>
 <p><strong>Dataset:</strong> <code class="docutils literal notranslate"><span class="pre">olive_oil_spectra.csv</span></code>
 <strong>Task:</strong> Use PCA on the spectral data. Can you distinguish oils from different regions? Which wavelengths (columns) are most important for this separation?</p>
 <div class="cell docutils container">
@@ -19806,7 +19807,7 @@ Total variance explained by first two components: 95.81%
 </div>
 </section>
 <section id="environmental-science-air-pollution-sources">
-<h3><span class="section-number">3.9.3. </span>Environmental Science - Air Pollution Sources<a class="headerlink" href="#environmental-science-air-pollution-sources" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.9.3. </span>Environmental Science - Air Pollution Sources<a class="headerlink" href="#environmental-science-air-pollution-sources" title="Link to this heading">#</a></h3>
 <p><strong>Dataset:</strong> <code class="docutils literal notranslate"><span class="pre">air_pollution.csv</span></code>
 <strong>Task:</strong> Use PCA to identify patterns in air quality data. Create a biplot and interpret the loadings. Can you hypothesize what physical processes PC1 and PC2 represent?</p>
 <div class="cell docutils container">
@@ -19837,7 +19838,7 @@ Total variance explained by first two components: 95.81%
 </div>
 </section>
 <section id="agriculture-crop-yield-analysis">
-<h3><span class="section-number">3.9.4. </span>Agriculture - Crop Yield Analysis<a class="headerlink" href="#agriculture-crop-yield-analysis" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.9.4. </span>Agriculture - Crop Yield Analysis<a class="headerlink" href="#agriculture-crop-yield-analysis" title="Link to this heading">#</a></h3>
 <p><strong>Dataset:</strong> <code class="docutils literal notranslate"><span class="pre">crop_data.csv</span></code>
 <strong>Task:</strong> Perform PCA on the input variables (everything except <code class="docutils literal notranslate"><span class="pre">Crop_Yield</span></code>). Then, plot the PC1 scores against <code class="docutils literal notranslate"><span class="pre">Crop_Yield</span></code>. Is there a relationship? This demonstrates using PCA for feature engineering.</p>
 <div class="cell docutils container">
@@ -19877,7 +19878,7 @@ Total variance explained by first two components: 95.81%
 </div>
 </section>
 <section id="pharmaceutical-analysis">
-<h3><span class="section-number">3.9.5. </span>Pharmaceutical Analysis<a class="headerlink" href="#pharmaceutical-analysis" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.9.5. </span>Pharmaceutical Analysis<a class="headerlink" href="#pharmaceutical-analysis" title="Link to this heading">#</a></h3>
 <p><strong>Scenario</strong>: A pharmaceutical company measured 50 chemical properties of 200 drug candidates to predict effectiveness.</p>
 <p><strong>Data Structure</strong>:</p>
 <ul class="simple">
@@ -19899,7 +19900,7 @@ Total variance explained by first two components: 95.81%
 </ul>
 </section>
 <section id="protein-structure-analysis">
-<h3><span class="section-number">3.9.6. </span>Protein Structure Analysis<a class="headerlink" href="#protein-structure-analysis" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.9.6. </span>Protein Structure Analysis<a class="headerlink" href="#protein-structure-analysis" title="Link to this heading">#</a></h3>
 <p><strong>Scenario</strong>: You have 3D coordinates for all atoms in a protein from molecular dynamics simulations (1000 time points).</p>
 <p><strong>Challenge</strong>: Identify main modes of protein flexibility.</p>
 <p><strong>Tasks</strong>:</p>
@@ -19918,7 +19919,7 @@ Total variance explained by first two components: 95.81%
 </ul>
 </section>
 <section id="astronomical-data">
-<h3><span class="section-number">3.9.7. </span>Astronomical Data<a class="headerlink" href="#astronomical-data" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.9.7. </span>Astronomical Data<a class="headerlink" href="#astronomical-data" title="Link to this heading">#</a></h3>
 <p><strong>Scenario</strong>: Telescope survey measured brightness in 20 wavelength bands for 10,000 stars.</p>
 <p><strong>Goal</strong>: Classify star types using PCA.</p>
 <p><strong>Questions</strong>:</p>
@@ -19938,7 +19939,7 @@ Total variance explained by first two components: 95.81%
 </section>
 </section>
 <section id="summary">
-<h2><span class="section-number">3.10. </span>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.10. </span>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p><strong>Key Takeaways</strong>:</p>
 <ol class="arabic simple">
 <li><p><strong>PCA transforms data</strong> to new coordinates that maximize variance</p></li>
@@ -19965,7 +19966,7 @@ Total variance explained by first two components: 95.81%
 </section>
 <hr class="docutils" />
 <section id="further-reading">
-<h2><span class="section-number">3.11. </span>Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.11. </span>Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
 <p><strong>Books</strong>:</p>
 <ul class="simple">
 <li><p>“The Elements of Statistical Learning” - Hastie, Tibshirani, Friedman</p></li>
@@ -20018,12 +20019,12 @@ Total variance explained by first two components: 95.81%
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../00-TALK-IntroML/IntroMachineLearning.html"
+       href="../02-LimpiezayPrepDatos/DataCleaning.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>A fast introduction to Machine Learning</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Pandas for data cleaning and analysis</p>
       </div>
     </a>
     <a class="right-next"
@@ -20031,7 +20032,7 @@ Total variance explained by first two components: 95.81%
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Linear Regression</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Linear Regression</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -20051,63 +20052,63 @@ Total variance explained by first two components: 95.81%
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">3.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-applications-to-basic-sciences">3.2. Example applications to basic sciences</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biology-molecular-biology">3.2.1. Biology &amp; Molecular Biology</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environmental-science-earth-science">3.2.2. Environmental Science &amp; Earth Science</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chemistry">3.2.3. Chemistry</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physics">3.2.4. Physics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">4.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-applications-to-basic-sciences">4.2. Example applications to basic sciences</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biology-molecular-biology">4.2.1. Biology &amp; Molecular Biology</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environmental-science-earth-science">4.2.2. Environmental Science &amp; Earth Science</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chemistry">4.2.3. Chemistry</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physics">4.2.4. Physics</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-foundation">3.3. Mathematical Foundation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-data-centering">3.3.1. Step 1: Data Centering</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-covariance-matrix">3.3.2. Step 2: Covariance Matrix</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-eigendecomposition">3.3.3. Step 3: Eigendecomposition</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-variance-explained">3.3.4. Step 4: Variance Explained</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-foundation">4.3. Mathematical Foundation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-data-centering">4.3.1. Step 1: Data Centering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-covariance-matrix">4.3.2. Step 2: Covariance Matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-eigendecomposition">4.3.3. Step 3: Eigendecomposition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-variance-explained">4.3.4. Step 4: Variance Explained</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-pca-process">3.4. Step-by-Step PCA Process</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-analyzing-plant-growth-data">3.4.1. Example: Analyzing Plant Growth Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-pca-process">4.4. Step-by-Step PCA Process</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-analyzing-plant-growth-data">4.4.1. Example: Analyzing Plant Growth Data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-applied-to-real-data">3.5. PCA applied to real data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-guidelines">3.6. Interpretation Guidelines</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-number-of-components">3.6.1. Choosing Number of Components</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-interpretation">3.6.2. Loading Interpretation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-pitfalls">3.6.3. Common Pitfalls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-applied-to-real-data">4.5. PCA applied to real data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-guidelines">4.6. Interpretation Guidelines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-number-of-components">4.6.1. Choosing Number of Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-interpretation">4.6.2. Loading Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-pitfalls">4.6.3. Common Pitfalls</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-detailed-worked-example-the-iris-dataset">3.7. A detailed Worked Example - The Iris Dataset</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-importing-libraries">3.7.1. Setup - Importing Libraries</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-data">3.7.2. Loading data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-standardize-the-data">3.7.3. Step 1: Standardize the Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-perform-pca">3.7.4. Step 2: Perform PCA</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-analyze-and-visualize-the-results">3.7.5. Step 3: Analyze and Visualize the Results</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scree-plot">3.7.5.1. Scree Plot</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scores-plot">3.7.5.2. Scores Plot</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#biplot">3.7.5.3. Biplot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-detailed-worked-example-the-iris-dataset">4.7. A detailed Worked Example - The Iris Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-importing-libraries">4.7.1. Setup - Importing Libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-data">4.7.2. Loading data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-standardize-the-data">4.7.3. Step 1: Standardize the Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-perform-pca">4.7.4. Step 2: Perform PCA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-analyze-and-visualize-the-results">4.7.5. Step 3: Analyze and Visualize the Results</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scree-plot">4.7.5.1. Scree Plot</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scores-plot">4.7.5.2. Scores Plot</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#biplot">4.7.5.3. Biplot</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-details">3.8. Advanced Details</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-assumptions-and-limitations">3.8.1. PCA Assumptions and Limitations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robust-pca">3.8.2. Robust PCA</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-vs-other-techniques">3.8.3. PCA vs. Other Techniques</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-details">4.8. Advanced Details</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-assumptions-and-limitations">4.8.1. PCA Assumptions and Limitations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robust-pca">4.8.2. Robust PCA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-vs-other-techniques">4.8.3. PCA vs. Other Techniques</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-exercises">3.9. Application Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#genomics-cancer-subtype-identification">3.9.1. Genomics - Cancer Subtype Identification</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chemistry-classifying-olive-oils">3.9.2. Chemistry - Classifying Olive Oils</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environmental-science-air-pollution-sources">3.9.3. Environmental Science - Air Pollution Sources</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agriculture-crop-yield-analysis">3.9.4. Agriculture - Crop Yield Analysis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pharmaceutical-analysis">3.9.5. Pharmaceutical Analysis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-structure-analysis">3.9.6. Protein Structure Analysis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#astronomical-data">3.9.7. Astronomical Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-exercises">4.9. Application Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#genomics-cancer-subtype-identification">4.9.1. Genomics - Cancer Subtype Identification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chemistry-classifying-olive-oils">4.9.2. Chemistry - Classifying Olive Oils</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environmental-science-air-pollution-sources">4.9.3. Environmental Science - Air Pollution Sources</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agriculture-crop-yield-analysis">4.9.4. Agriculture - Crop Yield Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pharmaceutical-analysis">4.9.5. Pharmaceutical Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-structure-analysis">4.9.6. Protein Structure Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#astronomical-data">4.9.7. Astronomical Data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">3.10. Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">3.11. Further Reading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">4.10. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">4.11. Further Reading</a></li>
 </ul>
   </nav></div>
 
