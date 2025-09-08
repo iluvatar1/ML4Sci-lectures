@@ -912,7 +912,7 @@ Complete the demo (find a data source) and create a script with inline dependenc
 <p>But when you first look at the data, you realize it’s not that simple. There are gaps, inconsistencies, and errors. This is where we need to clean the data.</p>
 <section id="getting-the-data">
 <h3><span class="section-number">3.3.1. </span>Getting the data<a class="headerlink" href="#getting-the-data" title="Link to this heading">#</a></h3>
-<p>First, let’s pull the data directly from the NASA Exoplanet Archive. This is real, live data!</p>
+<p>First, let’s pull the data directly from the NASA Exoplanet Archive. This is real, live data! <a class="reference external" href="https://exoplanetarchive.ipac.caltech.edu/docs/data.html">https://exoplanetarchive.ipac.caltech.edu/docs/data.html</a></p>
 <p>The columns we are requesting are:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pl_name: Planet Name
 
@@ -941,17 +941,19 @@ disc_year: Discovery Year
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span> <span class="c1"># We&#39;ll need numpy for more advanced NaN handling</span>
 
 <span class="c1"># The official URL from the NASA Exoplanet Archive</span>
-<span class="c1"># https://exoplanetarchive.ipac.caltech.edu/docs/data.html?utm_source=chatgpt.com</span>
+<span class="c1"># https://exoplanetarchive.ipac.caltech.edu/docs/data.html</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,hostname,discoverymethod,pl_orbper,pl_rade,pl_bmasse,st_teff,st_rad,st_mass,disc_year+from+ps&amp;format=csv&quot;</span>
 
 <span class="c1"># Load the data into a pandas DataFrame</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="c1"># go and read the manual</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Our Raw Exoplanet Data (First 5 Rows):&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Our Raw Exoplanet Data (First 5 Rows):&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Mission Critical Info ---&quot;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -970,8 +972,19 @@ disc_year: Discovery Year
 2   5647.0  1.39100    1.209       2009  
 3   5647.0  1.26100    1.114       2009  
 4   5690.0  1.29000    1.050       2009  
-
---- Mission Critical Info ---
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Mission Critical Info ---&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Mission Critical Info ---
 &lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 38779 entries, 0 to 38778
 Data columns (total 10 columns):
@@ -1439,8 +1452,13 @@ memory usage: 3.0+ MB
 <span class="c1">#     &#39;pl_bmasse&#39;: df_cleaned[&#39;pl_bmasse&#39;].median(),</span>
 <span class="c1">#     &#39;pl_orbper&#39;: df_cleaned[&#39;pl_orbper&#39;].median()</span>
 <span class="c1"># }, inplace=True)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Missing Values After Imputation ---&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Missing Values After Imputation ---&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df_cleaned</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -1508,6 +1526,37 @@ dtype: int64
 <img alt="../../_images/bc284f8e50c56eb3a09a257bf9e5ee1f8785a1c9c9323eb95359476de34be52f.png" src="../../_images/bc284f8e50c56eb3a09a257bf9e5ee1f8785a1c9c9323eb95359476de34be52f.png" />
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot showing data</span>
+<span class="c1"># Maybe use stripplot, swarmplot, or even a violin plot</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># First the boxplot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df_cleaned</span><span class="p">[</span><span class="s1">&#39;pl_rade&#39;</span><span class="p">])</span>
+
+<span class="c1"># Overlay the data as scatter (stripplot)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">stripplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df_cleaned</span><span class="p">[</span><span class="s1">&#39;pl_rade&#39;</span><span class="p">],</span> 
+              <span class="n">color</span><span class="o">=</span><span class="s1">&#39;brown&#39;</span><span class="p">,</span> 
+              <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>   <span class="c1"># transparency</span>
+              <span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>      <span class="c1"># point size</span>
+              <span class="n">jitter</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># adds random jitter to avoid overlap</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribution of Exoplanet Radii (in Earth Radii)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;pl_rade&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/cc6335457c85ebdba020faa8406d033f8bb6394b6c4547a070c3b3299a4683fb.png" src="../../_images/cc6335457c85ebdba020faa8406d033f8bb6394b6c4547a070c3b3299a4683fb.png" />
+</div>
+</div>
 <p>Notice that the box plot shows many points far to the right. These are planets with very large radii. A log scale helps, but we can see that most planets are clustered in a smaller range. Let’s say, for a specific analysis, we want to focus only on planets that are somewhat similar to Earth, and we consider anything over 20 Earth radii to be a “super-giant” that we want to handle separately.</p>
 <p>This is not about deleting data, but about filtering it for a specific analysis.</p>
 <div class="cell docutils container">
@@ -1553,6 +1602,12 @@ Filtered DataFrame size: 38568
 <div class="cell_output docutils container">
 <img alt="../../_images/93b5ffe859b23bc21c15169f0f2802357b9e15f1036551a5ebea9e832bafcf06.png" src="../../_images/93b5ffe859b23bc21c15169f0f2802357b9e15f1036551a5ebea9e832bafcf06.png" />
 </div>
+</div>
+<div class="exercise admonition" id="lectures/02-LimpiezayPrepDatos/DataCleaning-exercise-2">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.3 </span> (Explain this command)</p>
+<section id="exercise-content">
+</section>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1728,9 +1783,9 @@ Filtered DataFrame size: 38568
 </table>
 </div></div></div>
 </div>
-<div class="exercise admonition" id="lectures/02-LimpiezayPrepDatos/DataCleaning-exercise-2">
+<div class="exercise admonition" id="lectures/02-LimpiezayPrepDatos/DataCleaning-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 3.3 </span> (Planet mass)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.4 </span> (Planet mass)</p>
 <section id="exercise-content">
 <ol class="arabic simple">
 <li><p>Create a box plot for pl_bmasse. Remember to use a log scale (plt.xscale(‘log’)) to get a better view.</p></li>
@@ -1750,7 +1805,7 @@ Filtered DataFrame size: 38568
 <section id="more-analysis">
 <h3><span class="section-number">3.3.4. </span>More analysis<a class="headerlink" href="#more-analysis" title="Link to this heading">#</a></h3>
 <p>Now let’s try to answer the following question: What is the most common discovery method for each decade?</p>
-<p>To answer this, we need to make sure our discoverymethod and disc_year columns are clean and ready.</p>
+<p>To answer this, we need to make sure our <code class="docutils literal notranslate"><span class="pre">discoverymethod</span></code> and <code class="docutils literal notranslate"><span class="pre">disc_year</span></code> columns are clean and ready.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s check the different discovery methods</span>
@@ -1784,11 +1839,128 @@ Name: count, dtype: int64
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s create a &#39;decade&#39; column for easier grouping</span>
 <span class="c1"># We can do this by integer division</span>
 <span class="n">df_filtered</span><span class="p">[</span><span class="s1">&#39;discovery_decade&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_filtered</span><span class="p">[</span><span class="s1">&#39;disc_year&#39;</span><span class="p">]</span> <span class="o">//</span> <span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span>
+<span class="n">df_filtered</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="c1"># Now, let&#39;s count the methods per decade</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pl_name</th>
+      <th>hostname</th>
+      <th>discoverymethod</th>
+      <th>pl_orbper</th>
+      <th>pl_rade</th>
+      <th>pl_bmasse</th>
+      <th>st_teff</th>
+      <th>st_rad</th>
+      <th>st_mass</th>
+      <th>disc_year</th>
+      <th>discovery_decade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Kepler-6 b</td>
+      <td>Kepler-6</td>
+      <td>Transit</td>
+      <td>3.234699</td>
+      <td>13.101000</td>
+      <td>195.89164</td>
+      <td>5660.0</td>
+      <td>1.26100</td>
+      <td>1.090</td>
+      <td>2009</td>
+      <td>2000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Kepler-6 b</td>
+      <td>Kepler-6</td>
+      <td>Transit</td>
+      <td>3.234699</td>
+      <td>2.290000</td>
+      <td>195.89164</td>
+      <td>5613.0</td>
+      <td>1.31474</td>
+      <td>0.990</td>
+      <td>2009</td>
+      <td>2000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Kepler-6 b</td>
+      <td>Kepler-6</td>
+      <td>Transit</td>
+      <td>3.234699</td>
+      <td>2.290000</td>
+      <td>195.89164</td>
+      <td>5647.0</td>
+      <td>1.39100</td>
+      <td>1.209</td>
+      <td>2009</td>
+      <td>2000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Kepler-6 b</td>
+      <td>Kepler-6</td>
+      <td>Transit</td>
+      <td>3.234702</td>
+      <td>13.103321</td>
+      <td>201.18639</td>
+      <td>5647.0</td>
+      <td>1.26100</td>
+      <td>1.114</td>
+      <td>2009</td>
+      <td>2000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Kepler-6 b</td>
+      <td>Kepler-6</td>
+      <td>Transit</td>
+      <td>3.234699</td>
+      <td>13.380000</td>
+      <td>195.89164</td>
+      <td>5690.0</td>
+      <td>1.29000</td>
+      <td>1.050</td>
+      <td>2009</td>
+      <td>2000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now, let&#39;s count the methods per decade</span>
 <span class="n">discovery_summary</span> <span class="o">=</span> <span class="n">df_filtered</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;discovery_decade&#39;</span><span class="p">)[</span><span class="s1">&#39;discoverymethod&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Discovery Method Counts per Decade ---&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Discovery Method Counts per Decade ---&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">discovery_summary</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1830,9 +2002,9 @@ Name: count, dtype: int64
 </div>
 </div>
 </div>
-<div class="exercise admonition" id="lectures/02-LimpiezayPrepDatos/DataCleaning-exercise-3">
+<div class="exercise admonition" id="lectures/02-LimpiezayPrepDatos/DataCleaning-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 3.4 </span> (Visualizing the discovery data)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.5 </span> (Visualizing the discovery data)</p>
 <section id="exercise-content">
 <ol class="arabic simple">
 <li><p>The discovery_summary data is a Series. To plot it effectively with seaborn, it’s often easier to convert it into a DataFrame. Use the .reset_index() method on discovery_summary.</p></li>
