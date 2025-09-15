@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>15. Pandas for data cleaning and analysis &#8212; Introduction to Machine Learning for Science</title>
+    <title>8. Pandas for data cleaning and analysis &#8212; Introduction to Machine Learning for Science</title>
   
   
   
@@ -95,7 +95,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="14. Intro Python II: python data structures" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html" />
+    <link rel="prev" title="7. Intro Python II: python data structures" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -217,28 +217,12 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../03-PCA/Intro-PCA.html">4. An Introduction to Principal Component Analysis (PCA)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Supervised learning</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../04-LinearRegression/LinearRegression.html">5. Linear Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05-LogisticRegression/LogisticRegression.html">6. An Introduction to Logistic Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../06-SVM/SVM.html">7. Support Vector Machines</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Neural Networks</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">8. Neural Networks Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/BackPropagation.html">9. Introduction to Backpropagation in Neural Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/DeepLearning.html">10. An Introduction to Deep Learning</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to LLM and some useful tools</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../08-llm/llm.html">11. An Introduction to Large Language Models (LLMs) for Everyone</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/PythonReview.html">12. Python Review:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">13. Python Programming (very fast) Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">14. Intro Python II: python data structures</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">15. Pandas for data cleaning and analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/PythonReview.html">5. Python Review:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">6. Python Programming (very fast) Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">7. Intro Python II: python data structures</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Pandas for data cleaning and analysis</a></li>
 </ul>
 
     </div>
@@ -501,29 +485,29 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dataframe">15.1. The Dataframe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-vs-polars">15.2. Pandas vs. Polars</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polars-syntax-example">15.2.1. Polars Syntax Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dataframe">8.1. The Dataframe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-vs-polars">8.2. Pandas vs. Polars</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polars-syntax-example">8.2.1. Polars Syntax Example</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applied-pandas-tutorial">15.3. Applied pandas tutorial</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cargando-y-explorando-los-datos">15.3.1. Cargando y explorando los datos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-de-datos">15.3.2. Limpieza de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applied-pandas-tutorial">8.3. Applied pandas tutorial</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cargando-y-explorando-los-datos">8.3.1. Cargando y explorando los datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-de-datos">8.3.2. Limpieza de datos</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-data-exploration">15.4. More data exploration</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agrupaciones">15.4.1. Agrupaciones</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicar-una-funcion-a-los-datos-de-una-columna">15.4.2. Aplicar una función a los datos de una columna</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo1">15.4.2.1. Ejemplo1</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-2">15.4.2.2. Ejemplo 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-data-exploration">8.4. More data exploration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agrupaciones">8.4.1. Agrupaciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicar-una-funcion-a-los-datos-de-una-columna">8.4.2. Aplicar una función a los datos de una columna</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo1">8.4.2.1. Ejemplo1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-2">8.4.2.2. Ejemplo 2</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-sobre-cols">15.4.3. Operaciones sobre cols</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-sobre-cols">8.4.3. Operaciones sobre cols</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-cosas-utiles">15.5. Otras cosas útiles</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenar-bases-de-datos">15.5.1. concatenar bases de datos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agregar-columnas">15.5.2. agregar columnas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-cosas-utiles">8.5. Otras cosas útiles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenar-bases-de-datos">8.5.1. concatenar bases de datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agregar-columnas">8.5.2. agregar columnas</a></li>
 </ul>
 </li>
 </ul>
@@ -538,14 +522,14 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas-for-data-cleaning-and-analysis">
-<h1><span class="section-number">15. </span>Pandas for data cleaning and analysis<a class="headerlink" href="#pandas-for-data-cleaning-and-analysis" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">8. </span>Pandas for data cleaning and analysis<a class="headerlink" href="#pandas-for-data-cleaning-and-analysis" title="Link to this heading">#</a></h1>
 <p>Pandas has two main data structures:</p>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">Series</span></code></strong>: A one-dimensional labeled array, like a single column of data.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></strong>: A two-dimensional labeled data structure with columns of potentially different types, similar to a spreadsheet or SQL table.</p></li>
 </ul>
 <section id="the-dataframe">
-<h2><span class="section-number">15.1. </span>The Dataframe<a class="headerlink" href="#the-dataframe" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.1. </span>The Dataframe<a class="headerlink" href="#the-dataframe" title="Link to this heading">#</a></h2>
 <p>The dataframe is the most important object inside pandas. It allows to represent, access, process, etc multi-dimensional data.</p>
 <p><img alt="Pandas dataframe" src="https://www.w3resource.com/w3r_images/pandas-data-structure.svg" /></p>
 <p>Source: <a class="reference external" href="https://www.w3resource.com/python-exercises/pandas/index.php">https://www.w3resource.com/python-exercises/pandas/index.php</a></p>
@@ -847,7 +831,7 @@ For example, you can do something like</p>
 </div>
 </section>
 <section id="pandas-vs-polars">
-<h2><span class="section-number">15.2. </span>Pandas vs. Polars<a class="headerlink" href="#pandas-vs-polars" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.2. </span>Pandas vs. Polars<a class="headerlink" href="#pandas-vs-polars" title="Link to this heading">#</a></h2>
 <p>Polars is a newer, extremely fast DataFrame library built in Rust. It’s gaining popularity for its performance, especially on large datasets.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -890,11 +874,11 @@ For example, you can do something like</p>
 <li><p><strong>Polars</strong>: Ideal for large datasets, performance-critical data transformations, and building data pipelines where speed and memory are key.</p></li>
 </ul>
 <section id="polars-syntax-example">
-<h3><span class="section-number">15.2.1. </span>Polars Syntax Example<a class="headerlink" href="#polars-syntax-example" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.2.1. </span>Polars Syntax Example<a class="headerlink" href="#polars-syntax-example" title="Link to this heading">#</a></h3>
 <p>Notice the similarity, but also the use of expressions (<code class="docutils literal notranslate"><span class="pre">pl.col()</span></code>).</p>
 <div class="exercise admonition" id="lectures/02-LimpiezayPrepDatos/TutorialPandas-exercise-0">
 
-<p class="admonition-title"><span class="caption-number">Exercise 15.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 8.1 </span></p>
 <section id="exercise-content">
 <p>Complete the demo (find a data source) and create a script with inline dependencies.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">polars</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pl</span>
@@ -916,10 +900,10 @@ For example, you can do something like</p>
 </section>
 </section>
 <section id="applied-pandas-tutorial">
-<h2><span class="section-number">15.3. </span>Applied pandas tutorial<a class="headerlink" href="#applied-pandas-tutorial" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.3. </span>Applied pandas tutorial<a class="headerlink" href="#applied-pandas-tutorial" title="Link to this heading">#</a></h2>
 <p>En este tutorial se hará una manipulación y limpieza de datos en un archivo de pozos petroleros en Colombia.</p>
 <section id="cargando-y-explorando-los-datos">
-<h3><span class="section-number">15.3.1. </span>Cargando y explorando los datos<a class="headerlink" href="#cargando-y-explorando-los-datos" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.3.1. </span>Cargando y explorando los datos<a class="headerlink" href="#cargando-y-explorando-los-datos" title="Link to this heading">#</a></h3>
 <p>Lo primero es importar las librerías pandas y numpy</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1113,7 +1097,7 @@ For example, you can do something like</p>
 </div>
 </section>
 <section id="limpieza-de-datos">
-<h3><span class="section-number">15.3.2. </span>Limpieza de datos<a class="headerlink" href="#limpieza-de-datos" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.3.2. </span>Limpieza de datos<a class="headerlink" href="#limpieza-de-datos" title="Link to this heading">#</a></h3>
 <p>Problemas usuales: valores nulos, datos vacios, datos incorrectos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1154,7 +1138,7 @@ For example, you can do something like</p>
 <p>Pero, claramente, tenemos campos vacíos. Cuál puede ser la razón?</p>
 <div class="exercise admonition" id="lectures/02-LimpiezayPrepDatos/TutorialPandas-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 15.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 8.2 </span></p>
 <section id="exercise-content">
 <p>Busque la razón por la que esos campos no aparecen como nulos, resuélvala de tal manera que esos campos realmente aparezcan como nulos</p>
 </section>
@@ -1213,9 +1197,9 @@ For example, you can do something like</p>
 </section>
 </section>
 <section id="more-data-exploration">
-<h2><span class="section-number">15.4. </span>More data exploration<a class="headerlink" href="#more-data-exploration" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.4. </span>More data exploration<a class="headerlink" href="#more-data-exploration" title="Link to this heading">#</a></h2>
 <section id="agrupaciones">
-<h3><span class="section-number">15.4.1. </span>Agrupaciones<a class="headerlink" href="#agrupaciones" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.4.1. </span>Agrupaciones<a class="headerlink" href="#agrupaciones" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;DEPARTAMEN&#39;</span><span class="p">)[</span><span class="s2">&quot;FID&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -1247,9 +1231,9 @@ For example, you can do something like</p>
 </div>
 </section>
 <section id="aplicar-una-funcion-a-los-datos-de-una-columna">
-<h3><span class="section-number">15.4.2. </span>Aplicar una función a los datos de una columna<a class="headerlink" href="#aplicar-una-funcion-a-los-datos-de-una-columna" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.4.2. </span>Aplicar una función a los datos de una columna<a class="headerlink" href="#aplicar-una-funcion-a-los-datos-de-una-columna" title="Link to this heading">#</a></h3>
 <section id="ejemplo1">
-<h4><span class="section-number">15.4.2.1. </span>Ejemplo1<a class="headerlink" href="#ejemplo1" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">8.4.2.1. </span>Ejemplo1<a class="headerlink" href="#ejemplo1" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;FID_+1000000&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;FID&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="mi">1000000</span><span class="p">)</span>
@@ -1266,7 +1250,7 @@ For example, you can do something like</p>
 </div>
 </section>
 <section id="ejemplo-2">
-<h4><span class="section-number">15.4.2.2. </span>Ejemplo 2<a class="headerlink" href="#ejemplo-2" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">8.4.2.2. </span>Ejemplo 2<a class="headerlink" href="#ejemplo-2" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#defino una funcion, por ejemplo para corregir los errores en los nombre de los deptos:</span>
@@ -1337,7 +1321,7 @@ For example, you can do something like</p>
 </section>
 </section>
 <section id="operaciones-sobre-cols">
-<h3><span class="section-number">15.4.3. </span>Operaciones sobre cols<a class="headerlink" href="#operaciones-sobre-cols" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.4.3. </span>Operaciones sobre cols<a class="headerlink" href="#operaciones-sobre-cols" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;suma&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;FID&quot;</span><span class="p">]</span><span class="o">+</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;FID_+1000000&quot;</span><span class="p">]</span>
@@ -1355,9 +1339,9 @@ For example, you can do something like</p>
 </section>
 </section>
 <section id="otras-cosas-utiles">
-<h2><span class="section-number">15.5. </span>Otras cosas útiles<a class="headerlink" href="#otras-cosas-utiles" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.5. </span>Otras cosas útiles<a class="headerlink" href="#otras-cosas-utiles" title="Link to this heading">#</a></h2>
 <section id="concatenar-bases-de-datos">
-<h3><span class="section-number">15.5.1. </span>concatenar bases de datos<a class="headerlink" href="#concatenar-bases-de-datos" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.5.1. </span>concatenar bases de datos<a class="headerlink" href="#concatenar-bases-de-datos" title="Link to this heading">#</a></h3>
 <p>Agregar filas (ojo: ambos DataFrames tienen que tener las mismas columnas!!)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1377,7 +1361,7 @@ For example, you can do something like</p>
 </div>
 </section>
 <section id="agregar-columnas">
-<h3><span class="section-number">15.5.2. </span>agregar columnas<a class="headerlink" href="#agregar-columnas" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.5.2. </span>agregar columnas<a class="headerlink" href="#agregar-columnas" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
@@ -1439,7 +1423,7 @@ For example, you can do something like</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">14. </span>Intro Python II: python data structures</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Intro Python II: python data structures</p>
       </div>
     </a>
 </div>
@@ -1458,29 +1442,29 @@ For example, you can do something like</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dataframe">15.1. The Dataframe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-vs-polars">15.2. Pandas vs. Polars</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polars-syntax-example">15.2.1. Polars Syntax Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dataframe">8.1. The Dataframe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-vs-polars">8.2. Pandas vs. Polars</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polars-syntax-example">8.2.1. Polars Syntax Example</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applied-pandas-tutorial">15.3. Applied pandas tutorial</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cargando-y-explorando-los-datos">15.3.1. Cargando y explorando los datos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-de-datos">15.3.2. Limpieza de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applied-pandas-tutorial">8.3. Applied pandas tutorial</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cargando-y-explorando-los-datos">8.3.1. Cargando y explorando los datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-de-datos">8.3.2. Limpieza de datos</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-data-exploration">15.4. More data exploration</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agrupaciones">15.4.1. Agrupaciones</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicar-una-funcion-a-los-datos-de-una-columna">15.4.2. Aplicar una función a los datos de una columna</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo1">15.4.2.1. Ejemplo1</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-2">15.4.2.2. Ejemplo 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-data-exploration">8.4. More data exploration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agrupaciones">8.4.1. Agrupaciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicar-una-funcion-a-los-datos-de-una-columna">8.4.2. Aplicar una función a los datos de una columna</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo1">8.4.2.1. Ejemplo1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-2">8.4.2.2. Ejemplo 2</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-sobre-cols">15.4.3. Operaciones sobre cols</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-sobre-cols">8.4.3. Operaciones sobre cols</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-cosas-utiles">15.5. Otras cosas útiles</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenar-bases-de-datos">15.5.1. concatenar bases de datos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agregar-columnas">15.5.2. agregar columnas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-cosas-utiles">8.5. Otras cosas útiles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenar-bases-de-datos">8.5.1. concatenar bases de datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agregar-columnas">8.5.2. agregar columnas</a></li>
 </ul>
 </li>
 </ul>
