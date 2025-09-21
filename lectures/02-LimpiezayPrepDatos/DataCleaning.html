@@ -944,18 +944,18 @@ disc_year: Discovery Year
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Our Raw Exoplanet Data (First 5 Rows):
       pl_name  hostname discoverymethod  pl_orbper    pl_rade  pl_bmasse  \
-0  Kepler-6 b  Kepler-6         Transit   3.234699  13.101000        NaN   
+0  Kepler-6 b  Kepler-6         Transit        NaN  12.902000        NaN   
 1  Kepler-6 b  Kepler-6         Transit   3.234699        NaN        NaN   
-2  Kepler-6 b  Kepler-6         Transit   3.234699        NaN        NaN   
-3  Kepler-6 b  Kepler-6         Transit   3.234702  13.103321  201.18639   
-4  Kepler-6 b  Kepler-6         Transit   3.234699  13.380000        NaN   
+2  Kepler-6 b  Kepler-6         Transit   3.234699  13.103321  205.63601   
+3  Kepler-6 b  Kepler-6         Transit   3.234699  13.060000        NaN   
+4  Kepler-6 b  Kepler-6         Transit   3.234699  13.410000        NaN   
 
    st_teff   st_rad  st_mass  disc_year  
-0   5660.0  1.26100    1.090       2009  
+0   5660.0  1.27500      NaN       2009  
 1   5613.0  1.31474    0.990       2009  
-2   5647.0  1.39100    1.209       2009  
-3   5647.0  1.26100    1.114       2009  
-4   5690.0  1.29000    1.050       2009  
+2   5647.0  1.26100    1.114       2009  
+3   5640.0  1.29100    1.047       2009  
+4   5640.0  1.29100    1.047       2009  
 </pre></div>
 </div>
 </div>
@@ -970,20 +970,20 @@ disc_year: Discovery Year
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Mission Critical Info ---
 &lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 38779 entries, 0 to 38778
+RangeIndex: 38898 entries, 0 to 38897
 Data columns (total 10 columns):
  #   Column           Non-Null Count  Dtype  
 ---  ------           --------------  -----  
- 0   pl_name          38779 non-null  object 
- 1   hostname         38779 non-null  object 
- 2   discoverymethod  38779 non-null  object 
- 3   pl_orbper        35545 non-null  float64
- 4   pl_rade          26789 non-null  float64
- 5   pl_bmasse        6768 non-null   float64
- 6   st_teff          35435 non-null  float64
- 7   st_rad           35674 non-null  float64
- 8   st_mass          32797 non-null  float64
- 9   disc_year        38779 non-null  int64  
+ 0   pl_name          38898 non-null  object 
+ 1   hostname         38898 non-null  object 
+ 2   discoverymethod  38898 non-null  object 
+ 3   pl_orbper        35661 non-null  float64
+ 4   pl_rade          26894 non-null  float64
+ 5   pl_bmasse        6866 non-null   float64
+ 6   st_teff          35553 non-null  float64
+ 7   st_rad           35790 non-null  float64
+ 8   st_mass          32904 non-null  float64
+ 9   disc_year        38898 non-null  int64  
 dtypes: float64(6), int64(1), object(3)
 memory usage: 3.0+ MB
 </pre></div>
@@ -1027,33 +1027,33 @@ memory usage: 3.0+ MB
   <tbody>
     <tr>
       <th>count</th>
-      <td>3.554500e+04</td>
-      <td>26789.000000</td>
-      <td>6768.000000</td>
-      <td>35435.000000</td>
-      <td>35674.000000</td>
-      <td>32797.000000</td>
-      <td>38779.000000</td>
+      <td>3.566100e+04</td>
+      <td>26894.000000</td>
+      <td>6866.000000</td>
+      <td>35553.000000</td>
+      <td>35790.000000</td>
+      <td>32904.000000</td>
+      <td>38898.000000</td>
     </tr>
     <tr>
       <th>mean</th>
-      <td>1.228855e+04</td>
-      <td>5.442253</td>
-      <td>717.461554</td>
-      <td>5464.412349</td>
-      <td>1.152052</td>
-      <td>0.944379</td>
-      <td>2015.507156</td>
+      <td>1.224874e+04</td>
+      <td>5.437576</td>
+      <td>710.053607</td>
+      <td>5463.686485</td>
+      <td>1.151741</td>
+      <td>0.944362</td>
+      <td>2015.516093</td>
     </tr>
     <tr>
       <th>std</th>
-      <td>2.133482e+06</td>
-      <td>72.197690</td>
-      <td>1459.209790</td>
-      <td>994.063188</td>
-      <td>1.780387</td>
-      <td>0.326357</td>
-      <td>3.956813</td>
+      <td>2.130009e+06</td>
+      <td>72.057369</td>
+      <td>1451.794928</td>
+      <td>993.342756</td>
+      <td>1.777747</td>
+      <td>0.326200</td>
+      <td>3.959731</td>
     </tr>
     <tr>
       <th>min</th>
@@ -1067,9 +1067,9 @@ memory usage: 3.0+ MB
     </tr>
     <tr>
       <th>25%</th>
-      <td>4.388848e+00</td>
+      <td>4.393147e+00</td>
       <td>1.550000</td>
-      <td>13.923017</td>
+      <td>13.300000</td>
       <td>5100.000000</td>
       <td>0.788000</td>
       <td>0.812000</td>
@@ -1077,22 +1077,22 @@ memory usage: 3.0+ MB
     </tr>
     <tr>
       <th>50%</th>
-      <td>1.033840e+01</td>
-      <td>2.290000</td>
-      <td>195.891640</td>
-      <td>5614.000000</td>
+      <td>1.032738e+01</td>
+      <td>2.293000</td>
+      <td>190.000000</td>
+      <td>5613.000000</td>
       <td>0.951815</td>
       <td>0.960000</td>
       <td>2016.000000</td>
     </tr>
     <tr>
       <th>75%</th>
-      <td>2.644439e+01</td>
+      <td>2.644400e+01</td>
       <td>3.250000</td>
-      <td>670.621300</td>
-      <td>5952.000000</td>
-      <td>1.214000</td>
-      <td>1.071000</td>
+      <td>664.979818</td>
+      <td>5951.000000</td>
+      <td>1.213942</td>
+      <td>1.070000</td>
       <td>2016.000000</td>
     </tr>
     <tr>
@@ -1152,12 +1152,12 @@ memory usage: 3.0+ MB
       <td>False</td>
       <td>False</td>
       <td>False</td>
-      <td>False</td>
+      <td>True</td>
       <td>False</td>
       <td>True</td>
       <td>False</td>
       <td>False</td>
-      <td>False</td>
+      <td>True</td>
       <td>False</td>
     </tr>
     <tr>
@@ -1179,8 +1179,8 @@ memory usage: 3.0+ MB
       <td>False</td>
       <td>False</td>
       <td>False</td>
-      <td>True</td>
-      <td>True</td>
+      <td>False</td>
+      <td>False</td>
       <td>False</td>
       <td>False</td>
       <td>False</td>
@@ -1193,7 +1193,7 @@ memory usage: 3.0+ MB
       <td>False</td>
       <td>False</td>
       <td>False</td>
-      <td>False</td>
+      <td>True</td>
       <td>False</td>
       <td>False</td>
       <td>False</td>
@@ -1226,20 +1226,20 @@ memory usage: 3.0+ MB
       <td>...</td>
     </tr>
     <tr>
-      <th>38774</th>
+      <th>38893</th>
+      <td>False</td>
+      <td>False</td>
       <td>False</td>
       <td>False</td>
       <td>False</td>
       <td>False</td>
       <td>True</td>
-      <td>True</td>
-      <td>False</td>
       <td>False</td>
       <td>False</td>
       <td>False</td>
     </tr>
     <tr>
-      <th>38775</th>
+      <th>38894</th>
       <td>False</td>
       <td>False</td>
       <td>False</td>
@@ -1252,20 +1252,7 @@ memory usage: 3.0+ MB
       <td>False</td>
     </tr>
     <tr>
-      <th>38776</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>38777</th>
+      <th>38895</th>
       <td>False</td>
       <td>False</td>
       <td>False</td>
@@ -1278,12 +1265,25 @@ memory usage: 3.0+ MB
       <td>False</td>
     </tr>
     <tr>
-      <th>38778</th>
+      <th>38896</th>
       <td>False</td>
       <td>False</td>
       <td>False</td>
       <td>False</td>
       <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>38897</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
       <td>True</td>
       <td>False</td>
       <td>False</td>
@@ -1292,7 +1292,7 @@ memory usage: 3.0+ MB
     </tr>
   </tbody>
 </table>
-<p>38779 rows × 10 columns</p>
+<p>38898 rows × 10 columns</p>
 </div></div></div>
 </div>
 <p>Analyze the output:</p>
@@ -1349,8 +1349,8 @@ memory usage: 3.0+ MB
   <tbody>
     <tr>
       <th>0</th>
-      <td>3.234699</td>
-      <td>13.101000</td>
+      <td>NaN</td>
+      <td>12.902000</td>
     </tr>
     <tr>
       <th>1</th>
@@ -1360,17 +1360,17 @@ memory usage: 3.0+ MB
     <tr>
       <th>2</th>
       <td>3.234699</td>
-      <td>NaN</td>
+      <td>13.103321</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>3.234702</td>
-      <td>13.103321</td>
+      <td>3.234699</td>
+      <td>13.060000</td>
     </tr>
     <tr>
       <th>4</th>
       <td>3.234699</td>
-      <td>13.380000</td>
+      <td>13.410000</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1378,33 +1378,33 @@ memory usage: 3.0+ MB
       <td>...</td>
     </tr>
     <tr>
-      <th>38774</th>
-      <td>41.028139</td>
-      <td>NaN</td>
+      <th>38893</th>
+      <td>41.029000</td>
+      <td>4.000000</td>
     </tr>
     <tr>
-      <th>38775</th>
+      <th>38894</th>
       <td>NaN</td>
       <td>3.831000</td>
     </tr>
     <tr>
-      <th>38776</th>
-      <td>41.029020</td>
-      <td>4.460000</td>
-    </tr>
-    <tr>
-      <th>38777</th>
+      <th>38895</th>
       <td>41.028064</td>
-      <td>4.140000</td>
+      <td>3.580000</td>
     </tr>
     <tr>
-      <th>38778</th>
+      <th>38896</th>
+      <td>41.028000</td>
+      <td>4.000000</td>
+    </tr>
+    <tr>
+      <th>38897</th>
       <td>41.028342</td>
-      <td>3.920000</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
-<p>38779 rows × 2 columns</p>
+<p>38898 rows × 2 columns</p>
 </div></div></div>
 </div>
 </section>
@@ -1455,9 +1455,9 @@ discoverymethod       0
 pl_orbper             0
 pl_rade               0
 pl_bmasse             0
-st_teff            3344
-st_rad             3105
-st_mass            5982
+st_teff            3345
+st_rad             3108
+st_mass            5994
 disc_year             0
 dtype: int64
 </pre></div>
@@ -1507,7 +1507,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/bc284f8e50c56eb3a09a257bf9e5ee1f8785a1c9c9323eb95359476de34be52f.png" src="../../_images/bc284f8e50c56eb3a09a257bf9e5ee1f8785a1c9c9323eb95359476de34be52f.png" />
+<img alt="../../_images/0324238d0e649cf64545bce490a4f02c5d89c496cf3e33d45f146c532eb40fd6.png" src="../../_images/0324238d0e649cf64545bce490a4f02c5d89c496cf3e33d45f146c532eb40fd6.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1538,7 +1538,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0a446562d09153ced0c88054210abc9154e1375452fabca7eede16f37a9fada1.png" src="../../_images/0a446562d09153ced0c88054210abc9154e1375452fabca7eede16f37a9fada1.png" />
+<img alt="../../_images/87aa8326314ebc7ea0407c1fa8f3c98f56fd7ea623670c71b3f5d5c44c7dada1.png" src="../../_images/87aa8326314ebc7ea0407c1fa8f3c98f56fd7ea623670c71b3f5d5c44c7dada1.png" />
 </div>
 </div>
 <p>Notice that the box plot shows many points far to the right. These are planets with very large radii. A log scale helps, but we can see that most planets are clustered in a smaller range. Let’s say, for a specific analysis, we want to focus only on planets that are somewhat similar to Earth, and we consider anything over 20 Earth radii to be a “super-giant” that we want to handle separately.</p>
@@ -1558,10 +1558,10 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 211 planets with a radius greater than 20 Earths.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 212 planets with a radius greater than 20 Earths.
 
-Original DataFrame size: 38779
-Filtered DataFrame size: 38568
+Original DataFrame size: 38898
+Filtered DataFrame size: 38686
 </pre></div>
 </div>
 </div>
@@ -1584,7 +1584,7 @@ Filtered DataFrame size: 38568
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/93b5ffe859b23bc21c15169f0f2802357b9e15f1036551a5ebea9e832bafcf06.png" src="../../_images/93b5ffe859b23bc21c15169f0f2802357b9e15f1036551a5ebea9e832bafcf06.png" />
+<img alt="../../_images/13a04ed243bc1ba577804d62c3ebeace22b906a8a358e48bef81d49bfe6bf86c.png" src="../../_images/13a04ed243bc1ba577804d62c3ebeace22b906a8a358e48bef81d49bfe6bf86c.png" />
 </div>
 </div>
 <div class="exercise admonition" id="lectures/02-LimpiezayPrepDatos/DataCleaning-exercise-2">
@@ -1634,46 +1634,46 @@ Filtered DataFrame size: 38568
   </thead>
   <tbody>
     <tr>
-      <th>11386</th>
+      <th>11442</th>
       <td>Kepler-419 b</td>
       <td>Kepler-419</td>
       <td>Transit</td>
       <td>69.726641</td>
       <td>34.090000</td>
-      <td>195.89164</td>
+      <td>190.00000</td>
       <td>6460.0</td>
       <td>1.590</td>
       <td>1.440</td>
       <td>2014</td>
     </tr>
     <tr>
-      <th>11391</th>
-      <td>Kepler-419 b</td>
-      <td>Kepler-419</td>
-      <td>Transit</td>
-      <td>69.726641</td>
-      <td>39.505000</td>
-      <td>195.89164</td>
-      <td>6383.0</td>
-      <td>1.819</td>
-      <td>1.427</td>
-      <td>2014</td>
-    </tr>
-    <tr>
-      <th>11392</th>
+      <th>11444</th>
       <td>Kepler-419 b</td>
       <td>Kepler-419</td>
       <td>Transit</td>
       <td>69.726641</td>
       <td>30.640000</td>
-      <td>195.89164</td>
+      <td>190.00000</td>
       <td>6287.0</td>
       <td>1.423</td>
       <td>1.292</td>
       <td>2014</td>
     </tr>
     <tr>
-      <th>11531</th>
+      <th>11448</th>
+      <td>Kepler-419 b</td>
+      <td>Kepler-419</td>
+      <td>Transit</td>
+      <td>69.726641</td>
+      <td>39.505000</td>
+      <td>190.00000</td>
+      <td>6383.0</td>
+      <td>1.819</td>
+      <td>1.427</td>
+      <td>2014</td>
+    </tr>
+    <tr>
+      <th>11585</th>
       <td>TOI-3540 A b</td>
       <td>TOI-3540 A</td>
       <td>Transit</td>
@@ -1686,20 +1686,20 @@ Filtered DataFrame size: 38568
       <td>2022</td>
     </tr>
     <tr>
-      <th>12435</th>
+      <th>12491</th>
       <td>TOI-4463 A b</td>
       <td>TOI-4463 A</td>
       <td>Transit</td>
       <td>2.880690</td>
       <td>22.429700</td>
-      <td>195.89164</td>
+      <td>190.00000</td>
       <td>5541.0</td>
       <td>1.090</td>
       <td>NaN</td>
       <td>2023</td>
     </tr>
     <tr>
-      <th>13068</th>
+      <th>13124</th>
       <td>BD-14 3065 b</td>
       <td>BD-14 3065 A</td>
       <td>Transit</td>
@@ -1712,52 +1712,52 @@ Filtered DataFrame size: 38568
       <td>2024</td>
     </tr>
     <tr>
-      <th>13069</th>
+      <th>13125</th>
       <td>BD-14 3065 b</td>
       <td>BD-14 3065 A</td>
       <td>Transit</td>
       <td>4.288970</td>
       <td>20.711200</td>
-      <td>195.89164</td>
+      <td>190.00000</td>
       <td>6736.9</td>
       <td>2.610</td>
       <td>NaN</td>
       <td>2024</td>
     </tr>
     <tr>
-      <th>13243</th>
+      <th>13303</th>
       <td>Kepler-297 d</td>
       <td>Kepler-297</td>
       <td>Transit</td>
       <td>150.018951</td>
       <td>32.600000</td>
-      <td>195.89164</td>
+      <td>190.00000</td>
       <td>5618.0</td>
       <td>0.897</td>
       <td>0.846</td>
       <td>2023</td>
     </tr>
     <tr>
-      <th>13499</th>
+      <th>13559</th>
       <td>Kepler-223 e</td>
       <td>Kepler-223</td>
       <td>Transit</td>
       <td>19.724089</td>
       <td>31.460000</td>
-      <td>195.89164</td>
+      <td>190.00000</td>
       <td>5825.0</td>
       <td>1.003</td>
       <td>0.902</td>
       <td>2014</td>
     </tr>
     <tr>
-      <th>13500</th>
+      <th>13560</th>
       <td>Kepler-223 e</td>
       <td>Kepler-223</td>
       <td>Transit</td>
       <td>19.724089</td>
       <td>31.460000</td>
-      <td>195.89164</td>
+      <td>190.00000</td>
       <td>5825.0</td>
       <td>1.003</td>
       <td>0.902</td>
@@ -1801,11 +1801,11 @@ Filtered DataFrame size: 38568
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unique Discovery Methods:
 discoverymethod
-Transit                          34822
-Radial Velocity                   2645
+Transit                          34925
+Radial Velocity                   2656
 Microlensing                       733
 Transit Timing Variations          159
-Imaging                            143
+Imaging                            147
 Eclipse Timing Variations           24
 Orbital Brightness Modulation       21
 Pulsar Timing                       13
@@ -1865,12 +1865,12 @@ Name: count, dtype: int64
       <td>Kepler-6 b</td>
       <td>Kepler-6</td>
       <td>Transit</td>
-      <td>3.234699</td>
-      <td>13.101000</td>
-      <td>195.89164</td>
+      <td>10.327380</td>
+      <td>12.902000</td>
+      <td>190.00000</td>
       <td>5660.0</td>
-      <td>1.26100</td>
-      <td>1.090</td>
+      <td>1.27500</td>
+      <td>NaN</td>
       <td>2009</td>
       <td>2000</td>
     </tr>
@@ -1880,8 +1880,8 @@ Name: count, dtype: int64
       <td>Kepler-6</td>
       <td>Transit</td>
       <td>3.234699</td>
-      <td>2.290000</td>
-      <td>195.89164</td>
+      <td>2.293000</td>
+      <td>190.00000</td>
       <td>5613.0</td>
       <td>1.31474</td>
       <td>0.990</td>
@@ -1894,11 +1894,11 @@ Name: count, dtype: int64
       <td>Kepler-6</td>
       <td>Transit</td>
       <td>3.234699</td>
-      <td>2.290000</td>
-      <td>195.89164</td>
+      <td>13.103321</td>
+      <td>205.63601</td>
       <td>5647.0</td>
-      <td>1.39100</td>
-      <td>1.209</td>
+      <td>1.26100</td>
+      <td>1.114</td>
       <td>2009</td>
       <td>2000</td>
     </tr>
@@ -1907,12 +1907,12 @@ Name: count, dtype: int64
       <td>Kepler-6 b</td>
       <td>Kepler-6</td>
       <td>Transit</td>
-      <td>3.234702</td>
-      <td>13.103321</td>
-      <td>201.18639</td>
-      <td>5647.0</td>
-      <td>1.26100</td>
-      <td>1.114</td>
+      <td>3.234699</td>
+      <td>13.060000</td>
+      <td>190.00000</td>
+      <td>5640.0</td>
+      <td>1.29100</td>
+      <td>1.047</td>
       <td>2009</td>
       <td>2000</td>
     </tr>
@@ -1922,11 +1922,11 @@ Name: count, dtype: int64
       <td>Kepler-6</td>
       <td>Transit</td>
       <td>3.234699</td>
-      <td>13.380000</td>
-      <td>195.89164</td>
-      <td>5690.0</td>
-      <td>1.29000</td>
-      <td>1.050</td>
+      <td>13.410000</td>
+      <td>190.00000</td>
+      <td>5640.0</td>
+      <td>1.29100</td>
+      <td>1.047</td>
       <td>2009</td>
       <td>2000</td>
     </tr>
@@ -1961,8 +1961,8 @@ discovery_decade  discoverymethod
                   Eclipse Timing Variations            2
                   Pulsar Timing                        1
                   Pulsation Timing Variations          1
-2010              Transit                          28661
-                  Radial Velocity                    901
+2010              Transit                          28745
+                  Radial Velocity                    904
                   Microlensing                       253
                   Transit Timing Variations          129
                   Imaging                             64
@@ -1972,10 +1972,10 @@ discovery_decade  discoverymethod
                   Astrometry                           1
                   Disk Kinematics                      1
                   Pulsation Timing Variations          1
-2020              Transit                           5449
+2020              Transit                           5468
                   Microlensing                       454
-                  Radial Velocity                    444
-                  Imaging                             39
+                  Radial Velocity                    452
+                  Imaging                             43
                   Transit Timing Variations           30
                   Astrometry                           4
                   Eclipse Timing Variations            4
