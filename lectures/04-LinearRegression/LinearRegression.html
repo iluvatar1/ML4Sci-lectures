@@ -867,29 +867,138 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(\theta_0\)</span> (theta-zero) is the <strong>y-intercept</strong> (also called the bias). It’s the value of <span class="math notranslate nohighlight">\(\hat{y}\)</span> when <span class="math notranslate nohighlight">\(x=0\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\theta_1\)</span> (theta-one) is the <strong>slope</strong> or <strong>coefficient</strong>. It represents the change in <span class="math notranslate nohighlight">\(\hat{y}\)</span> for a one-unit change in <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
 </ul>
-<p>Our goal is to find the optimal values for <span class="math notranslate nohighlight">\(\theta_0\)</span> and <span class="math notranslate nohighlight">\(\theta_1\)</span> that make our line fit the data as closely as possible. Notice that it is possible to also add non-linear relationships even if the method is called linear regression. Notice that can apply linear regression to non-linear problems, as well.</p>
+<p>Our goal is to find the optimal values for <span class="math notranslate nohighlight">\(\theta_0\)</span> and <span class="math notranslate nohighlight">\(\theta_1\)</span> that make our line fit the data as closely as possible. We are going to follow to paths to do this: the classical exact solution, and the ML (gradient descent) way.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>Classical (Analytical)</p></th>
+<th class="head"><p>Machine Learning (Gradient Descent)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Mathematical Foundation</strong></p></td>
+<td><p>Calculus: <span class="math notranslate nohighlight">\(\partial/\partial\theta = 0\)</span></p></td>
+<td><p>Optimization: <span class="math notranslate nohighlight">\(\theta = \theta -\alpha \nabla\theta\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Solution Type</strong></p></td>
+<td><p>Exact (closed-form)</p></td>
+<td><p>Iterative approximation</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Computation Time</strong></p></td>
+<td><p>Fast (single calculation)</p></td>
+<td><p>Slower (many iterations)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Memory Requirements</strong></p></td>
+<td><p>Can handle large datasets</p></td>
+<td><p>May need batch processing</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Scalability</strong></p></td>
+<td><p>Limited by matrix operations</p></td>
+<td><p>Scales to massive datasets</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Interpretability</strong></p></td>
+<td><p>Direct mathematical insight</p></td>
+<td><p>Requires convergence analysis</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Flexibility</strong></p></td>
+<td><p>Fixed to linear relationships</p></td>
+<td><p>Easily extended (regularization, non-linear)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Noise Handling</strong></p></td>
+<td><p>Assumes well-behaved data</p></td>
+<td><p>Naturally robust to outliers</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Implementation</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.linalg.lstsq()</span></code> or <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></p></td>
+<td><p>Custom loops or <code class="docutils literal notranslate"><span class="pre">SGDRegressor</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>When to Use</strong></p></td>
+<td><p>Small-medium datasets, interpretability needed</p></td>
+<td><p>Large datasets, part of ML pipeline</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>The Key Insight</strong></p>
+<p>Both methods minimize the <strong>same cost function</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\text{MSE} = \frac{1}{2n} \sum_{i=1}^{n} (\hat{y}_i - y_i)^2\]</div>
+<ul class="simple">
+<li><p><strong>Classical</strong>: Solves <span class="math notranslate nohighlight">\(\nabla\)</span>MSE = 0 analytically</p></li>
+<li><p><strong>ML</strong>: Follows <span class="math notranslate nohighlight">\(\nabla\)</span>MSE downhill iteratively</p></li>
+</ul>
+<p>They’re different paths to the same mathematical destination!</p>
 </section>
 <section id="how-do-we-find-the-best-line-classical-approach">
 <h3><span class="section-number">5.3.3. </span>How Do We Find the “Best” Line? Classical approach<a class="headerlink" href="#how-do-we-find-the-best-line-classical-approach" title="Link to this heading">#</a></h3>
 <p>For this simple example, computing both parameters is “easily” done by defining a metric to minimize, computing its partial derivatives, making them null and then computing the parameters. The distance from a giving predicted pint from its corresponding data is <span class="math notranslate nohighlight">\((\hat y_i - y_i)^2\)</span>, and it is squared to take into account values over or under estimating the data. We can define the <strong>MEAN SQUARED ERROR</strong> as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bf07a941-5aba-4427-8c12-46df7a899886">
-<span class="eqno">(5.1)<a class="headerlink" href="#equation-bf07a941-5aba-4427-8c12-46df7a899886" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-834f2eea-3635-450b-b4b0-f8b4889841df">
+<span class="eqno">(5.1)<a class="headerlink" href="#equation-834f2eea-3635-450b-b4b0-f8b4889841df" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \Delta (\theta_0, \theta_1) = \frac{1}{2n} \sum_{i=1}^{n} (\hat{y}_i - y_i)^2 = \frac{1}{2n} \sum_{i=1}^{n} ((\theta_0 + \theta_1 x_i) - y_i)^2,
 \end{equation}\]</div>
 <p>and the goal is to minimize it.</p>
 <p>In this simple case, we can compute <span class="math notranslate nohighlight">\(\partial \Delta/\partial \theta_0 = 0\)</span> and <span class="math notranslate nohighlight">\(\partial \Delta/\partial \theta_1 = 0\)</span>, and from it arrive to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2f5404ec-b6b4-4581-b82c-b10881674e36">
-<span class="eqno">(5.2)<a class="headerlink" href="#equation-2f5404ec-b6b4-4581-b82c-b10881674e36" title="Permalink to this equation">#</a></span>\[\begin{align}
-\theta_1 &amp;= \frac{n\sum x_i y_i - \sum x_i \sum y_i}{n\sum x_i^2 - (\sum x_i)^2},\\
+<div class="amsmath math notranslate nohighlight" id="equation-dda684ca-dd49-4b58-a57d-a37df26361b4">
+<span class="eqno">(5.2)<a class="headerlink" href="#equation-dda684ca-dd49-4b58-a57d-a37df26361b4" title="Permalink to this equation">#</a></span>\[\begin{align}
+\theta_1 &amp;= \frac{n\sum x_i y_i - \sum x_i \sum y_i}{n\sum x_i^2 - (\sum x_i)^2},\\\\
 \theta_0 &amp;= \frac{\sum y_i - \theta_1\sum x_i}{n}.
 \end{align}\]</div>
-<p>This is good for simple problems, and you can use python <code class="docutils literal notranslate"><span class="pre">statmodels</span></code> to get even more info about your problem. But generalizing it to more dimensions, for instane, might be more difficult and cumbersome, so maybe we can re-formulate the problem in another way: “learning” the parameters so the model can be tested on the data and its predictive power be used for other data.</p>
+<p>This is the Ordinary Least Squares(OLS) formulation, and is good for simple problems. You can use python <code class="docutils literal notranslate"><span class="pre">statmodels</span></code> to get even more info about your solution and parameters. But generalizing it to more dimensions, for instance, might be more difficult and cumbersome, so maybe we can re-formulate the problem in another way: “learning” the parameters so the model can be tested on the data and its predictive power be used for other data. It is important to not blindly apply OLS, since it can fail when some assumptions are not fulfilled (more at the end)</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Simulate nonlinear relation + heteroscedastic noise</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y_true</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">x</span>
+<span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">x</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y_true</span> <span class="o">+</span> <span class="n">noise</span>
+
+<span class="c1"># Fit simple linear regression</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;OLS Fit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_true</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;True Relation&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;When linear fit poorly captures true relation&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Residuals</span>
+<span class="n">resid</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">y_pred</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">resid</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">y_pred</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_pred</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Fitted values&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Residuals&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Residuals vs Fitted: Nonlinearity and Heteroscedasticity visible&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/cfd80f124c3a3de279574beea2f44ec8b0b4bc90920fb2e7a7803b9a06f8ad16.png" src="../../_images/cfd80f124c3a3de279574beea2f44ec8b0b4bc90920fb2e7a7803b9a06f8ad16.png" />
+<img alt="../../_images/5aced4c98a725b1bbf7bb43932f07eb40e502bc9d9c90702033fcf4034c88d8e.png" src="../../_images/5aced4c98a725b1bbf7bb43932f07eb40e502bc9d9c90702033fcf4034c88d8e.png" />
+</div>
+</div>
 </section>
 <section id="how-do-we-find-the-best-line-learning-the-coefficients">
 <h3><span class="section-number">5.3.4. </span>How do we find the “Best” Line? Learning the coefficients<a class="headerlink" href="#how-do-we-find-the-best-line-learning-the-coefficients" title="Link to this heading">#</a></h3>
 <p>We need a way to quantify how “wrong” our line is. To do so, we define the same  <strong>Cost Function</strong> (or Loss Function) as before:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8a5524b4-2ed3-420f-8194-55f4349761f6">
-<span class="eqno">(5.3)<a class="headerlink" href="#equation-8a5524b4-2ed3-420f-8194-55f4349761f6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-95f71c26-6ebd-49d6-83c8-076bac653f57">
+<span class="eqno">(5.3)<a class="headerlink" href="#equation-95f71c26-6ebd-49d6-83c8-076bac653f57" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \Delta (\theta_0, \theta_1) = \frac{1}{2n} \sum_{i=1}^{n} (\hat{y}_i - y_i)^2 = \frac{1}{2n} \sum_{i=1}^{n} ((\theta_0 + \theta_1 x_i) - y_i)^2.
 \end{equation}\]</div>
 <div class="admonition note">
@@ -1006,7 +1115,7 @@ document.write(`
     </style>
     <div>
         <a href="https://bokeh.org" target="_blank" class="bk-notebook-logo"></a>
-        <span id="a5e0dc3c-e188-4f9e-bbe0-607599dea603">Loading BokehJS ...</span>
+        <span id="e33493ae-bf7c-4d29-a8b5-ca5640ac6a04">Loading BokehJS ...</span>
     </div>
 </div><script type="application/javascript">'use strict';
 (function(root) {
@@ -1171,7 +1280,7 @@ const JS_MIME_TYPE = 'application/javascript';
      "</div>"}};
 
   function display_loaded(error = null) {
-    const el = document.getElementById("a5e0dc3c-e188-4f9e-bbe0-607599dea603");
+    const el = document.getElementById("e33493ae-bf7c-4d29-a8b5-ca5640ac6a04");
     if (el != null) {
       const html = (() => {
         if (typeof root.Bokeh === "undefined") {
@@ -1305,7 +1414,7 @@ function(Bokeh) {
       console.log("Bokeh: BokehJS failed to load within specified timeout.");
       root._bokeh_failed_load = true;
     } else if (force !== true) {
-      const cell = $(document.getElementById("a5e0dc3c-e188-4f9e-bbe0-607599dea603")).parents('.cell').data().cell;
+      const cell = $(document.getElementById("e33493ae-bf7c-4d29-a8b5-ca5640ac6a04")).parents('.cell').data().cell;
       cell.output_area.append_execute_result(NB_LOAD_WARNING)
     }
   }
@@ -1320,11 +1429,11 @@ function(Bokeh) {
     });
   }
 }(window));</script><div class="output text_html">
-  <div id="aaf4b913-e7f2-48c6-8716-a3f3f6204a89" data-root-id="p1008" style="display: contents;"></div>
+  <div id="a7e7787b-4061-4538-8cc5-45d693c47af3" data-root-id="p1008" style="display: contents;"></div>
 </div><script type="application/javascript">(function(root) {
   function embed_document(root) {
-  const docs_json = {"6d17056d-4b02-40c1-9147-cb83f9044c26":{"version":"3.8.0","title":"Bokeh Application","config":{"type":"object","name":"DocumentConfig","id":"p1054","attributes":{"notifications":{"type":"object","name":"Notifications","id":"p1055"}}},"roots":[{"type":"object","name":"Figure","id":"p1008","attributes":{"width":800,"height":400,"x_range":{"type":"object","name":"DataRange1d","id":"p1009"},"y_range":{"type":"object","name":"DataRange1d","id":"p1010"},"x_scale":{"type":"object","name":"LinearScale","id":"p1018"},"y_scale":{"type":"object","name":"LinearScale","id":"p1019"},"title":{"type":"object","name":"Title","id":"p1011","attributes":{"text":"Hooke's Law: Force vs. Displacement"}},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1049","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1043","attributes":{"selected":{"type":"object","name":"Selection","id":"p1044","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1045"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/2NggACN9Qv3tH3aZQ+hT9nHOVfyPjW9AuXfsgfxplx/ABV/Yg+mpjyHyr+yB0sHvIOq+2CfA5GAqv9iHwBmfIXq+25vBlQd5/wTqv+XvdSpbCDzD9Scf/ZQZzkAAJ6NW+CgAAAA"},"shape":[20],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/wGgAF//fDCpKCrKzz/CY75SLuTZPyAKJB7jVvQ/cKAU++V1AUCpakDGS3H8P04obiPFAgJAzIg42b4NDUBpQ40Kl5gNQCRLfq8ZcAxAr/N0sUMjEkBMpiunQQUSQPtVjBQg6RNAsOe+KYQ4F0BiA46wFc4UQOlLkTOUExdA93JI9OVLG0DeekHHRUocQMf7HAplayBAt/hR/wQlIEDEvr5Dc5YgQJgtAhGgAAAA"},"shape":[20],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1050","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1051"}}},"glyph":{"type":"object","name":"Scatter","id":"p1046","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"fill_color":{"type":"value","value":"blue"},"hatch_color":{"type":"value","value":"blue"}}},"nonselection_glyph":{"type":"object","name":"Scatter","id":"p1047","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"value","value":"blue"},"fill_alpha":{"type":"value","value":0.1},"hatch_color":{"type":"value","value":"blue"},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Scatter","id":"p1048","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":"blue"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"value","value":"blue"},"hatch_alpha":{"type":"value","value":0.2}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1017","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1030"},{"type":"object","name":"WheelZoomTool","id":"p1031","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1032","attributes":{"dimensions":"both","overlay":{"type":"object","name":"BoxAnnotation","id":"p1033","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1039","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1038","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1040"},{"type":"object","name":"ResetTool","id":"p1041"},{"type":"object","name":"HelpTool","id":"p1042"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1025","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1026","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1027"},"axis_label":"Force (F) [N]","major_label_policy":{"type":"object","name":"AllLabels","id":"p1028"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1020","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1021","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1022"},"axis_label":"Displacement (x) [m]","major_label_policy":{"type":"object","name":"AllLabels","id":"p1023"}}}],"center":[{"type":"object","name":"Grid","id":"p1024","attributes":{"axis":{"id":"p1020"}}},{"type":"object","name":"Grid","id":"p1029","attributes":{"dimension":1,"axis":{"id":"p1025"}}},{"type":"object","name":"Legend","id":"p1052","attributes":{"items":[{"type":"object","name":"LegendItem","id":"p1053","attributes":{"label":{"type":"value","value":"Experimental Data"},"renderers":[{"id":"p1049"}]}}]}}]}}]}};
-  const render_items = [{"docid":"6d17056d-4b02-40c1-9147-cb83f9044c26","roots":{"p1008":"aaf4b913-e7f2-48c6-8716-a3f3f6204a89"},"root_ids":["p1008"]}];
+  const docs_json = {"a7581634-93ad-4cc1-ba2b-91f2efae649d":{"version":"3.8.0","title":"Bokeh Application","config":{"type":"object","name":"DocumentConfig","id":"p1054","attributes":{"notifications":{"type":"object","name":"Notifications","id":"p1055"}}},"roots":[{"type":"object","name":"Figure","id":"p1008","attributes":{"width":800,"height":400,"x_range":{"type":"object","name":"DataRange1d","id":"p1009"},"y_range":{"type":"object","name":"DataRange1d","id":"p1010"},"x_scale":{"type":"object","name":"LinearScale","id":"p1018"},"y_scale":{"type":"object","name":"LinearScale","id":"p1019"},"title":{"type":"object","name":"Title","id":"p1011","attributes":{"text":"Hooke's Law: Force vs. Displacement"}},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1049","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1043","attributes":{"selected":{"type":"object","name":"Selection","id":"p1044","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1045"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/2NggACN9Qv3tH3aZQ+hT9nHOVfyPjW9AuXfsgfxplx/ABV/Yg+mpjyHyr+yB0sHvIOq+2CfA5GAqv9iHwBmfIXq+25vBlQd5/wTqv+XvdSpbCDzD9Scf/ZQZzkAAJ6NW+CgAAAA"},"shape":[20],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/wGgAF//fDCpKCrKzz/CY75SLuTZPyAKJB7jVvQ/cKAU++V1AUCpakDGS3H8P04obiPFAgJAzIg42b4NDUBpQ40Kl5gNQCRLfq8ZcAxAr/N0sUMjEkBMpiunQQUSQPtVjBQg6RNAsOe+KYQ4F0BiA46wFc4UQOlLkTOUExdA93JI9OVLG0DeekHHRUocQMf7HAplayBAt/hR/wQlIEDEvr5Dc5YgQJgtAhGgAAAA"},"shape":[20],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1050","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1051"}}},"glyph":{"type":"object","name":"Scatter","id":"p1046","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"fill_color":{"type":"value","value":"blue"},"hatch_color":{"type":"value","value":"blue"}}},"nonselection_glyph":{"type":"object","name":"Scatter","id":"p1047","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"value","value":"blue"},"fill_alpha":{"type":"value","value":0.1},"hatch_color":{"type":"value","value":"blue"},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Scatter","id":"p1048","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":"blue"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"value","value":"blue"},"hatch_alpha":{"type":"value","value":0.2}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1017","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1030"},{"type":"object","name":"WheelZoomTool","id":"p1031","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1032","attributes":{"dimensions":"both","overlay":{"type":"object","name":"BoxAnnotation","id":"p1033","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1039","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1038","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1040"},{"type":"object","name":"ResetTool","id":"p1041"},{"type":"object","name":"HelpTool","id":"p1042"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1025","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1026","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1027"},"axis_label":"Force (F) [N]","major_label_policy":{"type":"object","name":"AllLabels","id":"p1028"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1020","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1021","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1022"},"axis_label":"Displacement (x) [m]","major_label_policy":{"type":"object","name":"AllLabels","id":"p1023"}}}],"center":[{"type":"object","name":"Grid","id":"p1024","attributes":{"axis":{"id":"p1020"}}},{"type":"object","name":"Grid","id":"p1029","attributes":{"dimension":1,"axis":{"id":"p1025"}}},{"type":"object","name":"Legend","id":"p1052","attributes":{"items":[{"type":"object","name":"LegendItem","id":"p1053","attributes":{"label":{"type":"value","value":"Experimental Data"},"renderers":[{"id":"p1049"}]}}]}}]}}]}};
+  const render_items = [{"docid":"a7581634-93ad-4cc1-ba2b-91f2efae649d","roots":{"p1008":"a7e7787b-4061-4538-8cc5-45d693c47af3"},"root_ids":["p1008"]}];
   void root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
   }
   if (root.Bokeh !== undefined) {
@@ -2017,7 +2126,7 @@ The true spring constant was: 4.5 N/m
     </style>
     <div>
         <a href="https://bokeh.org" target="_blank" class="bk-notebook-logo"></a>
-        <span id="f7046420-03d8-4042-a6cc-b309e567081a">Loading BokehJS ...</span>
+        <span id="ecf39c87-df2e-4456-9c25-6619265fc7a4">Loading BokehJS ...</span>
     </div>
 </div><script type="application/javascript">'use strict';
 (function(root) {
@@ -2182,7 +2291,7 @@ const JS_MIME_TYPE = 'application/javascript';
      "</div>"}};
 
   function display_loaded(error = null) {
-    const el = document.getElementById("f7046420-03d8-4042-a6cc-b309e567081a");
+    const el = document.getElementById("ecf39c87-df2e-4456-9c25-6619265fc7a4");
     if (el != null) {
       const html = (() => {
         if (typeof root.Bokeh === "undefined") {
@@ -2316,7 +2425,7 @@ function(Bokeh) {
       console.log("Bokeh: BokehJS failed to load within specified timeout.");
       root._bokeh_failed_load = true;
     } else if (force !== true) {
-      const cell = $(document.getElementById("f7046420-03d8-4042-a6cc-b309e567081a")).parents('.cell').data().cell;
+      const cell = $(document.getElementById("ecf39c87-df2e-4456-9c25-6619265fc7a4")).parents('.cell').data().cell;
       cell.output_area.append_execute_result(NB_LOAD_WARNING)
     }
   }
@@ -2331,11 +2440,11 @@ function(Bokeh) {
     });
   }
 }(window));</script><div class="output text_html">
-  <div id="e6df3d2d-b1c7-4d60-a54c-ef72b3150388" data-root-id="p1058" style="display: contents;"></div>
+  <div id="d538f572-c395-4380-b3e4-f3ad288f189f" data-root-id="p1058" style="display: contents;"></div>
 </div><script type="application/javascript">(function(root) {
   function embed_document(root) {
-  const docs_json = {"9205aeb9-54f6-4fa3-b124-1fe48fbf3ec7":{"version":"3.8.0","title":"Bokeh Application","config":{"type":"object","name":"DocumentConfig","id":"p1114","attributes":{"notifications":{"type":"object","name":"Notifications","id":"p1115"}}},"roots":[{"type":"object","name":"Figure","id":"p1058","attributes":{"width":800,"height":400,"x_range":{"type":"object","name":"DataRange1d","id":"p1059"},"y_range":{"type":"object","name":"DataRange1d","id":"p1060"},"x_scale":{"type":"object","name":"LinearScale","id":"p1068"},"y_scale":{"type":"object","name":"LinearScale","id":"p1069"},"title":{"type":"object","name":"Title","id":"p1061","attributes":{"text":"Hooke's Law with Model Fit"}},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1099","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1093","attributes":{"selected":{"type":"object","name":"Selection","id":"p1094","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1095"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/2NggACN9Qv3tH3aZQ+hT9nHOVfyPjW9AuXfsgfxplx/ABV/Yg+mpjyHyr+yB0sHvIOq+2CfA5GAqv9iHwBmfIXq+25vBlQd5/wTqv+XvdSpbCDzD9Scf/ZQZzkAAJ6NW+CgAAAA"},"shape":[20],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/wGgAF//fDCpKCrKzz/CY75SLuTZPyAKJB7jVvQ/cKAU++V1AUCpakDGS3H8P04obiPFAgJAzIg42b4NDUBpQ40Kl5gNQCRLfq8ZcAxAr/N0sUMjEkBMpiunQQUSQPtVjBQg6RNAsOe+KYQ4F0BiA46wFc4UQOlLkTOUExdA93JI9OVLG0DeekHHRUocQMf7HAplayBAt/hR/wQlIEDEvr5Dc5YgQJgtAhGgAAAA"},"shape":[20],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1100","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1101"}}},"glyph":{"type":"object","name":"Scatter","id":"p1096","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"fill_color":{"type":"value","value":"blue"},"hatch_color":{"type":"value","value":"blue"}}},"nonselection_glyph":{"type":"object","name":"Scatter","id":"p1097","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"value","value":"blue"},"fill_alpha":{"type":"value","value":0.1},"hatch_color":{"type":"value","value":"blue"},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Scatter","id":"p1098","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":"blue"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"value","value":"blue"},"hatch_alpha":{"type":"value","value":0.2}}}}},{"type":"object","name":"GlyphRenderer","id":"p1110","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1104","attributes":{"selected":{"type":"object","name":"Selection","id":"p1105","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1106"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/2NggACN9Qv3tH3aZQ+hT9nHOVfyPjW9AuXfsgfxplx/ABV/Yg+mpjyHyr+yB0sHvIOq+2CfA5GAqv9iHwBmfIXq+25vBlQd5/wTqv+XvdSpbCDzD9Scf/ZQZzkAAJ6NW+CgAAAA"},"shape":[20],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/wGgAF//AGj79j/J2D/lsIyOOvXpP+XWzZDqwvM/V1VV2jeL+j/lae6RwqkAQB4psjbpDQRAV+h12w9yB0CQpzmANtYKQMpm/SRdOg5AApPg5EHPEECeckI3VYESQDtSpIloMxRA1zEG3HvlFUBzEWguj5cXQBDxyYCiSRlArtAr07X7GkBKsI0lya0cQOaP73fcXx5Awrco5fcIIECQp1mOAeIgQLpmw0qgAAAA"},"shape":[20],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1111","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1112"}}},"glyph":{"type":"object","name":"Line","id":"p1107","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"red","line_width":3}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1108","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"red","line_alpha":0.1,"line_width":3}},"muted_glyph":{"type":"object","name":"Line","id":"p1109","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"red","line_alpha":0.2,"line_width":3}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1067","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1080"},{"type":"object","name":"WheelZoomTool","id":"p1081","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1082","attributes":{"dimensions":"both","overlay":{"type":"object","name":"BoxAnnotation","id":"p1083","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1089","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1088","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1090"},{"type":"object","name":"ResetTool","id":"p1091"},{"type":"object","name":"HelpTool","id":"p1092"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1075","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1076","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1077"},"axis_label":"Force (F) [N]","major_label_policy":{"type":"object","name":"AllLabels","id":"p1078"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1070","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1071","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1072"},"axis_label":"Displacement (x) [m]","major_label_policy":{"type":"object","name":"AllLabels","id":"p1073"}}}],"center":[{"type":"object","name":"Grid","id":"p1074","attributes":{"axis":{"id":"p1070"}}},{"type":"object","name":"Grid","id":"p1079","attributes":{"dimension":1,"axis":{"id":"p1075"}}},{"type":"object","name":"Legend","id":"p1102","attributes":{"items":[{"type":"object","name":"LegendItem","id":"p1103","attributes":{"label":{"type":"value","value":"Experimental Data"},"renderers":[{"id":"p1099"}]}},{"type":"object","name":"LegendItem","id":"p1113","attributes":{"label":{"type":"value","value":"Linear Regression Fit"},"renderers":[{"id":"p1110"}]}}]}}]}}]}};
-  const render_items = [{"docid":"9205aeb9-54f6-4fa3-b124-1fe48fbf3ec7","roots":{"p1058":"e6df3d2d-b1c7-4d60-a54c-ef72b3150388"},"root_ids":["p1058"]}];
+  const docs_json = {"3f144a23-5f6a-4d17-a1b1-1cbf034dfd7b":{"version":"3.8.0","title":"Bokeh Application","config":{"type":"object","name":"DocumentConfig","id":"p1114","attributes":{"notifications":{"type":"object","name":"Notifications","id":"p1115"}}},"roots":[{"type":"object","name":"Figure","id":"p1058","attributes":{"width":800,"height":400,"x_range":{"type":"object","name":"DataRange1d","id":"p1059"},"y_range":{"type":"object","name":"DataRange1d","id":"p1060"},"x_scale":{"type":"object","name":"LinearScale","id":"p1068"},"y_scale":{"type":"object","name":"LinearScale","id":"p1069"},"title":{"type":"object","name":"Title","id":"p1061","attributes":{"text":"Hooke's Law with Model Fit"}},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1099","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1093","attributes":{"selected":{"type":"object","name":"Selection","id":"p1094","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1095"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/2NggACN9Qv3tH3aZQ+hT9nHOVfyPjW9AuXfsgfxplx/ABV/Yg+mpjyHyr+yB0sHvIOq+2CfA5GAqv9iHwBmfIXq+25vBlQd5/wTqv+XvdSpbCDzD9Scf/ZQZzkAAJ6NW+CgAAAA"},"shape":[20],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/wGgAF//fDCpKCrKzz/CY75SLuTZPyAKJB7jVvQ/cKAU++V1AUCpakDGS3H8P04obiPFAgJAzIg42b4NDUBpQ40Kl5gNQCRLfq8ZcAxAr/N0sUMjEkBMpiunQQUSQPtVjBQg6RNAsOe+KYQ4F0BiA46wFc4UQOlLkTOUExdA93JI9OVLG0DeekHHRUocQMf7HAplayBAt/hR/wQlIEDEvr5Dc5YgQJgtAhGgAAAA"},"shape":[20],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1100","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1101"}}},"glyph":{"type":"object","name":"Scatter","id":"p1096","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"fill_color":{"type":"value","value":"blue"},"hatch_color":{"type":"value","value":"blue"}}},"nonselection_glyph":{"type":"object","name":"Scatter","id":"p1097","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"value","value":"blue"},"fill_alpha":{"type":"value","value":0.1},"hatch_color":{"type":"value","value":"blue"},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Scatter","id":"p1098","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":"blue"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"value","value":"blue"},"hatch_alpha":{"type":"value","value":0.2}}}}},{"type":"object","name":"GlyphRenderer","id":"p1110","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1104","attributes":{"selected":{"type":"object","name":"Selection","id":"p1105","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1106"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/2NggACN9Qv3tH3aZQ+hT9nHOVfyPjW9AuXfsgfxplx/ABV/Yg+mpjyHyr+yB0sHvIOq+2CfA5GAqv9iHwBmfIXq+25vBlQd5/wTqv+XvdSpbCDzD9Scf/ZQZzkAAJ6NW+CgAAAA"},"shape":[20],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/wGgAF//AGj79j/J2D/lsIyOOvXpP+XWzZDqwvM/V1VV2jeL+j/lae6RwqkAQB4psjbpDQRAV+h12w9yB0CQpzmANtYKQMpm/SRdOg5AApPg5EHPEECeckI3VYESQDtSpIloMxRA1zEG3HvlFUBzEWguj5cXQBDxyYCiSRlArtAr07X7GkBKsI0lya0cQOaP73fcXx5Awrco5fcIIECQp1mOAeIgQLpmw0qgAAAA"},"shape":[20],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1111","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1112"}}},"glyph":{"type":"object","name":"Line","id":"p1107","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"red","line_width":3}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1108","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"red","line_alpha":0.1,"line_width":3}},"muted_glyph":{"type":"object","name":"Line","id":"p1109","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"red","line_alpha":0.2,"line_width":3}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1067","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1080"},{"type":"object","name":"WheelZoomTool","id":"p1081","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1082","attributes":{"dimensions":"both","overlay":{"type":"object","name":"BoxAnnotation","id":"p1083","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1089","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1088","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1090"},{"type":"object","name":"ResetTool","id":"p1091"},{"type":"object","name":"HelpTool","id":"p1092"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1075","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1076","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1077"},"axis_label":"Force (F) [N]","major_label_policy":{"type":"object","name":"AllLabels","id":"p1078"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1070","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1071","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1072"},"axis_label":"Displacement (x) [m]","major_label_policy":{"type":"object","name":"AllLabels","id":"p1073"}}}],"center":[{"type":"object","name":"Grid","id":"p1074","attributes":{"axis":{"id":"p1070"}}},{"type":"object","name":"Grid","id":"p1079","attributes":{"dimension":1,"axis":{"id":"p1075"}}},{"type":"object","name":"Legend","id":"p1102","attributes":{"items":[{"type":"object","name":"LegendItem","id":"p1103","attributes":{"label":{"type":"value","value":"Experimental Data"},"renderers":[{"id":"p1099"}]}},{"type":"object","name":"LegendItem","id":"p1113","attributes":{"label":{"type":"value","value":"Linear Regression Fit"},"renderers":[{"id":"p1110"}]}}]}}]}}]}};
+  const render_items = [{"docid":"3f144a23-5f6a-4d17-a1b1-1cbf034dfd7b","roots":{"p1058":"d538f572-c395-4380-b3e4-f3ad288f189f"},"root_ids":["p1058"]}];
   void root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
   }
   if (root.Bokeh !== undefined) {
@@ -2603,17 +2712,32 @@ BUT, do not use sklearn LinearRegression, since it uses the exact least square f
 <section id="regularization">
 <h2><span class="section-number">5.8. </span>Regularization<a class="headerlink" href="#regularization" title="Link to this heading">#</a></h2>
 <p>The bias-variance trade-off shows that is important to not go to the extremes when fitting a model. For example, when the model performs well on the training data but does not work well on the test data, we might need to add a <code class="docutils literal notranslate"><span class="pre">regularization</span></code> so penalize the cost function to improve the trade-off. One example is the so-called ridge regularization, where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-baed1c57-b9b6-4733-92c6-aa9fc2c0e297">
-<span class="eqno">(5.4)<a class="headerlink" href="#equation-baed1c57-b9b6-4733-92c6-aa9fc2c0e297" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bff9b507-6dd2-4dbc-b13d-106d0e583840">
+<span class="eqno">(5.4)<a class="headerlink" href="#equation-bff9b507-6dd2-4dbc-b13d-106d0e583840" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \Delta(\theta) = \frac{1}{2m} \sum_{i=1}^{m} \left( \hat y(x_i) - y_i \right)^2 + \lambda \sum_{j=1}^{n} \theta_j^2,
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is the hyper-regularization parameter. This controls the magnitude of the coefficients preventing overfitting. When <span class="math notranslate nohighlight">\(\lambda\)</span> is large, the parameters <span class="math notranslate nohighlight">\(\theta\)</span> decrease, which shrinks the impact of variables no so correlated with the output. When <span class="math notranslate nohighlight">\(\lambda\)</span> decreases, we basically converge to the usual linear regression.</p>
 <p>There are several other regularization techniques, such as lasso regression (L1),</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a5f6f711-15a1-4196-8193-ae27b43e7b47">
-<span class="eqno">(5.5)<a class="headerlink" href="#equation-a5f6f711-15a1-4196-8193-ae27b43e7b47" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-67396c3a-2272-4ca3-8b79-583f26596595">
+<span class="eqno">(5.5)<a class="headerlink" href="#equation-67396c3a-2272-4ca3-8b79-583f26596595" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \Delta(\theta) = \frac{1}{2m} \sum_{i=1}^{m} \left( h_\theta(x_i) - y_i \right)^2 + \lambda \sum_{j=1}^{n} |\theta_j|, 
 \end{equation}\]</div>
 <p>Elastic Net regression, where both previous regressions are combines, and so on.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">Ridge</span><span class="p">,</span> <span class="n">Lasso</span><span class="p">,</span> <span class="n">ElasticNet</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">cross_val_score</span>
+
+<span class="c1"># Compare regularization methods</span>
+<span class="n">models</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Ridge&#39;</span><span class="p">:</span> <span class="n">Ridge</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">),</span>
+    <span class="s1">&#39;Lasso&#39;</span><span class="p">:</span> <span class="n">Lasso</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">),</span>
+    <span class="s1">&#39;ElasticNet&#39;</span><span class="p">:</span> <span class="n">ElasticNet</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">l1_ratio</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">models</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> CV R²: </span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> (±</span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">*</span><span class="mi">2</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <section id="exercises">
 <h3><span class="section-number">5.8.1. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h3>
 <div class="exercise admonition" id="lectures/04-LinearRegression/LinearRegression-exercise-3">
@@ -2636,8 +2760,8 @@ BUT, do not use sklearn LinearRegression, since it uses the exact least square f
 <h2><span class="section-number">5.9. </span>Multiple linear regression<a class="headerlink" href="#multiple-linear-regression" title="Link to this heading">#</a></h2>
 <p>REF: <a class="reference external" href="https://www.digitalocean.com/community/tutorials/multiple-linear-regression-python">https://www.digitalocean.com/community/tutorials/multiple-linear-regression-python</a></p>
 <p>Until now, we explore a single variable linear regression. But, in general, we have multiple variables problems. In this case, we want to study a model like</p>
-<div class="amsmath math notranslate nohighlight" id="equation-05f69e4b-8387-411d-b195-88855ebb23f7">
-<span class="eqno">(5.6)<a class="headerlink" href="#equation-05f69e4b-8387-411d-b195-88855ebb23f7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c3de875d-431c-42b6-82e3-939b6a82649b">
+<span class="eqno">(5.6)<a class="headerlink" href="#equation-c3de875d-431c-42b6-82e3-939b6a82649b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n + \epsilon = \vec \beta \cdot \vec V + \epsilon,
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\vec \beta\)</span> are the coefficients we want to optimize, and we have <span class="math notranslate nohighlight">\(n\)</span> “independent” variables.</p>
@@ -2708,8 +2832,33 @@ Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n + \epsilon = \vec
 <span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 
 <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">X1</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">X2</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">X3</span> <span class="o">+</span> <span class="n">noise</span> <span class="c1"># X3 has a small effect</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;X1&#39;</span><span class="p">:</span> <span class="n">X1</span><span class="p">,</span> <span class="s1">&#39;X2&#39;</span><span class="p">:</span> <span class="n">X2</span><span class="p">,</span> <span class="s1">&#39;X3&#39;</span><span class="p">:</span> <span class="n">X3</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">y</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The most important line of code in any analysis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X1</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X2</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X3</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/50598f4c2aa7fb475d2778b9d7f4bae1cae8c4e310571ec83cf56823f93389ed.png" src="../../_images/50598f4c2aa7fb475d2778b9d7f4bae1cae8c4e310571ec83cf56823f93389ed.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;X1&#39;</span><span class="p">:</span> <span class="n">X1</span><span class="p">,</span> <span class="s1">&#39;X2&#39;</span><span class="p">:</span> <span class="n">X2</span><span class="p">,</span> <span class="s1">&#39;X3&#39;</span><span class="p">:</span> <span class="n">X3</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">y</span><span class="p">})</span>
 
 <span class="c1"># --- Generate the Correlation Matrix ---</span>
 <span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
@@ -2785,9 +2934,64 @@ X3 -0.037654 -0.146354  1.000000
 <span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.898
+Model:                            OLS   Adj. R-squared:                  0.896
+Method:                 Least Squares   F-statistic:                     428.0
+Date:                Mon, 22 Sep 2025   Prob (F-statistic):           7.45e-49
+Time:                        01:39:34   Log-Likelihood:                -311.60
+No. Observations:                 100   AIC:                             629.2
+Df Residuals:                      97   BIC:                             637.0
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          2.1903      1.049      2.089      0.039       0.109       4.272
+X1             3.0667      0.337      9.101      0.000       2.398       3.735
+X2             4.8641      0.617      7.883      0.000       3.639       6.089
+==============================================================================
+Omnibus:                        5.239   Durbin-Watson:                   2.103
+Prob(Omnibus):                  0.073   Jarque-Bera (JB):                5.526
+Skew:                           0.306   Prob(JB):                       0.0631
+Kurtosis:                       3.975   Cond. No.                         11.9
+==============================================================================
 
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 
-<span class="c1"># 3. Check Assumptions</span>
+================================================================================
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">significant_features</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">pvalues</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">pvalues</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">]</span><span class="o">.</span><span class="n">index</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">significant_features</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;const&#39;, &#39;X1&#39;, &#39;X2&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. Check Assumptions</span>
 
 <span class="c1"># --- Linearity &amp; Homoscedasticity (Visual Check) ---</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Checking for Linearity and Homoscedasticity...&quot;</span><span class="p">)</span>
@@ -2853,36 +3057,7 @@ X3 -0.037654 -0.146354  1.000000
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
-==============================================================================
-Dep. Variable:                      y   R-squared:                       0.898
-Model:                            OLS   Adj. R-squared:                  0.896
-Method:                 Least Squares   F-statistic:                     428.0
-Date:                Sun, 21 Sep 2025   Prob (F-statistic):           7.45e-49
-Time:                        22:30:03   Log-Likelihood:                -311.60
-No. Observations:                 100   AIC:                             629.2
-Df Residuals:                      97   BIC:                             637.0
-Df Model:                           2                                         
-Covariance Type:            nonrobust                                         
-==============================================================================
-                 coef    std err          t      P&gt;|t|      [0.025      0.975]
-------------------------------------------------------------------------------
-const          2.1903      1.049      2.089      0.039       0.109       4.272
-X1             3.0667      0.337      9.101      0.000       2.398       3.735
-X2             4.8641      0.617      7.883      0.000       3.639       6.089
-==============================================================================
-Omnibus:                        5.239   Durbin-Watson:                   2.103
-Prob(Omnibus):                  0.073   Jarque-Bera (JB):                5.526
-Skew:                           0.306   Prob(JB):                       0.0631
-Kurtosis:                       3.975   Cond. No.                         11.9
-==============================================================================
-
-Notes:
-[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-
-================================================================================
-
-Checking for Linearity and Homoscedasticity...
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Checking for Linearity and Homoscedasticity...
 </pre></div>
 </div>
 <img alt="../../_images/8816fffc26568380a4d6d59965d899d6386e95ed68307d545842e937136ae82b.png" src="../../_images/8816fffc26568380a4d6d59965d899d6386e95ed68307d545842e937136ae82b.png" />
@@ -3022,8 +3197,8 @@ Result: Potential multicollinearity detected (Bad).
 <p class="admonition-title"><span class="caption-number">Exercise 5.8 </span> (Polynomial regression)</p>
 <section id="exercise-content">
 <p>Generate a random set following the model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4927f036-970a-4f6d-8124-9ac8e9fa3db9">
-<span class="eqno">(5.7)<a class="headerlink" href="#equation-4927f036-970a-4f6d-8124-9ac8e9fa3db9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f990a450-c576-43a9-8217-8156c90de650">
+<span class="eqno">(5.7)<a class="headerlink" href="#equation-f990a450-c576-43a9-8217-8156c90de650" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = \beta_0 + \beta_1 x_1 + \beta_2 x_1^2 + \epsilon
 \end{equation}\]</div>
 <p>and apply (polynomial) linear regression to get the coefficients.  Check <a class="reference external" href="https://www.geeksforgeeks.org/machine-learning/python-implementation-of-polynomial-regression/">https://www.geeksforgeeks.org/machine-learning/python-implementation-of-polynomial-regression/</a></p>
