@@ -22,7 +22,7 @@ parts:
     numbered: true
     chapters:
       - file: lectures/04-LinearRegression/LinearRegression.ipynb
-  #     - file: lectures/05-LogisticRegression/LogisticRegression.ipynb
+      - file: lectures/05-LogisticRegression/LogisticRegression.ipynb
   #     - file: lectures/06-SVM/SVM.ipynb
   # - caption: Introduction to Neural Networks
   #   numbered: true
