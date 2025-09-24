@@ -493,17 +493,21 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-why-not-linear-regression-for-classification">6.1. Motivation: Why Not Linear Regression for Classification?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-core-component-the-sigmoid-function">6.2. The Core Component: The Sigmoid Function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-example-breast-cancer-tumor-classification">6.3. Practical Example: Breast Cancer Tumor Classification</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-load-and-explore-the-data">6.3.1. Step 1: Load and Explore the Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-split-the-data">6.3.2. Step 2: Split the Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-train-the-logistic-regression-model">6.3.3. Step 3: Train the Logistic Regression Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-evaluate-the-model">6.3.4. Step 4: Evaluate the Model</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-the-results">6.3.4.1. Interpreting the Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-cost-function">6.3. What is the cost function?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-descent-derivation">6.3.1. Gradient descent derivation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-example-breast-cancer-tumor-classification">6.4. Practical Example: Breast Cancer Tumor Classification</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-load-and-explore-the-data">6.4.1. Step 1: Load and Explore the Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-split-the-data">6.4.2. Step 2: Split the Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-train-the-logistic-regression-model">6.4.3. Step 3: Train the Logistic Regression Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-evaluate-the-model">6.4.4. Step 4: Evaluate the Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-the-results">6.4.4.1. Interpreting the Results</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-exercises">6.4. Final Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-exercises">6.5. Final Exercises</a></li>
 </ul>
             </nav>
         </div>
@@ -607,7 +611,7 @@ $<span class="math notranslate nohighlight">\( \sigma(z) = \frac{1}{1 + e^{-z}} 
     </style>
     <div>
         <a href="https://bokeh.org" target="_blank" class="bk-notebook-logo"></a>
-        <span id="d61a950c-5a65-4722-a509-b7eb91f19317">Loading BokehJS ...</span>
+        <span id="e2af0c65-9276-4317-80f6-5e6f7c9b3034">Loading BokehJS ...</span>
     </div>
 </div><script type="application/javascript">'use strict';
 (function(root) {
@@ -772,7 +776,7 @@ const JS_MIME_TYPE = 'application/javascript';
      "</div>"}};
 
   function display_loaded(error = null) {
-    const el = document.getElementById("d61a950c-5a65-4722-a509-b7eb91f19317");
+    const el = document.getElementById("e2af0c65-9276-4317-80f6-5e6f7c9b3034");
     if (el != null) {
       const html = (() => {
         if (typeof root.Bokeh === "undefined") {
@@ -906,7 +910,7 @@ function(Bokeh) {
       console.log("Bokeh: BokehJS failed to load within specified timeout.");
       root._bokeh_failed_load = true;
     } else if (force !== true) {
-      const cell = $(document.getElementById("d61a950c-5a65-4722-a509-b7eb91f19317")).parents('.cell').data().cell;
+      const cell = $(document.getElementById("e2af0c65-9276-4317-80f6-5e6f7c9b3034")).parents('.cell').data().cell;
       cell.output_area.append_execute_result(NB_LOAD_WARNING)
     }
   }
@@ -951,11 +955,11 @@ function(Bokeh) {
 </details>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="da2cf83b-7c5b-442d-8c39-1ce9320bc509" data-root-id="p1008" style="display: contents;"></div>
+  <div id="f3fc5e0e-5d6f-433c-8ae0-d5f88024f54a" data-root-id="p1008" style="display: contents;"></div>
 </div><script type="application/javascript">(function(root) {
   function embed_document(root) {
-  const docs_json = {"c200bcf4-ea76-4efc-bb6a-dd88c0ccce20":{"version":"3.8.0","title":"Bokeh Application","config":{"type":"object","name":"DocumentConfig","id":"p1063","attributes":{"notifications":{"type":"object","name":"Notifications","id":"p1064"}}},"roots":[{"type":"object","name":"Figure","id":"p1008","attributes":{"x_range":{"type":"object","name":"DataRange1d","id":"p1009"},"y_range":{"type":"object","name":"DataRange1d","id":"p1010"},"x_scale":{"type":"object","name":"LinearScale","id":"p1018"},"y_scale":{"type":"object","name":"LinearScale","id":"p1019"},"title":{"type":"object","name":"Title","id":"p1011","attributes":{"text":"The sigmoid function"}},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1049","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1043","attributes":{"selected":{"type":"object","name":"Selection","id":"p1044","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1045"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/zWTf2SVURjHX9NszZ2t2123/ah737uZJpYZibLzZcX+aLn6p2RTJkpixcRIlmVMZFpjWiURSRkpq8T5xlhl0mo2WXITE9tSMmar9J7zPB2Hl/Oe53m+z/f5nCBwq4bNHZ/fDgxXs2/8xc2woZpvakdOP3qdYXF/9+7mjgyzC4eKpldDDrbu/Hh8MOTsaOLe8vaQFfFf5/rG02zvmtqXbE8TD4/WZRdSnDhbFe0UD7jrrVs5vTqU9+TCFh6xB2/PjFbxS29J00qukidbJufK45X8HnOFKujTdJVzzV2/u5kXfUCShanzP14WJHnl665ob2JZVD3/VBmdytqRBDMNnSdaJjfSH/+Jc8fzb3cu18cZJYkkbeAe32ApL7myvSW8OjzWWDNfzFuhC4zxvl9FfBqdLsXW09vQWcD3Ts5UPp07Y43ruOhsGMqjS9K0ErDQN/bXboui+rvXLOSHPeyvLdszzoaJnzbtDVqyWd/QvO1xsupy9pg39IMNnPy5Z/+/Rs+N3jMaZ0olj9G8RusYrWvSosOoLqM6obrxSfrAO+kL2ie0bzwQH3BDfMGA+AT1DeojHouvqBefob5D54DrMhckZE7QuUHniB6ZK37LnKFzx6JwAOUCOeEEbcINlCPsF67wSjiDcoc24RDKJWaEU1wTbqEcIyZcQzmHco+98g4QyLvAPxDfd84gAwAA"},"shape":[100],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/w3Fe1ALcAAHcB0WrqHrhJyTzRQnsrqRuG+FlPW4pKdqC2GpZlkpcuPyOG1HWnmkpjqP5nlGKS7yiNr0WsoiSVi12X5XC22Iff75cLvnf2U222K8TxDntZCKmJYm5uYOexSKd1Kb22ah8WRM+A+FE5Zsu/k2M9IZOkuUl3ycjojpshXcLFfQPvmkHBxxQ/tagatrOBOhZvakyaks1Ll9YtUJvDHQwjFrlT6wsVNefyDZALqmXnmSEQizOSAqviEEdU02DWkdW9D8o2rs/ZQoXOGzVY+Wx4F5eO8J33WJiA+KTqhxTIK/UJWcp+JBsLzJx0PCh40u3+5j4H5QxA9rTYUHEMYv2mhS50A04pIeXXIUuhsRjGm5x3EnLPiM04Y8qCdmCYcp+fDTBCWMiKVwz8iMpanPo3gbf9+tCaXIn9poflNRjoCjnDl+e68i+mf6PPGYHKHh14Ivpd5Fit5QUzmmgP8KyldDVzV8P45aXu5+jBNzZyhquPWwT3x3JTPnBaqH/rRSZr7GekVGWOlCFTgtDHH6/Va4dkvNPolqfNDX6J/ROmHiOfqtdNTgl+y1o4f7B1zriWCWbu/FbfvOXfda+nDMvUSo3d0PW9VowsDoFzjk0addTvsGngMrl9OqBU/Ciqc7DIIvrbh5YdUQChomBI1761Droozsd9ZD5pXT0T6gR/TOcq6t9DtmrxGtpzEMkPr1D+rKDFAWM9iLpxpxqS0g5ADXCL3twV623Ig9oh3uHd+MoB/PKbHMJogMWmZI8yVYd5GaWraD4DPihI0igkfK50XkHMFWefI7k5yAxV0lO11LQOsUzo19RaDLl8zpaiNY1qvdmNJN0M56+mZ/H4HEsyjDU0vw4Hr5piEdQW5h9pPnRoLA2OKKwWGCSVdzCw6NEswTlQac+0nwzO1GZcgYgSqUKqs2Exymdql7LAR2lb7+zb8JnBbFNJ79Q3Akk8Nh/iXQDFuKq6ybvGM0zuMECyh/s7OsH0lOmVVvnV1VcMFi3SMpYs/SfwQ9heezw6wreHeSBNZXn3Y6JLZ+iu+pKrP+H1w82fEgAwAA"},"shape":[100],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1050","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1051"}}},"glyph":{"type":"object","name":"Line","id":"p1046","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_width":2}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1047","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_alpha":0.1,"line_width":2}},"muted_glyph":{"type":"object","name":"Line","id":"p1048","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_alpha":0.2,"line_width":2}}}},{"type":"object","name":"GlyphRenderer","id":"p1058","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1052","attributes":{"selected":{"type":"object","name":"Selection","id":"p1053","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1054"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/zWTf2SVURjHX9NszZ2t2123/ah737uZJpYZibLzZcX+aLn6p2RTJkpixcRIlmVMZFpjWiURSRkpq8T5xlhl0mo2WXITE9tSMmar9J7zPB2Hl/Oe53m+z/f5nCBwq4bNHZ/fDgxXs2/8xc2woZpvakdOP3qdYXF/9+7mjgyzC4eKpldDDrbu/Hh8MOTsaOLe8vaQFfFf5/rG02zvmtqXbE8TD4/WZRdSnDhbFe0UD7jrrVs5vTqU9+TCFh6xB2/PjFbxS29J00qukidbJufK45X8HnOFKujTdJVzzV2/u5kXfUCShanzP14WJHnl665ob2JZVD3/VBmdytqRBDMNnSdaJjfSH/+Jc8fzb3cu18cZJYkkbeAe32ApL7myvSW8OjzWWDNfzFuhC4zxvl9FfBqdLsXW09vQWcD3Ts5UPp07Y43ruOhsGMqjS9K0ErDQN/bXboui+rvXLOSHPeyvLdszzoaJnzbtDVqyWd/QvO1xsupy9pg39IMNnPy5Z/+/Rs+N3jMaZ0olj9G8RusYrWvSosOoLqM6obrxSfrAO+kL2ie0bzwQH3BDfMGA+AT1DeojHouvqBefob5D54DrMhckZE7QuUHniB6ZK37LnKFzx6JwAOUCOeEEbcINlCPsF67wSjiDcoc24RDKJWaEU1wTbqEcIyZcQzmHco+98g4QyLvAPxDfd84gAwAA"},"shape":[100],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1059","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1060"}}},"glyph":{"type":"object","name":"Line","id":"p1055","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"value","value":0.5},"line_color":"red","line_width":2}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1056","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"value","value":0.5},"line_color":"red","line_alpha":0.1,"line_width":2}},"muted_glyph":{"type":"object","name":"Line","id":"p1057","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"value","value":0.5},"line_color":"red","line_alpha":0.2,"line_width":2}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1017","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1030"},{"type":"object","name":"WheelZoomTool","id":"p1031","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1032","attributes":{"dimensions":"both","overlay":{"type":"object","name":"BoxAnnotation","id":"p1033","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1039","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1038","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1040"},{"type":"object","name":"ResetTool","id":"p1041"},{"type":"object","name":"HelpTool","id":"p1042"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1025","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1026","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1027"},"axis_label":"$$\\sigma(z)$$","major_label_policy":{"type":"object","name":"AllLabels","id":"p1028"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1020","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1021","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1022"},"axis_label":"z","major_label_policy":{"type":"object","name":"AllLabels","id":"p1023"}}}],"center":[{"type":"object","name":"Grid","id":"p1024","attributes":{"axis":{"id":"p1020"}}},{"type":"object","name":"Grid","id":"p1029","attributes":{"dimension":1,"axis":{"id":"p1025"}}},{"type":"object","name":"Legend","id":"p1061","attributes":{"items":[{"type":"object","name":"LegendItem","id":"p1062","attributes":{"label":{"type":"value","value":"Threshold at 0.5"},"renderers":[{"id":"p1058"}]}}]}}]}}]}};
-  const render_items = [{"docid":"c200bcf4-ea76-4efc-bb6a-dd88c0ccce20","roots":{"p1008":"da2cf83b-7c5b-442d-8c39-1ce9320bc509"},"root_ids":["p1008"]}];
+  const docs_json = {"52d2cade-94b2-41f9-ad29-cc6c61ddf66d":{"version":"3.8.0","title":"Bokeh Application","config":{"type":"object","name":"DocumentConfig","id":"p1063","attributes":{"notifications":{"type":"object","name":"Notifications","id":"p1064"}}},"roots":[{"type":"object","name":"Figure","id":"p1008","attributes":{"x_range":{"type":"object","name":"DataRange1d","id":"p1009"},"y_range":{"type":"object","name":"DataRange1d","id":"p1010"},"x_scale":{"type":"object","name":"LinearScale","id":"p1018"},"y_scale":{"type":"object","name":"LinearScale","id":"p1019"},"title":{"type":"object","name":"Title","id":"p1011","attributes":{"text":"The sigmoid function"}},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1049","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1043","attributes":{"selected":{"type":"object","name":"Selection","id":"p1044","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1045"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/zWTf2SVURjHX9NszZ2t2123/ah737uZJpYZibLzZcX+aLn6p2RTJkpixcRIlmVMZFpjWiURSRkpq8T5xlhl0mo2WXITE9tSMmar9J7zPB2Hl/Oe53m+z/f5nCBwq4bNHZ/fDgxXs2/8xc2woZpvakdOP3qdYXF/9+7mjgyzC4eKpldDDrbu/Hh8MOTsaOLe8vaQFfFf5/rG02zvmtqXbE8TD4/WZRdSnDhbFe0UD7jrrVs5vTqU9+TCFh6xB2/PjFbxS29J00qukidbJufK45X8HnOFKujTdJVzzV2/u5kXfUCShanzP14WJHnl665ob2JZVD3/VBmdytqRBDMNnSdaJjfSH/+Jc8fzb3cu18cZJYkkbeAe32ApL7myvSW8OjzWWDNfzFuhC4zxvl9FfBqdLsXW09vQWcD3Ts5UPp07Y43ruOhsGMqjS9K0ErDQN/bXboui+rvXLOSHPeyvLdszzoaJnzbtDVqyWd/QvO1xsupy9pg39IMNnPy5Z/+/Rs+N3jMaZ0olj9G8RusYrWvSosOoLqM6obrxSfrAO+kL2ie0bzwQH3BDfMGA+AT1DeojHouvqBefob5D54DrMhckZE7QuUHniB6ZK37LnKFzx6JwAOUCOeEEbcINlCPsF67wSjiDcoc24RDKJWaEU1wTbqEcIyZcQzmHco+98g4QyLvAPxDfd84gAwAA"},"shape":[100],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/w3Fe1ALcAAHcB0WrqHrhJyTzRQnsrqRuG+FlPW4pKdqC2GpZlkpcuPyOG1HWnmkpjqP5nlGKS7yiNr0WsoiSVi12X5XC22Iff75cLvnf2U222K8TxDntZCKmJYm5uYOexSKd1Kb22ah8WRM+A+FE5Zsu/k2M9IZOkuUl3ycjojpshXcLFfQPvmkHBxxQ/tagatrOBOhZvakyaks1Ll9YtUJvDHQwjFrlT6wsVNefyDZALqmXnmSEQizOSAqviEEdU02DWkdW9D8o2rs/ZQoXOGzVY+Wx4F5eO8J33WJiA+KTqhxTIK/UJWcp+JBsLzJx0PCh40u3+5j4H5QxA9rTYUHEMYv2mhS50A04pIeXXIUuhsRjGm5x3EnLPiM04Y8qCdmCYcp+fDTBCWMiKVwz8iMpanPo3gbf9+tCaXIn9poflNRjoCjnDl+e68i+mf6PPGYHKHh14Ivpd5Fit5QUzmmgP8KyldDVzV8P45aXu5+jBNzZyhquPWwT3x3JTPnBaqH/rRSZr7GekVGWOlCFTgtDHH6/Va4dkvNPolqfNDX6J/ROmHiOfqtdNTgl+y1o4f7B1zriWCWbu/FbfvOXfda+nDMvUSo3d0PW9VowsDoFzjk0addTvsGngMrl9OqBU/Ciqc7DIIvrbh5YdUQChomBI1761Droozsd9ZD5pXT0T6gR/TOcq6t9DtmrxGtpzEMkPr1D+rKDFAWM9iLpxpxqS0g5ADXCL3twV623Ig9oh3uHd+MoB/PKbHMJogMWmZI8yVYd5GaWraD4DPihI0igkfK50XkHMFWefI7k5yAxV0lO11LQOsUzo19RaDLl8zpaiNY1qvdmNJN0M56+mZ/H4HEsyjDU0vw4Hr5piEdQW5h9pPnRoLA2OKKwWGCSVdzCw6NEswTlQac+0nwzO1GZcgYgSqUKqs2Exymdql7LAR2lb7+zb8JnBbFNJ79Q3Akk8Nh/iXQDFuKq6ybvGM0zuMECyh/s7OsH0lOmVVvnV1VcMFi3SMpYs/SfwQ9heezw6wreHeSBNZXn3Y6JLZ+iu+pKrP+H1w82fEgAwAA"},"shape":[100],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1050","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1051"}}},"glyph":{"type":"object","name":"Line","id":"p1046","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_width":2}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1047","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_alpha":0.1,"line_width":2}},"muted_glyph":{"type":"object","name":"Line","id":"p1048","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_alpha":0.2,"line_width":2}}}},{"type":"object","name":"GlyphRenderer","id":"p1058","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1052","attributes":{"selected":{"type":"object","name":"Selection","id":"p1053","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1054"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/zWTf2SVURjHX9NszZ2t2123/ah737uZJpYZibLzZcX+aLn6p2RTJkpixcRIlmVMZFpjWiURSRkpq8T5xlhl0mo2WXITE9tSMmar9J7zPB2Hl/Oe53m+z/f5nCBwq4bNHZ/fDgxXs2/8xc2woZpvakdOP3qdYXF/9+7mjgyzC4eKpldDDrbu/Hh8MOTsaOLe8vaQFfFf5/rG02zvmtqXbE8TD4/WZRdSnDhbFe0UD7jrrVs5vTqU9+TCFh6xB2/PjFbxS29J00qukidbJufK45X8HnOFKujTdJVzzV2/u5kXfUCShanzP14WJHnl665ob2JZVD3/VBmdytqRBDMNnSdaJjfSH/+Jc8fzb3cu18cZJYkkbeAe32ApL7myvSW8OjzWWDNfzFuhC4zxvl9FfBqdLsXW09vQWcD3Ts5UPp07Y43ruOhsGMqjS9K0ErDQN/bXboui+rvXLOSHPeyvLdszzoaJnzbtDVqyWd/QvO1xsupy9pg39IMNnPy5Z/+/Rs+N3jMaZ0olj9G8RusYrWvSosOoLqM6obrxSfrAO+kL2ie0bzwQH3BDfMGA+AT1DeojHouvqBefob5D54DrMhckZE7QuUHniB6ZK37LnKFzx6JwAOUCOeEEbcINlCPsF67wSjiDcoc24RDKJWaEU1wTbqEcIyZcQzmHco+98g4QyLvAPxDfd84gAwAA"},"shape":[100],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1059","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1060"}}},"glyph":{"type":"object","name":"Line","id":"p1055","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"value","value":0.5},"line_color":"red","line_width":2}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1056","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"value","value":0.5},"line_color":"red","line_alpha":0.1,"line_width":2}},"muted_glyph":{"type":"object","name":"Line","id":"p1057","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"value","value":0.5},"line_color":"red","line_alpha":0.2,"line_width":2}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1017","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1030"},{"type":"object","name":"WheelZoomTool","id":"p1031","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1032","attributes":{"dimensions":"both","overlay":{"type":"object","name":"BoxAnnotation","id":"p1033","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1039","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1038","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1040"},{"type":"object","name":"ResetTool","id":"p1041"},{"type":"object","name":"HelpTool","id":"p1042"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1025","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1026","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1027"},"axis_label":"$$\\sigma(z)$$","major_label_policy":{"type":"object","name":"AllLabels","id":"p1028"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1020","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1021","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1022"},"axis_label":"z","major_label_policy":{"type":"object","name":"AllLabels","id":"p1023"}}}],"center":[{"type":"object","name":"Grid","id":"p1024","attributes":{"axis":{"id":"p1020"}}},{"type":"object","name":"Grid","id":"p1029","attributes":{"dimension":1,"axis":{"id":"p1025"}}},{"type":"object","name":"Legend","id":"p1061","attributes":{"items":[{"type":"object","name":"LegendItem","id":"p1062","attributes":{"label":{"type":"value","value":"Threshold at 0.5"},"renderers":[{"id":"p1058"}]}}]}}]}}]}};
+  const render_items = [{"docid":"52d2cade-94b2-41f9-ad29-cc6c61ddf66d","roots":{"p1008":"f3fc5e0e-5d6f-433c-8ae0-d5f88024f54a"},"root_ids":["p1008"]}];
   void root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
   }
   if (root.Bokeh !== undefined) {
@@ -999,11 +1003,164 @@ function(Bokeh) {
 </section>
 </div>
 </section>
+<section id="what-is-the-cost-function">
+<h2><span class="section-number">6.3. </span>What is the cost function?<a class="headerlink" href="#what-is-the-cost-function" title="Link to this heading">#</a></h2>
+<p>In logistic regression, we are comparing probabilities. Therefore, it is more important to compare ratios than differences. The logarithm function has the nice property of comparing ratios easily as a subtraction, therefore, it is used in the context of logistic regression. The cost function is defined as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ca603fd2-7b13-4fc6-824a-3abc20d561e2">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-ca603fd2-7b13-4fc6-824a-3abc20d561e2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+Cost = -\sum[y\log(\hat y) - (1-y)\log(1-\hat y)],
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(y\)</span> is the predicted label and <span class="math notranslate nohighlight">\(\hat y\)</span> the predicted probability. It is always positive, heavily penalizes wrong predictions with large probability, and it is convex. For instance, if the label must be 1 but the predicted probability for it is 0.1, then we have a large penalty. Same for the inverse case. Also, it can be used nicely with gradient descent.</p>
+<section id="gradient-descent-derivation">
+<h3><span class="section-number">6.3.1. </span>Gradient descent derivation<a class="headerlink" href="#gradient-descent-derivation" title="Link to this heading">#</a></h3>
+<p>For the gradient descent update (“backward propagation”), we have</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6d5db489-eab4-44c6-9cc7-ab6e7ed59211">
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-6d5db489-eab4-44c6-9cc7-ab6e7ed59211" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\beta_i' = \beta_i - \alpha \frac{\partial Cost}{\beta_i}. 
+\end{equation}\]</div>
+<p>Given that the cost function is a function of <span class="math notranslate nohighlight">\(\hat y\)</span>, and <span class="math notranslate nohighlight">\(\hat y = 1/(1 + \exp(-z))\)</span>, with <span class="math notranslate nohighlight">\(z= \beta_0 + \beta_1 X_1 + \ldots + \beta_n X_n\)</span>, then, by using the chain rule, we have</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b195fafd-cab9-4aeb-bbd7-c6a217de8463">
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-b195fafd-cab9-4aeb-bbd7-c6a217de8463" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial Cost}{\partial \beta_i} &amp;= \frac{\partial Cost}{\partial \hat y}\frac{\partial \hat y}{\partial z}\frac{\partial z}{\partial \beta_i}\\
+\frac{\partial Cost}{\partial \beta_i} &amp;= (\hat y - y) X_i,
+\end{align}\]</div>
+<p>(for <span class="math notranslate nohighlight">\(\beta_0\)</span> it is only <span class="math notranslate nohighlight">\(\hat y - y\)</span>), and this shows how to simply update the parameters.</p>
+<p>This is an example (here <span class="math notranslate nohighlight">\(b = \beta_0\)</span> and <span class="math notranslate nohighlight">\(\vec w = (\beta_1, \beta_2, \ldots, \beta_n)\)</span>:</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">LogisticRegression</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">max_iterations</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">learning_rate</span> <span class="o">=</span> <span class="n">learning_rate</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_iterations</span> <span class="o">=</span> <span class="n">max_iterations</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">costs</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Sigmoid activation function&quot;&quot;&quot;</span>
+        <span class="c1"># Clip z to prevent overflow</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="o">-</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">))</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Train the logistic regression model&quot;&quot;&quot;</span>
+        <span class="c1"># Initialize parameters</span>
+        <span class="n">n_samples</span><span class="p">,</span> <span class="n">n_features</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_features</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        <span class="c1"># Gradient descent</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max_iterations</span><span class="p">):</span>
+            <span class="c1"># Forward pass: compute predictions</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span>
+            <span class="n">y_pred</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+            
+            <span class="c1"># Compute cost (for monitoring)</span>
+            <span class="n">cost</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_cost</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">costs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span>
+            
+            <span class="c1"># Compute gradients</span>
+            <span class="n">dw</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n_samples</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="p">(</span><span class="n">y_pred</span> <span class="o">-</span> <span class="n">y</span><span class="p">))</span>
+            <span class="n">db</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n_samples</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y_pred</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>
+            
+            <span class="c1"># Update parameters using gradient descent</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">learning_rate</span> <span class="o">*</span> <span class="n">dw</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">learning_rate</span> <span class="o">*</span> <span class="n">db</span>
+            
+            <span class="c1"># Print progress</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cost after iteration </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">cost</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">compute_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute cross-entropy cost&quot;&quot;&quot;</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_true</span><span class="p">)</span>
+        <span class="c1"># Avoid log(0) by clipping predictions</span>
+        <span class="n">y_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="mf">1e-15</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="mf">1e-15</span><span class="p">)</span>
+        <span class="n">cost</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y_true</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">y_true</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">y_pred</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">cost</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Make predictions&quot;&quot;&quot;</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span>
+        <span class="n">y_pred</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">y_pred</span> <span class="o">&gt;=</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict_proba</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return prediction probabilities&quot;&quot;&quot;</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+
+<span class="c1"># Example usage:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># Generate sample data</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    
+    <span class="c1"># Create and train model</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">max_iterations</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    
+    <span class="c1"># Make predictions</span>
+    <span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+    <span class="n">probabilities</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Final weights: </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">weights</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Final bias: </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">bias</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">predictions</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Plot cost function</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">costs</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Cost Function Over Training&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Iterations&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cost&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cost after iteration 0: 0.6931
+Cost after iteration 100: 0.2733
+Cost after iteration 200: 0.2088
+Cost after iteration 300: 0.1790
+Cost after iteration 400: 0.1607
+Cost after iteration 500: 0.1479
+Cost after iteration 600: 0.1383
+Cost after iteration 700: 0.1307
+Cost after iteration 800: 0.1245
+Cost after iteration 900: 0.1192
+Final weights: [3.73358795 3.74240946]
+Final bias: -0.17462946575109284
+Accuracy: 0.9900
+</pre></div>
+</div>
+<img alt="../../_images/9377e561f68366572923a4321fbbb844586488bd7ba3f252904d6fc6c70a63f1.png" src="../../_images/9377e561f68366572923a4321fbbb844586488bd7ba3f252904d6fc6c70a63f1.png" />
+</div>
+</div>
+<div class="exercise admonition" id="lectures/05-LogisticRegression/LogisticRegression-exercise-1">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6.2 </span></p>
+<section id="exercise-content">
+<p>Deduce analytically the previous expressions for the parameters estimation</p>
+</section>
+</div>
+</section>
+</section>
 <section id="practical-example-breast-cancer-tumor-classification">
-<h2><span class="section-number">6.3. </span>Practical Example: Breast Cancer Tumor Classification<a class="headerlink" href="#practical-example-breast-cancer-tumor-classification" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.4. </span>Practical Example: Breast Cancer Tumor Classification<a class="headerlink" href="#practical-example-breast-cancer-tumor-classification" title="Link to this heading">#</a></h2>
 <p>Let’s build a logistic regression model to predict whether a breast cancer tumor is <strong>malignant</strong> or <strong>benign</strong>. We will use the Breast Cancer Wisconsin dataset, which is conveniently included in the <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> library.</p>
 <section id="step-1-load-and-explore-the-data">
-<h3><span class="section-number">6.3.1. </span>Step 1: Load and Explore the Data<a class="headerlink" href="#step-1-load-and-explore-the-data" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.4.1. </span>Step 1: Load and Explore the Data<a class="headerlink" href="#step-1-load-and-explore-the-data" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -1209,7 +1366,7 @@ First 5 rows of the data:
 <p>Our goal is to use the feature columns (like ‘mean radius’, ‘mean texture’, etc.) to predict the ‘target’ column. Note that in this dataset, <code class="docutils literal notranslate"><span class="pre">0</span></code> represents a malignant tumor and <code class="docutils literal notranslate"><span class="pre">1</span></code> represents a benign tumor.</p>
 </section>
 <section id="step-2-split-the-data">
-<h3><span class="section-number">6.3.2. </span>Step 2: Split the Data<a class="headerlink" href="#step-2-split-the-data" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.4.2. </span>Step 2: Split the Data<a class="headerlink" href="#step-2-split-the-data" title="Link to this heading">#</a></h3>
 <p>We need to split our data into a training set (to build the model) and a testing set (to evaluate its performance on unseen data).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1236,7 +1393,7 @@ Testing set shape: (114, 30)
 </div>
 </section>
 <section id="step-3-train-the-logistic-regression-model">
-<h3><span class="section-number">6.3.3. </span>Step 3: Train the Logistic Regression Model<a class="headerlink" href="#step-3-train-the-logistic-regression-model" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.4.3. </span>Step 3: Train the Logistic Regression Model<a class="headerlink" href="#step-3-train-the-logistic-regression-model" title="Link to this heading">#</a></h3>
 <p>Now we’ll use <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>’s <code class="docutils literal notranslate"><span class="pre">LogisticRegression</span></code> class to train our model. For numerical stability, it’s often a good idea to scale our features first.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1249,7 +1406,7 @@ Testing set shape: (114, 30)
 <span class="n">X_test_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
 <span class="c1"># Create and train the model</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1732,7 +1889,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     height: 14px;
     cursor: pointer;
 }
-</style><body><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LogisticRegression()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>LogisticRegression</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.LogisticRegression.html">?<span>Documentation for LogisticRegression</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+</style><body><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LogisticRegression(n_jobs=1)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>LogisticRegression</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.LogisticRegression.html">?<span>Documentation for LogisticRegression</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
         <div class="estimator-table">
             <details>
                 <summary>Parameters</summary>
@@ -1869,13 +2026,13 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
         </tr>
     
 
-        <tr class="default">
+        <tr class="user-set">
             <td><i class="copy-paste-icon"
                  onclick="copyToClipboard('n_jobs',
                           this.parentElement.nextElementSibling)"
             ></i></td>
             <td class="param">n_jobs&nbsp;</td>
-            <td class="value">None</td>
+            <td class="value">1</td>
         </tr>
     
 
@@ -1939,7 +2096,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <p>That’s it! The model is now trained. The <code class="docutils literal notranslate"><span class="pre">.fit()</span></code> method found the best coefficients (β values) to map our input features to the probability of a tumor being benign.</p>
 </section>
 <section id="step-4-evaluate-the-model">
-<h3><span class="section-number">6.3.4. </span>Step 4: Evaluate the Model<a class="headerlink" href="#step-4-evaluate-the-model" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.4.4. </span>Step 4: Evaluate the Model<a class="headerlink" href="#step-4-evaluate-the-model" title="Link to this heading">#</a></h3>
 <p>How well did our model do? We’ll make predictions on our held-out test set and compare them to the actual outcomes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1992,7 +2149,7 @@ Confusion Matrix:
 </div>
 </div>
 <section id="interpreting-the-results">
-<h4><span class="section-number">6.3.4.1. </span>Interpreting the Results<a class="headerlink" href="#interpreting-the-results" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.4.4.1. </span>Interpreting the Results<a class="headerlink" href="#interpreting-the-results" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p><strong>Accuracy</strong>: The overall percentage of correct predictions. Our model is highly accurate!</p></li>
 <li><p><strong>Classification Report</strong>:</p>
@@ -2011,14 +2168,15 @@ Confusion Matrix:
 </ul>
 </li>
 </ul>
-<div class="exercise admonition" id="lectures/05-LogisticRegression/LogisticRegression-exercise-1">
+<div class="exercise admonition" id="lectures/05-LogisticRegression/LogisticRegression-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6.2 </span> (Interpretation)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.3 </span> (Interpretation)</p>
 <section id="exercise-content">
 <p>Looking at the confusion matrix generated above:</p>
 <ol class="arabic simple">
 <li><p>How many benign tumors were incorrectly classified as malignant (False Negatives)?</p></li>
 <li><p>Why might recall be a more important metric than precision for the ‘malignant’ class in this specific medical context?</p></li>
+<li><p>Compite the “report”: Precission, Recall, F1-Score</p></li>
 </ol>
 </section>
 </div>
@@ -2026,17 +2184,17 @@ Confusion Matrix:
 </section>
 </section>
 <section id="final-exercises">
-<h2><span class="section-number">6.4. </span>Final Exercises<a class="headerlink" href="#final-exercises" title="Link to this heading">#</a></h2>
-<div class="exercise admonition" id="lectures/05-LogisticRegression/LogisticRegression-exercise-2">
+<h2><span class="section-number">6.5. </span>Final Exercises<a class="headerlink" href="#final-exercises" title="Link to this heading">#</a></h2>
+<div class="exercise admonition" id="lectures/05-LogisticRegression/LogisticRegression-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6.3 </span> (Impact of Test Size)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.4 </span> (Impact of Test Size)</p>
 <section id="exercise-content">
 <p>Go back to <strong>Step 2: Split the Data</strong>. Change the <code class="docutils literal notranslate"><span class="pre">test_size</span></code> from <code class="docutils literal notranslate"><span class="pre">0.2</span></code> to <code class="docutils literal notranslate"><span class="pre">0.3</span></code> (meaning 30% of the data will be used for testing). Re-run all the subsequent cells. Did the model’s accuracy on the test set change? Why do you think this might happen?</p>
 </section>
 </div>
-<div class="exercise admonition" id="lectures/05-LogisticRegression/LogisticRegression-exercise-3">
+<div class="exercise admonition" id="lectures/05-LogisticRegression/LogisticRegression-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6.4 </span> (Predicting a Single Observation)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.5 </span> (Predicting a Single Observation)</p>
 <section id="exercise-content">
 <p>Imagine you have a new tumor with the characteristics of the first row of our original dataset. Use the trained <code class="docutils literal notranslate"><span class="pre">model</span></code> and <code class="docutils literal notranslate"><span class="pre">scaler</span></code> to predict whether this single tumor is malignant or benign.</p>
 <p><strong>Hint</strong>: You will need to select the first row from <code class="docutils literal notranslate"><span class="pre">X</span></code>, reshape it, scale it, and then use <code class="docutils literal notranslate"><span class="pre">model.predict()</span></code> and <code class="docutils literal notranslate"><span class="pre">model.predict_proba()</span></code>.</p>
@@ -2133,17 +2291,21 @@ Confusion Matrix:
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-why-not-linear-regression-for-classification">6.1. Motivation: Why Not Linear Regression for Classification?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-core-component-the-sigmoid-function">6.2. The Core Component: The Sigmoid Function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-example-breast-cancer-tumor-classification">6.3. Practical Example: Breast Cancer Tumor Classification</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-load-and-explore-the-data">6.3.1. Step 1: Load and Explore the Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-split-the-data">6.3.2. Step 2: Split the Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-train-the-logistic-regression-model">6.3.3. Step 3: Train the Logistic Regression Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-evaluate-the-model">6.3.4. Step 4: Evaluate the Model</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-the-results">6.3.4.1. Interpreting the Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-cost-function">6.3. What is the cost function?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-descent-derivation">6.3.1. Gradient descent derivation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-example-breast-cancer-tumor-classification">6.4. Practical Example: Breast Cancer Tumor Classification</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-load-and-explore-the-data">6.4.1. Step 1: Load and Explore the Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-split-the-data">6.4.2. Step 2: Split the Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-train-the-logistic-regression-model">6.4.3. Step 3: Train the Logistic Regression Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-evaluate-the-model">6.4.4. Step 4: Evaluate the Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-the-results">6.4.4.1. Interpreting the Results</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-exercises">6.4. Final Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-exercises">6.5. Final Exercises</a></li>
 </ul>
   </nav></div>
 
