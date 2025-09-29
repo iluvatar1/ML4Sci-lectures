@@ -95,7 +95,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="7. Python Review:" href="../01-reviewPython/PythonReview.html" />
+    <link rel="next" title="7. Neural Networks Introduction" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html" />
     <link rel="prev" title="5. Linear Regression" href="../04-LinearRegression/LinearRegression.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -223,12 +223,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../04-LinearRegression/LinearRegression.html">5. Linear Regression</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Support Vector Machines</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Neural Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">7. Neural Networks Introduction</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/PythonReview.html">7. Python Review:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">8. Python Programming (very fast) Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">9. Intro Python II: python data structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">10. Pandas for data cleaning and analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/PythonReview.html">8. Python Review:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">9. Python Programming (very fast) Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">10. Intro Python II: python data structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">11. Pandas for data cleaning and analysis</a></li>
 </ul>
 
     </div>
@@ -654,21 +658,21 @@ $<span class="math notranslate nohighlight">\(
 <p>This is the so-called hard-margin classifier. The actual hyperplane might not always exists, like in the case of the “circular boundary”.</p>
 <p><strong>Soft-margin</strong></p>
 <p>When there is not linear (hyperplane boundary), a hinge-loss function is introduced,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-da95b9ee-bea0-4ce8-bed7-97825f306cf7">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-da95b9ee-bea0-4ce8-bed7-97825f306cf7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cca394d9-d844-47d1-8857-5a10e7b3d6f9">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-cca394d9-d844-47d1-8857-5a10e7b3d6f9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \max(0, 1 - y_i(w\cdot x_i - b)),
 \end{equation}\]</div>
 <p>This function is 0 if the constrain is sattisfied, otherwise its value is proportional to the distance to the margin. This also allows for some misclassification, but this also makes the method less sentitive to outliers. The goal now is to minimize</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9a9b3bcf-6ce7-4f4e-9e15-81127ddb9474">
-<span class="eqno">(6.2)<a class="headerlink" href="#equation-9a9b3bcf-6ce7-4f4e-9e15-81127ddb9474" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-060f868b-9a15-41cf-b420-6357f9217384">
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-060f868b-9a15-41cf-b420-6357f9217384" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \|\mathbf{w}\|^{2} 
 + C \left[ \frac{1}{n} \sum_{i=1}^{n} 
 \max \bigl(0,\, 1 - y_i(\mathbf{w}^\top \mathbf{x}_i - b)\bigr) \right],
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(C \lt 0\)</span> represents the trade-off between increasing the margin size and ansuring that <span class="math notranslate nohighlight">\(x_i\)</span> ies on the correct size of the boundary.</p>
 <p>In this case, soft-margin SVM introduces slack variables <span class="math notranslate nohighlight">\(\zeta_i\)</span> and penalty <span class="math notranslate nohighlight">\(C\)</span>, and the problem becomes</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2f059a8f-29fe-4463-94a5-dd7072c018eb">
-<span class="eqno">(6.3)<a class="headerlink" href="#equation-2f059a8f-29fe-4463-94a5-dd7072c018eb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ad2f7467-4380-4642-b383-c354749d2733">
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-ad2f7467-4380-4642-b383-c354749d2733" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{aligned}
 \min_{\mathbf{w},\, b,\, \boldsymbol{\zeta}} \quad 
 &amp; \|\mathbf{w}\|_{2}^{2} + C \sum_{i=1}^{n} \zeta_i \\[6pt]
@@ -1191,11 +1195,11 @@ Goal: Classify tumors as malignant/benign using 30 morphological features.</p>
       </div>
     </a>
     <a class="right-next"
-       href="../01-reviewPython/PythonReview.html"
+       href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Python Review:</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Neural Networks Introduction</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
