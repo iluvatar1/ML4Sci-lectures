@@ -1,0 +1,83 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.13/x64/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 154, in wrapped
+    asyncio.get_running_loop()
+RuntimeError: no running event loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.13/x64/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/hostedtoolcache/Python/3.11.13/x64/lib/python3.11/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.13/x64/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 158, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.13/x64/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.13/x64/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/opt/hostedtoolcache/Python/3.11.13/x64/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.11.13/x64/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import SGDClassifier
+from sklearn.metrics import log_loss
+
+
+class LogisticRegressionSGD:
+    def __init__(self, learning_rate=0.01, max_iterations=1000):
+        self.learning_rate = learning_rate
+        self.max_iterations = max_iterations
+        self.model = None
+        self.costs = []
+
+    def fit(self, X, y):
+# YOUR CODE HERE
+
+
+    def predict(self, X):
+        return self.model.predict(X)
+
+    def predict_proba(self, X):
+        return self.model.predict_proba(X)[:, 1]
+
+
+# Example usage:
+if __name__ == "__main__":
+    np.random.seed(42)
+    X = np.random.randn(100, 2)
+    y = (X[:, 0] + X[:, 1] > 0).astype(int)
+
+    model_sgd = LogisticRegressionSGD(learning_rate=0.1, max_iterations=1000)
+    model_sgd.fit(X, y)
+
+    predictions = model_sgd.predict(X)
+    probabilities = model_sgd.predict_proba(X)
+
+    print(f"Accuracy: {np.mean(predictions == y):.4f}")
+
+    # Plot cost function
+    plt.figure(figsize=(10, 6))
+    plt.plot(model_sgd.costs, label="SGDClassifier")
+    plt.title("Cost Function Over Training (SGD)")
+    plt.xlabel("Iterations")
+    plt.ylabel("Cost (Log-loss)")
+    plt.legend()
+    plt.show()
+
+------------------
+
+
+  [36mCell[39m[36m [39m[32mIn[6][39m[32m, line 18[39m
+[31m    [39m[31mdef predict(self, X):[39m
+    ^
+[31mIndentationError[39m[31m:[39m expected an indented block after function definition on line 14
+
+

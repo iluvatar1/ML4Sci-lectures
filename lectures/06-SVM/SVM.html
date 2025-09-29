@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6. Support Vector Machines &#8212; Introduction to Machine Learning for Science</title>
+    <title>7. Support Vector Machines &#8212; Introduction to Machine Learning for Science</title>
   
   
   
@@ -95,8 +95,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="7. Neural Networks Introduction" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html" />
-    <link rel="prev" title="5. Linear Regression" href="../04-LinearRegression/LinearRegression.html" />
+    <link rel="next" title="8. Neural Networks Introduction" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html" />
+    <link rel="prev" title="6. An Introduction to Logistic Regression" href="../05-LogisticRegression/LogisticRegression.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -221,18 +221,19 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supervised learning</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../04-LinearRegression/LinearRegression.html">5. Linear Regression</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Support Vector Machines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-LogisticRegression/LogisticRegression.html">6. An Introduction to Logistic Regression</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Support Vector Machines</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Neural Networks</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">7. Neural Networks Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.html">8. Neural Networks Introduction</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/PythonReview.html">8. Python Review:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">9. Python Programming (very fast) Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">10. Intro Python II: python data structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">11. Pandas for data cleaning and analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/PythonReview.html">9. Python Review:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">10. Python Programming (very fast) Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">11. Intro Python II: python data structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">12. Pandas for data cleaning and analysis</a></li>
 </ul>
 
     </div>
@@ -495,28 +496,28 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-brief-history-of-the-support-vector-machine-svm">6.1. A Brief History of the Support Vector Machine (SVM)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-why-support-vector-machines">6.2. Motivation: Why Support Vector Machines?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#svm-fundamentals">6.3. SVM Fundamentals</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-margin">6.3.1. Visualizing the Margin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-brief-history-of-the-support-vector-machine-svm">7.1. A Brief History of the Support Vector Machine (SVM)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-why-support-vector-machines">7.2. Motivation: Why Support Vector Machines?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#svm-fundamentals">7.3. SVM Fundamentals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-margin">7.3.1. Visualizing the Margin</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-with-other-methods">6.4. Comparison with Other Methods</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#svm-vs-logistic-regression">6.4.1. SVM vs. Logistic Regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-with-other-methods">7.4. Comparison with Other Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#svm-vs-logistic-regression">7.4.1. SVM vs. Logistic Regression</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-kernel-trick-handling-non-linear-data">6.5. The Kernel Trick: Handling Non-Linear Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-more-complex-boundary">6.6. A more complex boundary</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-role-of-hyper-parameters">6.6.1. Interactive role of hyper parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-kernel-trick-handling-non-linear-data">7.5. The Kernel Trick: Handling Non-Linear Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-more-complex-boundary">7.6. A more complex boundary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-role-of-hyper-parameters">7.6.1. Interactive role of hyper parameters</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-in-basic-sciences">6.7. Applications in Basic Sciences</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biochemistry-enzyme-substrate-classification">6.7.1. Biochemistry: Enzyme Substrate Classification</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectroscopy-material-phase-classification">6.7.2. Spectroscopy: Material Phase Classification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-in-basic-sciences">7.7. Applications in Basic Sciences</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biochemistry-enzyme-substrate-classification">7.7.1. Biochemistry: Enzyme Substrate Classification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectroscopy-material-phase-classification">7.7.2. Spectroscopy: Material Phase Classification</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-scikit-pipeline">6.8. EXTRA: scikit pipeline</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-support-vector-machines-svm-with-model-explainability-shap">6.9. EXTRA: Support Vector Machines (SVM) with Model Explainability (SHAP)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-scikit-pipeline">7.8. EXTRA: scikit pipeline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-support-vector-machines-svm-with-model-explainability-shap">7.9. EXTRA: Support Vector Machines (SVM) with Model Explainability (SHAP)</a></li>
 </ul>
             </nav>
         </div>
@@ -529,9 +530,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="support-vector-machines">
-<h1><span class="section-number">6. </span>Support Vector Machines<a class="headerlink" href="#support-vector-machines" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">7. </span>Support Vector Machines<a class="headerlink" href="#support-vector-machines" title="Link to this heading">#</a></h1>
 <section id="a-brief-history-of-the-support-vector-machine-svm">
-<h2><span class="section-number">6.1. </span>A Brief History of the Support Vector Machine (SVM)<a class="headerlink" href="#a-brief-history-of-the-support-vector-machine-svm" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.1. </span>A Brief History of the Support Vector Machine (SVM)<a class="headerlink" href="#a-brief-history-of-the-support-vector-machine-svm" title="Link to this heading">#</a></h2>
 <p>The Support Vector Machine (SVM) algorithm has a different lineage than statistically-rooted methods like logistic regression. Its development is a story of deep theoretical work on learning theory and optimization, culminating in a practical and powerful algorithm that dominated machine learning for many years.</p>
 <p>Here is a timeline of its key developments:</p>
 <ul class="simple">
@@ -576,7 +577,7 @@ document.write(`
 </ul>
 </section>
 <section id="motivation-why-support-vector-machines">
-<h2><span class="section-number">6.2. </span>Motivation: Why Support Vector Machines?<a class="headerlink" href="#motivation-why-support-vector-machines" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.2. </span>Motivation: Why Support Vector Machines?<a class="headerlink" href="#motivation-why-support-vector-machines" title="Link to this heading">#</a></h2>
 <p>Support Vector Machines (SVMs) are a powerful class of supervised learning algorithms used for classification and regression tasks. While models like logistic regression are probabilistic, SVMs are deterministic and based on geometrical properties of the data. The core idea behind SVMs is to find an optimal hyperplane that best separates different classes of data points. This ‘optimality’ is achieved by maximizing the margin, which is the distance between the hyperplane and the closest data points from each class. These closest points are called <strong>support vectors</strong>, and they are the critical elements of the training data that define the decision boundary.</p>
 <ul class="simple">
 <li><p>Maximizes <strong>margin</strong> → better generalization.</p></li>
@@ -643,7 +644,7 @@ document.write(`
 </div>
 </section>
 <section id="svm-fundamentals">
-<h2><span class="section-number">6.3. </span>SVM Fundamentals<a class="headerlink" href="#svm-fundamentals" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.3. </span>SVM Fundamentals<a class="headerlink" href="#svm-fundamentals" title="Link to this heading">#</a></h2>
 <p>SVM finds the hyperplane that maximizes the margin (distance to nearest data points of each class). These nearest points are called support vectors.</p>
 <p>Given a dataset <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> with <span class="math notranslate nohighlight">\(y_i \in \{-1, 1\}\)</span>, SVM solves:
 $<span class="math notranslate nohighlight">\(
@@ -658,21 +659,21 @@ $<span class="math notranslate nohighlight">\(
 <p>This is the so-called hard-margin classifier. The actual hyperplane might not always exists, like in the case of the “circular boundary”.</p>
 <p><strong>Soft-margin</strong></p>
 <p>When there is not linear (hyperplane boundary), a hinge-loss function is introduced,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cca394d9-d844-47d1-8857-5a10e7b3d6f9">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-cca394d9-d844-47d1-8857-5a10e7b3d6f9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c486cc6e-4868-41d5-9332-c26bfebe6c69">
+<span class="eqno">(7.1)<a class="headerlink" href="#equation-c486cc6e-4868-41d5-9332-c26bfebe6c69" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \max(0, 1 - y_i(w\cdot x_i - b)),
 \end{equation}\]</div>
 <p>This function is 0 if the constrain is sattisfied, otherwise its value is proportional to the distance to the margin. This also allows for some misclassification, but this also makes the method less sentitive to outliers. The goal now is to minimize</p>
-<div class="amsmath math notranslate nohighlight" id="equation-060f868b-9a15-41cf-b420-6357f9217384">
-<span class="eqno">(6.2)<a class="headerlink" href="#equation-060f868b-9a15-41cf-b420-6357f9217384" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a5afdf62-3f1d-4ce0-8879-05617068ffb0">
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-a5afdf62-3f1d-4ce0-8879-05617068ffb0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \|\mathbf{w}\|^{2} 
 + C \left[ \frac{1}{n} \sum_{i=1}^{n} 
 \max \bigl(0,\, 1 - y_i(\mathbf{w}^\top \mathbf{x}_i - b)\bigr) \right],
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(C \lt 0\)</span> represents the trade-off between increasing the margin size and ansuring that <span class="math notranslate nohighlight">\(x_i\)</span> ies on the correct size of the boundary.</p>
 <p>In this case, soft-margin SVM introduces slack variables <span class="math notranslate nohighlight">\(\zeta_i\)</span> and penalty <span class="math notranslate nohighlight">\(C\)</span>, and the problem becomes</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ad2f7467-4380-4642-b383-c354749d2733">
-<span class="eqno">(6.3)<a class="headerlink" href="#equation-ad2f7467-4380-4642-b383-c354749d2733" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a82fce7f-833e-4a36-8092-5c076498a62b">
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-a82fce7f-833e-4a36-8092-5c076498a62b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{aligned}
 \min_{\mathbf{w},\, b,\, \boldsymbol{\zeta}} \quad 
 &amp; \|\mathbf{w}\|_{2}^{2} + C \sum_{i=1}^{n} \zeta_i \\[6pt]
@@ -685,13 +686,13 @@ $<span class="math notranslate nohighlight">\(
 \end{equation}\]</div>
 <div class="exercise admonition" id="lectures/06-SVM/SVM-exercise-0">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 7.1 </span></p>
 <section id="exercise-content">
 <p>Derive the dual form of the SVM optimization problem and explain the role of Lagrange multipliers.</p>
 </section>
 </div>
 <section id="visualizing-the-margin">
-<h3><span class="section-number">6.3.1. </span>Visualizing the Margin<a class="headerlink" href="#visualizing-the-margin" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.3.1. </span>Visualizing the Margin<a class="headerlink" href="#visualizing-the-margin" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -738,7 +739,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 <div class="exercise admonition" id="lectures/06-SVM/SVM-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6.2 </span> (Exploring the Margin)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 7.2 </span> (Exploring the Margin)</p>
 <section id="exercise-content">
 <ol class="arabic simple">
 <li><p>Modify the <code class="docutils literal notranslate"><span class="pre">C</span></code> parameter in the <code class="docutils literal notranslate"><span class="pre">svm.SVC</span></code> function in the code above. What do you observe about the margin and the number of support vectors when you use a very small <code class="docutils literal notranslate"><span class="pre">C</span></code> (e.g., 0.01) versus a very large <code class="docutils literal notranslate"><span class="pre">C</span></code> (e.g., 10000)?</p></li>
@@ -752,9 +753,9 @@ $<span class="math notranslate nohighlight">\(
 </section>
 </section>
 <section id="comparison-with-other-methods">
-<h2><span class="section-number">6.4. </span>Comparison with Other Methods<a class="headerlink" href="#comparison-with-other-methods" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.4. </span>Comparison with Other Methods<a class="headerlink" href="#comparison-with-other-methods" title="Link to this heading">#</a></h2>
 <section id="svm-vs-logistic-regression">
-<h3><span class="section-number">6.4.1. </span>SVM vs. Logistic Regression<a class="headerlink" href="#svm-vs-logistic-regression" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.4.1. </span>SVM vs. Logistic Regression<a class="headerlink" href="#svm-vs-logistic-regression" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Feature</p></th>
@@ -790,7 +791,7 @@ $<span class="math notranslate nohighlight">\(
 </section>
 </section>
 <section id="the-kernel-trick-handling-non-linear-data">
-<h2><span class="section-number">6.5. </span>The Kernel Trick: Handling Non-Linear Data<a class="headerlink" href="#the-kernel-trick-handling-non-linear-data" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.5. </span>The Kernel Trick: Handling Non-Linear Data<a class="headerlink" href="#the-kernel-trick-handling-non-linear-data" title="Link to this heading">#</a></h2>
 <p>What if the data is not linearly separable? This is where the <strong>kernel trick</strong> comes in. The kernel trick is a powerful technique that allows SVMs to classify non-linear data.  It works by mapping the input data into a higher-dimensional space where a linear separator can be found. This is done implicitly, without ever having to compute the coordinates of the data in this higher-dimensional space, which is computationally efficient.</p>
 <p>Commonly used kernels include:</p>
 <ul class="simple">
@@ -851,7 +852,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </section>
 <section id="a-more-complex-boundary">
-<h2><span class="section-number">6.6. </span>A more complex boundary<a class="headerlink" href="#a-more-complex-boundary" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.6. </span>A more complex boundary<a class="headerlink" href="#a-more-complex-boundary" title="Link to this heading">#</a></h2>
 <div class="cell tag_hide-input docutils container">
 <details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -904,7 +905,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 <div class="exercise admonition" id="lectures/06-SVM/SVM-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6.3 </span> (Compare SVM vs Logistic Regression)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 7.3 </span> (Compare SVM vs Logistic Regression)</p>
 <section id="exercise-content">
 <p>Fit a logistic regression model on the same moons dataset. Compare accuracy and decision boundary.</p>
 </section>
@@ -935,7 +936,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <section id="interactive-role-of-hyper-parameters">
-<h3><span class="section-number">6.6.1. </span>Interactive role of hyper parameters<a class="headerlink" href="#interactive-role-of-hyper-parameters" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.6.1. </span>Interactive role of hyper parameters<a class="headerlink" href="#interactive-role-of-hyper-parameters" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setup</span>
@@ -1014,7 +1015,7 @@ $<span class="math notranslate nohighlight">\(
 </section>
 </section>
 <section id="applications-in-basic-sciences">
-<h2><span class="section-number">6.7. </span>Applications in Basic Sciences<a class="headerlink" href="#applications-in-basic-sciences" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.7. </span>Applications in Basic Sciences<a class="headerlink" href="#applications-in-basic-sciences" title="Link to this heading">#</a></h2>
 <p>SVMs have found numerous applications in various scientific domains:</p>
 <ul class="simple">
 <li><p><strong>Bioinformatics:</strong> SVMs are widely used for tasks like protein classification, gene expression analysis, and cancer classification. Their ability to handle high-dimensional data makes them suitable for analyzing genomic and proteomic datasets.</p></li>
@@ -1022,19 +1023,19 @@ $<span class="math notranslate nohighlight">\(
 <li><p><strong>Chemistry:</strong> SVMs can be used in cheminformatics to predict the properties of molecules, such as their bioactivity or toxicity, based on their chemical structure.</p></li>
 </ul>
 <section id="biochemistry-enzyme-substrate-classification">
-<h3><span class="section-number">6.7.1. </span>Biochemistry: Enzyme Substrate Classification<a class="headerlink" href="#biochemistry-enzyme-substrate-classification" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.7.1. </span>Biochemistry: Enzyme Substrate Classification<a class="headerlink" href="#biochemistry-enzyme-substrate-classification" title="Link to this heading">#</a></h3>
 <p>Features: 3D molecular descriptors (e.g., hydrophobicity, size, charge).
 Task: Classify if a molecule is a substrate (yes/no) for an enzyme.
 Why SVM? High-dim, small samples, non-linear relationships</p>
 </section>
 <section id="spectroscopy-material-phase-classification">
-<h3><span class="section-number">6.7.2. </span>Spectroscopy: Material Phase Classification<a class="headerlink" href="#spectroscopy-material-phase-classification" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.7.2. </span>Spectroscopy: Material Phase Classification<a class="headerlink" href="#spectroscopy-material-phase-classification" title="Link to this heading">#</a></h3>
 <p>Features: Raman or IR intensity at 1000+ wavenumbers.
 Task: Classify solid vs. liquid phase.
 Why SVM? RBF kernel captures subtle spectral shifts.</p>
 <div class="exercise admonition" id="lectures/06-SVM/SVM-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6.4 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 7.4 </span></p>
 <section id="exercise-content">
 <p>Dataset: breast_cancer from sklearn (classic biomedical dataset).
 Goal: Classify tumors as malignant/benign using 30 morphological features.</p>
@@ -1050,7 +1051,7 @@ Goal: Classify tumors as malignant/benign using 30 morphological features.</p>
 </section>
 </section>
 <section id="extra-scikit-pipeline">
-<h2><span class="section-number">6.8. </span>EXTRA: scikit pipeline<a class="headerlink" href="#extra-scikit-pipeline" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.8. </span>EXTRA: scikit pipeline<a class="headerlink" href="#extra-scikit-pipeline" title="Link to this heading">#</a></h2>
 <p>A full scikit pipeline allows you to estimate the best hyper parameters for a given problem. It uses <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html">https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1136,7 +1137,7 @@ Goal: Classify tumors as malignant/benign using 30 morphological features.</p>
 </div>
 <div class="exercise admonition" id="lectures/06-SVM/SVM-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6.5 </span> (Build Your Own Pipeline)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 7.5 </span> (Build Your Own Pipeline)</p>
 <section id="exercise-content">
 <p>Use make_classification to generate a dataset with 100 features, 500 samples, and non-linear structure.</p>
 </section>
@@ -1150,7 +1151,7 @@ Goal: Classify tumors as malignant/benign using 30 morphological features.</p>
 </div>
 </section>
 <section id="extra-support-vector-machines-svm-with-model-explainability-shap">
-<h2><span class="section-number">6.9. </span>EXTRA: Support Vector Machines (SVM) with Model Explainability (SHAP)<a class="headerlink" href="#extra-support-vector-machines-svm-with-model-explainability-shap" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.9. </span>EXTRA: Support Vector Machines (SVM) with Model Explainability (SHAP)<a class="headerlink" href="#extra-support-vector-machines-svm-with-model-explainability-shap" title="Link to this heading">#</a></h2>
 <p>Please look at <a class="reference external" href="https://shap.readthedocs.io/en/latest/index.html">https://shap.readthedocs.io/en/latest/index.html</a></p>
 </section>
 </section>
@@ -1186,12 +1187,12 @@ Goal: Classify tumors as malignant/benign using 30 morphological features.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../04-LinearRegression/LinearRegression.html"
+       href="../05-LogisticRegression/LogisticRegression.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Linear Regression</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>An Introduction to Logistic Regression</p>
       </div>
     </a>
     <a class="right-next"
@@ -1199,7 +1200,7 @@ Goal: Classify tumors as malignant/benign using 30 morphological features.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Neural Networks Introduction</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Neural Networks Introduction</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1219,28 +1220,28 @@ Goal: Classify tumors as malignant/benign using 30 morphological features.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-brief-history-of-the-support-vector-machine-svm">6.1. A Brief History of the Support Vector Machine (SVM)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-why-support-vector-machines">6.2. Motivation: Why Support Vector Machines?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#svm-fundamentals">6.3. SVM Fundamentals</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-margin">6.3.1. Visualizing the Margin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-brief-history-of-the-support-vector-machine-svm">7.1. A Brief History of the Support Vector Machine (SVM)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-why-support-vector-machines">7.2. Motivation: Why Support Vector Machines?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#svm-fundamentals">7.3. SVM Fundamentals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-margin">7.3.1. Visualizing the Margin</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-with-other-methods">6.4. Comparison with Other Methods</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#svm-vs-logistic-regression">6.4.1. SVM vs. Logistic Regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-with-other-methods">7.4. Comparison with Other Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#svm-vs-logistic-regression">7.4.1. SVM vs. Logistic Regression</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-kernel-trick-handling-non-linear-data">6.5. The Kernel Trick: Handling Non-Linear Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-more-complex-boundary">6.6. A more complex boundary</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-role-of-hyper-parameters">6.6.1. Interactive role of hyper parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-kernel-trick-handling-non-linear-data">7.5. The Kernel Trick: Handling Non-Linear Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-more-complex-boundary">7.6. A more complex boundary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-role-of-hyper-parameters">7.6.1. Interactive role of hyper parameters</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-in-basic-sciences">6.7. Applications in Basic Sciences</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biochemistry-enzyme-substrate-classification">6.7.1. Biochemistry: Enzyme Substrate Classification</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectroscopy-material-phase-classification">6.7.2. Spectroscopy: Material Phase Classification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-in-basic-sciences">7.7. Applications in Basic Sciences</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biochemistry-enzyme-substrate-classification">7.7.1. Biochemistry: Enzyme Substrate Classification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectroscopy-material-phase-classification">7.7.2. Spectroscopy: Material Phase Classification</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-scikit-pipeline">6.8. EXTRA: scikit pipeline</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-support-vector-machines-svm-with-model-explainability-shap">6.9. EXTRA: Support Vector Machines (SVM) with Model Explainability (SHAP)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-scikit-pipeline">7.8. EXTRA: scikit pipeline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-support-vector-machines-svm-with-model-explainability-shap">7.9. EXTRA: Support Vector Machines (SVM) with Model Explainability (SHAP)</a></li>
 </ul>
   </nav></div>
 
