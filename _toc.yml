@@ -29,7 +29,7 @@ parts:
     chapters:
       - file: lectures/07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.ipynb
   #     - file: lectures/07-IntroNeuralNetworks/BackPropagation.ipynb
-  #     - file: lectures/07-IntroNeuralNetworks/DeepLearning.ipynb
+      - file: lectures/07-IntroNeuralNetworks/DeepLearning.ipynb
   # - caption: Introduction to LLM and some useful tools
   #   numbered: true
   #   chapters:
