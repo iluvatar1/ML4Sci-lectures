@@ -510,8 +510,8 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-core-of-deep-learning-deep-neural-networks">9.3. The Core of Deep Learning: Deep Neural Networks</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mathematics">9.3.1. The Mathematics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-requirements">9.3.2. Compute requirements:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-activation-functions">9.3.3. Common Activation Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-activation-functions">9.3.2. Common Activation Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-requirements">9.3.3. Compute requirements:</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-from-mistakes-backpropagation">9.4. Learning from Mistakes: Backpropagation</a><ul class="nav section-nav flex-column">
@@ -615,11 +615,11 @@ document.write(`
 <section id="neural-networks-structure-and-nesting">
 <h2><span class="section-number">9.2. </span>Neural Networks: Structure and Nesting<a class="headerlink" href="#neural-networks-structure-and-nesting" title="Link to this heading">#</a></h2>
 <p>Shallow neural network:</p>
-<a class="bg-primary reference internal image-reference" href="../../_images/nn-shallow.png"><img alt="shallow" class="bg-primary align-center" src="../../_images/nn-shallow.png" style="width: 80px;" /></a>
+<a class="bg-primary reference internal image-reference" href="../../_images/nn-shallow.png"><img alt="shallow" class="bg-primary align-center" src="../../_images/nn-shallow.png" style="width: 80%;" /></a>
 <section id="what-is-a-deep-neural-network">
 <h3><span class="section-number">9.2.1. </span>What is a (Deep) Neural Network?<a class="headerlink" href="#what-is-a-deep-neural-network" title="Link to this heading">#</a></h3>
 <p>A function composed of <strong>layers</strong> of interconnected neurons:</p>
-<a class="bg-primary reference internal image-reference" href="../../_images/nn.svg"><img alt="asdas" class="bg-primary align-center" src="../../_images/nn.svg" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../../_images/nn.svg"><img alt="asdas" class="align-center" src="../../_images/nn.svg" style="width: 100%;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
@@ -643,6 +643,43 @@ $<span class="math notranslate nohighlight">\(z = \sum w_i x_i + b \to a = \sigm
 <p>A pytorch implementation</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data generation</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="c1"># 1. Generate X data (input/features)</span>
+<span class="c1"># Create 1000 evenly spaced points from 0 to 2*pi</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+<span class="c1"># Reshape X to be a column vector (1000 samples, 1 feature)</span>
+<span class="c1"># PyTorch/NN models typically expect a 2D input array (samples, features)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># 2. Generate y data (output/labels)</span>
+<span class="c1"># Base sine function</span>
+<span class="n">y_base</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">X</span>
+
+<span class="c1"># Add noise (e.g., normal distribution noise)</span>
+<span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+<span class="c1"># Final noisy y data</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y_base</span> <span class="o">+</span> <span class="n">noise</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>torch
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/bin/bash: line 1: uv: command not found
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">torch.optim</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">optim</span>
@@ -662,7 +699,7 @@ $<span class="math notranslate nohighlight">\(z = \sum w_i x_i + b \to a = \sigm
 <span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 
 <span class="n">loss_fn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
-<span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span> <span class="c1"># Is lr useful?</span>
 
 <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
     <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
@@ -678,7 +715,7 @@ $<span class="math notranslate nohighlight">\(z = \sum w_i x_i + b \to a = \sigm
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">torch.optim</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">optim</span>
@@ -751,52 +788,8 @@ $<span class="math notranslate nohighlight">\(z = \sum w_i x_i + b \to a = \sigm
 <li><p><span class="math notranslate nohighlight">\(g\)</span> is the activation function.</p></li>
 </ul>
 </section>
-<section id="compute-requirements">
-<h3><span class="section-number">9.3.2. </span>Compute requirements:<a class="headerlink" href="#compute-requirements" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>For dense (fully connected) layer: cost is O(nin×nout) multiplies per sample.</p></li>
-<li><p>For convolutional layer: cost depends on kernel size, input channels, output channels and spatial size — often more efficient than dense for images due to weight sharing.</p></li>
-<li><p>Memory: store activations for backward pass (unless using checkpointing).</p></li>
-<li><p>Training scales with dataset size, model size and number of epochs; GPUs / TPUs accelerate matrix ops.</p></li>
-</ul>
-<div class="cell tag_hide-input docutils container">
-<details class="admonition hide above-input">
-<summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
-<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://archive.ourworldindata.org/20251007-111536/grapher/exponential-growth-of-datapoints-used-to-train-notable-ai-systems.html?tab=chart&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 50%; height: 600px; border: 0px none;&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;web-share; clipboard-write&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-</div>
-</details>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
-<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://ourworldindata.org/grapher/hardware-and-energy-cost-to-train-notable-ai-systems?tab=chart&quot;</span> <span class="na">loading</span><span class="o">=</span><span class="s">&quot;lazy&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 50%; height: 600px; border: 0px none;&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;web-share; clipboard-write&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
-<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://ourworldindata.org/grapher/exponential-growth-of-computation-in-the-training-of-notable-ai-systems?tab=chart&quot;</span> <span class="na">loading</span><span class="o">=</span><span class="s">&quot;lazy&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 50%; height: 600px; border: 0px none;&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;web-share; clipboard-write&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<a class="bg-primary reference internal image-reference" href="https://iee.psu.edu/sites/default/files/styles/large_1200_2400_/public/image/total-server-electricity-consumption.png?itok=yNSLVfzC"><img alt="energy" class="bg-primary align-center" src="https://iee.psu.edu/sites/default/files/styles/large_1200_2400_/public/image/total-server-electricity-consumption.png?itok=yNSLVfzC" style="width: 60%;" /></a>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.technologyreview.com/2025/05/20/1116327/ai-energy-usage-climate-footprint-big-tech/">https://www.technologyreview.com/2025/05/20/1116327/ai-energy-usage-climate-footprint-big-tech/</a></p></li>
-<li><p><a class="reference external" href="https://www.nature.com/articles/d41586-025-00616-z">https://www.nature.com/articles/d41586-025-00616-z</a></p></li>
-</ul>
-</section>
 <section id="common-activation-functions">
-<h3><span class="section-number">9.3.3. </span>Common Activation Functions<a class="headerlink" href="#common-activation-functions" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">9.3.2. </span>Common Activation Functions<a class="headerlink" href="#common-activation-functions" title="Link to this heading">#</a></h3>
 <p>The most common activation functions are Sigmoid, Tanh, and <strong>ReLU (Rectified Linear Unit)</strong>. ReLU is the most popular choice for hidden layers in deep learning today because it helps mitigate a problem called the “vanishing gradient.”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -846,6 +839,50 @@ $<span class="math notranslate nohighlight">\(z = \sum w_i x_i + b \to a = \sigm
 </div>
 <p>Relu activation is normally used since it is easy to compute and also helps to control the vanishing gradient problem.</p>
 </section>
+<section id="compute-requirements">
+<h3><span class="section-number">9.3.3. </span>Compute requirements:<a class="headerlink" href="#compute-requirements" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>For dense (fully connected) layer: cost is O(nin×nout) multiplies per sample.</p></li>
+<li><p>For convolutional layer: cost depends on kernel size, input channels, output channels and spatial size — often more efficient than dense for images due to weight sharing.</p></li>
+<li><p>Memory: store activations for backward pass (unless using checkpointing).</p></li>
+<li><p>Training scales with dataset size, model size and number of epochs; GPUs / TPUs accelerate matrix ops.</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://archive.ourworldindata.org/20251007-111536/grapher/exponential-growth-of-datapoints-used-to-train-notable-ai-systems.html?tab=chart&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 100%; height: 600px; border: 0px none;&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;web-share; clipboard-write&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://ourworldindata.org/grapher/hardware-and-energy-cost-to-train-notable-ai-systems?tab=chart&quot;</span> <span class="na">loading</span><span class="o">=</span><span class="s">&quot;lazy&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 100%; height: 600px; border: 0px none;&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;web-share; clipboard-write&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://ourworldindata.org/grapher/exponential-growth-of-computation-in-the-training-of-notable-ai-systems?tab=chart&quot;</span> <span class="na">loading</span><span class="o">=</span><span class="s">&quot;lazy&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 100%; height: 600px; border: 0px none;&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;web-share; clipboard-write&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<a class="bg-primary reference internal image-reference" href="https://iee.psu.edu/sites/default/files/styles/large_1200_2400_/public/image/total-server-electricity-consumption.png?itok=yNSLVfzC"><img alt="energy" class="bg-primary align-center" src="https://iee.psu.edu/sites/default/files/styles/large_1200_2400_/public/image/total-server-electricity-consumption.png?itok=yNSLVfzC" style="width: 80%;" /></a>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.technologyreview.com/2025/05/20/1116327/ai-energy-usage-climate-footprint-big-tech/">https://www.technologyreview.com/2025/05/20/1116327/ai-energy-usage-climate-footprint-big-tech/</a></p></li>
+<li><p><a class="reference external" href="https://www.nature.com/articles/d41586-025-00616-z">https://www.nature.com/articles/d41586-025-00616-z</a></p></li>
+</ul>
+</section>
 </section>
 <section id="learning-from-mistakes-backpropagation">
 <h2><span class="section-number">9.4. </span>Learning from Mistakes: Backpropagation<a class="headerlink" href="#learning-from-mistakes-backpropagation" title="Link to this heading">#</a></h2>
@@ -860,7 +897,7 @@ $<span class="math notranslate nohighlight">\(z = \sum w_i x_i + b \to a = \sigm
 <p>The error <span class="math notranslate nohighlight">\(\delta\)</span> in a hidden layer <em>l</em> is calculated based on the errors in the next layer <em>l+1</em>:</p>
 <p><span class="math notranslate nohighlight">\(\delta^{(l)} = ((W^{(l+1)})^T \delta^{(l+1)}) \odot g'(z^{(l)})\)</span></p>
 <p>Where <span class="math notranslate nohighlight">\(\odot\)</span> is element-wise multiplication and <span class="math notranslate nohighlight">\(g'(z^{(l)})\)</span> is the derivative of the activation function.</p>
-<figure class="align-default" id="id1" style="width: 70%">
+<figure class="align-default" id="id1" style="width: 90%">
 <img alt="../../_images/SGD.png" src="../../_images/SGD.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 9.1 </span><span class="caption-text"><a class="reference external" href="https://introtodeeplearning.com/">https://introtodeeplearning.com/</a></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
@@ -887,7 +924,7 @@ $<span class="math notranslate nohighlight">\(z = \sum w_i x_i + b \to a = \sigm
 </section>
 <section id="how-complex-is-the-loss-landscape">
 <h3><span class="section-number">9.4.2. </span>How complex is the loss landscape?<a class="headerlink" href="#how-complex-is-the-loss-landscape" title="Link to this heading">#</a></h3>
-<figure class="align-default" id="id2" style="width: 45%">
+<figure class="align-default" id="id2" style="width: 70%">
 <img alt="../../_images/loss-01.png" src="../../_images/loss-01.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 9.2 </span><span class="caption-text">Visualizing the loss landscape of Neural nets, 2017, hao Li et. al. <a class="reference external" href="https://arxiv.org/abs/1712.09913">https://arxiv.org/abs/1712.09913</a> , <a class="github reference external" href="https://github.com/tomgoldstein/loss-landscape">tomgoldstein/loss-landscape</a></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
@@ -898,7 +935,7 @@ $<span class="math notranslate nohighlight">\(z = \sum w_i x_i + b \to a = \sigm
 <li><p><a class="reference external" href="https://www.telesens.co/loss-landscape-viz/viewer.html">https://www.telesens.co/loss-landscape-viz/viewer.html</a>, from <a class="reference external" href="https://www.cs.umd.edu/~tomg/projects/landscapes/">https://www.cs.umd.edu/~tomg/projects/landscapes/</a></p></li>
 <li><p><a class="reference external" href="https://losslandscape.com/explorer">https://losslandscape.com/explorer</a></p></li>
 </ul>
-<figure class="align-default" id="id3" style="width: 45%">
+<figure class="align-default" id="id3" style="width: 70%">
 <img alt="../../_images/loss-02.png" src="../../_images/loss-02.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 9.3 </span><span class="caption-text"><a class="reference external" href="https://www.youtube.com/watch?v=NrO20Jb-hy0">https://www.youtube.com/watch?v=NrO20Jb-hy0</a></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
@@ -1465,8 +1502,8 @@ Used in NLP, Vision, Multimodal models. <a class="reference external" href="http
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-core-of-deep-learning-deep-neural-networks">9.3. The Core of Deep Learning: Deep Neural Networks</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mathematics">9.3.1. The Mathematics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-requirements">9.3.2. Compute requirements:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-activation-functions">9.3.3. Common Activation Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-activation-functions">9.3.2. Common Activation Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-requirements">9.3.3. Compute requirements:</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-from-mistakes-backpropagation">9.4. Learning from Mistakes: Backpropagation</a><ul class="nav section-nav flex-column">
