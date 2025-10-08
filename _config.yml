@@ -31,7 +31,7 @@ execute:
   allow_errors              : false # If `False`, when a code cell raises an error the execution is stopped, otherwise all cells are always run.
   stderr_output             : show  # One of 'show', 'remove', 'remove-warn', 'warn', 'error', 'severe'
   exclude_tags              : ["skip-execution"]
-
+  allow_html_output         : True
 # # Define the name of the latex output file for PDF builds
 # latex:
 #   latex_documents:
