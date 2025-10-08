@@ -95,7 +95,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="9. Python Review:" href="../01-reviewPython/PythonReview.html" />
+    <link rel="next" title="9. An Introduction to Deep Learning" href="DeepLearning.html" />
     <link rel="prev" title="7. Support Vector Machines" href="../06-SVM/SVM.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -227,13 +227,14 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Neural Networks</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Neural Networks Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DeepLearning.html">9. An Introduction to Deep Learning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/PythonReview.html">9. Python Review:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">10. Python Programming (very fast) Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">11. Intro Python II: python data structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">12. Pandas for data cleaning and analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/PythonReview.html">10. Python Review:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">11. Python Programming (very fast) Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">12. Intro Python II: python data structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">13. Pandas for data cleaning and analysis</a></li>
 </ul>
 
     </div>
@@ -774,29 +775,29 @@ Results after one step training:
 </ul>
 <p>But how to adjust the weights? There are several techniques based on the actual error <span class="math notranslate nohighlight">\(\Delta\)</span>.</p>
 <p>First, we will define a cost/loss function as the typical MSE</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0526cfa4-a70a-4cc5-8399-4231d1053d09">
-<span class="eqno">(8.1)<a class="headerlink" href="#equation-0526cfa4-a70a-4cc5-8399-4231d1053d09" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cb62046a-93d7-4cec-9b38-33f54b13f4a3">
+<span class="eqno">(8.1)<a class="headerlink" href="#equation-cb62046a-93d7-4cec-9b38-33f54b13f4a3" title="Permalink to this equation">#</a></span>\[\begin{equation}
 COST = \frac{1}{2} (\hat y - y)^2,
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat y\)</span> is the predicted value and <span class="math notranslate nohighlight">\(y\)</span> is the expected one.  Notice that we are not adding up because we only have one output.</p>
 <p>Second, we will apply gradient descent approximation to our problem, in order to improve our coefficients for our data. This means that we will propagate back the errors into the coefficients!</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8c4897b9-b4bd-45e4-a7a9-c52422587c32">
-<span class="eqno">(8.2)<a class="headerlink" href="#equation-8c4897b9-b4bd-45e4-a7a9-c52422587c32" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d4948679-f8d5-44f2-8b05-df78c0dc0c70">
+<span class="eqno">(8.2)<a class="headerlink" href="#equation-d4948679-f8d5-44f2-8b05-df78c0dc0c70" title="Permalink to this equation">#</a></span>\[\begin{equation}
 w_i' = w_i - \alpha \frac{\partial COST}{\partial w_i},
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\alpha\)</span> is the learning rate. Taking into account that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b006597b-7b03-40f7-9b57-9a3244382ce0">
-<span class="eqno">(8.3)<a class="headerlink" href="#equation-b006597b-7b03-40f7-9b57-9a3244382ce0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-492c03a0-fcc6-424c-9244-add9c41b6952">
+<span class="eqno">(8.3)<a class="headerlink" href="#equation-492c03a0-fcc6-424c-9244-add9c41b6952" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \hat y = \phi(z) = \frac{1}{1 + \exp(-z)},
 \end{equation}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-239c204d-827f-4a9b-9b00-d9df00af3010">
-<span class="eqno">(8.4)<a class="headerlink" href="#equation-239c204d-827f-4a9b-9b00-d9df00af3010" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2bd76703-1087-4b38-aeda-7b9f8473953a">
+<span class="eqno">(8.4)<a class="headerlink" href="#equation-2bd76703-1087-4b38-aeda-7b9f8473953a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z = \sum w_i x_i,
 \end{equation}\]</div>
 <p>then, by using the chain rule, we have</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a437d862-69ad-48e1-bb21-92fc3a5a9a05">
-<span class="eqno">(8.5)<a class="headerlink" href="#equation-a437d862-69ad-48e1-bb21-92fc3a5a9a05" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f5d5d4b2-e2c8-43f6-a579-a44baf447282">
+<span class="eqno">(8.5)<a class="headerlink" href="#equation-f5d5d4b2-e2c8-43f6-a579-a44baf447282" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial COST}{\partial w_i} = \frac{\partial COST}{\partial \hat y} \frac{\partial \hat y}{\partial z} \frac{\partial z}{\partial w_i} = (\hat y - y)\phi (1-\phi)x_i. 
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -958,11 +959,11 @@ There are more topics related to this that we have not used, like more layers, m
       </div>
     </a>
     <a class="right-next"
-       href="../01-reviewPython/PythonReview.html"
+       href="DeepLearning.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>Python Review:</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>An Introduction to Deep Learning</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
