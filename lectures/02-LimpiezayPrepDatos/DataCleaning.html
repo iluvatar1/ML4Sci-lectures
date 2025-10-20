@@ -954,19 +954,19 @@ disc_year: Discovery Year
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Our Raw Exoplanet Data (First 5 Rows):
-      pl_name  hostname discoverymethod  pl_orbper  pl_rade  pl_bmasse  \
-0  Kepler-6 b  Kepler-6         Transit   3.234700    11.07        NaN   
-1  Kepler-6 b  Kepler-6         Transit   3.234699      NaN        NaN   
-2  Kepler-6 b  Kepler-6         Transit   3.234699    13.06        NaN   
-3  Kepler-6 b  Kepler-6         Transit   3.234699    13.41        NaN   
-4  Kepler-6 b  Kepler-6         Transit   3.234699      NaN        NaN   
+      pl_name  hostname discoverymethod  pl_orbper    pl_rade  pl_bmasse  \
+0  Kepler-6 b  Kepler-6         Transit   3.234699        NaN        NaN   
+1  Kepler-6 b  Kepler-6         Transit   3.234699  13.410000        NaN   
+2  Kepler-6 b  Kepler-6         Transit   3.234694  13.316002        NaN   
+3  Kepler-6 b  Kepler-6         Transit   3.234723  14.830000  212.61900   
+4  Kepler-6 b  Kepler-6         Transit   3.234699  13.103321  205.63601   
 
    st_teff   st_rad  st_mass  disc_year  
-0   5826.0  1.08200    1.138       2009  
-1   5613.0  1.31474    0.990       2009  
-2   5640.0  1.29100    1.047       2009  
-3   5640.0  1.29100    1.047       2009  
-4   5647.0  1.39100    1.209       2009  
+0   5647.0  1.39100    1.209       2009  
+1   5640.0  1.29100    1.047       2009  
+2   5613.0  1.31474      NaN       2009  
+3   5647.0  1.39100    1.209       2009  
+4   5647.0  1.26100    1.114       2009  
 </pre></div>
 </div>
 </div>
@@ -1164,7 +1164,7 @@ memory usage: 3.0+ MB
       <td>False</td>
       <td>False</td>
       <td>False</td>
-      <td>False</td>
+      <td>True</td>
       <td>True</td>
       <td>False</td>
       <td>False</td>
@@ -1177,7 +1177,7 @@ memory usage: 3.0+ MB
       <td>False</td>
       <td>False</td>
       <td>False</td>
-      <td>True</td>
+      <td>False</td>
       <td>True</td>
       <td>False</td>
       <td>False</td>
@@ -1194,7 +1194,7 @@ memory usage: 3.0+ MB
       <td>True</td>
       <td>False</td>
       <td>False</td>
-      <td>False</td>
+      <td>True</td>
       <td>False</td>
     </tr>
     <tr>
@@ -1204,7 +1204,7 @@ memory usage: 3.0+ MB
       <td>False</td>
       <td>False</td>
       <td>False</td>
-      <td>True</td>
+      <td>False</td>
       <td>False</td>
       <td>False</td>
       <td>False</td>
@@ -1216,8 +1216,8 @@ memory usage: 3.0+ MB
       <td>False</td>
       <td>False</td>
       <td>False</td>
-      <td>True</td>
-      <td>True</td>
+      <td>False</td>
+      <td>False</td>
       <td>False</td>
       <td>False</td>
       <td>False</td>
@@ -1242,7 +1242,7 @@ memory usage: 3.0+ MB
       <td>False</td>
       <td>False</td>
       <td>False</td>
-      <td>False</td>
+      <td>True</td>
       <td>True</td>
       <td>False</td>
       <td>False</td>
@@ -1256,8 +1256,8 @@ memory usage: 3.0+ MB
       <td>False</td>
       <td>False</td>
       <td>False</td>
-      <td>False</td>
       <td>True</td>
+      <td>False</td>
       <td>False</td>
       <td>False</td>
       <td>False</td>
@@ -1282,8 +1282,8 @@ memory usage: 3.0+ MB
       <td>False</td>
       <td>False</td>
       <td>False</td>
-      <td>False</td>
       <td>True</td>
+      <td>False</td>
       <td>False</td>
       <td>False</td>
       <td>False</td>
@@ -1293,12 +1293,12 @@ memory usage: 3.0+ MB
       <td>False</td>
       <td>False</td>
       <td>False</td>
-      <td>True</td>
+      <td>False</td>
+      <td>False</td>
       <td>False</td>
       <td>True</td>
       <td>False</td>
       <td>False</td>
-      <td>True</td>
       <td>False</td>
     </tr>
   </tbody>
@@ -1360,28 +1360,28 @@ memory usage: 3.0+ MB
   <tbody>
     <tr>
       <th>0</th>
-      <td>3.234700</td>
-      <td>11.070</td>
+      <td>3.234699</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
       <td>3.234699</td>
-      <td>NaN</td>
+      <td>13.410000</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3.234699</td>
-      <td>13.060</td>
+      <td>3.234694</td>
+      <td>13.316002</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>3.234699</td>
-      <td>13.410</td>
+      <td>3.234723</td>
+      <td>14.830000</td>
     </tr>
     <tr>
       <th>4</th>
       <td>3.234699</td>
-      <td>NaN</td>
+      <td>13.103321</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1390,28 +1390,28 @@ memory usage: 3.0+ MB
     </tr>
     <tr>
       <th>38968</th>
-      <td>41.027950</td>
-      <td>4.690</td>
+      <td>41.028342</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>38969</th>
-      <td>41.028000</td>
-      <td>4.150</td>
+      <td>41.027950</td>
+      <td>4.690000</td>
     </tr>
     <tr>
       <th>38970</th>
-      <td>41.028064</td>
-      <td>3.939</td>
+      <td>41.028342</td>
+      <td>3.920000</td>
     </tr>
     <tr>
       <th>38971</th>
-      <td>41.029000</td>
-      <td>4.000</td>
+      <td>41.029020</td>
+      <td>4.460000</td>
     </tr>
     <tr>
       <th>38972</th>
-      <td>NaN</td>
-      <td>3.831</td>
+      <td>41.028000</td>
+      <td>4.150000</td>
     </tr>
   </tbody>
 </table>
@@ -1518,7 +1518,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e882fbf839aab4867166c726657978583c60d9d06d3d01fd95451ecc8f7f521d.png" src="../../_images/e882fbf839aab4867166c726657978583c60d9d06d3d01fd95451ecc8f7f521d.png" />
+<img alt="../../_images/df3313a687acf779cb4c2348c47cfb7a58566a02c9a8defc334e22bf63a9f3bc.png" src="../../_images/df3313a687acf779cb4c2348c47cfb7a58566a02c9a8defc334e22bf63a9f3bc.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1549,7 +1549,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/24fd634d2e2614af30ac188b258073bd60521dda6f911c733a9060a5a542fc24.png" src="../../_images/24fd634d2e2614af30ac188b258073bd60521dda6f911c733a9060a5a542fc24.png" />
+<img alt="../../_images/a10a4628d4237bea859a6f28ecbfd951bd70b33f6794a44991da24b2268d5280.png" src="../../_images/a10a4628d4237bea859a6f28ecbfd951bd70b33f6794a44991da24b2268d5280.png" />
 </div>
 </div>
 <p>Notice that the box plot shows many points far to the right. These are planets with very large radii. A log scale helps, but we can see that most planets are clustered in a smaller range. Let’s say, for a specific analysis, we want to focus only on planets that are somewhat similar to Earth, and we consider anything over 20 Earth radii to be a “super-giant” that we want to handle separately.</p>
@@ -1595,7 +1595,7 @@ Filtered DataFrame size: 38760
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ee423c710922e58ee6d2ec7a7942fcbfce47de3c07d80aa5b0f4f12db6db3a9b.png" src="../../_images/ee423c710922e58ee6d2ec7a7942fcbfce47de3c07d80aa5b0f4f12db6db3a9b.png" />
+<img alt="../../_images/e790a4b4c7582b5d5dd7449e30138352cf0199698742ee14fdb90eac2a8ae5ed.png" src="../../_images/e790a4b4c7582b5d5dd7449e30138352cf0199698742ee14fdb90eac2a8ae5ed.png" />
 </div>
 </div>
 <div class="exercise admonition" id="lectures/02-LimpiezayPrepDatos/DataCleaning-exercise-2">
@@ -1645,20 +1645,7 @@ Filtered DataFrame size: 38760
   </thead>
   <tbody>
     <tr>
-      <th>11487</th>
-      <td>Kepler-419 b</td>
-      <td>Kepler-419</td>
-      <td>Transit</td>
-      <td>69.726641</td>
-      <td>39.505000</td>
-      <td>189.425731</td>
-      <td>6383.0</td>
-      <td>1.819</td>
-      <td>1.427</td>
-      <td>2014</td>
-    </tr>
-    <tr>
-      <th>11488</th>
+      <th>11484</th>
       <td>Kepler-419 b</td>
       <td>Kepler-419</td>
       <td>Transit</td>
@@ -1689,15 +1676,28 @@ Filtered DataFrame size: 38760
       <td>Kepler-419</td>
       <td>Transit</td>
       <td>69.726641</td>
-      <td>34.090000</td>
+      <td>39.505000</td>
       <td>189.425731</td>
-      <td>6460.0</td>
-      <td>1.590</td>
-      <td>1.440</td>
+      <td>6383.0</td>
+      <td>1.819</td>
+      <td>1.427</td>
       <td>2014</td>
     </tr>
     <tr>
-      <th>11630</th>
+      <th>11493</th>
+      <td>Kepler-419 b</td>
+      <td>Kepler-419</td>
+      <td>Transit</td>
+      <td>69.726641</td>
+      <td>30.640000</td>
+      <td>189.425731</td>
+      <td>6287.0</td>
+      <td>1.423</td>
+      <td>1.292</td>
+      <td>2014</td>
+    </tr>
+    <tr>
+      <th>11633</th>
       <td>TOI-3540 A b</td>
       <td>TOI-3540 A</td>
       <td>Transit</td>
@@ -1749,7 +1749,7 @@ Filtered DataFrame size: 38760
       <td>2024</td>
     </tr>
     <tr>
-      <th>13342</th>
+      <th>13344</th>
       <td>Kepler-297 d</td>
       <td>Kepler-297</td>
       <td>Transit</td>
@@ -1762,16 +1762,16 @@ Filtered DataFrame size: 38760
       <td>2023</td>
     </tr>
     <tr>
-      <th>13602</th>
+      <th>13605</th>
       <td>Kepler-223 e</td>
       <td>Kepler-223</td>
       <td>Transit</td>
       <td>19.724089</td>
-      <td>30.800000</td>
+      <td>31.460000</td>
       <td>189.425731</td>
-      <td>5746.0</td>
-      <td>0.980</td>
-      <td>0.980</td>
+      <td>5825.0</td>
+      <td>1.003</td>
+      <td>0.902</td>
       <td>2014</td>
     </tr>
   </tbody>
@@ -1876,12 +1876,12 @@ Name: count, dtype: int64
       <td>Kepler-6 b</td>
       <td>Kepler-6</td>
       <td>Transit</td>
-      <td>3.234700</td>
-      <td>11.07</td>
+      <td>3.234699</td>
+      <td>2.300000</td>
       <td>189.425731</td>
-      <td>5826.0</td>
-      <td>1.08200</td>
-      <td>1.138</td>
+      <td>5647.0</td>
+      <td>1.39100</td>
+      <td>1.209</td>
       <td>2009</td>
       <td>2000</td>
     </tr>
@@ -1891,11 +1891,11 @@ Name: count, dtype: int64
       <td>Kepler-6</td>
       <td>Transit</td>
       <td>3.234699</td>
-      <td>2.30</td>
+      <td>13.410000</td>
       <td>189.425731</td>
-      <td>5613.0</td>
-      <td>1.31474</td>
-      <td>0.990</td>
+      <td>5640.0</td>
+      <td>1.29100</td>
+      <td>1.047</td>
       <td>2009</td>
       <td>2000</td>
     </tr>
@@ -1904,12 +1904,12 @@ Name: count, dtype: int64
       <td>Kepler-6 b</td>
       <td>Kepler-6</td>
       <td>Transit</td>
-      <td>3.234699</td>
-      <td>13.06</td>
+      <td>3.234694</td>
+      <td>13.316002</td>
       <td>189.425731</td>
-      <td>5640.0</td>
-      <td>1.29100</td>
-      <td>1.047</td>
+      <td>5613.0</td>
+      <td>1.31474</td>
+      <td>NaN</td>
       <td>2009</td>
       <td>2000</td>
     </tr>
@@ -1918,12 +1918,12 @@ Name: count, dtype: int64
       <td>Kepler-6 b</td>
       <td>Kepler-6</td>
       <td>Transit</td>
-      <td>3.234699</td>
-      <td>13.41</td>
-      <td>189.425731</td>
-      <td>5640.0</td>
-      <td>1.29100</td>
-      <td>1.047</td>
+      <td>3.234723</td>
+      <td>14.830000</td>
+      <td>212.619000</td>
+      <td>5647.0</td>
+      <td>1.39100</td>
+      <td>1.209</td>
       <td>2009</td>
       <td>2000</td>
     </tr>
@@ -1933,11 +1933,11 @@ Name: count, dtype: int64
       <td>Kepler-6</td>
       <td>Transit</td>
       <td>3.234699</td>
-      <td>2.30</td>
-      <td>189.425731</td>
+      <td>13.103321</td>
+      <td>205.636010</td>
       <td>5647.0</td>
-      <td>1.39100</td>
-      <td>1.209</td>
+      <td>1.26100</td>
+      <td>1.114</td>
       <td>2009</td>
       <td>2000</td>
     </tr>
