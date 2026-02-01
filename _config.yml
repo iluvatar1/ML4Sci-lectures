@@ -6,7 +6,7 @@
 #######################################################################################
 # Book settings
 title                       : Introduction to Machine Learning for Science # The title of the book. Will be placed in the left navbar.
-author                      : Veronica Arias, Carlos Viviescas, William Oquendo   # The author of the book
+author                      : William Oquendo   # The author of the book
 email                       : wfoquendop@unal.edu.co  # An email address to contact the author
 copyright                   : "2025"  # Copyright year to be placed in the footer
 # logo                        : https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Nanoscience_High-Performance_Computing_Facility.jpg/1600px-Nanoscience_High-Performance_Computing_Facility.jpg  # A path to the book logo
