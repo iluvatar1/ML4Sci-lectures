@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
@@ -69,7 +69,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-JMZ8EV2JDJ"></script>
@@ -212,6 +212,11 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../00-IntroductionCourseML/IntroCourse-MachineLearning.html">1. Introduction to the course and to Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00-TALK-IntroML/IntroMachineLearning.html">2. A fast introduction to Machine Learning</a></li>
+
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/DataCleaning.html">3. Pandas for data cleaning and analysis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unsupervised learning I</span></p>
@@ -730,7 +735,7 @@ document.write(`
 <p class="expanded admonition-title">Hide code cell output</p>
 </summary>
 <div class="cell_output docutils container">
-<img alt="../../_images/722220ad01f8cf117fb09a352d2d3008d21c552ca5d6f92832eee8584381df61.png" src="../../_images/722220ad01f8cf117fb09a352d2d3008d21c552ca5d6f92832eee8584381df61.png" />
+<img alt="../../_images/d7709df3b5c86571f2f73b055e7973b1227a825b3ecae5a0a1d45a83a5c641fd.png" src="../../_images/d7709df3b5c86571f2f73b055e7973b1227a825b3ecae5a0a1d45a83a5c641fd.png" />
 </div>
 </details>
 </div>
@@ -939,14 +944,14 @@ document.write(`
 <section id="how-do-we-find-the-best-line-classical-approach">
 <h3><span class="section-number">5.3.3. </span>How Do We Find the “Best” Line? Classical approach<a class="headerlink" href="#how-do-we-find-the-best-line-classical-approach" title="Link to this heading">#</a></h3>
 <p>For this simple example, computing both parameters is “easily” done by defining a metric to minimize, computing its partial derivatives, making them null and then computing the parameters. The distance from a giving predicted pint from its corresponding data is <span class="math notranslate nohighlight">\((\hat y_i - y_i)^2\)</span>, and it is squared to take into account values over or under estimating the data. We can define the <strong>MEAN SQUARED ERROR</strong> as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ec75dcdb-f853-4c66-98a7-9753af3977ee">
-<span class="eqno">(5.1)<a class="headerlink" href="#equation-ec75dcdb-f853-4c66-98a7-9753af3977ee" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d4236a2d-64b9-4912-8953-27e9ec8afefc">
+<span class="eqno">(5.1)<a class="headerlink" href="#equation-d4236a2d-64b9-4912-8953-27e9ec8afefc" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \Delta (\theta_0, \theta_1) = \frac{1}{2n} \sum_{i=1}^{n} (\hat{y}_i - y_i)^2 = \frac{1}{2n} \sum_{i=1}^{n} ((\theta_0 + \theta_1 x_i) - y_i)^2,
 \end{equation}\]</div>
 <p>and the goal is to minimize it.</p>
 <p>In this simple case, we can compute <span class="math notranslate nohighlight">\(\partial \Delta/\partial \theta_0 = 0\)</span> and <span class="math notranslate nohighlight">\(\partial \Delta/\partial \theta_1 = 0\)</span>, and from it arrive to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-67267310-95fc-4b80-97c2-532031dbe3e8">
-<span class="eqno">(5.2)<a class="headerlink" href="#equation-67267310-95fc-4b80-97c2-532031dbe3e8" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a22193a3-678a-4683-90c3-381d6eac5bc2">
+<span class="eqno">(5.2)<a class="headerlink" href="#equation-a22193a3-678a-4683-90c3-381d6eac5bc2" title="Permalink to this equation">#</a></span>\[\begin{align}
 \theta_1 &amp;= \frac{n\sum x_i y_i - \sum x_i \sum y_i}{n\sum x_i^2 - (\sum x_i)^2},\\\\
 \theta_0 &amp;= \frac{\sum y_i - \theta_1\sum x_i}{n}.
 \end{align}\]</div>
@@ -996,16 +1001,16 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/ea6bb43787434c196710b6961864e405f3277fe3841929f379b681444e4644cf.png" src="../../_images/ea6bb43787434c196710b6961864e405f3277fe3841929f379b681444e4644cf.png" />
-<img alt="../../_images/a509e637136efc8f80909514a9bade977adda55b8ecb8d935987fdaa41331a13.png" src="../../_images/a509e637136efc8f80909514a9bade977adda55b8ecb8d935987fdaa41331a13.png" />
+<img alt="../../_images/27820335e1552590e59a672c2fc46a9b7a4af4cc517fd53c0b2e230289d78b1a.png" src="../../_images/27820335e1552590e59a672c2fc46a9b7a4af4cc517fd53c0b2e230289d78b1a.png" />
+<img alt="../../_images/962dc74208c8554b407e352b62be784d92bebc09700a00fc61ef51cda3e087de.png" src="../../_images/962dc74208c8554b407e352b62be784d92bebc09700a00fc61ef51cda3e087de.png" />
 </div>
 </div>
 </section>
 <section id="how-do-we-find-the-best-line-learning-the-coefficients">
 <h3><span class="section-number">5.3.4. </span>How do we find the “Best” Line? Learning the coefficients<a class="headerlink" href="#how-do-we-find-the-best-line-learning-the-coefficients" title="Link to this heading">#</a></h3>
 <p>We need a way to quantify how “wrong” our line is. To do so, we define the same  <strong>Cost Function</strong> (or Loss Function) as before:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6c311712-9632-465e-90d4-64da86bdf82b">
-<span class="eqno">(5.3)<a class="headerlink" href="#equation-6c311712-9632-465e-90d4-64da86bdf82b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0ac66c6c-c751-4188-bda7-3af78aa8967a">
+<span class="eqno">(5.3)<a class="headerlink" href="#equation-0ac66c6c-c751-4188-bda7-3af78aa8967a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \Delta (\theta_0, \theta_1) = \frac{1}{2n} \sum_{i=1}^{n} (\hat{y}_i - y_i)^2 = \frac{1}{2n} \sum_{i=1}^{n} ((\theta_0 + \theta_1 x_i) - y_i)^2.
 \end{equation}\]</div>
 <div class="admonition note">
@@ -1122,7 +1127,7 @@ document.write(`
     </style>
     <div>
         <a href="https://bokeh.org" target="_blank" class="bk-notebook-logo"></a>
-        <span id="d4ac1b34-72e1-4d84-9eef-a923d64e82ad">Loading BokehJS ...</span>
+        <span id="e6d55abb-9d29-4fbf-a9ff-4809de8f3b64">Loading BokehJS ...</span>
     </div>
 </div><script type="application/javascript">'use strict';
 (function(root) {
@@ -1287,7 +1292,7 @@ const JS_MIME_TYPE = 'application/javascript';
      "</div>"}};
 
   function display_loaded(error = null) {
-    const el = document.getElementById("d4ac1b34-72e1-4d84-9eef-a923d64e82ad");
+    const el = document.getElementById("e6d55abb-9d29-4fbf-a9ff-4809de8f3b64");
     if (el != null) {
       const html = (() => {
         if (typeof root.Bokeh === "undefined") {
@@ -1395,7 +1400,7 @@ const JS_MIME_TYPE = 'application/javascript';
     document.body.appendChild(element);
   }
 
-  const js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-3.8.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.8.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.8.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.8.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.8.0.min.js"];
+  const js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-3.8.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.8.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.8.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.8.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.8.2.min.js"];
   const css_urls = [];
 
   const inline_js = [    function(Bokeh) {
@@ -1421,7 +1426,7 @@ function(Bokeh) {
       console.log("Bokeh: BokehJS failed to load within specified timeout.");
       root._bokeh_failed_load = true;
     } else if (force !== true) {
-      const cell = $(document.getElementById("d4ac1b34-72e1-4d84-9eef-a923d64e82ad")).parents('.cell').data().cell;
+      const cell = $(document.getElementById("e6d55abb-9d29-4fbf-a9ff-4809de8f3b64")).parents('.cell').data().cell;
       cell.output_area.append_execute_result(NB_LOAD_WARNING)
     }
   }
@@ -1436,11 +1441,11 @@ function(Bokeh) {
     });
   }
 }(window));</script><div class="output text_html">
-  <div id="ee5522ac-abd4-41a3-bed6-10dddbbf22e6" data-root-id="p1008" style="display: contents;"></div>
+  <div id="c3563d0e-0838-4789-9930-ada7b8ffa801" data-root-id="p1008" style="display: contents;"></div>
 </div><script type="application/javascript">(function(root) {
   function embed_document(root) {
-  const docs_json = {"b337fc82-cdc9-4447-964d-f17824b45b2a":{"version":"3.8.0","title":"Bokeh Application","config":{"type":"object","name":"DocumentConfig","id":"p1054","attributes":{"notifications":{"type":"object","name":"Notifications","id":"p1055"}}},"roots":[{"type":"object","name":"Figure","id":"p1008","attributes":{"width":800,"height":400,"x_range":{"type":"object","name":"DataRange1d","id":"p1009"},"y_range":{"type":"object","name":"DataRange1d","id":"p1010"},"x_scale":{"type":"object","name":"LinearScale","id":"p1018"},"y_scale":{"type":"object","name":"LinearScale","id":"p1019"},"title":{"type":"object","name":"Title","id":"p1011","attributes":{"text":"Hooke's Law: Force vs. Displacement"}},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1049","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1043","attributes":{"selected":{"type":"object","name":"Selection","id":"p1044","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1045"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/2NggACN9Qv3tH3aZQ+hT9nHOVfyPjW9AuXfsgfxplx/ABV/Yg+mpjyHyr+yB0sHvIOq+2CfA5GAqv9iHwBmfIXq+25vBlQd5/wTqv+XvdSpbCDzD9Scf/ZQZzkAAJ6NW+CgAAAA"},"shape":[20],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/wGgAF//fDCpKCrKzz/CY75SLuTZPyAKJB7jVvQ/cKAU++V1AUCpakDGS3H8P04obiPFAgJAzIg42b4NDUBpQ40Kl5gNQCRLfq8ZcAxAr/N0sUMjEkBMpiunQQUSQPtVjBQg6RNAsOe+KYQ4F0BiA46wFc4UQOlLkTOUExdA93JI9OVLG0DeekHHRUocQMf7HAplayBAt/hR/wQlIEDEvr5Dc5YgQJgtAhGgAAAA"},"shape":[20],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1050","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1051"}}},"glyph":{"type":"object","name":"Scatter","id":"p1046","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"fill_color":{"type":"value","value":"blue"},"hatch_color":{"type":"value","value":"blue"}}},"nonselection_glyph":{"type":"object","name":"Scatter","id":"p1047","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"value","value":"blue"},"fill_alpha":{"type":"value","value":0.1},"hatch_color":{"type":"value","value":"blue"},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Scatter","id":"p1048","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":"blue"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"value","value":"blue"},"hatch_alpha":{"type":"value","value":0.2}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1017","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1030"},{"type":"object","name":"WheelZoomTool","id":"p1031","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1032","attributes":{"dimensions":"both","overlay":{"type":"object","name":"BoxAnnotation","id":"p1033","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1039","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1038","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1040"},{"type":"object","name":"ResetTool","id":"p1041"},{"type":"object","name":"HelpTool","id":"p1042"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1025","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1026","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1027"},"axis_label":"Force (F) [N]","major_label_policy":{"type":"object","name":"AllLabels","id":"p1028"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1020","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1021","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1022"},"axis_label":"Displacement (x) [m]","major_label_policy":{"type":"object","name":"AllLabels","id":"p1023"}}}],"center":[{"type":"object","name":"Grid","id":"p1024","attributes":{"axis":{"id":"p1020"}}},{"type":"object","name":"Grid","id":"p1029","attributes":{"dimension":1,"axis":{"id":"p1025"}}},{"type":"object","name":"Legend","id":"p1052","attributes":{"items":[{"type":"object","name":"LegendItem","id":"p1053","attributes":{"label":{"type":"value","value":"Experimental Data"},"renderers":[{"id":"p1049"}]}}]}}]}}]}};
-  const render_items = [{"docid":"b337fc82-cdc9-4447-964d-f17824b45b2a","roots":{"p1008":"ee5522ac-abd4-41a3-bed6-10dddbbf22e6"},"root_ids":["p1008"]}];
+  const docs_json = {"feb620de-3a7c-4fa0-90c5-b4bc84469508":{"version":"3.8.2","title":"Bokeh Application","config":{"type":"object","name":"DocumentConfig","id":"p1054","attributes":{"notifications":{"type":"object","name":"Notifications","id":"p1055"}}},"roots":[{"type":"object","name":"Figure","id":"p1008","attributes":{"width":800,"height":400,"x_range":{"type":"object","name":"DataRange1d","id":"p1009"},"y_range":{"type":"object","name":"DataRange1d","id":"p1010"},"x_scale":{"type":"object","name":"LinearScale","id":"p1018"},"y_scale":{"type":"object","name":"LinearScale","id":"p1019"},"title":{"type":"object","name":"Title","id":"p1011","attributes":{"text":"Hooke's Law: Force vs. Displacement"}},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1049","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1043","attributes":{"selected":{"type":"object","name":"Selection","id":"p1044","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1045"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/2NggACN9Qv3tH3aZQ+hT9nHOVfyPjW9AuXfsgfxplx/ABV/Yg+mpjyHyr+yB0sHvIOq+2CfA5GAqv9iHwBmfIXq+25vBlQd5/wTqv+XvdSpbCDzD9Scf/ZQZzkAAJ6NW+CgAAAA"},"shape":[20],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/wGgAF//fDCpKCrKzz/CY75SLuTZPyAKJB7jVvQ/cKAU++V1AUCpakDGS3H8P04obiPFAgJAzIg42b4NDUBpQ40Kl5gNQCRLfq8ZcAxAr/N0sUMjEkBMpiunQQUSQPtVjBQg6RNAsOe+KYQ4F0BiA46wFc4UQOlLkTOUExdA93JI9OVLG0DeekHHRUocQMf7HAplayBAt/hR/wQlIEDEvr5Dc5YgQJgtAhGgAAAA"},"shape":[20],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1050","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1051"}}},"glyph":{"type":"object","name":"Scatter","id":"p1046","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"fill_color":{"type":"value","value":"blue"},"hatch_color":{"type":"value","value":"blue"}}},"nonselection_glyph":{"type":"object","name":"Scatter","id":"p1047","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"value","value":"blue"},"fill_alpha":{"type":"value","value":0.1},"hatch_color":{"type":"value","value":"blue"},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Scatter","id":"p1048","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":"blue"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"value","value":"blue"},"hatch_alpha":{"type":"value","value":0.2}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1017","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1030"},{"type":"object","name":"WheelZoomTool","id":"p1031","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1032","attributes":{"dimensions":"both","overlay":{"type":"object","name":"BoxAnnotation","id":"p1033","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1039","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1038","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1040"},{"type":"object","name":"ResetTool","id":"p1041"},{"type":"object","name":"HelpTool","id":"p1042"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1025","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1026","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1027"},"axis_label":"Force (F) [N]","major_label_policy":{"type":"object","name":"AllLabels","id":"p1028"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1020","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1021","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1022"},"axis_label":"Displacement (x) [m]","major_label_policy":{"type":"object","name":"AllLabels","id":"p1023"}}}],"center":[{"type":"object","name":"Grid","id":"p1024","attributes":{"axis":{"id":"p1020"}}},{"type":"object","name":"Grid","id":"p1029","attributes":{"dimension":1,"axis":{"id":"p1025"}}},{"type":"object","name":"Legend","id":"p1052","attributes":{"items":[{"type":"object","name":"LegendItem","id":"p1053","attributes":{"label":{"type":"value","value":"Experimental Data"},"renderers":[{"id":"p1049"}]}}]}}]}}]}};
+  const render_items = [{"docid":"feb620de-3a7c-4fa0-90c5-b4bc84469508","roots":{"p1008":"c3563d0e-0838-4789-9930-ada7b8ffa801"},"root_ids":["p1008"]}];
   void root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
   }
   if (root.Bokeh !== undefined) {
@@ -1498,20 +1503,21 @@ function(Bokeh) {
   --sklearn-color-fitted-level-1: #d4ebff;
   --sklearn-color-fitted-level-2: #b3dbfd;
   --sklearn-color-fitted-level-3: cornflowerblue;
+}
 
+#sk-container-id-1.light {
   /* Specific color for light theme */
-  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
-  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
-  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-text-on-default-background: black;
+  --sklearn-color-background: white;
+  --sklearn-color-border-box: black;
   --sklearn-color-icon: #696969;
+}
 
-  @media (prefers-color-scheme: dark) {
-    /* Redefinition of color scheme for dark theme */
-    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
-    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
-    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
-    --sklearn-color-icon: #878787;
-  }
+#sk-container-id-1.dark {
+  --sklearn-color-text-on-default-background: white;
+  --sklearn-color-background: #111;
+  --sklearn-color-border-box: white;
+  --sklearn-color-icon: #878787;
 }
 
 #sk-container-id-1 {
@@ -1637,8 +1643,8 @@ clickable and can be expanded/collapsed.
   padding: 0.5em;
   box-sizing: border-box;
   text-align: center;
-  align-items: start;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   gap: 0.5em;
 }
 
@@ -1745,7 +1751,6 @@ clickable and can be expanded/collapsed.
 #sk-container-id-1 div.sk-label label {
   font-family: monospace;
   font-weight: bold;
-  display: inline-block;
   line-height: 1.2em;
 }
 
@@ -1791,7 +1796,7 @@ a:visited.sk-estimator-doc-link {
   font-size: smaller;
   line-height: 1em;
   font-family: monospace;
-  background-color: var(--sklearn-color-background);
+  background-color: var(--sklearn-color-unfitted-level-0);
   border-radius: 1em;
   height: 1em;
   width: 1em;
@@ -1799,16 +1804,17 @@ a:visited.sk-estimator-doc-link {
   margin-left: 0.5em;
   text-align: center;
   /* unfitted */
-  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
-  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-3) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-3);
 }
 
 .sk-estimator-doc-link.fitted,
 a:link.sk-estimator-doc-link.fitted,
 a:visited.sk-estimator-doc-link.fitted {
   /* fitted */
-  border: var(--sklearn-color-fitted-level-1) 1pt solid;
-  color: var(--sklearn-color-fitted-level-1);
+  background-color: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3) 1pt solid;
+  color: var(--sklearn-color-fitted-level-3);
 }
 
 /* On hover */
@@ -1818,7 +1824,8 @@ div.sk-label-container:hover .sk-estimator-doc-link:hover,
 .sk-estimator-doc-link:hover {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-3);
-  color: var(--sklearn-color-background);
+  border: var(--sklearn-color-fitted-level-0) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-0);
   text-decoration: none;
 }
 
@@ -1828,7 +1835,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 .sk-estimator-doc-link.fitted:hover {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-3);
-  color: var(--sklearn-color-background);
+  border: var(--sklearn-color-fitted-level-0) 1pt solid;
+  color: var(--sklearn-color-fitted-level-0);
   text-decoration: none;
 }
 
@@ -1868,7 +1876,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   font-size: 1rem;
   line-height: 1em;
   font-family: monospace;
-  background-color: var(--sklearn-color-background);
+  background-color: var(--sklearn-color-unfitted-level-0);
   border-radius: 1rem;
   height: 1rem;
   width: 1rem;
@@ -1880,6 +1888,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 
 #sk-container-id-1 a.estimator_doc_link.fitted {
   /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
   border: var(--sklearn-color-fitted-level-1) 1pt solid;
   color: var(--sklearn-color-fitted-level-1);
 }
@@ -1897,10 +1906,17 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   background-color: var(--sklearn-color-fitted-level-3);
 }
 
+.estimator-table {
+    font-family: monospace;
+}
+
 .estimator-table summary {
     padding: .5rem;
-    font-family: monospace;
     cursor: pointer;
+}
+
+.estimator-table summary::marker {
+    font-size: 0.7rem;
 }
 
 .estimator-table details[open] {
@@ -1912,6 +1928,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 .estimator-table .parameters-table {
     margin-left: auto !important;
     margin-right: auto !important;
+    margin-top: 0;
 }
 
 .estimator-table .parameters-table tr:nth-child(odd) {
@@ -1930,24 +1947,85 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     border: 1px solid rgba(106, 105, 104, 0.232);
 }
 
-.user-set td {
-    color:rgb(255, 94, 0);
+/*
+    `table td`is set in notebook with right text-align.
+    We need to overwrite it.
+*/
+.estimator-table table td.param {
     text-align: left;
+    position: relative;
+    padding: 0;
 }
 
-.user-set td.value pre {
-    color:rgb(255, 94, 0) !important;
-    background-color: transparent !important;
+.user-set td {
+    color:rgb(255, 94, 0);
+    text-align: left !important;
+}
+
+.user-set td.value {
+    color:rgb(255, 94, 0);
+    background-color: transparent;
 }
 
 .default td {
     color: black;
-    text-align: left;
+    text-align: left !important;
 }
 
 .user-set td i,
 .default td i {
     color: black;
+}
+
+/*
+    Styles for parameter documentation links
+    We need styling for visited so jupyter doesn't overwrite it
+*/
+a.param-doc-link,
+a.param-doc-link:link,
+a.param-doc-link:visited {
+    text-decoration: underline dashed;
+    text-underline-offset: .3em;
+    color: inherit;
+    display: block;
+    padding: .5em;
+}
+
+/* "hack" to make the entire area of the cell containing the link clickable */
+a.param-doc-link::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+}
+
+.param-doc-description {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    left: 0;
+    padding: .5ex;
+    margin-left: 1.5em;
+    color: var(--sklearn-color-text);
+    box-shadow: .3em .3em .4em #999;
+    width: max-content;
+    text-align: left;
+    max-height: 10em;
+    overflow-y: auto;
+
+    /* unfitted */
+    background: var(--sklearn-color-unfitted-level-0);
+    border: thin solid var(--sklearn-color-unfitted-level-3);
+}
+
+/* Fitted state for parameter tooltips */
+.fitted .param-doc-description {
+    /* fitted */
+    background: var(--sklearn-color-fitted-level-0);
+    border: thin solid var(--sklearn-color-fitted-level-3);
+}
+
+.param-doc-link:hover .param-doc-description {
+    display: block;
 }
 
 .copy-paste-icon {
@@ -1960,7 +2038,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     height: 14px;
     cursor: pointer;
 }
-</style><body><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LinearRegression()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>LinearRegression</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.LinearRegression.html">?<span>Documentation for LinearRegression</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+</style><body><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LinearRegression()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>LinearRegression</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LinearRegression.html">?<span>Documentation for LinearRegression</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
         <div class="estimator-table">
             <details>
                 <summary>Parameters</summary>
@@ -1972,7 +2050,13 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                  onclick="copyToClipboard('fit_intercept',
                           this.parentElement.nextElementSibling)"
             ></i></td>
-            <td class="param">fit_intercept&nbsp;</td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LinearRegression.html#:~:text=fit_intercept,-bool%2C%20default%3DTrue">
+            fit_intercept
+            <span class="param-doc-description">fit_intercept: bool, default=True<br><br>Whether to calculate the intercept for this model. If set<br>to False, no intercept will be used in calculations<br>(i.e. data is expected to be centered).</span>
+        </a>
+    </td>
             <td class="value">True</td>
         </tr>
     
@@ -1982,7 +2066,13 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                  onclick="copyToClipboard('copy_X',
                           this.parentElement.nextElementSibling)"
             ></i></td>
-            <td class="param">copy_X&nbsp;</td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LinearRegression.html#:~:text=copy_X,-bool%2C%20default%3DTrue">
+            copy_X
+            <span class="param-doc-description">copy_X: bool, default=True<br><br>If True, X will be copied; else, it may be overwritten.</span>
+        </a>
+    </td>
             <td class="value">True</td>
         </tr>
     
@@ -1992,7 +2082,13 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                  onclick="copyToClipboard('tol',
                           this.parentElement.nextElementSibling)"
             ></i></td>
-            <td class="param">tol&nbsp;</td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LinearRegression.html#:~:text=tol,-float%2C%20default%3D1e-6">
+            tol
+            <span class="param-doc-description">tol: float, default=1e-6<br><br>The precision of the solution (`coef_`) is determined by `tol` which<br>specifies a different convergence criterion for the `lsqr` solver.<br>`tol` is set as `atol` and `btol` of :func:`scipy.sparse.linalg.lsqr` when<br>fitting on sparse training data. This parameter has no effect when fitting<br>on dense data.<br><br>.. versionadded:: 1.7</span>
+        </a>
+    </td>
             <td class="value">1e-06</td>
         </tr>
     
@@ -2002,7 +2098,13 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                  onclick="copyToClipboard('n_jobs',
                           this.parentElement.nextElementSibling)"
             ></i></td>
-            <td class="param">n_jobs&nbsp;</td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LinearRegression.html#:~:text=n_jobs,-int%2C%20default%3DNone">
+            n_jobs
+            <span class="param-doc-description">n_jobs: int, default=None<br><br>The number of jobs to use for the computation. This will only provide<br>speedup in case of sufficiently large problems, that is if firstly<br>`n_targets > 1` and secondly `X` is sparse or if `positive` is set<br>to `True`. ``None`` means 1 unless in a<br>:obj:`joblib.parallel_backend` context. ``-1`` means using all<br>processors. See :term:`Glossary <n_jobs>` for more details.</span>
+        </a>
+    </td>
             <td class="value">None</td>
         </tr>
     
@@ -2012,7 +2114,13 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                  onclick="copyToClipboard('positive',
                           this.parentElement.nextElementSibling)"
             ></i></td>
-            <td class="param">positive&nbsp;</td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LinearRegression.html#:~:text=positive,-bool%2C%20default%3DFalse">
+            positive
+            <span class="param-doc-description">positive: bool, default=False<br><br>When set to ``True``, forces the coefficients to be positive. This<br>option is only supported for dense arrays.<br><br>For a comparison between a linear regression model with positive constraints<br>on the regression coefficients and a linear regression without such constraints,<br>see :ref:`sphx_glr_auto_examples_linear_model_plot_nnls.py`.<br><br>.. versionadded:: 0.24</span>
+        </a>
+    </td>
             <td class="value">False</td>
         </tr>
     
@@ -2054,15 +2162,88 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     return false;
 }
 
-document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
+document.querySelectorAll('.copy-paste-icon').forEach(function(element) {
     const toggleableContent = element.closest('.sk-toggleable__content');
     const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
-    const paramName = element.parentElement.nextElementSibling.textContent.trim();
+    const paramName = element.parentElement.nextElementSibling
+        .textContent.trim().split(' ')[0];
     const fullParamName = paramPrefix ? `${paramPrefix}${paramName}` : paramName;
 
     element.setAttribute('title', fullParamName);
 });
-</script></body></div></div>
+
+
+/**
+ * Adapted from Skrub
+ * https://github.com/skrub-data/skrub/blob/403466d1d5d4dc76a7ef569b3f8228db59a31dc3/skrub/_reporting/_data/templates/report.js#L789
+ * @returns "light" or "dark"
+ */
+function detectTheme(element) {
+    const body = document.querySelector('body');
+
+    // Check VSCode theme
+    const themeKindAttr = body.getAttribute('data-vscode-theme-kind');
+    const themeNameAttr = body.getAttribute('data-vscode-theme-name');
+
+    if (themeKindAttr && themeNameAttr) {
+        const themeKind = themeKindAttr.toLowerCase();
+        const themeName = themeNameAttr.toLowerCase();
+
+        if (themeKind.includes("dark") || themeName.includes("dark")) {
+            return "dark";
+        }
+        if (themeKind.includes("light") || themeName.includes("light")) {
+            return "light";
+        }
+    }
+
+    // Check Jupyter theme
+    if (body.getAttribute('data-jp-theme-light') === 'false') {
+        return 'dark';
+    } else if (body.getAttribute('data-jp-theme-light') === 'true') {
+        return 'light';
+    }
+
+    // Guess based on a parent element's color
+    const color = window.getComputedStyle(element.parentNode, null).getPropertyValue('color');
+    const match = color.match(/^rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)\s*$/i);
+    if (match) {
+        const [r, g, b] = [
+            parseFloat(match[1]),
+            parseFloat(match[2]),
+            parseFloat(match[3])
+        ];
+
+        // https://en.wikipedia.org/wiki/HSL_and_HSV#Lightness
+        const luma = 0.299 * r + 0.587 * g + 0.114 * b;
+
+        if (luma > 180) {
+            // If the text is very bright we have a dark theme
+            return 'dark';
+        }
+        if (luma < 75) {
+            // If the text is very dark we have a light theme
+            return 'light';
+        }
+        // Otherwise fall back to the next heuristic.
+    }
+
+    // Fallback to system preference
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+
+function forceTheme(elementId) {
+    const estimatorElement = document.querySelector(`#${elementId}`);
+    if (estimatorElement === null) {
+        console.error(`Element with id ${elementId} not found.`);
+    } else {
+        const theme = detectTheme(estimatorElement);
+        estimatorElement.classList.add(theme);
+    }
+}
+
+forceTheme('sk-container-id-1');</script></body></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2133,7 +2314,7 @@ The true spring constant was: 4.5 N/m
     </style>
     <div>
         <a href="https://bokeh.org" target="_blank" class="bk-notebook-logo"></a>
-        <span id="f52fc4f1-fe10-46a5-9db0-94718710e225">Loading BokehJS ...</span>
+        <span id="dd585335-705c-420a-b81b-baf0b6082176">Loading BokehJS ...</span>
     </div>
 </div><script type="application/javascript">'use strict';
 (function(root) {
@@ -2298,7 +2479,7 @@ const JS_MIME_TYPE = 'application/javascript';
      "</div>"}};
 
   function display_loaded(error = null) {
-    const el = document.getElementById("f52fc4f1-fe10-46a5-9db0-94718710e225");
+    const el = document.getElementById("dd585335-705c-420a-b81b-baf0b6082176");
     if (el != null) {
       const html = (() => {
         if (typeof root.Bokeh === "undefined") {
@@ -2406,7 +2587,7 @@ const JS_MIME_TYPE = 'application/javascript';
     document.body.appendChild(element);
   }
 
-  const js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-3.8.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.8.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.8.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.8.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.8.0.min.js"];
+  const js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-3.8.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.8.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.8.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.8.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.8.2.min.js"];
   const css_urls = [];
 
   const inline_js = [    function(Bokeh) {
@@ -2432,7 +2613,7 @@ function(Bokeh) {
       console.log("Bokeh: BokehJS failed to load within specified timeout.");
       root._bokeh_failed_load = true;
     } else if (force !== true) {
-      const cell = $(document.getElementById("f52fc4f1-fe10-46a5-9db0-94718710e225")).parents('.cell').data().cell;
+      const cell = $(document.getElementById("dd585335-705c-420a-b81b-baf0b6082176")).parents('.cell').data().cell;
       cell.output_area.append_execute_result(NB_LOAD_WARNING)
     }
   }
@@ -2447,11 +2628,11 @@ function(Bokeh) {
     });
   }
 }(window));</script><div class="output text_html">
-  <div id="a3aee34c-ff60-430d-ac6c-4ee57d036359" data-root-id="p1058" style="display: contents;"></div>
+  <div id="d044a890-9e0c-4d10-9af2-6771bc4fffc2" data-root-id="p1058" style="display: contents;"></div>
 </div><script type="application/javascript">(function(root) {
   function embed_document(root) {
-  const docs_json = {"68102c68-ed7d-4d64-9dfc-c2851fb2b0ce":{"version":"3.8.0","title":"Bokeh Application","config":{"type":"object","name":"DocumentConfig","id":"p1114","attributes":{"notifications":{"type":"object","name":"Notifications","id":"p1115"}}},"roots":[{"type":"object","name":"Figure","id":"p1058","attributes":{"width":800,"height":400,"x_range":{"type":"object","name":"DataRange1d","id":"p1059"},"y_range":{"type":"object","name":"DataRange1d","id":"p1060"},"x_scale":{"type":"object","name":"LinearScale","id":"p1068"},"y_scale":{"type":"object","name":"LinearScale","id":"p1069"},"title":{"type":"object","name":"Title","id":"p1061","attributes":{"text":"Hooke's Law with Model Fit"}},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1099","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1093","attributes":{"selected":{"type":"object","name":"Selection","id":"p1094","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1095"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/2NggACN9Qv3tH3aZQ+hT9nHOVfyPjW9AuXfsgfxplx/ABV/Yg+mpjyHyr+yB0sHvIOq+2CfA5GAqv9iHwBmfIXq+25vBlQd5/wTqv+XvdSpbCDzD9Scf/ZQZzkAAJ6NW+CgAAAA"},"shape":[20],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/wGgAF//fDCpKCrKzz/CY75SLuTZPyAKJB7jVvQ/cKAU++V1AUCpakDGS3H8P04obiPFAgJAzIg42b4NDUBpQ40Kl5gNQCRLfq8ZcAxAr/N0sUMjEkBMpiunQQUSQPtVjBQg6RNAsOe+KYQ4F0BiA46wFc4UQOlLkTOUExdA93JI9OVLG0DeekHHRUocQMf7HAplayBAt/hR/wQlIEDEvr5Dc5YgQJgtAhGgAAAA"},"shape":[20],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1100","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1101"}}},"glyph":{"type":"object","name":"Scatter","id":"p1096","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"fill_color":{"type":"value","value":"blue"},"hatch_color":{"type":"value","value":"blue"}}},"nonselection_glyph":{"type":"object","name":"Scatter","id":"p1097","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"value","value":"blue"},"fill_alpha":{"type":"value","value":0.1},"hatch_color":{"type":"value","value":"blue"},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Scatter","id":"p1098","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":"blue"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"value","value":"blue"},"hatch_alpha":{"type":"value","value":0.2}}}}},{"type":"object","name":"GlyphRenderer","id":"p1110","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1104","attributes":{"selected":{"type":"object","name":"Selection","id":"p1105","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1106"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/2NggACN9Qv3tH3aZQ+hT9nHOVfyPjW9AuXfsgfxplx/ABV/Yg+mpjyHyr+yB0sHvIOq+2CfA5GAqv9iHwBmfIXq+25vBlQd5/wTqv+XvdSpbCDzD9Scf/ZQZzkAAJ6NW+CgAAAA"},"shape":[20],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/wGgAF//AGj79j/J2D/lsIyOOvXpP+XWzZDqwvM/V1VV2jeL+j/lae6RwqkAQB4psjbpDQRAV+h12w9yB0CQpzmANtYKQMpm/SRdOg5AApPg5EHPEECeckI3VYESQDtSpIloMxRA1zEG3HvlFUBzEWguj5cXQBDxyYCiSRlArtAr07X7GkBKsI0lya0cQOaP73fcXx5Awrco5fcIIECQp1mOAeIgQLpmw0qgAAAA"},"shape":[20],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1111","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1112"}}},"glyph":{"type":"object","name":"Line","id":"p1107","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"red","line_width":3}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1108","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"red","line_alpha":0.1,"line_width":3}},"muted_glyph":{"type":"object","name":"Line","id":"p1109","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"red","line_alpha":0.2,"line_width":3}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1067","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1080"},{"type":"object","name":"WheelZoomTool","id":"p1081","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1082","attributes":{"dimensions":"both","overlay":{"type":"object","name":"BoxAnnotation","id":"p1083","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1089","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1088","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1090"},{"type":"object","name":"ResetTool","id":"p1091"},{"type":"object","name":"HelpTool","id":"p1092"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1075","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1076","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1077"},"axis_label":"Force (F) [N]","major_label_policy":{"type":"object","name":"AllLabels","id":"p1078"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1070","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1071","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1072"},"axis_label":"Displacement (x) [m]","major_label_policy":{"type":"object","name":"AllLabels","id":"p1073"}}}],"center":[{"type":"object","name":"Grid","id":"p1074","attributes":{"axis":{"id":"p1070"}}},{"type":"object","name":"Grid","id":"p1079","attributes":{"dimension":1,"axis":{"id":"p1075"}}},{"type":"object","name":"Legend","id":"p1102","attributes":{"items":[{"type":"object","name":"LegendItem","id":"p1103","attributes":{"label":{"type":"value","value":"Experimental Data"},"renderers":[{"id":"p1099"}]}},{"type":"object","name":"LegendItem","id":"p1113","attributes":{"label":{"type":"value","value":"Linear Regression Fit"},"renderers":[{"id":"p1110"}]}}]}}]}}]}};
-  const render_items = [{"docid":"68102c68-ed7d-4d64-9dfc-c2851fb2b0ce","roots":{"p1058":"a3aee34c-ff60-430d-ac6c-4ee57d036359"},"root_ids":["p1058"]}];
+  const docs_json = {"96a58bdd-83a6-42c0-abdd-05b6c830b890":{"version":"3.8.2","title":"Bokeh Application","config":{"type":"object","name":"DocumentConfig","id":"p1114","attributes":{"notifications":{"type":"object","name":"Notifications","id":"p1115"}}},"roots":[{"type":"object","name":"Figure","id":"p1058","attributes":{"width":800,"height":400,"x_range":{"type":"object","name":"DataRange1d","id":"p1059"},"y_range":{"type":"object","name":"DataRange1d","id":"p1060"},"x_scale":{"type":"object","name":"LinearScale","id":"p1068"},"y_scale":{"type":"object","name":"LinearScale","id":"p1069"},"title":{"type":"object","name":"Title","id":"p1061","attributes":{"text":"Hooke's Law with Model Fit"}},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1099","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1093","attributes":{"selected":{"type":"object","name":"Selection","id":"p1094","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1095"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/2NggACN9Qv3tH3aZQ+hT9nHOVfyPjW9AuXfsgfxplx/ABV/Yg+mpjyHyr+yB0sHvIOq+2CfA5GAqv9iHwBmfIXq+25vBlQd5/wTqv+XvdSpbCDzD9Scf/ZQZzkAAJ6NW+CgAAAA"},"shape":[20],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/wGgAF//fDCpKCrKzz/CY75SLuTZPyAKJB7jVvQ/cKAU++V1AUCpakDGS3H8P04obiPFAgJAzIg42b4NDUBpQ40Kl5gNQCRLfq8ZcAxAr/N0sUMjEkBMpiunQQUSQPtVjBQg6RNAsOe+KYQ4F0BiA46wFc4UQOlLkTOUExdA93JI9OVLG0DeekHHRUocQMf7HAplayBAt/hR/wQlIEDEvr5Dc5YgQJgtAhGgAAAA"},"shape":[20],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1100","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1101"}}},"glyph":{"type":"object","name":"Scatter","id":"p1096","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"fill_color":{"type":"value","value":"blue"},"hatch_color":{"type":"value","value":"blue"}}},"nonselection_glyph":{"type":"object","name":"Scatter","id":"p1097","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"value","value":"blue"},"fill_alpha":{"type":"value","value":0.1},"hatch_color":{"type":"value","value":"blue"},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Scatter","id":"p1098","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"size":{"type":"value","value":10},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":"blue"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"value","value":"blue"},"hatch_alpha":{"type":"value","value":0.2}}}}},{"type":"object","name":"GlyphRenderer","id":"p1110","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1104","attributes":{"selected":{"type":"object","name":"Selection","id":"p1105","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1106"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/2NggACN9Qv3tH3aZQ+hT9nHOVfyPjW9AuXfsgfxplx/ABV/Yg+mpjyHyr+yB0sHvIOq+2CfA5GAqv9iHwBmfIXq+25vBlQd5/wTqv+XvdSpbCDzD9Scf/ZQZzkAAJ6NW+CgAAAA"},"shape":[20],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/wGgAF//AGj79j/J2D/lsIyOOvXpP+XWzZDqwvM/V1VV2jeL+j/lae6RwqkAQB4psjbpDQRAV+h12w9yB0CQpzmANtYKQMpm/SRdOg5AApPg5EHPEECeckI3VYESQDtSpIloMxRA1zEG3HvlFUBzEWguj5cXQBDxyYCiSRlArtAr07X7GkBKsI0lya0cQOaP73fcXx5Awrco5fcIIECQp1mOAeIgQLpmw0qgAAAA"},"shape":[20],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1111","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1112"}}},"glyph":{"type":"object","name":"Line","id":"p1107","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"red","line_width":3}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1108","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"red","line_alpha":0.1,"line_width":3}},"muted_glyph":{"type":"object","name":"Line","id":"p1109","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"red","line_alpha":0.2,"line_width":3}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1067","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1080"},{"type":"object","name":"WheelZoomTool","id":"p1081","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1082","attributes":{"dimensions":"both","overlay":{"type":"object","name":"BoxAnnotation","id":"p1083","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1089","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1088","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1090"},{"type":"object","name":"ResetTool","id":"p1091"},{"type":"object","name":"HelpTool","id":"p1092"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1075","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1076","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1077"},"axis_label":"Force (F) [N]","major_label_policy":{"type":"object","name":"AllLabels","id":"p1078"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1070","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1071","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1072"},"axis_label":"Displacement (x) [m]","major_label_policy":{"type":"object","name":"AllLabels","id":"p1073"}}}],"center":[{"type":"object","name":"Grid","id":"p1074","attributes":{"axis":{"id":"p1070"}}},{"type":"object","name":"Grid","id":"p1079","attributes":{"dimension":1,"axis":{"id":"p1075"}}},{"type":"object","name":"Legend","id":"p1102","attributes":{"items":[{"type":"object","name":"LegendItem","id":"p1103","attributes":{"label":{"type":"value","value":"Experimental Data"},"renderers":[{"id":"p1099"}]}},{"type":"object","name":"LegendItem","id":"p1113","attributes":{"label":{"type":"value","value":"Linear Regression Fit"},"renderers":[{"id":"p1110"}]}}]}}]}}]}};
+  const render_items = [{"docid":"96a58bdd-83a6-42c0-abdd-05b6c830b890","roots":{"p1058":"d044a890-9e0c-4d10-9af2-6771bc4fffc2"},"root_ids":["p1058"]}];
   void root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
   }
   if (root.Bokeh !== undefined) {
@@ -2719,14 +2900,14 @@ BUT, do not use sklearn LinearRegression, since it uses the exact least square f
 <section id="regularization">
 <h2><span class="section-number">5.8. </span>Regularization<a class="headerlink" href="#regularization" title="Link to this heading">#</a></h2>
 <p>The bias-variance trade-off shows that is important to not go to the extremes when fitting a model. For example, when the model performs well on the training data but does not work well on the test data, we might need to add a <code class="docutils literal notranslate"><span class="pre">regularization</span></code> so penalize the cost function to improve the trade-off. One example is the so-called ridge regularization, where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-04249120-fb75-4103-a665-5f714b81a8a2">
-<span class="eqno">(5.4)<a class="headerlink" href="#equation-04249120-fb75-4103-a665-5f714b81a8a2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7a9f9bea-9929-47ca-a99b-03bb5c309608">
+<span class="eqno">(5.4)<a class="headerlink" href="#equation-7a9f9bea-9929-47ca-a99b-03bb5c309608" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \Delta(\theta) = \frac{1}{2m} \sum_{i=1}^{m} \left( \hat y(x_i) - y_i \right)^2 + \lambda \sum_{j=1}^{n} \theta_j^2,
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is the hyper-regularization parameter. This controls the magnitude of the coefficients preventing overfitting. When <span class="math notranslate nohighlight">\(\lambda\)</span> is large, the parameters <span class="math notranslate nohighlight">\(\theta\)</span> decrease, which shrinks the impact of variables no so correlated with the output. When <span class="math notranslate nohighlight">\(\lambda\)</span> decreases, we basically converge to the usual linear regression.</p>
 <p>There are several other regularization techniques, such as lasso regression (L1),</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4cf1b275-7fe0-4c85-b8f6-88206dbc9ad5">
-<span class="eqno">(5.5)<a class="headerlink" href="#equation-4cf1b275-7fe0-4c85-b8f6-88206dbc9ad5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-37a30ec2-967d-4599-844d-b3945eac02c4">
+<span class="eqno">(5.5)<a class="headerlink" href="#equation-37a30ec2-967d-4599-844d-b3945eac02c4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \Delta(\theta) = \frac{1}{2m} \sum_{i=1}^{m} \left( h_\theta(x_i) - y_i \right)^2 + \lambda \sum_{j=1}^{n} |\theta_j|, 
 \end{equation}\]</div>
 <p>Elastic Net regression, where both previous regressions are combines, and so on.</p>
@@ -2767,8 +2948,8 @@ BUT, do not use sklearn LinearRegression, since it uses the exact least square f
 <h2><span class="section-number">5.9. </span>Multiple linear regression<a class="headerlink" href="#multiple-linear-regression" title="Link to this heading">#</a></h2>
 <p>REF: <a class="reference external" href="https://www.digitalocean.com/community/tutorials/multiple-linear-regression-python">https://www.digitalocean.com/community/tutorials/multiple-linear-regression-python</a></p>
 <p>Until now, we explore a single variable linear regression. But, in general, we have multiple variables problems. In this case, we want to study a model like</p>
-<div class="amsmath math notranslate nohighlight" id="equation-37ce4040-6ebc-4071-b11c-a88b2256bcc2">
-<span class="eqno">(5.6)<a class="headerlink" href="#equation-37ce4040-6ebc-4071-b11c-a88b2256bcc2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-52946ff5-7070-4b2f-ae76-08563cad8d76">
+<span class="eqno">(5.6)<a class="headerlink" href="#equation-52946ff5-7070-4b2f-ae76-08563cad8d76" title="Permalink to this equation">#</a></span>\[\begin{equation}
 Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n + \epsilon = \vec \beta \cdot \vec V + \epsilon,
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\vec \beta\)</span> are the coefficients we want to optimize, and we have <span class="math notranslate nohighlight">\(n\)</span> “independent” variables.</p>
@@ -2855,7 +3036,7 @@ Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n + \epsilon = \vec
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/7150aeac8182fa279e3520660a67cecfa23f70baa3cfa9871e04a3895ef0fa67.png" src="../../_images/7150aeac8182fa279e3520660a67cecfa23f70baa3cfa9871e04a3895ef0fa67.png" />
+<img alt="../../_images/0c21a70eefa12292c63c033463b862a61afe9d0920c7b515b49d0b34aceba017.png" src="../../_images/0c21a70eefa12292c63c033463b862a61afe9d0920c7b515b49d0b34aceba017.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -2889,7 +3070,7 @@ Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n + \epsilon = \vec
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/2b7a43863296bbd4189c2cd8edb2115e4cf4c8cf2edc817d96a65bf07e7aa43a.png" src="../../_images/2b7a43863296bbd4189c2cd8edb2115e4cf4c8cf2edc817d96a65bf07e7aa43a.png" />
+<img alt="../../_images/10a4d4da99547b99e9f3a5a3159edbc1659c6eb9116570077100f97c685e8641.png" src="../../_images/10a4d4da99547b99e9f3a5a3159edbc1659c6eb9116570077100f97c685e8641.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- 1. Correlation with Dependent Variable (y) ---
 We want these values to be high (far from zero).
 y     1.000000
@@ -2951,8 +3132,8 @@ X3 -0.037654 -0.146354  1.000000
 Dep. Variable:                      y   R-squared:                       0.898
 Model:                            OLS   Adj. R-squared:                  0.896
 Method:                 Least Squares   F-statistic:                     428.0
-Date:                Fri, 24 Oct 2025   Prob (F-statistic):           7.45e-49
-Time:                        17:22:32   Log-Likelihood:                -311.60
+Date:                Sun, 01 Feb 2026   Prob (F-statistic):           7.45e-49
+Time:                        22:30:20   Log-Likelihood:                -311.60
 No. Observations:                 100   AIC:                             629.2
 Df Residuals:                      97   BIC:                             637.0
 Df Model:                           2                                         
@@ -2986,7 +3167,7 @@ Notes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;const&#39;, &#39;X1&#39;, &#39;X2&#39;], dtype=&#39;object&#39;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;const&#39;, &#39;X1&#39;, &#39;X2&#39;], dtype=&#39;str&#39;)
 </pre></div>
 </div>
 </div>
@@ -3067,7 +3248,7 @@ Notes:
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Checking for Linearity and Homoscedasticity...
 </pre></div>
 </div>
-<img alt="../../_images/3b2b785802d186898ede5d90cb26058129c3e8c05327cd971f03c83b80fec8ca.png" src="../../_images/3b2b785802d186898ede5d90cb26058129c3e8c05327cd971f03c83b80fec8ca.png" />
+<img alt="../../_images/e691b8a3eb5fa3ac1f7afcfbc95a0bcf250a23e1f7dc29947445a1d44f5b8d49.png" src="../../_images/e691b8a3eb5fa3ac1f7afcfbc95a0bcf250a23e1f7dc29947445a1d44f5b8d49.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Checking for Homoscedasticity (Breusch-Pagan Test)...
 Breusch-Pagan Test p-value: 0.4893
 Result: No evidence of heteroscedasticity (Good).
@@ -3083,7 +3264,7 @@ Result: No significant autocorrelation (Good).
 Checking for Normality of Residuals (Q-Q Plot and Jarque-Bera)...
 </pre></div>
 </div>
-<img alt="../../_images/63009280a8a2a9468d15ee49ba4e6d60d9555e1cd02ac7fb6a51a58a05284b8d.png" src="../../_images/63009280a8a2a9468d15ee49ba4e6d60d9555e1cd02ac7fb6a51a58a05284b8d.png" />
+<img alt="../../_images/c7ba0869cbfefe50891d9e3874eca861117993022b22a8cd5f5cd1a9e326afd3.png" src="../../_images/c7ba0869cbfefe50891d9e3874eca861117993022b22a8cd5f5cd1a9e326afd3.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jarque-Bera test probability: 2.103
 Result: Residuals appear to be normally distributed (Good).
 
@@ -3204,8 +3385,8 @@ Result: Potential multicollinearity detected (Bad).
 <p class="admonition-title"><span class="caption-number">Exercise 5.8 </span> (Polynomial regression)</p>
 <section id="exercise-content">
 <p>Generate a random set following the model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5c3d7478-d3e3-4f71-9abb-e42cba9dac05">
-<span class="eqno">(5.7)<a class="headerlink" href="#equation-5c3d7478-d3e3-4f71-9abb-e42cba9dac05" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e04f1cf1-dd5b-4acc-8335-c1f5ee3e8250">
+<span class="eqno">(5.7)<a class="headerlink" href="#equation-e04f1cf1-dd5b-4acc-8335-c1f5ee3e8250" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = \beta_0 + \beta_1 x_1 + \beta_2 x_1^2 + \epsilon
 \end{equation}\]</div>
 <p>and apply (polynomial) linear regression to get the coefficients.  Check <a class="reference external" href="https://www.geeksforgeeks.org/machine-learning/python-implementation-of-polynomial-regression/">https://www.geeksforgeeks.org/machine-learning/python-implementation-of-polynomial-regression/</a></p>

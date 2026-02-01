@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
@@ -69,7 +69,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-JMZ8EV2JDJ"></script>
@@ -212,6 +212,11 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../00-IntroductionCourseML/IntroCourse-MachineLearning.html">1. Introduction to the course and to Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00-TALK-IntroML/IntroMachineLearning.html">2. A fast introduction to Machine Learning</a></li>
+
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/DataCleaning.html">3. Pandas for data cleaning and analysis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unsupervised learning I</span></p>
@@ -640,7 +645,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/fe0cc837950a55cae93cf364a4e72a8aded30b7f47e25a501622a9d544493ae6.png" src="../../_images/fe0cc837950a55cae93cf364a4e72a8aded30b7f47e25a501622a9d544493ae6.png" />
+<img alt="../../_images/70435ef54d25c88377826a0543ed79a18a5d6814efb5d8f763a44f97901b1c8f.png" src="../../_images/70435ef54d25c88377826a0543ed79a18a5d6814efb5d8f763a44f97901b1c8f.png" />
 </div>
 </div>
 </section>
@@ -660,21 +665,21 @@ $<span class="math notranslate nohighlight">\(
 <p>This is the so-called hard-margin classifier. The actual hyperplane might not always exists, like in the case of the “circular boundary”.</p>
 <p><strong>Soft-margin</strong></p>
 <p>When there is not linear (hyperplane boundary), a hinge-loss function is introduced,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-741cf5ae-c50f-41bd-8ced-0b45e06bc07a">
-<span class="eqno">(7.1)<a class="headerlink" href="#equation-741cf5ae-c50f-41bd-8ced-0b45e06bc07a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5c891e0f-5e8b-4d25-9cff-e73ddb685c41">
+<span class="eqno">(7.1)<a class="headerlink" href="#equation-5c891e0f-5e8b-4d25-9cff-e73ddb685c41" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \max(0, 1 - y_i(w\cdot x_i - b)),
 \end{equation}\]</div>
 <p>This function is 0 if the constrain is sattisfied, otherwise its value is proportional to the distance to the margin. This also allows for some misclassification, but this also makes the method less sentitive to outliers. The goal now is to minimize</p>
-<div class="amsmath math notranslate nohighlight" id="equation-691263aa-4f0a-4566-8b76-4abd8913fe1c">
-<span class="eqno">(7.2)<a class="headerlink" href="#equation-691263aa-4f0a-4566-8b76-4abd8913fe1c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-656c11fc-4243-4b3d-91ca-d7897f078806">
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-656c11fc-4243-4b3d-91ca-d7897f078806" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \|\mathbf{w}\|^{2} 
 + C \left[ \frac{1}{n} \sum_{i=1}^{n} 
 \max \bigl(0,\, 1 - y_i(\mathbf{w}^\top \mathbf{x}_i - b)\bigr) \right],
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(C \lt 0\)</span> represents the trade-off between increasing the margin size and ansuring that <span class="math notranslate nohighlight">\(x_i\)</span> ies on the correct size of the boundary.</p>
 <p>In this case, soft-margin SVM introduces slack variables <span class="math notranslate nohighlight">\(\zeta_i\)</span> and penalty <span class="math notranslate nohighlight">\(C\)</span>, and the problem becomes</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8fbe84db-1c2b-48ff-aca1-ad87ce421ea7">
-<span class="eqno">(7.3)<a class="headerlink" href="#equation-8fbe84db-1c2b-48ff-aca1-ad87ce421ea7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c30907cf-5f03-4cb5-8e86-b73681c20d41">
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-c30907cf-5f03-4cb5-8e86-b73681c20d41" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{aligned}
 \min_{\mathbf{w},\, b,\, \boldsymbol{\zeta}} \quad 
 &amp; \|\mathbf{w}\|_{2}^{2} + C \sum_{i=1}^{n} \zeta_i \\[6pt]
@@ -735,7 +740,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/adee22a28a8f86cc4e441ab85ffac06e59af6d4c7a0ca64550c707cf37ca6872.png" src="../../_images/adee22a28a8f86cc4e441ab85ffac06e59af6d4c7a0ca64550c707cf37ca6872.png" />
+<img alt="../../_images/fd8be202c9b0ceba110234bf962e7106d1adcc4207a3beadaf4c5c3ffb52fb1d.png" src="../../_images/fd8be202c9b0ceba110234bf962e7106d1adcc4207a3beadaf4c5c3ffb52fb1d.png" />
 </div>
 </div>
 <div class="exercise admonition" id="lectures/06-SVM/SVM-exercise-1">
@@ -842,7 +847,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d228456af900d8aee108fb4eb54ec7d9dfa8eca3737d299256d7129d25685ec7.png" src="../../_images/d228456af900d8aee108fb4eb54ec7d9dfa8eca3737d299256d7129d25685ec7.png" />
+<img alt="../../_images/4c52c9e92e0f4c5c9c7af4fe4f7120ec18cbb504c4bb1fe4b99d8bbbbdb17207.png" src="../../_images/4c52c9e92e0f4c5c9c7af4fe4f7120ec18cbb504c4bb1fe4b99d8bbbbdb17207.png" />
 </div>
 </div>
 <div class="{exercise}Experimenting docutils">
@@ -901,7 +906,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/ad86cdd4738d370494e3a59a821084cf5af58fbfc724eb43eb27bf04fe91610a.png" src="../../_images/ad86cdd4738d370494e3a59a821084cf5af58fbfc724eb43eb27bf04fe91610a.png" />
+<img alt="../../_images/b968bf2e21a649c4900c1acfca63f155f1d5edc27101a739b1b4780acde788f6.png" src="../../_images/b968bf2e21a649c4900c1acfca63f155f1d5edc27101a739b1b4780acde788f6.png" />
 </div>
 </div>
 <div class="exercise admonition" id="lectures/06-SVM/SVM-exercise-2">

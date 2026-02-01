@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
@@ -69,7 +69,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-JMZ8EV2JDJ"></script>
@@ -212,6 +212,11 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../00-IntroductionCourseML/IntroCourse-MachineLearning.html">1. Introduction to the course and to Machine Learning</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. A fast introduction to Machine Learning</a></li>
+
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/DataCleaning.html">3. Pandas for data cleaning and analysis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unsupervised learning I</span></p>
@@ -497,38 +502,78 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-machine-learning">2.1. Introduction to Machine Learning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-development">2.2. Historical development</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-find-data-in-the-basic-and-natural-sciences">2.3. Where to Find Data in the Basic and Natural Sciences</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#field-specific-databases">2.3.1. Field-Specific Databases</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#genomics-and-molecular-biology">2.3.1.1. Genomics and Molecular Biology:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#environmental-and-earth-sciences">2.3.1.2. Environmental and Earth Sciences:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#astronomy-and-physics">2.3.1.3. Astronomy and Physics:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#chemistry">2.3.1.4. Chemistry:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2. A fast introduction to Machine Learning</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#artificial-intelligence">2.1. Artificial intelligence</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-development-and-projections">2. Historical development and projections</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#major-developments-in-machine-learning-xx-xxi-centuries">2.1. Major Developments in Machine Learning (XX &amp; XXI Centuries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-timeline">2.2. The Timeline</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-1-the-golden-age-1950s1970">2.2.1. <strong>Phase 1: The Golden Age (1950s–1970)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-winter-1-19741980">2.2.2. <strong>❄️ AI Winter 1 (1974–1980)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-2-the-knowledge-era-19801987">2.2.3. <strong>Phase 2: The Knowledge Era (1980–1987)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-winter-2-19871993">2.2.4. <strong>❄️ AI Winter 2 (1987–1993)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-3-the-statistical-quiet-era-19952010">2.2.5. <strong>Phase 3: The Statistical “Quiet” Era (1995–2010)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-4-the-deep-learning-explosion-2012present">2.2.6. <strong>Phase 4: The Deep Learning Explosion (2012–Present)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-impact">2.3. Hardware impact</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-on-software-engineering-and-some-white-collar-jobs">2.4. Impact on software engineering (and some white collar jobs)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-in-science">2. ML in science</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-to-scientific-discovery">2.1. Applications to Scientific Discovery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-find-data-in-the-basic-and-natural-sciences">2.2. Where to Find Data in the Basic and Natural Sciences</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#field-specific-databases">2.2.1. Field-Specific Databases</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#genomics-and-molecular-biology">2.2.1.1. Genomics and Molecular Biology:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#environmental-and-earth-sciences">2.2.1.2. Environmental and Earth Sciences:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#astronomy-and-physics">2.2.1.3. Astronomy and Physics:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#chemistry">2.2.1.4. Chemistry:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-problems">2.2.2. Some problems</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-ml">2.3. Quantum ML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-tools-for-research">2.4. Some tools for research</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-and-short-example-also-the-blackbox">2. Practical and short example (also the blackbox)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised">2.1. Supervised</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised">2.2. Unsupervised</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning">2.3. Reinforcement learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typical-workflow">2.4. Typical workflow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-concepts">2.4.1. Core concepts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-algorithms">2.5. ML Algorithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classifier-comparison">2.5.1. Classifier comparison:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-flow-playground">2.5.2. Tensor flow playground</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-learning">2.4. Types of learning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-in-science">2.5. ML in science</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-short-fast-example">2.6. Practical, short, fast example</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised">2.6.1. Supervised</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised">2.6.2. Unsupervised</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning">2.6.3. Reinforcement learning</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-ethics-risks-and-future">2. ML Ethics, risks and future</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bias">2.1. Bias</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agi">2.2. “AGI”</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-illusion-of-thinking">2.2.1. The illusion of thinking</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typical-workflow">2.7. Typical workflow</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-concepts">2.7.1. Core concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-prices">2.3. Hardware prices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretability-and-understanding">2.4. Interpretability and Understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jobs">2.5. Jobs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#war">2.6. War</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#censorship">2.7. Censorship</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-and-hardware-use">2.8. Electric and hardware use</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fake-videos-news">2.9. Fake videos/news</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-therapy-sycophancy-problem-relationships">2.9.1. AI Therapy / sycophancy problem / relationships</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-algorithms">2.8. ML Algorithms</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classifier-comparison">2.8.1. Classifier comparison:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-flow-playground">2.8.2. Tensor flow playground</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-to-scientific-discovery">2.9. Applications to Scientific Discovery</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-ethics-risks-and-future">2.10. ML Ethics, risks and future</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#some-modern-examples-and-tools-with-some-demos">2. Some “modern” examples and tools, with some demos</a></li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -541,8 +586,6 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="a-fast-introduction-to-machine-learning">
 <h1><span class="section-number">2. </span>A fast introduction to Machine Learning<a class="headerlink" href="#a-fast-introduction-to-machine-learning" title="Link to this heading">#</a></h1>
-<section id="introduction-to-machine-learning">
-<h2><span class="section-number">2.1. </span>Introduction to Machine Learning<a class="headerlink" href="#introduction-to-machine-learning" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>Machine learning is the field of study that gives computers the ability
 to learn without being explicitly programmed. Arthur Samuel, 1959</p>
@@ -552,8 +595,12 @@ to learn without being explicitly programmed. Arthur Samuel, 1959</p>
 <div><p>A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E. Tom Mitchell’s, 1997</p>
 </div></blockquote>
 <p>Machine learning is a branch of artificial intelligence that allows computers to learn from given information and perform new but similar tasks.</p>
-<a class="reference internal image-reference" href="../../_images/AI-ML.png"><img alt="transistors-per-microprocessor.png" class="align-center" src="../../_images/AI-ML.png" style="width: 50%;" /></a>
-<p><strong>Artificial intelligence</strong>: The computer performs actions defined as requiring intelligence -&gt; Moving target</p>
+<figure class="align-center" id="transistor-per-micro-procesors">
+<a class="reference internal image-reference" href="../../_images/AI-ML.png"><img alt="../../_images/AI-ML.png" src="../../_images/AI-ML.png" style="width: 80%;" /></a>
+</figure>
+<section id="artificial-intelligence">
+<h2><span class="section-number">2.1. </span>Artificial intelligence<a class="headerlink" href="#artificial-intelligence" title="Link to this heading">#</a></h2>
+<p>The computer performs actions defined as requiring intelligence -&gt; Moving target</p>
 <ul class="simple">
 <li><p>Search Based Heuristic Optimization</p></li>
 <li><p>Evolutionary computation</p></li>
@@ -567,7 +614,7 @@ to learn without being explicitly programmed. Arthur Samuel, 1959</p>
 <p>Examples:</p>
 <ul class="simple">
 <li><p>Self-driving cars</p></li>
-<li><p>ChatGPT (LLM)</p></li>
+<li><p>ChatGPT (LLM): Chatgpt, gemini, claude, deepseek, qwen, … (Inner working: <a class="reference external" href="https://www.youtube.com/watch?v=NKnZYvZA7w4">https://www.youtube.com/watch?v=NKnZYvZA7w4</a>)</p></li>
 <li><p>Healthcare: Diagnosis from scans</p></li>
 <li><p>Finance: Fraud detection</p></li>
 <li><p>Retail: Recommender systems</p></li>
@@ -578,27 +625,452 @@ to learn without being explicitly programmed. Arthur Samuel, 1959</p>
     <img src="figs/AI-ML.png" alt="Machine learning as a subarea of artificail intelligence. From: Understanding Deep Learning, Simon J.D. Prince" width="600">
     <figcaption>From: Understanding Deep Learning, Simon J.D. Prince</figcaption>
 </div> --></section>
-<section id="historical-development">
-<h2><span class="section-number">2.2. </span>Historical development<a class="headerlink" href="#historical-development" title="Link to this heading">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="historical-development-and-projections">
+<h1><span class="section-number">2. </span>Historical development and projections<a class="headerlink" href="#historical-development-and-projections" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p><a class="reference external" href="https://letsdatascience.com/learn/history/history-of-machine-learning/">https://letsdatascience.com/learn/history/history-of-machine-learning/</a></p></li>
 <li><p><a class="github reference external" href="https://github.com/microsoft/ML-For-Beginners/blob/main/1-Introduction/2-history-of-ML/README.md">microsoft/ML-For-Beginners</a></p></li>
 <li><p><a class="reference external" href="https://www.inveniam.fr/a-brief-history-of-machine-learning">https://www.inveniam.fr/a-brief-history-of-machine-learning</a></p></li>
 <li><p><a class="reference external" href="https://ahistoryofai.com/">https://ahistoryofai.com/</a></p></li>
 </ul>
-<p>Hardware was too costly, but improvements on both cpu and gpu made it practical, or at least attainable, to apply the different AI models.</p>
-<a class="reference internal image-reference" href="../../_images/transistors-per-microprocessor.png"><img alt="transistor versus microprocesos" class="align-center" src="../../_images/transistors-per-microprocessor.png" style="width: 60%;" /></a>
-<img alt="gpu-perf over time" src="https://epochai.org/assets/images/posts/2022/gpu-perf/gpu-perf-banner.png" />
-<p>Is this the future? <a class="reference external" href="https://ai-2027.com/">https://ai-2027.com/</a></p>
-<div style="text-align: center;">
-<figure>
-<img src="https://ai-2027.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FepochLLMprice-nowatermark.824fa343.png&w=1920&q=75" width=60%>
-<figcaption> https://ai-2027.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FepochLLMprice-nowatermark.824fa343.png&w=1920&q=75 </figcaption>
-</figure>
+<section id="major-developments-in-machine-learning-xx-xxi-centuries">
+<h2><span class="section-number">2.1. </span>Major Developments in Machine Learning (XX &amp; XXI Centuries)<a class="headerlink" href="#major-developments-in-machine-learning-xx-xxi-centuries" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Year</p></th>
+<th class="head text-left"><p>Development / Algorithm</p></th>
+<th class="head text-left"><p>Key Researchers</p></th>
+<th class="head text-left"><p>Seminal Work &amp; Reference Link</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>1943</strong></p></td>
+<td class="text-left"><p><strong>Artificial Neuron</strong><br>(McCulloch-Pitts Neuron)</p></td>
+<td class="text-left"><p>Warren McCulloch,<br>Walter Pitts</p></td>
+<td class="text-left"><p><em>A Logical Calculus of the Ideas Immanent in Nervous Activity</em><br><a class="reference external" href="https://www.cs.cmu.edu/~./epxing/Class/10715/reading/McCulloch.and.Pitts.pdf"><strong>[PDF/Link]</strong></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>1950</strong></p></td>
+<td class="text-left"><p><strong>Turing Test</strong><br>(Foundations of AI)</p></td>
+<td class="text-left"><p>Alan Turing</p></td>
+<td class="text-left"><p><em>Computing Machinery and Intelligence</em><br><a class="reference external" href="https://academic.oup.com/mind/article/LIX/236/433/986238"><strong>[PDF/Link]</strong></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>1957</strong></p></td>
+<td class="text-left"><p><strong>The Perceptron</strong><br>(Single-layer Neural Network)</p></td>
+<td class="text-left"><p>Frank Rosenblatt</p></td>
+<td class="text-left"><p><em>The Perceptron: A Probabilistic Model for Information Storage and Organization in the Brain</em><br><a class="reference external" href="https://psycnet.apa.org/doi/10.1037/h0042519"><strong>[PDF/Link]</strong></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>1986</strong></p></td>
+<td class="text-left"><p><strong>Backpropagation</strong><br>(Popularization for Multi-Layer Perceptrons)</p></td>
+<td class="text-left"><p>D. Rumelhart, G. Hinton,<br>R. Williams</p></td>
+<td class="text-left"><p><em>Learning representations by back-propagating errors</em><br><a class="reference external" href="https://www.nature.com/articles/323533a0"><strong>[Nature Link]</strong></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>1989</strong></p></td>
+<td class="text-left"><p><strong>Convolutional Neural Networks (CNN)</strong><br>(LeNet predecessor)</p></td>
+<td class="text-left"><p>Yann LeCun et al.</p></td>
+<td class="text-left"><p><em>Backpropagation Applied to Handwritten Zip Code Recognition</em><br><a class="reference external" href="http://yann.lecun.com/exdb/publis/pdf/lecun-89e.pdf"><strong>[PDF/Link]</strong></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>1995</strong></p></td>
+<td class="text-left"><p><strong>Support Vector Machines (SVM)</strong></p></td>
+<td class="text-left"><p>Corinna Cortes,<br>Vladimir Vapnik</p></td>
+<td class="text-left"><p><em>Support-Vector Networks</em><br><a class="reference external" href="https://link.springer.com/article/10.1007/BF00994018"><strong>[Springer Link]</strong></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>1997</strong></p></td>
+<td class="text-left"><p><strong>Long Short-Term Memory (LSTM)</strong><br>(RNN Architecture)</p></td>
+<td class="text-left"><p>Sepp Hochreiter,<br>Jürgen Schmidhuber</p></td>
+<td class="text-left"><p><em>Long Short-Term Memory</em><br><a class="reference external" href="https://direct.mit.edu/neco/article-abstract/9/8/1735/6109/Long-Short-Term-Memory"><strong>[MIT Press Link]</strong></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>2001</strong></p></td>
+<td class="text-left"><p><strong>Random Forests</strong></p></td>
+<td class="text-left"><p>Leo Breiman</p></td>
+<td class="text-left"><p><em>Random Forests</em><br><a class="reference external" href="https://link.springer.com/article/10.1023/A:1010933404324"><strong>[Springer Link]</strong></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>2006</strong></p></td>
+<td class="text-left"><p><strong>Deep Belief Networks</strong><br>(Rebirth of Deep Learning)</p></td>
+<td class="text-left"><p>Geoffrey Hinton et al.</p></td>
+<td class="text-left"><p><em>A Fast Learning Algorithm for Deep Belief Nets</em><br><a class="reference external" href="https://www.cs.toronto.edu/~hinton/absps/fastnc.pdf"><strong>[PDF/Link]</strong></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>2012</strong></p></td>
+<td class="text-left"><p><strong>AlexNet</strong><br>(Deep Learning on ImageNet)</p></td>
+<td class="text-left"><p>A. Krizhevsky, I. Sutskever,<br>G. Hinton</p></td>
+<td class="text-left"><p><em>ImageNet Classification with Deep Convolutional Neural Networks</em><br><a class="reference external" href="https://proceedings.neurips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf"><strong>[NeurIPS Link]</strong></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>2013</strong></p></td>
+<td class="text-left"><p><strong>Word2Vec</strong><br>(Efficient Word Embeddings)</p></td>
+<td class="text-left"><p>Tomas Mikolov et al.</p></td>
+<td class="text-left"><p><em>Efficient Estimation of Word Representations in Vector Space</em><br><a class="reference external" href="https://arxiv.org/abs/1301.3781"><strong>[ArXiv Link]</strong></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>2014</strong></p></td>
+<td class="text-left"><p><strong>Generative Adversarial Networks (GANs)</strong></p></td>
+<td class="text-left"><p>Ian Goodfellow et al.</p></td>
+<td class="text-left"><p><em>Generative Adversarial Networks</em><br><a class="reference external" href="https://papers.nips.cc/paper/5423-generative-adversarial-nets.pdf"><strong>[NeurIPS Link]</strong></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>2015</strong></p></td>
+<td class="text-left"><p><strong>ResNet</strong><br>(Residual Learning / Very Deep Networks)</p></td>
+<td class="text-left"><p>Kaiming He et al.</p></td>
+<td class="text-left"><p><em>Deep Residual Learning for Image Recognition</em><br><a class="reference external" href="https://arxiv.org/abs/1512.03385"><strong>[CVPR/ArXiv Link]</strong></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>2016</strong></p></td>
+<td class="text-left"><p><strong>AlphaGo</strong><br>(Deep RL / MCTS)</p></td>
+<td class="text-left"><p>David Silver et al. (DeepMind)</p></td>
+<td class="text-left"><p><em>Mastering the game of Go with deep neural networks and tree search</em><br><a class="reference external" href="https://www.nature.com/articles/nature16961"><strong>[Nature Link]</strong></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>2017</strong></p></td>
+<td class="text-left"><p><strong>Transformer Architecture</strong><br>(Self-Attention Mechanism)</p></td>
+<td class="text-left"><p>Ashish Vaswani et al.</p></td>
+<td class="text-left"><p><em>Attention Is All You Need</em><br><a class="reference external" href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf"><strong>[NeurIPS Link]</strong></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>2018</strong></p></td>
+<td class="text-left"><p><strong>BERT</strong><br>(Bidirectional Encoder Representations)</p></td>
+<td class="text-left"><p>Jacob Devlin et al.</p></td>
+<td class="text-left"><p><em>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</em><br><a class="reference external" href="https://arxiv.org/abs/1810.04805"><strong>[ArXiv Link]</strong></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>2020</strong></p></td>
+<td class="text-left"><p><strong>GPT-3</strong><br>(Large Language Models / Few-Shot Learning)</p></td>
+<td class="text-left"><p>Tom Brown et al. (OpenAI)</p></td>
+<td class="text-left"><p><em>Language Models are Few-Shot Learners</em><br><a class="reference external" href="https://proceedings.neurips.cc/paper/2020/file/1457c0d6bfcb4967418bfb8ac142f64a-Paper.pdf"><strong>[NeurIPS Link]</strong></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>2020</strong></p></td>
+<td class="text-left"><p><strong>Diffusion Models</strong><br>(Foundation for Modern Image Gen)</p></td>
+<td class="text-left"><p>Jonathan Ho et al.</p></td>
+<td class="text-left"><p><em>Denoising Diffusion Probabilistic Models</em><br><a class="reference external" href="https://proceedings.neurips.cc/paper/2020/file/4c5bcfec8584af0d967f1ab10179ca4b-Paper.pdf"><strong>[NeurIPS Link]</strong></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>2021</strong></p></td>
+<td class="text-left"><p><strong>AlphaFold 2</strong><br>(Protein Structure Prediction)</p></td>
+<td class="text-left"><p>John Jumper et al. (DeepMind)</p></td>
+<td class="text-left"><p><em>Highly accurate protein structure prediction with AlphaFold</em><br><a class="reference external" href="https://www.nature.com/articles/s41586-021-03819-2"><strong>[Nature Link]</strong></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>2021</strong></p></td>
+<td class="text-left"><p><strong>LoRA</strong><br>(Low-Rank Adaptation / Efficient Fine-tuning)</p></td>
+<td class="text-left"><p>Edward Hu et al. (Microsoft)</p></td>
+<td class="text-left"><p><em>LoRA: Low-Rank Adaptation of Large Language Models</em><br><a class="reference external" href="https://arxiv.org/abs/2106.09685"><strong>[ArXiv Link]</strong></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>2022</strong></p></td>
+<td class="text-left"><p><strong>Chain-of-Thought (CoT)</strong><br>(Prompting for Reasoning)</p></td>
+<td class="text-left"><p>Jason Wei et al. (Google)</p></td>
+<td class="text-left"><p><em>Chain-of-Thought Prompting Elicits Reasoning in Large Language Models</em><br><a class="reference external" href="https://arxiv.org/abs/2201.11903"><strong>[ArXiv Link]</strong></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>2022</strong></p></td>
+<td class="text-left"><p><strong>ReAct</strong><br>(Foundations of AI Agents)</p></td>
+<td class="text-left"><p>Shunyu Yao et al. (Princeton/Google)</p></td>
+<td class="text-left"><p><em>ReAct: Synergizing Reasoning and Acting in Language Models</em><br><a class="reference external" href="https://arxiv.org/abs/2210.03629"><strong>[ArXiv Link]</strong></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>2023</strong></p></td>
+<td class="text-left"><p><strong>GPT-4</strong><br>(Multimodal Large Language Models)</p></td>
+<td class="text-left"><p>OpenAI</p></td>
+<td class="text-left"><p><em>GPT-4 Technical Report</em><br><a class="reference external" href="https://arxiv.org/abs/2303.08774"><strong>[ArXiv Link]</strong></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>2023</strong></p></td>
+<td class="text-left"><p><strong>Llama 2 / Open Weights</strong><br>(Democratization of LLMs)</p></td>
+<td class="text-left"><p>Hugo Touvron et al. (Meta AI)</p></td>
+<td class="text-left"><p><em>Llama 2: Open Foundation and Fine-Tuned Chat Models</em><br><a class="reference external" href="https://arxiv.org/abs/2307.09288"><strong>[ArXiv Link]</strong></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>2023</strong></p></td>
+<td class="text-left"><p><strong>DPO</strong><br>(RLHF Alternative)</p></td>
+<td class="text-left"><p>Rafael Rafailov et al. (Stanford)</p></td>
+<td class="text-left"><p><em>Direct Preference Optimization: Your Language Model is Secretly a Reward Model</em><br><a class="reference external" href="https://arxiv.org/abs/2305.18290"><strong>[NeurIPS Link]</strong></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>2024</strong></p></td>
+<td class="text-left"><p><strong>Mixture of Experts (MoE)</strong><br>(Efficient Scaling / Mixtral)</p></td>
+<td class="text-left"><p>Albert Q. Jiang et al. (Mistral AI)</p></td>
+<td class="text-left"><p><em>Mixtral of Experts</em><br><a class="reference external" href="https://arxiv.org/abs/2401.04088"><strong>[ArXiv Link]</strong></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>2024</strong></p></td>
+<td class="text-left"><p><strong>Long-Context Multimodal</strong><br>(1M+ Token Context / Gemini 1.5)</p></td>
+<td class="text-left"><p>Gemini Team (Google)</p></td>
+<td class="text-left"><p><em>Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context</em><br><a class="reference external" href="https://arxiv.org/abs/2403.05530"><strong>[ArXiv Link]</strong></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>2024</strong></p></td>
+<td class="text-left"><p><strong>Reasoning Models (System 2)</strong><br>(OpenAI o1 / Hidden Chain of Thought)</p></td>
+<td class="text-left"><p>OpenAI</p></td>
+<td class="text-left"><p><em>OpenAI o1 System Card</em><br><a class="reference external" href="https://openai.com/index/openai-o1-system-card/"><strong>[OpenAI Report]</strong></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>2025</strong></p></td>
+<td class="text-left"><p><strong>DeepSeek-V3</strong><br>(Hyper-Efficient Training / MLA)</p></td>
+<td class="text-left"><p>DeepSeek-AI</p></td>
+<td class="text-left"><p><em>DeepSeek-V3 Technical Report</em><br><a class="reference external" href="https://arxiv.org/abs/2412.19437"><strong>[ArXiv Link]</strong></a></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </section>
+<section id="the-timeline">
+<h2><span class="section-number">2.2. </span>The Timeline<a class="headerlink" href="#the-timeline" title="Link to this heading">#</a></h2>
+<section id="phase-1-the-golden-age-1950s1970">
+<h3><span class="section-number">2.2.1. </span><strong>Phase 1: The Golden Age (1950s–1970)</strong><a class="headerlink" href="#phase-1-the-golden-age-1950s1970" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Algorithms:</strong> Turing Test, Perceptrons (Rosenblatt), Logic Theorist.</p></li>
+<li><p><strong>Vibe:</strong> Unbridled optimism. “Machines will do everything humans can do within 20 years.”</p></li>
+<li><p><strong>The Crash:</strong> Minsky &amp; Papert published <em>Perceptrons</em> (1969), mathematically proving single-layer networks couldn’t solve simple problems like XOR. Funding dried up.</p></li>
+</ul>
+</section>
+<section id="ai-winter-1-19741980">
+<h3><span class="section-number">2.2.2. </span><strong>❄️ AI Winter 1 (1974–1980)</strong><a class="headerlink" href="#ai-winter-1-19741980" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Cause:</strong> Overpromising and underdelivering.</p></li>
+<li><p><strong>Result:</strong> Government funding (DARPA/UK) slashed. “Neural Networks” became a taboo term.</p></li>
+</ul>
+</section>
+<section id="phase-2-the-knowledge-era-19801987">
+<h3><span class="section-number">2.2.3. </span><strong>Phase 2: The Knowledge Era (1980–1987)</strong><a class="headerlink" href="#phase-2-the-knowledge-era-19801987" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Algorithms:</strong> Expert Systems (rule-based), Backpropagation popularization (Hinton/Rumelhart).</p></li>
+<li><p><strong>Vibe:</strong> AI moved from “learning” to “rules.” Companies bought expensive Lisp Machines.</p></li>
+<li><p><strong>The Crash:</strong> Lisp machines were too expensive and brittle. Desktop PCs (IBM/Apple) became cheaper and faster. The market for specialized AI hardware collapsed.</p></li>
+</ul>
+</section>
+<section id="ai-winter-2-19871993">
+<h3><span class="section-number">2.2.4. </span><strong>❄️ AI Winter 2 (1987–1993)</strong><a class="headerlink" href="#ai-winter-2-19871993" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Cause:</strong> Commercial failure of Expert Systems.</p></li>
+<li><p><strong>Result:</strong> Researchers fled the field or rebranded. The term “Machine Learning” started being used to distance the field from “AI.”</p></li>
+</ul>
+</section>
+<section id="phase-3-the-statistical-quiet-era-19952010">
+<h3><span class="section-number">2.2.5. </span><strong>Phase 3: The Statistical “Quiet” Era (1995–2010)</strong><a class="headerlink" href="#phase-3-the-statistical-quiet-era-19952010" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Algorithms:</strong> SVMs (Support Vector Machines), Random Forests.</p></li>
+<li><p><strong>Vibe:</strong> Neural networks were considered “unreliable” and “black boxes.” Mathematics and statistics ruled. SVMs were the gold standard.</p></li>
+<li><p><strong>Hardware context:</strong> Moore’s law was working, but CPUs were still serial processors. Training deep nets was theoretically possible but computationally impossible.</p></li>
+</ul>
+</section>
+<section id="phase-4-the-deep-learning-explosion-2012present">
+<h3><span class="section-number">2.2.6. </span><strong>Phase 4: The Deep Learning Explosion (2012–Present)</strong><a class="headerlink" href="#phase-4-the-deep-learning-explosion-2012present" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>The Catalyst:</strong> <strong>ImageNet 2012 (AlexNet).</strong></p></li>
+<li><p><strong>The Hardware Key:</strong> Researchers realized that <strong>GPUs</strong> (Graphics Processing Units), originally designed for video games, were perfect for the matrix math required by Neural Networks.</p></li>
+<li><p><strong>Development:</strong></p>
+<ul>
+<li><p><strong>2006:</strong> NVIDIA releases <strong>CUDA</strong> (making GPUs programmable).</p></li>
+<li><p><strong>2012:</strong> AlexNet destroys the competition using GPUs.</p></li>
+<li><p><strong>2017:</strong> Google introduces the <strong>Transformer</strong> (Attention mechanism), enabling massive parallelization on hardware.</p></li>
+<li><p><strong>2020+:</strong> Custom silicon (<strong>TPUs</strong>, A100s, H100s) allows for training models with trillions of parameters (GPT-4).</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.interpolate</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_interp_spline</span>
+
+<span class="c1"># Set up the figure</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># Data points to simulate the &quot;Hype/Progress&quot; curve</span>
+<span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1950</span><span class="p">,</span> <span class="mi">1960</span><span class="p">,</span> <span class="mi">1970</span><span class="p">,</span> <span class="mi">1974</span><span class="p">,</span> <span class="mi">1980</span><span class="p">,</span> <span class="mi">1985</span><span class="p">,</span> <span class="mi">1988</span><span class="p">,</span> <span class="mi">1993</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">2015</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2024</span><span class="p">]</span>
+<span class="n">hype_levels</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+
+<span class="c1"># Smooth the curve</span>
+<span class="n">X_Y_Spline</span> <span class="o">=</span> <span class="n">make_interp_spline</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">hype_levels</span><span class="p">)</span>
+<span class="n">X_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">years</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">years</span><span class="p">),</span> <span class="mi">500</span><span class="p">)</span>
+<span class="n">Y_</span> <span class="o">=</span> <span class="n">X_Y_Spline</span><span class="p">(</span><span class="n">X_</span><span class="p">)</span>
+<span class="n">Y_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">Y_</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="c1"># Keep within bounds</span>
+
+<span class="c1"># Plot the main line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_</span><span class="p">,</span> <span class="n">Y_</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#1f77b4&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;AI Capabilities/Hype&#39;</span><span class="p">)</span>
+
+<span class="c1"># --- Add AI Winters (Shaded Regions) ---</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="mi">1974</span><span class="p">,</span> <span class="mi">1980</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;1st AI Winter (funding cuts)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="mi">1987</span><span class="p">,</span> <span class="mi">1993</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;2nd AI Winter (Lisp market crash)&#39;</span><span class="p">)</span>
+
+<span class="c1"># --- Key Annotations ---</span>
+
+<span class="c1"># 1. Early Era</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;Perceptrons&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">1960</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">1955</span><span class="p">,</span> <span class="mi">55</span><span class="p">),</span>
+             <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.05</span><span class="p">))</span>
+
+<span class="c1"># 2. The Second Wave</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;Backpropagation</span><span class="se">\n</span><span class="s1">&amp; Expert Systems&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">1985</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">1980</span><span class="p">,</span> <span class="mi">70</span><span class="p">),</span>
+             <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.05</span><span class="p">))</span>
+
+<span class="c1"># 3. The Quiet Statistical Era</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;SVMs &amp; Random Forests</span><span class="se">\n</span><span class="s1">(Neural Nets unpopular)&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">1995</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+             <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.05</span><span class="p">))</span>
+
+<span class="c1"># 4. The Hardware/DL Explosion</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;AlexNet (2012)</span><span class="se">\n</span><span class="s1">Deep Learning Breakthrough&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">65</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">2005</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span>
+             <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.05</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;Transformers / LLMs&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">95</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">105</span><span class="p">),</span>
+             <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.05</span><span class="p">))</span>
+
+<span class="c1"># --- Hardware Overlay ---</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">2013</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;GPU Revolution</span><span class="se">\n</span><span class="s2">(NVIDIA CUDA)&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="s2">&quot;TPUs &amp; Massive Compute&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+<span class="c1"># Styling</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Evolution of Machine Learning: Winters &amp; Hardware Explosions&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Relative Progress / Hype&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+
+<span class="c1"># Show</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/ff8610e1ab868facf102731b37efa57f5a1d61889647d929bcd8c9abad8e6391.png" src="../../_images/ff8610e1ab868facf102731b37efa57f5a1d61889647d929bcd8c9abad8e6391.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="hardware-impact">
+<h2><span class="section-number">2.3. </span>Hardware impact<a class="headerlink" href="#hardware-impact" title="Link to this heading">#</a></h2>
+<p>Hardware was too costly, but improvements on both cpu and gpu made it practical, or at least attainable, to apply the different AI models.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/transistors-per-microprocessor.png"><img alt="../../_images/transistors-per-microprocessor.png" src="../../_images/transistors-per-microprocessor.png" style="width: 90%;" /></a>
+</figure>
+<!-- 
+<img src="figs/transistors-per-microprocessor.png" alt="transistor versus microprocesos" width="60%" align="center" /> --><figure class="align-center">
+<a class="reference internal image-reference" href="https://epochai.org/assets/images/posts/2022/gpu-perf/gpu-perf-banner.png"><img alt="https://epochai.org/assets/images/posts/2022/gpu-perf/gpu-perf-banner.png" src="https://epochai.org/assets/images/posts/2022/gpu-perf/gpu-perf-banner.png" style="width: 90%;" /></a>
+</figure>
+<!-- <img src="https://epochai.org/assets/images/posts/2022/gpu-perf/gpu-perf-banner.png" alt="gpu-perf over time" style="width: 80%;"/> --><p>Is this the future? <a class="reference external" href="https://ai-2027.com/">https://ai-2027.com/</a></p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://ai-2027.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FepochLLMprice-nowatermark.824fa343.png&amp;w=1920&amp;q=75"><img alt="https://ai-2027.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FepochLLMprice-nowatermark.824fa343.png&amp;w=1920&amp;q=75" src="https://ai-2027.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FepochLLMprice-nowatermark.824fa343.png&amp;w=1920&amp;q=75" style="width: 90%;" /></a>
+</figure>
+<p>Price inflation and the “ai bubble”</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/nvidia.png"><img alt="../../_images/nvidia.png" src="../../_images/nvidia.png" style="width: 90%;" /></a>
+</figure>
+<p><a class="reference external" href="https://investor.nvidia.com/stock-info/stock-quote-and-chart/default.aspx">https://investor.nvidia.com/stock-info/stock-quote-and-chart/default.aspx</a></p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/ailoop.png"><img alt="../../_images/ailoop.png" src="../../_images/ailoop.png" style="width: 80%;" /></a>
+</figure>
+<hr class="docutils" />
+<p><strong>New arquitectures- TPU (googles big bet):</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://considerthebulldog.com/tte-tpu/">https://considerthebulldog.com/tte-tpu/</a></p></li>
+<li><p><a class="reference external" href="https://jax-ml.github.io/scaling-book/tpus/">https://jax-ml.github.io/scaling-book/tpus/</a></p></li>
+<li><p><a class="reference external" href="https://henryhmko.github.io/posts/tpu/tpu.html">https://henryhmko.github.io/posts/tpu/tpu.html</a></p></li>
+</ul>
+<a class="reference internal image-reference" href="https://epoch.ai/assets/images/posts/2023/trends-in-machine-learning-hardware/trends-in-machine-learning-hardware-banner.png"><img alt="ML hardware prices" class="align-center" src="https://epoch.ai/assets/images/posts/2023/trends-in-machine-learning-hardware/trends-in-machine-learning-hardware-banner.png" style="width: 90%;" /></a>
+<p>Source: <a class="reference external" href="https://epoch.ai/blog/trends-in-machine-learning-hardware">https://epoch.ai/blog/trends-in-machine-learning-hardware</a></p>
+<hr class="docutils" />
+<a class="reference internal image-reference" href="https://epoch.ai/assets/images/posts/2024/how-much-does-it-cost-to-train-frontier-ai-models/how-much-does-it-cost-to-train-frontier-ai-models-banner.png"><img alt="cost per training" class="align-center" src="https://epoch.ai/assets/images/posts/2024/how-much-does-it-cost-to-train-frontier-ai-models/how-much-does-it-cost-to-train-frontier-ai-models-banner.png" style="width: 90%;" /></a>
+<p>Source: <a class="reference external" href="https://epoch.ai/blog/how-much-does-it-cost-to-train-frontier-ai-models">https://epoch.ai/blog/how-much-does-it-cost-to-train-frontier-ai-models</a></p>
+<p>Check more data: <a class="reference external" href="https://epoch.ai/data/machine-learning-hardware">https://epoch.ai/data/machine-learning-hardware</a></p>
+</section>
+<section id="impact-on-software-engineering-and-some-white-collar-jobs">
+<h2><span class="section-number">2.4. </span>Impact on software engineering (and some white collar jobs)<a class="headerlink" href="#impact-on-software-engineering-and-some-white-collar-jobs" title="Link to this heading">#</a></h2>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/softwarejobs.png"><img alt="../../_images/softwarejobs.png" src="../../_images/softwarejobs.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Source: <a class="reference external" href="https://fred.stlouisfed.org/series/IHLIDXUSTPSOFTDEVE#">https://fred.stlouisfed.org/series/IHLIDXUSTPSOFTDEVE#</a></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/codejanitor.png"><img alt="../../_images/codejanitor.png" src="../../_images/codejanitor.png" style="width: 80%;" /></a>
+</figure>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/officejobs.png"><img alt="../../_images/officejobs.png" src="../../_images/officejobs.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Source: <a class="reference external" href="https://fred.stlouisfed.org/series/LNU02032205#">https://fred.stlouisfed.org/series/LNU02032205#</a></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>See: <a class="reference external" href="https://claude.com/blog/cowork-research-preview">https://claude.com/blog/cowork-research-preview</a></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ml-in-science">
+<h1><span class="section-number">2. </span>ML in science<a class="headerlink" href="#ml-in-science" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://trends.google.com/explore?q=ml%2520physics&amp;amp;date=2004-01-01%202025-12-26&amp;amp;geo=Worldwide">https://trends.google.com/explore?q=ml%2520physics&amp;date=2004-01-01 2025-12-26&amp;geo=Worldwide</a></p>
+<p><a class="reference external" href="https://www.quantamagazine.org/series/science-in-the-age-of-ai/">https://www.quantamagazine.org/series/science-in-the-age-of-ai/</a></p>
+<ul class="simple">
+<li><p>NN - Hopfield: <a class="reference external" href="https://www.quantamagazine.org/the-strange-physics-that-gave-birth-to-ai-20250430/">https://www.quantamagazine.org/the-strange-physics-that-gave-birth-to-ai-20250430/</a></p></li>
+<li><p><a class="reference external" href="https://www.quantamagazine.org/an-idea-from-physics-helps-ai-see-in-higher-dimensions-20200109/">https://www.quantamagazine.org/an-idea-from-physics-helps-ai-see-in-higher-dimensions-20200109/</a></p></li>
+<li><p>Diffusion models: <a class="reference external" href="https://www.quantamagazine.org/the-physics-principle-that-inspired-modern-ai-art-20230105/">https://www.quantamagazine.org/the-physics-principle-that-inspired-modern-ai-art-20230105/</a></p></li>
+<li><p><a class="reference external" href="https://www.quantamagazine.org/where-do-scientists-think-this-is-all-going-20250430/">https://www.quantamagazine.org/where-do-scientists-think-this-is-all-going-20250430/</a></p></li>
+</ul>
+<p>Virtual assistants:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/">https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2502.18864">https://arxiv.org/abs/2502.18864</a></p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">IFrame</span>
+<span class="n">file_url</span> <span class="o">=</span> <span class="s2">&quot;https://drive.google.com/file/d/1NKW1ntAVym0F9nHijnIV8MAESnEvfU0K/preview&quot;</span>
+<span class="n">IFrame</span><span class="p">(</span><span class="n">file_url</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">480</span><span class="p">)</span>
+<span class="c1"># Source: https://www.reddit.com/r/interesting/comments/1qr1mxb/evolution_of_ai/</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html">
+        <iframe
+            width="640"
+            height="480"
+            src="https://drive.google.com/file/d/1NKW1ntAVym0F9nHijnIV8MAESnEvfU0K/preview"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
+</div>
+<section id="applications-to-scientific-discovery">
+<h2><span class="section-number">2.1. </span>Applications to Scientific Discovery<a class="headerlink" href="#applications-to-scientific-discovery" title="Link to this heading">#</a></h2>
+<p>“AI is becoming a microscope for data: it helps scientists see patterns and predictions that were previously invisible.”</p>
+<p>Machine Learning and AI are accelerating breakthroughs in scientific research by helping scientists extract patterns from massive datasets, automate complex processes, and even generate new hypotheses.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>ML/AI Application</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Astronomy</p></td>
+<td><p>Classifying galaxies from telescope data; finding exoplanets (e.g., Kepler mission)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Physics</p></td>
+<td><p>Simulating particle collisions (e.g., CERN), anomaly detection in LHC data</p></td>
+</tr>
+<tr class="row-even"><td><p>Biology</p></td>
+<td><p>Protein folding prediction (e.g., AlphaFold), gene expression analysis</p></td>
+</tr>
+<tr class="row-odd"><td><p>Chemistry</p></td>
+<td><p>Drug discovery by molecular property prediction</p></td>
+</tr>
+<tr class="row-even"><td><p>Climate Science</p></td>
+<td><p>Modeling weather and climate patterns; detecting extreme events</p></td>
+</tr>
+<tr class="row-odd"><td><p>Materials Science</p></td>
+<td><p>Discovering new materials using generative models and property prediction</p></td>
+</tr>
+<tr class="row-even"><td><p>Neuroscience</p></td>
+<td><p>Brain activity decoding from EEG/fMRI signals</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>AlphaFold</strong> by DeepMind predicts the 3D structure of proteins from amino acid sequences with remarkable accuracy — solving a 50-year grand challenge in biology.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://deepmind.google/science/alphafold/">https://deepmind.google/science/alphafold/</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=gg7WjuFs8F4">https://www.youtube.com/watch?v=gg7WjuFs8F4</a></p></li>
+</ul>
+<p><strong>Google Co-Scientist</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://blog.google/feed/google-research-ai-co-scientist/">https://blog.google/feed/google-research-ai-co-scientist/</a></p></li>
+<li><p><a class="reference external" href="https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/">https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/</a></p></li>
+</ul>
+</section>
 <section id="where-to-find-data-in-the-basic-and-natural-sciences">
-<h2><span class="section-number">2.3. </span>Where to Find Data in the Basic and Natural Sciences<a class="headerlink" href="#where-to-find-data-in-the-basic-and-natural-sciences" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.2. </span>Where to Find Data in the Basic and Natural Sciences<a class="headerlink" href="#where-to-find-data-in-the-basic-and-natural-sciences" title="Link to this heading">#</a></h2>
 <p>Finding high-quality, publicly available data is a crucial skill for any scientist. Data is often stored in repositories, which can be general-purpose or field-specific. The articles mentioned previously likely sourced their data from a mix of their own experiments and public databases like these.
 General-Purpose Scientific Data Repositories</p>
 <p>These platforms host datasets from a wide variety of scientific fields. They are often used when a field-specific repository doesn’t exist or as a requirement for publication in many journals.</p>
@@ -615,10 +1087,10 @@ General-Purpose Scientific Data Repositories</p>
 </ul>
 <p>A curated general-purpose repository that makes the data underlying scientific publications discoverable, freely reusable, and citable. It has strong ties to the biosciences but is open to all fields.</p>
 <section id="field-specific-databases">
-<h3><span class="section-number">2.3.1. </span>Field-Specific Databases<a class="headerlink" href="#field-specific-databases" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">2.2.1. </span>Field-Specific Databases<a class="headerlink" href="#field-specific-databases" title="Link to this heading">#</a></h3>
 <p>These are highly curated databases focused on a single area of research.</p>
 <section id="genomics-and-molecular-biology">
-<h4><span class="section-number">2.3.1.1. </span>Genomics and Molecular Biology:<a class="headerlink" href="#genomics-and-molecular-biology" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">2.2.1.1. </span>Genomics and Molecular Biology:<a class="headerlink" href="#genomics-and-molecular-biology" title="Link to this heading">#</a></h4>
 <ul>
 <li><p>NCBI (National Center for Biotechnology Information): (<a class="reference external" href="https://www.ncbi.nlm.nih.gov/">https://www.ncbi.nlm.nih.gov/</a>) A suite of databases, including:</p>
 <p>Gene Expression Omnibus (GEO): For gene expression data from microarrays and sequencing.</p>
@@ -628,7 +1100,7 @@ General-Purpose Scientific Data Repositories</p>
 </ul>
 </section>
 <section id="environmental-and-earth-sciences">
-<h4><span class="section-number">2.3.1.2. </span>Environmental and Earth Sciences:<a class="headerlink" href="#environmental-and-earth-sciences" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">2.2.1.2. </span>Environmental and Earth Sciences:<a class="headerlink" href="#environmental-and-earth-sciences" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>USGS (U.S. Geological Survey) Data Releases: (<a class="reference external" href="https://www.usgs.gov/data">https://www.usgs.gov/data</a>) Provides public access to water data (matching the Kaur &amp; Godara study), geological data (relevant to the Kahangwa study), and more.</p></li>
 <li><p>NOAA (National Oceanic and Atmospheric Administration): (<a class="reference external" href="https://www.noaa.gov/data">https://www.noaa.gov/data</a>) The primary source for climate, weather, and oceanographic data.</p></li>
@@ -636,31 +1108,83 @@ General-Purpose Scientific Data Repositories</p>
 </ul>
 </section>
 <section id="astronomy-and-physics">
-<h4><span class="section-number">2.3.1.3. </span>Astronomy and Physics:<a class="headerlink" href="#astronomy-and-physics" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">2.2.1.3. </span>Astronomy and Physics:<a class="headerlink" href="#astronomy-and-physics" title="Link to this heading">#</a></h4>
 <p>Sloan Digital Sky Survey (SDSS): (<a class="reference external" href="https://www.sdss.org/">https://www.sdss.org/</a>) A massive survey that has created the most detailed three-dimensional maps of the Universe ever made. It provides images and spectra for millions of celestial objects. (We will use this for our example).</p>
 <p>MAST (Mikulski Archive for Space Telescopes): (<a class="reference external" href="https://mast.stsci.edu/">https://mast.stsci.edu/</a>) The official data archive for NASA’s Hubble, James Webb, and other space telescopes.</p>
 <p>ESO Science Archive Facility: (<a class="reference external" href="http://archive.eso.org/">http://archive.eso.org/</a>) The data archive for the European Southern Observatory’s telescopes, including the Very Large Telescope (VLT).</p>
 </section>
 <section id="chemistry">
-<h4><span class="section-number">2.3.1.4. </span>Chemistry:<a class="headerlink" href="#chemistry" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">2.2.1.4. </span>Chemistry:<a class="headerlink" href="#chemistry" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>PubChem: (<a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/">https://pubchem.ncbi.nlm.nih.gov/</a>) A massive database of chemical molecules and their activities against biological assays.</p></li>
 <li><p>Spectral Database for Organic Compounds (SDBS): (<a class="reference external" href="https://sdbs.db.aist.go.jp/">https://sdbs.db.aist.go.jp/</a>) A free database containing various types of spectra (MS, NMR, IR, Raman) for thousands of organic compounds.</p></li>
+<li><p>Matminer: <a class="reference external" href="https://hackingmaterials.lbl.gov/matminer/">https://hackingmaterials.lbl.gov/matminer/</a>, <a class="github reference external" href="https://github.com/hackingmaterials/matminer">hackingmaterials/matminer</a>, <a class="reference external" href="https://www.sciencedirect.com/science/article/abs/pii/S0927025618303252">https://www.sciencedirect.com/science/article/abs/pii/S0927025618303252</a></p></li>
 </ul>
 </section>
 </section>
+<section id="some-problems">
+<h3><span class="section-number">2.2.2. </span>Some problems<a class="headerlink" href="#some-problems" title="Link to this heading">#</a></h3>
+<p>Challenges and Best Practices</p>
+<ul class="simple">
+<li><p>Validation: ML models must be validated externally to ensure findings are not merely fitting noise.</p></li>
+<li><p>Reproducibility: Ensuring findings can be replicated is a critical challenge, with frameworks like the REFORMS checklist (32 items) being developed to ensure high standards.</p></li>
+<li><p>Limitations: While powerful, ML does not replace researchers and should be used to complement, not solely define, scientific discovery.</p></li>
+<li><p>Blackbox, again</p></li>
+<li><p>Publications: <a class="reference external" href="https://arstechnica.com/science/2025/12/llms-impact-on-science-booming-publications-stagnating-quality/">https://arstechnica.com/science/2025/12/llms-impact-on-science-booming-publications-stagnating-quality/</a> : LLMs are profoundly transforming scientific publishing by driving a 23.7%–89.3% increase in manuscript production, particularly benefiting non-native English speakers. While boosting output and aiding in drafting, literature review, and editing, their use is linked to a decline in substantive quality and a rise in linguistically complex but shallow, “soulless” papers. Furthermore, paper evaluation os also heavily using LLM, so, besides input poissoinig, we are towards an ai based system where the human is just the information transmiter.</p></li>
+</ul>
 </section>
-<section id="types-of-learning">
-<h2><span class="section-number">2.4. </span>Types of learning<a class="headerlink" href="#types-of-learning" title="Link to this heading">#</a></h2>
-<a class="reference internal image-reference" href="../../_images/AI-ML.png"><img alt="ML trends" class="align-center" src="../../_images/AI-ML.png" style="width: 40%;" /></a>
 </section>
-<section id="ml-in-science">
-<h2><span class="section-number">2.5. </span>ML in science<a class="headerlink" href="#ml-in-science" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://mailchi.mp/quantamagazine.org/how-physics-made-modern-ai-possible?e=7add59a1e9">https://mailchi.mp/quantamagazine.org/how-physics-made-modern-ai-possible?e=7add59a1e9</a></p>
+<section id="quantum-ml">
+<h2><span class="section-number">2.3. </span>Quantum ML<a class="headerlink" href="#quantum-ml" title="Link to this heading">#</a></h2>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../../_images/quantumML-01.png"><img alt="../../_images/quantumML-01.png" src="../../_images/quantumML-01.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.3 </span><span class="caption-text">Source: <a class="reference external" href="https://youtu.be/EKOU3JWDNLI?si=o9YhT0GJ3dNg16K_&amp;amp;t=423">https://youtu.be/EKOU3JWDNLI?si=o9YhT0GJ3dNg16K_&amp;t=423</a></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<blockquote>
+<div><p>Quantum machine learning (QML) is the study of quantum algorithms for machine <a class="reference external" href="http://learning.It">learning.It</a> often refers to quantum algorithms for machine learning tasks which analyze classical data, sometimes called quantum-enhanced machine learning.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Quantum_machine_learning">https://en.wikipedia.org/wiki/Quantum_machine_learning</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2310.03011">https://arxiv.org/abs/2310.03011</a></p></li>
+<li><p><a class="reference external" href="https://quantum.cloud.ibm.com/learning/en/courses/quantum-machine-learning/introduction">https://quantum.cloud.ibm.com/learning/en/courses/quantum-machine-learning/introduction</a></p></li>
+<li><p><a class="reference external" href="https://pennylane.ai/qml/whatisqml">https://pennylane.ai/qml/whatisqml</a></p></li>
+</ul>
+<p>Quantum ML is in a very early stage, although google has shown the first sucessfull application:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://blog.google/intl/es-es/noticias-compania/nuestro-algoritmo-quantum-echoes-es-un-gran-paso-hacia-las-aplicaciones-reales-de-la-computacion-cuantica/">https://blog.google/intl/es-es/noticias-compania/nuestro-algoritmo-quantum-echoes-es-un-gran-paso-hacia-las-aplicaciones-reales-de-la-computacion-cuantica/</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=mEBCQidaNTQ">https://www.youtube.com/watch?v=mEBCQidaNTQ</a></p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/googleqml.jpg"><img alt="../../_images/googleqml.jpg" src="../../_images/googleqml.jpg" style="width: 80%;" /></a>
+</figure>
 </section>
-<section id="practical-short-fast-example">
-<h2><span class="section-number">2.6. </span>Practical, short, fast example<a class="headerlink" href="#practical-short-fast-example" title="Link to this heading">#</a></h2>
-<div class="cell tag_hide-input docutils container">
+<section id="some-tools-for-research">
+<h2><span class="section-number">2.4. </span>Some tools for research<a class="headerlink" href="#some-tools-for-research" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>notebooklm: <a class="reference external" href="https://notebooklm.google/">https://notebooklm.google/</a></p></li>
+<li><p>Google collab: <a class="reference external" href="https://colab.research.google.com/">https://colab.research.google.com/</a></p></li>
+<li><p>Awesome ai for science: <a class="github reference external" href="https://github.com/ai-boost/awesome-ai-for-science">ai-boost/awesome-ai-for-science</a></p></li>
+<li><p>LLM peer review: <a class="github reference external" href="https://github.com/VijayGKR/LLM-Peer-Review">VijayGKR/LLM-Peer-Review</a></p></li>
+<li><p>AgentReview: <a class="reference external" href="https://agentreview.github.io/">https://agentreview.github.io/</a></p></li>
+<li><p>AIScientist (<a class="reference external" href="https://arxiv.org/abs/2504.08066">https://arxiv.org/abs/2504.08066</a>), Google co-scientist (<a class="reference external" href="https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/">https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/</a>)</p></li>
+<li><p>Review setup: <a class="reference external" href="https://storm.genie.stanford.edu/">https://storm.genie.stanford.edu/</a></p></li>
+<li><p>AI Assistant to Automate Everyday Research Tasks <a class="reference external" href="https://scispace.com/">https://scispace.com/</a>, also check <a class="reference external" href="https://mystylus.ai/">https://mystylus.ai/</a></p></li>
+<li><p><a class="reference external" href="https://www.connectedpapers.com/">https://www.connectedpapers.com/</a>, <a class="reference external" href="https://consensus.app/">https://consensus.app/</a></p></li>
+<li><p><a class="reference external" href="https://www.sapiosciences.com/blog/10-scientific-ai-tools-every-scientist-should-know-in-2025-26/">https://www.sapiosciences.com/blog/10-scientific-ai-tools-every-scientist-should-know-in-2025-26/</a></p></li>
+<li><p><a class="reference external" href="https://scite.ai/">https://scite.ai/</a>, <a class="reference external" href="https://www.litmaps.com/">https://www.litmaps.com/</a></p></li>
+<li><p><a class="reference external" href="https://www.semanticscholar.org/">https://www.semanticscholar.org/</a></p></li>
+<li><p>…</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="practical-and-short-example-also-the-blackbox">
+<h1><span class="section-number">2. </span>Practical and short example (also the blackbox)<a class="headerlink" href="#practical-and-short-example-also-the-blackbox" title="Link to this heading">#</a></h1>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/AI-ML.png"><img alt="../../_images/AI-ML.png" src="../../_images/AI-ML.png" style="width: 80%;" /></a>
+</figure>
+<!-- <img src="./figs/AI-ML.png" alt="ML trends" width=40% align="center" > --><div class="cell tag_hide-input docutils container">
 <details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
 <p class="collapsed admonition-title">Show code cell source</p>
@@ -679,11 +1203,11 @@ General-Purpose Scientific Data Repositories</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/20f682e9c7421805012dcad400c358c490a6bc2c8feff8759955b99970e148c2.png" src="../../_images/20f682e9c7421805012dcad400c358c490a6bc2c8feff8759955b99970e148c2.png" />
+<img alt="../../_images/5519a3264f83c912506a1f1be6ba10dcd7df994ab314f8496748c330bbdd8eb0.png" src="../../_images/5519a3264f83c912506a1f1be6ba10dcd7df994ab314f8496748c330bbdd8eb0.png" />
 </div>
 </div>
 <section id="supervised">
-<h3><span class="section-number">2.6.1. </span>Supervised<a class="headerlink" href="#supervised" title="Link to this heading">#</a></h3>
+<h2><span class="section-number">2.1. </span>Supervised<a class="headerlink" href="#supervised" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Learn from labeled examples</p></li>
 <li><p>Task: Prediction (classification or regression)</p></li>
@@ -713,12 +1237,12 @@ General-Purpose Scientific Data Repositories</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a2b2f12da1f105dbf5e5a7bbe185091a89a9a16457b75ec6d7207409c50d4baf.png" src="../../_images/a2b2f12da1f105dbf5e5a7bbe185091a89a9a16457b75ec6d7207409c50d4baf.png" />
+<img alt="../../_images/b5673416930d5026afb56b330ddb568d8100307fd02a8044182315b559f68654.png" src="../../_images/b5673416930d5026afb56b330ddb568d8100307fd02a8044182315b559f68654.png" />
 </div>
 </div>
 </section>
 <section id="unsupervised">
-<h3><span class="section-number">2.6.2. </span>Unsupervised<a class="headerlink" href="#unsupervised" title="Link to this heading">#</a></h3>
+<h2><span class="section-number">2.2. </span>Unsupervised<a class="headerlink" href="#unsupervised" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>No labels, find structure in data</p></li>
 <li><p>Task: Clustering or dimensionality reduction</p></li>
@@ -736,12 +1260,12 @@ General-Purpose Scientific Data Repositories</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5881c3d8cce76ca58623ae11f70c5cdd23b165a373d7ccd4369b24579e670815.png" src="../../_images/5881c3d8cce76ca58623ae11f70c5cdd23b165a373d7ccd4369b24579e670815.png" />
+<img alt="../../_images/b6308d081d80cedb741ae6beb8234f3a6c1eb3e1eda64b16fcec264d3207cafd.png" src="../../_images/b6308d081d80cedb741ae6beb8234f3a6c1eb3e1eda64b16fcec264d3207cafd.png" />
 </div>
 </div>
 </section>
 <section id="reinforcement-learning">
-<h3><span class="section-number">2.6.3. </span>Reinforcement learning<a class="headerlink" href="#reinforcement-learning" title="Link to this heading">#</a></h3>
+<h2><span class="section-number">2.3. </span>Reinforcement learning<a class="headerlink" href="#reinforcement-learning" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Learn by trial and error</p></li>
 <li><p>Agent interacts with environment</p></li>
@@ -753,29 +1277,25 @@ General-Purpose Scientific Data Repositories</p>
 <p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">IFrame</span>
-<span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/embed/L_4BPjLBF4E?si=4vNIAkUAz7tkTyiO&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;560&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;315&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/L_4BPjLBF4E?si=QAcI7mfzcNeu1hn6&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;</span> <span class="na">referrerpolicy</span><span class="o">=</span><span class="s">&quot;strict-origin-when-cross-origin&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
 <div class="output text_html">
-        <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/L_4BPjLBF4E?si=4vNIAkUAz7tkTyiO"
-            frameborder="0"
-            allowfullscreen
-            
-        ></iframe>
-        </div></div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/L_4BPjLBF4E?si=QAcI7mfzcNeu1hn6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></div>
 </div>
 </section>
-</section>
 <section id="typical-workflow">
-<h2><span class="section-number">2.7. </span>Typical workflow<a class="headerlink" href="#typical-workflow" title="Link to this heading">#</a></h2>
-<a class="reference internal image-reference" href="../../_images/ML-workflow.png"><img alt="ML workflow" class="align-center" src="../../_images/ML-workflow.png" style="width: 50%;" /></a>
+<h2><span class="section-number">2.4. </span>Typical workflow<a class="headerlink" href="#typical-workflow" title="Link to this heading">#</a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/ML-workflow.png"><img alt="../../_images/ML-workflow.png" src="../../_images/ML-workflow.png" style="width: 90%;" /></a>
+</figure>
+<!-- <img src="./figs/ML-workflow.png" alt="ML workflow" width="50%" align="center"> -->
 <ol class="arabic simple">
 <li><p><strong>Dataset Collection</strong>: Depends on the experiment or goals. What kind of data ? (categorical numerical) How much data? Units? reference data? data base? Data storage/access?</p></li>
 <li><p><strong>Dataset preprocessing</strong>: Cleaning data. Missing data. Noise. Outliers. Normalization. Training and test sets. Or Train, validation (for hyper parameters), and test set.</p></li>
@@ -783,7 +1303,7 @@ General-Purpose Scientific Data Repositories</p>
 <li><p><strong>Model evaluation</strong>: Testing the training success, with some defined metrics. Maybe needs to redo some previous steps.</p></li>
 </ol>
 <section id="core-concepts">
-<h3><span class="section-number">2.7.1. </span>Core concepts<a class="headerlink" href="#core-concepts" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">2.4.1. </span>Core concepts<a class="headerlink" href="#core-concepts" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Data</strong>: examples used for learning</p></li>
 <li><p><strong>Features</strong>: inputs (e.g., age, temperature, pixels)</p></li>
@@ -852,157 +1372,266 @@ General-Purpose Scientific Data Repositories</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/6be8a00dce5751f9778f43f7eb86dae8620723fb6e6503f205eb401c45f08a1d.png" src="../../_images/6be8a00dce5751f9778f43f7eb86dae8620723fb6e6503f205eb401c45f08a1d.png" />
+<img alt="../../_images/67ac9a58e49c56a0f51e9f7fc7a3eede0a62bcb04b9c9142ffe51fb562b03d79.png" src="../../_images/67ac9a58e49c56a0f51e9f7fc7a3eede0a62bcb04b9c9142ffe51fb562b03d79.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="ml-algorithms">
-<h2><span class="section-number">2.8. </span>ML Algorithms<a class="headerlink" href="#ml-algorithms" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.5. </span>ML Algorithms<a class="headerlink" href="#ml-algorithms" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.datacamp.com/cheat-sheet/machine-learning-cheat-sheet">https://www.datacamp.com/cheat-sheet/machine-learning-cheat-sheet</a></p></li>
 <li><p><a class="reference external" href="https://sites.google.com/view/datascience-cheat-sheets">https://sites.google.com/view/datascience-cheat-sheets</a></p></li>
 <li><p><a class="github reference external" href="https://github.com/SamBelkacem/AI-ML-cheatsheets">SamBelkacem/AI-ML-cheatsheets</a></p></li>
 <li><p><a class="reference external" href="https://www.naftaliharris.com/blog/visualizing-k-means-clustering/">https://www.naftaliharris.com/blog/visualizing-k-means-clustering/</a></p></li>
 </ul>
-<a class="reference internal image-reference" href="../../_images/ML-CheatSheet-01.webp"><img alt="Some algs ML" class="align-center" src="../../_images/ML-CheatSheet-01.webp" style="width: 50%;" /></a>
-<a class="reference internal image-reference" href="../../_images/ML-Cheat-Sheet_2.png"><img alt="ML cheatsheet" class="align-center" src="../../_images/ML-Cheat-Sheet_2.png" style="width: 50%;" /></a>
-<section id="classifier-comparison">
-<h3><span class="section-number">2.8.1. </span>Classifier comparison:<a class="headerlink" href="#classifier-comparison" title="Link to this heading">#</a></h3>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/ML-CheatSheet-01.webp"><img alt="../../_images/ML-CheatSheet-01.webp" src="../../_images/ML-CheatSheet-01.webp" style="width: 80%;" /></a>
+</figure>
+<!-- <img src="./figs/ML-CheatSheet-01.webp" alt="Some algs ML" width="50%" align="center"> -->
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/ML-Cheat-Sheet_2.png"><img alt="../../_images/ML-Cheat-Sheet_2.png" src="../../_images/ML-Cheat-Sheet_2.png" style="width: 90%;" /></a>
+</figure>
+<!-- <img src="./figs/ML-Cheat-Sheet_2.png" alt="ML cheatsheet" width="50%" align="center"> --><section id="classifier-comparison">
+<h3><span class="section-number">2.5.1. </span>Classifier comparison:<a class="headerlink" href="#classifier-comparison" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html">https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html</a></p>
-<a class="reference internal image-reference" href="https://scikit-learn.org/stable/_images/sphx_glr_plot_classifier_comparison_001.png"><img alt="Classifiers" class="align-center" src="https://scikit-learn.org/stable/_images/sphx_glr_plot_classifier_comparison_001.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="https://scikit-learn.org/stable/_images/sphx_glr_plot_classifier_comparison_001.png"><img alt="Classifiers" class="align-center" src="https://scikit-learn.org/stable/_images/sphx_glr_plot_classifier_comparison_001.png" style="width: 90%;" /></a>
 </section>
 <section id="tensor-flow-playground">
-<h3><span class="section-number">2.8.2. </span>Tensor flow playground<a class="headerlink" href="#tensor-flow-playground" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">2.5.2. </span>Tensor flow playground<a class="headerlink" href="#tensor-flow-playground" title="Link to this heading">#</a></h3>
 <p>Try: <a class="reference external" href="https://playground.tensorflow.org">https://playground.tensorflow.org</a></p>
 </section>
 </section>
-<section id="applications-to-scientific-discovery">
-<h2><span class="section-number">2.9. </span>Applications to Scientific Discovery<a class="headerlink" href="#applications-to-scientific-discovery" title="Link to this heading">#</a></h2>
-<p>“AI is becoming a microscope for data: it helps scientists see patterns and predictions that were previously invisible.”</p>
-<p>Machine Learning and AI are accelerating breakthroughs in scientific research by helping scientists extract patterns from massive datasets, automate complex processes, and even generate new hypotheses.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Field</p></th>
-<th class="head"><p>ML/AI Application</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Astronomy</p></td>
-<td><p>Classifying galaxies from telescope data; finding exoplanets (e.g., Kepler mission)</p></td>
-</tr>
-<tr class="row-odd"><td><p>Physics</p></td>
-<td><p>Simulating particle collisions (e.g., CERN), anomaly detection in LHC data</p></td>
-</tr>
-<tr class="row-even"><td><p>Biology</p></td>
-<td><p>Protein folding prediction (e.g., AlphaFold), gene expression analysis</p></td>
-</tr>
-<tr class="row-odd"><td><p>Chemistry</p></td>
-<td><p>Drug discovery by molecular property prediction</p></td>
-</tr>
-<tr class="row-even"><td><p>Climate Science</p></td>
-<td><p>Modeling weather and climate patterns; detecting extreme events</p></td>
-</tr>
-<tr class="row-odd"><td><p>Materials Science</p></td>
-<td><p>Discovering new materials using generative models and property prediction</p></td>
-</tr>
-<tr class="row-even"><td><p>Neuroscience</p></td>
-<td><p>Brain activity decoding from EEG/fMRI signals</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>AlphaFold</strong> by DeepMind predicts the 3D structure of proteins from amino acid sequences with remarkable accuracy — solving a 50-year grand challenge in biology.</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://deepmind.google/science/alphafold/">https://deepmind.google/science/alphafold/</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=gg7WjuFs8F4">https://www.youtube.com/watch?v=gg7WjuFs8F4</a></p></li>
-</ul>
-<p><strong>Google Co-Scientist</strong></p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://blog.google/feed/google-research-ai-co-scientist/">https://blog.google/feed/google-research-ai-co-scientist/</a></p></li>
-<li><p><a class="reference external" href="https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/">https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/</a></p></li>
-</ul>
 </section>
-<section id="ml-ethics-risks-and-future">
-<h2><span class="section-number">2.10. </span>ML Ethics, risks and future<a class="headerlink" href="#ml-ethics-risks-and-future" title="Link to this heading">#</a></h2>
-<p><strong>Bias</strong></p>
+<section class="tex2jax_ignore mathjax_ignore" id="ml-ethics-risks-and-future">
+<h1><span class="section-number">2. </span>ML Ethics, risks and future<a class="headerlink" href="#ml-ethics-risks-and-future" title="Link to this heading">#</a></h1>
+<section id="bias">
+<h2><span class="section-number">2.1. </span>Bias<a class="headerlink" href="#bias" title="Link to this heading">#</a></h2>
+<a class="reference internal image-reference" href="https://www.approximatelycorrect.com/wp-content/uploads/2016/11/futurama-judge.png"><img alt="https://www.approximatelycorrect.com/wp-content/uploads/2016/11/futurama-judge.png" src="https://www.approximatelycorrect.com/wp-content/uploads/2016/11/futurama-judge.png" style="width: 50%;" /></a>
 <ul class="simple">
 <li><p><a class="reference external" href="http://approximatelycorrect.com/2016/11/07/the-foundations-of-algorithmic-bias/">http://approximatelycorrect.com/2016/11/07/the-foundations-of-algorithmic-bias/</a>, <a class="reference external" href="https://www.theverge.com/2024/2/21/24079371/google-ai-gemini-generative-inaccurate-historical">https://www.theverge.com/2024/2/21/24079371/google-ai-gemini-generative-inaccurate-historical</a>, <a class="reference external" href="https://www.economist.com/united-states/2024/02/28/is-googles-gemini-chatbot-woke-by-accident-or-design">https://www.economist.com/united-states/2024/02/28/is-googles-gemini-chatbot-woke-by-accident-or-design</a></p></li>
 <li><p><a class="reference external" href="https://www.edx.org/course/data-science-ethics-michiganx-ds101x-1">https://www.edx.org/course/data-science-ethics-michiganx-ds101x-1</a></p></li>
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Weapons_of_Math_Destruction?useskin=vector">https://en.wikipedia.org/wiki/Weapons_of_Math_Destruction?useskin=vector</a></p></li>
 <li><p>Bias in algorithms (data reflects societal bias).</p></li>
 </ul>
-<p><strong>AGI</strong></p>
+</section>
+<section id="agi">
+<h2><span class="section-number">2.2. </span>“AGI”<a class="headerlink" href="#agi" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Artificial_general_intelligence?useskin=vector">https://en.wikipedia.org/wiki/Artificial_general_intelligence?useskin=vector</a>
-|<a class="reference internal" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Performance_on_benchmarks_compared_to_humans_-_2024_AI_index.jpg/1920px-Performance_on_benchmarks_compared_to_humans_-_2024_AI_index.jpg"><img alt="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Performance_on_benchmarks_compared_to_humans_-_2024_AI_index.jpg/1920px-Performance_on_benchmarks_compared_to_humans_-_2024_AI_index.jpg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Performance_on_benchmarks_compared_to_humans_-_2024_AI_index.jpg/1920px-Performance_on_benchmarks_compared_to_humans_-_2024_AI_index.jpg" style="width: 40%;" /></a>|
-<a class="reference internal" href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Estimations_of_Human_Brain_Emulation_Required_Performance.svg/1920px-Estimations_of_Human_Brain_Emulation_Required_Performance.svg.png"><img alt="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Estimations_of_Human_Brain_Emulation_Required_Performance.svg/1920px-Estimations_of_Human_Brain_Emulation_Required_Performance.svg.png" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Estimations_of_Human_Brain_Emulation_Required_Performance.svg/1920px-Estimations_of_Human_Brain_Emulation_Required_Performance.svg.png" style="width: 40%;" /></a>|</p></li>
-<li><p>Can we really simulate the breain? Neural scaling laws:</p></li>
+|<a class="reference internal" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Performance_on_benchmarks_compared_to_humans_-_2024_AI_index.jpg/1920px-Performance_on_benchmarks_compared_to_humans_-_2024_AI_index.jpg"><img alt="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Performance_on_benchmarks_compared_to_humans_-_2024_AI_index.jpg/1920px-Performance_on_benchmarks_compared_to_humans_-_2024_AI_index.jpg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Performance_on_benchmarks_compared_to_humans_-_2024_AI_index.jpg/1920px-Performance_on_benchmarks_compared_to_humans_-_2024_AI_index.jpg" style="width: 80%;" /></a>|
+<a class="reference internal" href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Estimations_of_Human_Brain_Emulation_Required_Performance.svg/1920px-Estimations_of_Human_Brain_Emulation_Required_Performance.svg.png"><img alt="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Estimations_of_Human_Brain_Emulation_Required_Performance.svg/1920px-Estimations_of_Human_Brain_Emulation_Required_Performance.svg.png" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Estimations_of_Human_Brain_Emulation_Required_Performance.svg/1920px-Estimations_of_Human_Brain_Emulation_Required_Performance.svg.png" style="width: 80%;" /></a>|</p></li>
+<li><p>Can we really simulate the brain? Neural scaling laws:</p></li>
 </ul>
-<p><img alt="alt text" src="../../_images/ai-scaling.png" /></p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/ai-scaling.png"><img alt="../../_images/ai-scaling.png" src="../../_images/ai-scaling.png" style="width: 80%;" /></a>
+</figure>
 <ul class="simple">
 <li><p>CHECK: <a class="reference external" href="https://www.youtube.com/watch?v=5eqRuVp65eY">https://www.youtube.com/watch?v=5eqRuVp65eY</a></p></li>
 <li><p><a class="reference external" href="https://arxiv.org/abs/2001.08361">https://arxiv.org/abs/2001.08361</a></p></li>
 </ul>
-<p>The illusion of thinking:</p>
+<section id="the-illusion-of-thinking">
+<h3><span class="section-number">2.2.1. </span>The illusion of thinking<a class="headerlink" href="#the-illusion-of-thinking" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://machinelearning.apple.com/research/illusion-of-thinking">https://machinelearning.apple.com/research/illusion-of-thinking</a></p></li>
 <li><p><a class="reference external" href="https://garymarcus.substack.com/p/seven-replies-to-the-viral-apple">Seven replies to the viral Apple reasoning paper – and why they fall short</a></p></li>
 <li><p>Apples paper limitation: <a class="reference external" href="https://www.youtube.com/watch?v=9wZhFPGewz0">https://www.youtube.com/watch?v=9wZhFPGewz0</a></p></li>
 </ul>
-<p><strong>Interpretability and Understanding</strong></p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://mlr.cdn-apple.com/media/main_figure_f794f49488.png"><img alt="https://mlr.cdn-apple.com/media/main_figure_f794f49488.png" src="https://mlr.cdn-apple.com/media/main_figure_f794f49488.png" style="width: 80%;" /></a>
+</figure>
+</section>
+</section>
+<section id="hardware-prices">
+<h2><span class="section-number">2.3. </span>Hardware prices<a class="headerlink" href="#hardware-prices" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://lifehacker.com/tech/ram-prices-going-up">https://lifehacker.com/tech/ram-prices-going-up</a></p></li>
+<li><p><a class="reference external" href="https://pcpartpicker.com/trends/price/memory/">https://pcpartpicker.com/trends/price/memory/</a></p></li>
+<li><p>Nvidia stock: <a class="reference external" href="https://finance.yahoo.com/quote/NVDA/">https://finance.yahoo.com/quote/NVDA/</a></p></li>
+<li><p><a class="reference external" href="https://investor.nvidia.com/stock-info/stock-quote-and-chart/default.aspx">https://investor.nvidia.com/stock-info/stock-quote-and-chart/default.aspx</a></p></li>
+<li><p><a class="reference external" href="https://www.laptopoutlet.co.uk/blog/gpu-prices-2020-to-2025-analysis.html">https://www.laptopoutlet.co.uk/blog/gpu-prices-2020-to-2025-analysis.html</a></p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://cdna.pcpartpicker.com/static/forever/images/trends/2026.01.30.usd.ram.ddr4.3000.2x8192.2b5e5afee034453ed362d07a8d2f9131.png"><img alt="https://cdna.pcpartpicker.com/static/forever/images/trends/2026.01.30.usd.ram.ddr4.3000.2x8192.2b5e5afee034453ed362d07a8d2f9131.png" src="https://cdna.pcpartpicker.com/static/forever/images/trends/2026.01.30.usd.ram.ddr4.3000.2x8192.2b5e5afee034453ed362d07a8d2f9131.png" style="width: 90%;" /></a>
+</figure>
+</section>
+<section id="interpretability-and-understanding">
+<h2><span class="section-number">2.4. </span>Interpretability and Understanding<a class="headerlink" href="#interpretability-and-understanding" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Transparency (black-box models).</p></li>
 <li><p>Vibe coding full of security holes/lack of understanding</p></li>
 <li><p>Seniors are the new juniors, juniors are the new technicians</p></li>
 </ul>
-<p><strong>Jobs</strong></p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://media.licdn.com/dms/image/v2/D4D12AQEqy_ok1gMz5Q/article-cover_image-shrink_720_1280/B4DZZ3zDFdGsAM-/0/1745766597968?e=2147483647&amp;v=beta&amp;t=__9JD2teK0NaV-9GnDAsi7Zk-eduHv9pmW5N15wWvjk"><img alt="https://media.licdn.com/dms/image/v2/D4D12AQEqy_ok1gMz5Q/article-cover_image-shrink_720_1280/B4DZZ3zDFdGsAM-/0/1745766597968?e=2147483647&amp;v=beta&amp;t=__9JD2teK0NaV-9GnDAsi7Zk-eduHv9pmW5N15wWvjk" src="https://media.licdn.com/dms/image/v2/D4D12AQEqy_ok1gMz5Q/article-cover_image-shrink_720_1280/B4DZZ3zDFdGsAM-/0/1745766597968?e=2147483647&amp;v=beta&amp;t=__9JD2teK0NaV-9GnDAsi7Zk-eduHv9pmW5N15wWvjk" style="width: 80%;" /></a>
+</figure>
+</section>
+<section id="jobs">
+<h2><span class="section-number">2.5. </span>Jobs<a class="headerlink" href="#jobs" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Automation and the future of work.</p></li>
 <li><p>Automatic CV acceptance/rejection</p></li>
 <li><p>Automatic progress assestment</p></li>
 </ul>
-<p><strong>War</strong></p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/softwarejobs.png"><img alt="../../_images/softwarejobs.png" src="../../_images/softwarejobs.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.4 </span><span class="caption-text">Source: <a class="reference external" href="https://fred.stlouisfed.org/series/IHLIDXUSTPSOFTDEVE#">https://fred.stlouisfed.org/series/IHLIDXUSTPSOFTDEVE#</a></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="war">
+<h2><span class="section-number">2.6. </span>War<a class="headerlink" href="#war" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Autonomous bombing/attack</p></li>
 <li><p>Autonomous target identification / lack of context</p></li>
 <li><p>Lack of “human in the loop”</p></li>
+<li><p><a class="reference external" href="https://www.war.gov/News/Releases/Release/Article/4376420/war-department-launches-ai-acceleration-strategy-to-secure-american-military-ai/">https://www.war.gov/News/Releases/Release/Article/4376420/war-department-launches-ai-acceleration-strategy-to-secure-american-military-ai/</a></p></li>
+<li><p><a class="reference external" href="https://gjia.georgetown.edu/2024/07/12/war-artificial-intelligence-and-the-future-of-conflict/">https://gjia.georgetown.edu/2024/07/12/war-artificial-intelligence-and-the-future-of-conflict/</a></p></li>
 </ul>
-<p><strong>Censorship</strong></p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/aiwar.png"><img alt="../../_images/aiwar.png" src="../../_images/aiwar.png" style="width: 40%;" /></a>
+</figure>
+<p>Check: Cities covered by fiber optics <a class="reference external" href="https://youtube.com/shorts/pfG4ZYxj67w?si=sM9iP6oMv3QU3E2G">https://youtube.com/shorts/pfG4ZYxj67w?si=sM9iP6oMv3QU3E2G</a></p>
+</section>
+<section id="censorship">
+<h2><span class="section-number">2.7. </span>Censorship<a class="headerlink" href="#censorship" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>AI alignment and safety.</p></li>
+<li><p>AI alignment and safety : <a class="github reference external" href="https://github.com/asgeirtj/system_prompts_leaks">asgeirtj/system_prompts_leaks</a></p></li>
 <li><p><a class="reference external" href="https://www.abc.net.au/news/2025-06-04/beijing-ai-and-censors-erase-tiananmen-square-massacre/105370772">https://www.abc.net.au/news/2025-06-04/beijing-ai-and-censors-erase-tiananmen-square-massacre/105370772</a></p></li>
 <li><p>Using chatbots as search agents</p></li>
 <li><p><a class="reference external" href="https://time.com/6835213/the-future-of-censorship-is-ai-generated/">https://time.com/6835213/the-future-of-censorship-is-ai-generated/</a></p></li>
 <li><p><a class="reference external" href="https://www.vice.com/en/article/elon-musks-grok-got-suspended-on-twitter-x/">Grok suspended on twitter</a>, then returned ‘healed’ and now <a class="reference external" href="https://www.cnbc.com/2025/07/11/grok-4-appears-to-reference-musks-views-when-answering-questions-.html">checks for elon musk views</a> before answering</p></li>
+<li><p><a class="reference external" href="https://news.un.org/en/story/2025/05/1162856">https://news.un.org/en/story/2025/05/1162856</a></p></li>
 </ul>
-<p><strong>Electric and hardware use</strong></p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://gradientflow.com/wp-content/uploads/2024/07/newsletter106-alignment-siloes.png"><img alt="https://gradientflow.com/wp-content/uploads/2024/07/newsletter106-alignment-siloes.png" src="https://gradientflow.com/wp-content/uploads/2024/07/newsletter106-alignment-siloes.png" style="width: 80%;" /></a>
+</figure>
+</section>
+<section id="electric-and-hardware-use">
+<h2><span class="section-number">2.8. </span>Electric and hardware use<a class="headerlink" href="#electric-and-hardware-use" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Power usage:
-<a class="reference internal" href="https://www.researchgate.net/profile/Yuzhuo-Li-2/publication/384115745/figure/fig5/AS:11431281278937909&#64;1726775834031/Reported-energy-consumption-of-training-different-LLM-models-with-respect-to-model.png"><img alt="https://www.researchgate.net/publication/384115745_The_Unseen_AI_Disruptions_for_Power_Grids_LLM-Induced_Transients" class="align-center" src="https://www.researchgate.net/profile/Yuzhuo-Li-2/publication/384115745/figure/fig5/AS:11431281278937909&#64;1726775834031/Reported-energy-consumption-of-training-different-LLM-models-with-respect-to-model.png" style="width: 60%;" /></a></p>
+<li><p><a class="reference external" href="https://spectrum.ieee.org/ai-energy-use">https://spectrum.ieee.org/ai-energy-use</a></p></li>
+<li><p>Power usage (<a class="reference external" href="https://www.researchgate.net/figure/Reported-energy-consumption-of-training-different-LLM-models-with-respect-to-model_fig5_384115745">https://www.researchgate.net/figure/Reported-energy-consumption-of-training-different-LLM-models-with-respect-to-model_fig5_384115745</a>):
+<a class="reference internal" href="https://www.researchgate.net/profile/Yuzhuo-Li-2/publication/384115745/figure/fig5/AS:11431281278937909&#64;1726775834031/Reported-energy-consumption-of-training-different-LLM-models-with-respect-to-model.png"><img alt="https://www.researchgate.net/publication/384115745_The_Unseen_AI_Disruptions_for_Power_Grids_LLM-Induced_Transients" class="align-center" src="https://www.researchgate.net/profile/Yuzhuo-Li-2/publication/384115745/figure/fig5/AS:11431281278937909&#64;1726775834031/Reported-energy-consumption-of-training-different-LLM-models-with-respect-to-model.png" style="width: 80%;" /></a></p>
 <ul>
 <li><p><a class="reference external" href="https://www.nature.com/articles/s41598-024-76682-6">https://www.nature.com/articles/s41598-024-76682-6</a></p></li>
 <li><p><a class="reference external" href="https://birchtree.me/blog/another-study-on-llm-energy-use/">https://birchtree.me/blog/another-study-on-llm-energy-use/</a></p></li>
+<li><p><a class="reference external" href="https://www.goldmansachs.com/insights/articles/how-ai-is-transforming-data-centers-and-ramping-up-power-demand">https://www.goldmansachs.com/insights/articles/how-ai-is-transforming-data-centers-and-ramping-up-power-demand</a></p></li>
+<li><p><a class="reference external" href="https://www.technologyreview.com/2025/05/20/1116327/ai-energy-usage-climate-footprint-big-tech/">https://www.technologyreview.com/2025/05/20/1116327/ai-energy-usage-climate-footprint-big-tech/</a></p></li>
 </ul>
 </li>
 </ul>
-<p><strong>Fake videos/news</strong></p>
+<a class="reference internal image-reference" href="https://images.prismic.io/bethtechnology/ZnfatZbWFboweyK6_2.jpg?auto=compress,format&amp;q=90&amp;max-w=1000?w=1080"><img alt="inference energy" class="align-center" src="https://images.prismic.io/bethtechnology/ZnfatZbWFboweyK6_2.jpg?auto=compress,format&amp;q=90&amp;max-w=1000?w=1080" style="width: 80%;" /></a>
+<p>Source : <a class="reference external" href="https://io-fund.com/artificial-intelligence/ai-platforms/ai-power-consumption-becoming-mission-critical">https://io-fund.com/artificial-intelligence/ai-platforms/ai-power-consumption-becoming-mission-critical</a></p>
+<a class="reference internal image-reference" href="https://cdn.statcdn.com/Infographic/images/normal/33730.jpeg"><img alt="https://cdn.statcdn.com/Infographic/images/normal/33730.jpeg" src="https://cdn.statcdn.com/Infographic/images/normal/33730.jpeg" style="width: 80%;" /></a>
+<p>Source:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.statista.com/chart/33730/projected-and-currently-operating-nuclear-capacity/">https://www.statista.com/chart/33730/projected-and-currently-operating-nuclear-capacity/</a></p></li>
+<li><p><a class="reference external" href="https://www.statista.com/statistics/513671/number-of-under-construction-nuclear-reactors-worldwide/">https://www.statista.com/statistics/513671/number-of-under-construction-nuclear-reactors-worldwide/</a></p></li>
+</ul>
+<a class="reference internal image-reference" href="https://images.prismic.io/bethtechnology/aF3wNXfc4bHWixRg_Comparisonofnuclearvs.fossilfuelenergyoutputandemissionsefficiency.png?auto=compress,format&amp;q=90&amp;max-w=1000?w=1920"><img alt="energy needs" class="align-center" src="https://images.prismic.io/bethtechnology/aF3wNXfc4bHWixRg_Comparisonofnuclearvs.fossilfuelenergyoutputandemissionsefficiency.png?auto=compress,format&amp;q=90&amp;max-w=1000?w=1920" style="width: 80%;" /></a>
+<p>Source: <a class="reference external" href="https://io-fund.com/artificial-intelligence/nuclear-energy-ai-data-centers">https://io-fund.com/artificial-intelligence/nuclear-energy-ai-data-centers</a></p>
+</section>
+<section id="fake-videos-news">
+<h2><span class="section-number">2.9. </span>Fake videos/news<a class="headerlink" href="#fake-videos-news" title="Link to this heading">#</a></h2>
 <p><img alt="ai fake video" src="../../_images/ai-fakevideo.png" /></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://drive.google.com/open?id=1pLI2G7_tbFzZx94GQzuWkT2_-Q98s15J&amp;amp;usp=drive_fs">Ai news Ex1</a></p></li>
 <li><p><a class="reference external" href="https://drive.google.com/open?id=1GBf6OEMKJdkdy7vIC4pZYk_QatWo68Yh&amp;amp;usp=drive_fs">AI news Ex2</a></p></li>
 <li><p>Open AI Sora: <a class="reference external" href="https://openai.com/index/sora/">https://openai.com/index/sora/</a></p></li>
 <li><p>Google Ve3 with sound:  <a class="reference external" href="https://gemini.google/overview/video-generation/">https://gemini.google/overview/video-generation/</a></p></li>
+<li><p><a class="reference external" href="https://www.reddit.com/r/aivideos/">https://www.reddit.com/r/aivideos/</a></p></li>
+<li><p>Clonning any voice: <a class="reference external" href="https://huggingface.co/spaces/Qwen/Qwen3-TTS">https://huggingface.co/spaces/Qwen/Qwen3-TTS</a>, <a class="reference external" href="https://simonwillison.net/2026/Jan/22/qwen3-tts/">https://simonwillison.net/2026/Jan/22/qwen3-tts/</a></p></li>
 </ul>
-<p><strong>AI Therapy / sycophancy problem / relationships</strong></p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">IFrame</span>
+<span class="n">file_url</span> <span class="o">=</span> <span class="s2">&quot;https://drive.google.com/file/d/1pLI2G7_tbFzZx94GQzuWkT2_-Q98s15J/preview&quot;</span>
+<span class="n">IFrame</span><span class="p">(</span><span class="n">file_url</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">480</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html">
+        <iframe
+            width="640"
+            height="480"
+            src="https://drive.google.com/file/d/1pLI2G7_tbFzZx94GQzuWkT2_-Q98s15J/preview"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">IFrame</span>
+<span class="n">file_url</span> <span class="o">=</span> <span class="s2">&quot;https://drive.google.com/file/d/1GBf6OEMKJdkdy7vIC4pZYk_QatWo68Yh/preview&quot;</span>
+<span class="n">IFrame</span><span class="p">(</span><span class="n">file_url</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">480</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html">
+        <iframe
+            width="640"
+            height="480"
+            src="https://drive.google.com/file/d/1GBf6OEMKJdkdy7vIC4pZYk_QatWo68Yh/preview"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
+</div>
+<section id="ai-therapy-sycophancy-problem-relationships">
+<h3><span class="section-number">2.9.1. </span>AI Therapy / sycophancy problem / relationships<a class="headerlink" href="#ai-therapy-sycophancy-problem-relationships" title="Link to this heading">#</a></h3>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://cdn.arstechnica.net/wp-content/uploads/2025/07/robot_therapy_1.jpg"><img alt="https://cdn.arstechnica.net/wp-content/uploads/2025/07/robot_therapy_1.jpg" src="https://cdn.arstechnica.net/wp-content/uploads/2025/07/robot_therapy_1.jpg" style="width: 50%;" /></a>
+</figure>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.theguardian.com/technology/2025/may/07/experts-warn-therapy-ai-chatbots-are-not-safe-to-use">https://www.theguardian.com/technology/2025/may/07/experts-warn-therapy-ai-chatbots-are-not-safe-to-use</a></p></li>
 <li><p><a class="reference external" href="https://arstechnica.com/ai/2025/07/ai-therapy-bots-fuel-delusions-and-give-dangerous-advice-stanford-study-finds/">https://arstechnica.com/ai/2025/07/ai-therapy-bots-fuel-delusions-and-give-dangerous-advice-stanford-study-finds/</a></p></li>
 <li><p>Openai GPT5 destroyed “AI” boyfriends/girlfriends</p></li>
-<li><p>Robots assistants: <a class="reference external" href="https://www.kscale.dev/">https://www.kscale.dev/</a>, <a class="reference external" href="https://www.1x.tech/neo">https://www.1x.tech/neo</a>, <a class="reference external" href="https://deepmind.google/discover/blog/gemini-robotics-on-device-brings-ai-to-local-robotic-devices/">https://deepmind.google/discover/blog/gemini-robotics-on-device-brings-ai-to-local-robotic-devices/</a>,</p></li>
+<li><p>Robots assistants: <a class="reference external" href="https://www.kscale.dev/">https://www.kscale.dev/</a>, <a class="reference external" href="https://www.1x.tech/neo">https://www.1x.tech/neo</a>, <a class="reference external" href="https://deepmind.google/discover/blog/gemini-robotics-on-device-brings-ai-to-local-robotic-devices/">https://deepmind.google/discover/blog/gemini-robotics-on-device-brings-ai-to-local-robotic-devices/</a></p></li>
+<li><p><a class="reference external" href="https://techcrunch.com/2025/10/27/openai-says-over-a-million-people-talk-to-chatgpt-about-suicide-weekly/">https://techcrunch.com/2025/10/27/openai-says-over-a-million-people-talk-to-chatgpt-about-suicide-weekly/</a></p></li>
+<li><p><a class="reference external" href="https://www.nytimes.com/2025/08/26/technology/chatgpt-openai-suicide.html">https://www.nytimes.com/2025/08/26/technology/chatgpt-openai-suicide.html</a></p></li>
 </ul>
-<a class="bg-primary reference internal image-reference" href="../../_images/robot-love.webp"><img alt="fry and robot" class="bg-primary align-center" src="../../_images/robot-love.webp" style="width: 20%;" /></a>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/robot-love.webp"><img alt="../../_images/robot-love.webp" src="../../_images/robot-love.webp" style="width: 40%;" /></a>
+</figure>
 </section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="some-modern-examples-and-tools-with-some-demos">
+<h1><span class="section-number">2. </span>Some “modern” examples and tools, with some demos<a class="headerlink" href="#some-modern-examples-and-tools-with-some-demos" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://karpathy.bearblog.dev/year-in-review-2025/">https://karpathy.bearblog.dev/year-in-review-2025/</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=EKOU3JWDNLI">https://www.youtube.com/watch?v=EKOU3JWDNLI</a></p></li>
+<li><p><a class="reference external" href="https://raine.dev/blog/my-tmux-setup/">https://raine.dev/blog/my-tmux-setup/</a> : Running agents in the console</p></li>
+<li><p>OpenClowd (formerly MoltBot) (formerly Clowdbot) (hype?):</p>
+<ul>
+<li><p><a class="reference external" href="https://openclaw.ai/">https://openclaw.ai/</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=MUDvwqJWWIw">https://www.youtube.com/watch?v=MUDvwqJWWIw</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=esXXuejofgk">https://www.youtube.com/watch?v=esXXuejofgk</a></p></li>
+<li><p><a class="reference external" href="https://arstechnica.com/information-technology/2026/01/ai-agents-now-have-their-own-reddit-style-social-network-and-its-getting-weird-fast/">https://arstechnica.com/information-technology/2026/01/ai-agents-now-have-their-own-reddit-style-social-network-and-its-getting-weird-fast/</a></p></li>
+<li><p><a class="reference external" href="https://www.moltbook.com/">https://www.moltbook.com/</a> (and the new molt religion)</p></li>
+</ul>
+</li>
+<li><p>Local models: <a class="reference external" href="https://ollama.com/">https://ollama.com/</a> , <a class="reference external" href="https://lmstudio.ai/">https://lmstudio.ai/</a></p></li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1069,38 +1698,78 @@ General-Purpose Scientific Data Repositories</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-machine-learning">2.1. Introduction to Machine Learning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-development">2.2. Historical development</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-find-data-in-the-basic-and-natural-sciences">2.3. Where to Find Data in the Basic and Natural Sciences</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#field-specific-databases">2.3.1. Field-Specific Databases</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#genomics-and-molecular-biology">2.3.1.1. Genomics and Molecular Biology:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#environmental-and-earth-sciences">2.3.1.2. Environmental and Earth Sciences:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#astronomy-and-physics">2.3.1.3. Astronomy and Physics:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#chemistry">2.3.1.4. Chemistry:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2. A fast introduction to Machine Learning</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#artificial-intelligence">2.1. Artificial intelligence</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-development-and-projections">2. Historical development and projections</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#major-developments-in-machine-learning-xx-xxi-centuries">2.1. Major Developments in Machine Learning (XX &amp; XXI Centuries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-timeline">2.2. The Timeline</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-1-the-golden-age-1950s1970">2.2.1. <strong>Phase 1: The Golden Age (1950s–1970)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-winter-1-19741980">2.2.2. <strong>❄️ AI Winter 1 (1974–1980)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-2-the-knowledge-era-19801987">2.2.3. <strong>Phase 2: The Knowledge Era (1980–1987)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-winter-2-19871993">2.2.4. <strong>❄️ AI Winter 2 (1987–1993)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-3-the-statistical-quiet-era-19952010">2.2.5. <strong>Phase 3: The Statistical “Quiet” Era (1995–2010)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-4-the-deep-learning-explosion-2012present">2.2.6. <strong>Phase 4: The Deep Learning Explosion (2012–Present)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-impact">2.3. Hardware impact</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-on-software-engineering-and-some-white-collar-jobs">2.4. Impact on software engineering (and some white collar jobs)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-in-science">2. ML in science</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-to-scientific-discovery">2.1. Applications to Scientific Discovery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-find-data-in-the-basic-and-natural-sciences">2.2. Where to Find Data in the Basic and Natural Sciences</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#field-specific-databases">2.2.1. Field-Specific Databases</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#genomics-and-molecular-biology">2.2.1.1. Genomics and Molecular Biology:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#environmental-and-earth-sciences">2.2.1.2. Environmental and Earth Sciences:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#astronomy-and-physics">2.2.1.3. Astronomy and Physics:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#chemistry">2.2.1.4. Chemistry:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-problems">2.2.2. Some problems</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-ml">2.3. Quantum ML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-tools-for-research">2.4. Some tools for research</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-and-short-example-also-the-blackbox">2. Practical and short example (also the blackbox)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised">2.1. Supervised</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised">2.2. Unsupervised</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning">2.3. Reinforcement learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typical-workflow">2.4. Typical workflow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-concepts">2.4.1. Core concepts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-algorithms">2.5. ML Algorithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classifier-comparison">2.5.1. Classifier comparison:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-flow-playground">2.5.2. Tensor flow playground</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-learning">2.4. Types of learning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-in-science">2.5. ML in science</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-short-fast-example">2.6. Practical, short, fast example</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised">2.6.1. Supervised</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised">2.6.2. Unsupervised</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning">2.6.3. Reinforcement learning</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-ethics-risks-and-future">2. ML Ethics, risks and future</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bias">2.1. Bias</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agi">2.2. “AGI”</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-illusion-of-thinking">2.2.1. The illusion of thinking</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typical-workflow">2.7. Typical workflow</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-concepts">2.7.1. Core concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-prices">2.3. Hardware prices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretability-and-understanding">2.4. Interpretability and Understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jobs">2.5. Jobs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#war">2.6. War</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#censorship">2.7. Censorship</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-and-hardware-use">2.8. Electric and hardware use</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fake-videos-news">2.9. Fake videos/news</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-therapy-sycophancy-problem-relationships">2.9.1. AI Therapy / sycophancy problem / relationships</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-algorithms">2.8. ML Algorithms</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classifier-comparison">2.8.1. Classifier comparison:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-flow-playground">2.8.2. Tensor flow playground</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-to-scientific-discovery">2.9. Applications to Scientific Discovery</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-ethics-risks-and-future">2.10. ML Ethics, risks and future</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#some-modern-examples-and-tools-with-some-demos">2. Some “modern” examples and tools, with some demos</a></li>
 </ul>
+
   </nav></div>
 
 </div></div>
