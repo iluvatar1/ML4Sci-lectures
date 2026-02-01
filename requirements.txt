@@ -62,3 +62,5 @@ shap==0.48.0
 #torchvision
 
 #tensorflow
+
+jupyterlab-rise
