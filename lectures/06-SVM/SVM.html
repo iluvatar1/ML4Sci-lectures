@@ -239,7 +239,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/PythonReview.html">10. Python Review:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/01-IntroProgrammingPython.html">11. Python Programming (very fast) Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/02-IntroProgrammingPython-DataStructs.html">12. Intro Python II: python data structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/TutorialPandas.html">13. Pandas for data cleaning and analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-reviewPython/pandas-intro.html">13. Pandas Introduction</a></li>
 </ul>
 
     </div>
@@ -665,21 +665,21 @@ $<span class="math notranslate nohighlight">\(
 <p>This is the so-called hard-margin classifier. The actual hyperplane might not always exists, like in the case of the “circular boundary”.</p>
 <p><strong>Soft-margin</strong></p>
 <p>When there is not linear (hyperplane boundary), a hinge-loss function is introduced,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-966e78bf-1375-4108-9806-fab3eb7da66b">
-<span class="eqno">(7.1)<a class="headerlink" href="#equation-966e78bf-1375-4108-9806-fab3eb7da66b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-96a19ac5-0973-4292-8b65-78c6c0ed85db">
+<span class="eqno">(7.1)<a class="headerlink" href="#equation-96a19ac5-0973-4292-8b65-78c6c0ed85db" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \max(0, 1 - y_i(w\cdot x_i - b)),
 \end{equation}\]</div>
 <p>This function is 0 if the constrain is sattisfied, otherwise its value is proportional to the distance to the margin. This also allows for some misclassification, but this also makes the method less sentitive to outliers. The goal now is to minimize</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ea6c3e96-d998-4be0-bbdf-76853f50a936">
-<span class="eqno">(7.2)<a class="headerlink" href="#equation-ea6c3e96-d998-4be0-bbdf-76853f50a936" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7f733916-0ecb-456a-899d-6af96f4e4876">
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-7f733916-0ecb-456a-899d-6af96f4e4876" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \|\mathbf{w}\|^{2} 
 + C \left[ \frac{1}{n} \sum_{i=1}^{n} 
 \max \bigl(0,\, 1 - y_i(\mathbf{w}^\top \mathbf{x}_i - b)\bigr) \right],
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(C \lt 0\)</span> represents the trade-off between increasing the margin size and ansuring that <span class="math notranslate nohighlight">\(x_i\)</span> ies on the correct size of the boundary.</p>
 <p>In this case, soft-margin SVM introduces slack variables <span class="math notranslate nohighlight">\(\zeta_i\)</span> and penalty <span class="math notranslate nohighlight">\(C\)</span>, and the problem becomes</p>
-<div class="amsmath math notranslate nohighlight" id="equation-65d7a8d2-2803-400b-ad79-98676d115bf8">
-<span class="eqno">(7.3)<a class="headerlink" href="#equation-65d7a8d2-2803-400b-ad79-98676d115bf8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b1b41399-512b-4675-aee9-e81db28e031a">
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-b1b41399-512b-4675-aee9-e81db28e031a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{aligned}
 \min_{\mathbf{w},\, b,\, \boldsymbol{\zeta}} \quad 
 &amp; \|\mathbf{w}\|_{2}^{2} + C \sum_{i=1}^{n} \zeta_i \\[6pt]
@@ -1262,7 +1262,7 @@ Goal: Classify tumors as malignant/benign using 30 morphological features.</p>
   <div class="footer-item">
     
 <p class="component-author">
-By Veronica Arias, Carlos Viviescas, William Oquendo
+By William Oquendo
 </p>
 
   </div>
