@@ -781,29 +781,29 @@ Results after one step training:
 </ul>
 <p>But how to adjust the weights? There are several techniques based on the actual error <span class="math notranslate nohighlight">\(\Delta\)</span>.</p>
 <p>First, we will define a cost/loss function as the typical MSE</p>
-<div class="amsmath math notranslate nohighlight" id="equation-292ee083-4dd4-4f6b-b989-702424785f69">
-<span class="eqno">(8.1)<a class="headerlink" href="#equation-292ee083-4dd4-4f6b-b989-702424785f69" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4cb94601-612b-482a-be74-c36d3ae8751c">
+<span class="eqno">(8.1)<a class="headerlink" href="#equation-4cb94601-612b-482a-be74-c36d3ae8751c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 COST = \frac{1}{2} (\hat y - y)^2,
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat y\)</span> is the predicted value and <span class="math notranslate nohighlight">\(y\)</span> is the expected one.  Notice that we are not adding up because we only have one output.</p>
 <p>Second, we will apply gradient descent approximation to our problem, in order to improve our coefficients for our data. This means that we will propagate back the errors into the coefficients!</p>
-<div class="amsmath math notranslate nohighlight" id="equation-00985593-c3b1-49af-8aca-81f02c571bcc">
-<span class="eqno">(8.2)<a class="headerlink" href="#equation-00985593-c3b1-49af-8aca-81f02c571bcc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6c05e434-b532-4336-a6c9-7e36b0d30816">
+<span class="eqno">(8.2)<a class="headerlink" href="#equation-6c05e434-b532-4336-a6c9-7e36b0d30816" title="Permalink to this equation">#</a></span>\[\begin{equation}
 w_i' = w_i - \alpha \frac{\partial COST}{\partial w_i},
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\alpha\)</span> is the learning rate. Taking into account that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2cff584d-1f49-43c1-896b-cf09566c32f6">
-<span class="eqno">(8.3)<a class="headerlink" href="#equation-2cff584d-1f49-43c1-896b-cf09566c32f6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-504ad909-a5ca-4f93-8e37-7f64ad582064">
+<span class="eqno">(8.3)<a class="headerlink" href="#equation-504ad909-a5ca-4f93-8e37-7f64ad582064" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \hat y = \phi(z) = \frac{1}{1 + \exp(-z)},
 \end{equation}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8277bd72-fe68-45a0-8436-15ffe645c138">
-<span class="eqno">(8.4)<a class="headerlink" href="#equation-8277bd72-fe68-45a0-8436-15ffe645c138" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-499f588f-23a2-43aa-af5e-dd492e140c13">
+<span class="eqno">(8.4)<a class="headerlink" href="#equation-499f588f-23a2-43aa-af5e-dd492e140c13" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z = \sum w_i x_i,
 \end{equation}\]</div>
 <p>then, by using the chain rule, we have</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7b4403f7-5186-4640-a54e-1ca8c1c71ae1">
-<span class="eqno">(8.5)<a class="headerlink" href="#equation-7b4403f7-5186-4640-a54e-1ca8c1c71ae1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3ca473eb-739c-400d-ac96-f617e768fba4">
+<span class="eqno">(8.5)<a class="headerlink" href="#equation-3ca473eb-739c-400d-ac96-f617e768fba4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial COST}{\partial w_i} = \frac{\partial COST}{\partial \hat y} \frac{\partial \hat y}{\partial z} \frac{\partial z}{\partial w_i} = (\hat y - y)\phi (1-\phi)x_i. 
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -1025,7 +1025,7 @@ By William Oquendo
 
   <p class="copyright">
     
-      © Copyright 2025.
+      © Copyright 2026.
       <br/>
     
   </p>
