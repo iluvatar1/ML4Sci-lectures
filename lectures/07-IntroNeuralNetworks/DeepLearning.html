@@ -900,6 +900,11 @@ $<span class="math notranslate nohighlight">\(z = \sum w_i x_i + b \to a = \sigm
 <li><p>It calculates the gradient of the loss with respect to every weight and bias in the network. This is done efficiently via an algorithm called <strong><a class="reference external" href="https://en.wikipedia.org/wiki/Backpropagation?useskin=vector">backpropagation</a></strong>, which is essentially an application of the chain rule from calculus.</p></li>
 <li><p>It uses an <strong>optimizer</strong> (like Gradient Descent, <strong>Adam, Ada Delta, Adagrad, RMSProp</strong>) to update the weights and biases in the direction that minimizes the loss.</p></li>
 </ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>TODO
+<a class="reference external" href="https://www.youtube.com/watch?v=bO5nvE289ec">https://www.youtube.com/watch?v=bO5nvE289ec</a></p>
+</div>
 <p>This cycle is repeated many times with the training data. The core of backpropagation is figuring out how much each parameter contributed to the error, and propagating this error information “backward” from the output layer to the input layer.</p>
 <p>The error <span class="math notranslate nohighlight">\(\delta\)</span> in a hidden layer <em>l</em> is calculated based on the errors in the next layer <em>l+1</em>:</p>
 <p><span class="math notranslate nohighlight">\(\delta^{(l)} = ((W^{(l+1)})^T \delta^{(l+1)}) \odot g'(z^{(l)})\)</span></p>

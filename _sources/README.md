@@ -8,6 +8,9 @@ DATA: https://drive.google.com/drive/folders/1dRx5gtmaBm2WC0XP1pO_qXFRH1uHappi?u
 
 [Google Collab](https://colab.research.google.com/)
 
+[Launch Interactive Lab](./lab/)
+
+
 <!-- [Complementary presentations](https://drive.google.com/drive/folders/16na0yyeH0wru9mwkd9qzFvPXPsrYmqKI?usp=sharing) -->
 
 ```{tableofcontents}
