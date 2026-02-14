@@ -64,3 +64,8 @@ shap==0.48.0
 #tensorflow
 
 jupyterlab-rise
+
+missingno
+
+jupyterlite-core
+jupyterlite-pyodide-kernel

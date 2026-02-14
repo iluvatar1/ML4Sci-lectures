@@ -82,7 +82,9 @@ html:
    hypothesis              : false
    utterances              : false
   announcement              : "" # A banner announcement at the top of the site.
-
+  navbar:
+    - title: Interactive Lab
+      url: /ML4Sci-lectures/lab/
 
 # Parsing math blocks
 parse:

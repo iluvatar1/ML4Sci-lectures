@@ -1,0 +1,15 @@
+{
+  "LiteBuildConfig": {
+    "output_dir": "lite-build"
+  },
+  "LiteServerConfig": {
+    "base_url": "/ML4Sci-lectures/lab/"
+  },
+  "contents": [
+    {
+      "from": ".",
+      "to": "notebooks",
+      "include": ["**/*.ipynb"]
+    }
+  ]
+}
