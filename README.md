@@ -9,8 +9,6 @@ DATA: https://drive.google.com/drive/folders/1dRx5gtmaBm2WC0XP1pO_qXFRH1uHappi?u
 [Google Collab](https://colab.research.google.com/)
 
 
-[Launch Interactive Lab](/ML4Sci-lectures/lab/)
-
 <p>
   <a href="/ML4Sci-lectures/lab/" target="_blank" rel="noopener noreferrer">
     🚀 Launch Interactive Lab
