@@ -780,29 +780,29 @@ Results after one step training:
 </ul>
 <p>But how to adjust the weights? There are several techniques based on the actual error <span class="math notranslate nohighlight">\(\Delta\)</span>.</p>
 <p>First, we will define a cost/loss function as the typical MSE</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a1fc99dc-d098-4c0e-8915-684441a67e55">
-<span class="eqno">(7.1)<a class="headerlink" href="#equation-a1fc99dc-d098-4c0e-8915-684441a67e55" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8d48197c-7465-4947-ab95-835f8f77ac26">
+<span class="eqno">(7.1)<a class="headerlink" href="#equation-8d48197c-7465-4947-ab95-835f8f77ac26" title="Permalink to this equation">#</a></span>\[\begin{equation}
 COST = \frac{1}{2} (\hat y - y)^2,
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat y\)</span> is the predicted value and <span class="math notranslate nohighlight">\(y\)</span> is the expected one.  Notice that we are not adding up because we only have one output.</p>
 <p>Second, we will apply gradient descent approximation to our problem, in order to improve our coefficients for our data. This means that we will propagate back the errors into the coefficients!</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f0cc4cca-222a-488a-ad19-3872b5584edd">
-<span class="eqno">(7.2)<a class="headerlink" href="#equation-f0cc4cca-222a-488a-ad19-3872b5584edd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d19f3a1e-6658-4bfe-b615-5ab27f45e541">
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-d19f3a1e-6658-4bfe-b615-5ab27f45e541" title="Permalink to this equation">#</a></span>\[\begin{equation}
 w_i' = w_i - \alpha \frac{\partial COST}{\partial w_i},
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\alpha\)</span> is the learning rate. Taking into account that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2935835e-2fec-4eb1-8683-bf7391ab2530">
-<span class="eqno">(7.3)<a class="headerlink" href="#equation-2935835e-2fec-4eb1-8683-bf7391ab2530" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-13e28dd3-ed77-4d98-bf90-a2186f644fab">
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-13e28dd3-ed77-4d98-bf90-a2186f644fab" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \hat y = \phi(z) = \frac{1}{1 + \exp(-z)},
 \end{equation}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3db55fb3-454a-4fb5-a1e1-f583ec8c7ff1">
-<span class="eqno">(7.4)<a class="headerlink" href="#equation-3db55fb3-454a-4fb5-a1e1-f583ec8c7ff1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7e28c3a4-24b0-4330-97f4-fa99c81fb132">
+<span class="eqno">(7.4)<a class="headerlink" href="#equation-7e28c3a4-24b0-4330-97f4-fa99c81fb132" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z = \sum w_i x_i,
 \end{equation}\]</div>
 <p>then, by using the chain rule, we have</p>
-<div class="amsmath math notranslate nohighlight" id="equation-19756cbc-0eb7-48b0-956c-a7b64d3d05a3">
-<span class="eqno">(7.5)<a class="headerlink" href="#equation-19756cbc-0eb7-48b0-956c-a7b64d3d05a3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9dc3cbc6-9c42-4109-9a4a-15b0ee89cc8c">
+<span class="eqno">(7.5)<a class="headerlink" href="#equation-9dc3cbc6-9c42-4109-9a4a-15b0ee89cc8c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial COST}{\partial w_i} = \frac{\partial COST}{\partial \hat y} \frac{\partial \hat y}{\partial z} \frac{\partial z}{\partial w_i} = (\hat y - y)\phi (1-\phi)x_i. 
 \end{equation}\]</div>
 <div class="cell docutils container">

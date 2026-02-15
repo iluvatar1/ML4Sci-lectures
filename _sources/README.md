@@ -10,6 +10,12 @@ DATA: https://drive.google.com/drive/folders/1dRx5gtmaBm2WC0XP1pO_qXFRH1uHappi?u
 
 [Launch Interactive Lab](./lab/)
 
+<p>
+  <a href="/ML4Sci-lectures/lab/" target="_blank" rel="noopener noreferrer">
+    🚀 Launch Interactive Lab
+  </a>
+</p>
+
 
 <!-- [Complementary presentations](https://drive.google.com/drive/folders/16na0yyeH0wru9mwkd9qzFvPXPsrYmqKI?usp=sharing) -->
 
