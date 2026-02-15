@@ -1,0 +1,57 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2026-02-15T04:06:00.224437Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-15T04:03:41.288214Z",
+      "mimetype": "image/png",
+      "name": "inputs.png",
+      "path": "07-IntroNeuralNetworks/fig/neuralnetwork/inputs.png",
+      "size": 136195,
+      "type": "file",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2026-02-15T04:06:00.225416Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-15T04:03:41.290214Z",
+      "mimetype": "image/png",
+      "name": "weights.png",
+      "path": "07-IntroNeuralNetworks/fig/neuralnetwork/weights.png",
+      "size": 285540,
+      "type": "file",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2026-02-15T04:06:00.225038Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-15T04:03:41.288948Z",
+      "mimetype": "image/png",
+      "name": "newoutput.png",
+      "path": "07-IntroNeuralNetworks/fig/neuralnetwork/newoutput.png",
+      "size": 35807,
+      "type": "file",
+      "writable": true
+    }
+  ],
+  "created": "2026-02-15T04:06:00.225416Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2026-02-15T04:06:00.225416Z",
+  "mimetype": null,
+  "name": "neuralnetwork",
+  "path": "07-IntroNeuralNetworks/fig/neuralnetwork",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}

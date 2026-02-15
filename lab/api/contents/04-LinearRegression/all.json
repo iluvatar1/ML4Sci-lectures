@@ -1,0 +1,29 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2026-02-15T04:06:00.208138Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-15T04:03:41.274214Z",
+      "mimetype": null,
+      "name": "LinearRegression.ipynb",
+      "path": "04-LinearRegression/LinearRegression.ipynb",
+      "size": 65845,
+      "type": "notebook",
+      "writable": true
+    }
+  ],
+  "created": "2026-02-15T04:06:00.208138Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2026-02-15T04:06:00.208138Z",
+  "mimetype": null,
+  "name": "04-LinearRegression",
+  "path": "04-LinearRegression",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}

@@ -38,12 +38,6 @@
       },
       {
         "extension": "./extension",
-        "load": "static/remoteEntry.60e60346bde7b7d52c23.js",
-        "name": "@jupyterlab/git",
-        "style": "./style"
-      },
-      {
-        "extension": "./extension",
         "load": "static/remoteEntry.71fdd4ee54dea9240f59.js",
         "name": "@jupyterlab/mathjax3-extension",
         "style": "./style"
@@ -80,12 +74,6 @@
         "extension": "./extension",
         "load": "static\\remoteEntry.3b5771cb964e034dae80.js",
         "name": "jupyterlab_vpython",
-        "style": "./style"
-      },
-      {
-        "extension": "./extension",
-        "load": "static/remoteEntry.399ca30148d086cfdea3.js",
-        "name": "nbdime-jupyterlab",
         "style": "./style"
       }
     ],

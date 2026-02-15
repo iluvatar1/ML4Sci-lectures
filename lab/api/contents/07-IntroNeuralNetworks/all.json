@@ -1,0 +1,71 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2026-02-15T04:06:00.209943Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-15T04:03:41.275017Z",
+      "mimetype": null,
+      "name": "DeepLearning.ipynb",
+      "path": "07-IntroNeuralNetworks/DeepLearning.ipynb",
+      "size": 43096,
+      "type": "notebook",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2026-02-15T04:06:00.227377Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-15T04:06:00.227377Z",
+      "mimetype": null,
+      "name": "fig",
+      "path": "07-IntroNeuralNetworks/fig",
+      "size": null,
+      "type": "directory",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2026-02-15T04:06:00.210358Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-15T04:03:41.275214Z",
+      "mimetype": null,
+      "name": "NeuralNetworks-BasicConcepts.ipynb",
+      "path": "07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.ipynb",
+      "size": 20103,
+      "type": "notebook",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2026-02-15T04:06:00.209566Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-15T04:03:41.274214Z",
+      "mimetype": null,
+      "name": "BackPropagation.ipynb",
+      "path": "07-IntroNeuralNetworks/BackPropagation.ipynb",
+      "size": 27892,
+      "type": "notebook",
+      "writable": true
+    }
+  ],
+  "created": "2026-02-15T04:06:00.210358Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2026-02-15T04:06:00.210358Z",
+  "mimetype": null,
+  "name": "07-IntroNeuralNetworks",
+  "path": "07-IntroNeuralNetworks",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}
