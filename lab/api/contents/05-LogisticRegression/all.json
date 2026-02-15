@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2026-02-15T14:05:55.686245Z",
+      "created": "2026-02-15T14:09:33.734681Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2026-02-15T14:03:31.341769Z",
+      "last_modified": "2026-02-15T14:07:13.297836Z",
       "mimetype": null,
       "name": "LogisticRegression.ipynb",
       "path": "05-LogisticRegression/LogisticRegression.ipynb",
@@ -15,11 +15,11 @@
       "writable": true
     }
   ],
-  "created": "2026-02-15T14:05:55.686245Z",
+  "created": "2026-02-15T14:09:33.734681Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2026-02-15T14:05:55.686245Z",
+  "last_modified": "2026-02-15T14:09:33.734681Z",
   "mimetype": null,
   "name": "05-LogisticRegression",
   "path": "05-LogisticRegression",

@@ -212,11 +212,6 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../00-IntroductionCourseML/IntroCourse-MachineLearning.html">1. Introduction to the course and to Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00-TALK-IntroML/IntroMachineLearning.html">2. A fast introduction to Machine Learning</a></li>
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="../02-LimpiezayPrepDatos/DataCleaning.html">3. Pandas for data cleaning and analysis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unsupervised learning I</span></p>
@@ -799,29 +794,29 @@ Results after one step training:
 </ul>
 <p>But how to adjust the weights? There are several techniques based on the actual error <span class="math notranslate nohighlight">\(\Delta\)</span>.</p>
 <p>First, we will define a cost/loss function as the typical MSE</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e23d4e6d-728f-442e-aabf-a236d9baf4d0">
-<span class="eqno">(8.1)<a class="headerlink" href="#equation-e23d4e6d-728f-442e-aabf-a236d9baf4d0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-45c4fdc8-9ef5-4860-9e55-b3180d3a725e">
+<span class="eqno">(8.1)<a class="headerlink" href="#equation-45c4fdc8-9ef5-4860-9e55-b3180d3a725e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 COST = \frac{1}{2} (\hat y - y)^2,
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat y\)</span> is the predicted value and <span class="math notranslate nohighlight">\(y\)</span> is the expected one.  Notice that we are not adding up because we only have one output.</p>
 <p>Second, we will apply gradient descent approximation to our problem, in order to improve our coefficients for our data. This means that we will propagate back the errors into the coefficients!</p>
-<div class="amsmath math notranslate nohighlight" id="equation-93d5ef73-cddf-42a4-bff6-da69de0e011b">
-<span class="eqno">(8.2)<a class="headerlink" href="#equation-93d5ef73-cddf-42a4-bff6-da69de0e011b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fad6f41c-3693-4140-bfd0-9e9d0aa2dd3a">
+<span class="eqno">(8.2)<a class="headerlink" href="#equation-fad6f41c-3693-4140-bfd0-9e9d0aa2dd3a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 w_i' = w_i - \alpha \frac{\partial COST}{\partial w_i},
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\alpha\)</span> is the learning rate. Taking into account that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d7014a95-3fc8-43e2-a5c8-2890bd032dbd">
-<span class="eqno">(8.3)<a class="headerlink" href="#equation-d7014a95-3fc8-43e2-a5c8-2890bd032dbd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6251ba1a-325c-46a2-9108-18f79d63052a">
+<span class="eqno">(8.3)<a class="headerlink" href="#equation-6251ba1a-325c-46a2-9108-18f79d63052a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \hat y = \phi(z) = \frac{1}{1 + \exp(-z)},
 \end{equation}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e690a401-5f12-475f-89e7-70b1cd27d900">
-<span class="eqno">(8.4)<a class="headerlink" href="#equation-e690a401-5f12-475f-89e7-70b1cd27d900" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1668124f-c88c-4e02-8761-889ebbc57ec1">
+<span class="eqno">(8.4)<a class="headerlink" href="#equation-1668124f-c88c-4e02-8761-889ebbc57ec1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z = \sum w_i x_i,
 \end{equation}\]</div>
 <p>then, by using the chain rule, we have</p>
-<div class="amsmath math notranslate nohighlight" id="equation-30a2416c-949a-49ee-889b-705f21e12514">
-<span class="eqno">(8.5)<a class="headerlink" href="#equation-30a2416c-949a-49ee-889b-705f21e12514" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-07b49e76-0ea3-48fb-9a68-e6665838d9a0">
+<span class="eqno">(8.5)<a class="headerlink" href="#equation-07b49e76-0ea3-48fb-9a68-e6665838d9a0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial COST}{\partial w_i} = \frac{\partial COST}{\partial \hat y} \frac{\partial \hat y}{\partial z} \frac{\partial z}{\partial w_i} = (\hat y - y)\phi (1-\phi)x_i. 
 \end{equation}\]</div>
 <div class="cell docutils container">
