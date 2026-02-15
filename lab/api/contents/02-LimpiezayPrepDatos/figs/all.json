@@ -1,0 +1,29 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2026-02-15T05:00:24.810026Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-15T04:58:02.729682Z",
+      "mimetype": "image/png",
+      "name": "importpandas.png",
+      "path": "02-LimpiezayPrepDatos/figs/importpandas.png",
+      "size": 451308,
+      "type": "file",
+      "writable": true
+    }
+  ],
+  "created": "2026-02-15T05:00:24.810026Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2026-02-15T05:00:24.810026Z",
+  "mimetype": null,
+  "name": "figs",
+  "path": "02-LimpiezayPrepDatos/figs",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}

@@ -1,0 +1,57 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2026-02-15T05:00:24.810026Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-15T05:00:24.810026Z",
+      "mimetype": null,
+      "name": "figs",
+      "path": "02-LimpiezayPrepDatos/figs",
+      "size": null,
+      "type": "directory",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2026-02-15T05:00:24.809719Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-15T04:58:02.729682Z",
+      "mimetype": null,
+      "name": "TutorialPandas.ipynb",
+      "path": "02-LimpiezayPrepDatos/TutorialPandas.ipynb",
+      "size": 26516,
+      "type": "notebook",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2026-02-15T05:00:24.809467Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-15T04:58:02.728539Z",
+      "mimetype": null,
+      "name": "DataCleaning.ipynb",
+      "path": "02-LimpiezayPrepDatos/DataCleaning.ipynb",
+      "size": 29844,
+      "type": "notebook",
+      "writable": true
+    }
+  ],
+  "created": "2026-02-15T05:00:24.809719Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2026-02-15T05:00:24.809719Z",
+  "mimetype": null,
+  "name": "02-LimpiezayPrepDatos",
+  "path": "02-LimpiezayPrepDatos",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}
