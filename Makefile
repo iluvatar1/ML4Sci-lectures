@@ -1,5 +1,5 @@
 
-.PHONY: book clean actions repo2docker binder devcontainer lite reset-origin-master
+.PHONY: book clean actions repo2docker binder devcontainer lite reset-origin-master nbgrader
 
 book:
 	@echo "Building book with jupyter-book"
@@ -37,6 +37,10 @@ reset-origin-master:
 	git fetch origin master
 	git reset --hard origin/master
 	git clean -fd
+
+nbgrader:
+	@echo "Generating assingments to test ..."
+	nbgrader generate_assignment --assignment="lectures/*" --notebook="*" --force
 
 clean:
 	rm -f *~ #_build
