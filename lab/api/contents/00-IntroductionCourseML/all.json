@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2026-02-15T18:17:25.389686Z",
+      "created": "2026-02-15T21:29:19.343590Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2026-02-15T18:17:25.389686Z",
+      "last_modified": "2026-02-15T21:29:19.343590Z",
       "mimetype": null,
       "name": "figs",
       "path": "00-IntroductionCourseML/figs",
@@ -16,11 +16,11 @@
     },
     {
       "content": null,
-      "created": "2026-02-15T18:17:25.386498Z",
+      "created": "2026-02-15T21:29:19.340199Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2026-02-15T18:14:52.773911Z",
+      "last_modified": "2026-02-15T21:26:52.838931Z",
       "mimetype": null,
       "name": "IntroCourse-MachineLearning.ipynb",
       "path": "00-IntroductionCourseML/IntroCourse-MachineLearning.ipynb",
@@ -29,11 +29,11 @@
       "writable": true
     }
   ],
-  "created": "2026-02-15T18:17:25.386498Z",
+  "created": "2026-02-15T21:29:19.340199Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2026-02-15T18:17:25.386498Z",
+  "last_modified": "2026-02-15T21:29:19.340199Z",
   "mimetype": null,
   "name": "00-IntroductionCourseML",
   "path": "00-IntroductionCourseML",
