@@ -311,6 +311,24 @@
       
       
       
+      <li><a href="https://iluvatar1.github.io/ML4Sci-lectures/lab/hub/user-redirect/git-pull?repo=https%3A//github.com/iluvatar1/ML4Sci-lectures&urlpath=lab/tree/ML4Sci-lectures/lectures/06-SVM/SVM.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
       <li><a href="https://colab.research.google.com/github/iluvatar1/ML4Sci-lectures/blob/master/lectures/06-SVM/SVM.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
@@ -664,21 +682,21 @@ $<span class="math notranslate nohighlight">\(
 <p>This is the so-called hard-margin classifier. The actual hyperplane might not always exists, like in the case of the “circular boundary”.</p>
 <p><strong>Soft-margin</strong></p>
 <p>When there is not linear (hyperplane boundary), a hinge-loss function is introduced,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a6080c51-f43a-41c0-aa25-ba8f3b885ff4">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-a6080c51-f43a-41c0-aa25-ba8f3b885ff4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1a3e424f-835b-41ec-aa65-2ec165b78ed7">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-1a3e424f-835b-41ec-aa65-2ec165b78ed7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \max(0, 1 - y_i(w\cdot x_i - b)),
 \end{equation}\]</div>
 <p>This function is 0 if the constrain is sattisfied, otherwise its value is proportional to the distance to the margin. This also allows for some misclassification, but this also makes the method less sentitive to outliers. The goal now is to minimize</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4f7dd0eb-46d4-45a5-a4fc-2818ea2e697b">
-<span class="eqno">(6.2)<a class="headerlink" href="#equation-4f7dd0eb-46d4-45a5-a4fc-2818ea2e697b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3fd35be3-441f-4ff6-8443-a3cb8a0cfa85">
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-3fd35be3-441f-4ff6-8443-a3cb8a0cfa85" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \|\mathbf{w}\|^{2} 
 + C \left[ \frac{1}{n} \sum_{i=1}^{n} 
 \max \bigl(0,\, 1 - y_i(\mathbf{w}^\top \mathbf{x}_i - b)\bigr) \right],
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(C \lt 0\)</span> represents the trade-off between increasing the margin size and ansuring that <span class="math notranslate nohighlight">\(x_i\)</span> ies on the correct size of the boundary.</p>
 <p>In this case, soft-margin SVM introduces slack variables <span class="math notranslate nohighlight">\(\zeta_i\)</span> and penalty <span class="math notranslate nohighlight">\(C\)</span>, and the problem becomes</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7a7bdd13-330b-43bb-b974-5d2f8258ef7c">
-<span class="eqno">(6.3)<a class="headerlink" href="#equation-7a7bdd13-330b-43bb-b974-5d2f8258ef7c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e45412fe-b038-4cd4-8228-bf7645dec8b8">
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-e45412fe-b038-4cd4-8228-bf7645dec8b8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{aligned}
 \min_{\mathbf{w},\, b,\, \boldsymbol{\zeta}} \quad 
 &amp; \|\mathbf{w}\|_{2}^{2} + C \sum_{i=1}^{n} \zeta_i \\[6pt]
