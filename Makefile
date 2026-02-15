@@ -1,5 +1,5 @@
 
-.PHONY: book clean actions repo2docker binder devcontainer
+.PHONY: book clean actions repo2docker binder devcontainer lite reset-origin-master
 
 book:
 	@echo "Building book with jupyter-book"
@@ -24,6 +24,19 @@ devcontainer:
 	@echo "Building and running  devcontainer image "
 	devcontainer build --workspace-folder ./ --image-name devcontest
 	docker run -it devcontest /bin/bash
+
+lite:
+	rm -rf _output _contents lite-build _build
+	jupyter lite build --config jupyter_lite_config.json
+	mkdir -p _build/html/lab
+	cp -r lite-build/* _build/html/lab/
+	cd lite-build && python3 -m http.server 8000
+
+reset-origin-master:
+	@echo "Resetting current branch to origin/master"
+	git fetch origin master
+	git reset --hard origin/master
+	git clean -fd
 
 clean:
 	rm -f *~ #_build

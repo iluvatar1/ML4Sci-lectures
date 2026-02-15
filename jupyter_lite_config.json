@@ -1,9 +1,18 @@
 {
   "LiteBuildConfig": {
-    "output_dir": "lite-build"
+    "output_dir": "lite-build",
+    "contents": ["lectures", "requirements.txt"],
+    "extra_ignore_contents": [
+      "\\.devcontainer",
+      "\\.venv",
+      "\\.git",
+      "\\.github"
+    ]
   },
   "LiteServerConfig": {
     "base_url": "/ML4Sci-lectures/lab/"
   },
-  "contents": ["."]
+  "jupyter-config-data": {
+    "disabledExtensions": ["@jupyterlab/git:plugin", "@jupyterlab/git", "@jupyterlab/git:git", "@jupyterlab/git:settings"]
+  }
 }

@@ -8,7 +8,7 @@ scipy
 seaborn
 ghp-import
 #jupyterlab-lsp
-jupyterlab-git
+#jupyterlab-git
 pandas
 ipython
 seaborn
