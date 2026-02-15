@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2026-02-15T04:38:15.586581Z",
+      "created": "2026-02-15T04:42:23.045355Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2026-02-15T04:35:48.363296Z",
+      "last_modified": "2026-02-15T04:40:05.934883Z",
       "mimetype": null,
       "name": "llm.ipynb",
       "path": "08-llm/llm.ipynb",
@@ -15,11 +15,11 @@
       "writable": true
     }
   ],
-  "created": "2026-02-15T04:38:15.586581Z",
+  "created": "2026-02-15T04:42:23.045355Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2026-02-15T04:38:15.586581Z",
+  "last_modified": "2026-02-15T04:42:23.045355Z",
   "mimetype": null,
   "name": "08-llm",
   "path": "08-llm",
