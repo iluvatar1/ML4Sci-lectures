@@ -664,21 +664,21 @@ $<span class="math notranslate nohighlight">\(
 <p>This is the so-called hard-margin classifier. The actual hyperplane might not always exists, like in the case of the “circular boundary”.</p>
 <p><strong>Soft-margin</strong></p>
 <p>When there is not linear (hyperplane boundary), a hinge-loss function is introduced,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-15295097-af9e-474a-8d0c-a4860bdec716">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-15295097-af9e-474a-8d0c-a4860bdec716" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2e83a5ad-08c2-4c9f-baa6-e790bd745e95">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-2e83a5ad-08c2-4c9f-baa6-e790bd745e95" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \max(0, 1 - y_i(w\cdot x_i - b)),
 \end{equation}\]</div>
 <p>This function is 0 if the constrain is sattisfied, otherwise its value is proportional to the distance to the margin. This also allows for some misclassification, but this also makes the method less sentitive to outliers. The goal now is to minimize</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b34edfbd-323a-4ab6-a3b3-67b38160466c">
-<span class="eqno">(6.2)<a class="headerlink" href="#equation-b34edfbd-323a-4ab6-a3b3-67b38160466c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e6f25952-30d0-4dd8-addb-101fdc420faa">
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-e6f25952-30d0-4dd8-addb-101fdc420faa" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \|\mathbf{w}\|^{2} 
 + C \left[ \frac{1}{n} \sum_{i=1}^{n} 
 \max \bigl(0,\, 1 - y_i(\mathbf{w}^\top \mathbf{x}_i - b)\bigr) \right],
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(C \lt 0\)</span> represents the trade-off between increasing the margin size and ansuring that <span class="math notranslate nohighlight">\(x_i\)</span> ies on the correct size of the boundary.</p>
 <p>In this case, soft-margin SVM introduces slack variables <span class="math notranslate nohighlight">\(\zeta_i\)</span> and penalty <span class="math notranslate nohighlight">\(C\)</span>, and the problem becomes</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1a8b6c0e-5253-44b5-b1e2-9b043b18e19a">
-<span class="eqno">(6.3)<a class="headerlink" href="#equation-1a8b6c0e-5253-44b5-b1e2-9b043b18e19a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fad42e45-e336-4870-9d94-0d20c1942d86">
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-fad42e45-e336-4870-9d94-0d20c1942d86" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{aligned}
 \min_{\mathbf{w},\, b,\, \boldsymbol{\zeta}} \quad 
 &amp; \|\mathbf{w}\|_{2}^{2} + C \sum_{i=1}^{n} \zeta_i \\[6pt]
