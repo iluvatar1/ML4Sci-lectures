@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2026-02-15T17:54:31.454270Z",
+      "created": "2026-02-15T18:07:26.047142Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2026-02-15T17:52:01.298476Z",
+      "last_modified": "2026-02-15T18:05:13.112115Z",
       "mimetype": "image/png",
       "name": "sepal.png",
       "path": "03-PCA/figs/sepal.png",
@@ -15,11 +15,11 @@
       "writable": true
     }
   ],
-  "created": "2026-02-15T17:54:31.454032Z",
+  "created": "2026-02-15T18:07:26.047132Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2026-02-15T17:54:31.454032Z",
+  "last_modified": "2026-02-15T18:07:26.047132Z",
   "mimetype": null,
   "name": "figs",
   "path": "03-PCA/figs",
