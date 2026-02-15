@@ -50,6 +50,16 @@ jobs:
           #source .venv/bin/activate
           jupyter-book build .
 
+      - name: Build JupyterLite
+        run: |
+          jupyter lite build --config jupyter_lite_config.json
+
+      - name: Copy JupyterLite into book/lab
+        run: |
+          mkdir -p _build/html/lab
+          cp -r lite-build/* _build/html/lab/
+
+
       # For GitHub environment - actual deployment
       - name: Deploy to GitHub Pages
         if: ${{ !env.ACT }}
