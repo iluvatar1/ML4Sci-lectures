@@ -66,6 +66,8 @@ shap==0.48.0
 jupyterlab-rise
 
 missingno
+itables # interactive pandas tables
 
+# Testing jupyterlab deployment
 jupyterlite-core
 jupyterlite-pyodide-kernel
