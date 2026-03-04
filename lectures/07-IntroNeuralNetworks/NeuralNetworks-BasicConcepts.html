@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
@@ -794,29 +794,29 @@ Results after one step training:
 </ul>
 <p>But how to adjust the weights? There are several techniques based on the actual error <span class="math notranslate nohighlight">\(\Delta\)</span>.</p>
 <p>First, we will define a cost/loss function as the typical MSE</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6c248cef-6946-4c78-afb4-eabe193bd76d">
-<span class="eqno">(8.1)<a class="headerlink" href="#equation-6c248cef-6946-4c78-afb4-eabe193bd76d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-35012b08-4193-47b7-9f27-6fa8c71ec615">
+<span class="eqno">(8.1)<a class="headerlink" href="#equation-35012b08-4193-47b7-9f27-6fa8c71ec615" title="Permalink to this equation">#</a></span>\[\begin{equation}
 COST = \frac{1}{2} (\hat y - y)^2,
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat y\)</span> is the predicted value and <span class="math notranslate nohighlight">\(y\)</span> is the expected one.  Notice that we are not adding up because we only have one output.</p>
 <p>Second, we will apply gradient descent approximation to our problem, in order to improve our coefficients for our data. This means that we will propagate back the errors into the coefficients!</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7401e39e-5344-4198-8cb3-ce349b72f62d">
-<span class="eqno">(8.2)<a class="headerlink" href="#equation-7401e39e-5344-4198-8cb3-ce349b72f62d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c624175e-9a46-4364-bcd4-f4e19802d2d2">
+<span class="eqno">(8.2)<a class="headerlink" href="#equation-c624175e-9a46-4364-bcd4-f4e19802d2d2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 w_i' = w_i - \alpha \frac{\partial COST}{\partial w_i},
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\alpha\)</span> is the learning rate. Taking into account that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8ec3db76-e0a1-4ebd-84e7-429f5b65c417">
-<span class="eqno">(8.3)<a class="headerlink" href="#equation-8ec3db76-e0a1-4ebd-84e7-429f5b65c417" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-49164acd-9af9-4aaf-9d9d-3be7a6d6de42">
+<span class="eqno">(8.3)<a class="headerlink" href="#equation-49164acd-9af9-4aaf-9d9d-3be7a6d6de42" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \hat y = \phi(z) = \frac{1}{1 + \exp(-z)},
 \end{equation}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-34bc2bb2-cf23-4401-957f-35647c117d38">
-<span class="eqno">(8.4)<a class="headerlink" href="#equation-34bc2bb2-cf23-4401-957f-35647c117d38" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cb565a89-a785-461a-a6d2-c92f8dbf9f3f">
+<span class="eqno">(8.4)<a class="headerlink" href="#equation-cb565a89-a785-461a-a6d2-c92f8dbf9f3f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z = \sum w_i x_i,
 \end{equation}\]</div>
 <p>then, by using the chain rule, we have</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e46bbe01-64ce-461b-8e38-746c3bc0f951">
-<span class="eqno">(8.5)<a class="headerlink" href="#equation-e46bbe01-64ce-461b-8e38-746c3bc0f951" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-601983c8-e135-4d55-b102-9b334119e183">
+<span class="eqno">(8.5)<a class="headerlink" href="#equation-601983c8-e135-4d55-b102-9b334119e183" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial COST}{\partial w_i} = \frac{\partial COST}{\partial \hat y} \frac{\partial \hat y}{\partial z} \frac{\partial z}{\partial w_i} = (\hat y - y)\phi (1-\phi)x_i. 
 \end{equation}\]</div>
 <div class="cell docutils container">

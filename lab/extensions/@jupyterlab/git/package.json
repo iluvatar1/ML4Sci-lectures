@@ -1,6 +1,6 @@
 {
   "name": "@jupyterlab/git",
-  "version": "0.51.4",
+  "version": "0.52.0",
   "description": "A JupyterLab extension for version control using git",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -198,7 +198,7 @@
     },
     "outputDir": "jupyterlab_git/labextension",
     "_build": {
-      "load": "static/remoteEntry.60e60346bde7b7d52c23.js",
+      "load": "static/remoteEntry.76a80ec9845e990decd8.js",
       "extension": "./extension",
       "style": "./style"
     }
