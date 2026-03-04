@@ -95,6 +95,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="14. Python for Machine Learning — Practical Exercise" href="ml_intro_exercise.html" />
     <link rel="prev" title="12. Intro Python II: python data structures" href="02-IntroProgrammingPython-DataStructs.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -234,6 +235,7 @@
 <li class="toctree-l1"><a class="reference internal" href="01-IntroProgrammingPython.html">11. Python Programming (very fast) Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02-IntroProgrammingPython-DataStructs.html">12. Intro Python II: python data structures</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">13. Pandas Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml_intro_exercise.html">14. Python for Machine Learning — Practical Exercise</a></li>
 </ul>
 
     </div>
@@ -2877,45 +2879,45 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>-0.325897</td>
-      <td>0.584416</td>
-      <td>-0.510392</td>
-      <td>0.173488</td>
+      <td>-1.591635</td>
+      <td>0.821477</td>
+      <td>-0.216175</td>
+      <td>-0.764937</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
-      <td>-0.159303</td>
-      <td>0.794724</td>
-      <td>1.877632</td>
-      <td>1.537212</td>
+      <td>-0.856935</td>
+      <td>-0.179939</td>
+      <td>2.060609</td>
+      <td>-1.221545</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
-      <td>1.104952</td>
-      <td>1.922451</td>
-      <td>-0.894544</td>
-      <td>-0.209621</td>
+      <td>-0.552916</td>
+      <td>1.059453</td>
+      <td>0.649019</td>
+      <td>-0.000578</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>0.547128</td>
-      <td>1.036383</td>
-      <td>-0.074749</td>
-      <td>0.786194</td>
+      <td>0.851654</td>
+      <td>0.267959</td>
+      <td>0.324438</td>
+      <td>0.507300</td>
     </tr>
     <tr>
       <th>2013-01-05</th>
-      <td>0.463010</td>
-      <td>0.720658</td>
-      <td>-1.498895</td>
-      <td>0.351882</td>
+      <td>-0.162876</td>
+      <td>-0.807641</td>
+      <td>-0.617715</td>
+      <td>-0.720386</td>
     </tr>
     <tr>
       <th>2013-01-06</th>
-      <td>-0.796132</td>
-      <td>-0.534567</td>
-      <td>0.433919</td>
-      <td>-0.824804</td>
+      <td>-1.448479</td>
+      <td>-0.010900</td>
+      <td>-0.199187</td>
+      <td>-0.490367</td>
     </tr>
   </tbody>
 </table>
@@ -2955,45 +2957,45 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>0.173488</td>
-      <td>-0.510392</td>
-      <td>0.584416</td>
-      <td>-0.325897</td>
+      <td>-0.764937</td>
+      <td>-0.216175</td>
+      <td>0.821477</td>
+      <td>-1.591635</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
-      <td>1.537212</td>
-      <td>1.877632</td>
-      <td>0.794724</td>
-      <td>-0.159303</td>
+      <td>-1.221545</td>
+      <td>2.060609</td>
+      <td>-0.179939</td>
+      <td>-0.856935</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
-      <td>-0.209621</td>
-      <td>-0.894544</td>
-      <td>1.922451</td>
-      <td>1.104952</td>
+      <td>-0.000578</td>
+      <td>0.649019</td>
+      <td>1.059453</td>
+      <td>-0.552916</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>0.786194</td>
-      <td>-0.074749</td>
-      <td>1.036383</td>
-      <td>0.547128</td>
+      <td>0.507300</td>
+      <td>0.324438</td>
+      <td>0.267959</td>
+      <td>0.851654</td>
     </tr>
     <tr>
       <th>2013-01-05</th>
-      <td>0.351882</td>
-      <td>-1.498895</td>
-      <td>0.720658</td>
-      <td>0.463010</td>
+      <td>-0.720386</td>
+      <td>-0.617715</td>
+      <td>-0.807641</td>
+      <td>-0.162876</td>
     </tr>
     <tr>
       <th>2013-01-06</th>
-      <td>-0.824804</td>
-      <td>0.433919</td>
-      <td>-0.534567</td>
-      <td>-0.796132</td>
+      <td>-0.490367</td>
+      <td>-0.199187</td>
+      <td>-0.010900</td>
+      <td>-1.448479</td>
     </tr>
   </tbody>
 </table>
@@ -3033,45 +3035,45 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>-0.325897</td>
-      <td>0.584416</td>
-      <td>-0.510392</td>
-      <td>0.173488</td>
+      <td>-1.591635</td>
+      <td>0.821477</td>
+      <td>-0.216175</td>
+      <td>-0.764937</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
-      <td>-0.159303</td>
-      <td>0.794724</td>
-      <td>1.877632</td>
-      <td>1.537212</td>
+      <td>-0.856935</td>
+      <td>-0.179939</td>
+      <td>2.060609</td>
+      <td>-1.221545</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
-      <td>1.104952</td>
-      <td>1.922451</td>
-      <td>-0.894544</td>
-      <td>-0.209621</td>
+      <td>-0.552916</td>
+      <td>1.059453</td>
+      <td>0.649019</td>
+      <td>-0.000578</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>0.547128</td>
-      <td>1.036383</td>
-      <td>-0.074749</td>
-      <td>0.786194</td>
+      <td>0.851654</td>
+      <td>0.267959</td>
+      <td>0.324438</td>
+      <td>0.507300</td>
     </tr>
     <tr>
       <th>2013-01-05</th>
-      <td>0.463010</td>
-      <td>0.720658</td>
-      <td>-1.498895</td>
-      <td>0.351882</td>
+      <td>-0.162876</td>
+      <td>-0.807641</td>
+      <td>-0.617715</td>
+      <td>-0.720386</td>
     </tr>
     <tr>
       <th>2013-01-06</th>
-      <td>-0.796132</td>
-      <td>-0.534567</td>
-      <td>0.433919</td>
-      <td>-0.824804</td>
+      <td>-1.448479</td>
+      <td>-0.010900</td>
+      <td>-0.199187</td>
+      <td>-0.490367</td>
     </tr>
   </tbody>
 </table>
@@ -3086,9 +3088,9 @@ Name: count, dtype: int64
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2013-01-01    False
 2013-01-02    False
-2013-01-03     True
+2013-01-03    False
 2013-01-04     True
-2013-01-05     True
+2013-01-05    False
 2013-01-06    False
 Freq: D, Name: A, dtype: bool
 </pre></div>
@@ -3128,25 +3130,11 @@ Freq: D, Name: A, dtype: bool
   </thead>
   <tbody>
     <tr>
-      <th>2013-01-03</th>
-      <td>1.104952</td>
-      <td>1.922451</td>
-      <td>-0.894544</td>
-      <td>-0.209621</td>
-    </tr>
-    <tr>
       <th>2013-01-04</th>
-      <td>0.547128</td>
-      <td>1.036383</td>
-      <td>-0.074749</td>
-      <td>0.786194</td>
-    </tr>
-    <tr>
-      <th>2013-01-05</th>
-      <td>0.463010</td>
-      <td>0.720658</td>
-      <td>-1.498895</td>
-      <td>0.351882</td>
+      <td>0.851654</td>
+      <td>0.267959</td>
+      <td>0.324438</td>
+      <td>0.5073</td>
     </tr>
   </tbody>
 </table>
@@ -3187,43 +3175,43 @@ Freq: D, Name: A, dtype: bool
     <tr>
       <th>2013-01-01</th>
       <td>NaN</td>
-      <td>0.584416</td>
+      <td>0.821477</td>
       <td>NaN</td>
-      <td>0.173488</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
       <td>NaN</td>
-      <td>0.794724</td>
-      <td>1.877632</td>
-      <td>1.537212</td>
+      <td>NaN</td>
+      <td>2.060609</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
-      <td>1.104952</td>
-      <td>1.922451</td>
       <td>NaN</td>
+      <td>1.059453</td>
+      <td>0.649019</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>0.547128</td>
-      <td>1.036383</td>
-      <td>NaN</td>
-      <td>0.786194</td>
+      <td>0.851654</td>
+      <td>0.267959</td>
+      <td>0.324438</td>
+      <td>0.5073</td>
     </tr>
     <tr>
       <th>2013-01-05</th>
-      <td>0.463010</td>
-      <td>0.720658</td>
       <td>NaN</td>
-      <td>0.351882</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>2013-01-06</th>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.433919</td>
+      <td>NaN</td>
       <td>NaN</td>
     </tr>
   </tbody>
@@ -3265,44 +3253,44 @@ Freq: D, Name: A, dtype: bool
     <tr>
       <th>2013-01-01</th>
       <td>5.000000</td>
-      <td>0.584416</td>
+      <td>0.821477</td>
       <td>5.000000</td>
-      <td>0.173488</td>
+      <td>5.0000</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
       <td>5.000000</td>
-      <td>0.794724</td>
-      <td>1.877632</td>
-      <td>1.537212</td>
+      <td>5.000000</td>
+      <td>2.060609</td>
+      <td>5.0000</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
-      <td>1.104952</td>
-      <td>1.922451</td>
       <td>5.000000</td>
-      <td>5.000000</td>
+      <td>1.059453</td>
+      <td>0.649019</td>
+      <td>5.0000</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>0.547128</td>
-      <td>1.036383</td>
-      <td>5.000000</td>
-      <td>0.786194</td>
+      <td>0.851654</td>
+      <td>0.267959</td>
+      <td>0.324438</td>
+      <td>0.5073</td>
     </tr>
     <tr>
       <th>2013-01-05</th>
-      <td>0.463010</td>
-      <td>0.720658</td>
       <td>5.000000</td>
-      <td>0.351882</td>
+      <td>5.000000</td>
+      <td>5.000000</td>
+      <td>5.0000</td>
     </tr>
     <tr>
       <th>2013-01-06</th>
       <td>5.000000</td>
       <td>5.000000</td>
-      <td>0.433919</td>
       <td>5.000000</td>
+      <td>5.0000</td>
     </tr>
   </tbody>
 </table>
@@ -3793,6 +3781,15 @@ Freq: D, Name: A, dtype: bool
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title"><span class="section-number">12. </span>Intro Python II: python data structures</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="ml_intro_exercise.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Python for Machine Learning — Practical Exercise</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
