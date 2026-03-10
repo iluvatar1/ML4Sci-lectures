@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2026-03-10T23:26:09.695707Z",
+      "created": "2026-03-10T23:32:39.884055Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2026-03-10T23:23:29.688950Z",
+      "last_modified": "2026-03-10T23:30:07.508892Z",
       "mimetype": null,
       "name": "LinearRegression.ipynb",
       "path": "04-LinearRegression/LinearRegression.ipynb",
@@ -15,11 +15,11 @@
       "writable": true
     }
   ],
-  "created": "2026-03-10T23:26:09.695707Z",
+  "created": "2026-03-10T23:32:39.884055Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2026-03-10T23:26:09.695707Z",
+  "last_modified": "2026-03-10T23:32:39.884055Z",
   "mimetype": null,
   "name": "04-LinearRegression",
   "path": "04-LinearRegression",
