@@ -16,20 +16,22 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
@@ -49,10 +51,11 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles.css?v=76e7d31e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/jquery.js?v=5d32c60e"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
@@ -61,7 +64,7 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../../_static/tabs.js?v=3ee01567"></script>
     <script src="../../_static/js/hoverxref.js"></script>
     <script src="../../_static/js/tooltipster.bundle.min.js"></script>
@@ -99,6 +102,7 @@
     <link rel="prev" title="5. Linear Regression" href="../04-LinearRegression/LinearRegression.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -114,19 +118,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -134,7 +127,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -142,8 +134,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -159,7 +151,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -189,15 +182,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -244,9 +233,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -461,7 +455,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -475,25 +469,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -551,6 +537,12 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="an-introduction-to-logistic-regression">
 <h1><span class="section-number">6. </span>An Introduction to Logistic Regression<a class="headerlink" href="#an-introduction-to-logistic-regression" title="Link to this heading">#</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>TODO
+Check <a class="reference external" href="https://www.youtube.com/watch?v=YevSE6bRhTo">https://www.youtube.com/watch?v=YevSE6bRhTo</a>
+Cross entropy: <a class="reference external" href="https://www.youtube.com/watch?v=KHVR587oW8I">https://www.youtube.com/watch?v=KHVR587oW8I</a></p>
+</div>
 <section id="a-brief-history-of-logistic-regression">
 <h2><span class="section-number">6.1. </span>A Brief History of Logistic Regression<a class="headerlink" href="#a-brief-history-of-logistic-regression" title="Link to this heading">#</a></h2>
 <p>Logistic Regression is often one of the first classification algorithms that people learn in machine learning, but its story begins over a century earlier in the field of statistics and demography. It wasn’t invented by a computer scientist for a machine learning task, but rather evolved over time to solve problems related to understanding relationships in data.</p>
@@ -676,7 +668,7 @@ $<span class="math notranslate nohighlight">\( \sigma(z) = \frac{1}{1 + e^{-z}} 
     </style>
     <div>
         <a href="https://bokeh.org" target="_blank" class="bk-notebook-logo"></a>
-        <span id="d0e18e23-1b53-4688-905d-ad9cab13ffaf">Loading BokehJS ...</span>
+        <span id="c0cb801d-6ac0-4aff-8c39-f0493db1b42f">Loading BokehJS ...</span>
     </div>
 </div><script type="application/javascript">'use strict';
 (function(root) {
@@ -841,7 +833,7 @@ const JS_MIME_TYPE = 'application/javascript';
      "</div>"}};
 
   function display_loaded(error = null) {
-    const el = document.getElementById("d0e18e23-1b53-4688-905d-ad9cab13ffaf");
+    const el = document.getElementById("c0cb801d-6ac0-4aff-8c39-f0493db1b42f");
     if (el != null) {
       const html = (() => {
         if (typeof root.Bokeh === "undefined") {
@@ -975,7 +967,7 @@ function(Bokeh) {
       console.log("Bokeh: BokehJS failed to load within specified timeout.");
       root._bokeh_failed_load = true;
     } else if (force !== true) {
-      const cell = $(document.getElementById("d0e18e23-1b53-4688-905d-ad9cab13ffaf")).parents('.cell').data().cell;
+      const cell = $(document.getElementById("c0cb801d-6ac0-4aff-8c39-f0493db1b42f")).parents('.cell').data().cell;
       cell.output_area.append_execute_result(NB_LOAD_WARNING)
     }
   }
@@ -1020,11 +1012,11 @@ function(Bokeh) {
 </details>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="f6f148d2-9227-45c7-af04-797f1341d80b" data-root-id="p1008" style="display: contents;"></div>
+  <div id="f0948a68-c5ce-4a1b-9d49-6aeee9222ad2" data-root-id="p1008" style="display: contents;"></div>
 </div><script type="application/javascript">(function(root) {
   function embed_document(root) {
-  const docs_json = {"de9d2e0c-e332-44b8-bbaa-fd1f50e5afe0":{"version":"3.8.2","title":"Bokeh Application","config":{"type":"object","name":"DocumentConfig","id":"p1063","attributes":{"notifications":{"type":"object","name":"Notifications","id":"p1064"}}},"roots":[{"type":"object","name":"Figure","id":"p1008","attributes":{"x_range":{"type":"object","name":"DataRange1d","id":"p1009"},"y_range":{"type":"object","name":"DataRange1d","id":"p1010"},"x_scale":{"type":"object","name":"LinearScale","id":"p1018"},"y_scale":{"type":"object","name":"LinearScale","id":"p1019"},"title":{"type":"object","name":"Title","id":"p1011","attributes":{"text":"The sigmoid function"}},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1049","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1043","attributes":{"selected":{"type":"object","name":"Selection","id":"p1044","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1045"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/zWTf2SVURjHX9NszZ2t2123/ah737uZJpYZibLzZcX+aLn6p2RTJkpixcRIlmVMZFpjWiURSRkpq8T5xlhl0mo2WXITE9tSMmar9J7zPB2Hl/Oe53m+z/f5nCBwq4bNHZ/fDgxXs2/8xc2woZpvakdOP3qdYXF/9+7mjgyzC4eKpldDDrbu/Hh8MOTsaOLe8vaQFfFf5/rG02zvmtqXbE8TD4/WZRdSnDhbFe0UD7jrrVs5vTqU9+TCFh6xB2/PjFbxS29J00qukidbJufK45X8HnOFKujTdJVzzV2/u5kXfUCShanzP14WJHnl665ob2JZVD3/VBmdytqRBDMNnSdaJjfSH/+Jc8fzb3cu18cZJYkkbeAe32ApL7myvSW8OjzWWDNfzFuhC4zxvl9FfBqdLsXW09vQWcD3Ts5UPp07Y43ruOhsGMqjS9K0ErDQN/bXboui+rvXLOSHPeyvLdszzoaJnzbtDVqyWd/QvO1xsupy9pg39IMNnPy5Z/+/Rs+N3jMaZ0olj9G8RusYrWvSosOoLqM6obrxSfrAO+kL2ie0bzwQH3BDfMGA+AT1DeojHouvqBefob5D54DrMhckZE7QuUHniB6ZK37LnKFzx6JwAOUCOeEEbcINlCPsF67wSjiDcoc24RDKJWaEU1wTbqEcIyZcQzmHco+98g4QyLvAPxDfd84gAwAA"},"shape":[100],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/w3Fe1ALcAAHcB0WrqHrhJyTzRQnsrqRuG+FlPW4pKdqC2GpZlkpcuPyOG1HWnmkpjqP5nlGKS7yiNr0WsoiSVi12X5XC22Iff75cLvnf2U222K8TxDntZCKmJYm5uYOexSKd1Kb22ah8WRM+A+FE5Zsu/k2M9IZOkuUl3ycjojpshXcLFfQPvmkHBxxQ/tagatrOBOhZvakyaks1Ll9YtUJvDHQwjFrlT6wsVNefyDZALqmXnmSEQizOSAqviEEdU02DWkdW9D8o2rs/ZQoXOGzVY+Wx4F5eO8J33WJiA+KTqhxTIK/UJWcp+JBsLzJx0PCh40u3+5j4H5QxA9rTYUHEMYv2mhS50A04pIeXXIUuhsRjGm5x3EnLPiM04Y8qCdmCYcp+fDTBCWMiKVwz8iMpanPo3gbf9+tCaXIn9poflNRjoCjnDl+e68i+mf6PPGYHKHh14Ivpd5Fit5QUzmmgP8KyldDVzV8P45aXu5+jBNzZyhquPWwT3x3JTPnBaqH/rRSZr7GekVGWOlCFTgtDHH6/Va4dkvNPolqfNDX6J/ROmHiOfqtdNTgl+y1o4f7B1zriWCWbu/FbfvOXfda+nDMvUSo3d0PW9VowsDoFzjk0addTvsGngMrl9OqBU/Ciqc7DIIvrbh5YdUQChomBI1761Droozsd9ZD5pXT0T6gR/TOcq6t9DtmrxGtpzEMkPr1D+rKDFAWM9iLpxpxqS0g5ADXCL3twV623Ig9oh3uHd+MoB/PKbHMJogMWmZI8yVYd5GaWraD4DPihI0igkfK50XkHMFWefI7k5yAxV0lO11LQOsUzo19RaDLl8zpaiNY1qvdmNJN0M56+mZ/H4HEsyjDU0vw4Hr5piEdQW5h9pPnRoLA2OKKwWGCSVdzCw6NEswTlQac+0nwzO1GZcgYgSqUKqs2Exymdql7LAR2lb7+zb8JnBbFNJ79Q3Akk8Nh/iXQDFuKq6ybvGM0zuMECyh/s7OsH0lOmVVvnV1VcMFi3SMpYs/SfwQ9heezw6wreHeSBNZXn3Y6JLZ+iu+pKrP+H1w82fEgAwAA"},"shape":[100],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1050","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1051"}}},"glyph":{"type":"object","name":"Line","id":"p1046","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_width":2}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1047","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_alpha":0.1,"line_width":2}},"muted_glyph":{"type":"object","name":"Line","id":"p1048","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_alpha":0.2,"line_width":2}}}},{"type":"object","name":"GlyphRenderer","id":"p1058","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1052","attributes":{"selected":{"type":"object","name":"Selection","id":"p1053","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1054"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/zWTf2SVURjHX9NszZ2t2123/ah737uZJpYZibLzZcX+aLn6p2RTJkpixcRIlmVMZFpjWiURSRkpq8T5xlhl0mo2WXITE9tSMmar9J7zPB2Hl/Oe53m+z/f5nCBwq4bNHZ/fDgxXs2/8xc2woZpvakdOP3qdYXF/9+7mjgyzC4eKpldDDrbu/Hh8MOTsaOLe8vaQFfFf5/rG02zvmtqXbE8TD4/WZRdSnDhbFe0UD7jrrVs5vTqU9+TCFh6xB2/PjFbxS29J00qukidbJufK45X8HnOFKujTdJVzzV2/u5kXfUCShanzP14WJHnl665ob2JZVD3/VBmdytqRBDMNnSdaJjfSH/+Jc8fzb3cu18cZJYkkbeAe32ApL7myvSW8OjzWWDNfzFuhC4zxvl9FfBqdLsXW09vQWcD3Ts5UPp07Y43ruOhsGMqjS9K0ErDQN/bXboui+rvXLOSHPeyvLdszzoaJnzbtDVqyWd/QvO1xsupy9pg39IMNnPy5Z/+/Rs+N3jMaZ0olj9G8RusYrWvSosOoLqM6obrxSfrAO+kL2ie0bzwQH3BDfMGA+AT1DeojHouvqBefob5D54DrMhckZE7QuUHniB6ZK37LnKFzx6JwAOUCOeEEbcINlCPsF67wSjiDcoc24RDKJWaEU1wTbqEcIyZcQzmHco+98g4QyLvAPxDfd84gAwAA"},"shape":[100],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1059","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1060"}}},"glyph":{"type":"object","name":"Line","id":"p1055","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"value","value":0.5},"line_color":"red","line_width":2}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1056","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"value","value":0.5},"line_color":"red","line_alpha":0.1,"line_width":2}},"muted_glyph":{"type":"object","name":"Line","id":"p1057","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"value","value":0.5},"line_color":"red","line_alpha":0.2,"line_width":2}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1017","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1030"},{"type":"object","name":"WheelZoomTool","id":"p1031","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1032","attributes":{"dimensions":"both","overlay":{"type":"object","name":"BoxAnnotation","id":"p1033","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1039","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1038","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1040"},{"type":"object","name":"ResetTool","id":"p1041"},{"type":"object","name":"HelpTool","id":"p1042"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1025","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1026","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1027"},"axis_label":"$$\\sigma(z)$$","major_label_policy":{"type":"object","name":"AllLabels","id":"p1028"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1020","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1021","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1022"},"axis_label":"z","major_label_policy":{"type":"object","name":"AllLabels","id":"p1023"}}}],"center":[{"type":"object","name":"Grid","id":"p1024","attributes":{"axis":{"id":"p1020"}}},{"type":"object","name":"Grid","id":"p1029","attributes":{"dimension":1,"axis":{"id":"p1025"}}},{"type":"object","name":"Legend","id":"p1061","attributes":{"items":[{"type":"object","name":"LegendItem","id":"p1062","attributes":{"label":{"type":"value","value":"Threshold at 0.5"},"renderers":[{"id":"p1058"}]}}]}}]}}]}};
-  const render_items = [{"docid":"de9d2e0c-e332-44b8-bbaa-fd1f50e5afe0","roots":{"p1008":"f6f148d2-9227-45c7-af04-797f1341d80b"},"root_ids":["p1008"]}];
+  const docs_json = {"032eb620-7856-4e90-a93f-2a843651831c":{"version":"3.8.2","title":"Bokeh Application","config":{"type":"object","name":"DocumentConfig","id":"p1063","attributes":{"notifications":{"type":"object","name":"Notifications","id":"p1064"}}},"roots":[{"type":"object","name":"Figure","id":"p1008","attributes":{"x_range":{"type":"object","name":"DataRange1d","id":"p1009"},"y_range":{"type":"object","name":"DataRange1d","id":"p1010"},"x_scale":{"type":"object","name":"LinearScale","id":"p1018"},"y_scale":{"type":"object","name":"LinearScale","id":"p1019"},"title":{"type":"object","name":"Title","id":"p1011","attributes":{"text":"The sigmoid function"}},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1049","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1043","attributes":{"selected":{"type":"object","name":"Selection","id":"p1044","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1045"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/zWTf2SVURjHX9NszZ2t2123/ah737uZJpYZibLzZcX+aLn6p2RTJkpixcRIlmVMZFpjWiURSRkpq8T5xlhl0mo2WXITE9tSMmar9J7zPB2Hl/Oe53m+z/f5nCBwq4bNHZ/fDgxXs2/8xc2woZpvakdOP3qdYXF/9+7mjgyzC4eKpldDDrbu/Hh8MOTsaOLe8vaQFfFf5/rG02zvmtqXbE8TD4/WZRdSnDhbFe0UD7jrrVs5vTqU9+TCFh6xB2/PjFbxS29J00qukidbJufK45X8HnOFKujTdJVzzV2/u5kXfUCShanzP14WJHnl665ob2JZVD3/VBmdytqRBDMNnSdaJjfSH/+Jc8fzb3cu18cZJYkkbeAe32ApL7myvSW8OjzWWDNfzFuhC4zxvl9FfBqdLsXW09vQWcD3Ts5UPp07Y43ruOhsGMqjS9K0ErDQN/bXboui+rvXLOSHPeyvLdszzoaJnzbtDVqyWd/QvO1xsupy9pg39IMNnPy5Z/+/Rs+N3jMaZ0olj9G8RusYrWvSosOoLqM6obrxSfrAO+kL2ie0bzwQH3BDfMGA+AT1DeojHouvqBefob5D54DrMhckZE7QuUHniB6ZK37LnKFzx6JwAOUCOeEEbcINlCPsF67wSjiDcoc24RDKJWaEU1wTbqEcIyZcQzmHco+98g4QyLvAPxDfd84gAwAA"},"shape":[100],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/w3Fe1ALcAAHcB0WrqHrhJyTzRQnsrqRuG+FlPW4pKdqC2GpZlkpcuPyOG1HWnmkpjqP5nlGKS7yiNr0WsoiSVi12X5XC22Iff75cLvnf2U222K8TxDntZCKmJYm5uYOexSKd1Kb22ah8WRM+A+FE5Zsu/k2M9IZOkuUl3ycjojpshXcLFfQPvmkHBxxQ/tagatrOBOhZvakyaks1Ll9YtUJvDHQwjFrlT6wsVNefyDZALqmXnmSEQizOSAqviEEdU02DWkdW9D8o2rs/ZQoXOGzVY+Wx4F5eO8J33WJiA+KTqhxTIK/UJWcp+JBsLzJx0PCh40u3+5j4H5QxA9rTYUHEMYv2mhS50A04pIeXXIUuhsRjGm5x3EnLPiM04Y8qCdmCYcp+fDTBCWMiKVwz8iMpanPo3gbf9+tCaXIn9poflNRjoCjnDl+e68i+mf6PPGYHKHh14Ivpd5Fit5QUzmmgP8KyldDVzV8P45aXu5+jBNzZyhquPWwT3x3JTPnBaqH/rRSZr7GekVGWOlCFTgtDHH6/Va4dkvNPolqfNDX6J/ROmHiOfqtdNTgl+y1o4f7B1zriWCWbu/FbfvOXfda+nDMvUSo3d0PW9VowsDoFzjk0addTvsGngMrl9OqBU/Ciqc7DIIvrbh5YdUQChomBI1761Droozsd9ZD5pXT0T6gR/TOcq6t9DtmrxGtpzEMkPr1D+rKDFAWM9iLpxpxqS0g5ADXCL3twV623Ig9oh3uHd+MoB/PKbHMJogMWmZI8yVYd5GaWraD4DPihI0igkfK50XkHMFWefI7k5yAxV0lO11LQOsUzo19RaDLl8zpaiNY1qvdmNJN0M56+mZ/H4HEsyjDU0vw4Hr5piEdQW5h9pPnRoLA2OKKwWGCSVdzCw6NEswTlQac+0nwzO1GZcgYgSqUKqs2Exymdql7LAR2lb7+zb8JnBbFNJ79Q3Akk8Nh/iXQDFuKq6ybvGM0zuMECyh/s7OsH0lOmVVvnV1VcMFi3SMpYs/SfwQ9heezw6wreHeSBNZXn3Y6JLZ+iu+pKrP+H1w82fEgAwAA"},"shape":[100],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1050","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1051"}}},"glyph":{"type":"object","name":"Line","id":"p1046","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_width":2}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1047","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_alpha":0.1,"line_width":2}},"muted_glyph":{"type":"object","name":"Line","id":"p1048","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_alpha":0.2,"line_width":2}}}},{"type":"object","name":"GlyphRenderer","id":"p1058","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1052","attributes":{"selected":{"type":"object","name":"Selection","id":"p1053","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1054"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/zWTf2SVURjHX9NszZ2t2123/ah737uZJpYZibLzZcX+aLn6p2RTJkpixcRIlmVMZFpjWiURSRkpq8T5xlhl0mo2WXITE9tSMmar9J7zPB2Hl/Oe53m+z/f5nCBwq4bNHZ/fDgxXs2/8xc2woZpvakdOP3qdYXF/9+7mjgyzC4eKpldDDrbu/Hh8MOTsaOLe8vaQFfFf5/rG02zvmtqXbE8TD4/WZRdSnDhbFe0UD7jrrVs5vTqU9+TCFh6xB2/PjFbxS29J00qukidbJufK45X8HnOFKujTdJVzzV2/u5kXfUCShanzP14WJHnl665ob2JZVD3/VBmdytqRBDMNnSdaJjfSH/+Jc8fzb3cu18cZJYkkbeAe32ApL7myvSW8OjzWWDNfzFuhC4zxvl9FfBqdLsXW09vQWcD3Ts5UPp07Y43ruOhsGMqjS9K0ErDQN/bXboui+rvXLOSHPeyvLdszzoaJnzbtDVqyWd/QvO1xsupy9pg39IMNnPy5Z/+/Rs+N3jMaZ0olj9G8RusYrWvSosOoLqM6obrxSfrAO+kL2ie0bzwQH3BDfMGA+AT1DeojHouvqBefob5D54DrMhckZE7QuUHniB6ZK37LnKFzx6JwAOUCOeEEbcINlCPsF67wSjiDcoc24RDKJWaEU1wTbqEcIyZcQzmHco+98g4QyLvAPxDfd84gAwAA"},"shape":[100],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1059","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1060"}}},"glyph":{"type":"object","name":"Line","id":"p1055","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"value","value":0.5},"line_color":"red","line_width":2}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1056","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"value","value":0.5},"line_color":"red","line_alpha":0.1,"line_width":2}},"muted_glyph":{"type":"object","name":"Line","id":"p1057","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"value","value":0.5},"line_color":"red","line_alpha":0.2,"line_width":2}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1017","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1030"},{"type":"object","name":"WheelZoomTool","id":"p1031","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1032","attributes":{"dimensions":"both","overlay":{"type":"object","name":"BoxAnnotation","id":"p1033","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1039","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1038","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1040"},{"type":"object","name":"ResetTool","id":"p1041"},{"type":"object","name":"HelpTool","id":"p1042"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1025","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1026","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1027"},"axis_label":"$$\\sigma(z)$$","major_label_policy":{"type":"object","name":"AllLabels","id":"p1028"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1020","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1021","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1022"},"axis_label":"z","major_label_policy":{"type":"object","name":"AllLabels","id":"p1023"}}}],"center":[{"type":"object","name":"Grid","id":"p1024","attributes":{"axis":{"id":"p1020"}}},{"type":"object","name":"Grid","id":"p1029","attributes":{"dimension":1,"axis":{"id":"p1025"}}},{"type":"object","name":"Legend","id":"p1061","attributes":{"items":[{"type":"object","name":"LegendItem","id":"p1062","attributes":{"label":{"type":"value","value":"Threshold at 0.5"},"renderers":[{"id":"p1058"}]}}]}}]}}]}};
+  const render_items = [{"docid":"032eb620-7856-4e90-a93f-2a843651831c","roots":{"p1008":"f0948a68-c5ce-4a1b-9d49-6aeee9222ad2"},"root_ids":["p1008"]}];
   void root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
   }
   if (root.Bokeh !== undefined) {
@@ -1118,8 +1110,8 @@ L(\beta) = \prod_{i=1}^n \big[\sigma(x_i^\top \beta)\big]^{y_i} \cdot \big[1 - \
 \]</div>
 <p>This is called the logit.</p>
 <p>With this, it is possible to define the loss or cost function as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e248289c-cd9c-4224-a368-16989f1ed321">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-e248289c-cd9c-4224-a368-16989f1ed321" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a54b3e20-ae86-40a4-bde1-537f10e696ce">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-a54b3e20-ae86-40a4-bde1-537f10e696ce" title="Permalink to this equation">#</a></span>\[\begin{equation}
 Cost = -\ell (\beta)  = -\sum[y\log(\hat y) - (1-y)\log(1-\hat y)],
 \end{equation}\]</div>
 <p>to define it positive and compute the minimum. This cost function maximizes the probability for each label. For instance, if the label must be 1 but the predicted probability for it is 0.1, then we have a large penalty. Same for the inverse case. Also, it can be used nicely with gradient descent.</p>
@@ -1141,13 +1133,13 @@ Cost = -\ell (\beta)  = -\sum[y\log(\hat y) - (1-y)\log(1-\hat y)],
 <section id="gradient-descent-implementation">
 <h3><span class="section-number">6.4.5. </span>Gradient descent implementation<a class="headerlink" href="#gradient-descent-implementation" title="Link to this heading">#</a></h3>
 <p>For the gradient descent update (“backward propagation”), we have</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dd8042ec-9cdc-4181-a268-44f51ab8e871">
-<span class="eqno">(6.2)<a class="headerlink" href="#equation-dd8042ec-9cdc-4181-a268-44f51ab8e871" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ba810844-8fdc-4029-8d12-aa227995ef0d">
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-ba810844-8fdc-4029-8d12-aa227995ef0d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \beta_i' = \beta_i - \alpha \frac{\partial Cost}{\beta_i}. 
 \end{equation}\]</div>
 <p>Given that the cost function is a function of <span class="math notranslate nohighlight">\(\hat y\)</span>, and <span class="math notranslate nohighlight">\(\hat y = 1/(1 + \exp(-z))\)</span>, with <span class="math notranslate nohighlight">\(z= \beta_0 + \beta_1 X_1 + \ldots + \beta_n X_n\)</span>, then, by using the chain rule, we have</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4a276d0a-deba-45e6-8731-92353feca1c7">
-<span class="eqno">(6.3)<a class="headerlink" href="#equation-4a276d0a-deba-45e6-8731-92353feca1c7" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5ad566aa-4386-4f21-8f19-e14da7d216c4">
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-5ad566aa-4386-4f21-8f19-e14da7d216c4" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial Cost}{\partial \beta_i} &amp;= \frac{\partial Cost}{\partial \hat y}\frac{\partial \hat y}{\partial z}\frac{\partial z}{\partial \beta_i}\\
 \frac{\partial Cost}{\partial \beta_i} &amp;= (\hat y - y) X_i,
 \end{align}\]</div>
@@ -1708,14 +1700,16 @@ Accuracy: 0.9900
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-brief-history-of-logistic-regression">6.1. A Brief History of Logistic Regression</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-why-not-linear-regression-for-classification">6.2. Motivation: Why Not Linear Regression for Classification?</a></li>
@@ -1787,8 +1781,8 @@ By William Oquendo
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
