@@ -72,7 +72,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-JMZ8EV2JDJ"></script>
@@ -205,7 +205,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unsupervised learning I</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../03-PCA/Intro-PCA.html">4. An Introduction to Principal Component Analysis (PCA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-PCA/Intro-PCA.html">4. Dimensionality reduction: Principal Component Analysis (PCA)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supervised learning</span></p>
 <ul class="nav bd-sidenav">
@@ -2865,45 +2865,45 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>0.952250</td>
-      <td>-0.443733</td>
-      <td>-1.072062</td>
-      <td>-0.147088</td>
+      <td>0.976725</td>
+      <td>-0.131793</td>
+      <td>-0.340236</td>
+      <td>0.847997</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
-      <td>-0.537921</td>
-      <td>-1.742540</td>
-      <td>0.365098</td>
-      <td>-0.839455</td>
+      <td>0.101436</td>
+      <td>-1.028809</td>
+      <td>0.258411</td>
+      <td>-0.926825</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
-      <td>0.922262</td>
-      <td>-0.200490</td>
-      <td>-1.229465</td>
-      <td>0.919608</td>
+      <td>1.595550</td>
+      <td>0.070408</td>
+      <td>0.189496</td>
+      <td>0.799812</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>0.381332</td>
-      <td>1.405802</td>
-      <td>-0.543554</td>
-      <td>1.361385</td>
+      <td>0.044304</td>
+      <td>0.879030</td>
+      <td>0.193533</td>
+      <td>-0.063248</td>
     </tr>
     <tr>
       <th>2013-01-05</th>
-      <td>-0.943948</td>
-      <td>1.005759</td>
-      <td>0.306404</td>
-      <td>-1.772373</td>
+      <td>-1.573837</td>
+      <td>-1.486218</td>
+      <td>-1.210954</td>
+      <td>0.718381</td>
     </tr>
     <tr>
       <th>2013-01-06</th>
-      <td>0.757505</td>
-      <td>0.636122</td>
-      <td>1.871436</td>
-      <td>2.225619</td>
+      <td>0.216270</td>
+      <td>-0.412454</td>
+      <td>-1.791547</td>
+      <td>-1.706531</td>
     </tr>
   </tbody>
 </table>
@@ -2943,45 +2943,45 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>-0.147088</td>
-      <td>-1.072062</td>
-      <td>-0.443733</td>
-      <td>0.952250</td>
+      <td>0.847997</td>
+      <td>-0.340236</td>
+      <td>-0.131793</td>
+      <td>0.976725</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
-      <td>-0.839455</td>
-      <td>0.365098</td>
-      <td>-1.742540</td>
-      <td>-0.537921</td>
+      <td>-0.926825</td>
+      <td>0.258411</td>
+      <td>-1.028809</td>
+      <td>0.101436</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
-      <td>0.919608</td>
-      <td>-1.229465</td>
-      <td>-0.200490</td>
-      <td>0.922262</td>
+      <td>0.799812</td>
+      <td>0.189496</td>
+      <td>0.070408</td>
+      <td>1.595550</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>1.361385</td>
-      <td>-0.543554</td>
-      <td>1.405802</td>
-      <td>0.381332</td>
+      <td>-0.063248</td>
+      <td>0.193533</td>
+      <td>0.879030</td>
+      <td>0.044304</td>
     </tr>
     <tr>
       <th>2013-01-05</th>
-      <td>-1.772373</td>
-      <td>0.306404</td>
-      <td>1.005759</td>
-      <td>-0.943948</td>
+      <td>0.718381</td>
+      <td>-1.210954</td>
+      <td>-1.486218</td>
+      <td>-1.573837</td>
     </tr>
     <tr>
       <th>2013-01-06</th>
-      <td>2.225619</td>
-      <td>1.871436</td>
-      <td>0.636122</td>
-      <td>0.757505</td>
+      <td>-1.706531</td>
+      <td>-1.791547</td>
+      <td>-0.412454</td>
+      <td>0.216270</td>
     </tr>
   </tbody>
 </table>
@@ -3021,45 +3021,45 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>0.952250</td>
-      <td>-0.443733</td>
-      <td>-1.072062</td>
-      <td>-0.147088</td>
+      <td>0.976725</td>
+      <td>-0.131793</td>
+      <td>-0.340236</td>
+      <td>0.847997</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
-      <td>-0.537921</td>
-      <td>-1.742540</td>
-      <td>0.365098</td>
-      <td>-0.839455</td>
+      <td>0.101436</td>
+      <td>-1.028809</td>
+      <td>0.258411</td>
+      <td>-0.926825</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
-      <td>0.922262</td>
-      <td>-0.200490</td>
-      <td>-1.229465</td>
-      <td>0.919608</td>
+      <td>1.595550</td>
+      <td>0.070408</td>
+      <td>0.189496</td>
+      <td>0.799812</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>0.381332</td>
-      <td>1.405802</td>
-      <td>-0.543554</td>
-      <td>1.361385</td>
+      <td>0.044304</td>
+      <td>0.879030</td>
+      <td>0.193533</td>
+      <td>-0.063248</td>
     </tr>
     <tr>
       <th>2013-01-05</th>
-      <td>-0.943948</td>
-      <td>1.005759</td>
-      <td>0.306404</td>
-      <td>-1.772373</td>
+      <td>-1.573837</td>
+      <td>-1.486218</td>
+      <td>-1.210954</td>
+      <td>0.718381</td>
     </tr>
     <tr>
       <th>2013-01-06</th>
-      <td>0.757505</td>
-      <td>0.636122</td>
-      <td>1.871436</td>
-      <td>2.225619</td>
+      <td>0.216270</td>
+      <td>-0.412454</td>
+      <td>-1.791547</td>
+      <td>-1.706531</td>
     </tr>
   </tbody>
 </table>
@@ -3073,7 +3073,7 @@ Name: count, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2013-01-01     True
-2013-01-02    False
+2013-01-02     True
 2013-01-03     True
 2013-01-04     True
 2013-01-05    False
@@ -3117,31 +3117,38 @@ Freq: D, Name: A, dtype: bool
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>0.952250</td>
-      <td>-0.443733</td>
-      <td>-1.072062</td>
-      <td>-0.147088</td>
+      <td>0.976725</td>
+      <td>-0.131793</td>
+      <td>-0.340236</td>
+      <td>0.847997</td>
+    </tr>
+    <tr>
+      <th>2013-01-02</th>
+      <td>0.101436</td>
+      <td>-1.028809</td>
+      <td>0.258411</td>
+      <td>-0.926825</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
-      <td>0.922262</td>
-      <td>-0.200490</td>
-      <td>-1.229465</td>
-      <td>0.919608</td>
+      <td>1.595550</td>
+      <td>0.070408</td>
+      <td>0.189496</td>
+      <td>0.799812</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>0.381332</td>
-      <td>1.405802</td>
-      <td>-0.543554</td>
-      <td>1.361385</td>
+      <td>0.044304</td>
+      <td>0.879030</td>
+      <td>0.193533</td>
+      <td>-0.063248</td>
     </tr>
     <tr>
       <th>2013-01-06</th>
-      <td>0.757505</td>
-      <td>0.636122</td>
-      <td>1.871436</td>
-      <td>2.225619</td>
+      <td>0.216270</td>
+      <td>-0.412454</td>
+      <td>-1.791547</td>
+      <td>-1.706531</td>
     </tr>
   </tbody>
 </table>
@@ -3181,45 +3188,45 @@ Freq: D, Name: A, dtype: bool
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>0.952250</td>
+      <td>0.976725</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>0.847997</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
+      <td>0.101436</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>0.365098</td>
+      <td>0.258411</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
-      <td>0.922262</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.919608</td>
+      <td>1.595550</td>
+      <td>0.070408</td>
+      <td>0.189496</td>
+      <td>0.799812</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>0.381332</td>
-      <td>1.405802</td>
+      <td>0.044304</td>
+      <td>0.879030</td>
+      <td>0.193533</td>
       <td>NaN</td>
-      <td>1.361385</td>
     </tr>
     <tr>
       <th>2013-01-05</th>
       <td>NaN</td>
-      <td>1.005759</td>
-      <td>0.306404</td>
       <td>NaN</td>
+      <td>NaN</td>
+      <td>0.718381</td>
     </tr>
     <tr>
       <th>2013-01-06</th>
-      <td>0.757505</td>
-      <td>0.636122</td>
-      <td>1.871436</td>
-      <td>2.225619</td>
+      <td>0.216270</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
@@ -3259,45 +3266,45 @@ Freq: D, Name: A, dtype: bool
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>0.952250</td>
+      <td>0.976725</td>
       <td>5.000000</td>
       <td>5.000000</td>
-      <td>5.000000</td>
+      <td>0.847997</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
+      <td>0.101436</td>
       <td>5.000000</td>
-      <td>5.000000</td>
-      <td>0.365098</td>
+      <td>0.258411</td>
       <td>5.000000</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
-      <td>0.922262</td>
-      <td>5.000000</td>
-      <td>5.000000</td>
-      <td>0.919608</td>
+      <td>1.595550</td>
+      <td>0.070408</td>
+      <td>0.189496</td>
+      <td>0.799812</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>0.381332</td>
-      <td>1.405802</td>
+      <td>0.044304</td>
+      <td>0.879030</td>
+      <td>0.193533</td>
       <td>5.000000</td>
-      <td>1.361385</td>
     </tr>
     <tr>
       <th>2013-01-05</th>
       <td>5.000000</td>
-      <td>1.005759</td>
-      <td>0.306404</td>
       <td>5.000000</td>
+      <td>5.000000</td>
+      <td>0.718381</td>
     </tr>
     <tr>
       <th>2013-01-06</th>
-      <td>0.757505</td>
-      <td>0.636122</td>
-      <td>1.871436</td>
-      <td>2.225619</td>
+      <td>0.216270</td>
+      <td>5.000000</td>
+      <td>5.000000</td>
+      <td>5.000000</td>
     </tr>
   </tbody>
 </table>

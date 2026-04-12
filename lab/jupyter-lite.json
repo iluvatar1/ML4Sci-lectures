@@ -2,7 +2,7 @@
   "jupyter-config-data": {
     "appName": "JupyterLite",
     "appUrl": "./lab",
-    "appVersion": "0.7.3",
+    "appVersion": "0.7.4",
     "baseUrl": "./",
     "defaultKernelName": "python",
     "faviconUrl": "./lab/favicon.ico",
@@ -15,8 +15,32 @@
       },
       {
         "extension": "./extension",
-        "load": "static/remoteEntry.06fa288e8c5f8082f5c5.js",
-        "name": "@jupyter-ai/core",
+        "load": "static/remoteEntry.0cbbaf94fd56f92d091a.js",
+        "name": "@jupyter-ai-contrib/server-documents",
+        "style": "./style"
+      },
+      {
+        "extension": "./extension",
+        "load": "static/remoteEntry.69c77bc40b46056000f0.js",
+        "name": "@jupyter-ai/acp-client",
+        "style": "./style"
+      },
+      {
+        "extension": "./extension",
+        "load": "static/remoteEntry.d6dcb45964a9e2b0fb60.js",
+        "name": "@jupyter-ai/chat-commands",
+        "style": "./style"
+      },
+      {
+        "extension": "./extension",
+        "load": "static/remoteEntry.724c04778af8aa3d7148.js",
+        "name": "@jupyter-ai/persona-manager",
+        "style": "./style"
+      },
+      {
+        "extension": "./extension",
+        "load": "static/remoteEntry.1188dcec0d8112db502f.js",
+        "name": "@jupyter-ai/router",
         "style": "./style"
       },
       {
@@ -29,6 +53,18 @@
         "extension": "./extension",
         "load": "static/remoteEntry.9077b3d2deaffb329dfc.js",
         "name": "@jupyter-widgets/jupyterlab-manager"
+      },
+      {
+        "extension": "./extension",
+        "load": "static/remoteEntry.a111142a9a55bcd9a7f4.js",
+        "name": "@jupyter/collaboration-extension",
+        "style": "./style"
+      },
+      {
+        "extension": "./extension",
+        "load": "static/remoteEntry.8a22e1d5831baaf9f3bf.js",
+        "name": "@jupyter/docprovider-extension",
+        "style": "./style"
       },
       {
         "extension": "./extension",
@@ -55,12 +91,36 @@
       },
       {
         "extension": "./extension",
+        "load": "static/remoteEntry.bebbeccdd61dc466ceaf.js",
+        "name": "jupyterlab-chat-extension",
+        "style": "./style"
+      },
+      {
+        "extension": "./extension",
+        "load": "static/remoteEntry.a6d440e7092a3bb2f2e4.js",
+        "name": "jupyterlab-commands-toolkit",
+        "style": "./style"
+      },
+      {
+        "extension": "./extension",
+        "load": "static/remoteEntry.5577376b289c1f9e2dc2.js",
+        "name": "jupyterlab-eventlistener-extension",
+        "style": "./style"
+      },
+      {
+        "extension": "./extension",
         "load": "static/remoteEntry.f85e32c9dc9a4472331f.js",
         "name": "jupyterlab-myst",
         "style": "./style"
       },
       {
-        "load": "static/remoteEntry.bbf25df5110252151416.js",
+        "extension": "./extension",
+        "load": "static/remoteEntry.a1c9812b1671c22d1d46.js",
+        "name": "jupyterlab-notebook-awareness",
+        "style": "./style"
+      },
+      {
+        "load": "static/remoteEntry.b2077f01f9b03ba2c63d.js",
         "mimeExtension": "./mimeExtension",
         "name": "jupyterlab-plotly"
       },

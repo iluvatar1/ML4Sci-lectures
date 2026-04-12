@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2026-03-11T19:38:54.594260Z",
+      "created": "2026-04-12T22:21:17.933465Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2026-03-11T19:36:21.126384Z",
+      "last_modified": "2026-04-12T22:18:57.745253Z",
       "mimetype": null,
       "name": "lecture01_decision_tree.ipynb",
       "path": "09-Decisions_tree/lecture01_decision_tree.ipynb",
@@ -15,11 +15,11 @@
       "writable": true
     }
   ],
-  "created": "2026-03-11T19:38:54.594260Z",
+  "created": "2026-04-12T22:21:17.933465Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2026-03-11T19:38:54.594260Z",
+  "last_modified": "2026-04-12T22:21:17.933465Z",
   "mimetype": null,
   "name": "09-Decisions_tree",
   "path": "09-Decisions_tree",
