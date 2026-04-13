@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2026-04-12T22:21:17.900192Z",
+      "created": "2026-04-13T01:28:32.403553Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2026-04-12T22:21:17.900192Z",
+      "last_modified": "2026-04-13T01:28:32.403553Z",
       "mimetype": null,
       "name": "figs",
       "path": "00-TALK-IntroML/figs",
@@ -16,11 +16,11 @@
     },
     {
       "content": null,
-      "created": "2026-04-12T22:21:17.878789Z",
+      "created": "2026-04-13T01:28:32.383332Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2026-04-12T22:18:57.693253Z",
+      "last_modified": "2026-04-13T01:26:09.898228Z",
       "mimetype": null,
       "name": "IntroMachineLearning.ipynb",
       "path": "00-TALK-IntroML/IntroMachineLearning.ipynb",
@@ -29,11 +29,11 @@
       "writable": true
     }
   ],
-  "created": "2026-04-12T22:21:17.878789Z",
+  "created": "2026-04-13T01:28:32.383553Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2026-04-12T22:21:17.878789Z",
+  "last_modified": "2026-04-13T01:28:32.383553Z",
   "mimetype": null,
   "name": "00-TALK-IntroML",
   "path": "00-TALK-IntroML",
