@@ -16,6 +16,8 @@ DATA: https://drive.google.com/drive/folders/1dRx5gtmaBm2WC0XP1pO_qXFRH1uHappi?u
 </p>
 
 
+MYST: https://mystmd.org/guide/
+
 <!-- [Complementary presentations](https://drive.google.com/drive/folders/16na0yyeH0wru9mwkd9qzFvPXPsrYmqKI?usp=sharing) -->
 
 ```{tableofcontents}
