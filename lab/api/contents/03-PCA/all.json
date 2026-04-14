@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2026-04-13T01:28:32.416828Z",
+      "created": "2026-04-14T18:03:30.717634Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2026-04-13T01:26:09.932465Z",
+      "last_modified": "2026-04-14T18:00:54.638199Z",
       "mimetype": null,
       "name": "Intro-PCA.ipynb",
       "path": "03-PCA/Intro-PCA.ipynb",
@@ -16,11 +16,11 @@
     },
     {
       "content": null,
-      "created": "2026-04-13T01:28:32.417263Z",
+      "created": "2026-04-14T18:03:30.718079Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2026-04-13T01:28:32.417263Z",
+      "last_modified": "2026-04-14T18:03:30.718079Z",
       "mimetype": null,
       "name": "figs",
       "path": "03-PCA/figs",
@@ -29,11 +29,11 @@
       "writable": true
     }
   ],
-  "created": "2026-04-13T01:28:32.416828Z",
+  "created": "2026-04-14T18:03:30.717634Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2026-04-13T01:28:32.416828Z",
+  "last_modified": "2026-04-14T18:03:30.717634Z",
   "mimetype": null,
   "name": "03-PCA",
   "path": "03-PCA",
