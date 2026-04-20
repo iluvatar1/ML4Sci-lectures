@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2026-04-20T14:44:18.071319Z",
+      "created": "2026-04-20T14:55:18.065931Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2026-04-20T14:41:49.108138Z",
+      "last_modified": "2026-04-20T14:53:02.030122Z",
       "mimetype": null,
       "name": "SVM.ipynb",
       "path": "06-SVM/SVM.ipynb",
@@ -15,11 +15,11 @@
       "writable": true
     }
   ],
-  "created": "2026-04-20T14:44:18.071319Z",
+  "created": "2026-04-20T14:55:18.065931Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2026-04-20T14:44:18.071319Z",
+  "last_modified": "2026-04-20T14:55:18.065931Z",
   "mimetype": null,
   "name": "06-SVM",
   "path": "06-SVM",
