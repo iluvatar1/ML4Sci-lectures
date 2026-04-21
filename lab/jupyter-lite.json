@@ -21,7 +21,7 @@
       },
       {
         "extension": "./extension",
-        "load": "static/remoteEntry.69c77bc40b46056000f0.js",
+        "load": "static/remoteEntry.93f63a8933948156f626.js",
         "name": "@jupyter-ai/acp-client",
         "style": "./style"
       },
