@@ -1,0 +1,53 @@
+version: 1
+project:
+  title: Introduction to Machine Learning for Science
+  authors:
+    - name: William Oquendo
+    - email: wfoquendop@unal.edu.co
+  copyright: '2026'
+  exclude:
+    - _build
+    - Thumbs.db
+    - .DS_Store
+    - '**.ipynb_checkpoints'
+    - VisualizationGL
+  github: iluvatar1/ML4Sci-lectures
+  thebe:
+    binder:
+      repo: iluvatar1/ML4Sci-lectures
+      provider: github
+      url: https://mybinder.org
+      ref: master
+  toc:
+    - file: README.md
+    - title: Introduction
+      children:
+        - file: lectures/00-IntroductionCourseML/IntroCourse-MachineLearning.ipynb
+        - file: lectures/00-TALK-IntroML/IntroMachineLearning.ipynb
+        - file: lectures/02-LimpiezayPrepDatos/DataCleaning.ipynb
+    - title: Unsupervised learning I
+      children:
+        - file: lectures/03-PCA/Intro-PCA.ipynb
+    - title: Supervised learning I
+      children:
+        - file: lectures/04-LinearRegression/LinearRegression.ipynb
+        - file: lectures/05-LogisticRegression/LogisticRegression.ipynb
+        - file: lectures/06-SVM/SVM.ipynb
+    - title: Introduction to Neural Networks
+      children:
+        - file: lectures/07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.ipynb
+        - file: lectures/07-IntroNeuralNetworks/DeepLearning.ipynb
+    - title: Appendix
+      children:
+        - file: lectures/01-reviewPython/PythonReview.ipynb
+        - file: lectures/01-reviewPython/01-IntroProgrammingPython.ipynb
+        - file: lectures/01-reviewPython/02-IntroProgrammingPython-DataStructs.ipynb
+        - file: lectures/01-reviewPython/pandas-intro.ipynb
+        - file: lectures/01-reviewPython/ml_intro_exercise.ipynb
+site:
+  options:
+    favicon: ''
+    analytics_google: G-JMZ8EV2JDJ
+    analytics_plausible: ''
+    folders: true
+  template: book-theme
