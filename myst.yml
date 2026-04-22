@@ -40,10 +40,11 @@ project:
     - title: Appendix
       children:
         - file: lectures/01-reviewPython/PythonReview.ipynb
-        - file: lectures/01-reviewPython/01-IntroProgrammingPython.ipynb
-        - file: lectures/01-reviewPython/02-IntroProgrammingPython-DataStructs.ipynb
+        # - file: lectures/01-reviewPython/01-IntroProgrammingPython.ipynb
+        # - file: lectures/01-reviewPython/02-IntroProgrammingPython-DataStructs.ipynb
         - file: lectures/01-reviewPython/pandas-intro.ipynb
         - file: lectures/01-reviewPython/ml_intro_exercise.ipynb
+  
 site:
   options:
     favicon: ''
@@ -51,3 +52,4 @@ site:
     analytics_plausible: ''
     folders: true
   template: book-theme
+  

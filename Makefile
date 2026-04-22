@@ -42,5 +42,10 @@ nbgrader:
 	@echo "Generating assingments to test ..."
 	nbgrader generate_assignment --assignment="lectures/*" --notebook="*" --force
 
+html:
+	@echo "Building html book and serving it..."
+	jupyter-book build --html --execute
+	npx serve _build/html
+
 clean:
 	rm -f *~ #_build
