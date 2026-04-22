@@ -35,12 +35,6 @@
     <loc>http://localhost:3000/lectures/reviewpython/pythonreview</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/lectures/reviewpython/introprogrammingpython</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/lectures/reviewpython/introprogrammingpython-datastructs</loc>
-  </url>
-  <url>
     <loc>http://localhost:3000/lectures/reviewpython/pandas-intro</loc>
   </url>
   <url>
