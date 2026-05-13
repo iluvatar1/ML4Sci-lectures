@@ -35,7 +35,7 @@ project:
         - file: lectures/06-SVM/SVM.ipynb
     - title: Introduction to Neural Networks
       children:
-        - file: lectures/07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.ipynb
+        # - file: lectures/07-IntroNeuralNetworks/NeuralNetworks-BasicConcepts.ipynb
         - file: lectures/07-IntroNeuralNetworks/DeepLearning.ipynb
     - title: Appendix
       children:
