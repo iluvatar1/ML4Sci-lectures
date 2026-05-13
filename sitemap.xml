@@ -26,12 +26,6 @@
     <loc>http://localhost:3000/lectures/svm/svm</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/lectures/introneuralnetworks/neuralnetworks-basicconcepts</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/lectures/introneuralnetworks/deeplearning</loc>
-  </url>
-  <url>
     <loc>http://localhost:3000/lectures/reviewpython/pythonreview</loc>
   </url>
   <url>
